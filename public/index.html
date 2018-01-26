@@ -8,29 +8,46 @@
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.90/jsrender.min.js"></script>
   <script type="text/javascript" src="js/message_formatter.js"></script>
+<style>
+  html, body { height: 100%; }
+  #main {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    padding-bottom: 15px;
+  }
+  #history {
+    flex: 1 1 20%; 
+    display: flex;
+    flex-direction: column; 
+    overflow: auto;
+  }
+</style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h2 class="panel-title">Chat with a Bot</h2>
-      </div>
+  <div id="main" class="container">
+    <div id="history"></div>
 
-      <div class="container">
-        <form id="chat">
-          <div class="form-group">
-            <label for="userText">Your Message</label>
-            <input type="text" id="userText" class="form-control" placeholder="Type something" />
-          </div>
-          <button type="submit" class="btn btn-default">Send</button>
-        </form>
+    <form id="chat">
+      <div class="form-group">
+        <label for="userText">
+          <h2 class="panel-title">Chat with a Bot</h2>
+        </label>
+        <input type="text" id="userText" class="form-control" placeholder="Type something" />
       </div>
-
-      <div class="panel-body" id="history"></div>
-    </div>
+      <button type="submit" id="chatBtn" class="btn btn-default">Send</button>
+    </form>
   </div>
 
   <script type="text/javascript" src="js/ajax.js"></script>
+  <script type="text/javascript">
+    $(document).ready(() => {
+      const $userText = $('#userText');
+      const $history = $('#history');
+      Ajax().initAjax($userText, $history);
+      $userText.focus();
+    });
+  </script>
 </body>
 </html>
