@@ -1,3 +1,1 @@
-module.exports = {
-  handleChat: require('./handle_chat')
-};
+module.exports = require('./handle_chat');

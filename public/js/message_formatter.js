@@ -4,7 +4,7 @@ window.messageFormatter = (() => {
   $.templates({
     user: (`
       <div class="panel panel-default">
-        <div class="panel-body" style="text-align: right;">{{:message}}</div>
+        <div class="panel-body" style="text-align: right;">{{>message}}</div>
       </div>
     `),
     plain: (`
@@ -12,7 +12,17 @@ window.messageFormatter = (() => {
         <div class="panel-heading">
           <h3 class="panel-title">{{:name}}, {{:time}}</h3>
         </div>
-        <div class="panel-body">{{:message}}</div>
+        <div class="panel-body">{{>message}}</div>
+      </div>
+    `),
+    help: (`
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{:name}}, {{:time}}</h3>
+        </div>
+        <div class="panel-body">
+          Keyword help: <em>{{>message}}</em>
+        </div>
       </div>
     `)
   });
@@ -20,6 +30,7 @@ window.messageFormatter = (() => {
   const formatters = {
     user: message => $.render.user(message),
     plain: message => $.render.plain(message),
+    help: message => $.render.help(message),
   };
 
   return message => {

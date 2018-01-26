@@ -1,11 +1,19 @@
 const moment = require('moment');
 const { DATE_FORMAT, BOT_NAME } = require('../constants');
+const { SmartMessage } = require('./smart_message');
 
-module.exports = function (req, res) {
-  res.json({
-    format: 'plain',
-    message: `Interesting that you would say "${req.body.message}"`,
-    name: BOT_NAME,
-    time: moment(req.body.time).format(DATE_FORMAT),
-  });
-};
+function handleChat(req, res) {
+  const { message, format } = req.body;
+  const smartMessage = new SmartMessage(message, format);
+  const json = Object.assign({},
+    smartMessage.getResponse(),
+    {
+      name: BOT_NAME,
+      time: moment(req.body.time).format(DATE_FORMAT)
+    }
+  );
+
+  res.json(json);
+}
+
+module.exports = { handleChat };
