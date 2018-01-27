@@ -1,3 +1,4 @@
+const { sample } = require('lodash');
 const { KeywordResponder } = require('../keyword_responder');
 const { getMessage } = require('../get_message');
 const { jokes } = require('../dictionary');
@@ -17,7 +18,7 @@ class JokeResponder extends KeywordResponder {
   }
 
   getResponse() {
-    const text = jokes[0];
+    const text = sample(jokes);
     return getMessage('plain', 'Here is a joke:\n' + text);
   }
 }

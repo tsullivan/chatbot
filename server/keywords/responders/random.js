@@ -1,5 +1,4 @@
 const { sample } = require('lodash');
-
 const { KeywordResponder } = require('../keyword_responder');
 const { getResponders } = require('../get_responders');
 
