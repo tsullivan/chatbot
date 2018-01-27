@@ -8,8 +8,8 @@ class HelpResponder extends KeywordResponder {
     this.name = 'help';
   }
 
-  testMatch() {
-    return this.input.match(/^help\b/);
+  testMatch(input) {
+    return input.match(/^help\b/);
   }
 
   getResponse() {
