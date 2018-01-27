@@ -18,7 +18,7 @@ class SmartMessage {
     } else {
       const { isKeyword, responder } = keywordTester(this.originalText);
       if (isKeyword) {
-        this.response = responder.getResponse();
+        this.response = responder.runKeyword();
       } else {
         this.response = {
           format: 'plain',

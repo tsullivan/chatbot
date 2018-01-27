@@ -1,5 +1,1 @@
-const keywords = [
-  require('./plugins/repeat')
-];
-
-module.exports = { keywords };
+module.exports = require('./get_plugins');

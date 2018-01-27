@@ -1,8 +1,9 @@
-const { keywords } = require('../keywords');
+const { getPlugins } = require('../keywords');
 
 function keywordTester(input) {
-  for (const keyword of keywords) {
-    const responder = new keyword.Responder(input);
+  const plugins = getPlugins();
+  for (const keyword in plugins) {
+    const responder = new plugins[keyword].Responder(input);
     if (responder.inputMatches()) {
       return {
         isKeyword: true,

@@ -4,28 +4,21 @@ const { getMessage } = require('../get_message');
 class RepeatResponder extends KeywordResponder {
   constructor(input) {
     super(input);
+    this.pluginName = 'repeat';
     this.phrase = null;
   }
 
-  inputMatches() {
-    let matches;
-    matches = this.input.match(/^repeat help$/);
-    if (matches !== null && matches[0] !== '') {
-      return true;
-    }
-
-    matches = this.input.match(/^repeat ([0-9]+) ([\S ]+)$/);
-    if (matches !== null && matches[0] !== '') {
-      const [ _matchedPortion, num, phrase ] = matches; //eslint-disable-line no-unused-vars
+  testMatch(input) {
+    const _matches = input.match(/^repeat ([0-9]+) ([\S ]+)$/);
+    if (_matches !== null) {
+      const [ _matchedPortion, num, phrase ] = _matches; //eslint-disable-line no-unused-vars
       if (num > 0 && num <= 1000) {
         this.num = num;
         this.phrase = phrase;
-        return true;
       }
-      return true; // show help
     }
 
-    return false;
+    return input.match(/^repeat\b/);
   }
 
   help() {
