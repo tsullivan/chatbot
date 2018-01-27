@@ -23,9 +23,12 @@ function Ajax() {
       const scroller = new Scroller($container); // capture bottom tracking
       const $html = $(html);
       $container.append($html); // add to page
+
+      const fadeTo = (message.format === 'user') ? 0 : 1200;
       $html.fadeTo(0, 0); // make invisible
+      $html.fadeTo(fadeTo, 1); // make visible
+
       scroller.scroll(); // scroll down
-      $html.fadeTo(1200, 1); // make visible
     }
   }
 
