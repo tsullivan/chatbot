@@ -1,1 +1,5 @@
-module.exports = require('./keyword_tester');
+const keywords = [
+  require('./plugins/repeat')
+];
+
+module.exports = { keywords };

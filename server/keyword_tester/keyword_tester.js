@@ -1,6 +1,4 @@
-const keywords = [
-  require('./repeat')
-];
+const { keywords } = require('../keywords');
 
 function keywordTester(input) {
   for (const keyword of keywords) {

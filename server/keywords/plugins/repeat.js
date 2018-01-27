@@ -1,5 +1,5 @@
-const { KeywordResponder } = require('./keyword_responder');
-const { getMessage } = require('./get_message');
+const { KeywordResponder } = require('../keyword_responder');
+const { getMessage } = require('../get_message');
 
 class RepeatResponder extends KeywordResponder {
   constructor(input) {
