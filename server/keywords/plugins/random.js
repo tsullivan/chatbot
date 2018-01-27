@@ -1,4 +1,5 @@
 const { KeywordResponder } = require('../keyword_responder');
+const { getPlugins } = require('../get_plugins');
 const { getMessage } = require('../get_message');
 
 class RandomResponder extends KeywordResponder {

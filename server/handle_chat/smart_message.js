@@ -1,4 +1,4 @@
-const { keywordTester } = require('../keyword_tester');
+const { keywordTester } = require('./keyword_tester');
 
 class SmartMessage {
 
