@@ -1,6 +1,8 @@
 /* global $ */
 function Ajax() {
 
+  let lastText = '';
+
   function Scroller($container) {
     // http://jsfiddle.net/dotnetCarpenter/KpM5j/
     const el = $container.get(0);
@@ -58,12 +60,16 @@ function Ajax() {
     return e => {
       e.preventDefault();
 
-      const messageText = $userText.val();
+      let messageText = $userText.val();
       if (messageText === '') {
+        // prefill with last message, and stop
+        messageText = lastText;
+        $userText.val(messageText);
         return false;
       }
 
       sendMessage(messageText, 'user', (message, response) => {
+        lastText = messageText;
         updateHistory(message, $history);
         $userText.val('');
         updateHistory(response, $history);
