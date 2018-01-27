@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { handleChat } = require('./server/handle_chat');
+const { BOT_NAME } = require('./server/constants');
 
 const app = express();
 const jsonParser = bodyParser.json({ type: 'application/json' });
@@ -18,5 +19,5 @@ app.post('/chat', jsonParser, (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log('Example app listening on port 3000!'); // eslint-disable-line no-console
+  console.log(`${BOT_NAME} listening on port 3000!`); // eslint-disable-line no-console
 });
