@@ -4,7 +4,7 @@ const { getMessage } = require('../get_message');
 class RepeatResponder extends KeywordResponder {
   constructor(input) {
     super(input);
-    this.pluginName = 'repeat';
+    this.name = 'repeat';
     this.phrase = null;
   }
 

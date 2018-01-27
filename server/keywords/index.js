@@ -1,1 +1,1 @@
-module.exports = require('./get_plugins');
+module.exports = require('./get_responders');

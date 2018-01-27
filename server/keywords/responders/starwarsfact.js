@@ -5,7 +5,7 @@ const { starwarsfacts } = require('../dictionary');
 class StarWarsFactResponder extends KeywordResponder {
   constructor(input) {
     super(input);
-    this.pluginName = 'starwarsfact';
+    this.name = 'starwarsfact';
   }
 
   testMatch(input) {

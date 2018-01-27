@@ -4,7 +4,7 @@ class KeywordResponder {
 
   constructor(input) {
     this.input = input;
-    this.pluginName = null;
+    this.name = null;
   }
 
   isImpromptu() {
@@ -20,7 +20,7 @@ class KeywordResponder {
   }
 
   help() {
-    return getMessage('help', `Type \`${this.pluginName}\` and see what happens...`);
+    return getMessage('help', `Type \`${this.name}\` and see what happens...`);
   }
 
   getResponse() {

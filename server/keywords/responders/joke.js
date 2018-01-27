@@ -5,7 +5,7 @@ const { jokes } = require('../dictionary');
 class JokeResponder extends KeywordResponder {
   constructor(input) {
     super(input);
-    this.pluginName = 'joke';
+    this.name = 'joke';
   }
 
   testMatch(input) {
