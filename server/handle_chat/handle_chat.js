@@ -3,15 +3,19 @@ const { DATE_FORMAT, BOT_NAME } = require('../constants');
 const { SmartMessage } = require('./smart_message');
 
 function handleChat(req, res) {
+  let json = {};
+
   const { message, format } = req.body;
-  const smartMessage = new SmartMessage(message, format);
-  const json = Object.assign({},
-    smartMessage.getResponse(),
-    {
-      name: BOT_NAME,
-      time: moment(req.body.time).format(DATE_FORMAT)
-    }
-  );
+  if (message && format) {
+    const smartMessage = new SmartMessage(message, format);
+    json = Object.assign({},
+      smartMessage.getResponse(),
+      {
+        name: BOT_NAME,
+        time: moment(req.body.time).format(DATE_FORMAT)
+      }
+    );
+  }
 
   res.json(json);
 }
