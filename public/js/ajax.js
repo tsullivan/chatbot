@@ -2,35 +2,15 @@
 function Ajax() {
 
   let lastText = '';
-
-  function Scroller($container) {
-    // http://jsfiddle.net/dotnetCarpenter/KpM5j/
-    const el = $container.get(0);
-    const { scrollHeight, clientHeight, scrollTop } = el;
-
-    this.trackingBottom = scrollHeight - clientHeight <= scrollTop + 1;
-    this.scroll = () => {
-      if (this.trackingBottom) {
-        const { scrollHeight, clientHeight } = el;
-        el.scrollTop = scrollHeight - clientHeight;
-      }
-    };
-
-    return this;
-  }
-
   function updateHistory(message, $container) {
     const html = window.messageFormatter(message);
     if (html) {
-      const scroller = new Scroller($container); // capture bottom tracking
-      const $html = $(html);
-      $container.append($html); // add to page
+      const $html = $(`<div role="log">${html}</div>`);
+      $container.prepend($html); // add to page
 
       const fadeTo = (message.format === 'user') ? 0 : 1200;
       $html.fadeTo(0, 0); // make invisible
       $html.fadeTo(fadeTo, 1); // make visible
-
-      scroller.scroll(); // scroll down
     }
   }
 
