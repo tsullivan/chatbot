@@ -1,4 +1,5 @@
 const { keywordTester } = require('./keyword_tester');
+const { createNonsense } = require('./nonsense');
 
 class SmartMessage {
 
@@ -22,7 +23,7 @@ class SmartMessage {
       } else {
         this.response = {
           format: 'plain',
-          message: `Interesting that you would say "${this.originalText}"`
+          message: createNonsense(this.originalText)
         };
       }
     }
