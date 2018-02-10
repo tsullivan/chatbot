@@ -1,21 +1,23 @@
-const { getCodename } = require('./get_codename');
+const { getPhraseParts } = require('./get_phrase_parts');
 const { getPhrases } = require('./get_phrases');
+const { MAX_REUSE } = require('../constants');
 
 // keep these around for awhile
-let name;
+let parts;
 let phrases;
 let numUses = 0;
 
 function createNonsense(originalText) {
-  if (numUses === 0) {
-    name = getCodename();
-    phrases = getPhrases(name);
-    numUses = phrases.length;
+  if (numUses <= 0) {
+    parts = getPhraseParts();
+    phrases = getPhrases(parts);
+    numUses = Math.min(MAX_REUSE, phrases.length);
   }
 
-  if (originalText.toLowerCase() === name.toLowerCase()) {
+  const codeWord = `${parts.adjective} ${parts.noun}`;
+  if (originalText.toLowerCase() === codeWord.toLowerCase()) {
     return (
-      `That's what I'm talking about! ${name}!`
+      `That's what I'm talking about! ${codeWord}!`
     );
   }
 

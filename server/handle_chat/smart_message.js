@@ -1,5 +1,5 @@
 const { keywordTester } = require('./keyword_tester');
-const { createNonsense } = require('./nonsense');
+const { createNonsense } = require('../nonsense');
 
 class SmartMessage {
 
