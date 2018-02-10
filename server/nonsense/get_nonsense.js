@@ -1,12 +1,21 @@
+const { sample } = require('lodash');
+const { oneOf } = require('../one_of');
 const { roll } = require('../roll');
 const { getPhraseParts } = require('./get_phrase_parts');
 const { getPhrases } = require('./get_phrases');
 const { MAX_REUSE } = require('../constants');
 
-// keep these around for awhile
+// keep these around across multiple requests
 let parts;
 let phrases;
 let numUses = 0;
+
+const createSeededNonsense = (generators) => {
+  const myNoun = oneOf(generators);
+  const { adjective } = getPhraseParts();
+  const myPhrases = getPhrases({ adjective, noun: myNoun });
+  return sample(myPhrases);
+};
 
 const createNonsense = () => {
   const pIdx = Math.floor(Math.random() * numUses);
@@ -19,7 +28,7 @@ const createNonsense = () => {
   return phrase;
 };
 
-function getNonsense(originalText) {
+function getNonsense(originalText, seedNounGenerators) {
   if (numUses <= 0) {
     parts = getPhraseParts();
     phrases = getPhrases(parts);
@@ -32,6 +41,13 @@ function getNonsense(originalText) {
   }
 
   if (roll(10).atLeast(3)) {
+    if (roll(4).is(4)) {
+      return {
+        useNonsense: true,
+        nonsense: createSeededNonsense(seedNounGenerators)
+      };
+    }
+
     return {
       useNonsense: true,
       nonsense: createNonsense()

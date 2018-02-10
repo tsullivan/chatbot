@@ -26,7 +26,11 @@ class SmartMessage {
       return;
     }
 
-    const { useNonsense, nonsense } = getNonsense(this.originalText);
+    const seedNounGenerators = [getFood];
+    const { useNonsense, nonsense } = getNonsense(
+      this.originalText,
+      seedNounGenerators
+    );
     if (useNonsense) {
       this.response = {
         format: 'plain',

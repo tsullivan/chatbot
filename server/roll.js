@@ -1,20 +1,16 @@
-function roll(sides) {
-  let effective = sides;
-  if (typeof effective === 'string') {
-    effective = effective.replace(/[^\d]/g, '');
-  }
-
+function roll(numSides) {
   const { floor, random } = Math;
-  const result = floor(random() * effective) + 1;
+  const result = floor(random() * numSides) + 1;
 
   return {
     result,
+    is(checkNum) {
+      return result === checkNum;
+    },
     atLeast(checkNum) {
       return result >= checkNum;
     }
   };
 }
 
-module.exports = {
-  roll
-};
+module.exports = { roll };
