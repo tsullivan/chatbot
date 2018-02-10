@@ -1,4 +1,4 @@
-const { getResponders } = require('../keywords');
+const { getResponders } = require('./get_responders');
 
 function keywordTester(input) {
   const responders = getResponders();

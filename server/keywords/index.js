@@ -1,1 +1,1 @@
-module.exports = require('./get_responders');
+module.exports = require('./keyword_tester');
