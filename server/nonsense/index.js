@@ -1,1 +1,1 @@
-module.exports = require('./create_nonsense');
+module.exports = require('./get_nonsense');
