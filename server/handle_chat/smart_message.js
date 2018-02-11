@@ -2,7 +2,7 @@ const { keywordTester } = require('../keywords');
 const { getNonsense } = require('../nonsense');
 const { oneOf } = require('../one_of');
 const { getFood } = require('../food');
-const { umm } = require('../umm');
+const { definitive, neutral, umm } = require('../wrap_noun');
 
 class SmartMessage {
   constructor(messageText, messageFormat) {
@@ -42,7 +42,7 @@ class SmartMessage {
 
     this.response = {
       format: 'plain',
-      message: oneOf([getFood, umm(getFood)])
+      message: oneOf([definitive(getFood), neutral(getFood), umm(getFood)])
     };
   }
 
