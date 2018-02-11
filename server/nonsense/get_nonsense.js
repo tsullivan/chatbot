@@ -10,7 +10,7 @@ let parts;
 let phrases;
 let numUses = 0;
 
-const createSeededNonsense = (generators) => {
+const createSeededNonsense = generators => {
   const myNoun = oneOf(generators);
   const { adjective } = getPhraseParts();
   const myPhrases = getPhrases({ adjective, noun: myNoun });
@@ -35,21 +35,26 @@ function getNonsense(originalText, seedNounGenerators) {
     numUses = Math.min(MAX_REUSE, phrases.length);
   }
 
+  const useNonsense = true;
+
   const codeWord = `${parts.adjective} ${parts.noun}`;
   if (originalText.toLowerCase() === codeWord.toLowerCase()) {
-    return `That's what I'm talking about! ${codeWord}!`;
+    return {
+      useNonsense,
+      nonsense: `That's what I'm talking about! ${codeWord}!`
+    };
   }
 
   if (roll(10).atLeast(3)) {
     if (roll(4).is(4)) {
       return {
-        useNonsense: true,
+        useNonsense,
         nonsense: createSeededNonsense(seedNounGenerators)
       };
     }
 
     return {
-      useNonsense: true,
+      useNonsense,
       nonsense: createNonsense()
     };
   }

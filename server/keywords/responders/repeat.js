@@ -35,10 +35,10 @@ class RepeatResponder extends KeywordResponder {
     }
 
     let message = '';
-    for (let n = 0; n <= this.num; n += 1) {
+    for (let n = 0; n < this.num; n += 1) {
       message += this.phrase + ' ';
     }
-    return getMessage('plain', message);
+    return getMessage('plain', message.trim());
   }
 }
 

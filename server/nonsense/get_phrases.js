@@ -5,7 +5,7 @@ function getPhrases({ adjective: upperA, noun: upperN }) {
   const lowerN = upperN.toLowerCase();
 
   return [
-    `My ${upperN} is ${lowerA}.`,
+    `My ${lowerN} is really ${lowerA}.`,
     `Want a ${lowerN}? How about a ${lowerA} ${lowerN}?`,
     `${proper} for President!`,
     `A ${lowerN}‽ Really‽ A ${lower}‽`,
