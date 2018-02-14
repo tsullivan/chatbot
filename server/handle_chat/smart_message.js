@@ -5,19 +5,30 @@ const { getFood } = require('../food');
 const { definitive, neutral, umm } = require('../wrap_noun');
 
 class SmartMessage {
-  constructor(messageText, messageFormat) {
+  constructor(session, messageText, messageFormat) {
     this.originalText = messageText;
     this.originalFormat = messageFormat;
-    this.makeResponse();
+    this.makeResponse(session);
   }
 
-  makeResponse() {
+  makeResponse(session) {
+    session.fulfillWait(this.originalText);
+    const nextBotMessage = session.popNextBotMessage();
+    if (nextBotMessage !== null) {
+      this.response = {
+        format: 'plain',
+        message: nextBotMessage,
+      };
+      return;
+    }
+
     // test for different commands
     if (this.originalFormat === 'syn') {
       this.response = {
         format: 'plain',
         message: 'Hello! What is your name?'
       };
+      session.setWaitOnName();
       return;
     }
 

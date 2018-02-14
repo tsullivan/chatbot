@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const { initSession } = require('./server/session');
 const { handleChat } = require('./server/handle_chat');
 const { BOT_NAME } = require('./server/constants');
 
 const app = express();
 const jsonParser = bodyParser.json({ type: 'application/json' });
+initSession(app);
 
 app.use(express.static(__dirname + '/public')); // home html page, static js
 

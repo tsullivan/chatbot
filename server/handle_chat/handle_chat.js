@@ -7,7 +7,8 @@ function handleChat(req, res) {
 
   const { message, format } = req.body;
   if (message && format) {
-    const smartMessage = new SmartMessage(message, format);
+    const { chat } = req.session;
+    const smartMessage = new SmartMessage(chat, message, format);
     json = Object.assign({},
       smartMessage.getResponse(),
       {
