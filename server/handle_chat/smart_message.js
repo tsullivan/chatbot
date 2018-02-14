@@ -1,11 +1,13 @@
+const { Responder } = require('./responder');
 const { keywordTester } = require('../keywords');
 const { getNonsense } = require('../nonsense');
 const { oneOf } = require('../one_of');
 const { getFood } = require('../food');
 const { definitive, neutral, umm } = require('../wrap_noun');
 
-class SmartMessage {
+class SmartMessage extends Responder {
   constructor(session, messageText, messageFormat) {
+    super();
     this.originalText = messageText;
     this.originalFormat = messageFormat;
     this.makeResponse(session);
@@ -15,46 +17,27 @@ class SmartMessage {
     session.fulfillWait(this.originalText);
     const nextBotMessage = session.popNextBotMessage();
     if (nextBotMessage !== null) {
-      this.response = {
-        format: 'plain',
-        message: nextBotMessage,
-      };
-      return;
+      return this.setPlain(nextBotMessage);
     }
 
     // test for different commands
     if (this.originalFormat === 'syn') {
-      this.response = {
-        format: 'plain',
-        message: 'Hello! What is your name?'
-      };
       session.setWaitOnName();
-      return;
+      return this.setPlain('Hello! What is your name?');
     }
 
     const { isKeyword, responder } = keywordTester(this.originalText);
     if (isKeyword) {
-      this.response = responder.runKeyword();
-      return;
+      return this.setPlain(responder.runKeyword());
     }
 
     const seedNounGenerators = [getFood];
-    const { useNonsense, nonsense } = getNonsense(
-      this.originalText,
-      seedNounGenerators
-    );
+    const { useNonsense, nonsense } = getNonsense(this.originalText, seedNounGenerators);
     if (useNonsense) {
-      this.response = {
-        format: 'plain',
-        message: nonsense
-      };
-      return;
+      return this.setPlain(nonsense);
     }
 
-    this.response = {
-      format: 'plain',
-      message: oneOf([definitive(getFood), neutral(getFood), umm(getFood)])
-    };
+    return this.setPlain(oneOf([definitive(getFood), neutral(getFood), umm(getFood)]));
   }
 
   getResponse() {
