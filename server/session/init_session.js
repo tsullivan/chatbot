@@ -1,9 +1,10 @@
 const session = require('express-session');
+const { session_secret: sessionSecret } = require('../../config');
 const { ChatSession } = require('./chat_session');
 
 function initSession(app) {
   app.use(session({
-    secret: 'XyJYNFxy MRD7o2mS E1pTOJzG 84gcEmPb', // FIXME: dotfile or something
+    secret: sessionSecret,
     cookie: { maxAge: 60000 },
     resave: true,
     saveUninitialized: true
