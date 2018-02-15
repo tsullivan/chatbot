@@ -1,5 +1,7 @@
 class ChatResponder {
-  constructor() {
+  constructor(messageText, messageFormat) {
+    this.originalText = messageText;
+    this.originalFormat = messageFormat;
     this.response = null;
   }
 

@@ -7,33 +7,14 @@ const { definitive, neutral, umm } = require('../wrap_noun');
 
 class SmartMessage extends ChatResponder {
   constructor(session, messageText, messageFormat) {
-    super();
+    super(messageText, messageFormat);
     this.originalText = messageText;
     this.originalFormat = messageFormat;
+
     this.makeResponse(session);
   }
 
   makeResponse(session) {
-    // test for different commands
-    if (this.originalFormat === 'syn') {
-      session.setWaitOnName();
-      return this.setPlain('Hello! What is your name?');
-    }
-
-    session.fulfillWait(this.originalText);
-    const nextBotMessage = session.popNextBotMessage();
-    if (nextBotMessage !== null) {
-      return this.setPlain(nextBotMessage);
-    }
-
-    if (session.game !== null) {
-      const { isDone, response } = session.game.testInput(this.originalText);
-      if (isDone) {
-        session.endGame();
-      }
-      return this.setPlain(response);
-    }
-
     const { isKeyword, responder } = keywordTester(this.originalText, session);
     if (isKeyword) {
       return this.setPlain(responder.runKeyword());
