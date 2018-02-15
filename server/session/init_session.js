@@ -1,6 +1,9 @@
 const session = require('express-session');
 const { session_secret: sessionSecret } = require('../../config');
 const { ChatSession } = require('./chat_session');
+const { getGames } = require('../games');
+
+const games = getGames();
 
 function initSession(app) {
   app.use(session({
@@ -16,6 +19,12 @@ function initSession(app) {
       req.session.chat = sess.getInitial();
     } else {
       req.session.chat = sess.getResumed(req.session);
+      // resume game
+      if (req.session.chat.game !== null) {
+        const game = new games[req.session.chat.game.name].Game();
+        game.resume(req.session.chat.game);
+        req.session.chat.game = game;
+      }
     }
     next();
   });

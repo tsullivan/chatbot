@@ -1,5 +1,6 @@
 const { defaultsDeep } = require('lodash');
 const { mapFieldToResponse } = require('./map_field_to_response');
+const { getGames } = require('../games');
 
 const proto = {
   name: null,
@@ -11,6 +12,7 @@ const proto = {
   }
 };
 
+const games = getGames();
 
 class ChatSession {
   constructor(session) {
@@ -64,15 +66,22 @@ class ChatSession {
   }
 
   setGame(game) {
-    this.game = game;
+    this.game = new games[game].Game(this);
+    this.game.init();
+    this.save();
   }
 
-  getGameResponse() {
+  endGame() {
+    this.game = null;
+    this.save();
+  }
+
+  getGameWelcome() {
     const game = this.game;
     if (game !== null) {
-      return 'you are playing a game!';
+      return this.game.getWelcome();
     } else {
-      return `Weird, I don't know what game you're playing right now.`; //eslint-disable-line quotes
+      return `Weird, I don't know what game you wanted to play.`;
     }
   }
 }

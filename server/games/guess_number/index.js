@@ -1,29 +1,44 @@
+const { ChatGame } = require('../chat_game');
+
 /*
  * Let user guess a number between 1 and 20
  */
-class GuessNumber {
-  constructor(session) {
-    // if session does not have number to guess
-    //  - generate the number and stage a reply about it
-
-    // if original text contains a valid guess
-    //  - test the guess and stage a reply
-    //  - if the guess is correct, tell them the number of guesses it took and clear the game state
-    //  - if the guess is incorrect, increment the number of guesses and tell them if too low or too high
-
-    // if original text contains an invalid value
+class GuessNumber extends ChatGame {
+  constructor() {
+    super();
+    this.name = 'guess_number';
   }
 
   init() {
-    if (!session.games.guess_number.target) {
-      const { random, floor } = Math;
-      session.games.guess_number.target = floor(random() * 20) + 1;
-      session.pushNextBotMessage('I thought of a number between 1 and 20. Can you guess it?');
-    }
+    this.score = 20;
+
+    //  Generate the number and stage a reply about it
+    const { random, floor } = Math;
+    this.target = floor(random() * 20) + 1;
   }
 
-  getResponse() {
+  testInput(input) {
+    const guess = parseInt(input, 10);
+
+    if (guess !== this.target) {
+      const isDone = false;
+      this.score -= 1;
+      if (guess < this.target) {
+        return { response: 'Too low', isDone };
+      } else {
+        return { response: 'Too high', isDone };
+      }
+    }
+
+    return {
+      isDone: true,
+      response: `You got it! ${input} is the right number. You guessed ${this.guesses} times.`
+    };
+  }
+
+  getWelcome() {
+    return `Let's play guess a number. I'm thinking of a number between 1 and 20. Try to guess it.`;
   }
 }
 
-module.exports = { GuessNumber };
+module.exports = { Game: GuessNumber };

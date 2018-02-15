@@ -8,12 +8,15 @@ class GameResponder extends KeywordResponder {
     super(input);
     this.name = 'game';
 
+
     this.getResponse = () => {
-      // set the game being played
       const game = input.replace(/^play /, '');
-      console.log(game);
-      // pass through game text
-      return session.getGameResponse();
+      if (Object.keys(games).includes(game)) {
+        session.setGame(game);
+        return session.getGameWelcome();
+      } else {
+        return this.help();
+      }
     };
   }
 
@@ -33,4 +36,4 @@ class GameResponder extends KeywordResponder {
   }
 }
 
-module.exports = { Responder: GameResponder };
+module.exports = { KeywordResponder: GameResponder };

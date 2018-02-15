@@ -14,16 +14,24 @@ class SmartMessage extends ChatResponder {
   }
 
   makeResponse(session) {
+    // test for different commands
+    if (this.originalFormat === 'syn') {
+      session.setWaitOnName();
+      return this.setPlain('Hello! What is your name?');
+    }
+
     session.fulfillWait(this.originalText);
     const nextBotMessage = session.popNextBotMessage();
     if (nextBotMessage !== null) {
       return this.setPlain(nextBotMessage);
     }
 
-    // test for different commands
-    if (this.originalFormat === 'syn') {
-      session.setWaitOnName();
-      return this.setPlain('Hello! What is your name?');
+    if (session.game !== null) {
+      const { isDone, response } = session.game.testInput(this.originalText);
+      if (isDone) {
+        session.endGame();
+      }
+      return this.setPlain(response);
     }
 
     const { isKeyword, responder } = keywordTester(this.originalText, session);
