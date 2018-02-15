@@ -4,6 +4,7 @@ const { mapFieldToResponse } = require('./map_field_to_response');
 const proto = {
   name: null,
   waitingOn: null,
+  game: null,
   messages: {
     history: [],
     next: []
@@ -60,6 +61,19 @@ class ChatSession {
     }
     this.save();
     return nextMessage;
+  }
+
+  setGame(game) {
+    this.game = game;
+  }
+
+  getGameResponse() {
+    const game = this.game;
+    if (game !== null) {
+      return 'you are playing a game!';
+    } else {
+      return `Weird, I don't know what game you're playing right now.`; //eslint-disable-line quotes
+    }
   }
 }
 

@@ -26,7 +26,7 @@ class SmartMessage extends Responder {
       return this.setPlain('Hello! What is your name?');
     }
 
-    const { isKeyword, responder } = keywordTester(this.originalText);
+    const { isKeyword, responder } = keywordTester(this.originalText, session);
     if (isKeyword) {
       return this.setPlain(responder.runKeyword());
     }
