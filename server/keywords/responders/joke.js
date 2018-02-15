@@ -22,4 +22,4 @@ class JokeResponder extends KeywordResponder {
   }
 }
 
-module.exports = { Responder: JokeResponder };
+module.exports = { KeywordResponder: JokeResponder };

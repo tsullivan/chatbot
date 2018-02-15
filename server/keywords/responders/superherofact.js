@@ -22,4 +22,4 @@ class SuperHeroFactResponder extends KeywordResponder {
   }
 }
 
-module.exports = { Responder: SuperHeroFactResponder };
+module.exports = { KeywordResponder: SuperHeroFactResponder };

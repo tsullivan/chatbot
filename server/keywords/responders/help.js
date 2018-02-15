@@ -21,7 +21,7 @@ class HelpResponder extends KeywordResponder {
       const [ _match, keyword ] = keywordMatches; //eslint-disable-line no-unused-vars
 
       if (responders[keyword] !== undefined) {
-        const responder = new responders[keyword].Responder();
+        const responder = new responders[keyword].KeywordResponder();
         return responder.help();
       }
     }
@@ -30,4 +30,4 @@ class HelpResponder extends KeywordResponder {
   }
 }
 
-module.exports = { Responder: HelpResponder };
+module.exports = { KeywordResponder: HelpResponder };

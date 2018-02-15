@@ -1,4 +1,4 @@
-class Responder {
+class ChatResponder {
   constructor() {
     this.response = null;
   }
@@ -13,4 +13,4 @@ class Responder {
   }
 }
 
-module.exports = { Responder };
+module.exports = { ChatResponder };

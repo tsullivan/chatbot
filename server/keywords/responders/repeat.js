@@ -40,4 +40,4 @@ class RepeatResponder extends KeywordResponder {
   }
 }
 
-module.exports = { Responder: RepeatResponder };
+module.exports = { KeywordResponder: RepeatResponder };

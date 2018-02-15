@@ -22,4 +22,4 @@ class StarWarsFactResponder extends KeywordResponder {
   }
 }
 
-module.exports = { Responder: StarWarsFactResponder };
+module.exports = { KeywordResponder: StarWarsFactResponder };

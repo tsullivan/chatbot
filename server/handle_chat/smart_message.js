@@ -1,11 +1,11 @@
-const { Responder } = require('./responder');
+const { ChatResponder } = require('./chat_responder');
 const { keywordTester } = require('../keywords');
 const { getNonsense } = require('../nonsense');
 const { oneOf } = require('../one_of');
 const { getFood } = require('../food');
 const { definitive, neutral, umm } = require('../wrap_noun');
 
-class SmartMessage extends Responder {
+class SmartMessage extends ChatResponder {
   constructor(session, messageText, messageFormat) {
     super();
     this.originalText = messageText;
