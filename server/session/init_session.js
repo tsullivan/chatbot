@@ -21,7 +21,7 @@ function initSession(app) {
       req.session.chat = sess.getResumed(req.session);
       // resume game
       if (req.session.chat.game !== null) {
-        const game = new games[req.session.chat.game.name].Game();
+        const game = new games[req.session.chat.game.name].Game(req.session.chat);
         game.resume(req.session.chat.game);
         req.session.chat.game = game;
       }

@@ -1,8 +1,10 @@
 const { defaults } = require('lodash');
 
 class ChatGame {
-  constructor() {
-    this.score = 0;
+  constructor(session) {
+    this.save = () => {
+      session.save();
+    };
   }
 
   resume(session) {

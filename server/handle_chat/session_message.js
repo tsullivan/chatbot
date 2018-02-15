@@ -15,6 +15,7 @@ class SessionMessage extends ChatResponder {
 
     if (session.game !== null) {
       const { isDone, response } = session.game.testInput(this.originalText);
+      session.game.save();
       if (isDone) {
         session.endGame();
       }
