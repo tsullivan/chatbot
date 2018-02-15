@@ -1,5 +1,4 @@
 const { KeywordResponder } = require('../keyword_responder');
-const { getMessage } = require('../get_message');
 
 class RepeatResponder extends KeywordResponder {
   constructor(input) {
@@ -22,9 +21,8 @@ class RepeatResponder extends KeywordResponder {
   }
 
   help() {
-    return getMessage(
-      'help',
-      `\`repeat\`: Repeats a phrase between 1-1000 times. 
+    return (
+      `\`repeat\`: Repeats a phrase between 1-1000 times.
       Usage: \`repeat <NUM> <PHRASE>\``
     );
   }
@@ -38,7 +36,7 @@ class RepeatResponder extends KeywordResponder {
     for (let n = 0; n < this.num; n += 1) {
       message += this.phrase + ' ';
     }
-    return getMessage('plain', message.trim());
+    return message.trim();
   }
 }
 

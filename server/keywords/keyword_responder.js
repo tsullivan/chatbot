@@ -1,5 +1,3 @@
-const { getMessage } = require('./get_message');
-
 class KeywordResponder {
 
   constructor(input) {
@@ -20,11 +18,11 @@ class KeywordResponder {
   }
 
   help() {
-    return getMessage('help', `Type \`${this.name}\` and see what happens...`);
+    return `Type \`${this.name}\` and see what happens...`;
   }
 
   getResponse() {
-    return getMessage('plain', 'Nothing to say.');
+    return 'Nothing to say.';
   }
 
   runKeyword() {

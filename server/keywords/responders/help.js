@@ -1,6 +1,5 @@
 const { KeywordResponder } = require('../keyword_responder');
 const { getResponders } = require('../get_responders');
-const { getMessage } = require('../get_message');
 
 class HelpResponder extends KeywordResponder {
   constructor(input) {
@@ -27,7 +26,7 @@ class HelpResponder extends KeywordResponder {
       }
     }
 
-    return getMessage('help', 'Here are keywords you can use:\n' + responderKeys.join(', '));
+    return 'Here are keywords you can use:\n' + responderKeys.join(', ');
   }
 }
 
