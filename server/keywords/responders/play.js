@@ -6,7 +6,7 @@ const games = getGames();
 class GameResponder extends KeywordResponder {
   constructor(input, session) {
     super(input);
-    this.name = 'game';
+    this.name = 'play';
 
 
     this.getResponse = () => {

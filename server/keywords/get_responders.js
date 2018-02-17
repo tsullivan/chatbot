@@ -7,7 +7,7 @@ function getResponders() {
     starwarsfact: require('./responders/starwarsfact'),
     random: require('./responders/random'),
     // just_dont: require('./responders/just_dont'),
-    game: require('./responders/game'),
+    game: require('./responders/play'),
   };
 }
 

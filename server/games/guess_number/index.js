@@ -1,7 +1,9 @@
 const { ChatGame } = require('../chat_game');
 
+const GUESS_BOUND = 100;
+
 /*
- * Let user guess a number between 1 and 20
+ * Let user guess a number between 1 and GUESS_BOUND
  */
 class GuessNumber extends ChatGame {
   constructor(session) {
@@ -15,7 +17,7 @@ class GuessNumber extends ChatGame {
 
     //  Generate the number and stage a reply about it
     const { random, floor } = Math;
-    this.target = floor(random() * 20) + 1;
+    this.target = floor(random() * GUESS_BOUND) + 1;
   }
 
   testInput(input) {
@@ -23,10 +25,10 @@ class GuessNumber extends ChatGame {
     const isDone = false;
     const guess = parseInt(input, 10);
 
-    if (guess < 1 || guess > 20) {
+    if (guess < 1 || guess > GUESS_BOUND) {
       this.score -= 2;
       return {
-        response: 'The number is between 1 and 20. That guess is outside of the bounds!',
+        response: `The number is between 1 and ${GUESS_BOUND}. That guess is outside of the bounds, Cat Boy!`,
         isDone
       };
     }
@@ -35,9 +37,9 @@ class GuessNumber extends ChatGame {
       this.score -= 1;
 
       if (guess < this.target) {
-        return { response: 'Too low', isDone };
+        return { response: `${guess} is too low`, isDone };
       } else {
-        return { response: 'Too high', isDone };
+        return { response: `${guess} is too high`, isDone };
       }
     }
 
@@ -51,7 +53,7 @@ class GuessNumber extends ChatGame {
   }
 
   getWelcome() {
-    return `Let's play guess a number. I'm thinking of a number between 1 and 20. Try to guess it.`;
+    return `Let's play guess a number. I'm thinking of a number between 1 and ${GUESS_BOUND}. Try to guess it.`;
   }
 }
 
