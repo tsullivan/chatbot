@@ -70,6 +70,11 @@ class ChatSession {
     return nextMessage;
   }
 
+  addHistory(message) {
+    this.messages.history.push(message);
+    this.save();
+  }
+
   setGame(game) {
     this.game = new games[game].Game(this);
     this.game.init();

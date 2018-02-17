@@ -9,6 +9,8 @@ function handleChat(req) {
   const { message, format } = req.body;
   if (message && format) {
     const { chat } = req.session;
+    // chat.addHistory(message);
+
     if (format === 'syn') {
       chat.setWaitOnName();
       response.message = 'Hello! What is your name?';
@@ -22,6 +24,7 @@ function handleChat(req) {
         response = smartMessage.getResponse();
       }
     }
+
   }
 
   const json = Object.assign({}, response, {
