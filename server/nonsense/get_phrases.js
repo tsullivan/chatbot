@@ -5,7 +5,6 @@ function getPhrases({ adjective: upperA, noun: upperN }) {
   const lowerN = upperN.toLowerCase();
 
   return [
-    `My ${lowerN} is really ${lowerA}.`,
     `Want a ${lowerN}? How about a ${lowerA} ${lowerN}?`,
     `${proper} for President!`,
     `A ${lowerN}‽ Really‽ A ${lower}‽`,
@@ -26,7 +25,7 @@ function getPhrases({ adjective: upperA, noun: upperN }) {
     `Never look a ${lowerN} in the eye.`,
     `Oh. My. God. Look at her ${lowerN}.`,
     `On Wednesdays I go bowling with a ${lowerN}.`,
-    `Once upon a time there was a beautiful princess named ${proper}a.`,
+    `Once upon a time there was a beautiful princess named ${proper}-a.`,
     `Pancakes and ${lowerN}s. Mm-mm good.`,
     `Say it with me: ${proper}.`,
     `Tacos and ${lowerN}s.`,
@@ -38,7 +37,7 @@ function getPhrases({ adjective: upperA, noun: upperN }) {
     `There's a ${lower} right behind you!`,
     `That's what a ${lower} would say.`,
     `Today's secret word is "${proper}".`,
-    `Would you still love me if I was ${lowerA}?`,
+    `Would you still love me if I was ${lowerA}-ish?`,
     `Would you still love me if I was a ${lowerN}?`
   ];
 }
