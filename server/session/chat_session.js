@@ -3,9 +3,10 @@ const { mapFieldToResponse } = require('./map_field_to_response');
 const { getGames } = require('../games');
 
 const proto = {
-  name: null,
+  name: 'foo',
   waitingOn: null,
   game: null,
+  scores: [],
   messages: {
     history: [],
     next: []
@@ -74,6 +75,15 @@ class ChatSession {
   endGame() {
     this.game = null;
     this.save();
+  }
+
+  addScore(score) {
+    this.scores.push(score);
+    this.save();
+  }
+
+  getAverageScore() {
+    return mean(this.scores);
   }
 
   getGameWelcome() {

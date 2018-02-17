@@ -1,6 +1,7 @@
 const { ChatGame } = require('../chat_game');
 
-const GUESS_BOUND = 100;
+const GUESS_BOUND = 20;
+const notDone = response => ({ response, isDone: false });
 
 /*
  * Let user guess a number between 1 and GUESS_BOUND
@@ -22,32 +23,39 @@ class GuessNumber extends ChatGame {
 
   testInput(input) {
     this.guesses += 1;
-    const isDone = false;
     const guess = parseInt(input, 10);
+
+    if (Number.isNaN(guess)) {
+      this.score -= 3;
+      return notDone(
+        `WRONG. "${input}" is not a number, ${this.playerName}!`
+      );
+    }
 
     if (guess < 1 || guess > GUESS_BOUND) {
       this.score -= 2;
-      return {
-        response: `The number is between 1 and ${GUESS_BOUND}. That guess is outside of the bounds, Cat Boy!`,
-        isDone
-      };
+      return notDone(
+        `WRONG. The number is between 1 and ${GUESS_BOUND}. ${guess} isn't that, ${this.playerName}!`
+      );
     }
 
     if (guess !== this.target) {
       this.score -= 1;
 
       if (guess < this.target) {
-        return { response: `${guess} is too low`, isDone };
+        return notDone(`${guess} is too low`);
       } else {
-        return { response: `${guess} is too high`, isDone };
+        return notDone(`${guess} is too high`);
       }
     }
 
+    this.saveScore(this.score);
     return {
       isDone: true,
       response: (
-        `You got it! ${input} is the right number. You guessed ` +
-        `${this.guesses} times. Your score is ${this.score}.`
+        `You got it! ${input} is the right number. You guessed ${this.guesses} ` +
+        `times. Your score is ${this.score}. Average of all your scores is ` +
+        `${this.getAverageScore()}`
       )
     };
   }
