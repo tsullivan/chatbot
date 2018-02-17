@@ -45,8 +45,8 @@ function getNonsense(originalText, seedNounGenerators) {
     };
   }
 
-  if (roll(10).atLeast(2)) {
-    if (roll(4).is(4)) {
+  if (roll(10).atLeast(7)) {
+    if (roll(5).atLeast(2)) {
       return {
         useNonsense,
         nonsense: createSeededNonsense(seedNounGenerators)
