@@ -18,17 +18,14 @@ const games = getGames();
 class ChatSession {
   constructor(session) {
     this.initialized = false;
+
     this.save = () => {
-      defaultsDeep(session, this);
+      this.initialized = true;
+      defaultsDeep(session.chat, this);
+      return this;
     };
   }
 
-  getInitial() {
-    this.initialized = true;
-    defaultsDeep(this, proto);
-    this.save();
-    return this;
-  }
   getResumed({ chat }) {
     defaultsDeep(this, chat, proto);
     return this;

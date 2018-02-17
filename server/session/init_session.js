@@ -16,7 +16,7 @@ function initSession(app) {
   app.use((req, res, next) => {
     const sess = new ChatSession(req.session); // new instance for every request
     if (!req.session.chat) {
-      req.session.chat = sess.getInitial();
+      req.session.chat = sess.save();
     } else {
       req.session.chat = sess.getResumed(req.session);
       // resume game

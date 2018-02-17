@@ -13,7 +13,7 @@ class ChatGame {
     };
 
     this.getAverageScore = () => {
-      session.getAverageScore();
+      return session.getAverageScore();
     };
   }
 
