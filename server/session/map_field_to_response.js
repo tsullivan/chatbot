@@ -1,9 +1,12 @@
 const mapFieldToResponse = (field, value) => {
   const map = {
-    name: `Hello, ${value}! Nice to meet you.`
+    name: {
+      method: 'setName',
+      response: `Hello, ${value}! Nice to meet you.`
+    }
   };
-
-  return map[field] || null;
+  const noMapping = { response: null };
+  return map[field] || noMapping;
 };
 
 module.exports = { mapFieldToResponse };

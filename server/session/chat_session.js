@@ -1,4 +1,4 @@
-const { defaultsDeep } = require('lodash');
+const { defaultsDeep, mean } = require('lodash');
 const { mapFieldToResponse } = require('./map_field_to_response');
 const { getGames } = require('../games');
 
@@ -26,6 +26,7 @@ class ChatSession {
   getInitial() {
     this.initialized = true;
     defaultsDeep(this, proto);
+    this.save();
     return this;
   }
   getResumed({ chat }) {
@@ -38,18 +39,24 @@ class ChatSession {
     this.save();
   }
 
-  fulfillWait(response) {
-    if (this.waitingOn !== null) {
-      const mappedResponse = mapFieldToResponse(this.waitingOn, response);
-      if (mappedResponse !== null) {
-        this.pushNextBotMessage(mappedResponse);
-      }
-      this.waitingOn = null;
+  setName(name) {
+    this.name = name;
+    this.save();
+  }
 
-      this.save();
-      return true;
+  fulfillWait(input) {
+    if (this.waitingOn !== null) {
+      const field = this.waitingOn;
+      this.waitingOn = null;
+      const { response, method } = mapFieldToResponse(field, input);
+
+      if (response !== null && this[method] !== undefined) {
+        const fn = this[method].bind(this);
+        fn(input);
+        this.pushNextBotMessage(response);
+        this.save();
+      }
     }
-    return false;
   }
 
   pushNextBotMessage(message) {
