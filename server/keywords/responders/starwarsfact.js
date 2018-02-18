@@ -18,7 +18,7 @@ class StarWarsFactResponder extends DictionaryResponder {
   getResponse() {
     return this.getRandomOrRequested({
       prefix(index) {
-        return `Star Wars fact number ${index}`;
+        return `Here is Star Wars fact number ${index}`;
       },
       dictionary: starwarsfacts
     });

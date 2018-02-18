@@ -18,7 +18,7 @@ class SuperHeroFactResponder extends DictionaryResponder {
   getResponse() {
     return this.getRandomOrRequested({
       prefix(index) {
-        return `Super Hero fact number ${index}`;
+        return `Here is superhero fact number ${index}`;
       },
       dictionary: superherofacts
     });
