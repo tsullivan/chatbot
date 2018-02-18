@@ -1,4 +1,4 @@
-class ChatResponder {
+class ResponseMessage {
   constructor(messageText, messageFormat) {
     this.originalText = messageText;
     this.originalFormat = messageFormat;
@@ -19,4 +19,4 @@ class ChatResponder {
   }
 }
 
-module.exports = { ChatResponder };
+module.exports = { ResponseMessage };

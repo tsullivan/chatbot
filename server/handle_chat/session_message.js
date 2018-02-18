@@ -1,6 +1,6 @@
-const { ChatResponder } = require('./chat_responder');
+const { ResponseMessage } = require('./response_message');
 
-class SessionMessage extends ChatResponder {
+class SessionMessage extends ResponseMessage {
   constructor(session, messageText, messageFormat) {
     super(messageText, messageFormat);
     this.response = this.makeResponse(session);

@@ -1,4 +1,4 @@
-const { ChatResponder } = require('./chat_responder');
+const { ResponseMessage } = require('./response_message');
 const { oneOf } = require('../one_of');
 const { getFood } = require('../food');
 const { getNormal } = require('../logs');
@@ -7,7 +7,7 @@ const {
 } = require('../keywords/responders/random');
 const { definitive, umm, neutral } = require('../wrap_noun');
 
-class RandomMessage extends ChatResponder {
+class RandomMessage extends ResponseMessage {
   constructor(_session, messageText, messageFormat) {
     super(messageText, messageFormat);
     this.response = this.makeResponse();

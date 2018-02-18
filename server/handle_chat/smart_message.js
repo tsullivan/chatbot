@@ -1,7 +1,7 @@
-const { ChatResponder } = require('./chat_responder');
+const { ResponseMessage } = require('./response_message');
 const { keywordTester } = require('../keywords');
 
-class SmartMessage extends ChatResponder {
+class SmartMessage extends ResponseMessage {
   constructor(session, messageText, messageFormat) {
     super(messageText, messageFormat);
     this.originalText = messageText;
