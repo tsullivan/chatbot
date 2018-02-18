@@ -1,27 +1,18 @@
 module.exports = {
-  "env": {
-    "node": true,
-    "commonjs": true,
-    "es6": true
+  env: {
+    node: true,
+    commonjs: true,
+    es6: true
   },
-  "extends": "eslint:recommended",
-  "rules": {
-    "indent": [
-      "error",
-      2
+  extends: 'eslint:recommended',
+  rules: {
+    'no-unused-vars': [
+      'error',
+      { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }
     ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single",
-      { "allowTemplateLiterals": true }
-    ],
-    "semi": [
-      "error",
-      "always"
-    ]
+    indent: ['error', 2],
+    'linebreak-style': ['error', 'unix'],
+    quotes: ['error', 'single', { allowTemplateLiterals: true }],
+    semi: ['error', 'always']
   }
 };

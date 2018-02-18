@@ -10,7 +10,7 @@ class SayResponder extends KeywordResponder {
   testMatch(input) {
     const matches = input.match(/^say (.*)$/);
     if (matches !== null) {
-      const [ _matched, thingToSay ] = matches; //eslint-disable-line no-unused-vars
+      const [ _matched, thingToSay ] = matches;
       if (thingToSay.trim() !== '') {
         this.thingToSay = thingToSay;
       }

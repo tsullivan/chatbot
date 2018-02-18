@@ -10,7 +10,7 @@ class RepeatResponder extends KeywordResponder {
   testMatch(input) {
     const _matches = input.match(/^repeat ([0-9]+) ([\S ]+)$/);
     if (_matches !== null) {
-      const [ _matched, num, phrase ] = _matches; //eslint-disable-line no-unused-vars
+      const [ _matched, num, phrase ] = _matches;
       if (num > 0 && num <= 1000) {
         this.num = num;
         this.phrase = phrase;
