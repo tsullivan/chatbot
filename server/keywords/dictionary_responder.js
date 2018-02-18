@@ -23,7 +23,7 @@ class DictionaryResponder extends KeywordResponder {
   }
 
   help() {
-    return `Type \`${this.name}\`, or \`${this.name} <some number>\`, and see what happens...`;
+    return `Type \`${this.name}\`, or \`${this.name} <some number>\`, and see what happens...`; // prettier-ignore
   }
 
   getRandomOrRequested({ prefix, dictionary }) {
@@ -34,7 +34,7 @@ class DictionaryResponder extends KeywordResponder {
     } else {
       index = parseInt(sample(indices), 10);
     }
-    return prefix(this.requested) + ':\n' + dictionary[index];
+    return prefix(index + 1) + ':\n' + dictionary[index];
   }
 }
 
