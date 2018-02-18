@@ -1,7 +1,6 @@
 class ResponseMessage {
-  constructor(messageText, messageFormat) {
-    this.originalText = messageText;
-    this.originalFormat = messageFormat;
+  constructor(userMessage) {
+    this.userMessage = userMessage;
     this.response = null;
   }
 

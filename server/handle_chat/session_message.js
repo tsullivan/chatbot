@@ -13,14 +13,14 @@ class SessionMessage extends ResponseMessage {
   }
 
   makeResponse(chat) {
-    chat.fulfillWait(this.originalText);
+    chat.fulfillWait(this.userMessage);
     const nextBotMessage = chat.popNextBotMessage();
     if (nextBotMessage !== null) {
       return this.plain(nextBotMessage);
     }
 
     if (chat.game !== null) {
-      const { isDone, response } = chat.game.testInput(this.originalText);
+      const { isDone, response } = chat.game.testInput(this.userMessage);
       chat.game.save();
       if (isDone) {
         chat.endGame();
