@@ -11,30 +11,23 @@ const responseWorkers = [
 ];
 
 function handleChat(req) {
-  let response = { format: 'plain' };
-  const { message, format } = req.body;
+  let response;
 
+  const { message, format } = req.body;
   if (message && format) {
     const { chat } = req.session;
     // chat.addHistory(message);
-    if (format === 'syn') {
-      chat.setWaitOnName();
-      response.message = 'Hello! What is your name?';
-    } else {
-      let workerIdx = 0;
-      while (workerIdx < responseWorkers.length) {
-        const worker = new responseWorkers[workerIdx].Worker(
-          chat,
-          message,
-          format
-        );
-        const test = worker.getResponse();
-        if (test !== null) {
-          response = test;
-          break;
-        }
-        workerIdx++;
+
+    let workIdx = 0;
+    while (workIdx < responseWorkers.length) {
+      const { Worker } = responseWorkers[workIdx];
+      const worker = new Worker(chat, message, format);
+      const test = worker.getResponse();
+      if (test !== null) {
+        response = test;
+        break;
       }
+      workIdx++;
     }
   }
 
