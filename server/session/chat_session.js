@@ -20,7 +20,10 @@ class ChatSession {
     this.initialized = false;
 
     this.save = () => {
-      this.initialized = true;
+      if (!this.initialized) {
+        this.initialized = true;
+        defaultsDeep(this, proto);
+      }
       defaultsDeep(session.chat, this);
       return this;
     };
@@ -57,16 +60,21 @@ class ChatSession {
   }
 
   pushNextBotMessage(message) {
-    this.messages.next.push(message);
-    this.save();
+    if (this.initialized) {
+      this.messages.next.push(message);
+      this.save();
+    }
   }
 
   popNextBotMessage() {
-    const nextMessage = this.messages.next.pop();
-    if (nextMessage === undefined) {
-      return null;
+    let nextMessage = null;
+    if (this.initialized) {
+      const test = this.messages.next.pop();
+      if (test !== undefined) {
+        nextMessage = test;
+      }
+      this.save();
     }
-    this.save();
     return nextMessage;
   }
 
