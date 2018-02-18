@@ -3,14 +3,14 @@ const { ChatResponder } = require('./chat_responder');
 class SessionMessage extends ChatResponder {
   constructor(session, messageText, messageFormat) {
     super(messageText, messageFormat);
-    this.makeResponse(session);
+    this.response = this.makeResponse(session);
   }
 
   makeResponse(session) {
     session.fulfillWait(this.originalText);
     const nextBotMessage = session.popNextBotMessage();
     if (nextBotMessage !== null) {
-      return this.setPlain(nextBotMessage);
+      return this.plain(nextBotMessage);
     }
 
     if (session.game !== null) {
@@ -19,12 +19,10 @@ class SessionMessage extends ChatResponder {
       if (isDone) {
         session.endGame();
       }
-      return this.setPlain(response);
+      return this.plain(response);
     }
-  }
 
-  getResponse() {
-    return this.response;
+    return null;
   }
 }
 

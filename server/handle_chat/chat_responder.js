@@ -5,12 +5,16 @@ class ChatResponder {
     this.response = null;
   }
 
-  setPlain(message) {
+  plain(message) {
     this.response = {
       format: 'plain',
       message
     };
 
+    return this.response;
+  }
+
+  getResponse() {
     return this.response;
   }
 }
