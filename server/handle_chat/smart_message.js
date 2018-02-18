@@ -1,6 +1,5 @@
 const { ChatResponder } = require('./chat_responder');
 const { keywordTester } = require('../keywords');
-const { getNonsense } = require('../nonsense');
 const { oneOf } = require('../one_of');
 const { getFood } = require('../food');
 const { getNormal } = require('../logs');
@@ -20,12 +19,6 @@ class SmartMessage extends ChatResponder {
     const { isKeyword, responder } = keywordTester(this.originalText, session);
     if (isKeyword) {
       return this.setPlain(responder.runKeyword());
-    }
-
-    const seedNounGenerators = [getFood];
-    const { useNonsense, nonsense } = getNonsense(this.originalText, seedNounGenerators);
-    if (useNonsense) {
-      return this.setPlain(nonsense);
     }
 
     return this.setPlain(
