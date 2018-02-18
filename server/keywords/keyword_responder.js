@@ -1,5 +1,4 @@
 class KeywordResponder {
-
   constructor(input) {
     this.input = input;
     this.name = null;
@@ -33,7 +32,6 @@ class KeywordResponder {
 
     return this.getResponse();
   }
-
 }
 
 module.exports = { KeywordResponder };

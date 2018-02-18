@@ -8,7 +8,6 @@ class GameResponder extends KeywordResponder {
     super(input);
     this.name = 'play';
 
-
     this.getResponse = () => {
       const game = input.replace(/^play /, '');
       if (Object.keys(games).includes(game)) {

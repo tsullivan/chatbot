@@ -10,7 +10,7 @@ class RepeatResponder extends KeywordResponder {
   testMatch(input) {
     const _matches = input.match(/^repeat ([0-9]+) ([\S ]+)$/);
     if (_matches !== null) {
-      const [ _matched, num, phrase ] = _matches;
+      const [_matched, num, phrase] = _matches;
       if (num > 0 && num <= 1000) {
         this.num = num;
         this.phrase = phrase;
@@ -21,10 +21,8 @@ class RepeatResponder extends KeywordResponder {
   }
 
   help() {
-    return (
-      `\`repeat\`: Repeats a phrase between 1-1000 times.
-      Usage: \`repeat <NUM> <PHRASE>\``
-    );
+    return `\`repeat\`: Repeats a phrase between 1-1000 times.
+      Usage: \`repeat <NUM> <PHRASE>\``;
   }
 
   getResponse() {

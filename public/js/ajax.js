@@ -1,6 +1,5 @@
 /* global $ */
 function Ajax() {
-
   let lastText = '';
   function updateHistory(message, $container) {
     const html = window.messageFormatter(message);
@@ -8,7 +7,7 @@ function Ajax() {
       const $html = $(`<div role="log">${html}</div>`);
       $container.prepend($html); // add to page
 
-      const fadeTo = (message.format === 'user') ? 0 : 1200;
+      const fadeTo = message.format === 'user' ? 0 : 1200;
       $html.fadeTo(0, 0); // make invisible
       $html.fadeTo(fadeTo, 1); // make visible
     }
@@ -31,7 +30,7 @@ function Ajax() {
     $.ajax(
       Object.assign({}, AJAX_OPTS, {
         data: JSON.stringify(message),
-        success: (response) => callback(message, response)
+        success: response => callback(message, response)
       })
     );
   }

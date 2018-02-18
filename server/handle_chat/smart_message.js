@@ -3,7 +3,9 @@ const { keywordTester } = require('../keywords');
 const { oneOf } = require('../one_of');
 const { getFood } = require('../food');
 const { getNormal } = require('../logs');
-const { KeywordResponder: RandomResponder } = require('../keywords/responders/random');
+const {
+  KeywordResponder: RandomResponder
+} = require('../keywords/responders/random');
 const { definitive, umm, neutral } = require('../wrap_noun');
 
 class SmartMessage extends ChatResponder {
@@ -23,9 +25,11 @@ class SmartMessage extends ChatResponder {
 
     return this.setPlain(
       oneOf([
-        neutral(getFood), definitive(getFood), umm(getFood),
+        neutral(getFood),
+        definitive(getFood),
+        umm(getFood),
         getNormal,
-        () => (new RandomResponder()).getResponse()
+        () => new RandomResponder().getResponse()
       ])
     );
   }

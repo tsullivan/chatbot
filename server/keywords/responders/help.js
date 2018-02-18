@@ -18,7 +18,7 @@ class HelpResponder extends KeywordResponder {
     // check if ask for help about keyword
     const keywordMatches = this.input.match(/^help (\S+)$/);
     if (keywordMatches !== null) {
-      const [ _match, keyword ] = keywordMatches;
+      const [_match, keyword] = keywordMatches;
 
       if (responders[keyword] !== undefined) {
         const responder = new responders[keyword].KeywordResponder();

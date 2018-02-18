@@ -14,7 +14,9 @@ class JokeResponder extends DictionaryResponder {
 
   getResponse() {
     return this.getRandomOrRequested({
-      prefix(index) { return `Joke number ${index}`; },
+      prefix(index) {
+        return `Joke number ${index}`;
+      },
       dictionary: jokes
     });
   }

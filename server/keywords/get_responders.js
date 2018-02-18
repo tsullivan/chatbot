@@ -8,7 +8,7 @@ function getResponders() {
     repeat: require('./responders/repeat'),
     say: require('./responders/say'),
     starwarsfact: require('./responders/starwarsfact'),
-    superherofact: require('./responders/superherofact'),
+    superherofact: require('./responders/superherofact')
   };
 }
 

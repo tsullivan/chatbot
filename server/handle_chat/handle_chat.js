@@ -24,7 +24,6 @@ function handleChat(req) {
         response = smartMessage.getResponse();
       }
     }
-
   }
 
   const json = Object.assign({}, response, {

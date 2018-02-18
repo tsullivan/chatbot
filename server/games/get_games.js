@@ -1,6 +1,6 @@
 function getGames() {
   return {
-    guess_number: require('./games/guess_number'),
+    guess_number: require('./games/guess_number')
   };
 }
 

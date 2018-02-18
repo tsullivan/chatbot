@@ -43,7 +43,7 @@ const normalLogs = [
   'yeah, those are good',
   'you sound confused',
   'you sound repetitive',
-  'you\'re scaring me',
+  `you're scaring me`,
   'yuck!',
   'yummy!'
 ];

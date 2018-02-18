@@ -8,13 +8,18 @@ class StarWarsFactResponder extends DictionaryResponder {
   }
 
   testMatch(input) {
-    this.setParsedRequestedDictionaryItem(input, /^starwarsfact ([1-9]+[0-9]?)$/);
+    this.setParsedRequestedDictionaryItem(
+      input,
+      /^starwarsfact ([1-9]+[0-9]?)$/
+    );
     return input.match(/^starwarsfact\b/);
   }
 
   getResponse() {
     return this.getRandomOrRequested({
-      prefix(index) { return `Star Wars fact number ${index}`; },
+      prefix(index) {
+        return `Star Wars fact number ${index}`;
+      },
       dictionary: starwarsfacts
     });
   }
