@@ -41,9 +41,9 @@ class GuessNumber extends ChatGame {
       this.score -= 1;
 
       if (guess < this.target) {
-        return notDone(`${guess} is too low`);
+        return notDone(`Good guess, but ${guess} is too low :(`);
       } else {
-        return notDone(`${guess} is too high`);
+        return notDone(`Good guess, but ${guess} is too high :(`);
       }
     }
 
