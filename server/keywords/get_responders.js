@@ -6,6 +6,8 @@ function getResponders() {
     superherofact: require('./responders/superherofact'),
     starwarsfact: require('./responders/starwarsfact'),
     random: require('./responders/random'),
+    name: require('./responders/name'),
+    roll: require('./responders/roll'),
   };
 }
 
