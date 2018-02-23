@@ -33,7 +33,9 @@ class GuessNumber extends ChatGame {
     if (guess < 1 || guess > GUESS_BOUND) {
       this.score -= 2;
       return notDone(
-        `WRONG. The number is between 1 and ${GUESS_BOUND}. ${guess} isn't that, ${this.playerName}!`
+        `WRONG. The number is between 1 and ${GUESS_BOUND}. ${guess} isn't that, ${
+          this.playerName
+        }!`
       );
     }
 
@@ -50,12 +52,11 @@ class GuessNumber extends ChatGame {
     this.saveScore(this.score);
     return {
       isDone: true,
-      response:
-        `You got it! ${input} is the right number. You guessed ${
-          this.guesses
-        } ` +
-        `times. Your score is ${this.score}. Average of all your scores is ` +
-        `${this.getAverageScore()}`
+      response: `You got it! ${input} is the right number. You guessed ${
+        this.guesses
+      } times. Your score is ${
+        this.score
+      }. Average of all your scores is ${this.getAverageScore()}`
     };
   }
 
