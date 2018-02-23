@@ -44,6 +44,10 @@ class ChatSession {
     this.save();
   }
 
+  getName() {
+    return this.name;
+  }
+
   validateSession() {
     if (this.waitingOn === null && this.name === null) {
       // somehow lost session data!

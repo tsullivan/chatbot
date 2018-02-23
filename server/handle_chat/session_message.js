@@ -27,11 +27,13 @@ class SessionMessage extends ResponseMessage {
 
     if (chat.game !== null) {
       const { isDone, response } = chat.game.testInput(this.userMessage);
+      let modResponse = response;
       chat.game.save();
       if (isDone === true) {
+        modResponse += `\nThat was fun, ${chat.getName()}!`;
         chat.endGame();
       }
-      return this.plain(response);
+      return this.plain(modResponse);
     }
 
     return null;

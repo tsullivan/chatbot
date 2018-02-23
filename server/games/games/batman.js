@@ -25,14 +25,14 @@ class GuessNumber extends ChatGame {
       this.saveScore(this.score);
       let response;
       if (input === WIN_CODE) {
-        response = 'You Win! Right now!';
+        response = 'You win right now';
       } else if (input === LOSE_CODE) {
         this.score = 0;
         response = 'kl';
       }
 
       return yesDone(
-        `${response}! "${input}" ended the game. Your bat stuff is: ${this.batStuff.join(', ')}. Score is ${this.score}`
+        `${response}! "${input}" ended the Batgame. Your Batstuff is: ${this.batStuff.join(', ')}. Your Batscore is ${this.score}`
       );
     } else {
       this.score += 1;
