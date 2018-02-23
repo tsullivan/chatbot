@@ -13,7 +13,13 @@ class SessionMessage extends ResponseMessage {
   }
 
   makeResponse(chat) {
-    chat.fulfillWait(this.userMessage);
+    const { isValid, revalidateResponse } = chat.validateSession();
+    if (isValid) {
+      chat.fulfillWait(this.userMessage);
+    } else {
+      return this.plain(revalidateResponse);
+    }
+
     const nextBotMessage = chat.popNextBotMessage();
     if (nextBotMessage !== null) {
       return this.plain(nextBotMessage);
@@ -21,10 +27,10 @@ class SessionMessage extends ResponseMessage {
 
     if (chat.game !== null) {
       const { isDone, response } = chat.game.testInput(this.userMessage);
-      chat.game.save();
-      if (isDone) {
+      if (isDone === true) {
         chat.endGame();
       }
+      chat.game.save();
       return this.plain(response);
     }
 

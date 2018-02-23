@@ -3,7 +3,7 @@ const { mapFieldToResponse } = require('./map_field_to_response');
 const { getGames } = require('../games');
 
 const proto = {
-  name: 'foo',
+  name: null,
   waitingOn: null,
   game: null,
   scores: [],
@@ -44,15 +44,33 @@ class ChatSession {
     this.save();
   }
 
+  validateSession() {
+    if (this.waitingOn === null && this.name === null) {
+      // somehow lost session data!
+      this.setWaitOnName();
+      return {
+        isValid: false,
+        revalidateResponse: 'Wait, who are you? What is your name?'
+      };
+    }
+    return {
+      isValid: true,
+      revalidateResponse: null
+    };
+  }
+
   fulfillWait(input) {
+    this.validateSession();
+
     if (this.waitingOn !== null) {
       const field = this.waitingOn;
-      this.waitingOn = null;
       const { response, method } = mapFieldToResponse(field, input);
 
       if (response !== null && this[method] !== undefined) {
         const fn = this[method].bind(this);
         fn(input);
+
+        this.waitingOn = null;
         this.pushNextBotMessage(response);
         this.save();
       }
