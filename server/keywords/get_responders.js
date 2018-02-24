@@ -10,6 +10,7 @@ function getResponders() {
     starwarsfact: require('./responders/starwarsfact'),
     superherofact: require('./responders/superherofact'),
     name: require('./responders/name'),
+    coinflip: require('./responders/coinflip'),
     roll: require('./responders/roll')
   };
 }
