@@ -1,11 +1,13 @@
 const { KeywordResponder } = require('../keyword_responder');
 const { roll } = require('../../roll');
 
+const DEFAULT_SIDES = 20;
+
 class RollResponder extends KeywordResponder {
   constructor(input) {
     super(input);
     this.name = 'roll';
-    this.sides = null;
+    this.sides = DEFAULT_SIDES;
   }
 
   testMatch(input) {
@@ -13,9 +15,8 @@ class RollResponder extends KeywordResponder {
     if (matches !== null) {
       const [ _match, sides ] = matches;
       this.sides = parseInt(sides, 10);
-    } else {
-      this.sides = 20;
     }
+
     return input.match(/^roll\b/);
   }
 
