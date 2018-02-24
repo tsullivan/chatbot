@@ -1,13 +1,16 @@
 function getResponders() {
   return {
+    // just_dont: require('./responders/just_dont'),
+    game: require('./responders/play'),
     help: require('./responders/help'),
-    repeat: require('./responders/repeat'),
     joke: require('./responders/joke'),
-    superherofact: require('./responders/superherofact'),
-    starwarsfact: require('./responders/starwarsfact'),
     random: require('./responders/random'),
+    repeat: require('./responders/repeat'),
+    say: require('./responders/say'),
+    starwarsfact: require('./responders/starwarsfact'),
+    superherofact: require('./responders/superherofact'),
     name: require('./responders/name'),
-    roll: require('./responders/roll'),
+    roll: require('./responders/roll')
   };
 }
 

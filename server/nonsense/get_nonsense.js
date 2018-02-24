@@ -28,41 +28,27 @@ const createNonsense = () => {
   return phrase;
 };
 
-function getNonsense(originalText, seedNounGenerators) {
+function getNonsense(userMessage, seedNounGenerators) {
   if (numUses <= 0) {
     parts = getPhraseParts();
     phrases = getPhrases(parts);
     numUses = Math.min(MAX_REUSE, phrases.length);
   }
 
-  const useNonsense = true;
-
   const codeWord = `${parts.adjective} ${parts.noun}`;
-  if (originalText.toLowerCase() === codeWord.toLowerCase()) {
-    return {
-      useNonsense,
-      nonsense: `That's what I'm talking about! ${codeWord}!`
-    };
+  if (userMessage.toLowerCase() === codeWord.toLowerCase()) {
+    return `That's what I'm talking about! ${codeWord}!`;
   }
 
-  if (roll(10).atLeast(3)) {
-    if (roll(4).is(4)) {
-      return {
-        useNonsense,
-        nonsense: createSeededNonsense(seedNounGenerators)
-      };
-    }
-
-    return {
-      useNonsense,
-      nonsense: createNonsense()
-    };
+  if (roll(7).atLeast(6)) {
+    return createSeededNonsense(seedNounGenerators);
   }
 
-  numUses = 0;
-  return {
-    useNonsense: false
-  };
+  if (roll(5).is(5)) {
+    numUses = 0;
+  }
+
+  return createNonsense();
 }
 
 module.exports = {

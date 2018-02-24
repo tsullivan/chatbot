@@ -1,6 +1,5 @@
 const { KeywordResponder } = require('../keyword_responder');
 const { getResponders } = require('../get_responders');
-const { getMessage } = require('../get_message');
 
 class HelpResponder extends KeywordResponder {
   constructor(input) {
@@ -19,16 +18,16 @@ class HelpResponder extends KeywordResponder {
     // check if ask for help about keyword
     const keywordMatches = this.input.match(/^help (\S+)$/);
     if (keywordMatches !== null) {
-      const [ _match, keyword ] = keywordMatches; //eslint-disable-line no-unused-vars
+      const [_match, keyword] = keywordMatches;
 
       if (responders[keyword] !== undefined) {
-        const responder = new responders[keyword].Responder();
+        const responder = new responders[keyword].KeywordResponder();
         return responder.help();
       }
     }
 
-    return getMessage('help', 'Here are keywords you can use:\n' + responderKeys.join(', '));
+    return 'Here are keywords you can use:\n' + responderKeys.join(', ');
   }
 }
 
-module.exports = { Responder: HelpResponder };
+module.exports = { KeywordResponder: HelpResponder };

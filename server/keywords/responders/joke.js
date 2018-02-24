@@ -1,26 +1,25 @@
-const { sample } = require('lodash');
-const { KeywordResponder } = require('../keyword_responder');
-const { getMessage } = require('../get_message');
+const { DictionaryResponder } = require('../dictionary_responder');
 const { jokes } = require('../dictionary');
 
-class JokeResponder extends KeywordResponder {
+class JokeResponder extends DictionaryResponder {
   constructor(input) {
     super(input);
     this.name = 'joke';
   }
 
   testMatch(input) {
+    this.setParsedRequestedDictionaryItem(input, /^joke ([1-9]+[0-9]?)$/);
     return input.match(/^joke\b/);
   }
 
-  isImpromptu() {
-    return true;
-  }
-
   getResponse() {
-    const text = sample(jokes);
-    return getMessage('plain', 'Here is a joke:\n' + text);
+    return this.getRandomOrRequested({
+      prefix(index) {
+        return `Here is joke number ${index}`;
+      },
+      dictionary: jokes
+    });
   }
 }
 
-module.exports = { Responder: JokeResponder };
+module.exports = { KeywordResponder: JokeResponder };

@@ -16,7 +16,7 @@ class RandomResponder extends KeywordResponder {
     const responders = getResponders();
     const names = Object.keys(responders);
     const name = sample(names);
-    const responder = new responders[name].Responder();
+    const responder = new responders[name].KeywordResponder();
     if (responder.isImpromptu()) {
       return responder;
     }
@@ -29,4 +29,4 @@ class RandomResponder extends KeywordResponder {
   }
 }
 
-module.exports = { Responder: RandomResponder };
+module.exports = { KeywordResponder: RandomResponder };

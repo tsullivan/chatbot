@@ -1,26 +1,28 @@
-const { sample } = require('lodash');
-const { KeywordResponder } = require('../keyword_responder');
-const { getMessage } = require('../get_message');
+const { DictionaryResponder } = require('../dictionary_responder');
 const { starwarsfacts } = require('../dictionary');
 
-class StarWarsFactResponder extends KeywordResponder {
+class StarWarsFactResponder extends DictionaryResponder {
   constructor(input) {
     super(input);
     this.name = 'starwarsfact';
   }
 
   testMatch(input) {
+    this.setParsedRequestedDictionaryItem(
+      input,
+      /^starwarsfact ([1-9]+[0-9]?)$/
+    );
     return input.match(/^starwarsfact\b/);
   }
 
-  isImpromptu() {
-    return true;
-  }
-
   getResponse() {
-    const text = sample(starwarsfacts);
-    return getMessage('plain', 'Here is a fact about Star Wars:\n' + text);
+    return this.getRandomOrRequested({
+      prefix(index) {
+        return `Here is Star Wars fact number ${index}`;
+      },
+      dictionary: starwarsfacts
+    });
   }
 }
 
-module.exports = { Responder: StarWarsFactResponder };
+module.exports = { KeywordResponder: StarWarsFactResponder };

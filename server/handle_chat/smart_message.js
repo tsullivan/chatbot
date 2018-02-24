@@ -1,53 +1,18 @@
+const { ResponseMessage } = require('./response_message');
 const { keywordTester } = require('../keywords');
-const { getNonsense } = require('../nonsense');
-const { oneOf } = require('../one_of');
-const { getFood } = require('../food');
-const { definitive, neutral, umm } = require('../wrap_noun');
 
-class SmartMessage {
-  constructor(messageText, messageFormat) {
-    this.originalText = messageText;
-    this.originalFormat = messageFormat;
-    this.makeResponse();
+class SmartMessage extends ResponseMessage {
+  constructor(session, messageText, messageFormat) {
+    super(messageText, messageFormat);
+    this.response = this.makeResponse(session);
   }
 
-  makeResponse() {
-    // test for different commands
-    if (this.originalFormat === 'syn') {
-      this.response = {
-        format: 'plain',
-        message: 'Hello! What is your name?'
-      };
-      return;
-    }
-
-    const { isKeyword, responder } = keywordTester(this.originalText);
+  makeResponse(session) {
+    const { isKeyword, responder } = keywordTester(this.userMessage, session);
     if (isKeyword) {
-      this.response = responder.runKeyword();
-      return;
+      return this.plain(responder.runKeyword());
     }
-
-    const seedNounGenerators = [getFood];
-    const { useNonsense, nonsense } = getNonsense(
-      this.originalText,
-      seedNounGenerators
-    );
-    if (useNonsense) {
-      this.response = {
-        format: 'plain',
-        message: nonsense
-      };
-      return;
-    }
-
-    this.response = {
-      format: 'plain',
-      message: oneOf([definitive(getFood), neutral(getFood), umm(getFood)])
-    };
-  }
-
-  getResponse() {
-    return this.response;
+    return null;
   }
 }
 
