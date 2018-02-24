@@ -1,13 +1,17 @@
 const { KeywordResponder } = require('../keyword_responder');
-const { getMessage } = require('../get_message');
 
 class NameResponder extends KeywordResponder {
-  constructor(input) {
+  constructor(input, chat) {
     super(input);
     this.name = 'name';
 
     this.getResponse = () => {
-      return getMessage('plain', `As far as I know, your name is foo.`);
+      chat.setWaitOnName();
+      const name = chat.getName();
+      if (name === null) {
+        return 'I have no idea what your name is! What is it?';
+      }
+      return `I think your name is ${name}. What is it really?`;
     };
   }
 
@@ -20,4 +24,4 @@ class NameResponder extends KeywordResponder {
   }
 }
 
-module.exports = { Responder: NameResponder };
+module.exports = { KeywordResponder: NameResponder };

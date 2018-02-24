@@ -1,5 +1,4 @@
 const { KeywordResponder } = require('../keyword_responder');
-const { getMessage } = require('../get_message');
 const { roll } = require('../../roll');
 
 class RollResponder extends KeywordResponder {
@@ -34,10 +33,10 @@ class RollResponder extends KeywordResponder {
     } else if (result === sides) {
       commentary = 'Nice!';
     }
-      
+
     const resultMessage = `It's a ${result}. ${commentary}`;
-    return getMessage('plain', `Rolling a d${sides}... ${resultMessage.trim()}`);
+    return `Rolling a d${sides}... ${resultMessage.trim()}`;
   }
 }
 
-module.exports = { Responder: RollResponder };
+module.exports = { KeywordResponder: RollResponder };
