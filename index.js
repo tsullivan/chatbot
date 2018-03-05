@@ -1,3 +1,7 @@
+/* eslint-disable no-console */
+const { apm: apmConfig } = require('./config');
+require('elastic-apm-node').start(apmConfig);
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const { initSession } = require('./server/session');

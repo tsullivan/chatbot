@@ -1,2 +1,3 @@
 yarn.lock
 config.js
+elastic-apm-node.js
