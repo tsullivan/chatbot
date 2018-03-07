@@ -2,13 +2,13 @@ const { ResponseMessage } = require('./response_message');
 const { keywordTester } = require('../keywords');
 
 class SmartMessage extends ResponseMessage {
-  constructor(session, messageText, messageFormat) {
-    super(messageText, messageFormat);
-    this.response = this.makeResponse(session);
+  constructor(chat, message, format) {
+    super(message, format);
+    this.response = this.makeResponse(chat);
   }
 
-  makeResponse(session) {
-    const { isKeyword, responder } = keywordTester(this.userMessage, session);
+  makeResponse(chat) {
+    const { isKeyword, responder } = keywordTester(this.userMessage, chat);
     if (isKeyword) {
       return this.plain(responder.runKeyword());
     }

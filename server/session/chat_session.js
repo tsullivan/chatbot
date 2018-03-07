@@ -1,3 +1,5 @@
+const apm = require('elastic-apm-node');
+
 const { defaultsDeep, mean } = require('lodash');
 const { mapFieldToResponse } = require('./map_field_to_response');
 const { getGames } = require('../games');
@@ -51,6 +53,9 @@ class ChatSession {
   validateSession() {
     if (this.waitingOn === null && this.name === null) {
       // somehow lost session data!
+      const err = new Error('Session data got lost!');
+      apm.captureError(err);
+
       this.setWaitOnName();
       return {
         isValid: false,

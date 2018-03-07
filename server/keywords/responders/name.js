@@ -1,3 +1,4 @@
+const apm = require('elastic-apm-node');
 const { KeywordResponder } = require('../keyword_responder');
 
 class NameResponder extends KeywordResponder {
@@ -6,8 +7,16 @@ class NameResponder extends KeywordResponder {
     this.name = 'name';
 
     this.getResponse = () => {
-      chat.setWaitOnName();
-      const name = chat.getName();
+      let name;
+
+      try {
+        chat.setWaitOnName();
+        name = chat.getName();
+      } catch (err) {
+        apm.captureError(err);
+        return 'An error has been logged.';
+      }
+
       if (name === null) {
         return 'I have no idea what your name is! What is it?';
       }

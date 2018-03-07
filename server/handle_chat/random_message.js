@@ -9,19 +9,19 @@ const {
 const { definitive, umm, neutral } = require('../wrap_noun');
 
 class RandomMessage extends ResponseMessage {
-  constructor(_session, message, format) {
+  constructor(chat, message, format) {
     super(message, format);
-    this.response = this.makeResponse();
-  }
+    this.makeResponse = () => {
+      return this.plain(
+        oneOf([
+          () => new Impromptu(null, chat).getResponse(),
+          () => oneOf([getNormal, () => getNonsense(this.userMessage, [getFood])]),
+          () => oneOf([neutral(getFood), definitive(getFood), umm(getFood)])
+        ])
+      );
+    };
 
-  makeResponse() {
-    return this.plain(
-      oneOf([
-        () => new Impromptu().getResponse(),
-        () => oneOf([getNormal, () => getNonsense(this.userMessage, [getFood])]),
-        () => oneOf([neutral(getFood), definitive(getFood), umm(getFood)])
-      ])
-    );
+    this.response = this.makeResponse();
   }
 }
 

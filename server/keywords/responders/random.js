@@ -3,7 +3,7 @@ const { KeywordResponder } = require('../keyword_responder');
 const { getResponders } = require('../get_responders');
 
 class RandomResponder extends KeywordResponder {
-  constructor(input) {
+  constructor(input, chat) {
     super(input);
     this.name = 'random';
   }

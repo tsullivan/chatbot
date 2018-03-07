@@ -10,12 +10,11 @@ const responseWorkers = [
   { Worker: RandomMessage }
 ];
 
-function handleChat(req) {
+function handleChat(req, chat) {
   let response;
 
   const { message, format } = req.body;
   if (message && format) {
-    const { chat } = req.session;
     // chat.addHistory(message);
 
     let workIdx = 0;
