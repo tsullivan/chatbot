@@ -1,3 +1,4 @@
+const apm = require('elastic-apm-node');
 const session = require('express-session');
 const { session_secret: sessionSecret } = require('../../config');
 const { ChatSession } = require('./chat_session');
@@ -17,11 +18,11 @@ function initSession(app) {
     );
 
     app.use((req, res, next) => {
-      const sess = new ChatSession(req.session); // new instance for every request
+      const chat = new ChatSession(req.session); // new instance for every request
       if (!req.session.chat) {
-        req.session.chat = sess.save();
+        req.session.chat = chat.save();
       } else {
-        req.session.chat = sess.getResumed(req.session);
+        req.session.chat = chat.getResumed(req.session);
         // resume game
         if (req.session.chat.game !== null) {
           const game = new games[req.session.chat.game.name].Game(

@@ -1,24 +1,28 @@
 const { defaults } = require('lodash');
 
 class ChatGame {
-  constructor(session) {
-    this.playerName = session.name;
+  constructor(chat) {
+    this.playerName = chat.name;
 
     this.save = () => {
-      session.save();
+      chat.save();
     };
 
     this.saveScore = score => {
-      session.addScore(score);
+      chat.addScore(score);
     };
 
     this.getAverageScore = () => {
-      return session.getAverageScore();
+      return chat.getAverageScore();
     };
   }
 
-  resume(session) {
-    defaults(this, session);
+  getName() {
+    return this.name;
+  }
+
+  resume(chat) {
+    defaults(this, chat);
   }
 }
 

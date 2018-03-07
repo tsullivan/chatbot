@@ -1,7 +1,21 @@
+const apm = require('elastic-apm-node');
+
 class ResponseMessage {
-  constructor(userMessage) {
+  constructor(name, chat, userMessage, _userFormat) {
+    this.span = apm.startSpan(`${name}Span`);
+    this.name = name;
     this.userMessage = userMessage;
-    this.response = null;
+    this.response = this.makeResponse(chat);
+  }
+
+  makeResponse(_chat) {
+    /*
+     * override this
+     */
+  }
+
+  getName() {
+    return this.name;
   }
 
   plain(message) {
@@ -14,6 +28,7 @@ class ResponseMessage {
   }
 
   getResponse() {
+    this.span.end();
     return this.response;
   }
 }

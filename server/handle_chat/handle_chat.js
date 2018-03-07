@@ -1,3 +1,4 @@
+const apm = require('elastic-apm-node');
 const moment = require('moment');
 const { DATE_FORMAT, BOT_NAME } = require('../constants');
 const { SessionMessage } = require('./session_message');
@@ -23,6 +24,7 @@ function handleChat(req, chat) {
       const worker = new Worker(chat, message, format);
       const test = worker.getResponse();
       if (test !== null) {
+        apm.setTag('responder', worker.getName());
         response = test;
         break;
       }

@@ -1,15 +1,16 @@
+const apm = require('elastic-apm-node');
 const { ResponseMessage } = require('./response_message');
 const { keywordTester } = require('../keywords');
 
 class SmartMessage extends ResponseMessage {
   constructor(chat, message, format) {
-    super(message, format);
-    this.response = this.makeResponse(chat);
+    super('smart', chat, message, format);
   }
 
   makeResponse(chat) {
     const { isKeyword, responder } = keywordTester(this.userMessage, chat);
     if (isKeyword) {
+      apm.setTag('keyword', responder.getName());
       return this.plain(responder.runKeyword());
     }
     return null;

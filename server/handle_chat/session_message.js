@@ -3,31 +3,20 @@ const { ResponseMessage } = require('./response_message');
 
 class SessionMessage extends ResponseMessage {
   constructor(chat, message, format) {
-    super(message, format);
-    this.format = format;
-
-    try {
-      const _chat = chat.save();
-      this.response = this.makeResponse(_chat);
-    } catch (err) {
-      apm.captureError(err);
-      this.response = 'An error has been logged.';
-      return;
-    }
-
+    super('session', chat, message, format);
   }
 
   makeResponse(chat) {
+    if (this.format === 'syn') {
+      chat.setWaitOnName();
+      return this.plain('Hello! What is your name?');
+    }
+
     const { isValid, revalidateResponse } = chat.validateSession();
     if (isValid) {
       chat.fulfillWait(this.userMessage);
     } else {
       return this.plain(revalidateResponse);
-    }
-
-    if (this.format === 'syn') {
-      chat.setWaitOnName();
-      return this.plain('Hello! What is your name?');
     }
 
     const nextBotMessage = chat.popNextBotMessage();
@@ -36,6 +25,7 @@ class SessionMessage extends ResponseMessage {
     }
 
     if (chat.game !== null) {
+      apm.setTag('game', chat.game.getName());
       const { isDone, response } = chat.game.testInput(this.userMessage);
       let modResponse = response;
       chat.game.save();

@@ -33,6 +33,7 @@ class ChatSession {
 
   getResumed({ chat }) {
     defaultsDeep(this, chat, proto);
+    this.save();
     return this;
   }
 

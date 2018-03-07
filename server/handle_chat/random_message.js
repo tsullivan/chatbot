@@ -8,18 +8,17 @@ const { definitive, umm, neutral } = require('../wrap_noun');
 
 class RandomMessage extends ResponseMessage {
   constructor(chat, message, format) {
-    super(message, format);
-    this.makeResponse = () => {
-      return this.plain(
-        oneOf([
-          () => new Impromptu(null, chat).getResponse(),
-          () => oneOf([getNormal, () => getNonsense(this.userMessage, [getFood])]),
-          () => oneOf([neutral(getFood), definitive(getFood), umm(getFood)])
-        ])
-      );
-    };
+    super('random', chat, message, format);
+  }
 
-    this.response = this.makeResponse();
+  makeResponse(chat) {
+    return this.plain(
+      oneOf([
+        () => new Impromptu(null, chat).getResponse(),
+        () => oneOf([getNormal, () => getNonsense(this.userMessage, [getFood])]),
+        () => oneOf([neutral(getFood), definitive(getFood), umm(getFood)])
+      ])
+    );
   }
 }
 

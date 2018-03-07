@@ -4,6 +4,10 @@ class KeywordResponder {
     this.name = null;
   }
 
+  getName() {
+    return this.name;
+  }
+
   isImpromptu() {
     return false;
   }
