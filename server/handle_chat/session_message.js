@@ -1,15 +1,20 @@
+const apm = require('elastic-apm-node');
 const { ResponseMessage } = require('./response_message');
 
 class SessionMessage extends ResponseMessage {
   constructor(chat, message, format) {
     super(message, format);
+    this.format = format;
 
-    if (format === 'syn') {
-      chat.setWaitOnName();
-      this.response = this.plain('Hello! What is your name?');
-    } else {
-      this.response = this.makeResponse(chat);
+    try {
+      const _chat = chat.save();
+      this.response = this.makeResponse(_chat);
+    } catch (err) {
+      apm.captureError(err);
+      this.response = 'An error has been logged.';
+      return;
     }
+
   }
 
   makeResponse(chat) {
@@ -18,6 +23,11 @@ class SessionMessage extends ResponseMessage {
       chat.fulfillWait(this.userMessage);
     } else {
       return this.plain(revalidateResponse);
+    }
+
+    if (this.format === 'syn') {
+      chat.setWaitOnName();
+      return this.plain('Hello! What is your name?');
     }
 
     const nextBotMessage = chat.popNextBotMessage();
@@ -38,6 +48,7 @@ class SessionMessage extends ResponseMessage {
 
     return null;
   }
+
 }
 
 module.exports = { SessionMessage };

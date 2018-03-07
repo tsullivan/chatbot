@@ -3,9 +3,7 @@ const { oneOf } = require('../one_of');
 const { getFood } = require('../food');
 const { getNonsense } = require('../nonsense');
 const { getNormal } = require('../logs');
-const {
-  KeywordResponder: Impromptu
-} = require('../keywords/responders/random');
+const { KeywordResponder: Impromptu } = require('../keywords/responders/random');
 const { definitive, umm, neutral } = require('../wrap_noun');
 
 class RandomMessage extends ResponseMessage {
