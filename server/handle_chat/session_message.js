@@ -2,12 +2,12 @@ const apm = require('elastic-apm-node');
 const { ResponseMessage } = require('./response_message');
 
 class SessionMessage extends ResponseMessage {
-  constructor(chat, message, format) {
-    super('session', chat, message, format);
+  constructor(chat, userMessage, userFormat) {
+    super('session', chat, userMessage, userFormat);
   }
 
   makeResponse(chat) {
-    if (this.format === 'syn') {
+    if (this.userFormat === 'syn') {
       chat.setWaitOnName();
       return this.plain('Hello! What is your name?');
     }

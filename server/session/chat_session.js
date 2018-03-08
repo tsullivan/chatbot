@@ -70,8 +70,6 @@ class ChatSession {
   }
 
   fulfillWait(input) {
-    this.validateSession();
-
     if (this.waitingOn !== null) {
       const field = this.waitingOn;
       const { response, method } = mapFieldToResponse(field, input);

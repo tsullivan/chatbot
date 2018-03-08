@@ -1,10 +1,11 @@
 const apm = require('elastic-apm-node');
 
 class ResponseMessage {
-  constructor(name, chat, userMessage, _userFormat) {
+  constructor(name, chat, userMessage, userFormat) {
     this.span = apm.startSpan(`${name}Span`);
     this.name = name;
     this.userMessage = userMessage;
+    this.userFormat = userFormat;
     this.response = this.makeResponse(chat);
   }
 
