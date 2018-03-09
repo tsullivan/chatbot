@@ -23,6 +23,7 @@ class GuessNumber extends ChatGame {
   testInput(input) {
     if ([WIN_CODE, LOSE_CODE].includes(input)) {
       this.saveScore(this.score);
+
       let response;
       if (input === WIN_CODE) {
         response = 'You win right now';
@@ -32,7 +33,11 @@ class GuessNumber extends ChatGame {
       }
 
       return yesDone(
-        `${response}! "${input}" ended the Batgame. Your Batstuff is: ${this.batStuff.join(', ')}. Your Batscore is ${this.score}`
+        `${response}! "${input}" ended the Batgame. Your Batstuff is: ${this.batStuff.join(
+          ', '
+        )}. Your Batscore is ${
+          this.score
+        }. Average of all your Batscores is ${this.getAverageScore()}.`
       );
     } else {
       this.score += 1;
