@@ -9,10 +9,15 @@ function routes(app, chat) {
    */
   app.post('/chat', jsonParser, (req, res) => {
     apm.startTransaction();
-    apm.setUserContext({ username: chat.name });
+    apm.setUserContext({
+      username: chat.getName()
+    });
+    apm.setCustomContext({
+      numMessages: chat.getHistory().length,
+      avgScore: chat.getAverageScore()
+    });
 
     res.json(handleChat(req, chat));
-
     apm.endTransaction();
   });
 }

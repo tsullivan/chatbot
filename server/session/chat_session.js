@@ -109,6 +109,10 @@ class ChatSession {
     this.save();
   }
 
+  getHistory() {
+    return this.messages.history;
+  }
+
   setGame(game) {
     this.game = new games[game].Game(this);
     this.game.init();

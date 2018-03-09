@@ -16,7 +16,7 @@ function handleChat(req, chat) {
 
   const { message, format } = req.body;
   if (message && format) {
-    // chat.addHistory(message);
+    chat.addHistory(message);
 
     let workIdx = 0;
     while (workIdx < responseWorkers.length) {
