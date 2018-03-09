@@ -13,8 +13,8 @@ function routes(app, chat) {
       username: chat.getName()
     });
     apm.setCustomContext({
-      numMessages: chat.getHistory().length,
-      avgScore: chat.getAverageScore()
+      num_messages: chat.getHistory().length,
+      avg_score: chat.getAverageScore()
     });
 
     res.json(handleChat(req, chat));
