@@ -1,4 +1,3 @@
-const apm = require('elastic-apm-node');
 const session = require('express-session');
 const { session_secret: sessionSecret } = require('../../config');
 const { ChatSession } = require('./chat_session');
