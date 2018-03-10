@@ -11,10 +11,10 @@ const responseWorkers = [
   { Worker: RandomMessage }
 ];
 
-function handleChat(req, chat) {
+function handleChat(body, chat) {
   let response;
 
-  const { message, format } = req.body;
+  const { message, format } = body;
   if (message && format) {
     chat.addHistory(message);
 
@@ -34,7 +34,7 @@ function handleChat(req, chat) {
 
   const json = Object.assign({}, response, {
     name: BOT_NAME,
-    time: moment(req.body.time).format(DATE_FORMAT)
+    time: moment(body.time).format(DATE_FORMAT)
   });
   return json;
 }

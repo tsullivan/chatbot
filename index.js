@@ -5,7 +5,7 @@ const apm = require('elastic-apm-node').start(apmConfig);
 const express = require('express');
 const { initSession } = require('./server/session');
 const { BOT_NAME } = require('./server/constants');
-const { routes: initRoutes } = require('./init_routes');
+const { initRoutes } = require('./server');
 
 const app = express();
 
@@ -16,9 +16,8 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
-initSession(app).then(chat => {
-  initRoutes(app, chat);
-});
+const chatSession = initSession(app);
+initRoutes(app, chatSession);
 
 app.listen(3000, () => {
   console.log(`${BOT_NAME} listening on port 3000!`);
