@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint | npm run mocha",
+    "test": "npm run lint & npm run mocha",
     "lint": "eslint .",
-    "mocha": "NODE_ENV=test mocha ./test --exit",
+    "mocha": "NODE_ENV=test mocha ./test",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
