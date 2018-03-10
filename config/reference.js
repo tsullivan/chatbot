@@ -1,4 +1,5 @@
 module.exports = {
+  env: 'production',
   session_secret: 'omgponies',
   apm: {
     serviceName: 'chatbot', // Set required service name (allowed characters: a-z, A-Z, 0-9, -, _, and space)
