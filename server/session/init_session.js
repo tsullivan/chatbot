@@ -6,7 +6,7 @@ const { getGames } = require('../games');
 const games = getGames();
 
 function initSession(app) {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     app.use(
       session({
         secret: sessionSecret,

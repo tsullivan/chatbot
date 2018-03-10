@@ -3,15 +3,12 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json({ type: 'application/json' });
 const { chatRouteHandler } = require('./chat');
 
-function initRoutes(app, chatSession) {
-  app.post('/chat', jsonParser, (req, res) => {
+function initRoutes(app, chat) {
+  app.post('/chat', jsonParser, async (req, res) => {
     apm.startTransaction();
-    chatSession
-      .then(chat => chatRouteHandler(req.body, chat))
-      .then(response => {
-        res.json(response);
-        apm.endTransaction();
-      });
+    const response = chatRouteHandler(req.body, await chat);
+    res.json(response);
+    apm.endTransaction();
   });
 }
 
