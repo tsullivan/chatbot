@@ -11,6 +11,7 @@ function getResponders() {
     superherofact: require('./responders/superherofact'),
     name: require('./responders/name'),
     coinflip: require('./responders/coinflip'),
+    remember: require('./responders/remember'),
     roll: require('./responders/roll')
   };
 }
