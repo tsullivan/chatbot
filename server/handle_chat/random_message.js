@@ -4,7 +4,6 @@ const { getFood } = require('../food');
 const { getNonsense } = require('../nonsense');
 const { getNormal } = require('../logs');
 const { KeywordResponder: Impromptu } = require('../keywords/responders/random');
-const { definitive, umm, neutral } = require('../wrap_noun');
 
 class RandomMessage extends ResponseMessage {
   constructor(chat, message, format) {
@@ -13,11 +12,14 @@ class RandomMessage extends ResponseMessage {
   }
 
   makeResponse(chat) {
+    const sayImpromptu = () => new Impromptu(null, chat).getResponse();
+    const sayFoodOrNonsense = () => oneOf([getFood, () => getNonsense(this.userMessage, [getFood])]);
+
     return this.plain(
       oneOf([
-        () => new Impromptu(null, chat).getResponse(),
-        () => oneOf([getNormal, () => getNonsense(this.userMessage, [getFood])]),
-        () => oneOf([neutral(getFood), definitive(getFood), umm(getFood)])
+        getNormal,
+        sayImpromptu,
+        sayFoodOrNonsense,
       ])
     );
   }
