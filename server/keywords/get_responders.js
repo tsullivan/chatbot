@@ -1,6 +1,6 @@
 function getResponders() {
   return {
-    // just_dont: require('./responders/just_dont'),
+    just_dont: require('./responders/just_dont'),
     game: require('./responders/play'),
     help: require('./responders/help'),
     joke: require('./responders/joke'),

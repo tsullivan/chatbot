@@ -23,6 +23,10 @@ class GameResponder extends KeywordResponder {
     return input.match(/^play\b/);
   }
 
+  justDont() {
+    return `Just don't say "play batman"`;
+  }
+
   help() {
     const gameKeys = Object.keys(games);
     return (

@@ -16,6 +16,10 @@ class RememberResponder extends KeywordResponder {
     return input.match(/^remember\b/);
   }
 
+  justDont() {
+    return `Just don't ask me "remember that one time." I probably don't.`;
+  }
+
   isImpromptu() {
     return true;
   }

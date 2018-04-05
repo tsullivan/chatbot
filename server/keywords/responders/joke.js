@@ -12,6 +12,10 @@ class JokeResponder extends DictionaryResponder {
     return input.match(/^joke\b/);
   }
 
+  justDont() {
+    return `Just don't say "joke 7". PLEASE`;
+  }
+
   getResponse() {
     return this.getRandomOrRequested({
       prefix(index) {

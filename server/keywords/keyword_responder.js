@@ -12,6 +12,10 @@ class KeywordResponder {
     return false;
   }
 
+  isListed() {
+    return true;
+  }
+
   testMatch(input) {
     return input.match(/^$/);
   }
@@ -22,6 +26,10 @@ class KeywordResponder {
 
   help() {
     return `Type \`${this.name}\` and see what happens...`;
+  }
+
+  justDont() {
+    return `Just don't.`;
   }
 
   getResponse() {

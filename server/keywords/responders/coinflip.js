@@ -15,6 +15,10 @@ class CoinFlipResponder extends KeywordResponder {
     return true;
   }
 
+  justDont() {
+    return `Just don't say "coinflip", I'll flip out!`;
+  }
+
   getResponse() {
     const result = roll(2).result === 1 ? 'HEADS' : 'TAILS';
     return `Flipping a coin... ${result}!`;

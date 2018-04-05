@@ -23,6 +23,10 @@ class SayResponder extends KeywordResponder {
     return `\`say\`: Type \`say something\` and see what happens.`;
   }
 
+  justDont() {
+    return `Just don't tell me to say something.`;
+  }
+
   getResponse() {
     if (this.thingToSay === null) {
       return this.help();
