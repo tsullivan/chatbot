@@ -9,6 +9,7 @@ const { definitive, umm, neutral } = require('../wrap_noun');
 class RandomMessage extends ResponseMessage {
   constructor(chat, message, format) {
     super('random', chat, message, format);
+    chat.addHistory(message);
   }
 
   makeResponse(chat) {

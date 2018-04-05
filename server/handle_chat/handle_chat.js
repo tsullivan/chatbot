@@ -16,8 +16,6 @@ function handleChat(body, chat) {
 
   const { message, format } = body;
   if (message && format) {
-    chat.addHistory(message);
-
     let workIdx = 0;
     while (workIdx < responseWorkers.length) {
       const { Worker } = responseWorkers[workIdx];
