@@ -25,6 +25,10 @@ class RepeatResponder extends KeywordResponder {
       Usage: \`repeat <NUM> <PHRASE>\``;
   }
 
+  justDont() {
+    return `Just don't say "repeat 50 blah"`;
+  }
+
   getResponse() {
     if (this.phrase === null) {
       return this.help();

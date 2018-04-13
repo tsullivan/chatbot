@@ -1,4 +1,5 @@
 module.exports = {
+  parserOptions: { ecmaVersion: 8 },
   env: {
     node: true,
     commonjs: true,

@@ -24,6 +24,10 @@ class RollResponder extends KeywordResponder {
     return true;
   }
 
+  justDont() {
+    return `Just don't say "roll 7". I don't have a d7!`;
+  }
+
   getResponse() {
     const sides = this.sides;
     const result = roll(sides).result;

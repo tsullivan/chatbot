@@ -1,10 +1,10 @@
 function getEnvConfig(env) {
   switch (env) {
-    case 'production':
-    case 'test':
-      return require(`./${env}`);
-    default:
-      return require(`./development`);
+  case 'production':
+  case 'test':
+    return require(`./${env}`);
+  default:
+    return require(`./development`);
   }
 }
 

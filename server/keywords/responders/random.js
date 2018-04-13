@@ -24,6 +24,10 @@ class RandomResponder extends KeywordResponder {
   }
 
 
+  justDont() {
+    return `Just don't say "random". I'm not sure what will happen!`;
+  }
+
   getResponse() {
     const responder = this.getRandomResponder();
     return responder.getResponse();

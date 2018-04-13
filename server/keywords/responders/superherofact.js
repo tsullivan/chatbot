@@ -15,6 +15,10 @@ class SuperHeroFactResponder extends DictionaryResponder {
     return input.match(/^superherofact\b/);
   }
 
+  justDont() {
+    return `Just don't say "superherofact". I know some obscure facts about superkind.`;
+  }
+
   getResponse() {
     return this.getRandomOrRequested({
       prefix(index) {

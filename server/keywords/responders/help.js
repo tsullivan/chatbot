@@ -14,6 +14,10 @@ class HelpResponder extends KeywordResponder {
   getResponse() {
     const responders = getResponders();
     const responderKeys = Object.keys(responders);
+    const usableResponders = responderKeys.filter(key => {
+      const responder = new responders[key].KeywordResponder();
+      return responder.isListed() === true;
+    });
 
     // check if ask for help about keyword
     const keywordMatches = this.input.match(/^help (\S+)$/);
@@ -26,7 +30,7 @@ class HelpResponder extends KeywordResponder {
       }
     }
 
-    return 'Here are keywords you can use:\n' + responderKeys.join(', ');
+    return 'Here are keywords you can use:\n' + usableResponders.join(', ');
   }
 }
 

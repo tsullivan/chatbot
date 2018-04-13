@@ -1,4 +1,3 @@
-const apm = require('elastic-apm-node');
 const session = require('express-session');
 const { session_secret: sessionSecret } = require('../../config');
 const { ChatSession } = require('./chat_session');
@@ -7,7 +6,7 @@ const { getGames } = require('../games');
 const games = getGames();
 
 function initSession(app) {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     app.use(
       session({
         secret: sessionSecret,
