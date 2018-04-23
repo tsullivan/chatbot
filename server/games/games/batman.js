@@ -47,7 +47,7 @@ class GuessNumber extends ChatGame {
   }
 
   getWelcome() {
-    return `Let's play Batman. Type in stuff for the Batcave, but don't type "77" or "kl".`;
+    return `Let's play Batman. Type in stuff for the Batcave. Type "77" to keep your points or "kl" to throw it all away.`;
   }
 }
 

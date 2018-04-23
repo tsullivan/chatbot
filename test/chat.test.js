@@ -25,7 +25,10 @@ describe('#POST / chat', () => {
     server = app.listen(3033);
   });
 
-  afterEach(() => {
+  afterEach(async () => {
+    await request(app)
+      .post('/chat')
+      .send({ format: 'user', message: 'kl' });
     server.close();
   });
 
@@ -47,7 +50,7 @@ describe('#POST / chat', () => {
       .send({ format: 'user', message: 'play batman' });
 
     expect(startGame.body.message).to.equal(
-      `Let's play Batman. Type in stuff for the Batcave, but don't type "77" or "kl".`
+      `Let's play Batman. Type in stuff for the Batcave. Type "77" to keep your points or "kl" to throw it all away.`
     );
 
     const sayBatmobile = await request(app)
@@ -77,7 +80,7 @@ describe('#POST / chat', () => {
       .send({ format: 'user', message: 'play batman' });
 
     expect(startGame.body.message).to.equal(
-      `Let's play Batman. Type in stuff for the Batcave, but don't type "77" or "kl".`
+      `Let's play Batman. Type in stuff for the Batcave. Type "77" to keep your points or "kl" to throw it all away.`
     );
 
     const sayBatmobile = await request(app)
