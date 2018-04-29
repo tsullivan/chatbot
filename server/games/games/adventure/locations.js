@@ -81,6 +81,7 @@ function getLocations(game) {
         instructions:
           'Type SLEEP to sleep on the comfy bed, LOOK to look closer at the open-air windows, EXIT to leave the beautful great hall and the castle.'
       });
+      this.windowsOpen = true;
 
       this.addKeyword('SLEEP', () => {
         if (this.windowsOpen) {
