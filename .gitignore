@@ -1,3 +1,1 @@
-yarn.lock
-config
-elastic-apm-node.js
+config/production.js

@@ -1,6 +1,6 @@
 const { app } = require('./server');
 
-const PORT = 3000;
+const PORT = 8080;
 app.listen(PORT, () => {
   console.log(`chatbot server listening on :${PORT}!`); // eslint-disable-line no-console
 });

@@ -1,5 +1,6 @@
 function getEnvConfig(env) {
   switch (env) {
+  case 'docker':
   case 'production':
   case 'test':
     return require(`./${env}`);
