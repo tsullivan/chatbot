@@ -16,7 +16,7 @@ function Ajax() {
   const AJAX_OPTS = {
     method: 'post',
     contentType: 'application/json',
-    url: '/chat',
+    url: './chat',
     dataType: 'json'
   };
 
