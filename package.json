@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint & npm run mocha",
+    "test": "yarn run lint & yarn run mocha",
     "lint": "eslint .",
     "mocha": "NODE_ENV=test mocha ./test",
     "start": "node index.js",

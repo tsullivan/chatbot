@@ -28,7 +28,7 @@ describe('batman game', () => {
   afterEach(async () => {
     await request(app)
       .post('/chat')
-      .send({ format: 'user', message: 'kl' });
+      .send({ format: 'hup', message: 'Bye!' });
     server.close();
   });
 

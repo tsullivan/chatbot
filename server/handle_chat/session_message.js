@@ -10,6 +10,9 @@ class SessionMessage extends ResponseMessage {
     if (this.userFormat === 'syn') {
       chat.setWaitOnName();
       return this.plain('Hello! What is your name?');
+    } else if (this.userFormat === 'hup') {
+      chat.hangup();
+      return this.plain('Bye!');
     }
 
     const { isValid, revalidateResponse } = chat.validateSession();

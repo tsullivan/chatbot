@@ -26,7 +26,10 @@ describe('adventure game', () => {
   });
 
   afterEach(async () => {
-    return server.close();
+    await request(app)
+      .post('/chat')
+      .send({ format: 'hup', message: 'Bye!' });
+    server.close();
   });
 
   it('should win at the adventure game', async () => {

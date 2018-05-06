@@ -9,6 +9,9 @@ describe('#POST / chat', () => {
   });
 
   afterEach(async () => {
+    await request(app)
+      .post('/chat')
+      .send({ format: 'hup', message: 'Bye!' });
     server.close();
   });
 

@@ -29,6 +29,13 @@ class ChatSession {
       defaultsDeep(session.chat, this);
       return this;
     };
+
+    this.hangup = () => {
+      session.destroy();
+      this.initialized = false;
+      Object.assign(this, proto);
+      this.save();
+    };
   }
 
   getResumed({ chat }) {
