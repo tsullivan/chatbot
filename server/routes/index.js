@@ -1,13 +1,22 @@
 const apm = require('elastic-apm-node');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json({ type: 'application/json' });
-const { chatRouteHandler } = require('./chat');
+const { handleChat } = require('../handle_chat');
 
-function initRoutes(app, chat) {
-  const routeHandler = async (req, res) => {
+function initRoutes(app, unresolvedChat) {
+  const routeHandler = async ({ body }, res) => {
     apm.startTransaction();
-    const response = chatRouteHandler(req.body, await chat);
-    res.json(response);
+
+    const chat = await unresolvedChat;
+    res.json(handleChat(body, chat));
+
+    apm.setUserContext({
+      username: chat.getName()
+    });
+    apm.setCustomContext({
+      num_messages: chat.getHistory().length,
+      avg_score: chat.getAverageScore()
+    });
     apm.endTransaction();
   };
   app.post('/chat', jsonParser, routeHandler);
