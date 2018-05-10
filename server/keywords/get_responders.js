@@ -23,6 +23,7 @@ function getResponders() {
       roll: require('./responders/roll'),
       phrase: require('./responders/phrases'),
       fact: require('./responders/fact'),
+      score: require('./responders/score'),
     },
     getFactResponders
   );
