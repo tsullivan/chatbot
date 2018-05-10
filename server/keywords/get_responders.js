@@ -23,10 +23,6 @@ function getResponders() {
       roll: require('./responders/roll'),
       phrase: require('./responders/phrases'),
       fact: require('./responders/fact'),
-      starwarsfact: require('./responders/starwarsfact'),
-      superherofact: require('./responders/superherofact'),
-      pokemonfact: require('./responders/pokemonfact'),
-      ninjafact: require('./responders/ninjafact')
     },
     getFactResponders
   );
