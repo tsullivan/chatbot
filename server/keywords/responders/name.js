@@ -27,10 +27,6 @@ class NameResponder extends KeywordResponder {
   testMatch(input) {
     return input.match(/^name\b/);
   }
-
-  isImpromptu() {
-    return true;
-  }
 }
 
 module.exports = { KeywordResponder: NameResponder };
