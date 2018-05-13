@@ -44,6 +44,23 @@ describe('Chatbot', () => {
     });
   });
 
+  describe('Keywords', () => {
+    let message;
+    afterEach(() => {
+      console.log({ message }); // eslint-disable-line no-console
+    });
+
+    it('should make some random phrase', async () => {
+      await handshake();
+
+      const res = await request(app)
+        .post('/chat')
+        .send({ format: 'user', message: 'phrase' });
+      expect(res.statusCode).to.equal(200);
+      message = res.body.message;
+    });
+  });
+
   describe('Games', () => {
     it('should win at the batman game', async () => {
       await handshake();
