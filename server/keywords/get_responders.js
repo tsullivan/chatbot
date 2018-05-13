@@ -21,7 +21,7 @@ function getResponders() {
       coinflip: require('./responders/coinflip'),
       remember: require('./responders/remember'),
       roll: require('./responders/roll'),
-      phrase: require('./responders/phrases'),
+      phrase: require('./responders/phrase'),
       fact: require('./responders/fact'),
       score: require('./responders/score'),
     },
