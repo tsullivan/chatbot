@@ -1,12 +1,12 @@
 class LocationKeywordResponse {
-  constructor({ text = 'Not sure', reduceScore = 0, isDone = false }) {
+  constructor({ text = 'Not sure', changeScore = 0, isDone = false }) {
     this.text = text;
-    this.reduceScore = reduceScore;
+    this.changeScore = changeScore;
     this.isDone = isDone;
   }
 
-  static getResponseFromHandler(handler) {
-    const handlerResponse = handler();
+  static getResponseFromHandler(handler, game) {
+    const handlerResponse = handler(game);
     if (handlerResponse instanceof LocationKeywordResponse) {
       return handlerResponse;
     } else {
@@ -18,15 +18,11 @@ class LocationKeywordResponse {
     this.text = text;
   }
 
-  reduceScoreBy(amount) {
-    this.reduceScoreBy -= amount;
-  }
-
   get() {
-    const { text, reduceScore, isDone } = this;
+    const { text, changeScore, isDone } = this;
     return {
       response: text,
-      reduceScore,
+      changeScore,
       isDone
     };
   }

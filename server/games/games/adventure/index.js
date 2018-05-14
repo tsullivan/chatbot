@@ -1,3 +1,4 @@
+const snl = require('strip-newlines');
 const { ChatGame } = require('../../chat_game');
 const { getLocations } = require('./locations');
 
@@ -7,14 +8,17 @@ const yesDone = response => ({ response, isDone: true });
 class Adventure extends ChatGame {
   constructor(session) {
     super(session);
+
     this.name = 'adventure';
+    this.inventory = new Set();
+
     this.locations = getLocations(this);
   }
 
   init() {
     this.score = 100;
     this.turns = 0;
-    this.currentLocation = this.locations.START;
+    this.currentLocation = this.locations.startLocation;
   }
 
   setLocation(location) {
@@ -23,19 +27,16 @@ class Adventure extends ChatGame {
 
   win(response) {
     this.saveScore();
-    return yesDone(
-      `I guess you win becase ${response} you got to fall asleep! Goodnight, sweet ${
-        this.playerName
-      }! Bye! Turns: ${this.turns} Score: ${this.score}`
-    );
+    return yesDone(snl`I guess you win becase ${response} you got to fall
+        asleep! Goodnight, sweet ${this.playerName}! Bye! Turns: ${this.turns}
+        Score: ${this.score}`);
   }
 
   testInput(input) {
     const aInput = input.toUpperCase();
-    const { response, reduceScore, isDone } = this.currentLocation.getInputResponse(aInput);
-    // TODO: convert `win` `die` objcts
+    const { response, changeScore, isDone } = this.currentLocation.getInputResponse(aInput);
 
-    this.score -= reduceScore;
+    this.score += changeScore;
     if (isDone) {
       this.saveScore();
       return this.win(response);
@@ -45,13 +46,22 @@ class Adventure extends ChatGame {
     }
   }
 
-  getRoomDescription() {
-    return `${this.currentLocation.description}
-${this.currentLocation.instructions}`;
+  addToInventory(item) {
+    this.inventory.add(item);
+  }
+  inInventory(item) {
+    return this.inventory.has(item);
+  }
+  dropInventory(item, location) {
+    this.inventory.delete(item);
+    location.addFloorItem(item);
+  }
+  deleteInventory(item) {
+    this.inventory.delete(item);
   }
 
   getWelcome() {
-    return this.getRoomDescription();
+    return this.currentLocation.getDescription();
   }
 }
 
