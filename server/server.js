@@ -7,13 +7,13 @@ const { initSession } = require('./session');
 const { initRoutes } = require('./routes');
 
 const app = express();
-const public = join(__dirname, '..', 'public');
+const pubs = join(__dirname, '..', 'public');
 
-app.use(express.static(public)); // home html page, static js
+app.use(express.static(pubs)); // home html page, static js
 app.use(apm.middleware.connect());
 
 app.get('/', (req, res) => {
-  res.sendFile(join(public, 'index.html'));
+  res.sendFile(join(pubs, 'index.html'));
 });
 
 // init chat route

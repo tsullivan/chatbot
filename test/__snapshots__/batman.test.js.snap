@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`batman should lose at the batman game 1`] = `"Let's play Batman. Type in stuff for the Batcave. Type \\"77\\" to keep your points or \\"kl\\" to throw it all away."`;
+
+exports[`batman should lose at the batman game 2`] = `"Adding batgirl to the Batcave."`;
+
+exports[`batman should lose at the batman game 3`] = `
+"Type \\"kl\\" and you lose the Batgame :( \\"kl\\" ended the Batgame. Your Batstuff is: batgirl. Your Batscore is 0. Average of all your Batscores is 0.5.
+That was fun, Tim!"
+`;
+
+exports[`batman should win at the batman game 1`] = `"Let's play Batman. Type in stuff for the Batcave. Type \\"77\\" to keep your points or \\"kl\\" to throw it all away."`;
+
+exports[`batman should win at the batman game 2`] = `"Adding batmobile to the Batcave."`;
+
+exports[`batman should win at the batman game 3`] = `
+"You won! Right now!! \\"77\\" ended the Batgame. Your Batstuff is: batmobile. Your Batscore is 1. Average of all your Batscores is 1.
+That was fun, Tim!"
+`;
