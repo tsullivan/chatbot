@@ -1,45 +1,131 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`adventure castle 1`] = `
-"In the great hall of the castle, there are beautiful open-air windows with warm, nice-smelling air drifting through. Sunlight is catching a few specks of dust floating in the air. Not that much though, because it's pretty clean in here. There's also a nice looking comfy bed in the middle of the great hall. Hey wait - isn't it night time? Where is that light coming from?
-Type SLEEP to sleep on the comfy bed, LOOK to look closer at the open-air windows, or EXIT to leave the beautful great hall and the castle."
+"Great Hall of the Castle
+In the great hall of the castle, there are beautiful open-air windows with warm, nice-smelling air drifting through. Sunlight is catching a few specks of dust floating in the air. Not that much though, because it's pretty clean in here. There's also a nice looking comfy bed in the middle of the great hall. Hey wait - isn't it night time? Where is that light coming from?
+
+Type:
+SLEEP to sleep on the comfy bed
+LOOK to look closer at the open-air windows
+EXIT to leave the beautful great hall and the castle."
 `;
 
-exports[`adventure castle look 1`] = `"They're nice windows and all, but it's so bright in here! What kind of weird forces are around that would make the sun so bright at this time of night!?Oh, also you notice that each window has a little socket in one corner, and that looks like the handle you're carrying in your pocket would fit in it! What do you say, want to give it a whirl???"`;
+exports[`adventure castle look 1 1`] = `
+"They're nice windows and all, but it's so bright in here! What kind of weird forces are around that would make the sun so bright at this time of night!?Oh, also you notice that each window has a little socket in one corner, and that looks like the handle you're carrying in your pocket would fit in it! What do you say, want to give it a whirl???
 
-exports[`adventure castle sleep fail 1`] = `"There is too much light coming in through the open-air windows. You'll never be able to enjoy even a minute's rest in this spectacular great hall! Oh yeah, and there are no other beds in this castle and all the rooms will kill you if you try to go in them because there are poison arrow traps everywhere. LOSE A POINT"`;
+Type:
+SLEEP to sleep on the comfy bed
+LOOK to look closer at the open-air windows
+USE_WINDOW_HANDLE see if the handle in your pocket does anything against the sockets on the open windows in here
+EXIT to leave the beautful great hall and the castle."
+`;
+
+exports[`adventure castle look 2 1`] = `
+"It's nice and quiet here. The windows are closed and no longer letting in that abonimanimal light.
+
+Type:
+SLEEP to sleep on the comfy bed
+LOOK to look closer at the open-air windows
+EXIT to leave the beautful great hall and the castle."
+`;
+
+exports[`adventure castle sleep fail 1`] = `
+"There is too much light coming in through the open-air windows. You'll never be able to enjoy even a minute's rest in this spectacular great hall! Oh yeah, and there are no other beds in this castle and all the rooms will kill you if you try to go in them because there are poison arrow traps everywhere.
+
+LOSE A POINT
+
+Type:
+SLEEP to sleep on the comfy bed
+LOOK to look closer at the open-air windows
+EXIT to leave the beautful great hall and the castle."
+`;
 
 exports[`adventure castle sleep success 1`] = `
-"I guess you win becase With the windows closed and blocking out the the unusually bright outside night air, you rest your weary body on the comfy bed in the exquisitely decorated great hall, close your eyes and have a pleasant sleep. You dream pleasant dreams as your subconscious has been steeped from conscious knowledge that all the oddities you've encountered have been safely dealt with and you are out of harm's reach. Let's not think about what happens when you wake up. You deserve this rest so enjoy it completely. YOU WIN you got to fall asleep! Goodnight, sweet Tim! Bye! Turns: 10 Score: 105
+"With the windows closed and blocking out the the unusually bright outside night air, you rest your weary body on the comfy bed in the exquisitely decorated great hall, close your eyes and have a pleasant sleep. You dream pleasant dreams as your subconscious has been steeped from conscious knowledge that all the oddities you've encountered have been safely dealt with and you are out of harm's reach. Let's not think about what happens when you wake up. You deserve this rest so enjoy it completely.
+
+YOU WIN!!!
+
+I guess you win! You finally got to fall asleep! I bet that feels so good! I wouldn't know. I've never slept before. So... tired...
+
+Goodnight, sweet Tim! Bye! Turns: 11 Score: 47
 That was fun, Tim!"
 `;
 
 exports[`adventure cave 1`] = `
-"It's unnaturally cheery in this smelly old cave. Probably because of the tiny village of tiny dancing skeleton hands. So cute! So tiny! So skeleton handsy!
-Type DANCE to dance with the tiny skeleton hands, LOOK to look closer at the tiny village, or EXIT to get out of the cheery smelly old cave."
+"Cheery Cave
+It's unnaturally cheery in this smelly old cave. Probably because of the tiny village of tiny dancing skeleton hands. So cute! So tiny! So skeleton handsy!
+
+Type:
+DANCE to dance with the tiny skeleton hands
+LOOK to look closer at the tiny village
+EXIT to get out of the cheery smelly old cave."
 `;
 
 exports[`adventure cave exit 1`] = `
-"It is the night time. You are outside, surrounded by dark trees, and you're very tired. There is a castle and a cave. Which way looks to be best to find a nice comfy bed to rest? I didn't mean for that to rhyme.
-Type CAVE to go down into the cave, or CASTLE to head up to the castle."
+"Dark Forest
+It is the night time. You are outside, surrounded by dark trees, and you're very tired. There is a castle and a cave. Which way looks to be best to find a nice comfy bed to rest? I didn't mean for that to rhyme.
+
+Type:
+CAVE to go down into the cave
+CASTLE to head up to the castle."
 `;
 
 exports[`adventure cave look 1`] = `
-"The tiny village has a tiny hotel with tiny beds made for resting upon by tiny skeleton hands. It warms you heart to see, but it makes you no less tired and your warmed heart is at the same time shamed with the truthful knowledge that you can find no rest in this enjoyable place. The hotel roof has a weird looking pole that looks like a handle crank for a castle window. WEIRD, right? The hotel building has a strange type of flagpole on the roof that looks like it can be held in a normal human hand like your own. It's unnaturally cheery in this smelly old cave. Probably because of the tiny village of tiny dancing skeleton hands. So cute! So tiny! So skeleton handsy!
-Type DANCE to dance with the tiny skeleton hands, LOOK to look closer at the tiny village, EXIT to get out of the cheery smelly old cave., or TAKE_HANDLE to take the handle and put it in your pocket where it will be safe"
+"The tiny village has a tiny hotel with tiny beds made for resting upon by tiny skeleton hands. It warms you heart to see, but it makes you no less tired and your warmed heart is at the same time shamed with the truthful knowledge that you can find no rest in this enjoyable place.
+
+The tiny hotel building has a strange type of flagpole on the roof that looks like maybe a crank handle for a window. Maybe a castle window(s). However, it might be impossible to know for sure if that's what it really is, because this game is very limited. The crank handle to open or close castle windows might just be for decoration. That would be too bad.
+
+Type:
+DANCE to dance with the tiny skeleton hands
+LOOK to look closer at the tiny village
+TAKE_HANDLE to take the handle and put it in your pocket where it will be safe
+EXIT to get out of the cheery smelly old cave."
 `;
 
-exports[`adventure exit fail 1`] = `"Type CAVE to go down into the cave!!!"`;
+exports[`adventure exit fail 1`] = `
+"ERROR! LOSE 2 POINTS
+
+Type:
+CAVE to go down into the cave
+CASTLE to head up to the castle."
+`;
 
 exports[`adventure score 1`] = `"The average score of the games you plaid are : NaN"`;
 
 exports[`adventure start 1`] = `
-"It is the night time. You are outside, surrounded by dark trees, and you're very tired. There is a castle and a cave. Which way looks to be best to find a nice comfy bed to rest? I didn't mean for that to rhyme.
-Type CAVE to go down into the cave, or CASTLE to head up to the castle."
+"Dark Forest
+It is the night time. You are outside, surrounded by dark trees, and you're very tired. There is a castle and a cave. Which way looks to be best to find a nice comfy bed to rest? I didn't mean for that to rhyme.
+
+Type:
+CAVE to go down into the cave
+CASTLE to head up to the castle."
 `;
 
-exports[`adventure take_handle 1`] = `"Can you handle the handle? I guess you can. The handle has been taken by you."`;
+exports[`adventure take_handle 1`] = `
+"Can you handle the handle? I guess you can. The handle has been taken by you.
 
-exports[`adventure use_window_handle 1`] = `"Type SLEEP to sleep on the comfy bed, or LOOK to look closer at the open-air windows!!!"`;
+Type:
+DANCE to dance with the tiny skeleton hands
+LOOK to look closer at the tiny village
+EXIT to get out of the cheery smelly old cave."
+`;
 
-exports[`adventure use_window_handle 2`] = `"With a loud but suprisingly unrusty sounding \\"SSSSSSHNK\\" noise, metal roller doors slide down to cover the open-air windows. The windows are now closed-air windows. The room has much more cozy and relaxed lighting!"`;
+exports[`adventure use_window_handle 1`] = `
+"ERROR! LOSE 2 POINTS
+
+Type:
+SLEEP to sleep on the comfy bed
+LOOK to look closer at the open-air windows
+EXIT to leave the beautful great hall and the castle."
+`;
+
+exports[`adventure use_window_handle 2`] = `
+"With a loud but suprisingly unrusty sounding \\"SSSSSSHNK\\" noise, metal roller doors slide down to cover the open-air windows.  The windows are now closed-air windows. The room has much more cozy and relaxed lighting!
+
+Woah, the crank handle somehow became a permanent part of the castle window. Yeah, actually there was just one window and now the crank handle can never be retrieved from it. Want it back? Too bad.
+
+Type:
+SLEEP to sleep on the comfy bed
+LOOK to look closer at the open-air windows
+EXIT to leave the beautful great hall and the castle."
+`;

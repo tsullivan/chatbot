@@ -68,7 +68,7 @@ describe('adventure', () => {
     expect(useHandle1.message).toMatchSnapshot();
   });
 
-  test('castle look', async () => {
+  test('castle look 1', async () => {
     const { body: lookCastle } = await request(app)
       .post('/chat')
       .send({ format: 'user', message: 'look' });
@@ -80,6 +80,13 @@ describe('adventure', () => {
       .post('/chat')
       .send({ format: 'user', message: 'use_window_handle' });
     expect(useHandle2.message).toMatchSnapshot();
+  });
+
+  test('castle look 2', async () => {
+    const { body: lookCastle } = await request(app)
+      .post('/chat')
+      .send({ format: 'user', message: 'look' });
+    expect(lookCastle.message).toMatchSnapshot();
   });
 
   test('castle sleep success', async () => {

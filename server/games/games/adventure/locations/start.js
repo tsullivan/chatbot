@@ -4,7 +4,7 @@ const { NORTH, EAST } = require('../constants');
 
 class StartLocation extends Location {
   constructor(game) {
-    super({ game, name: 'Main Entrance' });
+    super({ game, name: 'Dark Forest' });
   }
   setDescription() {
     this.description = snl`It is the night time. You are outside, surrounded
@@ -12,15 +12,9 @@ class StartLocation extends Location {
       Which way looks to be best to find a nice comfy bed to rest? I didn't
       mean for that to rhyme.`;
   }
-  setInstructions() {
-    this.instructions = [
-      'CAVE to go down into the cave',
-      'CASTLE to head up to the castle.'
-    ];
-  }
   setKeywords() {
-    this.addKeyword('CAVE', () => this.followExit(EAST));
-    this.addKeyword('CASTLE', () => this.followExit(NORTH));
+    this.addKeyword('CAVE', 'CAVE to go down into the cave', () => this.followExit(EAST));
+    this.addKeyword('CASTLE', 'CASTLE to head up to the castle.', () => this.followExit(NORTH));
   }
 }
 

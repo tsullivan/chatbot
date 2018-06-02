@@ -1,11 +1,13 @@
-const snl = require('strip-newlines');
 const { LocationKeywordResponse } = require('./class_location_keyword_response');
 
 class Location {
   constructor({ game, name, description, instructions = [] }) {
+    if (instructions && instructions.length) {
+      throw new Error('not like that');
+    }
+
     this.name = name;
     this.description = description;
-    this.instructions = instructions;
     this.game = game;
 
     this.exits = new Map();
@@ -13,15 +15,11 @@ class Location {
     this.floorItems = new Set();
 
     this.setDescription(game);
-    this.setInstructions(game);
     this.setKeywords(game);
   }
 
   setDescription() {
     throw new Error('setDescription must be overridden in ' + this.name);
-  }
-  setInstructions() {
-    throw new Error('setInstructions must be overridden in ' + this.name);
   }
   setKeywords() {
     throw new Error('setKeywords must be overridden in ' + this.name);
@@ -36,7 +34,7 @@ class Location {
       exit.updateKeywords(this.game);
 
       return new LocationKeywordResponse({
-        text: this.game.getWelcome()
+        text: exit.getDescription()
       });
     }
 
@@ -48,7 +46,6 @@ class Location {
   updateKeywords(game) {
     this.clearKeywords();
     this.setKeywords(game);
-    this.setInstructions(game);
   }
 
   addExit({ location, exit, inverseExit }) {
@@ -62,26 +59,35 @@ class Location {
     }
   }
 
-  getDescription(prefix = '') {
-    const myPrefix = prefix !== '' ? prefix + ' ' : '';
-    const description = snl`${myPrefix}${this.description}`;
-    return  `${description}\n${this.getInstructions()}`;
+  getDescription() {
+    return `${this.name}\n${this.description}`;
   }
+
+  // get the instructions from the keywords
   getInstructions() {
-    if (this.instructions.length === 1) {
-      return 'Type ' + this.instructions[0];
+    const instructions = [];
+    const iterator = this.keywords.values();
+    let loopDone = false;
+
+    while (!loopDone) {
+      const { value: instruction, done } = iterator.next();
+      loopDone = done;
+      if (loopDone) {
+        break;
+      } else {
+        instructions.push(instruction.text);
+      }
     }
 
-    let last;
-    last = this.instructions.splice(-1, 1)[0]; // last value of array
-    return 'Type ' + this.instructions.join(', ') + ', or ' + last;
+    return `Type:\n${instructions.join('\n')}`;
   }
 
   /*
+   * text {String} text used for getInstructions
    * fn {Function} function that must return LocationKeywordResponse
    */
-  addKeyword(keyword, fn) {
-    this.keywords.set(keyword, fn);
+  addKeyword(keyword, text, fn) {
+    this.keywords.set(keyword, { text, fn });
   }
   removeKeyword(keyword) {
     this.keywords.delete(keyword);
@@ -104,12 +110,12 @@ class Location {
   getInputResponse(input) {
     let response;
     if (this.keywords.has(input)) {
-      const fn = this.keywords.get(input);
+      const { fn } = this.keywords.get(input);
       response = LocationKeywordResponse.getResponseFromHandler(fn, this.game);
     } else {
       response = new LocationKeywordResponse({
-        text: this.getInstructions() + '!!!',
-        changeScore: 2
+        text: `ERROR! LOSE 2 POINTS`,
+        changeScore: -2
       });
     }
 
