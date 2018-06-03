@@ -1,26 +1,17 @@
 const { LocationKeywordResponse } = require('./class_location_keyword_response');
 
 class Location {
-  constructor({ game, name, description, instructions = [] }) {
-    if (instructions && instructions.length) {
-      throw new Error('not like that');
-    }
-
+  constructor({ game, name }) {
     this.name = name;
-    this.description = description;
     this.game = game;
 
     this.exits = new Map();
     this.keywords = new Map();
     this.floorItems = new Set();
 
-    this.setDescription(game);
     this.setKeywords(game);
   }
 
-  setDescription() {
-    throw new Error('setDescription must be overridden in ' + this.name);
-  }
   setKeywords() {
     throw new Error('setKeywords must be overridden in ' + this.name);
   }
@@ -30,11 +21,10 @@ class Location {
       const exit = this.exits.get(direction);
       this.game.setLocation(exit);
 
-      exit.setDescription(this.game);
       exit.updateKeywords(this.game);
 
       return new LocationKeywordResponse({
-        text: exit.getDescription()
+        text: exit.getDescriptionInternal()
       });
     }
 
@@ -59,8 +49,8 @@ class Location {
     }
   }
 
-  getDescription() {
-    return `${this.name}\n${this.description}`;
+  getDescriptionInternal() {
+    return `${this.name}\n${this.getDescription()}`;
   }
 
   // get the instructions from the keywords

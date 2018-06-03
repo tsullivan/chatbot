@@ -65,7 +65,7 @@ class Adventure extends ChatGame {
   }
 
   getWelcome() {
-    return this.getNext(this.currentLocation.getDescription());
+    return this.getNext(this.currentLocation.getDescriptionInternal());
   }
 }
 

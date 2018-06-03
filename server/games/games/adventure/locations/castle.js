@@ -5,16 +5,17 @@ const { SOUTH, WINDOW_HANDLE } = require('../constants');
 class CastleLocation extends Location {
   constructor(game) {
     super({ game, name: 'Great Hall of the Castle' });
-    this._windowsOpen = true;
-    this._socketsSeen = false;
-  }
-  setDescription() {
-    this.description = snl`In the great hall of the castle, there are
+    this._description = snl`In the great hall of the castle, there are
       beautiful open-air windows with warm, nice-smelling air drifting
       through. Sunlight is catching a few specks of dust floating in the air.
       Not that much though, because it's pretty clean in here. There's also a
       nice looking comfy bed in the middle of the great hall. Hey wait -
       isn't it night time? Where is that light coming from?`;
+    this._windowsOpen = true;
+    this._socketsSeen = false;
+  }
+  getDescription() {
+    return this._description;
   }
 
   setKeywords(game) {

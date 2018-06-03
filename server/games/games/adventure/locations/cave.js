@@ -9,11 +9,13 @@ class CaveLocation extends Location {
     this._handleSeen = false;
     this._danced = false;
   }
-  setDescription() {
-    this.description = snl`It's unnaturally cheery in this smelly old cave.
-        Probably because of the tiny village of tiny dancing skeleton hands. So
-        cute! So tiny! So skeleton handsy!`;
+
+  getDescription() {
+    return snl`It's unnaturally cheery in this smelly old cave. Probably
+      because of the tiny village of tiny dancing skeleton hands. So cute! So
+      tiny! So skeleton handsy!`;
   }
+
   setKeywords() {
     const p = [
       snl`The dance is beautiful, with flowing, synchronized forms.
