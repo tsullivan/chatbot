@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location } = require('../class_location');
+const { Location } = require('../../../lib');
 const { NORTH, EAST } = require('../constants');
 
 class StartLocation extends Location {
