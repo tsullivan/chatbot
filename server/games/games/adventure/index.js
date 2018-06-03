@@ -8,6 +8,7 @@ class AdventureGame extends Adventure {
 
     this.name = 'adventure';
     this.locations = getLocations(this);
+    this.currentLocation = this.locations.startLocation;
   }
 
   lose(response) {

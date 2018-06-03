@@ -24,7 +24,7 @@ class Location {
       exit.updateKeywords(this.game);
 
       return new LocationKeywordResponse({
-        text: exit.getDescriptionInternal()
+        text: exit.getDescriptionInternal(this.game)
       });
     }
 
@@ -49,8 +49,8 @@ class Location {
     }
   }
 
-  getDescriptionInternal() {
-    return `${this.name}\n${this.getDescription()}`;
+  getDescriptionInternal(game) {
+    return `${this.name}\n${this.getDescription(game)}`;
   }
 
   // get the instructions from the keywords

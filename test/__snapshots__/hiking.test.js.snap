@@ -1,0 +1,656 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`hiking explode the ghosts on the sun 1`] = `
+"On the bridge
+At the top of the bridge is a spaceship. It looks like a Sun Ship. The hatch is open, and it looks pretty functional.
+
+You're on the bridge, and can look down at the lake. This lake is beautiful. From up here, the lake seems to have a less grim appearance.
+
+The enemies that were in the lake have been defeated! Their defeated corpses float in the water.
+
+Type:
+SHIP - enter the ship
+LAKE - to go back down to the lake
+FINISH_LINE - from up here on the bridge, you can see the finish line!"
+`;
+
+exports[`hiking explode the ghosts on the sun 2`] = `
+"Sun Ship, on Earth
+Pretty nice in here. Whatever alien species created this ship did a good job.
+
+The controls here look pretty simple. There's just one big button that says \\"PUSH_ME\\"
+
+Type:
+PUSH_ME - push the control button
+EXIT - jump out of the ship and back to the bridge"
+`;
+
+exports[`hiking explode the ghosts on the sun 3`] = `
+"The Sun, in the Sun Ship
+It's so hot on the Sun! Fear not, it's safe inside the sun ship. It's very bright, but the windows of the sunship make it safe to look at.
+
+Type:
+BACK - go back to earth
+LOOK - look at the sun (through the safety of the sunship windows)
+THROW_YOGURT - throw the ghost yogurt onto the sun"
+`;
+
+exports[`hiking explode the ghosts on the sun 4`] = `
+"There's not much to say about the sun at the moment. It's plain, like plain yogurt.
+
+Type:
+BACK - go back to earth
+LOOK - look at the sun (through the safety of the sunship windows)
+THROW_YOGURT - throw the ghost yogurt onto the sun"
+`;
+
+exports[`hiking explode the ghosts on the sun 5`] = `
+"You reach for the ghost yogurt in your pocket, open the hatch of the sunship, and with all your strength, you mightily hurl the yogurt onto the surface of the sun.
+
+The yogurt quickly melts, releasing the dreadful ghosts. The ghosts begin to moan and start turning into smoke.
+
+One of the ghosts looks at you and says, \\"Thank you for releasing us! Our sprits are free now, and we can join our ancestors in ghost heaven.\\"
+
+Then all of the ghosts explode
+
+GAIN 20 POINTS
+
+Type:
+BACK - go back to earth
+LOOK - look at the sun (through the safety of the sunship windows)"
+`;
+
+exports[`hiking explode the ghosts on the sun 6`] = `
+"On the surface of the sun, there is melted yogurt and the remains of exploded ghosts.
+
+Type:
+BACK - go back to earth
+LOOK - look at the sun (through the safety of the sunship windows)"
+`;
+
+exports[`hiking explode the ghosts on the sun 7`] = `
+"Sun Ship, on Earth
+Pretty nice in here. Whatever alien species created this ship did a good job.
+
+The controls here look pretty simple. There's just one big button that says \\"PUSH_ME\\"
+
+Type:
+PUSH_ME - push the control button
+EXIT - jump out of the ship and back to the bridge"
+`;
+
+exports[`hiking explode the ghosts on the sun 8`] = `
+"On the bridge
+At the top of the bridge is a spaceship. It looks like a Sun Ship. The hatch is open, and it looks pretty functional.
+
+You're on the bridge, and can look down at the lake. This lake is beautiful. From up here, the lake seems to have a less grim appearance.
+
+The enemies that were in the lake have been defeated! Their defeated corpses float in the water.
+
+Type:
+SHIP - enter the ship
+LAKE - to go back down to the lake
+FINISH_LINE - from up here on the bridge, you can see the finish line!"
+`;
+
+exports[`hiking explore sun 1`] = `
+"Lake
+This lake is beautiful, but the cloudy sky gives it a grim appearance. This seems to be a place of battle.
+
+There are enemies are in the lake. The shores of the lake are too far away from them to do anything about them, though
+
+Type:
+LANDING - go back the place where you start
+BRIDGE - a giant bridge looks like it crosses right over the entire lake.
+SWIM - swim around in the lake"
+`;
+
+exports[`hiking explore sun 2`] = `
+"On the bridge
+At the top of the bridge is a spaceship. It looks like a Sun Ship. The hatch is open, and it looks pretty functional.
+
+You're on the bridge, and can look down at the lake. This lake is beautiful. From up here, the lake seems to have a less grim appearance.
+
+There are enemies in the lake. At top of this bridge, it is too high up to do anything about it though.
+
+Type:
+SHIP - enter the ship
+LAKE - to go back down to the lake
+FINISH_LINE - from up here on the bridge, you can see the finish line!"
+`;
+
+exports[`hiking explore sun 3`] = `
+"Sun Ship, on Earth
+Pretty nice in here. Whatever alien species created this ship did a good job.
+
+The controls here look pretty simple. There's just one big button that says \\"PUSH_ME\\"
+
+Type:
+PUSH_ME - push the control button
+EXIT - jump out of the ship and back to the bridge"
+`;
+
+exports[`hiking explore sun 4`] = `
+"The Sun, in the Sun Ship
+It's so hot on the Sun! Fear not, it's safe inside the sun ship. It's very bright, but the windows of the sunship make it safe to look at.
+
+Type:
+BACK - go back to earth
+LOOK - look at the sun (through the safety of the sunship windows)"
+`;
+
+exports[`hiking explore sun 5`] = `
+"There's not much to say about the sun at the moment. It's plain, like plain yogurt.
+
+Type:
+BACK - go back to earth
+LOOK - look at the sun (through the safety of the sunship windows)"
+`;
+
+exports[`hiking explore sun 6`] = `
+"Sun Ship, on Earth
+Pretty nice in here. Whatever alien species created this ship did a good job.
+
+The controls here look pretty simple. There's just one big button that says \\"PUSH_ME\\"
+
+Type:
+PUSH_ME - push the control button
+EXIT - jump out of the ship and back to the bridge"
+`;
+
+exports[`hiking explore sun 7`] = `
+"On the bridge
+At the top of the bridge is a spaceship. It looks like a Sun Ship. The hatch is open, and it looks pretty functional.
+
+You're on the bridge, and can look down at the lake. This lake is beautiful. From up here, the lake seems to have a less grim appearance.
+
+There are enemies in the lake. At top of this bridge, it is too high up to do anything about it though.
+
+Type:
+SHIP - enter the ship
+LAKE - to go back down to the lake
+FINISH_LINE - from up here on the bridge, you can see the finish line!"
+`;
+
+exports[`hiking finish the game 1`] = `
+"Finish
+There's a finish line here.
+
+Ready to end the hiking journey?
+
+Type:
+FINISH - leave the hiking journey and save your points
+BRIDGE - back to the bridge"
+`;
+
+exports[`hiking finish the game 2`] = `
+"Not sure
+
+Looks like you're a winner! Turns: 50 Score: 121
+That was fun, Tim!"
+`;
+
+exports[`hiking fly a car back to the lake 1`] = `
+"You have dodged all the magical spray from the water, and are quite dry. You are not feeling magical.
+
+Type:
+ROCKS - go to the place that has a lot of rocks
+MOUNTAIN - try to climb up the really tall mountain.
+ROPE - try to climb the rope
+GET_SPRAYED - allow yourself to get sprayed by the water
+CHECK_DRYNESS - check yourself to see if you are wet or dry from the waterfall spray"
+`;
+
+exports[`hiking fly a car back to the lake 2`] = `
+"You jump around in the water for a bit. The magical wetness covers you and leaves you soaked! You feel magically powerful!
+
+Type:
+ROCKS - go to the place that has a lot of rocks
+MOUNTAIN - try to climb up the really tall mountain.
+ROPE - try to climb the rope
+GET_SPRAYED - allow yourself to get sprayed by the water
+CHECK_DRYNESS - check yourself to see if you are wet or dry from the waterfall spray"
+`;
+
+exports[`hiking fly a car back to the lake 3`] = `
+"Top of the mountain
+It was a long climb up to the really tall top of this mountain, so it feels so good to be up here.
+
+Nearby is a blue house with a green roof. It has a lot of windows and only one door that is open. There is smoke coming out of the chimney.
+
+Type:
+WATERFALL - to go back down to the waterfall
+HOUSE - check out the mountain house up here."
+`;
+
+exports[`hiking fly a car back to the lake 4`] = `
+"Mountain House
+Inside the mountain house, the many windows create an atmosphere of light, but as it is cloudy outside, you find yourself wishing for a little more.
+
+There's a comfy-looking bed, in case you need a rest.
+
+There's a deep hole in the floor. You can't see the bottom, but you could fit yourself inside.
+
+Type:
+OUTSIDE - go out to the top of the mountain
+DOWN - take a look at what's down the hole
+SLEEP - take a rest on the comfy-looking bed"
+`;
+
+exports[`hiking fly a car back to the lake 5`] = `
+"You lay down on the bed and close your eyes. You let your mind wander. Thinking about how pretty the waterfall was, you realize that although you were scared initially you're feeling pretty good now. You think to yourself that this game is pretty awesome, even though it doesn't have a lot of pictures and it's mostly reading.
+
+GAIN A POINT
+
+Type:
+OUTSIDE - go out to the top of the mountain
+DOWN - take a look at what's down the hole
+SLEEP - take a rest on the comfy-looking bed"
+`;
+
+exports[`hiking fly a car back to the lake 6`] = `
+"Under the Mountain House
+The bottom of the hole is so deep, you'd have to use a ladder to get back up.
+
+There's a silver car here, at the start of a long tunnel into darkness. The car is floating slightly, but it seems pretty easy to get in if you want.
+
+Type:
+LADDER - climb the ladder to get back up to the house
+CAR - get into the car and see what's down this tunnel"
+`;
+
+exports[`hiking fly a car back to the lake 7`] = `
+"Mountain House
+Inside the mountain house, the many windows create an atmosphere of light, but as it is cloudy outside, you find yourself wishing for a little more.
+
+There's a comfy-looking bed, in case you need a rest.
+
+There's a deep hole in the floor. You can't see the bottom, but you could fit yourself inside.
+
+Type:
+OUTSIDE - go out to the top of the mountain
+DOWN - take a look at what's down the hole
+SLEEP - take a rest on the comfy-looking bed"
+`;
+
+exports[`hiking fly a car back to the lake 8`] = `
+"You lay down on the bed and close your eyes. You let your mind wander. Thinking about how pretty the waterfall was, you realize that although you were scared initially you're feeling pretty good now. You think to yourself that this game is pretty awesome, even though it doesn't have a lot of pictures and it's mostly reading.
+
+GAIN A POINT
+
+Type:
+OUTSIDE - go out to the top of the mountain
+DOWN - take a look at what's down the hole
+SLEEP - take a rest on the comfy-looking bed"
+`;
+
+exports[`hiking fly a car back to the lake 9`] = `
+"Under the Mountain House
+The bottom of the hole is so deep, you'd have to use a ladder to get back up.
+
+There's a silver car here, at the start of a long tunnel into darkness. The car is floating slightly, but it seems pretty easy to get in if you want.
+
+Type:
+LADDER - climb the ladder to get back up to the house
+CAR - get into the car and see what's down this tunnel"
+`;
+
+exports[`hiking fly a car back to the lake 10`] = `
+"Lake
+This lake is beautiful, but the cloudy sky gives it a grim appearance. This seems to be a place of battle.
+
+There are enemies are in the lake. You're floating over their heads in your flying car.
+
+Type:
+LANDING - go back the place where you start
+BRIDGE - a giant bridge looks like it crosses right over the entire lake.
+SWIM - swim around in the lake
+THROW_APPLES - throw the apples at the enemies"
+`;
+
+exports[`hiking fly a car back to the lake 11`] = `
+"On the bridge
+At the top of the bridge is a spaceship. It looks like a Sun Ship. The hatch is open, and it looks pretty functional.
+
+You're on the bridge, and can look down at the lake. This lake is beautiful. From up here, the lake seems to have a less grim appearance.
+
+There are enemies in the lake. At top of this bridge, it is too high up to do anything about it though.
+
+Type:
+SHIP - enter the ship
+LAKE - to go back down to the lake
+FINISH_LINE - from up here on the bridge, you can see the finish line!"
+`;
+
+exports[`hiking fly a car back to the lake 12`] = `
+"Lake
+This lake is beautiful, but the cloudy sky gives it a grim appearance. This seems to be a place of battle.
+
+There are enemies are in the lake. You're floating over their heads in your flying car.
+
+Type:
+LANDING - go back the place where you start
+BRIDGE - a giant bridge looks like it crosses right over the entire lake.
+SWIM - swim around in the lake
+THROW_APPLES - throw the apples at the enemies"
+`;
+
+exports[`hiking fly a car back to the lake 13`] = `
+"You reach for an apple in your pocket, and give it a mighty hurl. It knocks an enemy head! That enemy becomes defeated!
+
+You continue on in this manner until all enemies are defeated. Their corpses float amidst apples in the water of the lake.
+
+GAIN 35 points
+
+Unfortunately, at this point, the silver flying car breaks down. No more flying car.
+
+Type:
+LANDING - go back the place where you start
+BRIDGE - a giant bridge looks like it crosses right over the entire lake.
+SWIM - swim around in the lake"
+`;
+
+exports[`hiking get sprayed at the waterfall 1`] = `
+"Lake
+This lake is beautiful, but the cloudy sky gives it a grim appearance. This seems to be a place of battle.
+
+There are enemies are in the lake. The shores of the lake are too far away from them to do anything about them, though
+
+Type:
+LANDING - go back the place where you start
+BRIDGE - a giant bridge looks like it crosses right over the entire lake.
+SWIM - swim around in the lake"
+`;
+
+exports[`hiking get sprayed at the waterfall 2`] = `
+"Landing - the starting place
+You can go wherever you want. You're surrounded by trees and you're so scared. It's cloudy outside.
+
+Type:
+LAKE - there's a lake over that way.
+ROCKS - you see some rocks over there."
+`;
+
+exports[`hiking get sprayed at the waterfall 3`] = `
+"Rocky place
+There's rocks here. Be careful! You could trip, or if you horseplay, a rock could fall on your head.
+
+If you are careful, you could cross the rocks to get to a waterfall.
+
+Type:
+LANDING - go back the place where you start
+WATERFALL - check it out, you can see a waterfall"
+`;
+
+exports[`hiking get sprayed at the waterfall 4`] = `
+"Really giant waterfall
+It is so magical here.
+
+This waterfall is at the bottom of the really tall waterfall. There's a path up the mountain, and you can try to see the top of the mountain, but it's so tall that it hurts your neck to look at it.
+
+There's a climbing rope that leads to a really big circle. You're not sure what it is, and you don't feel strong enough to climb up right now.
+
+There's water spraying everywhere!
+
+Type:
+ROCKS - go to the place that has a lot of rocks
+MOUNTAIN - try to climb up the really tall mountain.
+ROPE - try to climb the rope
+GET_SPRAYED - allow yourself to get sprayed by the water
+CHECK_DRYNESS - check yourself to see if you are wet or dry from the waterfall spray"
+`;
+
+exports[`hiking get sprayed at the waterfall 5`] = `
+"You have dodged all the magical spray from the water, and are quite dry. You are not feeling magical.
+
+Type:
+ROCKS - go to the place that has a lot of rocks
+MOUNTAIN - try to climb up the really tall mountain.
+ROPE - try to climb the rope
+GET_SPRAYED - allow yourself to get sprayed by the water
+CHECK_DRYNESS - check yourself to see if you are wet or dry from the waterfall spray"
+`;
+
+exports[`hiking get sprayed at the waterfall 6`] = `
+"You try to climb the rope up to the giant circle, but you're too weak right now!
+
+LOSE A POINT
+
+Type:
+ROCKS - go to the place that has a lot of rocks
+MOUNTAIN - try to climb up the really tall mountain.
+ROPE - try to climb the rope
+GET_SPRAYED - allow yourself to get sprayed by the water
+CHECK_DRYNESS - check yourself to see if you are wet or dry from the waterfall spray"
+`;
+
+exports[`hiking get sprayed at the waterfall 7`] = `
+"You try to hike the trail going straight up the really tall mountain, but you're too weak right now!
+
+LOSE A POINT
+
+Type:
+ROCKS - go to the place that has a lot of rocks
+MOUNTAIN - try to climb up the really tall mountain.
+ROPE - try to climb the rope
+GET_SPRAYED - allow yourself to get sprayed by the water
+CHECK_DRYNESS - check yourself to see if you are wet or dry from the waterfall spray"
+`;
+
+exports[`hiking get sprayed at the waterfall 8`] = `
+"You jump around in the water for a bit. The magical wetness covers you and leaves you soaked! You feel magically powerful!
+
+Type:
+ROCKS - go to the place that has a lot of rocks
+MOUNTAIN - try to climb up the really tall mountain.
+ROPE - try to climb the rope
+GET_SPRAYED - allow yourself to get sprayed by the water
+CHECK_DRYNESS - check yourself to see if you are wet or dry from the waterfall spray"
+`;
+
+exports[`hiking get sprayed at the waterfall 9`] = `
+"You have recently been sprayed by some of the magical spray of the waterfall. You feel magically powerful!
+
+Type:
+ROCKS - go to the place that has a lot of rocks
+MOUNTAIN - try to climb up the really tall mountain.
+ROPE - try to climb the rope
+GET_SPRAYED - allow yourself to get sprayed by the water
+CHECK_DRYNESS - check yourself to see if you are wet or dry from the waterfall spray"
+`;
+
+exports[`hiking purchase some items at the apple shop 1`] = `
+"Apple Store
+This shed is an Apple Store. It looks like a giant, giant circle. Inside there are many, many shelves full of apples. It looks like there are exactly 100 apples.
+
+There's no one in the store, but there's a man out back. He looks inside and sees you, then he comes in and says a friendly hello.
+
+\\"Oh, a customer! Would you like to buy an apple?\\" he says.
+
+Type:
+EXIT - if you want to leave the Apple Store
+LOOK - look at the contents of the Apple Store
+BUY_APPLE - if you'd like to own one of these delicious apples."
+`;
+
+exports[`hiking purchase some items at the apple shop 2`] = `
+"There are exactly 100 apples on the shelves.
+
+Type:
+EXIT - if you want to leave the Apple Store
+LOOK - look at the contents of the Apple Store
+BUY_APPLE - if you'd like to own one of these delicious apples."
+`;
+
+exports[`hiking purchase some items at the apple shop 3`] = `
+"\\"Oh, you'd like to own one of these delicious apples?\\" says the man. \\"Well, you can have one. It costs $1,000.\\"
+
+\\"I have no money!\\" You tell him.
+
+\\"Oh, well, you can still have one apple, for free.\\" he says.
+
+\\"THANKS!\\" you say.
+
+\\"Actually, you can have all of the apples for free.\\" he says.
+
+GAIN 10 POINTS
+
+Type:
+EXIT - if you want to leave the Apple Store
+LOOK - look at the contents of the Apple Store"
+`;
+
+exports[`hiking purchase some items at the apple shop 4`] = `
+"There are no apples on the shelves. There is nothing in the store. It is completely empty. Except for some yogurt. But the yogurt has ghosts in it.
+
+Type:
+EXIT - if you want to leave the Apple Store
+LOOK - look at the contents of the Apple Store
+BUY_YOGURT - purchase the yogurt with ghosts in it."
+`;
+
+exports[`hiking purchase some items at the apple shop 5`] = `
+"Really giant waterfall
+It is so magical here.
+
+This waterfall is at the bottom of the really tall waterfall. There's a path up the mountain, and you can try to see the top of the mountain, but it's so tall that it hurts your neck to look at it.
+
+There's a climbing rope that leads to a really big circle. You're not sure what it is, and you don't feel strong enough to climb up right now.
+
+There's water spraying everywhere!
+
+Type:
+ROCKS - go to the place that has a lot of rocks
+MOUNTAIN - try to climb up the really tall mountain.
+ROPE - try to climb the rope
+GET_SPRAYED - allow yourself to get sprayed by the water
+CHECK_DRYNESS - check yourself to see if you are wet or dry from the waterfall spray"
+`;
+
+exports[`hiking purchase some items at the apple shop 6`] = `
+"You have dodged all the magical spray from the water, and are quite dry. You are not feeling magical.
+
+Type:
+ROCKS - go to the place that has a lot of rocks
+MOUNTAIN - try to climb up the really tall mountain.
+ROPE - try to climb the rope
+GET_SPRAYED - allow yourself to get sprayed by the water
+CHECK_DRYNESS - check yourself to see if you are wet or dry from the waterfall spray"
+`;
+
+exports[`hiking purchase some items at the apple shop 7`] = `
+"You jump around in the water for a bit. The magical wetness covers you and leaves you soaked! You feel magically powerful!
+
+Type:
+ROCKS - go to the place that has a lot of rocks
+MOUNTAIN - try to climb up the really tall mountain.
+ROPE - try to climb the rope
+GET_SPRAYED - allow yourself to get sprayed by the water
+CHECK_DRYNESS - check yourself to see if you are wet or dry from the waterfall spray"
+`;
+
+exports[`hiking purchase some items at the apple shop 8`] = `
+"Apple Store
+This shed is an Apple Store. It looks like a giant, giant circle. Inside there are many, many shelves full of apples. It looks like there are exactly 0 apples.
+
+Type:
+EXIT - if you want to leave the Apple Store
+LOOK - look at the contents of the Apple Store
+BUY_YOGURT - purchase the yogurt with ghosts in it."
+`;
+
+exports[`hiking purchase some items at the apple shop 9`] = `
+"There are no apples on the shelves. There is nothing in the store. It is completely empty. Except for some yogurt. But the yogurt has ghosts in it.
+
+Type:
+EXIT - if you want to leave the Apple Store
+LOOK - look at the contents of the Apple Store
+BUY_YOGURT - purchase the yogurt with ghosts in it."
+`;
+
+exports[`hiking purchase some items at the apple shop 10`] = `
+"\\"Oh, you'd like to own this yogurt?\\" says the man. \\"Well, you can have it for free, because it has ghosts in it.\\"
+
+\\"GHOSTS!?\\" You say.
+
+\\"Yes, ghosts.\\" he says.
+
+\\"THANKS FOR THE GHOSTGURT!\\" you say.
+
+\\"By the way, ghosts dislike being on the sun.\\" he says.
+
+GAIN 6 POINTS
+
+Type:
+EXIT - if you want to leave the Apple Store
+LOOK - look at the contents of the Apple Store"
+`;
+
+exports[`hiking purchase some items at the apple shop 11`] = `
+"The Apple Store is completely empty.
+
+Type:
+EXIT - if you want to leave the Apple Store
+LOOK - look at the contents of the Apple Store"
+`;
+
+exports[`hiking purchase some items at the apple shop 12`] = `
+"Really giant waterfall
+It is so magical here.
+
+This waterfall is at the bottom of the really tall waterfall. There's a path up the mountain, and you can try to see the top of the mountain, but it's so tall that it hurts your neck to look at it.
+
+There's a climbing rope that leads to a really big circle. You're not sure what it is, and you don't feel strong enough to climb up right now.
+
+There's water spraying everywhere!
+
+Type:
+ROCKS - go to the place that has a lot of rocks
+MOUNTAIN - try to climb up the really tall mountain.
+ROPE - try to climb the rope
+GET_SPRAYED - allow yourself to get sprayed by the water
+CHECK_DRYNESS - check yourself to see if you are wet or dry from the waterfall spray"
+`;
+
+exports[`hiking score 1`] = `"The average score of the games you plaid are : NaN"`;
+
+exports[`hiking swim fail and start over 1`] = `
+"Landing - the starting place
+You can go wherever you want. You're surrounded by trees and you're so scared. It's cloudy outside.
+
+Type:
+LAKE - there's a lake over that way.
+ROCKS - you see some rocks over there."
+`;
+
+exports[`hiking swim fail and start over 2`] = `
+"Lake
+This lake is beautiful, but the cloudy sky gives it a grim appearance. This seems to be a place of battle.
+
+There are enemies are in the lake. The shores of the lake are too far away from them to do anything about them, though
+
+Type:
+LANDING - go back the place where you start
+BRIDGE - a giant bridge looks like it crosses right over the entire lake.
+SWIM - swim around in the lake"
+`;
+
+exports[`hiking swim fail and start over 3`] = `
+"As soon as you dip one toe in the water, the enemies come up and defeat you!
+
+LOSE 50 points
+
+YOU LOST. You lost too many points!
+
+Goodnight, sweet Tim! Better luck next time! Turns: 1 Score: 0
+That was fun, Tim!"
+`;
+
+exports[`hiking swim fail and start over 4`] = `
+"Landing - the starting place
+You can go wherever you want. You're surrounded by trees and you're so scared. It's cloudy outside.
+
+Type:
+LAKE - there's a lake over that way.
+ROCKS - you see some rocks over there."
+`;

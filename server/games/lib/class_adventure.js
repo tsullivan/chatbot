@@ -23,7 +23,6 @@ class Adventure extends ChatGame {
   init() {
     this.score = 50;
     this.turns = 0;
-    this.currentLocation = this.locations.startLocation;
   }
 
   setLocation(location) {
@@ -65,7 +64,7 @@ class Adventure extends ChatGame {
   }
 
   getWelcome() {
-    return this.getNext(this.currentLocation.getDescriptionInternal());
+    return this.getNext(this.currentLocation.getDescriptionInternal(this));
   }
 }
 
