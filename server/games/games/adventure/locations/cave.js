@@ -15,7 +15,7 @@ class CaveLocation extends Location {
         Probably because of the tiny village of tiny dancing skeleton hands. So
         cute! So tiny! So skeleton handsy!`;
   }
-  setKeywords(game) {
+  setKeywords() {
     const p = [
       snl`The dance is beautiful, with flowing, synchronized forms.
         However, as hands have no ears, and skeleton hands are the forms that
@@ -27,12 +27,13 @@ class CaveLocation extends Location {
         night and you're still tired.`,
       'GAIN A POINT'
     ];
-    if (!this.hasDanced()) {
+    if (!this._danced) {
       this.addKeyword(
         'DANCE',
         'DANCE to dance with the tiny skeleton hands',
         () => {
-          this.didDance(game);
+          this._danced = true;
+          this.removeKeyword('DANCE');
           return new LocationKeywordResponse({
             text: p.join('\n\n'),
             changeScore: 1 // add a point for the heck of it
@@ -56,8 +57,7 @@ class CaveLocation extends Location {
           if that's what it really is, because this game is very limited. The
           crank handle to open or close castle windows might just be for
           decoration. That would be too bad.`);
-
-        this.handleWasSeen(game);
+        this._handleSeen = true;
       }
 
       return new LocationKeywordResponse({
@@ -65,12 +65,15 @@ class CaveLocation extends Location {
       });
     });
 
-    if (this.wasHandleSeen() && this.hasFloorItem(WINDOW_HANDLE)) {
+    if (this._handleSeen && this.hasFloorItem(WINDOW_HANDLE)) {
       this.addKeyword(
         'TAKE_HANDLE',
         'TAKE_HANDLE to take the handle and put it in your pocket where it will be safe',
         () => {
-          this.handleWasTaken(game);
+          this.game.addToInventory(WINDOW_HANDLE);
+          this.removeFloorItem(WINDOW_HANDLE);
+          this.removeKeyword('TAKE_HANDLE');
+
           return new LocationKeywordResponse({
             text: snl`Can you handle the handle? I guess you can. The handle
               has been taken by you.`,
@@ -81,28 +84,6 @@ class CaveLocation extends Location {
     }
 
     this.addKeyword('EXIT', 'EXIT to get out of the cheery smelly old cave.', () => this.followExit(WEST));
-  }
-
-  hasDanced() {
-    return this._danced;
-  }
-  didDance(game) {
-    this._danced = true;
-    this.removeKeyword('DANCE');
-    this.updateKeywords(game);
-  }
-  wasHandleSeen() {
-    return this._handleSeen;
-  }
-  handleWasSeen(game) {
-    this._handleSeen = true;
-    this.updateKeywords(game);
-  }
-  handleWasTaken(game) {
-    this.game.addToInventory(WINDOW_HANDLE);
-    this.removeFloorItem(WINDOW_HANDLE);
-    this.removeKeyword('TAKE_HANDLE');
-    this.updateKeywords(game);
   }
 }
 

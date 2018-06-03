@@ -112,6 +112,7 @@ class Location {
     if (this.keywords.has(input)) {
       const { fn } = this.keywords.get(input);
       response = LocationKeywordResponse.getResponseFromHandler(fn, this.game);
+      this.updateKeywords(this.game); // handler can change available keywords
     } else {
       response = new LocationKeywordResponse({
         text: `ERROR! LOSE 2 POINTS`,

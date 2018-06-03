@@ -64,7 +64,7 @@ class CastleLocation extends Location {
           text += snl`Oh, also you notice that each window has a little socket in
             one corner, and that looks like the handle you're carrying in your pocket
             would fit in it! What do you say, want to give it a whirl???`;
-          this.socketsWereSeen();
+          this._socketsSeen = true;
         }
       } else {
         text = snl`It's nice and quiet here. The windows are closed and no
@@ -73,7 +73,7 @@ class CastleLocation extends Location {
       return new LocationKeywordResponse({ text });
     });
 
-    if (game.inInventory(WINDOW_HANDLE) && this.wereSocketsSeen()) {
+    if (game.inInventory(WINDOW_HANDLE) && this._socketsSeen) {
       this.addKeyword(
         'USE_WINDOW_HANDLE',
         snl`USE_WINDOW_HANDLE see if the handle in your pocket does anything
@@ -98,14 +98,6 @@ class CastleLocation extends Location {
     }
 
     this.addKeyword('EXIT', 'EXIT to leave the beautful great hall and the castle.', () => this.followExit(SOUTH));
-  }
-
-  wereSocketsSeen() {
-    return this._socketsSeen;
-  }
-  socketsWereSeen() {
-    this._socketsSeen = true;
-    this.updateKeywords(this.game);
   }
 }
 
