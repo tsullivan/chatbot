@@ -16,15 +16,20 @@ class Location {
     throw new Error('setKeywords must be overridden in ' + this.name);
   }
 
-  followExit(direction) {
+  followExit(direction, prefix = '') {
     if (this.exits.has(direction)) {
       const exit = this.exits.get(direction);
       this.game.setLocation(exit);
 
       exit.updateKeywords(this.game);
 
+      const ps = [ exit.getDescriptionInternal(this.game) ];
+      if (prefix !== '') {
+        ps.unshift(prefix);
+      }
+
       return new LocationKeywordResponse({
-        text: exit.getDescriptionInternal(this.game)
+        text: ps.join('\n\n')
       });
     }
 
@@ -56,16 +61,17 @@ class Location {
   // get the instructions from the keywords
   getInstructions() {
     const instructions = [];
-    const iterator = this.keywords.values();
+    const iterator = this.keywords.entries();
     let loopDone = false;
 
     while (!loopDone) {
-      const { value: instruction, done } = iterator.next();
+      const { value, done } = iterator.next();
       loopDone = done;
       if (loopDone) {
         break;
       } else {
-        instructions.push(instruction.text);
+        const [ keyword, { text } ] = value;
+        instructions.push(`${keyword}: ${text}`);
       }
     }
 
@@ -77,9 +83,15 @@ class Location {
    * fn {Function} function that must return LocationKeywordResponse
    */
   addKeyword(keyword, text, fn) {
+    if (typeof keyword === undefined) {
+      throw new Error('Keyword was undefined');
+    }
     this.keywords.set(keyword, { text, fn });
   }
   removeKeyword(keyword) {
+    if (typeof keyword === undefined) {
+      throw new Error('Keyword was undefined');
+    }
     this.keywords.delete(keyword);
   }
   clearKeywords() {

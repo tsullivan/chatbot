@@ -23,9 +23,9 @@ class LakeLocation extends Location {
   }
 
   setKeywords(game) {
-    this.addKeyword('LANDING', 'LANDING - go back the place where you start', () => this.followExit(SOUTH));
-    this.addKeyword('BRIDGE', `BRIDGE - a giant bridge looks like it crosses right over the entire lake.`, () => this.followExit(NORTH));
-    this.addKeyword('SWIM', 'SWIM - swim around in the lake', () => {
+    this.addKeyword('ROCKS', 'Go to a place with a lot of rocks', () => this.followExit(SOUTH));
+    this.addKeyword('BRIDGE', `A giant bridge looks like it crosses right over the entire lake.`, () => this.followExit(NORTH));
+    this.addKeyword('SWIM', 'Swim around in the lake', () => {
       if (game.inInventory(ENEMIES)) {
         const ps = [
           snl`As soon as you dip one toe in the water, the enemies come up and
@@ -52,7 +52,7 @@ class LakeLocation extends Location {
     });
 
     if (game.inInventory(CAR) && game.inInventory(APPLES)) {
-      this.addKeyword('THROW_APPLES', 'THROW_APPLES - throw the apples at the enemies', () => {
+      this.addKeyword('THROW_APPLES', 'Throw the apples at the enemies', () => {
         game.deleteInventory(APPLES);
         game.deleteInventory(ENEMIES);
         game.deleteInventory(CAR);

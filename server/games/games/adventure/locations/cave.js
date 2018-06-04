@@ -31,7 +31,7 @@ class CaveLocation extends Location {
     if (!this._danced) {
       this.addKeyword(
         'DANCE',
-        'DANCE to dance with the tiny skeleton hands',
+        'Dance with the tiny skeleton hands',
         () => {
           this._danced = true;
           this.removeKeyword('DANCE');
@@ -43,7 +43,7 @@ class CaveLocation extends Location {
       );
     }
 
-    this.addKeyword('LOOK', 'LOOK to look closer at the tiny village', () => {
+    this.addKeyword('LOOK', 'Look closer at the tiny village', () => {
       const p = [];
       p.push(snl`The tiny village has a tiny hotel with tiny beds made
         for resting upon by tiny skeleton hands. It warms you heart to see, but
@@ -69,7 +69,7 @@ class CaveLocation extends Location {
     if (this._handleSeen && this.hasFloorItem(WINDOW_HANDLE)) {
       this.addKeyword(
         'TAKE_HANDLE',
-        'TAKE_HANDLE to take the handle and put it in your pocket where it will be safe',
+        'Take the handle and put it in your pocket where it will be safe',
         () => {
           this.game.addToInventory(WINDOW_HANDLE);
           this.removeFloorItem(WINDOW_HANDLE);
@@ -84,7 +84,11 @@ class CaveLocation extends Location {
       );
     }
 
-    this.addKeyword('EXIT', 'EXIT to get out of the cheery smelly old cave.', () => this.followExit(WEST));
+    this.addKeyword(
+      'EXIT',
+      'Get out of the cheery smelly old cave.',
+      () => this.followExit(WEST)
+    );
   }
 }
 

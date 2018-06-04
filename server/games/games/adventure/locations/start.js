@@ -14,8 +14,8 @@ class StartLocation extends Location {
   }
 
   setKeywords() {
-    this.addKeyword('CAVE', 'CAVE to go down into the cave', () => this.followExit(EAST));
-    this.addKeyword('CASTLE', 'CASTLE to head up to the castle.', () => this.followExit(NORTH));
+    this.addKeyword('CAVE', 'Go down into the cave', () => this.followExit(EAST));
+    this.addKeyword('CASTLE', 'Head up to the castle.', () => this.followExit(NORTH));
   }
 }
 

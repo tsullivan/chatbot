@@ -16,9 +16,12 @@ class TheSunLocation extends Location {
   // walk
 
   setKeywords(game) {
-    this.addKeyword('BACK', `BACK - go back to earth`, () => this.followExit(DOWN));
-
-    this.addKeyword('LOOK', `LOOK - look at the sun (through the safety of the sunship windows)`, () => {
+    this.addKeyword('BACK', `Go back to Earth`, () => {
+      const px = snl`KSHOOOOM. Back down to Earth you go in the sun ship. Hope
+        you enjoyed your stay on the sun! Come back soon!`;
+      return this.followExit(DOWN, px);
+    });
+    this.addKeyword('LOOK', `Look at the sun (through the safety of the sunship windows)`, () => {
       if (this._hasGhosts) {
         return new LocationKeywordResponse({
           text: snl`On the surface of the sun, there is melted yogurt and the
@@ -33,7 +36,7 @@ class TheSunLocation extends Location {
     });
 
     if (game.inInventory(YOGURT)) {
-      this.addKeyword('THROW_YOGURT', `THROW_YOGURT - throw the ghost yogurt onto the sun`, () => {
+      this.addKeyword('THROW_YOGURT', `Throw the ghost yogurt onto the sun`, () => {
         game.deleteInventory(YOGURT);
         this.removeKeyword('THROW_YOGURT');
         this._hasGhosts = true;

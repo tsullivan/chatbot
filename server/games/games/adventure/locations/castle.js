@@ -19,7 +19,7 @@ class CastleLocation extends Location {
   }
 
   setKeywords(game) {
-    this.addKeyword('SLEEP', 'SLEEP to sleep on the comfy bed', () => {
+    this.addKeyword('SLEEP', 'Sleep on the comfy bed', () => {
       if (this._windowsOpen) {
         const p = [
           snl`There is too much light coming in through the open-air
@@ -53,7 +53,7 @@ class CastleLocation extends Location {
       }
     });
 
-    this.addKeyword('LOOK', 'LOOK to look closer at the open-air windows', () => {
+    this.addKeyword('LOOK', 'Look closer at the open-air windows', () => {
       let text;
       if (this._windowsOpen) {
         text = snl`They're nice windows and all, but it's so bright in
@@ -76,8 +76,8 @@ class CastleLocation extends Location {
     if (game.inInventory(WINDOW_HANDLE) && this._socketsSeen) {
       this.addKeyword(
         'USE_WINDOW_HANDLE',
-        snl`USE_WINDOW_HANDLE see if the handle in your pocket does anything
-          against the sockets on the open windows in here`,
+        snl`See if the handle in your pocket does anything against the sockets
+          on the open windows in here`,
         () => {
           this._windowsOpen = false;
           game.deleteInventory(WINDOW_HANDLE);
@@ -97,7 +97,7 @@ class CastleLocation extends Location {
         });
     }
 
-    this.addKeyword('EXIT', 'EXIT to leave the beautful great hall and the castle.', () => this.followExit(SOUTH));
+    this.addKeyword('EXIT', 'Leave the beautful great hall and the castle.', () => this.followExit(SOUTH));
   }
 }
 

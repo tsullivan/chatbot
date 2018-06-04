@@ -29,13 +29,16 @@ function getLocations(game) {
 
   start.addExit({
     location: lake,
-    exit: NORTH,
-    inverseExit: SOUTH
+    exit: NORTH
   });
   start.addExit({
     location: rocks,
-    exit: WEST,
-    inverseExit: EAST
+    exit: WEST
+  });
+  rocks.addExit({
+    location: lake, // no getting back to start
+    exit: EAST,
+    inverseExit: SOUTH, // trail bends
   });
   rocks.addExit({
     location: waterfall,

@@ -13,8 +13,11 @@ class StartLocation extends Location {
   }
 
   setKeywords(/*game*/) {
-    this.addKeyword('LAKE', `LAKE - there's a lake over that way.`, () => this.followExit(NORTH));
-    this.addKeyword('ROCKS', 'ROCKS - you see some rocks over there.', () => this.followExit(WEST));
+    const pxLake = snl`Your hiking adventure begins! Off to the lake we go.`;
+    const pxRocks = snl`Your hiking adventure begins! Starting out with a
+      scrambly feeling, you make your way over to the rocks.`;
+    this.addKeyword('LAKE', `You can see a lake in one direction. It looks pretty nice.`, () => this.followExit(NORTH, pxLake));
+    this.addKeyword('ROCKS', `You can see precarious rocks on the trail in another direction. They look scrambly.`, () => this.followExit(WEST, pxRocks));
   }
 }
 

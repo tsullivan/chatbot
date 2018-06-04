@@ -24,8 +24,13 @@ class AppleShedLocation extends Location {
   }
 
   setKeywords(game) {
-    this.addKeyword('EXIT', `EXIT - if you want to leave the Apple Store`, () => this.followExit(EAST));
-    this.addKeyword('LOOK', `LOOK - look at the contents of the Apple Store`, () => {
+    let pxEx;
+    if (!game.inInventory(APPLES) || !game.inInventory(YOGURT)) {
+      pxEx = snl`"Thanks for coming!" says the business man. "I still have a few items left for sale if
+        you're ever interested!"`;
+    }
+    this.addKeyword('EXIT', `If you want to leave the Apple Store`, () => this.followExit(EAST, pxEx));
+    this.addKeyword('LOOK', `Look at the contents of the Apple Store`, () => {
       let resp;
       if (this._numApples > 0) {
         resp = new LocationKeywordResponse({
@@ -48,7 +53,7 @@ class AppleShedLocation extends Location {
     });
 
     if (!game.inInventory(APPLES)) {
-      this.addKeyword('BUY_APPLE', `BUY_APPLE - if you'd like to own one of these delicious apples.`, () => {
+      this.addKeyword('BUY_APPLE', `If you'd like to own one of these delicious apples.`, () => {
         this._numApples = 0;
         game.addToInventory(APPLES);
         this.removeKeyword('BUY_APPLE');
@@ -66,7 +71,7 @@ class AppleShedLocation extends Location {
         });
       });
     } else if (this._yogurtSeen && this._hasYogurt) {
-      this.addKeyword('BUY_YOGURT', `BUY_YOGURT - purchase the yogurt with ghosts in it.`, () => {
+      this.addKeyword('BUY_YOGURT', `Purchase the yogurt with ghosts in it.`, () => {
         game.addToInventory(YOGURT);
         this.removeKeyword('BUY_YOGURT');
         this._hasYogurt = false;

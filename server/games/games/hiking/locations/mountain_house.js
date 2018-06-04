@@ -2,6 +2,12 @@ const snl = require('strip-newlines');
 const { Location, LocationKeywordResponse } = require('../../../lib');
 const { WEST, DOWN } = require('../constants');
 
+const KEYWORDS = {
+  exit: 'OUTSIDE',
+  down: 'DOWN_THE_HOLE',
+  sleep: 'SLEEP',
+};
+
 class MountainHouseLocation extends Location {
   constructor(game) {
     super({ game, name: 'Mountain House' });
@@ -18,10 +24,17 @@ class MountainHouseLocation extends Location {
     return ps.join('\n\n');
   }
 
-  setKeywords(/*game*/) {
-    this.addKeyword('OUTSIDE', 'OUTSIDE - go out to the top of the mountain', () => this.followExit(WEST));
-    this.addKeyword('DOWN', `DOWN - take a look at what's down the hole`, () => this.followExit(DOWN));
-    this.addKeyword('SLEEP', `SLEEP - take a rest on the comfy-looking bed`, () => {
+  setKeywords(game) {
+    const { exit, down, sleep } = KEYWORDS;
+
+    this.addKeyword(exit, `Go out to the top of the mountain`, () => this.followExit(WEST));
+    this.addKeyword(
+      down,
+      `Take a look at what's down the hole`,
+      () => this.followExit(DOWN, snl`Fortunately, there's a ladder leading
+      straight down the hole, so you don't have to jump down an unknown
+      distance through complete darkness.`));
+    this.addKeyword(sleep, `Take a rest on the comfy-looking bed`, () => {
       const ps = [
         snl`You lay down on the bed and close your eyes. You let your mind
         wander. Thinking about how pretty the waterfall was, you realize that
@@ -31,9 +44,25 @@ class MountainHouseLocation extends Location {
         // list the inventory
         `GAIN A POINT`
       ];
+
+      // stats stuff
+      const learnThingsIndex = ps.length;
+      ps[learnThingsIndex] = `You learn some things:
+- Your score is ${game.score}
+- You've taken ${game.turns} turns`;
+
+      // restore some points
+      let changeScore = 0;
+      const scoreDeficit = 50 - game.score;
+      if(scoreDeficit > 0) {
+        changeScore = scoreDeficit; // bump them up to 50 again
+        ps[learnThingsIndex] += '\n' + snl`- You get ${scoreDeficit} more
+          points from sleeping right now.`;
+      }
+
       return new LocationKeywordResponse({
         text: ps.join('\n\n'),
-        changeScore: 1
+        changeScore
       });
     });
   }

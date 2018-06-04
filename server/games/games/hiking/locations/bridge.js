@@ -25,9 +25,16 @@ class BridgeLocation extends Location {
   }
 
   setKeywords(/*game*/) {
-    this.addKeyword('SHIP', `SHIP - enter the ship`, () => this.followExit(WEST));
-    this.addKeyword('LAKE', `LAKE - to go back down to the lake`, () => this.followExit(SOUTH));
-    this.addKeyword('FINISH_LINE', 'FINISH_LINE - from up here on the bridge, you can see the finish line!', () => this.followExit(NORTH));
+    this.addKeyword('SHIP', `Enter the ship`, () => this.followExit(WEST));
+    this.addKeyword(
+      'LAKE',
+      `Go back down to the lake`,
+      () => this.followExit(SOUTH, snl`Down, down, down you go. Down the
+        bridge, bridge, bridge to the lake, lake, lake.`));
+    this.addKeyword(
+      'FINISH_LINE',
+      'From up here on the bridge, you can see the finish line of this entire game!',
+      () => this.followExit(NORTH, 'Leaving so soon?'));
   }
 }
 

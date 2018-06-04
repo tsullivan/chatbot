@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint & npm run jest",
+    "test": "yarn run lint & yarn run jest",
     "lint": "eslint .",
     "jest": "NODE_ENV=test jest ./test/*.test.js",
     "start": "node index.js",

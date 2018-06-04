@@ -9,20 +9,21 @@ class FinishLocation extends Location {
 
   getDescription() {
     const ps = [
-      snl`There's a finish line here.`,
-      snl`Ready to end the hiking journey?`,
+      snl`There's a finish line here. There's really not much else to say about
+        this place.`,
+      `Ready to end the hiking journey?`,
     ];
     return ps.join('\n\n');
   }
 
-  // bathe
-  // trip
-
   setKeywords(/*game*/) {
-    this.addKeyword('FINISH', `FINISH - leave the hiking journey and save your points`, () => {
+    this.addKeyword('FINISH', `Leave the hiking journey and save your points`, () => {
       return new LocationKeywordResponse({ isDone: true });
     });
-    this.addKeyword('BRIDGE', `BRIDGE - back to the bridge`, () => this.followExit(SOUTH));
+    this.addKeyword(
+      'BRIDGE',
+      `BRIDGE - go back to the bridge, and keep playing the hiking game`,
+      () => this.followExit(SOUTH));
   }
 }
 
