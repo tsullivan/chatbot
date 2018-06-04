@@ -90,7 +90,7 @@ CAVE to go down into the cave
 CASTLE to head up to the castle."
 `;
 
-exports[`adventure score 1`] = `"The average score of the games you plaid are : NaN"`;
+exports[`adventure score 1`] = `"The average score of the games you plaid are : 47"`;
 
 exports[`adventure start 1`] = `
 "Dark Forest

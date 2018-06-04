@@ -20,7 +20,7 @@ class AdventureGame extends Adventure {
         and die.`,
       `Goodnight, sweet ${this.playerName}! Bye! Turns: ${this.turns} Score: ${this.score}`
     ];
-    this.saveScore();
+    this.saveScore(this.score);
     return this.yesDone(p.join('\n\n'));
   }
 
@@ -31,7 +31,7 @@ class AdventureGame extends Adventure {
         good! I wouldn't know. I've never slept before. So... tired...`,
       `Goodnight, sweet ${this.playerName}! Bye! Turns: ${this.turns} Score: ${this.score}`
     ];
-    this.saveScore();
+    this.saveScore(this.score);
     return this.yesDone(p.join('\n\n'));
   }
 }

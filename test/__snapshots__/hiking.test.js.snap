@@ -612,7 +612,7 @@ GET_SPRAYED - allow yourself to get sprayed by the water
 CHECK_DRYNESS - check yourself to see if you are wet or dry from the waterfall spray"
 `;
 
-exports[`hiking score 1`] = `"The average score of the games you plaid are : NaN"`;
+exports[`hiking score 1`] = `"The average score of the games you plaid are : 60.5"`;
 
 exports[`hiking swim fail and start over 1`] = `
 "Landing - the starting place
@@ -642,7 +642,7 @@ LOSE 50 points
 
 YOU LOST. You lost too many points!
 
-Goodnight, sweet Tim! Better luck next time! Turns: 1 Score: 0
+See ya, Tim! Better luck next time! Turns: 1 Score: 0
 That was fun, Tim!"
 `;
 

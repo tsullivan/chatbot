@@ -18,10 +18,10 @@ class HikingGame extends Adventure {
     const p = [
       response,
       'YOU LOST. You lost too many points!',
-      snl`Goodnight, sweet ${this.playerName}! Better luck next time! Turns:
+      snl`See ya, ${this.playerName}! Better luck next time! Turns:
         ${this.turns} Score: ${this.score}`
     ];
-    this.saveScore();
+    this.saveScore(this.score);
     return this.yesDone(p.join('\n\n'));
   }
 
@@ -30,7 +30,7 @@ class HikingGame extends Adventure {
       response,
       `Looks like you're a winner! Turns: ${this.turns} Score: ${this.score}`
     ];
-    this.saveScore();
+    this.saveScore(this.score);
     return this.yesDone(p.join('\n\n'));
   }
 }
