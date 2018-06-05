@@ -13,15 +13,10 @@ class RandomMessage extends ResponseMessage {
 
   makeResponse(chat) {
     const sayImpromptu = () => new Impromptu(null, chat).getResponse();
-    const sayFoodOrNonsense = () => oneOf([getFood, () => getNonsense(this.userMessage, [getFood])]);
+    const sayFoodOrNonsense = () =>
+      oneOf([getFood, () => getNonsense(this.userMessage, [getFood])]);
 
-    return this.plain(
-      oneOf([
-        getNormal,
-        sayImpromptu,
-        sayFoodOrNonsense,
-      ])
-    );
+    return this.plain(oneOf([getNormal, sayImpromptu, sayFoodOrNonsense]));
   }
 }
 

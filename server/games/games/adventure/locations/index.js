@@ -11,20 +11,19 @@ function getLocations(game) {
   startLocation.addExit({
     location: caveLocation,
     exit: EAST,
-    inverseExit: WEST
+    inverseExit: WEST,
   });
   startLocation.addExit({
     location: castleLocation,
     exit: NORTH,
-    inverseExit: SOUTH
+    inverseExit: SOUTH,
   });
 
   return {
     startLocation,
     caveLocation,
-    castleLocation
+    castleLocation,
   };
 }
 
 module.exports = { getLocations };
-

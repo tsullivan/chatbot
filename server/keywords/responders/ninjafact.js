@@ -8,10 +8,7 @@ class NinjaFactResponder extends DictionaryResponder {
   }
 
   testMatch(input) {
-    this.setParsedRequestedDictionaryItem(
-      input,
-      /^ninjafact ([1-9]+[0-9]?)$/
-    );
+    this.setParsedRequestedDictionaryItem(input, /^ninjafact ([1-9]+[0-9]?)$/);
     return input.match(/^ninjafact\b/);
   }
 
@@ -20,7 +17,7 @@ class NinjaFactResponder extends DictionaryResponder {
       prefix(index) {
         return `Here is ninja fact number ${index}`;
       },
-      dictionary: ninjafacts
+      dictionary: ninjafacts,
     });
   }
 }

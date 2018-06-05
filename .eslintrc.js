@@ -3,17 +3,16 @@ module.exports = {
   env: {
     node: true,
     commonjs: true,
-    es6: true
+    es6: true,
   },
-  extends: 'eslint:recommended',
+  extends: ['eslint:recommended', 'prettier'],
+  plugins: ['prettier'],
   rules: {
-    'no-unused-vars': [
-      'error',
-      { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }
-    ],
+    'prettier/prettier': 2,
+    'no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single', { allowTemplateLiterals: true }],
-    semi: ['error', 'always']
-  }
+    semi: ['error', 'always'],
+  },
 };

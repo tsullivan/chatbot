@@ -12,7 +12,7 @@ function initSession(app) {
         secret: sessionSecret,
         cookie: { maxAge: 60000 },
         resave: true,
-        saveUninitialized: true
+        saveUninitialized: true,
       })
     );
 
@@ -24,9 +24,7 @@ function initSession(app) {
         req.session.chat = chat.getResumed(req.session);
         // resume game
         if (req.session.chat.game !== null) {
-          const game = new games[req.session.chat.game.name].Game(
-            req.session.chat
-          );
+          const game = new games[req.session.chat.game.name].Game(req.session.chat);
           game.resume(req.session.chat.game);
           req.session.chat.game = game;
         }

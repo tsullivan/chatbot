@@ -45,7 +45,7 @@ const normalLogs = [
   'you sound repetitive',
   `you're scaring me`,
   'yuck!',
-  'yummy!'
+  'yummy!',
 ];
 
 module.exports = { getNormal: getNormal(normalLogs) };

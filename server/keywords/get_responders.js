@@ -3,7 +3,7 @@ function getFactResponders() {
     starwarsfact: require('./responders/starwarsfact'),
     superherofact: require('./responders/superherofact'),
     pokemonfact: require('./responders/pokemonfact'),
-    ninjafact: require('./responders/ninjafact')
+    ninjafact: require('./responders/ninjafact'),
   };
 }
 function getResponders() {

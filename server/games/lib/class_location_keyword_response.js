@@ -23,7 +23,7 @@ class LocationKeywordResponse {
     return {
       response: text,
       changeScore,
-      isDone
+      isDone,
     };
   }
 }

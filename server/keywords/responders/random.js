@@ -23,7 +23,6 @@ class RandomResponder extends KeywordResponder {
     return input.match(/^random\b/);
   }
 
-
   justDont() {
     return `Just don't say "random". I'm not sure what will happen!`;
   }

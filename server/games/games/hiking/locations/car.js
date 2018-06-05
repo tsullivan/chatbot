@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location/*, LocationKeywordResponse*/ } = require('../../../lib');
+const { Location /*, LocationKeywordResponse*/ } = require('../../../lib');
 const { UP, DOWN, CAR } = require('../constants');
 
 class CarLocation extends Location {
@@ -20,22 +20,18 @@ class CarLocation extends Location {
   }
 
   setKeywords(game) {
-    this.addKeyword(
-      'LADDER',
-      `Climb the ladder to get back up to the house`,
-      () => this.followExit(UP, 'Climb, climb, climb.'));
-    this.addKeyword(
-      'CAR',
-      `Get into the car and see what's down this tunnel`,
-      () => {
-        game.addToInventory(CAR);
-        const px = snl`You hop in the car and buckle in. As you put your hands on
+    this.addKeyword('LADDER', `Climb the ladder to get back up to the house`, () =>
+      this.followExit(UP, 'Climb, climb, climb.')
+    );
+    this.addKeyword('CAR', `Get into the car and see what's down this tunnel`, () => {
+      game.addToInventory(CAR);
+      const px = snl`You hop in the car and buckle in. As you put your hands on
         hthe steering wheel, the car floats up higher and takes off down the dark
         htunnel! You zoom and zoom through it as the light of the outside comes
         hcloser and closer. There is a tremendous WHOOSH sound as the car flies
         hout of the side of the mountain! You're now flying over the lake that you
         hpassed by on the beginning of this hiking journey.`;
-        return this.followExit(DOWN, px);
+      return this.followExit(DOWN, px);
 
       /* FIXME this doesn't work
         return new LocationKeywordResponse({
@@ -43,7 +39,7 @@ class CarLocation extends Location {
           changeScore: 5
         });
       */
-      });
+    });
   }
 }
 

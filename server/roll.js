@@ -9,7 +9,7 @@ function roll(numSides) {
     },
     atLeast(checkNum) {
       return result >= checkNum;
-    }
+    },
   };
 }
 

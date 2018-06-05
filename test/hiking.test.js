@@ -3,7 +3,9 @@ const request = require('supertest');
 const { handshake } = require('./handshake');
 
 const send = message => {
-  return request(app).post('/chat').send({ format: 'user', message });
+  return request(app)
+    .post('/chat')
+    .send({ format: 'user', message });
 };
 
 const checkResponses = resps => {

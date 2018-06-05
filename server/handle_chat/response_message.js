@@ -22,7 +22,7 @@ class ResponseMessage {
   plain(message) {
     this.response = {
       format: 'plain',
-      message
+      message,
     };
 
     return this.response;

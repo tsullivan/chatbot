@@ -8,8 +8,10 @@ class LakeLocation extends Location {
   }
 
   getDescription(game) {
-    const ps = [ snl`This lake is beautiful, but the cloudy sky gives it a grim
-      appearance. This seems to be a place of battle.` ];
+    const ps = [
+      snl`This lake is beautiful, but the cloudy sky gives it a grim
+      appearance. This seems to be a place of battle.`,
+    ];
     if (game.inInventory(ENEMIES) && !game.inInventory(CAR)) {
       ps.push(snl`There are enemies are in the lake. The shores of the lake are
         too far away from them to do anything about them, though`);
@@ -24,29 +26,33 @@ class LakeLocation extends Location {
 
   setKeywords(game) {
     this.addKeyword('ROCKS', 'Go to a place with a lot of rocks', () => this.followExit(SOUTH));
-    this.addKeyword('BRIDGE', `A giant bridge looks like it crosses right over the entire lake.`, () => this.followExit(NORTH));
+    this.addKeyword(
+      'BRIDGE',
+      `A giant bridge looks like it crosses right over the entire lake.`,
+      () => this.followExit(NORTH)
+    );
     this.addKeyword('SWIM', 'Swim around in the lake', () => {
       if (game.inInventory(ENEMIES)) {
         const ps = [
           snl`As soon as you dip one toe in the water, the enemies come up and
             defeat you!`,
-          'LOSE 50 points'
+          'LOSE 50 points',
         ];
         return new LocationKeywordResponse({
           text: ps.join('\n\n'),
           changeScore: -50,
-          isDone: true
+          isDone: true,
         });
       } else {
         const ps = [
           snl`You swim around for a little bit, but the floating corpses
             of the defeated enemies gross you out and you get out of the water
             after a little bit.`,
-          'LOSE A POINT'
+          'LOSE A POINT',
         ];
         return new LocationKeywordResponse({
           text: ps.join('\n\n'),
-          changeScore: -1
+          changeScore: -1,
         });
       }
     });
@@ -68,7 +74,7 @@ class LakeLocation extends Location {
         ];
         return new LocationKeywordResponse({
           text: ps.join('\n\n'),
-          changeScore: 35
+          changeScore: 35,
         });
       });
     }

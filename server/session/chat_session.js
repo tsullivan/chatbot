@@ -11,8 +11,8 @@ const proto = {
   scores: [],
   messages: {
     history: [],
-    next: []
-  }
+    next: [],
+  },
 };
 
 const games = getGames();
@@ -67,12 +67,12 @@ class ChatSession {
       this.setWaitOnName();
       return {
         isValid: false,
-        revalidateResponse: 'Wait, who are you? What is your name?'
+        revalidateResponse: 'Wait, who are you? What is your name?',
       };
     }
     return {
       isValid: true,
-      revalidateResponse: null
+      revalidateResponse: null,
     };
   }
 

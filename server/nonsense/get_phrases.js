@@ -35,10 +35,10 @@ function getPhrases({ adjective: upperA, noun: upperN }) {
     `Want a ${lowerN}? How about a ${lowerA} ${lowerN}?`,
     `${upperN}s! Get your ${lowerN}s here! Nice ${lower}s, come and get 'em!`,
     `Would you still love me if I was ${lowerA}-ish?`,
-    `Would you still love me if I was a ${lowerN}?`
+    `Would you still love me if I was a ${lowerN}?`,
   ];
 }
 
 module.exports = {
-  getPhrases
+  getPhrases,
 };

@@ -15,9 +15,17 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "eslint": "^4.15.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
     "jest": "^22.4.4",
     "nodemon": "^1.14.11",
+    "prettier": "^1.13.4",
     "supertest": "^3.0.0"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
   "dependencies": {
     "body-parser": "^1.18.2",

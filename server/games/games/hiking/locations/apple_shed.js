@@ -10,9 +10,11 @@ class AppleShedLocation extends Location {
   }
 
   getDescription() {
-    const ps = [ snl`This shed is an Apple Store. It looks like a giant, giant circle.
+    const ps = [
+      snl`This shed is an Apple Store. It looks like a giant, giant circle.
       Inside there are many, many shelves full of apples. It looks like there
-      are exactly ${this._numApples} apples.` ];
+      are exactly ${this._numApples} apples.`,
+    ];
     if (this._numApples > 0) {
       ps.push(
         snl`There's no one in the store, but there's a man out back. He looks
@@ -29,12 +31,14 @@ class AppleShedLocation extends Location {
       pxEx = snl`"Thanks for coming!" says the business man. "I still have a few items left for sale if
         you're ever interested!"`;
     }
-    this.addKeyword('EXIT', `If you want to leave the Apple Store`, () => this.followExit(EAST, pxEx));
+    this.addKeyword('EXIT', `If you want to leave the Apple Store`, () =>
+      this.followExit(EAST, pxEx)
+    );
     this.addKeyword('LOOK', `Look at the contents of the Apple Store`, () => {
       let resp;
       if (this._numApples > 0) {
         resp = new LocationKeywordResponse({
-          text: `There are exactly ${this._numApples} apples on the shelves.`
+          text: `There are exactly ${this._numApples} apples on the shelves.`,
         });
       } else if (!game.inInventory(YOGURT)) {
         this._yogurtSeen = true;
@@ -42,11 +46,11 @@ class AppleShedLocation extends Location {
         resp = new LocationKeywordResponse({
           text: snl`There are no apples on the shelves. There is nothing in the
             store. It is completely empty. Except for some yogurt. But the yogurt
-            has ghosts in it.`
+            has ghosts in it.`,
         });
       } else {
         resp = new LocationKeywordResponse({
-          text: 'The Apple Store is completely empty.'
+          text: 'The Apple Store is completely empty.',
         });
       }
       return resp;
@@ -93,4 +97,3 @@ class AppleShedLocation extends Location {
 }
 
 module.exports = { AppleShedLocation };
-

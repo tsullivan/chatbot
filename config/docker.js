@@ -4,6 +4,6 @@ module.exports = {
   apm: {
     serviceName: 'chatbot',
     secretToken: '6C5VF4saR7m1LjCoslakZzNCPMFy7VoV',
-    serverUrl: process.env.ELASTIC_APM_SERVER_URL
-  }
+    serverUrl: process.env.ELASTIC_APM_SERVER_URL,
+  },
 };

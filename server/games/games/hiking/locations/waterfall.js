@@ -20,7 +20,9 @@ class WaterfallLocation extends Location {
   }
 
   setKeywords(/*game*/) {
-    this.addKeyword('ROCKS', `Go to the place that has a lot of rocks`, () => this.followExit(EAST));
+    this.addKeyword('ROCKS', `Go to the place that has a lot of rocks`, () =>
+      this.followExit(EAST)
+    );
     this.addKeyword('MOUNTAIN', `Try to climb up the really tall mountain.`, () => {
       if (this._gotSprayed) {
         this._gotSprayed = false;
@@ -31,11 +33,11 @@ class WaterfallLocation extends Location {
         const ps = [
           snl`You try to hike the trail going straight up the really tall
             mountain, but you're too weak right now!`,
-          'LOSE A POINT'
+          'LOSE A POINT',
         ];
         return new LocationKeywordResponse({
           text: ps.join('\n\n'),
-          changeScore: -1
+          changeScore: -1,
         });
       }
     });
@@ -49,11 +51,11 @@ class WaterfallLocation extends Location {
         const ps = [
           snl`You try to climb the rope up to the giant circle, but you're too
             weak right now!`,
-          'LOSE A POINT'
+          'LOSE A POINT',
         ];
         return new LocationKeywordResponse({
           text: ps.join('\n\n'),
-          changeScore: -1
+          changeScore: -1,
         });
       }
     });
@@ -61,22 +63,26 @@ class WaterfallLocation extends Location {
       this._gotSprayed = true;
       return new LocationKeywordResponse({
         text: snl`You jump around in the water for a bit. The magical wetness
-          covers you and leaves you soaked! You feel magically powerful!`
+          covers you and leaves you soaked! You feel magically powerful!`,
       });
     });
-    this.addKeyword('CHECK_DRYNESS', `Check yourself to see if you are wet or dry from the waterfall spray`, () => {
-      if (this._gotSprayed) {
-        return new LocationKeywordResponse({
-          text: snl`You have recently been sprayed by some of the magical droplets of
-            the waterfall. You feel magically powerful!`
-        });
-      } else {
-        return new LocationKeywordResponse({
-          text: snl`You have dodged all the magical spray from the water, and
-            are quite dry. You are not feeling magical.`
-        });
+    this.addKeyword(
+      'CHECK_DRYNESS',
+      `Check yourself to see if you are wet or dry from the waterfall spray`,
+      () => {
+        if (this._gotSprayed) {
+          return new LocationKeywordResponse({
+            text: snl`You have recently been sprayed by some of the magical droplets of
+            the waterfall. You feel magically powerful!`,
+          });
+        } else {
+          return new LocationKeywordResponse({
+            text: snl`You have dodged all the magical spray from the water, and
+            are quite dry. You are not feeling magical.`,
+          });
+        }
       }
-    });
+    );
   }
 }
 

@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location/*, LocationKeywordResponse */ } = require('../../../lib');
+const { Location /*, LocationKeywordResponse */ } = require('../../../lib');
 const { EAST, UP } = require('../constants');
 
 class SunshipLocation extends Location {
@@ -25,7 +25,9 @@ class SunshipLocation extends Location {
     const pxEx = snl`Hope you enjoyed your time on the sun ship. Come back
       again anytime you want to be in a sun ship!`;
     this.addKeyword('PUSH_ME', `Push the control button`, () => this.followExit(UP, pxUp));
-    this.addKeyword('EXIT', `Jump out of the ship and back to the bridge`, () => this.followExit(EAST, pxEx));
+    this.addKeyword('EXIT', `Jump out of the ship and back to the bridge`, () =>
+      this.followExit(EAST, pxEx)
+    );
   }
 }
 

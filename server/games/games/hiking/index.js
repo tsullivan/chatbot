@@ -19,17 +19,14 @@ class HikingGame extends Adventure {
       response,
       'YOU LOST. You lost too many points!',
       snl`See ya, ${this.playerName}! Better luck next time! Turns:
-        ${this.turns} Score: ${this.score}`
+        ${this.turns} Score: ${this.score}`,
     ];
     this.saveScore(this.score);
     return this.yesDone(p.join('\n\n'));
   }
 
   win(response) {
-    const p = [
-      response,
-      `Looks like you're a winner! Turns: ${this.turns} Score: ${this.score}`
-    ];
+    const p = [response, `Looks like you're a winner! Turns: ${this.turns} Score: ${this.score}`];
     this.saveScore(this.score);
     return this.yesDone(p.join('\n\n'));
   }

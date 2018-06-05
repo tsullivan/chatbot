@@ -8,10 +8,7 @@ class SuperHeroFactResponder extends DictionaryResponder {
   }
 
   testMatch(input) {
-    this.setParsedRequestedDictionaryItem(
-      input,
-      /^superherofact ([1-9]+[0-9]?)$/
-    );
+    this.setParsedRequestedDictionaryItem(input, /^superherofact ([1-9]+[0-9]?)$/);
     return input.match(/^superherofact\b/);
   }
 
@@ -24,7 +21,7 @@ class SuperHeroFactResponder extends DictionaryResponder {
       prefix(index) {
         return `Here is superhero fact number ${index}`;
       },
-      dictionary: superherofacts
+      dictionary: superherofacts,
     });
   }
 }

@@ -8,10 +8,7 @@ class PokemonFactResponder extends DictionaryResponder {
   }
 
   testMatch(input) {
-    this.setParsedRequestedDictionaryItem(
-      input,
-      /^pokemonfact ([1-9]+[0-9]?)$/
-    );
+    this.setParsedRequestedDictionaryItem(input, /^pokemonfact ([1-9]+[0-9]?)$/);
     return input.match(/^pokemonfact\b/);
   }
 
@@ -20,7 +17,7 @@ class PokemonFactResponder extends DictionaryResponder {
       prefix(index) {
         return `Here is pokemon fact number ${index}`;
       },
-      dictionary: pokemonfacts
+      dictionary: pokemonfacts,
     });
   }
 }

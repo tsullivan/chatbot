@@ -29,11 +29,11 @@ function getLocations(game) {
 
   start.addExit({
     location: lake,
-    exit: NORTH
+    exit: NORTH,
   });
   start.addExit({
     location: rocks,
-    exit: WEST
+    exit: WEST,
   });
   rocks.addExit({
     location: lake, // no getting back to start
@@ -88,7 +88,7 @@ function getLocations(game) {
   mountainHouse.addExit({
     location: car,
     exit: DOWN,
-    inverseExit: UP
+    inverseExit: UP,
   });
   car.addExit({
     location: lake,

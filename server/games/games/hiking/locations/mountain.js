@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location/*, LocationKeywordResponse */ } = require('../../../lib');
+const { Location /*, LocationKeywordResponse */ } = require('../../../lib');
 const { DOWN, EAST } = require('../constants');
 
 class MountainLocation extends Location {

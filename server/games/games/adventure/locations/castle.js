@@ -27,11 +27,11 @@ class CastleLocation extends Location {
             spectacular great hall! Oh yeah, and there are no other beds in
             this castle and all the rooms will kill you if you try to go in
             them because there are poison arrow traps everywhere.`,
-          'LOSE A POINT'
+          'LOSE A POINT',
         ];
         return new LocationKeywordResponse({
           text: p.join('\n\n'),
-          changeScore: -1
+          changeScore: -1,
         });
       } else {
         // YOU WIN
@@ -44,11 +44,11 @@ class CastleLocation extends Location {
             oddities you've encountered have been safely dealt with and you are
             out of harm's reach. Let's not think about what happens when you
             wake up. You deserve this rest so enjoy it completely.`,
-          'YOU WIN!!!'
+          'YOU WIN!!!',
         ];
         return new LocationKeywordResponse({
           text: p.join('\n\n'),
-          isDone: true
+          isDone: true,
         });
       }
     });
@@ -89,15 +89,18 @@ class CastleLocation extends Location {
               relaxed lighting!`,
             snl`Woah, the crank handle somehow became a permanent part of the
               castle window. Yeah, actually there was just one window and now the
-              crank handle can never be retrieved from it. Want it back? Too bad.`
+              crank handle can never be retrieved from it. Want it back? Too bad.`,
           ];
           return new LocationKeywordResponse({
-            text: p.join('\n\n')
+            text: p.join('\n\n'),
           });
-        });
+        }
+      );
     }
 
-    this.addKeyword('EXIT', 'Leave the beautful great hall and the castle.', () => this.followExit(SOUTH));
+    this.addKeyword('EXIT', 'Leave the beautful great hall and the castle.', () =>
+      this.followExit(SOUTH)
+    );
   }
 }
 

@@ -8,7 +8,7 @@ const { RandomMessage } = require('./random_message');
 const responseWorkers = [
   { Worker: SessionMessage },
   { Worker: SmartMessage },
-  { Worker: RandomMessage }
+  { Worker: RandomMessage },
 ];
 
 function handleChat(body, chat) {
@@ -32,7 +32,7 @@ function handleChat(body, chat) {
 
   const json = Object.assign({}, response, {
     name: BOT_NAME,
-    time: moment(body.time).format(DATE_FORMAT)
+    time: moment(body.time).format(DATE_FORMAT),
   });
   return json;
 }

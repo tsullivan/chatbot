@@ -7,7 +7,7 @@ function keywordTester(input, chat) {
     if (responder.inputMatches()) {
       return {
         isKeyword: true,
-        responder
+        responder,
       };
     }
   }

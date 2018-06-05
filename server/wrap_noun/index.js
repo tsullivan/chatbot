@@ -11,5 +11,5 @@ function umm(fn) {
 module.exports = {
   definitive,
   neutral,
-  umm
+  umm,
 };

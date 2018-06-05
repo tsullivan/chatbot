@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location/*, LocationKeywordResponse */ } = require('../../../lib');
+const { Location /*, LocationKeywordResponse */ } = require('../../../lib');
 const { NORTH, WEST } = require('../constants');
 
 class StartLocation extends Location {
@@ -16,8 +16,14 @@ class StartLocation extends Location {
     const pxLake = snl`Your hiking adventure begins! Off to the lake we go.`;
     const pxRocks = snl`Your hiking adventure begins! Starting out with a
       scrambly feeling, you make your way over to the rocks.`;
-    this.addKeyword('LAKE', `You can see a lake in one direction. It looks pretty nice.`, () => this.followExit(NORTH, pxLake));
-    this.addKeyword('ROCKS', `You can see precarious rocks on the trail in another direction. They look scrambly.`, () => this.followExit(WEST, pxRocks));
+    this.addKeyword('LAKE', `You can see a lake in one direction. It looks pretty nice.`, () =>
+      this.followExit(NORTH, pxLake)
+    );
+    this.addKeyword(
+      'ROCKS',
+      `You can see precarious rocks on the trail in another direction. They look scrambly.`,
+      () => this.followExit(WEST, pxRocks)
+    );
   }
 }
 

@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location/*, LocationKeywordResponse */ } = require('../../../lib');
+const { Location /*, LocationKeywordResponse */ } = require('../../../lib');
 const { SOUTH, NORTH, WEST, ENEMIES } = require('../constants');
 
 class BridgeLocation extends Location {
@@ -26,15 +26,18 @@ class BridgeLocation extends Location {
 
   setKeywords(/*game*/) {
     this.addKeyword('SHIP', `Enter the ship`, () => this.followExit(WEST));
-    this.addKeyword(
-      'LAKE',
-      `Go back down to the lake`,
-      () => this.followExit(SOUTH, snl`Down, down, down you go. Down the
-        bridge, bridge, bridge to the lake, lake, lake.`));
+    this.addKeyword('LAKE', `Go back down to the lake`, () =>
+      this.followExit(
+        SOUTH,
+        snl`Down, down, down you go. Down the
+        bridge, bridge, bridge to the lake, lake, lake.`
+      )
+    );
     this.addKeyword(
       'FINISH_LINE',
       'From up here on the bridge, you can see the finish line of this entire game!',
-      () => this.followExit(NORTH, 'Leaving so soon?'));
+      () => this.followExit(NORTH, 'Leaving so soon?')
+    );
   }
 }
 

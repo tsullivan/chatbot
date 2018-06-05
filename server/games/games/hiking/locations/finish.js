@@ -23,7 +23,8 @@ class FinishLocation extends Location {
     this.addKeyword(
       'BRIDGE',
       `BRIDGE - go back to the bridge, and keep playing the hiking game`,
-      () => this.followExit(SOUTH));
+      () => this.followExit(SOUTH)
+    );
   }
 }
 

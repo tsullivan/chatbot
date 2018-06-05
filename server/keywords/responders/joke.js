@@ -21,7 +21,7 @@ class JokeResponder extends DictionaryResponder {
       prefix(index) {
         return `Here is joke number ${index}`;
       },
-      dictionary: jokes
+      dictionary: jokes,
     });
   }
 }

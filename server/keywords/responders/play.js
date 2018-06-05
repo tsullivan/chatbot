@@ -29,9 +29,9 @@ class GameResponder extends KeywordResponder {
 
   help() {
     const gameKeys = Object.keys(games);
-    return (
-      `\`play\`: Play a game with me!\nUsage: \`play <game name>\`\nHere are the games I have: ${gameKeys.join(', ')}`
-    );
+    return `\`play\`: Play a game with me!\nUsage: \`play <game name>\`\nHere are the games I have: ${gameKeys.join(
+      ', '
+    )}`;
   }
 
   isImpromptu() {

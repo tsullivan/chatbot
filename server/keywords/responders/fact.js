@@ -19,7 +19,6 @@ class FactResponder extends KeywordResponder {
     return input.match(/^fact\b/);
   }
 
-
   getResponse() {
     const responder = this.getFactResponder();
     return responder.getResponse();

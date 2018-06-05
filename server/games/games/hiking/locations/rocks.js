@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location/*, LocationKeywordResponse */ } = require('../../../lib');
+const { Location /*, LocationKeywordResponse */ } = require('../../../lib');
 const { EAST, WEST } = require('../constants');
 
 class RocksLocation extends Location {
@@ -20,7 +20,9 @@ class RocksLocation extends Location {
     const px = snl`You're a careful sort of person, so you can easily get over
       the treacherous rocks to go where you want to go.`;
     this.addKeyword('LAKE', 'Go to the lake', () => this.followExit(EAST, px));
-    this.addKeyword('WATERFALL', `Check it out, you can see a waterfall beyond the rocks`, () => this.followExit(WEST, px));
+    this.addKeyword('WATERFALL', `Check it out, you can see a waterfall beyond the rocks`, () =>
+      this.followExit(WEST, px)
+    );
   }
 }
 

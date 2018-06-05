@@ -11,11 +11,11 @@ function initRoutes(app, unresolvedChat) {
     res.json(handleChat(body, chat));
 
     apm.setUserContext({
-      username: chat.getName()
+      username: chat.getName(),
     });
     apm.setCustomContext({
       num_messages: chat.getHistory().length,
-      avg_score: chat.getAverageScore()
+      avg_score: chat.getAverageScore(),
     });
     apm.endTransaction();
   };

@@ -17,20 +17,20 @@ function Ajax() {
     method: 'post',
     contentType: 'application/json',
     url: './chat',
-    dataType: 'json'
+    dataType: 'json',
   };
 
   function sendMessage(messageText, messageFormat, callback) {
     const message = {
       format: messageFormat,
       message: messageText,
-      time: Date.now()
+      time: Date.now(),
     };
 
     $.ajax(
       Object.assign({}, AJAX_OPTS, {
         data: JSON.stringify(message),
-        success: response => callback(message, response)
+        success: response => callback(message, response),
       })
     );
   }
@@ -63,7 +63,7 @@ function Ajax() {
       sendMessage('HELO', 'syn', (message, response) => {
         updateHistory(response, $history);
       });
-    }
+    },
   };
 }
 

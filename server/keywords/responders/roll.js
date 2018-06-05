@@ -13,7 +13,7 @@ class RollResponder extends KeywordResponder {
   testMatch(input) {
     const matches = input.match(/^roll ([1-9]+[0-9]?)/);
     if (matches !== null) {
-      const [ _match, sides ] = matches;
+      const [_match, sides] = matches;
       this.sides = parseInt(sides, 10);
     }
 

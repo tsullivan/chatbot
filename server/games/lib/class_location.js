@@ -23,18 +23,18 @@ class Location {
 
       exit.updateKeywords(this.game);
 
-      const ps = [ exit.getDescriptionInternal(this.game) ];
+      const ps = [exit.getDescriptionInternal(this.game)];
       if (prefix !== '') {
         ps.unshift(prefix);
       }
 
       return new LocationKeywordResponse({
-        text: ps.join('\n\n')
+        text: ps.join('\n\n'),
       });
     }
 
     return new LocationKeywordResponse({
-      text: 'Bad directions!!! ' + direction
+      text: 'Bad directions!!! ' + direction,
     });
   }
 
@@ -49,7 +49,7 @@ class Location {
     if (inverseExit) {
       location.addExit({
         location: this,
-        exit: inverseExit
+        exit: inverseExit,
       });
     }
   }
@@ -70,7 +70,7 @@ class Location {
       if (loopDone) {
         break;
       } else {
-        const [ keyword, { text } ] = value;
+        const [keyword, { text }] = value;
         instructions.push(`${keyword}: ${text}`);
       }
     }
@@ -118,7 +118,7 @@ class Location {
     } else {
       response = new LocationKeywordResponse({
         text: `ERROR! LOSE 2 POINTS`,
-        changeScore: -2
+        changeScore: -2,
       });
     }
 

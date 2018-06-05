@@ -9,5 +9,5 @@ module.exports = {
   EAST,
   SOUTH,
   WEST,
-  WINDOW_HANDLE
+  WINDOW_HANDLE,
 };

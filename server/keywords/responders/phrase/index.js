@@ -1,6 +1,6 @@
 const { sample } = require('lodash');
 const { KeywordResponder } = require('../../keyword_responder');
-const [ setA, setB ] = require('./words');
+const [setA, setB] = require('./words');
 
 class PhraseResponder extends KeywordResponder {
   constructor(input) {
@@ -17,7 +17,7 @@ class PhraseResponder extends KeywordResponder {
   }
 
   getResponse() {
-    const set = sample([ setA, setB ]);
+    const set = sample([setA, setB]);
     const { adjectives, nouns } = set;
     return sample(adjectives) + ' ' + sample(nouns);
   }

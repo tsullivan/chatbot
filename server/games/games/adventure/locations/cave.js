@@ -26,21 +26,17 @@ class CaveLocation extends Location {
         You have no hope to try to participate. Just take a minute to enjoy the
         show. Or keep finding a way to rest your weary self. It's still late at
         night and you're still tired.`,
-      'GAIN A POINT'
+      'GAIN A POINT',
     ];
     if (!this._danced) {
-      this.addKeyword(
-        'DANCE',
-        'Dance with the tiny skeleton hands',
-        () => {
-          this._danced = true;
-          this.removeKeyword('DANCE');
-          return new LocationKeywordResponse({
-            text: p.join('\n\n'),
-            changeScore: 1 // add a point for the heck of it
-          });
-        }
-      );
+      this.addKeyword('DANCE', 'Dance with the tiny skeleton hands', () => {
+        this._danced = true;
+        this.removeKeyword('DANCE');
+        return new LocationKeywordResponse({
+          text: p.join('\n\n'),
+          changeScore: 1, // add a point for the heck of it
+        });
+      });
     }
 
     this.addKeyword('LOOK', 'Look closer at the tiny village', () => {
@@ -62,7 +58,7 @@ class CaveLocation extends Location {
       }
 
       return new LocationKeywordResponse({
-        text: p.join('\n\n')
+        text: p.join('\n\n'),
       });
     });
 
@@ -78,17 +74,13 @@ class CaveLocation extends Location {
           return new LocationKeywordResponse({
             text: snl`Can you handle the handle? I guess you can. The handle
               has been taken by you.`,
-            changeScore: 2
+            changeScore: 2,
           });
         }
       );
     }
 
-    this.addKeyword(
-      'EXIT',
-      'Get out of the cheery smelly old cave.',
-      () => this.followExit(WEST)
-    );
+    this.addKeyword('EXIT', 'Get out of the cheery smelly old cave.', () => this.followExit(WEST));
   }
 }
 

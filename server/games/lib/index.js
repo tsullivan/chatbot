@@ -5,5 +5,5 @@ const { LocationKeywordResponse } = require('./class_location_keyword_response')
 module.exports = {
   Adventure,
   Location,
-  LocationKeywordResponse
+  LocationKeywordResponse,
 };

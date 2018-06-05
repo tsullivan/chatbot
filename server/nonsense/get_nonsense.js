@@ -52,5 +52,5 @@ function getNonsense(userMessage, seedNounGenerators) {
 }
 
 module.exports = {
-  getNonsense
+  getNonsense,
 };

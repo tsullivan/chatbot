@@ -23,7 +23,6 @@ class RememberResponder extends KeywordResponder {
   isImpromptu() {
     return true;
   }
-
 }
 
 module.exports = { KeywordResponder: RememberResponder };

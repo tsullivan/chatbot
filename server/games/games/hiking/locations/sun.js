@@ -25,12 +25,12 @@ class TheSunLocation extends Location {
       if (this._hasGhosts) {
         return new LocationKeywordResponse({
           text: snl`On the surface of the sun, there is melted yogurt and the
-            remains of exploded ghosts.`
+            remains of exploded ghosts.`,
         });
       } else {
         return new LocationKeywordResponse({
           text: snl`There's not much to say about the sun at the moment. It's
-            plain, like plain yogurt.`
+            plain, like plain yogurt.`,
         });
       }
     });
@@ -49,11 +49,11 @@ class TheSunLocation extends Location {
           snl`One of the ghosts looks at you and says, "Thank you for releasing
             us! Our sprits are free now, and we can join our ancestors in ghost heaven."`,
           snl`Then all of the ghosts explode`,
-          'GAIN 20 POINTS'
+          'GAIN 20 POINTS',
         ];
         return new LocationKeywordResponse({
           text: ps.join('\n\n'),
-          changeScore: 20
+          changeScore: 20,
         });
       });
     }

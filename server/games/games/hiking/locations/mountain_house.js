@@ -28,12 +28,14 @@ class MountainHouseLocation extends Location {
     const { exit, down, sleep } = KEYWORDS;
 
     this.addKeyword(exit, `Go out to the top of the mountain`, () => this.followExit(WEST));
-    this.addKeyword(
-      down,
-      `Take a look at what's down the hole`,
-      () => this.followExit(DOWN, snl`Fortunately, there's a ladder leading
+    this.addKeyword(down, `Take a look at what's down the hole`, () =>
+      this.followExit(
+        DOWN,
+        snl`Fortunately, there's a ladder leading
       straight down the hole, so you don't have to jump down an unknown
-      distance through complete darkness.`));
+      distance through complete darkness.`
+      )
+    );
     this.addKeyword(sleep, `Take a rest on the comfy-looking bed`, () => {
       const ps = [
         snl`You lay down on the bed and close your eyes. You let your mind
@@ -42,7 +44,7 @@ class MountainHouseLocation extends Location {
         think to yourself that this game is pretty awesome, even though it
         doesn't have a lot of pictures and it's mostly reading.`,
         // list the inventory
-        `GAIN A POINT`
+        `GAIN A POINT`,
       ];
 
       // stats stuff
@@ -54,15 +56,17 @@ class MountainHouseLocation extends Location {
       // restore some points
       let changeScore = 0;
       const scoreDeficit = 50 - game.score;
-      if(scoreDeficit > 0) {
+      if (scoreDeficit > 0) {
         changeScore = scoreDeficit; // bump them up to 50 again
-        ps[learnThingsIndex] += '\n' + snl`- You get ${scoreDeficit} more
+        ps[learnThingsIndex] +=
+          '\n' +
+          snl`- You get ${scoreDeficit} more
           points from sleeping right now.`;
       }
 
       return new LocationKeywordResponse({
         text: ps.join('\n\n'),
-        changeScore
+        changeScore,
       });
     });
   }

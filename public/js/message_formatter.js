@@ -24,13 +24,13 @@ window.messageFormatter = (() => {
           <div class="messageBody">{{>message}}</div>
         </div>
       </div>
-    `
+    `,
   });
 
   const formatters = {
     user: message => $.render.user(message),
     plain: message => $.render.plain(message),
-    help: message => $.render.help(message)
+    help: message => $.render.help(message),
   };
 
   return message => {

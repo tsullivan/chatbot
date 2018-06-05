@@ -56,7 +56,7 @@ class GuessNumber extends ChatGame {
         this.guesses
       } times. Your score is ${
         this.score
-      }. Average of all your scores is ${this.getAverageScore()}`
+      }. Average of all your scores is ${this.getAverageScore()}`,
     };
   }
 

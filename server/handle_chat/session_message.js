@@ -41,7 +41,6 @@ class SessionMessage extends ResponseMessage {
 
     return null;
   }
-
 }
 
 module.exports = { SessionMessage };
