@@ -17,7 +17,7 @@ class TheSunLocation extends Location {
 
   setKeywords(game) {
     this.addKeyword('BACK', `Go back to Earth`, () => {
-      const px = snl`KSHOOOOM. Back down to Earth you go in the sun ship. Hope
+      const px = snl`KSHOOOOM!! Back down to Earth you go in the sun ship. Hope
         you enjoyed your stay on the sun! Come back soon!`;
       return this.followExit(DOWN, px);
     });

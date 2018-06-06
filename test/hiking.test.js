@@ -79,7 +79,7 @@ describe('hiking', () => {
     resps[resps.length] = await send('ladder');
     resps[resps.length] = await send('sleep');
     resps[resps.length] = await send('down_the_hole');
-    resps[resps.length] = await send('car');
+    resps[resps.length] = await send('drive_the_car');
     resps[resps.length] = await send('bridge');
     resps[resps.length] = await send('lake');
     resps[resps.length] = await send('throw_apples');
@@ -100,7 +100,7 @@ describe('hiking', () => {
 
   test('finish the game', async () => {
     resps[resps.length] = await send('finish_line');
-    resps[resps.length] = await send('finish');
+    resps[resps.length] = await send('ask_the_robot_to_take_out_a_flag');
     checkResponses(resps);
   });
 

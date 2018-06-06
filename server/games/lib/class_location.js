@@ -71,7 +71,7 @@ class Location {
         break;
       } else {
         const [keyword, { text }] = value;
-        instructions.push(`${keyword}: ${text}`);
+        instructions.push(`${keyword} - ${text}`);
       }
     }
 

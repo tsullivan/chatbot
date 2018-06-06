@@ -31,18 +31,18 @@ class MountainHouseLocation extends Location {
     this.addKeyword(down, `Take a look at what's down the hole`, () =>
       this.followExit(
         DOWN,
-        snl`Fortunately, there's a ladder leading
-      straight down the hole, so you don't have to jump down an unknown
-      distance through complete darkness.`
+        snl`Fortunately, there's a ladder leading straight down the hole, so
+          you don't have to jump down an unknown distance through complete
+          darkness.`
       )
     );
     this.addKeyword(sleep, `Take a rest on the comfy-looking bed`, () => {
       const ps = [
-        snl`You lay down on the bed and close your eyes. You let your mind
-        wander. Thinking about how pretty the waterfall was, you realize that
-        although you were scared initially you're feeling pretty good now. You
-        think to yourself that this game is pretty awesome, even though it
-        doesn't have a lot of pictures and it's mostly reading.`,
+        snl`You lay down on the comfy bed and close your eyes. You let your
+          mind wander. Thinking about how pretty the waterfall was, you realize
+          that although you were scared initially you're feeling pretty good now.
+          You think to yourself that this game is pretty awesome, even though it
+          doesn't have a lot of pictures and it's mostly reading.`,
         // list the inventory
         `GAIN A POINT`,
       ];

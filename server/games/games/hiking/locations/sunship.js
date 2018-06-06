@@ -19,9 +19,10 @@ class SunshipLocation extends Location {
   // talk
 
   setKeywords(/*game*/) {
-    const pxUp = snl`You close your eyes, hold your breath, and slam the
-      PUSH_ME button. The ship's engine's rumble and your insides suddenly feel
-      like cooked noodles as the ship rises up into the sky, and into space!`;
+    const pxUp = snl`You close your eyes, hold your breath, and slam your hand
+      on the PUSH_ME button. The ship's engine's rumble and your insides suddenly
+      feel like cooked noodles as the ship rises up into the sky, and KSHOOOOM!
+      into space!`;
     const pxEx = snl`Hope you enjoyed your time on the sun ship. Come back
       again anytime you want to be in a sun ship!`;
     this.addKeyword('PUSH_ME', `Push the control button`, () => this.followExit(UP, pxUp));

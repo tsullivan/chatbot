@@ -62,8 +62,9 @@ class WaterfallLocation extends Location {
     this.addKeyword('GET_SPRAYED', `Allow yourself to get sprayed by the water`, () => {
       this._gotSprayed = true;
       return new LocationKeywordResponse({
-        text: snl`You jump around in the water for a bit. The magical wetness
-          covers you and leaves you soaked! You feel magically powerful!`,
+        text: snl`You jump around in the waterfall spray for a bit. It feels so
+          magical! The magical wetness covers you and leaves you soaked! You feel
+          magically powerful!`,
       });
     });
     this.addKeyword(
