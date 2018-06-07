@@ -2,12 +2,6 @@ const snl = require('strip-newlines');
 const { Location, LocationKeywordResponse } = require('../../../lib');
 const { WEST, DOWN } = require('../constants');
 
-const KEYWORDS = {
-  exit: 'OUTSIDE',
-  down: 'DOWN_THE_HOLE',
-  sleep: 'SLEEP',
-};
-
 class MountainHouseLocation extends Location {
   constructor(game) {
     super({ game, name: 'Mountain House' });
@@ -25,10 +19,10 @@ class MountainHouseLocation extends Location {
   }
 
   setKeywords(game) {
-    const { exit, down, sleep } = KEYWORDS;
-
-    this.addKeyword(exit, `Go out to the top of the mountain`, () => this.followExit(WEST));
-    this.addKeyword(down, `Take a look at what's down the hole`, () =>
+    this.addKeyword(['OUTSIDE', 'EXIT'], `Go out to the top of the mountain`, () =>
+      this.followExit(WEST)
+    );
+    this.addKeyword(['DOWN_THE_HOLE', 'DOWN', 'HOLE'], `Take a look at what's down the hole`, () =>
       this.followExit(
         DOWN,
         snl`Fortunately, there's a ladder leading straight down the hole, so
@@ -36,7 +30,7 @@ class MountainHouseLocation extends Location {
           darkness.`
       )
     );
-    this.addKeyword(sleep, `Take a rest on the comfy-looking bed`, () => {
+    this.addKeyword(['SLEEP', 'BED'], `Take a rest on the comfy-looking bed`, () => {
       const ps = [
         snl`You lay down on the comfy bed and close your eyes. You let your
           mind wander. Thinking about how pretty the waterfall was, you realize

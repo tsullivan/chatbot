@@ -34,7 +34,7 @@ describe('hiking', () => {
     resps[resps.length] = await send('lake');
     resps[resps.length] = await send('bridge');
     resps[resps.length] = await send('ship');
-    resps[resps.length] = await send('push_me');
+    resps[resps.length] = await send('push_button');
     resps[resps.length] = await send('look');
     resps[resps.length] = await send('back');
     resps[resps.length] = await send('exit');
@@ -75,11 +75,11 @@ describe('hiking', () => {
     resps[resps.length] = await send('mountain');
     resps[resps.length] = await send('house');
     resps[resps.length] = await send('sleep');
-    resps[resps.length] = await send('down_the_hole');
+    resps[resps.length] = await send('down');
     resps[resps.length] = await send('ladder');
     resps[resps.length] = await send('sleep');
-    resps[resps.length] = await send('down_the_hole');
-    resps[resps.length] = await send('drive_the_car');
+    resps[resps.length] = await send('hole');
+    resps[resps.length] = await send('car');
     resps[resps.length] = await send('bridge');
     resps[resps.length] = await send('lake');
     resps[resps.length] = await send('throw_apples');
@@ -100,7 +100,7 @@ describe('hiking', () => {
 
   test('finish the game', async () => {
     resps[resps.length] = await send('finish_line');
-    resps[resps.length] = await send('ask_the_robot_to_take_out_a_flag');
+    resps[resps.length] = await send('finish');
     checkResponses(resps);
   });
 

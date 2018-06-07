@@ -1,4 +1,5 @@
 const { LocationKeywordResponse } = require('./class_location_keyword_response');
+const { MultiMap } = require('../../../lib');
 
 class Location {
   constructor({ game, name }) {
@@ -6,7 +7,7 @@ class Location {
     this.game = game;
 
     this.exits = new Map();
-    this.keywords = new Map();
+    this.keywords = new MultiMap();
     this.floorItems = new Set();
 
     this.setKeywords(game);
@@ -86,7 +87,16 @@ class Location {
     if (typeof keyword === undefined) {
       throw new Error('Keyword was undefined');
     }
-    this.keywords.set(keyword, { text, fn });
+
+    if (Array.isArray(keyword)) {
+      const [primary, ...aliases] = keyword;
+      this.keywords.set(primary, { text, fn });
+      for (let i = 0; i < aliases.length; i++) {
+        this.keywords.addAlias(aliases[i], primary);
+      }
+    } else {
+      this.keywords.set(keyword, { text, fn });
+    }
   }
   removeKeyword(keyword) {
     if (typeof keyword === undefined) {

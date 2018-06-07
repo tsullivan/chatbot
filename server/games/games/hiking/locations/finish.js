@@ -18,7 +18,7 @@ class FinishLocation extends Location {
 
   setKeywords(/*game*/) {
     this.addKeyword(
-      'ASK_THE_ROBOT_TO_TAKE_OUT_A_FLAG',
+      ['ASK_THE_ROBOT_TO_TAKE_OUT_A_FLAG', 'ROBOT', 'FLAG', 'FINISH'],
       `Leave the hiking journey and save your points`,
       () => {
         return new LocationKeywordResponse({

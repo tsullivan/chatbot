@@ -22,7 +22,7 @@ class CarLocation extends Location {
       this.followExit(UP, 'Climb, climb, climb.')
     );
     this.addKeyword(
-      'DRIVE_THE_CAR',
+      ['DRIVE_THE_CAR', 'DRIVE', 'CAR'],
       `Get into the car and drive it, to see what's down this tunnel`,
       () => {
         game.addToInventory(CAR);
