@@ -2,6 +2,7 @@
   "jokes": [
     "Knock-Knock\nWho's there?\nAtch.\nAtch who?\nBless you!",
     "Knock-Knock\nWho's there?\nHeywood.\nHeywood who?\nHeywood you let me in? It's cold out here!!",
+    "Knock-Knock\nWho's there?\nI am Groot.\nI am Groot who?\nI am Groot!",
     "Why did I throw a human out of the guard tower window?\nBecause he was fired.",
     "Why did the man throw a butterfly out of the window?\nBecause he wanted it to be able to smell around the world!",
     "Why did the man throw a window out that window?\nBecause he wanted it to crash!",
@@ -33,8 +34,10 @@
     "Plusser Man is a superhero that needs power for the ship that could zap on the other ships when it could stick to anything and it could ram and it could do a big explosion and zezezezezezezezezezezezezezezezezez zez zez zezez zez zez zezez zez zez no zez hahahha haha ha ha zez zez zez no zeslap it on your face",
     "Spider-Man can shoot out webs",
     "Iron Man can shoot out blasts.",
-    "Billy Dee Williams plays Lando in Star Wars and he plays Two Face in Lego Batman. That is a Star Wars fact as well as a superhero fact.",
-    "Batman can talk to bats."
+    "Billy Dee Williams plays Lando in Star Wars and Two Face in Lego Batman.",
+    "Batman can talk to bats.",
+    "Batman gets his powers from eating bats.",
+    "Toad and Koopa Troopa are friends, because they are pets of each other."
   ],
   "starwarsfacts": [
     "C3-PO and R2-D2 are friends.",
@@ -62,6 +65,7 @@
   ],
   "worldfacts": [
     "Some robots have tongues.",
-    "Everyone just wants a bubble bath and cereal for breakfast."
+    "Everyone just wants a bubble bath and cereal for breakfast.",
+    "Coyotes are real."
   ]
 }
