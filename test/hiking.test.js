@@ -30,6 +30,14 @@ describe('hiking', () => {
     checkResponses(resps);
   });
 
+  test('help and quit and start over', async () => {
+    resps[resps.length] = await send('help');
+    resps[resps.length] = await send('blahblah');
+    resps[resps.length] = await send('quit');
+    resps[resps.length] = await send('play hiking');
+    checkResponses(resps);
+  });
+
   test('explore sun', async () => {
     resps[resps.length] = await send('lake');
     resps[resps.length] = await send('bridge');

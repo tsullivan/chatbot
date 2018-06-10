@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location, LocationKeywordResponse } = require('../../../lib');
+const { Location, KeywordResponse } = require('../../../lib');
 const { SOUTH, WINDOW_HANDLE } = require('../constants');
 
 class CastleLocation extends Location {
@@ -29,7 +29,7 @@ class CastleLocation extends Location {
             them because there are poison arrow traps everywhere.`,
           'LOSE A POINT',
         ];
-        return new LocationKeywordResponse({
+        return new KeywordResponse({
           text: p.join('\n\n'),
           changeScore: -1,
         });
@@ -46,7 +46,7 @@ class CastleLocation extends Location {
             wake up. You deserve this rest so enjoy it completely.`,
           'YOU WIN!!!',
         ];
-        return new LocationKeywordResponse({
+        return new KeywordResponse({
           text: p.join('\n\n'),
           isDone: true,
         });
@@ -70,7 +70,7 @@ class CastleLocation extends Location {
         text = snl`It's nice and quiet here. The windows are closed and no
           longer letting in that abonimanimal light.`;
       }
-      return new LocationKeywordResponse({ text });
+      return new KeywordResponse({ text });
     });
 
     if (game.inInventory(WINDOW_HANDLE) && this._socketsSeen) {
@@ -91,7 +91,7 @@ class CastleLocation extends Location {
               castle window. Yeah, actually there was just one window and now the
               crank handle can never be retrieved from it. Want it back? Too bad.`,
           ];
-          return new LocationKeywordResponse({
+          return new KeywordResponse({
             text: p.join('\n\n'),
           });
         }

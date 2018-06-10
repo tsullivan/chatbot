@@ -83,7 +83,15 @@ EXIT - Get out of the cheery smelly old cave."
 `;
 
 exports[`adventure exit fail 1`] = `
-"ERROR! LOSE 2 POINTS
+"ERROR! LOSE 2 POINTS. Type HELP to show all the commands
+
+Type:
+CAVE - Go down into the cave
+CASTLE - Head up to the castle.
+
+Type:
+HINT - See all the commands you can type
+QUIT - Quit the game
 
 Type:
 CAVE - Go down into the cave
@@ -111,7 +119,16 @@ EXIT - Get out of the cheery smelly old cave."
 `;
 
 exports[`adventure use_window_handle 1`] = `
-"ERROR! LOSE 2 POINTS
+"ERROR! LOSE 2 POINTS. Type HELP to show all the commands
+
+Type:
+SLEEP - Sleep on the comfy bed
+LOOK - Look closer at the open-air windows
+EXIT - Leave the beautful great hall and the castle.
+
+Type:
+HINT - See all the commands you can type
+QUIT - Quit the game
 
 Type:
 SLEEP - Sleep on the comfy bed

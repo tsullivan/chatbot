@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location /*, LocationKeywordResponse */ } = require('../../../lib');
+const { Location /*, KeywordResponse */ } = require('../../../lib');
 const { SOUTH, NORTH, WEST, ENEMIES } = require('../constants');
 
 class BridgeLocation extends Location {

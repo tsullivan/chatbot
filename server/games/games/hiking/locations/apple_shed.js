@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location, LocationKeywordResponse } = require('../../../lib');
+const { Location, KeywordResponse } = require('../../../lib');
 const { EAST, APPLES, YOGURT } = require('../constants');
 
 class AppleShedLocation extends Location {
@@ -37,19 +37,19 @@ class AppleShedLocation extends Location {
     this.addKeyword('LOOK', `Look at the contents of the Apple Store`, () => {
       let resp;
       if (this._numApples > 0) {
-        resp = new LocationKeywordResponse({
+        resp = new KeywordResponse({
           text: `There are exactly ${this._numApples} apples on the shelves.`,
         });
       } else if (!game.inInventory(YOGURT)) {
         this._yogurtSeen = true;
         this._hasYogurt = true;
-        resp = new LocationKeywordResponse({
+        resp = new KeywordResponse({
           text: snl`There are no apples on the shelves. There is nothing in the
             store. It is completely empty. Except for some yogurt. But the yogurt
             has ghosts in it.`,
         });
       } else {
-        resp = new LocationKeywordResponse({
+        resp = new KeywordResponse({
           text: 'The Apple Store is completely empty.',
         });
       }
@@ -69,7 +69,7 @@ class AppleShedLocation extends Location {
           snl`"Actually, you can have all of the apples for free." he says.`,
           'GAIN 10 POINTS',
         ];
-        return new LocationKeywordResponse({
+        return new KeywordResponse({
           text: ps.join('\n\n'),
           changeScore: 10,
         });
@@ -87,7 +87,7 @@ class AppleShedLocation extends Location {
           snl`"By the way, ghosts dislike being on the sun." he says.`,
           'GAIN 6 POINTS',
         ];
-        return new LocationKeywordResponse({
+        return new KeywordResponse({
           text: ps.join('\n\n'),
           changeScore: 6,
         });

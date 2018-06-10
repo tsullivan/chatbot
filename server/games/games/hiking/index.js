@@ -6,12 +6,10 @@ const { ENEMIES } = require('./constants');
 class HikingGame extends Adventure {
   constructor(session) {
     super(session);
-
     this.name = 'hiking';
     this.locations = getLocations(this);
     this.currentLocation = this.locations.start;
-
-    this.addToInventory(ENEMIES);
+    this.addToInventory(ENEMIES); // TODO add global
   }
 
   lose(response) {

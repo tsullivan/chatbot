@@ -1,13 +1,14 @@
-class LocationKeywordResponse {
-  constructor({ text = 'Not sure', changeScore = 0, isDone = false }) {
+class KeywordResponse {
+  constructor({ text = 'Not sure', changeScore = 0, isDone = false, showInstructions = true }) {
     this.text = text;
     this.changeScore = changeScore;
     this.isDone = isDone;
+    this.showInstructions = showInstructions;
   }
 
   static getResponseFromHandler(handler, game) {
     const handlerResponse = handler(game);
-    if (handlerResponse instanceof LocationKeywordResponse) {
+    if (handlerResponse instanceof KeywordResponse) {
       return handlerResponse;
     } else {
       throw new Error('Bad response: ' + JSON.stringify(handlerResponse));
@@ -19,13 +20,14 @@ class LocationKeywordResponse {
   }
 
   get() {
-    const { text, changeScore, isDone } = this;
+    const { text, changeScore, isDone, showInstructions } = this;
     return {
       response: text,
       changeScore,
       isDone,
+      showInstructions,
     };
   }
 }
 
-module.exports = { LocationKeywordResponse };
+module.exports = { KeywordResponse };

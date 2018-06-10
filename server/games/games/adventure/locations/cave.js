@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location, LocationKeywordResponse } = require('../../../lib');
+const { Location, KeywordResponse } = require('../../../lib');
 const { WEST, WINDOW_HANDLE } = require('../constants');
 
 class CaveLocation extends Location {
@@ -32,7 +32,7 @@ class CaveLocation extends Location {
       this.addKeyword('DANCE', 'Dance with the tiny skeleton hands', () => {
         this._danced = true;
         this.removeKeyword('DANCE');
-        return new LocationKeywordResponse({
+        return new KeywordResponse({
           text: p.join('\n\n'),
           changeScore: 1, // add a point for the heck of it
         });
@@ -57,7 +57,7 @@ class CaveLocation extends Location {
         this._handleSeen = true;
       }
 
-      return new LocationKeywordResponse({
+      return new KeywordResponse({
         text: p.join('\n\n'),
       });
     });
@@ -66,12 +66,12 @@ class CaveLocation extends Location {
       this.addKeyword(
         'TAKE_HANDLE',
         'Take the handle and put it in your pocket where it will be safe',
-        () => {
-          this.game.addToInventory(WINDOW_HANDLE);
+        game => {
+          game.addToInventory(WINDOW_HANDLE);
           this.removeFloorItem(WINDOW_HANDLE);
           this.removeKeyword('TAKE_HANDLE');
 
-          return new LocationKeywordResponse({
+          return new KeywordResponse({
             text: snl`Can you handle the handle? I guess you can. The handle
               has been taken by you.`,
             changeScore: 2,

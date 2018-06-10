@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location, LocationKeywordResponse } = require('../../../lib');
+const { Location, KeywordResponse } = require('../../../lib');
 const { DOWN, YOGURT } = require('../constants');
 
 class TheSunLocation extends Location {
@@ -23,12 +23,12 @@ class TheSunLocation extends Location {
     });
     this.addKeyword('LOOK', `Look at the sun (through the safety of the sunship windows)`, () => {
       if (this._hasGhosts) {
-        return new LocationKeywordResponse({
+        return new KeywordResponse({
           text: snl`On the surface of the sun, there is melted yogurt and the
             remains of exploded ghosts.`,
         });
       } else {
-        return new LocationKeywordResponse({
+        return new KeywordResponse({
           text: snl`There's not much to say about the sun at the moment. It's
             plain, like plain yogurt.`,
         });
@@ -51,7 +51,7 @@ class TheSunLocation extends Location {
           snl`Then all of the ghosts explode`,
           'GAIN 20 POINTS',
         ];
-        return new LocationKeywordResponse({
+        return new KeywordResponse({
           text: ps.join('\n\n'),
           changeScore: 20,
         });

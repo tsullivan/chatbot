@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location, LocationKeywordResponse } = require('../../../lib');
+const { Location, KeywordResponse } = require('../../../lib');
 const { SOUTH } = require('../constants');
 
 class FinishLocation extends Location {
@@ -21,7 +21,7 @@ class FinishLocation extends Location {
       ['ASK_THE_ROBOT_TO_TAKE_OUT_A_FLAG', 'ROBOT', 'FLAG', 'FINISH'],
       `Leave the hiking journey and save your points`,
       () => {
-        return new LocationKeywordResponse({
+        return new KeywordResponse({
           text: snl`The robot takes out a flag, and swishes it over your head.
             This takes you to the end of the hiking journey.`,
           isDone: true,

@@ -490,6 +490,56 @@ GET_SPRAYED - Allow yourself to get sprayed by the water
 CHECK_DRYNESS - Check yourself to see if you are wet or dry from the waterfall spray"
 `;
 
+exports[`hiking help and quit and start over 1`] = `
+"Type:
+LAKE - You can see a lake in one direction. It looks pretty nice.
+ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly.
+
+Type:
+HINT - See all the commands you can type
+QUIT - Quit the game
+
+Type:
+LAKE - You can see a lake in one direction. It looks pretty nice.
+ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly."
+`;
+
+exports[`hiking help and quit and start over 2`] = `
+"ERROR! LOSE 2 POINTS. Type HELP to show all the commands
+
+Type:
+LAKE - You can see a lake in one direction. It looks pretty nice.
+ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly.
+
+Type:
+HINT - See all the commands you can type
+QUIT - Quit the game
+
+Type:
+LAKE - You can see a lake in one direction. It looks pretty nice.
+ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly."
+`;
+
+exports[`hiking help and quit and start over 3`] = `
+"I guess you don't want to hike any more. See ya!
+
+Looks like you're a winner! Turns: 2 Score: 48
+That was fun, Tim!"
+`;
+
+exports[`hiking help and quit and start over 4`] = `
+"Escaping from the cops station
+You've just escaped from a jail. You breathe a sigh of relief because that part of your life is forever behind you. They'll never find you in these woods. Plus, you stole the jail key, because you're not a bad guy. You were put in jail accidentally. They made you steal the key.
+
+Now, all you have to do is hike...
+
+You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast.
+
+Type:
+LAKE - You can see a lake in one direction. It looks pretty nice.
+ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly."
+`;
+
 exports[`hiking purchase some items at the apple shop 1`] = `
 "With the magical strength gained by the waterfall spray, you climb like Spider-Man right up the rope to the giant circle.
 
@@ -639,7 +689,7 @@ GET_SPRAYED - Allow yourself to get sprayed by the water
 CHECK_DRYNESS - Check yourself to see if you are wet or dry from the waterfall spray"
 `;
 
-exports[`hiking score 1`] = `"The average score of the games you plaid are : 59.5"`;
+exports[`hiking score 1`] = `"The average score of the games you plaid are : 55.666666666666664"`;
 
 exports[`hiking swim fail and start over 1`] = `
 "Escaping from the cops station

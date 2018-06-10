@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location, LocationKeywordResponse } = require('../../../lib');
+const { Location, KeywordResponse } = require('../../../lib');
 const { WEST, EAST, UP } = require('../constants');
 
 class WaterfallLocation extends Location {
@@ -35,7 +35,7 @@ class WaterfallLocation extends Location {
             mountain, but you're too weak right now!`,
           'LOSE A POINT',
         ];
-        return new LocationKeywordResponse({
+        return new KeywordResponse({
           text: ps.join('\n\n'),
           changeScore: -1,
         });
@@ -53,7 +53,7 @@ class WaterfallLocation extends Location {
             weak right now!`,
           'LOSE A POINT',
         ];
-        return new LocationKeywordResponse({
+        return new KeywordResponse({
           text: ps.join('\n\n'),
           changeScore: -1,
         });
@@ -61,7 +61,7 @@ class WaterfallLocation extends Location {
     });
     this.addKeyword('GET_SPRAYED', `Allow yourself to get sprayed by the water`, () => {
       this._gotSprayed = true;
-      return new LocationKeywordResponse({
+      return new KeywordResponse({
         text: snl`You jump around in the waterfall spray for a bit. It feels so
           magical! The magical wetness covers you and leaves you soaked! You feel
           magically powerful!`,
@@ -72,12 +72,12 @@ class WaterfallLocation extends Location {
       `Check yourself to see if you are wet or dry from the waterfall spray`,
       () => {
         if (this._gotSprayed) {
-          return new LocationKeywordResponse({
+          return new KeywordResponse({
             text: snl`You have recently been sprayed by some of the magical droplets of
             the waterfall. You feel magically powerful!`,
           });
         } else {
-          return new LocationKeywordResponse({
+          return new KeywordResponse({
             text: snl`You have dodged all the magical spray from the water, and
             are quite dry. You are not feeling magical.`,
           });

@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location, LocationKeywordResponse } = require('../../../lib');
+const { Location, KeywordResponse } = require('../../../lib');
 const { WEST, DOWN } = require('../constants');
 
 class MountainHouseLocation extends Location {
@@ -58,7 +58,7 @@ class MountainHouseLocation extends Location {
           points from sleeping right now.`;
       }
 
-      return new LocationKeywordResponse({
+      return new KeywordResponse({
         text: ps.join('\n\n'),
         changeScore,
       });

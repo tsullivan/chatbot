@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location /*, LocationKeywordResponse*/ } = require('../../../lib');
+const { Location /*, KeywordResponse*/ } = require('../../../lib');
 const { UP, DOWN, CAR } = require('../constants');
 
 class CarLocation extends Location {
@@ -34,8 +34,8 @@ class CarLocation extends Location {
           passed by on the beginning of this hiking journey.`;
         return this.followExit(DOWN, px);
 
-        /* FIXME this doesn't work
-        return new LocationKeywordResponse({
+        /* FIXME this doesn't work, keyword responses are not composable
+        return new KeywordResponse({
           text: this.followExit(DOWN),
           changeScore: 5
         });

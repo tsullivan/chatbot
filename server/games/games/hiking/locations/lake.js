@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location, LocationKeywordResponse } = require('../../../lib');
+const { Location, KeywordResponse } = require('../../../lib');
 const { SOUTH, NORTH, ENEMIES, CAR, APPLES } = require('../constants');
 
 class LakeLocation extends Location {
@@ -38,7 +38,7 @@ class LakeLocation extends Location {
             defeat you!`,
           'LOSE 50 points',
         ];
-        return new LocationKeywordResponse({
+        return new KeywordResponse({
           text: ps.join('\n\n'),
           changeScore: -50,
           isDone: true,
@@ -50,7 +50,7 @@ class LakeLocation extends Location {
             after a little bit.`,
           'LOSE A POINT',
         ];
-        return new LocationKeywordResponse({
+        return new KeywordResponse({
           text: ps.join('\n\n'),
           changeScore: -1,
         });
@@ -72,7 +72,7 @@ class LakeLocation extends Location {
           snl`Unfortunately, at this point, the silver flying car breaks down.
             No more flying car.`,
         ];
-        return new LocationKeywordResponse({
+        return new KeywordResponse({
           text: ps.join('\n\n'),
           changeScore: 35,
         });
