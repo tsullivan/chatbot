@@ -5,7 +5,7 @@ const { KeywordResponse } = require('./class_keyword_response');
 function getGameKeywords() {
   return [
     {
-      key: ['HINT', 'HELP'],
+      key: 'HELP',
       description: 'See all the commands you can type',
       fn: game => {
         const parts = [game.currentLocation.getInstructions(), game.getInstructions()];
@@ -70,22 +70,27 @@ class Adventure extends ChatGame {
     input = input.toUpperCase();
     let response,
       changeScore,
-      isDone = false;
+      isDone = false,
+      showInstructions = true;
 
     if (this.currentLocation.hasKeyword(input)) {
       // keyword of location
-      ({ response, changeScore, isDone } = this.currentLocation.getInputResponse(input, this));
+      ({ response, changeScore, isDone, showInstructions } = this.currentLocation.getInputResponse(
+        input,
+        this
+      ));
       this.currentLocation.clearKeywords();
       this.currentLocation.setKeywords(this); // location keywords depend on game state
     } else if (this.hasKeyword(input)) {
       // keyword of game
-      ({ response, changeScore, isDone } = this.getInputResponse(input, this));
+      ({ response, changeScore, isDone, showInstructions } = this.getInputResponse(input, this));
       this.clearKeywords();
       this.setKeywords();
     } else {
       ({ response } = this.getInputResponse('HELP', this, this));
       response = `ERROR! LOSE 2 POINTS. Type HELP to show all the commands` + '\n\n' + response;
       changeScore = -2;
+      showInstructions = false;
     }
 
     this.score += changeScore;
@@ -96,7 +101,7 @@ class Adventure extends ChatGame {
       return this.win(response);
     } else {
       this.turns += 1;
-      return this.notDone(this.getNext(response));
+      return this.notDone(this.getNext(response, showInstructions));
     }
   }
 
@@ -114,8 +119,12 @@ class Adventure extends ChatGame {
     this.inventory.delete(item);
   }
 
-  getNext(prefix) {
-    return prefix + '\n\n' + this.currentLocation.getInstructions();
+  getNext(prefix, showInstructions) {
+    let next = prefix;
+    if (showInstructions) {
+      next += '\n\n' + this.currentLocation.getInstructions();
+    }
+    return next;
   }
 
   getWelcome() {

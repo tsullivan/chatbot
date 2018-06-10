@@ -90,23 +90,15 @@ CAVE - Go down into the cave
 CASTLE - Head up to the castle.
 
 Type:
-HINT - See all the commands you can type
-QUIT - Quit the game
-
-Type:
-CAVE - Go down into the cave
-CASTLE - Head up to the castle."
+HELP - See all the commands you can type
+QUIT - Quit the game"
 `;
 
 exports[`adventure score 1`] = `"The average score of the games you plaid are : 47"`;
 
 exports[`adventure start 1`] = `
 "Dark Forest
-It is the night time. You are outside, surrounded by dark trees, and you're very tired. There is a castle and a cave. Which way looks to be best to find a nice comfy bed to rest? I didn't mean for that to rhyme.
-
-Type:
-CAVE - Go down into the cave
-CASTLE - Head up to the castle."
+It is the night time. You are outside, surrounded by dark trees, and you're very tired. There is a castle and a cave. Which way looks to be best to find a nice comfy bed to rest? I didn't mean for that to rhyme."
 `;
 
 exports[`adventure take_handle 1`] = `
@@ -127,13 +119,8 @@ LOOK - Look closer at the open-air windows
 EXIT - Leave the beautful great hall and the castle.
 
 Type:
-HINT - See all the commands you can type
-QUIT - Quit the game
-
-Type:
-SLEEP - Sleep on the comfy bed
-LOOK - Look closer at the open-air windows
-EXIT - Leave the beautful great hall and the castle."
+HELP - See all the commands you can type
+QUIT - Quit the game"
 `;
 
 exports[`adventure use_window_handle 2`] = `

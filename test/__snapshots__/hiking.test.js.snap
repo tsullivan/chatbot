@@ -496,12 +496,8 @@ LAKE - You can see a lake in one direction. It looks pretty nice.
 ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly.
 
 Type:
-HINT - See all the commands you can type
-QUIT - Quit the game
-
-Type:
-LAKE - You can see a lake in one direction. It looks pretty nice.
-ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly."
+HELP - See all the commands you can type
+QUIT - Quit the game"
 `;
 
 exports[`hiking help and quit and start over 2`] = `
@@ -512,12 +508,8 @@ LAKE - You can see a lake in one direction. It looks pretty nice.
 ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly.
 
 Type:
-HINT - See all the commands you can type
-QUIT - Quit the game
-
-Type:
-LAKE - You can see a lake in one direction. It looks pretty nice.
-ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly."
+HELP - See all the commands you can type
+QUIT - Quit the game"
 `;
 
 exports[`hiking help and quit and start over 3`] = `
@@ -533,11 +525,7 @@ You've just escaped from a jail. You breathe a sigh of relief because that part 
 
 Now, all you have to do is hike...
 
-You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast.
-
-Type:
-LAKE - You can see a lake in one direction. It looks pretty nice.
-ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly."
+You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast."
 `;
 
 exports[`hiking purchase some items at the apple shop 1`] = `
@@ -697,11 +685,7 @@ You've just escaped from a jail. You breathe a sigh of relief because that part 
 
 Now, all you have to do is hike...
 
-You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast.
-
-Type:
-LAKE - You can see a lake in one direction. It looks pretty nice.
-ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly."
+You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast."
 `;
 
 exports[`hiking swim fail and start over 2`] = `
@@ -735,9 +719,5 @@ You've just escaped from a jail. You breathe a sigh of relief because that part 
 
 Now, all you have to do is hike...
 
-You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast.
-
-Type:
-LAKE - You can see a lake in one direction. It looks pretty nice.
-ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly."
+You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast."
 `;
