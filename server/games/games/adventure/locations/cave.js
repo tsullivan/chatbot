@@ -17,21 +17,21 @@ class CaveLocation extends Location {
   }
 
   setKeywords() {
-    const p = [
-      snl`The dance is beautiful, with flowing, synchronized forms.
-        However, as hands have no ears, and skeleton hands are the forms that
-        are dancing, there is no music. You can infer a beat, but you can not
-        move your feet to synchronize in kind - as the hands also do not have
-        feet and are instead dancing upon the tips of their skeleton fingers.
-        You have no hope to try to participate. Just take a minute to enjoy the
-        show. Or keep finding a way to rest your weary self. It's still late at
-        night and you're still tired.`,
-      'GAIN A POINT',
-    ];
     if (!this._danced) {
       this.addKeyword('DANCE', 'Dance with the tiny skeleton hands', () => {
         this._danced = true;
         this.removeKeyword('DANCE');
+        const p = [
+          snl`The dance is beautiful, with flowing, synchronized forms.
+            However, as hands have no ears, and skeleton hands are the forms that
+            are dancing, there is no music. You can infer a beat, but you can not
+            move your feet to synchronize in kind - as the hands also do not have
+            feet and are instead dancing upon the tips of their skeleton fingers.
+            You have no hope to try to participate. Just take a minute to enjoy the
+            show. Or keep finding a way to rest your weary self. It's still late at
+            night and you're still tired.`,
+          'GAIN A POINT',
+        ];
         return new KeywordResponse({
           text: p.join('\n\n'),
           changeScore: 1, // add a point for the heck of it

@@ -62,7 +62,6 @@ describe('hiking', () => {
   });
 
   test('purchase some items at the apple shop', async () => {
-    const resps = [];
     resps[resps.length] = await send('rope');
     resps[resps.length] = await send('look');
     resps[resps.length] = await send('buy_apple');

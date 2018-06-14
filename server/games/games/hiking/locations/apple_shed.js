@@ -11,9 +11,10 @@ class AppleShedLocation extends Location {
 
   getDescription() {
     const ps = [
-      snl`This shed is an Apple Store. It looks like a giant, giant circle.
-      Inside there are many, many shelves full of apples. It looks like there
-      are exactly ${this._numApples} apples.`,
+      snl`This giant, giant circle in the trees at the top of the climbing
+        rope. is an Apple Store. It looks like a shed.  Inside there are many,
+        many shelves full of apples. It looks like there are exactly
+        ${this._numApples} apples.`,
     ];
     if (this._numApples > 0) {
       ps.push(

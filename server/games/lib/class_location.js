@@ -5,27 +5,27 @@ class Location {
   constructor({ game, name }) {
     Object.assign(this, getKeywordsHelper());
 
-    this.name = name;
-    this.game = game;
+    this._game = game;
+    this._exits = new Map();
 
-    this.exits = new Map();
+    this._name = name;
     this.floorItems = new Set();
 
     this.setKeywords(game);
   }
 
   setKeywords() {
-    throw new Error('setKeywords must be overridden in ' + this.name);
+    throw new Error('setKeywords must be overridden in ' + this._name);
   }
 
   followExit(direction, prefix = '') {
-    if (this.exits.has(direction)) {
-      const exit = this.exits.get(direction);
-      this.game.setLocation(exit);
+    if (this._exits.has(direction)) {
+      const exit = this._exits.get(direction);
+      this._game.setLocation(exit);
       exit.clearKeywords();
-      exit.setKeywords(this.game);
+      exit.setKeywords(this._game);
 
-      const ps = [exit.getDescriptionInternal(this.game)];
+      const ps = [exit.getDescriptionInternal(this._game)];
       if (prefix !== '') {
         ps.unshift(prefix);
       }
@@ -41,7 +41,7 @@ class Location {
   }
 
   addExit({ location, exit, inverseExit }) {
-    this.exits.set(exit, location);
+    this._exits.set(exit, location);
 
     if (inverseExit) {
       location.addExit({
@@ -52,7 +52,7 @@ class Location {
   }
 
   getDescriptionInternal(game) {
-    return `${this.name}\n${this.getDescription(game)}`;
+    return `${this._name}\n${this.getDescription(game)}`;
   }
 
   addFloorItem(item) {
