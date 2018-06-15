@@ -1,3 +1,4 @@
+const { ItemCollection } = require('./class_item_collection');
 const { KeywordResponse } = require('./class_keyword_response');
 const { getKeywordsHelper } = require('./keywords_helper');
 
@@ -9,7 +10,7 @@ class Location {
     this._exits = new Map();
 
     this._name = name;
-    this.floorItems = new Set();
+    this._floorItems = new Set();
 
     this.setKeywords(game);
   }
@@ -55,15 +56,18 @@ class Location {
     return `${this._name}\n${this.getDescription(game)}`;
   }
 
-  addFloorItem(item) {
-    this.floorItems.add(item);
+  addFloorItem(id) {
+    // BUG this gets the readable name not the const
+    this._floorItems.add(id);
   }
-  hasFloorItem(item) {
-    return this.floorItems.has(item);
+  hasFloorItem(id) {
+    return this._floorItems.has(id);
   }
-  // find the item and remove it from the floor
-  removeFloorItem(item) {
-    this.floorItems.delete(item);
+  removeFloorItem(id) {
+    this._floorItems.delete(id);
+  }
+  getFloorItems() {
+    return ItemCollection.getVisibleItemsFromSet(this._floorItems, this._game);
   }
 }
 

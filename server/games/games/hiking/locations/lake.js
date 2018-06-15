@@ -61,7 +61,6 @@ class LakeLocation extends Location {
       this.addKeyword('THROW_APPLES', 'Throw the apples at the enemies', () => {
         game.deleteInventory(APPLES);
         game.deleteInventory(ENEMIES);
-        game.deleteInventory(CAR);
         this.removeKeyword('THROW_APPLES');
         const ps = [
           snl`You reach for an apple in your pocket, and give it a mighty hurl.
@@ -69,8 +68,6 @@ class LakeLocation extends Location {
           snl`You continue on in this manner until all enemies are defeated.
             Their corpses float amidst apples in the water of the lake.`,
           'GAIN 35 points',
-          snl`Unfortunately, at this point, the silver flying car breaks down.
-            No more flying car.`,
         ];
         return new KeywordResponse({
           text: ps.join('\n\n'),

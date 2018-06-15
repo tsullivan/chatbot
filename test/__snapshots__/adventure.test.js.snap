@@ -90,6 +90,7 @@ CAVE - Go down into the cave
 CASTLE - Head up to the castle.
 
 Type:
+ITEMS - Actions you can do on stuff.
 HELP - See all the commands you can type
 QUIT - Quit the game"
 `;
@@ -119,6 +120,7 @@ LOOK - Look closer at the open-air windows
 EXIT - Leave the beautful great hall and the castle.
 
 Type:
+ITEMS - Actions you can do on stuff.
 HELP - See all the commands you can type
 QUIT - Quit the game"
 `;

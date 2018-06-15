@@ -42,20 +42,27 @@ class MountainHouseLocation extends Location {
       ];
 
       // stats stuff
-      const learnThingsIndex = ps.length;
-      ps[learnThingsIndex] = `You learn some things:
-- Your score is ${game.score}
-- You've taken ${game.turns} turns`;
+      const { score, turns } = game;
+      ps[ps.length] = `You learn some things:
+- Your score is ${score}
+- You've taken ${turns} turns`;
 
       // restore some points
       let changeScore = 0;
-      const scoreDeficit = 50 - game.score;
+      const scoreDeficit = 50 - score;
       if (scoreDeficit > 0) {
         changeScore = scoreDeficit; // bump them up to 50 again
-        ps[learnThingsIndex] +=
-          '\n' +
-          snl`- You get ${scoreDeficit} more
-          points from sleeping right now.`;
+        ps[ps.length] = `- You get ${scoreDeficit} more points from sleeping right now.`;
+      }
+
+      const items = game.getVisibleInventoryItems();
+      const inventoryIndex = ps.length;
+      ps[inventoryIndex] = 'Stuff you are holding:';
+      items.forEach(item => {
+        ps[inventoryIndex] += `\n- ${item.getName()}: ${item.getDescription()}`;
+      });
+      if (items.length === 0) {
+        ps[inventoryIndex] += `\n- In fact you are holding nothing.`;
       }
 
       return new KeywordResponse({

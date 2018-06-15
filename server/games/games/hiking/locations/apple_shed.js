@@ -27,6 +27,8 @@ class AppleShedLocation extends Location {
   }
 
   setKeywords(game) {
+    const yogurt = game.getItemFromCollection(YOGURT);
+
     let pxEx;
     if (!game.inInventory(APPLES) || !game.inInventory(YOGURT)) {
       pxEx = snl`"Thanks for coming!" says the business man. "I still have a few items left for sale if
@@ -42,7 +44,7 @@ class AppleShedLocation extends Location {
           text: `There are exactly ${this._numApples} apples on the shelves.`,
         });
       } else if (!game.inInventory(YOGURT)) {
-        this._yogurtSeen = true;
+        yogurt.see();
         this._hasYogurt = true;
         resp = new KeywordResponse({
           text: snl`There are no apples on the shelves. There is nothing in the
@@ -75,7 +77,7 @@ class AppleShedLocation extends Location {
           changeScore: 10,
         });
       });
-    } else if (this._yogurtSeen && this._hasYogurt) {
+    } else if (yogurt.isSeen() && this._hasYogurt) {
       this.addKeyword('BUY_YOGURT', `Purchase the yogurt with ghosts in it.`, () => {
         game.addToInventory(YOGURT);
         this.removeKeyword('BUY_YOGURT');

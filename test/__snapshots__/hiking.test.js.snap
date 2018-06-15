@@ -100,6 +100,15 @@ FINISH_LINE - From up here on the bridge, you can see the finish line of this en
 `;
 
 exports[`hiking explore sun 1`] = `
+"Escaping from the cops station
+You've just escaped from a jail. You breathe a sigh of relief because that part of your life is forever behind you. They'll never find you in these woods. Plus, you stole the jail key, because you're not a bad guy. You were put in jail accidentally. They made you steal the key.
+
+Now, all you have to do is hike...
+
+You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast."
+`;
+
+exports[`hiking explore sun 2`] = `
 "Your hiking adventure begins! Off to the lake we go.
 
 Lake
@@ -113,7 +122,7 @@ BRIDGE - A giant bridge looks like it crosses right over the entire lake.
 SWIM - Swim around in the lake"
 `;
 
-exports[`hiking explore sun 2`] = `
+exports[`hiking explore sun 3`] = `
 "On the bridge
 At the top of the bridge is a spaceship. It looks like a Sun Ship. The hatch is open, and it looks pretty functional.
 
@@ -127,7 +136,7 @@ LAKE - Go back down to the lake
 FINISH_LINE - From up here on the bridge, you can see the finish line of this entire game!"
 `;
 
-exports[`hiking explore sun 3`] = `
+exports[`hiking explore sun 4`] = `
 "Sun Ship, on Earth
 Pretty nice in here. Whatever alien species created this ship did a good job.
 
@@ -138,7 +147,7 @@ PUSH_ME - Push the control button
 EXIT - Jump out of the ship and back to the bridge"
 `;
 
-exports[`hiking explore sun 4`] = `
+exports[`hiking explore sun 5`] = `
 "You close your eyes, hold your breath, and slam your hand on the PUSH_ME button. The ship's engine's rumble and your insides suddenly feel like cooked noodles as the ship rises up into the sky, and KSHOOOOM! into space!
 
 The Sun, in the Sun Ship
@@ -149,7 +158,7 @@ BACK - Go back to Earth
 LOOK - Look at the sun (through the safety of the sunship windows)"
 `;
 
-exports[`hiking explore sun 5`] = `
+exports[`hiking explore sun 6`] = `
 "There's not much to say about the sun at the moment. It's plain, like plain yogurt.
 
 Type:
@@ -157,7 +166,7 @@ BACK - Go back to Earth
 LOOK - Look at the sun (through the safety of the sunship windows)"
 `;
 
-exports[`hiking explore sun 6`] = `
+exports[`hiking explore sun 7`] = `
 "KSHOOOOM!! Back down to Earth you go in the sun ship. Hope you enjoyed your stay on the sun! Come back soon!
 
 Sun Ship, on Earth
@@ -170,7 +179,7 @@ PUSH_ME - Push the control button
 EXIT - Jump out of the ship and back to the bridge"
 `;
 
-exports[`hiking explore sun 7`] = `
+exports[`hiking explore sun 8`] = `
 "Hope you enjoyed your time on the sun ship. Come back again anytime you want to be in a sun ship!
 
 On the bridge
@@ -184,6 +193,13 @@ Type:
 SHIP - Enter the ship
 LAKE - Go back down to the lake
 FINISH_LINE - From up here on the bridge, you can see the finish line of this entire game!"
+`;
+
+exports[`hiking explore sun 9`] = `
+"I guess you don't want to hike any more. See ya!
+
+Looks like you're a winner! Turns: 7 Score: 50
+That was fun, Tim!"
 `;
 
 exports[`hiking finish the game 1`] = `
@@ -202,7 +218,7 @@ BRIDGE - Go back to the bridge, and keep playing the hiking game"
 exports[`hiking finish the game 2`] = `
 "The robot takes out a flag, and swishes it over your head. This takes you to the end of the hiking journey.
 
-Looks like you're a winner! Turns: 48 Score: 119
+Looks like you're a winner! Turns: 41 Score: 119
 That was fun, Tim!"
 `;
 
@@ -262,7 +278,12 @@ GAIN A POINT
 
 You learn some things:
 - Your score is 64
-- You've taken 30 turns
+- You've taken 23 turns
+
+Stuff you are holding:
+- Jail Key: The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+- Apples: 100 red apples.
+- Yogurt: This yogurt is haunted with ghosts. They look like they want to get out.
 
 Type:
 OUTSIDE - Go out to the top of the mountain
@@ -306,7 +327,12 @@ GAIN A POINT
 
 You learn some things:
 - Your score is 64
-- You've taken 33 turns
+- You've taken 26 turns
+
+Stuff you are holding:
+- Jail Key: The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+- Apples: 100 red apples.
+- Yogurt: This yogurt is haunted with ghosts. They look like they want to get out.
 
 Type:
 OUTSIDE - Go out to the top of the mountain
@@ -378,8 +404,6 @@ You continue on in this manner until all enemies are defeated. Their corpses flo
 
 GAIN 35 points
 
-Unfortunately, at this point, the silver flying car breaks down. No more flying car.
-
 Type:
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
@@ -387,7 +411,16 @@ SWIM - Swim around in the lake"
 `;
 
 exports[`hiking get sprayed at the waterfall 1`] = `
-"Down, down, down you go. Down the bridge, bridge, bridge to the lake, lake, lake.
+"Escaping from the cops station
+You've just escaped from a jail. You breathe a sigh of relief because that part of your life is forever behind you. They'll never find you in these woods. Plus, you stole the jail key, because you're not a bad guy. You were put in jail accidentally. They made you steal the key.
+
+Now, all you have to do is hike...
+
+You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast."
+`;
+
+exports[`hiking get sprayed at the waterfall 2`] = `
+"Your hiking adventure begins! Off to the lake we go.
 
 Lake
 This lake is beautiful, but the cloudy sky gives it a grim appearance. This seems to be a place of battle.
@@ -400,7 +433,7 @@ BRIDGE - A giant bridge looks like it crosses right over the entire lake.
 SWIM - Swim around in the lake"
 `;
 
-exports[`hiking get sprayed at the waterfall 2`] = `
+exports[`hiking get sprayed at the waterfall 3`] = `
 "Rocky place
 There's rocks here. Be careful! You could trip, or if you horseplay, a rock could fall on your head.
 
@@ -411,7 +444,7 @@ LAKE - Go to the lake
 WATERFALL - Check it out, you can see a waterfall beyond the rocks"
 `;
 
-exports[`hiking get sprayed at the waterfall 3`] = `
+exports[`hiking get sprayed at the waterfall 4`] = `
 "You're a careful sort of person, so you can easily get over the treacherous rocks to go where you want to go.
 
 Really giant waterfall
@@ -431,7 +464,7 @@ GET_SPRAYED - Allow yourself to get sprayed by the water
 CHECK_DRYNESS - Check yourself to see if you are wet or dry from the waterfall spray"
 `;
 
-exports[`hiking get sprayed at the waterfall 4`] = `
+exports[`hiking get sprayed at the waterfall 5`] = `
 "You have dodged all the magical spray from the water, and are quite dry. You are not feeling magical.
 
 Type:
@@ -442,7 +475,7 @@ GET_SPRAYED - Allow yourself to get sprayed by the water
 CHECK_DRYNESS - Check yourself to see if you are wet or dry from the waterfall spray"
 `;
 
-exports[`hiking get sprayed at the waterfall 5`] = `
+exports[`hiking get sprayed at the waterfall 6`] = `
 "You try to climb the rope up to the giant circle, but you're too weak right now!
 
 LOSE A POINT
@@ -455,7 +488,7 @@ GET_SPRAYED - Allow yourself to get sprayed by the water
 CHECK_DRYNESS - Check yourself to see if you are wet or dry from the waterfall spray"
 `;
 
-exports[`hiking get sprayed at the waterfall 6`] = `
+exports[`hiking get sprayed at the waterfall 7`] = `
 "You try to hike the trail going straight up the really tall mountain, but you're too weak right now!
 
 LOSE A POINT
@@ -468,7 +501,7 @@ GET_SPRAYED - Allow yourself to get sprayed by the water
 CHECK_DRYNESS - Check yourself to see if you are wet or dry from the waterfall spray"
 `;
 
-exports[`hiking get sprayed at the waterfall 7`] = `
+exports[`hiking get sprayed at the waterfall 8`] = `
 "You jump around in the waterfall spray for a bit. It feels so magical! The magical wetness covers you and leaves you soaked! You feel magically powerful!
 
 Type:
@@ -479,7 +512,7 @@ GET_SPRAYED - Allow yourself to get sprayed by the water
 CHECK_DRYNESS - Check yourself to see if you are wet or dry from the waterfall spray"
 `;
 
-exports[`hiking get sprayed at the waterfall 8`] = `
+exports[`hiking get sprayed at the waterfall 9`] = `
 "You have recently been sprayed by some of the magical droplets of the waterfall. You feel magically powerful!
 
 Type:
@@ -490,17 +523,27 @@ GET_SPRAYED - Allow yourself to get sprayed by the water
 CHECK_DRYNESS - Check yourself to see if you are wet or dry from the waterfall spray"
 `;
 
-exports[`hiking help and quit and start over 1`] = `
+exports[`hiking help 1`] = `
+"Escaping from the cops station
+You've just escaped from a jail. You breathe a sigh of relief because that part of your life is forever behind you. They'll never find you in these woods. Plus, you stole the jail key, because you're not a bad guy. You were put in jail accidentally. They made you steal the key.
+
+Now, all you have to do is hike...
+
+You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast."
+`;
+
+exports[`hiking help 2`] = `
 "Type:
 LAKE - You can see a lake in one direction. It looks pretty nice.
 ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly.
 
 Type:
+ITEMS - Actions you can do on stuff.
 HELP - See all the commands you can type
 QUIT - Quit the game"
 `;
 
-exports[`hiking help and quit and start over 2`] = `
+exports[`hiking help 3`] = `
 "ERROR! LOSE 2 POINTS. Type HELP to show all the commands
 
 Type:
@@ -508,24 +551,110 @@ LAKE - You can see a lake in one direction. It looks pretty nice.
 ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly.
 
 Type:
+ITEMS - Actions you can do on stuff.
 HELP - See all the commands you can type
 QUIT - Quit the game"
 `;
 
-exports[`hiking help and quit and start over 3`] = `
+exports[`hiking help 4`] = `
 "I guess you don't want to hike any more. See ya!
 
 Looks like you're a winner! Turns: 2 Score: 48
 That was fun, Tim!"
 `;
 
-exports[`hiking help and quit and start over 4`] = `
+exports[`hiking items and drop key and pick up key 1`] = `
 "Escaping from the cops station
 You've just escaped from a jail. You breathe a sigh of relief because that part of your life is forever behind you. They'll never find you in these woods. Plus, you stole the jail key, because you're not a bad guy. You were put in jail accidentally. They made you steal the key.
 
 Now, all you have to do is hike...
 
 You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast."
+`;
+
+exports[`hiking items and drop key and pick up key 2`] = `
+"Your hiking adventure begins! Off to the lake we go.
+
+Lake
+This lake is beautiful, but the cloudy sky gives it a grim appearance. This seems to be a place of battle.
+
+There are enemies are in the lake. The shores of the lake are too far away from them to do anything about them, though
+
+Type:
+ROCKS - Go to a place with a lot of rocks
+BRIDGE - A giant bridge looks like it crosses right over the entire lake.
+SWIM - Swim around in the lake"
+`;
+
+exports[`hiking items and drop key and pick up key 3`] = `
+"Type:
+DROP_JAIL_KEY - Drop the key you stole from the jail.
+
+Type:
+ROCKS - Go to a place with a lot of rocks
+BRIDGE - A giant bridge looks like it crosses right over the entire lake.
+SWIM - Swim around in the lake"
+`;
+
+exports[`hiking items and drop key and pick up key 4`] = `
+"The key has been dropped. You didn't need it anyways.
+
+Type:
+ROCKS - Go to a place with a lot of rocks
+BRIDGE - A giant bridge looks like it crosses right over the entire lake.
+SWIM - Swim around in the lake"
+`;
+
+exports[`hiking items and drop key and pick up key 5`] = `
+"Rocky place
+There's rocks here. Be careful! You could trip, or if you horseplay, a rock could fall on your head.
+
+If you are careful, you could cross the rocks to get to a waterfall.
+
+Type:
+LAKE - Go to the lake
+WATERFALL - Check it out, you can see a waterfall beyond the rocks"
+`;
+
+exports[`hiking items and drop key and pick up key 6`] = `
+"You're a careful sort of person, so you can easily get over the treacherous rocks to go where you want to go.
+
+Lake
+This lake is beautiful, but the cloudy sky gives it a grim appearance. This seems to be a place of battle.
+
+There are enemies are in the lake. The shores of the lake are too far away from them to do anything about them, though
+
+Type:
+ROCKS - Go to a place with a lot of rocks
+BRIDGE - A giant bridge looks like it crosses right over the entire lake.
+SWIM - Swim around in the lake"
+`;
+
+exports[`hiking items and drop key and pick up key 7`] = `
+"You now have the key. Again.
+
+Type:
+ROCKS - Go to a place with a lot of rocks
+BRIDGE - A giant bridge looks like it crosses right over the entire lake.
+SWIM - Swim around in the lake"
+`;
+
+exports[`hiking items and drop key and pick up key 8`] = `
+"Rocky place
+There's rocks here. Be careful! You could trip, or if you horseplay, a rock could fall on your head.
+
+If you are careful, you could cross the rocks to get to a waterfall.
+
+Type:
+LAKE - Go to the lake
+WATERFALL - Check it out, you can see a waterfall beyond the rocks"
+`;
+
+exports[`hiking items and drop key and pick up key 9`] = `
+"I guess you don't want to hike any more. See ya!
+
+Looks like you're a winner! Turns: 7 Score: 50
+That was fun, Tim!"
 `;
 
 exports[`hiking purchase some items at the apple shop 1`] = `
@@ -677,9 +806,9 @@ GET_SPRAYED - Allow yourself to get sprayed by the water
 CHECK_DRYNESS - Check yourself to see if you are wet or dry from the waterfall spray"
 `;
 
-exports[`hiking score 1`] = `"The average score of the games you plaid are : 55.666666666666664"`;
+exports[`hiking score 1`] = `"The average score of the games you plaid are : 53.4"`;
 
-exports[`hiking swim fail and start over 1`] = `
+exports[`hiking swim fail 1`] = `
 "Escaping from the cops station
 You've just escaped from a jail. You breathe a sigh of relief because that part of your life is forever behind you. They'll never find you in these woods. Plus, you stole the jail key, because you're not a bad guy. You were put in jail accidentally. They made you steal the key.
 
@@ -688,7 +817,7 @@ Now, all you have to do is hike...
 You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast."
 `;
 
-exports[`hiking swim fail and start over 2`] = `
+exports[`hiking swim fail 2`] = `
 "Your hiking adventure begins! Off to the lake we go.
 
 Lake
@@ -702,7 +831,7 @@ BRIDGE - A giant bridge looks like it crosses right over the entire lake.
 SWIM - Swim around in the lake"
 `;
 
-exports[`hiking swim fail and start over 3`] = `
+exports[`hiking swim fail 3`] = `
 "As soon as you dip one toe in the water, the enemies come up and defeat you!
 
 LOSE 50 points
@@ -711,13 +840,4 @@ YOU LOST. You lost too many points!
 
 See ya, Tim! Better luck next time! Turns: 1 Score: 0
 That was fun, Tim!"
-`;
-
-exports[`hiking swim fail and start over 4`] = `
-"Escaping from the cops station
-You've just escaped from a jail. You breathe a sigh of relief because that part of your life is forever behind you. They'll never find you in these woods. Plus, you stole the jail key, because you're not a bad guy. You were put in jail accidentally. They made you steal the key.
-
-Now, all you have to do is hike...
-
-You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast."
 `;

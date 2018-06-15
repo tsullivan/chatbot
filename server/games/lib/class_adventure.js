@@ -1,13 +1,16 @@
 const { ChatGame } = require('../chat_game');
 const { getKeywordsHelper } = require('./keywords_helper');
 const { getGameKeywords } = require('./game_keywords');
+const { ItemCollection } = require('./class_item_collection');
 
 class Adventure extends ChatGame {
   constructor(session) {
     super(session);
     Object.assign(this, getKeywordsHelper());
 
-    this.inventory = new Set();
+    this._itemCollection = new ItemCollection();
+    this._inventory = new Set(); // ids of items in the collection
+
     this.notDone = response => ({ response, isDone: false });
     this.yesDone = response => ({ response, isDone: true });
 
@@ -18,11 +21,31 @@ class Adventure extends ChatGame {
     this.setKeywords();
   }
 
+  addItemToCollection(id, item) {
+    this._itemCollection.addItem(id, item);
+  }
+
   setKeywords() {
     const gameKeywords = getGameKeywords(this);
     gameKeywords.forEach(({ key, description, fn }) => {
       this.addKeyword(key, description, fn);
     });
+  }
+  setInventoryKeywords() {
+    const items = ItemCollection.getAllItemsFromSet(this._inventory, this);
+    items.forEach(item => item.setKeywords(this));
+  }
+
+  getInputHandlerItem(items, input) {
+    let foundItem = null;
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      if (item.hasKeyword(input)) {
+        foundItem = item;
+        break;
+      }
+    }
+    return foundItem;
   }
 
   win() {
@@ -48,20 +71,45 @@ class Adventure extends ChatGame {
       isDone = false,
       showInstructions = true;
 
-    if (this.currentLocation.hasKeyword(input)) {
-      // keyword of location
-      ({ response, changeScore, isDone, showInstructions } = this.currentLocation.getInputResponse(
-        input,
-        this
-      ));
-      this.currentLocation.clearKeywords();
-      this.currentLocation.setKeywords(this); // location keywords depend on game state
-    } else if (this.hasKeyword(input)) {
-      // keyword of game
-      ({ response, changeScore, isDone, showInstructions } = this.getInputResponse(input, this));
-      this.clearKeywords();
-      this.setKeywords();
-    } else {
+    /* array of functions to call to look through areas
+     * for which the input can be a keyword */
+    const checks = [
+      {
+        inputCheck: () => this.hasKeyword(input),
+        getResponder: () => this.getInputResponse(input, this),
+      },
+      {
+        inputCheck: game => game.currentLocation.hasKeyword(input) && game.currentLocation, // location keyword
+        getResponder: currentLocation => currentLocation.getInputResponse(input, this),
+      },
+      {
+        inputCheck: () => {
+          const inventoryItems = this.getVisibleInventoryItems(); // keyword of a visible item in inventory
+          return this.getInputHandlerItem(inventoryItems, input);
+        },
+        getResponder: inventoryItem => inventoryItem.getInputResponse(input, this),
+      },
+      {
+        inputCheck: () => {
+          const locationItems = this.currentLocation.getFloorItems(); // keyword of a visible item in the location
+          return this.getInputHandlerItem(locationItems, input);
+        },
+        getResponder: locationItem => locationItem.getInputResponse(input, this),
+      },
+    ];
+
+    let foundResponse = false;
+    for (let c = 0; c < checks.length; c++) {
+      const { inputCheck, getResponder } = checks[c];
+      const contextResult = inputCheck(this);
+      if (contextResult) {
+        ({ response, changeScore, isDone, showInstructions } = getResponder(contextResult));
+        foundResponse = true;
+        break;
+      }
+    }
+    if (!foundResponse) {
+      // if show item keywords of itemCollection items for  visible items on floor or in inventory
       ({ response } = this.getInputResponse('HELP', this, this));
       response = `ERROR! LOSE 2 POINTS. Type HELP to show all the commands` + '\n\n' + response;
       changeScore = -2;
@@ -80,18 +128,29 @@ class Adventure extends ChatGame {
     }
   }
 
-  addToInventory(item) {
-    this.inventory.add(item);
+  getItemFromCollection(id) {
+    return this._itemCollection.get(id);
   }
-  inInventory(item) {
-    return this.inventory.has(item);
+
+  addToInventory(id) {
+    this._inventory.add(id);
   }
-  dropInventory(item, location) {
-    this.inventory.delete(item);
-    location.addFloorItem(item);
+  inInventory(id) {
+    return this._inventory.has(id);
   }
-  deleteInventory(item) {
-    this.inventory.delete(item);
+  dropInventory(id, location) {
+    this._inventory.delete(id);
+    location.addFloorItem(id);
+  }
+  takeFromLocation(id, location) {
+    this._inventory.add(id);
+    location.removeFloorItem(id);
+  }
+  deleteInventory(id) {
+    this._inventory.delete(id);
+  }
+  getVisibleInventoryItems() {
+    return ItemCollection.getVisibleItemsFromSet(this._inventory, this);
   }
 
   getNext(prefix, showInstructions) {
@@ -103,7 +162,9 @@ class Adventure extends ChatGame {
   }
 
   getWelcome() {
-    return this.getNext(this.currentLocation.getDescriptionInternal(this));
+    const locationDescription = this.currentLocation.getDescriptionInternal(this);
+    const { response: locationHelp } = this.getInputResponse('HELP', this, this);
+    return [locationDescription, locationHelp].join('\n\n');
   }
 }
 

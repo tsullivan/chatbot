@@ -1,15 +1,17 @@
 const snl = require('strip-newlines');
 const { Adventure } = require('../../lib');
+const { setItems } = require('./items');
 const { getLocations } = require('./locations');
-const { ENEMIES } = require('./constants');
 
 class HikingGame extends Adventure {
   constructor(session) {
     super(session);
     this.name = 'hiking';
-    this.locations = getLocations(this);
-    this.currentLocation = this.locations.start;
-    this.addToInventory(ENEMIES); // TODO add global
+
+    const { start } = getLocations(this);
+    this.currentLocation = start;
+
+    setItems(this); // able to set takeable keyword depends on currentLocation
   }
 
   lose(response) {

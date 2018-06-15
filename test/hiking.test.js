@@ -22,23 +22,36 @@ describe('hiking', () => {
     resps = [];
   });
 
-  test('swim fail and start over', async () => {
+  test('swim fail', async () => {
     resps[resps.length] = await send('play hiking');
     resps[resps.length] = await send('lake');
     resps[resps.length] = await send('swim');
-    resps[resps.length] = await send('play hiking');
     checkResponses(resps);
   });
 
-  test('help and quit and start over', async () => {
+  test('help', async () => {
+    resps[resps.length] = await send('play hiking');
     resps[resps.length] = await send('help');
     resps[resps.length] = await send('blahblah');
     resps[resps.length] = await send('quit');
+    checkResponses(resps);
+  });
+
+  test('items and drop key and pick up key', async () => {
     resps[resps.length] = await send('play hiking');
+    resps[resps.length] = await send('lake');
+    resps[resps.length] = await send('items');
+    resps[resps.length] = await send('drop_jail_key');
+    resps[resps.length] = await send('rocks');
+    resps[resps.length] = await send('lake');
+    resps[resps.length] = await send('take_jail_key');
+    resps[resps.length] = await send('rocks');
+    resps[resps.length] = await send('quit');
     checkResponses(resps);
   });
 
   test('explore sun', async () => {
+    resps[resps.length] = await send('play hiking');
     resps[resps.length] = await send('lake');
     resps[resps.length] = await send('bridge');
     resps[resps.length] = await send('ship');
@@ -46,10 +59,12 @@ describe('hiking', () => {
     resps[resps.length] = await send('look');
     resps[resps.length] = await send('back');
     resps[resps.length] = await send('exit');
+    resps[resps.length] = await send('quit');
     checkResponses(resps);
   });
 
   test('get sprayed at the waterfall', async () => {
+    resps[resps.length] = await send('play hiking');
     resps[resps.length] = await send('lake');
     resps[resps.length] = await send('rocks');
     resps[resps.length] = await send('waterfall');
