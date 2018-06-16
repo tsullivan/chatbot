@@ -12,6 +12,8 @@ const YOGURT = 'yogurt';
 const ENEMIES = 'enemies';
 const CAR = 'car';
 
+const BUBBLE_GUN = 'bubble_gun';
+
 module.exports = {
   NORTH,
   EAST,
@@ -24,4 +26,5 @@ module.exports = {
   ENEMIES,
   CAR,
   YOGURT,
+  BUBBLE_GUN,
 };

@@ -1,8 +1,8 @@
 const snl = require('strip-newlines');
 const { InventoryItem, KeywordResponse } = require('../../lib');
-const { ENEMIES, CAR, APPLES, YOGURT, KEY } = require('./constants');
+const { ENEMIES, CAR, APPLES, YOGURT, KEY, BUBBLE_GUN } = require('./constants');
 
-function setItems(game) {
+function setItems(game, { appleShed, car: garage, mountain }) {
   /*
    * Enemies
    */
@@ -26,8 +26,8 @@ function setItems(game) {
       jail accidentally, you had to steal the key because the bad guys made
       you.`,
   });
-  keyItem.setKeywords = _game => {
-    keyItem.setDroppable({
+  keyItem.setActions = ({ setDroppable, setTakeable }) => {
+    setDroppable({
       keyword: 'DROP_JAIL_KEY',
       keywordDescription: 'Drop the key you stole from the jail.',
       fn: () =>
@@ -35,7 +35,7 @@ function setItems(game) {
           text: snl`The key has been dropped. You didn't need it anyways.`,
         }),
     });
-    keyItem.setTakeable({
+    setTakeable({
       keyword: 'TAKE_JAIL_KEY',
       keywordDescription: 'Pick up the key you stole from the jail.',
       fn: () =>
@@ -56,8 +56,8 @@ function setItems(game) {
       fast. It is created inside the tall mountain.`,
     game,
   });
-  carItem.setKeywords = _game => {
-    carItem.setDroppable({
+  carItem.setActions = ({ setDroppable }) => {
+    setDroppable({
       keyword: 'CRASH_CAR',
       keywordDescription: 'Crash the silver flying car',
       fn: () => {
@@ -71,7 +71,6 @@ function setItems(game) {
         });
       },
     });
-    carItem.setTakeable({ isTakeable: false });
   };
 
   /*
@@ -93,6 +92,28 @@ function setItems(game) {
   });
 
   /*
+   * Random ones
+   */
+  const bubbleGunItem = new InventoryItem({
+    name: 'Bubble Gun',
+    id: BUBBLE_GUN,
+    description: snl`It's a bubble gun for gunning out bubbles. It looks very interesting.`,
+    game,
+  });
+  bubbleGunItem.setActions = ({ setTakeable }) => {
+    setTakeable({
+      keyword: 'TAKE_BUBBLE_GUN',
+      keywordDescription: 'Pick up interesting looking bubble gun.',
+      // check for batteries in inventory
+      // check for bubble soap in inventory
+      fn: () =>
+        new KeywordResponse({
+          text: snl`The bubble gun is now yours.`,
+        }),
+    });
+  };
+
+  /*
    * Set to game
    */
   game.addItemToCollection(ENEMIES, enemiesItem);
@@ -100,10 +121,17 @@ function setItems(game) {
   game.addItemToCollection(CAR, carItem);
   game.addItemToCollection(APPLES, applesItem);
   game.addItemToCollection(YOGURT, yogurtItem);
+  game.addItemToCollection(BUBBLE_GUN, bubbleGunItem);
 
-  // starting items
+  // starting inventory items
   game.addToInventory(KEY);
   game.addToInventory(ENEMIES); // global item
+
+  // starting location items
+  appleShed.addFloorItem(APPLES);
+  appleShed.addFloorItem(YOGURT);
+  garage.addFloorItem(CAR);
+  mountain.addFloorItem(BUBBLE_GUN);
 
   // register all the keywords given to items
   game.setInventoryKeywords();

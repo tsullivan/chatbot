@@ -66,7 +66,7 @@ class Location {
   removeFloorItem(id) {
     this._floorItems.delete(id);
   }
-  getFloorItems() {
+  getVisibleFloorItems() {
     return ItemCollection.getVisibleItemsFromSet(this._floorItems, this._game);
   }
 }

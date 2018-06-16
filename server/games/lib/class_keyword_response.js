@@ -1,9 +1,16 @@
 class KeywordResponse {
-  constructor({ text = 'Not sure', changeScore = 0, isDone = false, showInstructions = true }) {
+  constructor({
+    text = 'Not sure',
+    changeScore = 0,
+    isDone = false,
+    showInstructions = true,
+    isCascade = false,
+  }) {
     this.text = text;
     this.changeScore = changeScore;
     this.isDone = isDone;
     this.showInstructions = showInstructions;
+    this.isCascade = isCascade;
   }
 
   static getResponseFromHandler(handler, game) {
@@ -20,12 +27,13 @@ class KeywordResponse {
   }
 
   get() {
-    const { text, changeScore, isDone, showInstructions } = this;
+    const { text, changeScore, isDone, showInstructions, isCascade } = this;
     return {
       response: text,
       changeScore,
       isDone,
       showInstructions,
+      isCascade,
     };
   }
 }

@@ -8,10 +8,9 @@ class HikingGame extends Adventure {
     super(session);
     this.name = 'hiking';
 
-    const { start } = getLocations(this);
-    this.currentLocation = start;
-
-    setItems(this); // able to set takeable keyword depends on currentLocation
+    const items = getLocations(this);
+    this.currentLocation = items.start;
+    setItems(this, items); // able to set takeable keyword depends on currentLocation
   }
 
   lose(response) {

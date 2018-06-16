@@ -95,7 +95,22 @@ function getLocations(game) {
     exit: DOWN, // no way back to the car
   });
 
-  return { start };
+  // any location that game init needs to know about
+  // e.g. if you need to add floor items to the location
+  return {
+    start,
+    rocks,
+    waterfall,
+    appleShed,
+    lake,
+    bridge,
+    sunship,
+    theSun,
+    mountain,
+    mountainHouse,
+    car,
+    finish,
+  };
 }
 
 module.exports = { getLocations };

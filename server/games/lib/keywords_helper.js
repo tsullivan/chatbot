@@ -24,7 +24,7 @@ const getKeywordsHelper = () => ({
     }
   },
 
-  getInstructions() {
+  getInstructions(prefix = '') {
     const instructions = [];
     const iterator = this._keywords.entries();
     let loopDone = false;
@@ -36,7 +36,7 @@ const getKeywordsHelper = () => ({
         break;
       } else {
         const [keyword, { text }] = value;
-        instructions.push(`${keyword} - ${text}`);
+        instructions.push(`${prefix}${keyword} - ${text}`);
       }
     }
 

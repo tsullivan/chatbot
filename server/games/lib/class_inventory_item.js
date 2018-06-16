@@ -40,7 +40,14 @@ class InventoryItem {
     this.setKeywords(game);
   }
 
-  setKeywords() {} // override it, sometimes
+  setKeywords() {
+    return this.setActions({
+      setDroppable: this.setDroppable.bind(this),
+      setTakeable: this.setTakeable.bind(this),
+    });
+  }
+
+  setActions() {} // override it, sometimes
 
   setDroppable({ isDroppable = true, keyword, keywordDescription, fn }) {
     // add a drop keyword if item is currently in inventory

@@ -33,7 +33,7 @@ class Adventure extends ChatGame {
   }
   setInventoryKeywords() {
     const items = ItemCollection.getAllItemsFromSet(this._inventory, this);
-    items.forEach(item => item.setKeywords(this));
+    items.forEach(item => item.setKeywords());
   }
 
   getInputHandlerItem(items, input) {
@@ -66,6 +66,7 @@ class Adventure extends ChatGame {
 
   testInput(input) {
     input = input.toUpperCase();
+    const responseSet = [];
     let response,
       changeScore,
       isDone = false,
@@ -91,7 +92,7 @@ class Adventure extends ChatGame {
       },
       {
         inputCheck: () => {
-          const locationItems = this.currentLocation.getFloorItems(); // keyword of a visible item in the location
+          const locationItems = this.currentLocation.getVisibleFloorItems(); // keyword of a visible item in the location
           return this.getInputHandlerItem(locationItems, input);
         },
         getResponder: locationItem => locationItem.getInputResponse(input, this),
@@ -103,19 +104,32 @@ class Adventure extends ChatGame {
       const { inputCheck, getResponder } = checks[c];
       const contextResult = inputCheck(this);
       if (contextResult) {
-        ({ response, changeScore, isDone, showInstructions } = getResponder(contextResult));
+        let isCascade = false;
+        ({ response, changeScore, isDone, showInstructions, isCascade } = getResponder(
+          contextResult
+        ));
+
         foundResponse = true;
-        break;
+
+        responseSet.push(response);
+
+        if (!isCascade) {
+          break;
+        }
       }
     }
     if (!foundResponse) {
-      // if show item keywords of itemCollection items for  visible items on floor or in inventory
+      // if show item keywords of itemCollection items for visible items on floor or in inventory
       ({ response } = this.getInputResponse('HELP', this, this));
-      response = `ERROR! LOSE 2 POINTS. Type HELP to show all the commands` + '\n\n' + response;
+      responseSet.push(
+        `ERROR! LOSE 2 POINTS. Type HELP to show all the commands` + '\n\n' + response
+      );
       changeScore = -2;
       showInstructions = false;
     }
 
+    responseSet.reverse();
+    response = responseSet.join('\n\n');
     this.score += changeScore;
 
     if (this.score <= 0) {
@@ -150,6 +164,9 @@ class Adventure extends ChatGame {
     this._inventory.delete(id);
   }
   getVisibleInventoryItems() {
+    return ItemCollection.getVisibleItemsFromSet(this._inventory, this);
+  }
+  getVisibleLocationItems() {
     return ItemCollection.getVisibleItemsFromSet(this._inventory, this);
   }
 
