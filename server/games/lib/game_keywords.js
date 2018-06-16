@@ -43,7 +43,7 @@ function getGameKeywords() {
       fn: game => {
         const parts = [game.currentLocation.getInstructions(), game.getInstructions()];
         return new KeywordResponse({
-          text: parts.join('\n\n'),
+          text: parts.join('\n'),
           showInstructions: false,
         });
       },

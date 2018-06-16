@@ -40,7 +40,7 @@ const getKeywordsHelper = () => ({
       }
     }
 
-    return `Type:\n${instructions.join('\n')}`;
+    return instructions.join('\n');
   },
 
   removeKeyword(keyword) {

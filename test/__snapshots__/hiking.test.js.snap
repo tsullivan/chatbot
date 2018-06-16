@@ -8,7 +8,6 @@ You're on the bridge, and can look down at the lake. This lake is beautiful. Fro
 
 The enemies that were in the lake have been defeated! Their defeated corpses float in the water.
 
-Type:
 SHIP - Enter the ship
 LAKE - Go back down to the lake
 FINISH_LINE - From up here on the bridge, you can see the finish line of this entire game!"
@@ -20,7 +19,6 @@ Pretty nice in here. Whatever alien species created this ship did a good job.
 
 The controls here look pretty simple. There's just one big button that says \\"PUSH_ME\\"
 
-Type:
 PUSH_ME - Push the control button
 EXIT - Jump out of the ship and back to the bridge"
 `;
@@ -31,7 +29,6 @@ exports[`hiking explode the ghosts on the sun 3`] = `
 The Sun, in the Sun Ship
 It's so hot on the Sun! Fear not, it's safe inside the sun ship. It's very bright, but the windows of the sunship make it safe to look at.
 
-Type:
 BACK - Go back to Earth
 LOOK - Look at the sun (through the safety of the sunship windows)
 THROW_YOGURT - Throw the ghost yogurt onto the sun"
@@ -40,7 +37,6 @@ THROW_YOGURT - Throw the ghost yogurt onto the sun"
 exports[`hiking explode the ghosts on the sun 4`] = `
 "There's not much to say about the sun at the moment. It's plain, like plain yogurt.
 
-Type:
 BACK - Go back to Earth
 LOOK - Look at the sun (through the safety of the sunship windows)
 THROW_YOGURT - Throw the ghost yogurt onto the sun"
@@ -57,7 +53,6 @@ Then all of the ghosts explode
 
 GAIN 20 POINTS
 
-Type:
 BACK - Go back to Earth
 LOOK - Look at the sun (through the safety of the sunship windows)"
 `;
@@ -65,7 +60,6 @@ LOOK - Look at the sun (through the safety of the sunship windows)"
 exports[`hiking explode the ghosts on the sun 6`] = `
 "On the surface of the sun, there is melted yogurt and the remains of exploded ghosts.
 
-Type:
 BACK - Go back to Earth
 LOOK - Look at the sun (through the safety of the sunship windows)"
 `;
@@ -78,7 +72,6 @@ Pretty nice in here. Whatever alien species created this ship did a good job.
 
 The controls here look pretty simple. There's just one big button that says \\"PUSH_ME\\"
 
-Type:
 PUSH_ME - Push the control button
 EXIT - Jump out of the ship and back to the bridge"
 `;
@@ -93,7 +86,6 @@ You're on the bridge, and can look down at the lake. This lake is beautiful. Fro
 
 The enemies that were in the lake have been defeated! Their defeated corpses float in the water.
 
-Type:
 SHIP - Enter the ship
 LAKE - Go back down to the lake
 FINISH_LINE - From up here on the bridge, you can see the finish line of this entire game!"
@@ -105,7 +97,13 @@ You've just escaped from a jail. You breathe a sigh of relief because that part 
 
 Now, all you have to do is hike...
 
-You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast."
+You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast.
+
+LAKE - You can see a lake in one direction. It looks pretty nice.
+ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly.
+ITEMS - Actions you can do on stuff.
+HELP - See all the commands you can type
+QUIT - Quit the game"
 `;
 
 exports[`hiking explore sun 2`] = `
@@ -116,7 +114,6 @@ This lake is beautiful, but the cloudy sky gives it a grim appearance. This seem
 
 There are enemies are in the lake. The shores of the lake are too far away from them to do anything about them, though
 
-Type:
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
 SWIM - Swim around in the lake"
@@ -130,7 +127,6 @@ You're on the bridge, and can look down at the lake. This lake is beautiful. Fro
 
 There are enemies in the lake. At top of this bridge, it is too high up to do anything about it though.
 
-Type:
 SHIP - Enter the ship
 LAKE - Go back down to the lake
 FINISH_LINE - From up here on the bridge, you can see the finish line of this entire game!"
@@ -142,7 +138,6 @@ Pretty nice in here. Whatever alien species created this ship did a good job.
 
 The controls here look pretty simple. There's just one big button that says \\"PUSH_ME\\"
 
-Type:
 PUSH_ME - Push the control button
 EXIT - Jump out of the ship and back to the bridge"
 `;
@@ -153,7 +148,6 @@ exports[`hiking explore sun 5`] = `
 The Sun, in the Sun Ship
 It's so hot on the Sun! Fear not, it's safe inside the sun ship. It's very bright, but the windows of the sunship make it safe to look at.
 
-Type:
 BACK - Go back to Earth
 LOOK - Look at the sun (through the safety of the sunship windows)"
 `;
@@ -161,7 +155,6 @@ LOOK - Look at the sun (through the safety of the sunship windows)"
 exports[`hiking explore sun 6`] = `
 "There's not much to say about the sun at the moment. It's plain, like plain yogurt.
 
-Type:
 BACK - Go back to Earth
 LOOK - Look at the sun (through the safety of the sunship windows)"
 `;
@@ -174,7 +167,6 @@ Pretty nice in here. Whatever alien species created this ship did a good job.
 
 The controls here look pretty simple. There's just one big button that says \\"PUSH_ME\\"
 
-Type:
 PUSH_ME - Push the control button
 EXIT - Jump out of the ship and back to the bridge"
 `;
@@ -189,7 +181,6 @@ You're on the bridge, and can look down at the lake. This lake is beautiful. Fro
 
 There are enemies in the lake. At top of this bridge, it is too high up to do anything about it though.
 
-Type:
 SHIP - Enter the ship
 LAKE - Go back down to the lake
 FINISH_LINE - From up here on the bridge, you can see the finish line of this entire game!"
@@ -210,7 +201,6 @@ The finish line looks like a robot. You can ask the robot to take out a flag, an
 
 Ready to end the hiking journey?
 
-Type:
 ASK_THE_ROBOT_TO_TAKE_OUT_A_FLAG - Leave the hiking journey and save your points
 BRIDGE - Go back to the bridge, and keep playing the hiking game"
 `;
@@ -225,7 +215,6 @@ That was fun, Tim!"
 exports[`hiking fly a car back to the lake 1`] = `
 "You have dodged all the magical spray from the water, and are quite dry. You are not feeling magical.
 
-Type:
 ROCKS - Go to the place that has a lot of rocks
 MOUNTAIN - Try to climb up the really tall mountain.
 ROPE - Try to climb the rope
@@ -236,7 +225,6 @@ CHECK_DRYNESS - Check yourself to see if you are wet or dry from the waterfall s
 exports[`hiking fly a car back to the lake 2`] = `
 "You jump around in the waterfall spray for a bit. It feels so magical! The magical wetness covers you and leaves you soaked! You feel magically powerful!
 
-Type:
 ROCKS - Go to the place that has a lot of rocks
 MOUNTAIN - Try to climb up the really tall mountain.
 ROPE - Try to climb the rope
@@ -252,7 +240,6 @@ It was a long climb up to the really tall top of this mountain, so it feels so g
 
 Nearby is a blue house with a green roof. It has a lot of windows and only one door that is open. There is smoke coming out of the chimney.
 
-Type:
 WATERFALL - To go back down to the waterfall
 HOUSE - Check out the mountain house up here."
 `;
@@ -265,7 +252,6 @@ There's a comfy-looking bed, in case you need a rest.
 
 There's a deep hole in the floor. You can't see the bottom, but you could fit yourself inside.
 
-Type:
 OUTSIDE - Go out to the top of the mountain
 DOWN_THE_HOLE - Take a look at what's down the hole
 SLEEP - Take a rest on the comfy-looking bed"
@@ -285,7 +271,6 @@ Stuff you are holding:
 - Apples: 100 red apples.
 - Yogurt: This yogurt is haunted with ghosts. They look like they want to get out.
 
-Type:
 OUTSIDE - Go out to the top of the mountain
 DOWN_THE_HOLE - Take a look at what's down the hole
 SLEEP - Take a rest on the comfy-looking bed"
@@ -299,7 +284,6 @@ The bottom of the hole is so deep, you'd have to use a ladder to get back up.
 
 There's a silver car here, at the start of a long tunnel into darkness. The car is floating slightly, but it seems pretty easy to get in if you want.
 
-Type:
 LADDER - Climb the ladder to get back up to the house
 DRIVE_THE_CAR - Get into the car and drive it, to see what's down this tunnel"
 `;
@@ -314,7 +298,6 @@ There's a comfy-looking bed, in case you need a rest.
 
 There's a deep hole in the floor. You can't see the bottom, but you could fit yourself inside.
 
-Type:
 OUTSIDE - Go out to the top of the mountain
 DOWN_THE_HOLE - Take a look at what's down the hole
 SLEEP - Take a rest on the comfy-looking bed"
@@ -334,7 +317,6 @@ Stuff you are holding:
 - Apples: 100 red apples.
 - Yogurt: This yogurt is haunted with ghosts. They look like they want to get out.
 
-Type:
 OUTSIDE - Go out to the top of the mountain
 DOWN_THE_HOLE - Take a look at what's down the hole
 SLEEP - Take a rest on the comfy-looking bed"
@@ -348,7 +330,6 @@ The bottom of the hole is so deep, you'd have to use a ladder to get back up.
 
 There's a silver car here, at the start of a long tunnel into darkness. The car is floating slightly, but it seems pretty easy to get in if you want.
 
-Type:
 LADDER - Climb the ladder to get back up to the house
 DRIVE_THE_CAR - Get into the car and drive it, to see what's down this tunnel"
 `;
@@ -361,7 +342,6 @@ This lake is beautiful, but the cloudy sky gives it a grim appearance. This seem
 
 There are enemies are in the lake. You're floating over their heads in your flying car.
 
-Type:
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
 SWIM - Swim around in the lake
@@ -376,7 +356,6 @@ You're on the bridge, and can look down at the lake. This lake is beautiful. Fro
 
 There are enemies in the lake. At top of this bridge, it is too high up to do anything about it though.
 
-Type:
 SHIP - Enter the ship
 LAKE - Go back down to the lake
 FINISH_LINE - From up here on the bridge, you can see the finish line of this entire game!"
@@ -390,7 +369,6 @@ This lake is beautiful, but the cloudy sky gives it a grim appearance. This seem
 
 There are enemies are in the lake. You're floating over their heads in your flying car.
 
-Type:
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
 SWIM - Swim around in the lake
@@ -404,7 +382,6 @@ You continue on in this manner until all enemies are defeated. Their corpses flo
 
 GAIN 35 points
 
-Type:
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
 SWIM - Swim around in the lake"
@@ -416,7 +393,13 @@ You've just escaped from a jail. You breathe a sigh of relief because that part 
 
 Now, all you have to do is hike...
 
-You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast."
+You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast.
+
+LAKE - You can see a lake in one direction. It looks pretty nice.
+ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly.
+ITEMS - Actions you can do on stuff.
+HELP - See all the commands you can type
+QUIT - Quit the game"
 `;
 
 exports[`hiking get sprayed at the waterfall 2`] = `
@@ -427,7 +410,6 @@ This lake is beautiful, but the cloudy sky gives it a grim appearance. This seem
 
 There are enemies are in the lake. The shores of the lake are too far away from them to do anything about them, though
 
-Type:
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
 SWIM - Swim around in the lake"
@@ -439,7 +421,6 @@ There's rocks here. Be careful! You could trip, or if you horseplay, a rock coul
 
 If you are careful, you could cross the rocks to get to a waterfall.
 
-Type:
 LAKE - Go to the lake
 WATERFALL - Check it out, you can see a waterfall beyond the rocks"
 `;
@@ -456,7 +437,6 @@ There's a climbing rope that leads to a really big circle. You're not sure what 
 
 There's water spraying everywhere!
 
-Type:
 ROCKS - Go to the place that has a lot of rocks
 MOUNTAIN - Try to climb up the really tall mountain.
 ROPE - Try to climb the rope
@@ -467,7 +447,6 @@ CHECK_DRYNESS - Check yourself to see if you are wet or dry from the waterfall s
 exports[`hiking get sprayed at the waterfall 5`] = `
 "You have dodged all the magical spray from the water, and are quite dry. You are not feeling magical.
 
-Type:
 ROCKS - Go to the place that has a lot of rocks
 MOUNTAIN - Try to climb up the really tall mountain.
 ROPE - Try to climb the rope
@@ -480,7 +459,6 @@ exports[`hiking get sprayed at the waterfall 6`] = `
 
 LOSE A POINT
 
-Type:
 ROCKS - Go to the place that has a lot of rocks
 MOUNTAIN - Try to climb up the really tall mountain.
 ROPE - Try to climb the rope
@@ -493,7 +471,6 @@ exports[`hiking get sprayed at the waterfall 7`] = `
 
 LOSE A POINT
 
-Type:
 ROCKS - Go to the place that has a lot of rocks
 MOUNTAIN - Try to climb up the really tall mountain.
 ROPE - Try to climb the rope
@@ -504,7 +481,6 @@ CHECK_DRYNESS - Check yourself to see if you are wet or dry from the waterfall s
 exports[`hiking get sprayed at the waterfall 8`] = `
 "You jump around in the waterfall spray for a bit. It feels so magical! The magical wetness covers you and leaves you soaked! You feel magically powerful!
 
-Type:
 ROCKS - Go to the place that has a lot of rocks
 MOUNTAIN - Try to climb up the really tall mountain.
 ROPE - Try to climb the rope
@@ -515,7 +491,6 @@ CHECK_DRYNESS - Check yourself to see if you are wet or dry from the waterfall s
 exports[`hiking get sprayed at the waterfall 9`] = `
 "You have recently been sprayed by some of the magical droplets of the waterfall. You feel magically powerful!
 
-Type:
 ROCKS - Go to the place that has a lot of rocks
 MOUNTAIN - Try to climb up the really tall mountain.
 ROPE - Try to climb the rope
@@ -529,15 +504,18 @@ You've just escaped from a jail. You breathe a sigh of relief because that part 
 
 Now, all you have to do is hike...
 
-You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast."
+You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast.
+
+LAKE - You can see a lake in one direction. It looks pretty nice.
+ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly.
+ITEMS - Actions you can do on stuff.
+HELP - See all the commands you can type
+QUIT - Quit the game"
 `;
 
 exports[`hiking help 2`] = `
-"Type:
-LAKE - You can see a lake in one direction. It looks pretty nice.
+"LAKE - You can see a lake in one direction. It looks pretty nice.
 ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly.
-
-Type:
 ITEMS - Actions you can do on stuff.
 HELP - See all the commands you can type
 QUIT - Quit the game"
@@ -546,11 +524,8 @@ QUIT - Quit the game"
 exports[`hiking help 3`] = `
 "ERROR! LOSE 2 POINTS. Type HELP to show all the commands
 
-Type:
 LAKE - You can see a lake in one direction. It looks pretty nice.
 ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly.
-
-Type:
 ITEMS - Actions you can do on stuff.
 HELP - See all the commands you can type
 QUIT - Quit the game"
@@ -569,7 +544,13 @@ You've just escaped from a jail. You breathe a sigh of relief because that part 
 
 Now, all you have to do is hike...
 
-You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast."
+You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast.
+
+LAKE - You can see a lake in one direction. It looks pretty nice.
+ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly.
+ITEMS - Actions you can do on stuff.
+HELP - See all the commands you can type
+QUIT - Quit the game"
 `;
 
 exports[`hiking items and drop key and pick up key 2`] = `
@@ -580,17 +561,14 @@ This lake is beautiful, but the cloudy sky gives it a grim appearance. This seem
 
 There are enemies are in the lake. The shores of the lake are too far away from them to do anything about them, though
 
-Type:
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
 SWIM - Swim around in the lake"
 `;
 
 exports[`hiking items and drop key and pick up key 3`] = `
-"Type:
-DROP_JAIL_KEY - Drop the key you stole from the jail.
+"DROP_JAIL_KEY - Drop the key you stole from the jail.
 
-Type:
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
 SWIM - Swim around in the lake"
@@ -599,7 +577,6 @@ SWIM - Swim around in the lake"
 exports[`hiking items and drop key and pick up key 4`] = `
 "The key has been dropped. You didn't need it anyways.
 
-Type:
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
 SWIM - Swim around in the lake"
@@ -611,7 +588,6 @@ There's rocks here. Be careful! You could trip, or if you horseplay, a rock coul
 
 If you are careful, you could cross the rocks to get to a waterfall.
 
-Type:
 LAKE - Go to the lake
 WATERFALL - Check it out, you can see a waterfall beyond the rocks"
 `;
@@ -624,7 +600,6 @@ This lake is beautiful, but the cloudy sky gives it a grim appearance. This seem
 
 There are enemies are in the lake. The shores of the lake are too far away from them to do anything about them, though
 
-Type:
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
 SWIM - Swim around in the lake"
@@ -633,7 +608,6 @@ SWIM - Swim around in the lake"
 exports[`hiking items and drop key and pick up key 7`] = `
 "You now have the key. Again.
 
-Type:
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
 SWIM - Swim around in the lake"
@@ -645,7 +619,6 @@ There's rocks here. Be careful! You could trip, or if you horseplay, a rock coul
 
 If you are careful, you could cross the rocks to get to a waterfall.
 
-Type:
 LAKE - Go to the lake
 WATERFALL - Check it out, you can see a waterfall beyond the rocks"
 `;
@@ -667,7 +640,6 @@ There's no one in the store, but there's a man out back. He looks inside and see
 
 \\"Oh, a customer! Would you like to buy an apple?\\" he says.
 
-Type:
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store
 BUY_APPLE - If you'd like to own one of these delicious apples."
@@ -676,7 +648,6 @@ BUY_APPLE - If you'd like to own one of these delicious apples."
 exports[`hiking purchase some items at the apple shop 2`] = `
 "There are exactly 100 apples on the shelves.
 
-Type:
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store
 BUY_APPLE - If you'd like to own one of these delicious apples."
@@ -695,7 +666,6 @@ exports[`hiking purchase some items at the apple shop 3`] = `
 
 GAIN 10 POINTS
 
-Type:
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store"
 `;
@@ -712,7 +682,6 @@ There's a climbing rope that leads to a really big circle. You're not sure what 
 
 There's water spraying everywhere!
 
-Type:
 ROCKS - Go to the place that has a lot of rocks
 MOUNTAIN - Try to climb up the really tall mountain.
 ROPE - Try to climb the rope
@@ -723,7 +692,6 @@ CHECK_DRYNESS - Check yourself to see if you are wet or dry from the waterfall s
 exports[`hiking purchase some items at the apple shop 5`] = `
 "You have dodged all the magical spray from the water, and are quite dry. You are not feeling magical.
 
-Type:
 ROCKS - Go to the place that has a lot of rocks
 MOUNTAIN - Try to climb up the really tall mountain.
 ROPE - Try to climb the rope
@@ -734,7 +702,6 @@ CHECK_DRYNESS - Check yourself to see if you are wet or dry from the waterfall s
 exports[`hiking purchase some items at the apple shop 6`] = `
 "You jump around in the waterfall spray for a bit. It feels so magical! The magical wetness covers you and leaves you soaked! You feel magically powerful!
 
-Type:
 ROCKS - Go to the place that has a lot of rocks
 MOUNTAIN - Try to climb up the really tall mountain.
 ROPE - Try to climb the rope
@@ -748,7 +715,6 @@ exports[`hiking purchase some items at the apple shop 7`] = `
 Apple Store
 This giant, giant circle in the trees at the top of the climbing rope. is an Apple Store. It looks like a shed.  Inside there are many, many shelves full of apples. It looks like there are exactly 0 apples.
 
-Type:
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store"
 `;
@@ -756,7 +722,6 @@ LOOK - Look at the contents of the Apple Store"
 exports[`hiking purchase some items at the apple shop 8`] = `
 "There are no apples on the shelves. There is nothing in the store. It is completely empty. Except for some yogurt. But the yogurt has ghosts in it.
 
-Type:
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store
 BUY_YOGURT - Purchase the yogurt with ghosts in it."
@@ -775,7 +740,6 @@ exports[`hiking purchase some items at the apple shop 9`] = `
 
 GAIN 6 POINTS
 
-Type:
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store"
 `;
@@ -783,7 +747,6 @@ LOOK - Look at the contents of the Apple Store"
 exports[`hiking purchase some items at the apple shop 10`] = `
 "The Apple Store is completely empty.
 
-Type:
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store"
 `;
@@ -798,7 +761,6 @@ There's a climbing rope that leads to a really big circle. You're not sure what 
 
 There's water spraying everywhere!
 
-Type:
 ROCKS - Go to the place that has a lot of rocks
 MOUNTAIN - Try to climb up the really tall mountain.
 ROPE - Try to climb the rope
@@ -814,7 +776,13 @@ You've just escaped from a jail. You breathe a sigh of relief because that part 
 
 Now, all you have to do is hike...
 
-You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast."
+You're surrounded by trees and it's cloudy outside. To be honest, it's a little scary because you really don't know what's out here. And there's cops chasing you, but they're far behind. And you can go super fast.
+
+LAKE - You can see a lake in one direction. It looks pretty nice.
+ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly.
+ITEMS - Actions you can do on stuff.
+HELP - See all the commands you can type
+QUIT - Quit the game"
 `;
 
 exports[`hiking swim fail 2`] = `
@@ -825,7 +793,6 @@ This lake is beautiful, but the cloudy sky gives it a grim appearance. This seem
 
 There are enemies are in the lake. The shores of the lake are too far away from them to do anything about them, though
 
-Type:
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
 SWIM - Swim around in the lake"
