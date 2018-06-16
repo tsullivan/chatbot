@@ -98,6 +98,7 @@ describe('hiking', () => {
     resps[resps.length] = await send('get_sprayed');
     resps[resps.length] = await send('mountain');
     resps[resps.length] = await send('look');
+    resps[resps.length] = await send('take_bubble_gun');
     resps[resps.length] = await send('house');
     resps[resps.length] = await send('sleep');
     resps[resps.length] = await send('down');

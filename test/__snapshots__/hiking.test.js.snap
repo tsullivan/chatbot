@@ -218,7 +218,7 @@ BRIDGE - Go back to the bridge, and keep playing the hiking game"
 exports[`hiking finish the game 2`] = `
 "The robot takes out a flag, and swishes it over your head. This takes you to the end of the hiking journey.
 
-Looks like you're a winner! Turns: 44 Score: 119
+Looks like you're a winner! Turns: 45 Score: 117
 That was fun, Tim!"
 `;
 
@@ -268,6 +268,17 @@ HOUSE - Check out the mountain house up here."
 `;
 
 exports[`hiking fly a car back to the lake 5`] = `
+"ERROR! LOSE 2 POINTS. Type HELP to show all the commands
+
+WATERFALL - To go back down to the waterfall
+HOUSE - Check out the mountain house up here.
+LOOK - Look at the area you are currently in.
+ITEMS - Things you can do with stuff you are holding or stuff you see.
+HELP - See all the commands you can type
+QUIT - Quit the game"
+`;
+
+exports[`hiking fly a car back to the lake 6`] = `
 "Mountain House
 Inside the mountain house, the many windows create an atmosphere of light, but as it is cloudy outside, you find yourself wishing for a little more.
 
@@ -280,14 +291,14 @@ DOWN_THE_HOLE - Take a look at what's down the hole
 SLEEP - Take a rest on the comfy-looking bed"
 `;
 
-exports[`hiking fly a car back to the lake 6`] = `
+exports[`hiking fly a car back to the lake 7`] = `
 "You lay down on the comfy bed and close your eyes. You let your mind wander. Thinking about how pretty the waterfall was, you realize that although you were scared initially you're feeling pretty good now. You think to yourself that this game is pretty awesome, even though it doesn't have a lot of pictures and it's mostly reading.
 
 GAIN A POINT
 
 You learn some things:
-- Your score is 64
-- You've taken 25 turns
+- Your score is 62
+- You've taken 26 turns
 
 Stuff you are holding:
 - Apples: 100 red apples.
@@ -298,7 +309,7 @@ DOWN_THE_HOLE - Take a look at what's down the hole
 SLEEP - Take a rest on the comfy-looking bed"
 `;
 
-exports[`hiking fly a car back to the lake 7`] = `
+exports[`hiking fly a car back to the lake 8`] = `
 "Fortunately, there's a ladder leading straight down the hole, so you don't have to jump down an unknown distance through complete darkness.
 
 Under the Mountain House
@@ -310,7 +321,7 @@ LADDER - Climb the ladder to get back up to the house
 DRIVE_THE_CAR - Get into the car and drive it, to see what's down this tunnel"
 `;
 
-exports[`hiking fly a car back to the lake 8`] = `
+exports[`hiking fly a car back to the lake 9`] = `
 "Climb, climb, climb.
 
 Mountain House
@@ -325,14 +336,14 @@ DOWN_THE_HOLE - Take a look at what's down the hole
 SLEEP - Take a rest on the comfy-looking bed"
 `;
 
-exports[`hiking fly a car back to the lake 9`] = `
+exports[`hiking fly a car back to the lake 10`] = `
 "You lay down on the comfy bed and close your eyes. You let your mind wander. Thinking about how pretty the waterfall was, you realize that although you were scared initially you're feeling pretty good now. You think to yourself that this game is pretty awesome, even though it doesn't have a lot of pictures and it's mostly reading.
 
 GAIN A POINT
 
 You learn some things:
-- Your score is 64
-- You've taken 28 turns
+- Your score is 62
+- You've taken 29 turns
 
 Stuff you are holding:
 - Apples: 100 red apples.
@@ -343,7 +354,7 @@ DOWN_THE_HOLE - Take a look at what's down the hole
 SLEEP - Take a rest on the comfy-looking bed"
 `;
 
-exports[`hiking fly a car back to the lake 10`] = `
+exports[`hiking fly a car back to the lake 11`] = `
 "Fortunately, there's a ladder leading straight down the hole, so you don't have to jump down an unknown distance through complete darkness.
 
 Under the Mountain House
@@ -355,7 +366,7 @@ LADDER - Climb the ladder to get back up to the house
 DRIVE_THE_CAR - Get into the car and drive it, to see what's down this tunnel"
 `;
 
-exports[`hiking fly a car back to the lake 11`] = `
+exports[`hiking fly a car back to the lake 12`] = `
 "Under the Mountain House
 The bottom of the hole is so deep, you'd have to use a ladder to get back up.
 
@@ -368,7 +379,7 @@ LADDER - Climb the ladder to get back up to the house
 DRIVE_THE_CAR - Get into the car and drive it, to see what's down this tunnel"
 `;
 
-exports[`hiking fly a car back to the lake 12`] = `
+exports[`hiking fly a car back to the lake 13`] = `
 "You hop in the car and buckle in. As you put your hands on the steering wheel, the car floats up higher and takes off down the dark tunnel! You zoom and zoom through it as the light of the outside comes closer and closer. There is a tremendous WHOOOOSH!! sound as the car flies out of the side of the mountain! You're now flying over the lake that you passed by on the beginning of this hiking journey.
 
 Lake
@@ -382,7 +393,7 @@ SWIM - Swim around in the lake
 THROW_APPLES - Throw the apples at the enemies"
 `;
 
-exports[`hiking fly a car back to the lake 13`] = `
+exports[`hiking fly a car back to the lake 14`] = `
 "On the bridge
 At the top of the bridge is a spaceship. It looks like a Sun Ship. The hatch is open, and it looks pretty functional.
 
@@ -395,7 +406,7 @@ LAKE - Go back down to the lake
 FINISH_LINE - From up here on the bridge, you can see the finish line of this entire game!"
 `;
 
-exports[`hiking fly a car back to the lake 14`] = `
+exports[`hiking fly a car back to the lake 15`] = `
 "Down, down, down you go. Down the bridge, bridge, bridge to the lake, lake, lake.
 
 Lake
@@ -409,7 +420,7 @@ SWIM - Swim around in the lake
 THROW_APPLES - Throw the apples at the enemies"
 `;
 
-exports[`hiking fly a car back to the lake 15`] = `
+exports[`hiking fly a car back to the lake 16`] = `
 "You reach for an apple in your pocket, and give it a mighty hurl. It knocks an enemy head! That enemy becomes defeated!
 
 You continue on in this manner until all enemies are defeated. Their corpses float amidst apples in the water of the lake.
@@ -851,7 +862,7 @@ GET_SPRAYED - Allow yourself to get sprayed by the water
 CHECK_DRYNESS - Check yourself to see if you are wet or dry from the waterfall spray"
 `;
 
-exports[`hiking score 1`] = `"The average score of the games you plaid are : 53.4"`;
+exports[`hiking score 1`] = `"The average score of the games you plaid are : 53"`;
 
 exports[`hiking swim fail 1`] = `
 "Escaping from the cops station

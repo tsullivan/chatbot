@@ -1,6 +1,8 @@
 const { MultiMap } = require('../../../lib');
 const { getKeywordsHelper } = require('./keywords_helper');
 
+const noop = () => {};
+
 class InventoryItem {
   /*
    * name
@@ -9,7 +11,7 @@ class InventoryItem {
    * droppable
    * takeable
    */
-  constructor({ game, name, id, description, seen = true }) {
+  constructor({ game, name, id, description, seen = true, setActions = noop }) {
     if (!(game instanceof Object)) {
       throw new Error('game must be an Adventure object');
     }
@@ -37,17 +39,16 @@ class InventoryItem {
     this._droppable = false;
     this._takeable = false;
 
+    this._setActions = setActions;
     this.setKeywords(game);
   }
 
   setKeywords() {
-    return this.setActions({
+    return this._setActions({
       setDroppable: this.setDroppable.bind(this),
       setTakeable: this.setTakeable.bind(this),
     });
   }
-
-  setActions() {} // override it, sometimes
 
   setDroppable({ isDroppable = true, keyword, keywordDescription, fn }) {
     // add a drop keyword if item is currently in inventory

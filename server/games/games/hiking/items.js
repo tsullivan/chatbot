@@ -25,25 +25,25 @@ function setItems(game, { appleShed, car: garage, mountain }) {
     description: snl`The key you stole from the jail. Since you were put into
       jail accidentally, you had to steal the key because the bad guys made
       you.`,
+    setActions: ({ setDroppable, setTakeable }) => {
+      setDroppable({
+        keyword: 'DROP_JAIL_KEY',
+        keywordDescription: 'Drop the key you stole from the jail.',
+        fn: () =>
+          new KeywordResponse({
+            text: snl`The key has been dropped. You didn't need it anyways.`,
+          }),
+      });
+      setTakeable({
+        keyword: 'TAKE_JAIL_KEY',
+        keywordDescription: 'Pick up the key you stole from the jail.',
+        fn: () =>
+          new KeywordResponse({
+            text: snl`You now have the key. Again.`,
+          }),
+      });
+    },
   });
-  keyItem.setActions = ({ setDroppable, setTakeable }) => {
-    setDroppable({
-      keyword: 'DROP_JAIL_KEY',
-      keywordDescription: 'Drop the key you stole from the jail.',
-      fn: () =>
-        new KeywordResponse({
-          text: snl`The key has been dropped. You didn't need it anyways.`,
-        }),
-    });
-    setTakeable({
-      keyword: 'TAKE_JAIL_KEY',
-      keywordDescription: 'Pick up the key you stole from the jail.',
-      fn: () =>
-        new KeywordResponse({
-          text: snl`You now have the key. Again.`,
-        }),
-    });
-  };
 
   /*
    * Car
@@ -55,23 +55,23 @@ function setItems(game, { appleShed, car: garage, mountain }) {
       the bottom that point at the ground and lift it up, making it go really
       fast. It is created inside the tall mountain.`,
     game,
-  });
-  carItem.setActions = ({ setDroppable }) => {
-    setDroppable({
-      keyword: 'CRASH_CAR',
-      keywordDescription: 'Crash the silver flying car',
-      fn: () => {
-        carItem.setName('Flying silver car (destroyed)');
-        carItem.setDescription(snl`This flying silver car has been crashed into a
+    setActions: ({ setDroppable }) => {
+      setDroppable({
+        keyword: 'CRASH_CAR',
+        keywordDescription: 'Crash the silver flying car',
+        fn: () => {
+          carItem.setName('Flying silver car (destroyed)');
+          carItem.setDescription(snl`This flying silver car has been crashed into a
           tree. It's flyers have become completely destroyed, and it will no
           longer go fast or go at all.`);
-        return new KeywordResponse({
-          text: snl`You steer the car towards a tree, make it go really really
+          return new KeywordResponse({
+            text: snl`You steer the car towards a tree, make it go really really
             fast, then CRASH! EXPLODE! The flying car is destroyed.`,
-        });
-      },
-    });
-  };
+          });
+        },
+      });
+    },
+  });
 
   /*
    * Apple & Yogurt
@@ -99,19 +99,29 @@ function setItems(game, { appleShed, car: garage, mountain }) {
     id: BUBBLE_GUN,
     description: snl`It's a bubble gun for gunning out bubbles. It looks very interesting.`,
     game,
+    setActions: ({ setTakeable, setDroppable }) => {
+      setTakeable({
+        keyword: 'TAKE_BUBBLE_GUN',
+        keywordDescription: 'Pick up interesting looking bubble gun.',
+        // check for batteries in inventory
+        // check for bubble soap in inventory
+        fn: () =>
+          new KeywordResponse({
+            text: snl`The bubble gun is now yours.`,
+          }),
+      });
+      setDroppable({
+        keyword: 'DROP_BUBBLE_GUN',
+        keywordDescription: 'Drop the interesting looking bubble gun.',
+        // check for batteries in inventory
+        // check for bubble soap in inventory
+        fn: () =>
+          new KeywordResponse({
+            text: snl`The bubble gun now belongs to the floor.`,
+          }),
+      });
+    },
   });
-  bubbleGunItem.setActions = ({ setTakeable }) => {
-    setTakeable({
-      keyword: 'TAKE_BUBBLE_GUN',
-      keywordDescription: 'Pick up interesting looking bubble gun.',
-      // check for batteries in inventory
-      // check for bubble soap in inventory
-      fn: () =>
-        new KeywordResponse({
-          text: snl`The bubble gun is now yours.`,
-        }),
-    });
-  };
 
   /*
    * Set to game
