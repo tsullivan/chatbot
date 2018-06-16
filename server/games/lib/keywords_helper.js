@@ -1,7 +1,7 @@
 const { MultiMap } = require('../../../lib');
 const { KeywordResponse } = require('./class_keyword_response');
 
-const getKeywordsHelper = () => ({
+const getKeywordsHelper = setKeywordsFunctionName => ({
   _keywords: new MultiMap(),
 
   /*
@@ -67,7 +67,7 @@ const getKeywordsHelper = () => ({
     const response = KeywordResponse.getResponseFromHandler(fn, game);
 
     this.clearKeywords();
-    this.setKeywords(game);
+    this[setKeywordsFunctionName](game);
 
     return response.get();
   },

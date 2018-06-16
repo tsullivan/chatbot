@@ -218,7 +218,7 @@ BRIDGE - Go back to the bridge, and keep playing the hiking game"
 exports[`hiking finish the game 2`] = `
 "The robot takes out a flag, and swishes it over your head. This takes you to the end of the hiking journey.
 
-Looks like you're a winner! Turns: 45 Score: 117
+Looks like you're a winner! Turns: 45 Score: 119
 That was fun, Tim!"
 `;
 
@@ -261,21 +261,18 @@ It was a long climb up to the really tall top of this mountain, so it feels so g
 Nearby is a blue house with a green roof. It has a lot of windows and only one door that is open. There is smoke coming out of the chimney.
 
 There is an item here you may be interested in:
-Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting. 
+Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+ - TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.
 
 WATERFALL - To go back down to the waterfall
 HOUSE - Check out the mountain house up here."
 `;
 
 exports[`hiking fly a car back to the lake 5`] = `
-"ERROR! LOSE 2 POINTS. Type HELP to show all the commands
+"The bubble gun is now yours.
 
 WATERFALL - To go back down to the waterfall
-HOUSE - Check out the mountain house up here.
-LOOK - Look at the area you are currently in.
-ITEMS - Things you can do with stuff you are holding or stuff you see.
-HELP - See all the commands you can type
-QUIT - Quit the game"
+HOUSE - Check out the mountain house up here."
 `;
 
 exports[`hiking fly a car back to the lake 6`] = `
@@ -297,12 +294,13 @@ exports[`hiking fly a car back to the lake 7`] = `
 GAIN A POINT
 
 You learn some things:
-- Your score is 62
+- Your score is 64
 - You've taken 26 turns
 
 Stuff you are holding:
 - Apples: 100 red apples.
 - Yogurt: This yogurt is haunted with ghosts. They look like they want to get out.
+- Bubble Gun: It's a bubble gun for gunning out bubbles. It looks very interesting.
 
 OUTSIDE - Go out to the top of the mountain
 DOWN_THE_HOLE - Take a look at what's down the hole
@@ -342,12 +340,13 @@ exports[`hiking fly a car back to the lake 10`] = `
 GAIN A POINT
 
 You learn some things:
-- Your score is 62
+- Your score is 64
 - You've taken 29 turns
 
 Stuff you are holding:
 - Apples: 100 red apples.
 - Yogurt: This yogurt is haunted with ghosts. They look like they want to get out.
+- Bubble Gun: It's a bubble gun for gunning out bubbles. It looks very interesting.
 
 OUTSIDE - Go out to the top of the mountain
 DOWN_THE_HOLE - Take a look at what's down the hole
@@ -373,7 +372,7 @@ The bottom of the hole is so deep, you'd have to use a ladder to get back up.
 There's a silver car here, at the start of a long tunnel into darkness. The car is floating slightly, but it seems pretty easy to get in if you want.
 
 There is an item here you may be interested in:
-Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain. 
+Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
 
 LADDER - Climb the ladder to get back up to the house
 DRIVE_THE_CAR - Get into the car and drive it, to see what's down this tunnel"
@@ -640,7 +639,8 @@ This lake is beautiful, but the cloudy sky gives it a grim appearance. This seem
 There are enemies are in the lake. The shores of the lake are too far away from them to do anything about them, though
 
 There is an item here you may be interested in:
-Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.  - TAKE_JAIL_KEY - Pick up the key you stole from the jail.
+Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+ - TAKE_JAIL_KEY - Pick up the key you stole from the jail.
 
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
@@ -721,7 +721,7 @@ There's no one in the store, but there's a man out back. He looks inside and see
 \\"Oh, a customer! Would you like to buy an apple?\\" he says.
 
 There is an item here you may be interested in:
-Apples - 100 red apples. 
+Apples - 100 red apples.
 
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store
@@ -801,7 +801,7 @@ Apple Store
 This giant, giant circle in the trees at the top of the climbing rope. is an Apple Store. It looks like a shed.  Inside there are many, many shelves full of apples. It looks like there are exactly 0 apples.
 
 There is an item here you may be interested in:
-Apples - 100 red apples. 
+Apples - 100 red apples.
 
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store
@@ -839,7 +839,8 @@ Apple Store
 This giant, giant circle in the trees at the top of the climbing rope. is an Apple Store. It looks like a shed.  Inside there are many, many shelves full of apples. It looks like there are exactly 0 apples.
 
 There are 3 items here you may be interested in:
-Apples - 100 red apples. ,Yogurt - This yogurt is haunted with ghosts. They look like they want to get out. ,Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.  - TAKE_JAIL_KEY - Pick up the key you stole from the jail.
+Apples - 100 red apples.,Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.,Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+ - TAKE_JAIL_KEY - Pick up the key you stole from the jail.
 
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store"
@@ -862,7 +863,7 @@ GET_SPRAYED - Allow yourself to get sprayed by the water
 CHECK_DRYNESS - Check yourself to see if you are wet or dry from the waterfall spray"
 `;
 
-exports[`hiking score 1`] = `"The average score of the games you plaid are : 53"`;
+exports[`hiking score 1`] = `"The average score of the games you plaid are : 53.4"`;
 
 exports[`hiking swim fail 1`] = `
 "Escaping from the cops station

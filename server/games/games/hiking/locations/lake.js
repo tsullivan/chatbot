@@ -24,7 +24,7 @@ class LakeLocation extends Location {
     return ps.join('\n\n');
   }
 
-  setKeywords(game) {
+  setLocationKeywords(game) {
     this.addKeyword('ROCKS', 'Go to a place with a lot of rocks', () => this.followExit(SOUTH));
     this.addKeyword(
       'BRIDGE',

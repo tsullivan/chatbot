@@ -13,7 +13,7 @@ class StartLocation extends Location {
       best to find a nice comfy bed to rest? I didn't mean for that to rhyme.`;
   }
 
-  setKeywords() {
+  setLocationKeywords() {
     this.addKeyword('CAVE', 'Go down into the cave', () => this.followExit(EAST));
     this.addKeyword('CASTLE', 'Head up to the castle.', () => this.followExit(NORTH));
   }

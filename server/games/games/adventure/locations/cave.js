@@ -16,7 +16,7 @@ class CaveLocation extends Location {
       tiny! So skeleton handsy!`;
   }
 
-  setKeywords() {
+  setLocationKeywords() {
     if (!this._danced) {
       this.addKeyword('DANCE', 'Dance with the tiny skeleton hands', () => {
         this._danced = true;

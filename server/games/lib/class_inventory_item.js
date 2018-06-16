@@ -27,7 +27,7 @@ class InventoryItem {
     if (typeof description !== 'string') {
       throw new Error('description must be string');
     }
-    Object.assign(this, getKeywordsHelper());
+    Object.assign(this, getKeywordsHelper('setItemKeywords'));
 
     this._game = game;
     this._name = name;
@@ -40,10 +40,10 @@ class InventoryItem {
     this._takeable = false;
 
     this._setActions = setActions;
-    this.setKeywords(game);
+    this.setItemKeywords(game);
   }
 
-  setKeywords() {
+  setItemKeywords() {
     return this._setActions({
       setDroppable: this.setDroppable.bind(this),
       setTakeable: this.setTakeable.bind(this),

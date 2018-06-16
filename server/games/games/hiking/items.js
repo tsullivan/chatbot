@@ -143,7 +143,7 @@ function setItems(game, { appleShed, car: garage, mountain }) {
   garage.addFloorItem(CAR);
   mountain.addFloorItem(BUBBLE_GUN);
 
-  // register all the keywords given to items
+  // register all the keywords given to inventory items
   game.setInventoryKeywords();
 }
 

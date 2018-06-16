@@ -15,7 +15,7 @@ class TheSunLocation extends Location {
 
   // walk
 
-  setKeywords(game) {
+  setLocationKeywords(game) {
     this.addKeyword('BACK', `Go back to Earth`, () => {
       const px = snl`KSHOOOOM!! Back down to Earth you go in the sun ship. Hope
         you enjoyed your stay on the sun! Come back soon!`;

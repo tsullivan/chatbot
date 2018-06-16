@@ -6,7 +6,7 @@ const { ItemCollection } = require('./class_item_collection');
 class Adventure extends ChatGame {
   constructor(session) {
     super(session);
-    Object.assign(this, getKeywordsHelper());
+    Object.assign(this, getKeywordsHelper('setGameKeywords'));
 
     this._itemCollection = new ItemCollection();
     this._inventory = new Set(); // ids of items in the collection
@@ -18,14 +18,14 @@ class Adventure extends ChatGame {
     this.name = 'unknown game';
     this.locations = {};
 
-    this.setKeywords();
+    this.setGameKeywords();
   }
 
   addItemToCollection(id, item) {
     this._itemCollection.addItem(id, item);
   }
 
-  setKeywords() {
+  setGameKeywords() {
     const gameKeywords = getGameKeywords(this);
     gameKeywords.forEach(({ key, description, fn }) => {
       this.addKeyword(key, description, fn);
@@ -33,7 +33,7 @@ class Adventure extends ChatGame {
   }
   setInventoryKeywords() {
     const items = ItemCollection.getAllItemsFromSet(this._inventory, this);
-    items.forEach(item => item.setKeywords());
+    items.forEach(item => item.setItemKeywords());
   }
 
   getInputHandlerItem(items, input) {
@@ -92,7 +92,7 @@ class Adventure extends ChatGame {
       },
       {
         inputCheck: () => {
-          const locationItems = this.currentLocation.getVisibleFloorItems(); // keyword of a visible item in the location
+          const locationItems = this.currentLocation.getVisibleFloorItems(this); // keyword of a visible item in the location
           return this.getInputHandlerItem(locationItems, input);
         },
         getResponder: locationItem => locationItem.getInputResponse(input, this),

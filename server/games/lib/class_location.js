@@ -4,7 +4,7 @@ const { getKeywordsHelper } = require('./keywords_helper');
 
 class Location {
   constructor({ game, name }) {
-    Object.assign(this, getKeywordsHelper());
+    Object.assign(this, getKeywordsHelper('setLocationKeywords'));
 
     this._game = game;
     this._exits = new Map();
@@ -12,11 +12,11 @@ class Location {
     this._name = name;
     this._floorItems = new Set();
 
-    this.setKeywords(game);
+    this.setLocationKeywords(game);
   }
 
-  setKeywords() {
-    throw new Error('setKeywords must be overridden in ' + this._name);
+  setLocationKeywords() {
+    throw new Error('setLocationKeywords must be overridden in ' + this._name);
   }
 
   followExit(direction, prefix = '') {
@@ -24,7 +24,8 @@ class Location {
       const exit = this._exits.get(direction);
       this._game.setLocation(exit);
       exit.clearKeywords();
-      exit.setKeywords(this._game);
+      exit.setLocationKeywords(this._game);
+      exit.setVisibleItemKeywords(this._game);
 
       const ps = [exit.getDescriptionInternal(this._game)];
       if (prefix !== '') {
@@ -66,8 +67,12 @@ class Location {
   removeFloorItem(id) {
     this._floorItems.delete(id);
   }
-  getVisibleFloorItems() {
-    return ItemCollection.getVisibleItemsFromSet(this._floorItems, this._game);
+  getVisibleFloorItems(game) {
+    return ItemCollection.getVisibleItemsFromSet(this._floorItems, game);
+  }
+  setVisibleItemKeywords(game) {
+    const items = ItemCollection.getVisibleItemsFromSet(this._floorItems, game);
+    items.forEach(item => item.setItemKeywords());
   }
 }
 

@@ -26,7 +26,7 @@ class AppleShedLocation extends Location {
     return ps.join('\n\n');
   }
 
-  setKeywords(game) {
+  setLocationKeywords(game) {
     const yogurt = game.getItemFromCollection(YOGURT);
 
     let pxEx;

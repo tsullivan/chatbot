@@ -15,12 +15,16 @@ function getGameKeywords() {
         const {
           itemsCount: locItemsCount,
           itemsHelp: locItemsHelp,
-        } = game.currentLocation.getVisibleFloorItems().reduce(
+        } = game.currentLocation.getVisibleFloorItems(game).reduce(
           ({ itemsHelp, itemsCount }, item) => {
+            let instructions = item.getInstructions(' - ');
+            if (instructions) {
+              instructions = '\n' + instructions;
+            }
             return {
               itemsCount: itemsCount + 1,
               itemsHelp: itemsHelp.concat(
-                `${item.getName()} - ${item.getDescription()} ${item.getInstructions(' - ')}`
+                `${item.getName()} - ${item.getDescription()}${instructions}`
               ),
             };
           },
@@ -53,7 +57,7 @@ function getGameKeywords() {
           )
           .join('\n');
 
-        const locItems = game.currentLocation.getVisibleFloorItems();
+        const locItems = game.currentLocation.getVisibleFloorItems(game);
         const locItemsHelp = locItems.map(item => item.getInstructions()).join('\n');
 
         const invPre = 'Stuff you are holding:\n';

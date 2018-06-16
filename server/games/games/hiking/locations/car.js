@@ -17,7 +17,7 @@ class CarLocation extends Location {
     return ps.join('\n\n');
   }
 
-  setKeywords(game) {
+  setLocationKeywords(game) {
     this.addKeyword('LADDER', `Climb the ladder to get back up to the house`, () =>
       this.followExit(UP, 'Climb, climb, climb.')
     );
