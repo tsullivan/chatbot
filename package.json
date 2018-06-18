@@ -14,10 +14,14 @@
   },
   "author": "Tim Sullivan",
   "license": "ISC",
+  "engines": {
+    "node": ">=8.11 <9"
+  },
   "devDependencies": {
     "chai": "^4.1.2",
     "eslint": "^4.15.0",
     "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-prettier": "^2.6.0",
     "husky": "^0.14.3",
     "jest": "^22.4.4",
