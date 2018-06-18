@@ -21,6 +21,8 @@ class AdventureGame extends Adventure {
         game: this,
       })
     );
+
+    this.updateState();
   }
 
   lose(response) {

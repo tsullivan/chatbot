@@ -4,30 +4,36 @@ const { getKeywordsHelper } = require('./keywords_helper');
 
 class Location {
   constructor({ game, name }) {
-    Object.assign(this, getKeywordsHelper('setLocationKeywords'));
+    if (!(game instanceof Object)) {
+      throw new Error('game must be an Adventure object');
+    }
+    if (typeof name !== 'string') {
+      throw new Error('name must be string');
+    }
 
-    this._game = game;
+    Object.assign(this, getKeywordsHelper());
+
     this._exits = new Map();
 
     this._name = name;
     this._floorItems = new Set();
 
-    this.setLocationKeywords(game);
+    this.followExit = (direction, prefix) => this.followExitInternal(game, direction, prefix);
+
+    this.updateState(game);
   }
 
-  setLocationKeywords() {
-    throw new Error('setLocationKeywords must be overridden in ' + this._name);
+  updateState() {
+    throw new Error('updateState must be overridden in ' + this._name);
   }
 
-  followExit(direction, prefix = '') {
+  followExitInternal(game, direction, prefix = '') {
     if (this._exits.has(direction)) {
       const exit = this._exits.get(direction);
-      this._game.setLocation(exit);
-      exit.clearKeywords();
-      exit.setLocationKeywords(this._game);
-      exit.setVisibleItemKeywords(this._game);
+      game.setLocation(exit);
+      game.updateState();
 
-      const ps = [exit.getDescriptionInternal(this._game)];
+      const ps = [game.getLocationDescription()];
       if (prefix !== '') {
         ps.unshift(prefix);
       }
@@ -72,7 +78,7 @@ class Location {
   }
   setVisibleItemKeywords(game) {
     const items = ItemCollection.getVisibleItemsFromSet(this._floorItems, game);
-    items.forEach(item => item.setItemKeywords());
+    items.forEach(item => item.updateState(game));
   }
 }
 

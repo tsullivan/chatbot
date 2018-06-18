@@ -6,7 +6,7 @@ const { ItemCollection } = require('./class_item_collection');
 class Adventure extends ChatGame {
   constructor(session) {
     super(session);
-    Object.assign(this, getKeywordsHelper('setGameKeywords'));
+    Object.assign(this, getKeywordsHelper());
 
     this._itemCollection = new ItemCollection();
     this._inventory = new Set(); // ids of items in the collection
@@ -17,23 +17,29 @@ class Adventure extends ChatGame {
     // should override
     this.name = 'unknown game';
     this.locations = {};
-
-    this.setGameKeywords();
   }
 
   addItemToCollection(id, item) {
     this._itemCollection.addItem(id, item);
   }
 
-  setGameKeywords() {
-    const gameKeywords = getGameKeywords(this);
-    gameKeywords.forEach(({ key, description, fn }) => {
+  updateState() {
+    // set game keywords
+    this.clearKeywords();
+    getGameKeywords(this).forEach(({ key, description, fn }) => {
       this.addKeyword(key, description, fn);
     });
-  }
-  setInventoryKeywords() {
+
+    // update inventory item states
     const items = ItemCollection.getAllItemsFromSet(this._inventory, this);
-    items.forEach(item => item.setItemKeywords());
+    items.forEach(item => item.updateState(this));
+
+    // update location states
+    this.currentLocation.clearKeywords();
+    this.currentLocation.updateState(this);
+    this.currentLocation.setVisibleItemKeywords(this);
+
+    // update npc states
   }
 
   getInputHandlerItem(items, input) {
@@ -176,6 +182,11 @@ class Adventure extends ChatGame {
       next += '\n\n' + this.currentLocation.getInstructions();
     }
     return next;
+  }
+
+  getLocationDescription() {
+    const { response: locationText } = this.getInputResponse('LOOK', this, this);
+    return locationText;
   }
 
   getWelcome() {

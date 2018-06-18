@@ -1,4 +1,4 @@
-const { MultiMap } = require('../../../lib');
+const { partial } = require('lodash');
 const { getKeywordsHelper } = require('./keywords_helper');
 
 const noop = () => {};
@@ -27,35 +27,34 @@ class InventoryItem {
     if (typeof description !== 'string') {
       throw new Error('description must be string');
     }
-    Object.assign(this, getKeywordsHelper('setItemKeywords'));
+    Object.assign(this, getKeywordsHelper());
 
-    this._game = game;
     this._name = name;
     this._id = id;
     this._description = description;
     this._seen = seen;
-    this._keywords = new MultiMap();
 
     this._droppable = false;
     this._takeable = false;
 
     this._setActions = setActions;
-    this.setItemKeywords(game);
+
+    this.updateState(game);
   }
 
-  setItemKeywords() {
+  updateState(game) {
     return this._setActions({
-      setDroppable: this.setDroppable.bind(this),
-      setTakeable: this.setTakeable.bind(this),
+      setDroppable: partial(this.setDroppable, game).bind(this),
+      setTakeable: partial(this.setTakeable, game).bind(this),
     });
   }
 
-  setDroppable({ isDroppable = true, keyword, keywordDescription, fn }) {
+  setDroppable(game, { isDroppable = true, keyword, keywordDescription, fn }) {
     // add a drop keyword if item is currently in inventory
-    if (isDroppable && this._game.inInventory(this._id)) {
+    if (isDroppable && game.inInventory(this._id)) {
       this._droppable = true;
-      this.addKeyword(keyword, keywordDescription, game => {
-        game.dropInventory(this._id, game.currentLocation);
+      this.addKeyword(keyword, keywordDescription, theGame => {
+        theGame.dropInventory(this._id, theGame.currentLocation);
         return fn(game);
       });
     } else {
@@ -63,12 +62,12 @@ class InventoryItem {
       this.removeKeyword(keyword);
     }
   }
-  setTakeable({ isTakeable = true, keyword, keywordDescription, fn }) {
+  setTakeable(game, { isTakeable = true, keyword, keywordDescription, fn }) {
     // add a take keyword if game location has the item
-    if (isTakeable && this._game.currentLocation.hasFloorItem(this._id)) {
+    if (isTakeable && game.currentLocation.hasFloorItem(this._id)) {
       this._takeable = true;
-      this.addKeyword(keyword, keywordDescription, game => {
-        game.takeFromLocation(this._id, game.currentLocation);
+      this.addKeyword(keyword, keywordDescription, theGame => {
+        theGame.takeFromLocation(this._id, theGame.currentLocation);
         return fn(game);
       });
     } else {

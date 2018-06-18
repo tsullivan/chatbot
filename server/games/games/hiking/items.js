@@ -2,7 +2,7 @@ const snl = require('strip-newlines');
 const { InventoryItem, KeywordResponse } = require('../../lib');
 const { ENEMIES, CAR, APPLES, YOGURT, KEY, BUBBLE_GUN } = require('./constants');
 
-function setItems(game, { appleShed, car: garage, mountain }) {
+function getItems(game) {
   /*
    * Enemies
    */
@@ -123,6 +123,21 @@ function setItems(game, { appleShed, car: garage, mountain }) {
     },
   });
 
+  return {
+    enemiesItem,
+    keyItem,
+    carItem,
+    applesItem,
+    yogurtItem,
+    bubbleGunItem,
+  };
+}
+
+function setItemsToLocations(
+  { enemiesItem, keyItem, carItem, applesItem, yogurtItem, bubbleGunItem },
+  { appleShed, car: garage, mountain },
+  game
+) {
   /*
    * Set to game
    */
@@ -142,9 +157,6 @@ function setItems(game, { appleShed, car: garage, mountain }) {
   appleShed.addFloorItem(YOGURT);
   garage.addFloorItem(CAR);
   mountain.addFloorItem(BUBBLE_GUN);
-
-  // register all the keywords given to inventory items
-  game.setInventoryKeywords();
 }
 
-module.exports = { setItems };
+module.exports = { setItemsToLocations, getItems };

@@ -18,7 +18,7 @@ class MountainHouseLocation extends Location {
     return ps.join('\n\n');
   }
 
-  setLocationKeywords(game) {
+  updateState(game) {
     this.addKeyword(['OUTSIDE', 'EXIT'], `Go out to the top of the mountain`, () =>
       this.followExit(WEST)
     );

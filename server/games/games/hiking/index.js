@@ -1,16 +1,24 @@
 const snl = require('strip-newlines');
 const { Adventure } = require('../../lib');
-const { setItems } = require('./items');
+const { setItemsToLocations, getItems } = require('./items');
 const { getLocations } = require('./locations');
 
 class HikingGame extends Adventure {
   constructor(session) {
     super(session);
+
     this.name = 'hiking';
 
-    const items = getLocations(this);
-    this.currentLocation = items.start;
-    setItems(this, items); // able to set takeable keyword depends on currentLocation
+    const locations = getLocations(this);
+    this.currentLocation = locations.start;
+
+    const items = getItems(this);
+    setItemsToLocations(items, locations, this);
+
+    this._locations = locations;
+    this._items = locations;
+
+    this.updateState();
   }
 
   lose(response) {
@@ -28,6 +36,10 @@ class HikingGame extends Adventure {
     const p = [response, `Looks like you're a winner! Turns: ${this.turns} Score: ${this.score}`];
     this.saveScore(this.score);
     return this.yesDone(p.join('\n\n'));
+  }
+
+  getRandomLocation() {
+    return this._locations;
   }
 }
 

@@ -24,7 +24,7 @@ class BridgeLocation extends Location {
     return ps.join('\n\n');
   }
 
-  setLocationKeywords(/*game*/) {
+  updateState(/*game*/) {
     this.addKeyword('SHIP', `Enter the ship`, () => this.followExit(WEST));
     this.addKeyword('LAKE', `Go back down to the lake`, () =>
       this.followExit(
