@@ -52,7 +52,8 @@ function getGameKeywords() {
         const invItems = game.getVisibleInventoryItems();
         const invItemsHelp = invItems
           .reduce(
-            (accum, item) => (item.hasKeywords() && [...accum, item.getInstructions()]) || accum,
+            (accum, item) =>
+              (item.hasKeywords() && [...accum, item.getInstructions()]) || accum,
             []
           )
           .join('\n');

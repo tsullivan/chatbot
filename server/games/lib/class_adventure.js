@@ -86,7 +86,8 @@ class Adventure extends ChatGame {
         getResponder: () => this.getInputResponse(input, this),
       },
       {
-        inputCheck: game => game.currentLocation.hasKeyword(input) && game.currentLocation, // location keyword
+        inputCheck: game =>
+          game.currentLocation.hasKeyword(input) && game.currentLocation, // location keyword
         getResponder: currentLocation => currentLocation.getInputResponse(input, this),
       },
       {

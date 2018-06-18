@@ -33,7 +33,10 @@ class HikingGame extends Adventure {
   }
 
   win(response) {
-    const p = [response, `Looks like you're a winner! Turns: ${this.turns} Score: ${this.score}`];
+    const p = [
+      response,
+      `Looks like you're a winner! Turns: ${this.turns} Score: ${this.score}`,
+    ];
     this.saveScore(this.score);
     return this.yesDone(p.join('\n\n'));
   }

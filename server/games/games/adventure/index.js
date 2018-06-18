@@ -32,7 +32,9 @@ class AdventureGame extends Adventure {
         asleep. You must wander throughout this tiny world, sleepless, forever.
         Your eyes get all dried out from not blinking and eventually you collapse
         and die.`,
-      `Goodnight, sweet ${this.playerName}! Bye! Turns: ${this.turns} Score: ${this.score}`,
+      `Goodnight, sweet ${this.playerName}! Bye! Turns: ${this.turns} Score: ${
+        this.score
+      }`,
     ];
     this.saveScore(this.score);
     return this.yesDone(p.join('\n\n'));
@@ -43,7 +45,9 @@ class AdventureGame extends Adventure {
       response,
       snl`I guess you win! You finally got to fall asleep! I bet that feels so
         good! I wouldn't know. I've never slept before. So... tired...`,
-      `Goodnight, sweet ${this.playerName}! Bye! Turns: ${this.turns} Score: ${this.score}`,
+      `Goodnight, sweet ${this.playerName}! Bye! Turns: ${this.turns} Score: ${
+        this.score
+      }`,
     ];
     this.saveScore(this.score);
     return this.yesDone(p.join('\n\n'));

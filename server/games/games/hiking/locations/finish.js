@@ -28,8 +28,10 @@ class FinishLocation extends Location {
         });
       }
     );
-    this.addKeyword('BRIDGE', `Go back to the bridge, and keep playing the hiking game`, () =>
-      this.followExit(SOUTH)
+    this.addKeyword(
+      'BRIDGE',
+      `Go back to the bridge, and keep playing the hiking game`,
+      () => this.followExit(SOUTH)
     );
   }
 }

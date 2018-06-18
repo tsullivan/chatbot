@@ -25,8 +25,10 @@ class StartLocation extends Location {
     const pxLake = snl`Your hiking adventure begins! Off to the lake we go.`;
     const pxRocks = snl`Your hiking adventure begins! Starting out with a
       scrambly feeling, you make your way over to the rocks.`;
-    this.addKeyword('LAKE', `You can see a lake in one direction. It looks pretty nice.`, () =>
-      this.followExit(NORTH, pxLake)
+    this.addKeyword(
+      'LAKE',
+      `You can see a lake in one direction. It looks pretty nice.`,
+      () => this.followExit(NORTH, pxLake)
     );
     this.addKeyword(
       'ROCKS',

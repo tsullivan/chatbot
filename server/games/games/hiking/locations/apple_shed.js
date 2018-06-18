@@ -60,23 +60,27 @@ class AppleShedLocation extends Location {
     });
 
     if (!game.inInventory(APPLES)) {
-      this.addKeyword('BUY_APPLE', `If you'd like to own one of these delicious apples.`, () => {
-        this._numApples = 0;
-        game.addToInventory(APPLES);
-        this.removeKeyword('BUY_APPLE');
-        const ps = [
-          snl`"Oh, you'd like to own one of these delicious apples?" says the man. "Well, you can have one. It costs $1,000."`,
-          snl`"I have no money!" You tell him.`,
-          snl`"Oh, well, you can still have one apple, for free." he says.`,
-          snl`"THANKS!" you say.`,
-          snl`"Actually, you can have all of the apples for free." he says.`,
-          'GAIN 10 POINTS',
-        ];
-        return new KeywordResponse({
-          text: ps.join('\n\n'),
-          changeScore: 10,
-        });
-      });
+      this.addKeyword(
+        'BUY_APPLE',
+        `If you'd like to own one of these delicious apples.`,
+        () => {
+          this._numApples = 0;
+          game.addToInventory(APPLES);
+          this.removeKeyword('BUY_APPLE');
+          const ps = [
+            snl`"Oh, you'd like to own one of these delicious apples?" says the man. "Well, you can have one. It costs $1,000."`,
+            snl`"I have no money!" You tell him.`,
+            snl`"Oh, well, you can still have one apple, for free." he says.`,
+            snl`"THANKS!" you say.`,
+            snl`"Actually, you can have all of the apples for free." he says.`,
+            'GAIN 10 POINTS',
+          ];
+          return new KeywordResponse({
+            text: ps.join('\n\n'),
+            changeScore: 10,
+          });
+        }
+      );
     } else if (yogurt.isSeen() && this._hasYogurt) {
       this.addKeyword('BUY_YOGURT', `Purchase the yogurt with ghosts in it.`, () => {
         game.addToInventory(YOGURT);

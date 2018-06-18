@@ -22,13 +22,16 @@ class MountainHouseLocation extends Location {
     this.addKeyword(['OUTSIDE', 'EXIT'], `Go out to the top of the mountain`, () =>
       this.followExit(WEST)
     );
-    this.addKeyword(['DOWN_THE_HOLE', 'DOWN', 'HOLE'], `Take a look at what's down the hole`, () =>
-      this.followExit(
-        DOWN,
-        snl`Fortunately, there's a ladder leading straight down the hole, so
+    this.addKeyword(
+      ['DOWN_THE_HOLE', 'DOWN', 'HOLE'],
+      `Take a look at what's down the hole`,
+      () =>
+        this.followExit(
+          DOWN,
+          snl`Fortunately, there's a ladder leading straight down the hole, so
           you don't have to jump down an unknown distance through complete
           darkness.`
-      )
+        )
     );
     this.addKeyword(['SLEEP', 'BED'], `Take a rest on the comfy-looking bed`, () => {
       const ps = [
@@ -52,7 +55,9 @@ class MountainHouseLocation extends Location {
       const scoreDeficit = 50 - score;
       if (scoreDeficit > 0) {
         changeScore = scoreDeficit; // bump them up to 50 again
-        ps[ps.length] = `- You get ${scoreDeficit} more points from sleeping right now.`;
+        ps[
+          ps.length
+        ] = `- You get ${scoreDeficit} more points from sleeping right now.`;
       }
 
       const items = game.getVisibleInventoryItems();

@@ -21,19 +21,23 @@ class TheSunLocation extends Location {
         you enjoyed your stay on the sun! Come back soon!`;
       return this.followExit(DOWN, px);
     });
-    this.addKeyword('LOOK', `Look at the sun (through the safety of the sunship windows)`, () => {
-      if (this._hasGhosts) {
-        return new KeywordResponse({
-          text: snl`On the surface of the sun, there is melted yogurt and the
+    this.addKeyword(
+      'LOOK',
+      `Look at the sun (through the safety of the sunship windows)`,
+      () => {
+        if (this._hasGhosts) {
+          return new KeywordResponse({
+            text: snl`On the surface of the sun, there is melted yogurt and the
             remains of exploded ghosts.`,
-        });
-      } else {
-        return new KeywordResponse({
-          text: snl`There's not much to say about the sun at the moment. It's
+          });
+        } else {
+          return new KeywordResponse({
+            text: snl`There's not much to say about the sun at the moment. It's
             plain, like plain yogurt.`,
-        });
+          });
+        }
       }
-    });
+    );
 
     if (game.inInventory(YOGURT)) {
       this.addKeyword('THROW_YOGURT', `Throw the ghost yogurt onto the sun`, () => {

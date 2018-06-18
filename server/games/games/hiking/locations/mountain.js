@@ -18,8 +18,12 @@ class MountainLocation extends Location {
   }
 
   updateState(/*game*/) {
-    this.addKeyword('WATERFALL', `To go back down to the waterfall`, () => this.followExit(DOWN));
-    this.addKeyword('HOUSE', 'Check out the mountain house up here.', () => this.followExit(EAST));
+    this.addKeyword('WATERFALL', `To go back down to the waterfall`, () =>
+      this.followExit(DOWN)
+    );
+    this.addKeyword('HOUSE', 'Check out the mountain house up here.', () =>
+      this.followExit(EAST)
+    );
   }
 }
 
