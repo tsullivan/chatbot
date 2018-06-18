@@ -8,7 +8,9 @@
     "lint": "eslint .",
     "jest": "NODE_ENV=test jest ./*/*.test.js ",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "precommit": "eslint .",
+    "prepush": "yarn run test"
   },
   "author": "Tim Sullivan",
   "license": "ISC",
@@ -17,6 +19,7 @@
     "eslint": "^4.15.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
     "jest": "^22.4.4",
     "nodemon": "^1.14.11",
     "prettier": "^1.13.4",
