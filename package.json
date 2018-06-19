@@ -8,8 +8,9 @@
     "lint": "eslint .",
     "jest": "NODE_ENV=test jest ./*/*.test.js ",
     "start": "node index.js",
+    "debug": "node --inspect-brk index.js",
     "dev": "nodemon index.js",
-    "precommit": "eslint .",
+    "precommit": "yarn run lint",
     "prepush": "yarn run test"
   },
   "author": "Tim Sullivan",
