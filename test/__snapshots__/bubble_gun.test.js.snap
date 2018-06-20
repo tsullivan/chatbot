@@ -1,0 +1,440 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`bubble_gun fall down in soap store 1`] = `
+"!!!Welcome to Bubble Gun World!!!
+
+You are at: The Playground
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+BRIDGE - Go to the bridge
+TREE_FORT - Climb the ladder up to the tree fort
+ELECTRONICS - Go to the Electronics store
+SOAPS - Go to the Soaps store
+MAGNETS - Go to the Magnet store
+LOOK - Look at the area you are currently in.
+ITEMS - Things you can do with stuff you are holding or stuff you see.
+HELP - See all the commands you can type
+QUIT - Quit the game"
+`;
+
+exports[`bubble_gun fall down in soap store 2`] = `
+"You are at: The Soap Store
+Oh my goodness, this store has so much soap! It is by far the soapiest store you have ever been in!
+
+There is an extremely strong fragrance of clean in this place.
+
+There is an item here you may be interested in:
+Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
+
+PLAYGROUND - Go back to the playground
+ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
+`;
+
+exports[`bubble_gun fall down in soap store 3`] = `
+"OOPSIE. You accidentally spilled some soap on the floor! Be careful now, the floor might be slippery.
+
+PLAYGROUND - Go back to the playground
+DONT_BE_CAREFUL - You can accidentally not be careful. No one will blame you because it will be another accident."
+`;
+
+exports[`bubble_gun fall down in soap store 4`] = `
+"OOPSIE. You accidentally weren't careful and slipped on the soap that you spilled on the floor!
+
+BAM! There goes your bottom!
+
+PLAYGROUND - Go back to the playground
+ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
+`;
+
+exports[`bubble_gun fall down in soap store 5`] = `
+"OOPSIE. You accidentally spilled some soap on the floor! Be careful now, the floor might be slippery.
+
+PLAYGROUND - Go back to the playground
+DONT_BE_CAREFUL - You can accidentally not be careful. No one will blame you because it will be another accident."
+`;
+
+exports[`bubble_gun fall down in soap store 6`] = `
+"OOPSIE. You accidentally weren't careful and slipped on the soap that you spilled on the floor!
+
+BONK! There goes your head!
+
+PLAYGROUND - Go back to the playground
+ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
+`;
+
+exports[`bubble_gun fall down in soap store 7`] = `
+"OOPSIE. You accidentally spilled some soap on the floor! Be careful now, the floor might be slippery.
+
+PLAYGROUND - Go back to the playground
+DONT_BE_CAREFUL - You can accidentally not be careful. No one will blame you because it will be another accident."
+`;
+
+exports[`bubble_gun fall down in soap store 8`] = `
+"OOPSIE. You accidentally weren't careful and slipped on the soap that you spilled on the floor!
+
+BAM! There goes your bottom!
+
+PLAYGROUND - Go back to the playground
+ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
+`;
+
+exports[`bubble_gun fall down in soap store 9`] = `
+"OOPSIE. You accidentally spilled some soap on the floor! Be careful now, the floor might be slippery.
+
+PLAYGROUND - Go back to the playground
+DONT_BE_CAREFUL - You can accidentally not be careful. No one will blame you because it will be another accident."
+`;
+
+exports[`bubble_gun fall down in soap store 10`] = `
+"OOPSIE. You accidentally weren't careful and slipped on the soap that you spilled on the floor!
+
+BONK! There goes your head!
+
+PLAYGROUND - Go back to the playground
+ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
+`;
+
+exports[`bubble_gun fall down in soap store 11`] = `
+"I guess you don't want to hike any more. See ya!
+
+Looks like you're a winner! Turns: 9 Score: 50
+That was fun, Tim!"
+`;
+
+exports[`bubble_gun walk around 1`] = `
+"!!!Welcome to Bubble Gun World!!!
+
+You are at: The Playground
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+BRIDGE - Go to the bridge
+TREE_FORT - Climb the ladder up to the tree fort
+ELECTRONICS - Go to the Electronics store
+SOAPS - Go to the Soaps store
+MAGNETS - Go to the Magnet store
+LOOK - Look at the area you are currently in.
+ITEMS - Things you can do with stuff you are holding or stuff you see.
+HELP - See all the commands you can type
+QUIT - Quit the game"
+`;
+
+exports[`bubble_gun walk around 2`] = `
+"You are at: The Playground
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+There is an item here you may be interested in:
+Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+BRIDGE - Go to the bridge
+TREE_FORT - Climb the ladder up to the tree fort
+ELECTRONICS - Go to the Electronics store
+SOAPS - Go to the Soaps store
+MAGNETS - Go to the Magnet store"
+`;
+
+exports[`bubble_gun walk around 3`] = `
+"You are at: The Bridge Out Of Town
+This long, long bridge carries the road over a very tall gorge that surrounds Bubble Gun World. It is the only way out of town.
+
+There's no way out of town right now, Bubble Gun World Police have blocked the road to prevent anyone from using the road. A power outage in the streets has caused all the street lights to turn off in this area. The Police are saying it's too dark and unsafe to let anyone try to cross.
+
+The police have put up signs all along the bridge that say BRIDGE IS OUT!But it is too dark to even see them.
+
+PLAYGROUND - Go back to the playground
+CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
+`;
+
+exports[`bubble_gun walk around 4`] = `
+"You are at: The Bridge Out Of Town
+This long, long bridge carries the road over a very tall gorge that surrounds Bubble Gun World. It is the only way out of town.
+
+There's no way out of town right now, Bubble Gun World Police have blocked the road to prevent anyone from using the road. A power outage in the streets has caused all the street lights to turn off in this area. The Police are saying it's too dark and unsafe to let anyone try to cross.
+
+The police have put up signs all along the bridge that say BRIDGE IS OUT!But it is too dark to even see them.
+
+PLAYGROUND - Go back to the playground
+CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
+`;
+
+exports[`bubble_gun walk around 5`] = `
+"You are at: The Playground
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+There is an item here you may be interested in:
+Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+BRIDGE - Go to the bridge
+TREE_FORT - Climb the ladder up to the tree fort
+ELECTRONICS - Go to the Electronics store
+SOAPS - Go to the Soaps store
+MAGNETS - Go to the Magnet store"
+`;
+
+exports[`bubble_gun walk around 6`] = `
+"You are at: The Playground
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+There is an item here you may be interested in:
+Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+BRIDGE - Go to the bridge
+TREE_FORT - Climb the ladder up to the tree fort
+ELECTRONICS - Go to the Electronics store
+SOAPS - Go to the Soaps store
+MAGNETS - Go to the Magnet store"
+`;
+
+exports[`bubble_gun walk around 7`] = `
+"You are at: The Tree Fort
+This tree fort is so tall! It has a big window with a clear view of the entire playground.
+
+PLAYGROUND - Go back to the playground"
+`;
+
+exports[`bubble_gun walk around 8`] = `
+"You are at: The Tree Fort
+This tree fort is so tall! It has a big window with a clear view of the entire playground.
+
+PLAYGROUND - Go back to the playground"
+`;
+
+exports[`bubble_gun walk around 9`] = `
+"You are at: The Playground
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+There is an item here you may be interested in:
+Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+BRIDGE - Go to the bridge
+TREE_FORT - Climb the ladder up to the tree fort
+ELECTRONICS - Go to the Electronics store
+SOAPS - Go to the Soaps store
+MAGNETS - Go to the Magnet store"
+`;
+
+exports[`bubble_gun walk around 10`] = `
+"You are at: The Playground
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+There is an item here you may be interested in:
+Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+BRIDGE - Go to the bridge
+TREE_FORT - Climb the ladder up to the tree fort
+ELECTRONICS - Go to the Electronics store
+SOAPS - Go to the Soaps store
+MAGNETS - Go to the Magnet store"
+`;
+
+exports[`bubble_gun walk around 11`] = `
+"You are at: The Electronics Store
+Here at the Electronics store, their motto is: \\"Electronics - they're what we sell!\\"
+
+There are 3 items here you may be interested in:
+Small LR41 Batteries. - The two LR41 batteries are the standard 1.5V button size batteries. They'd fit nicely into the battery holder of a very small piece of electronics.
+Medium-size AA Batteries. - The two AA batteries are the standard 1.5V medium-size batteries. They'd fit nicely into the battery holder of a medium-size piece of electronics.
+LED - It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
+
+PLAYGROUND - Go back to the playground"
+`;
+
+exports[`bubble_gun walk around 12`] = `
+"You are at: The Electronics Store
+Here at the Electronics store, their motto is: \\"Electronics - they're what we sell!\\"
+
+There are 3 items here you may be interested in:
+Small LR41 Batteries. - The two LR41 batteries are the standard 1.5V button size batteries. They'd fit nicely into the battery holder of a very small piece of electronics.
+Medium-size AA Batteries. - The two AA batteries are the standard 1.5V medium-size batteries. They'd fit nicely into the battery holder of a medium-size piece of electronics.
+LED - It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
+
+PLAYGROUND - Go back to the playground"
+`;
+
+exports[`bubble_gun walk around 13`] = `
+"You are at: The Playground
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+There is an item here you may be interested in:
+Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+BRIDGE - Go to the bridge
+TREE_FORT - Climb the ladder up to the tree fort
+ELECTRONICS - Go to the Electronics store
+SOAPS - Go to the Soaps store
+MAGNETS - Go to the Magnet store"
+`;
+
+exports[`bubble_gun walk around 14`] = `
+"You are at: The Playground
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+There is an item here you may be interested in:
+Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+BRIDGE - Go to the bridge
+TREE_FORT - Climb the ladder up to the tree fort
+ELECTRONICS - Go to the Electronics store
+SOAPS - Go to the Soaps store
+MAGNETS - Go to the Magnet store"
+`;
+
+exports[`bubble_gun walk around 15`] = `
+"You are at: The Soap Store
+Oh my goodness, this store has so much soap! It is by far the soapiest store you have ever been in!
+
+There is an extremely strong fragrance of clean in this place.
+
+There is an item here you may be interested in:
+Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
+
+PLAYGROUND - Go back to the playground
+ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
+`;
+
+exports[`bubble_gun walk around 16`] = `
+"You are at: The Soap Store
+Oh my goodness, this store has so much soap! It is by far the soapiest store you have ever been in!
+
+There is an extremely strong fragrance of clean in this place.
+
+There is an item here you may be interested in:
+Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
+
+PLAYGROUND - Go back to the playground
+ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
+`;
+
+exports[`bubble_gun walk around 17`] = `
+"You are at: The Playground
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+There is an item here you may be interested in:
+Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+BRIDGE - Go to the bridge
+TREE_FORT - Climb the ladder up to the tree fort
+ELECTRONICS - Go to the Electronics store
+SOAPS - Go to the Soaps store
+MAGNETS - Go to the Magnet store"
+`;
+
+exports[`bubble_gun walk around 18`] = `
+"You are at: The Playground
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+There is an item here you may be interested in:
+Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+BRIDGE - Go to the bridge
+TREE_FORT - Climb the ladder up to the tree fort
+ELECTRONICS - Go to the Electronics store
+SOAPS - Go to the Soaps store
+MAGNETS - Go to the Magnet store"
+`;
+
+exports[`bubble_gun walk around 19`] = `
+"You are at: The Magnet Store
+Hold on to your metals, they got lots of magnets in here!
+
+There is an item here you may be interested in:
+Small magnet - This looks like a pretty handy little small magent! It has a sticker on for sticking onto a small device.
+
+PLAYGROUND - Go back to the playground"
+`;
+
+exports[`bubble_gun walk around 20`] = `
+"You are at: The Magnet Store
+Hold on to your metals, they got lots of magnets in here!
+
+There is an item here you may be interested in:
+Small magnet - This looks like a pretty handy little small magent! It has a sticker on for sticking onto a small device.
+
+PLAYGROUND - Go back to the playground"
+`;
+
+exports[`bubble_gun walk around 21`] = `
+"You are at: The Playground
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+There is an item here you may be interested in:
+Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+BRIDGE - Go to the bridge
+TREE_FORT - Climb the ladder up to the tree fort
+ELECTRONICS - Go to the Electronics store
+SOAPS - Go to the Soaps store
+MAGNETS - Go to the Magnet store"
+`;
+
+exports[`bubble_gun walk around 22`] = `
+"You are at: The Playground
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+There is an item here you may be interested in:
+Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+BRIDGE - Go to the bridge
+TREE_FORT - Climb the ladder up to the tree fort
+ELECTRONICS - Go to the Electronics store
+SOAPS - Go to the Soaps store
+MAGNETS - Go to the Magnet store"
+`;
+
+exports[`bubble_gun walk around 23`] = `
+"I guess you don't want to hike any more. See ya!
+
+Looks like you're a winner! Turns: 21 Score: 50
+That was fun, Tim!"
+`;

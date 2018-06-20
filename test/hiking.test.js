@@ -1,16 +1,4 @@
-const { app } = require('../server');
-const request = require('supertest');
-const { handshake } = require('./handshake');
-
-const send = message => {
-  return request(app)
-    .post('/chat')
-    .send({ format: 'user', message });
-};
-
-const checkResponses = resps => {
-  resps.forEach(({ body }) => expect(body.message).toMatchSnapshot());
-};
+const { handshake, send, checkResponses } = require('./utils');
 
 describe('hiking', () => {
   beforeAll(() => {

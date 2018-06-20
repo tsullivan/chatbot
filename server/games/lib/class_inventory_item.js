@@ -36,6 +36,8 @@ class InventoryItem {
 
     this._droppable = false;
     this._takeable = false;
+    this._combinable = false;
+    this._combinedWith = new Set();
 
     this._setActions = setActions;
 
@@ -46,15 +48,36 @@ class InventoryItem {
     return this._setActions({
       setDroppable: partial(this.setDroppable, game).bind(this),
       setTakeable: partial(this.setTakeable, game).bind(this),
+      setCombinable: partial(this.setCombinable, game).bind(this),
     });
+  }
+
+  setCombinable(
+    game,
+    { isCombinable = true, combinesWith, keyword, keywordDescription, fn }
+  ) {
+    if (
+      isCombinable &&
+      (game.inInventory(this._id) || game.currentLocation.hasFloorItem(this._id))
+    ) {
+      this._combinable = true;
+      this.addKeyword(keyword, keywordDescription, () => {
+        this._combinedWith.add(combinesWith);
+        // fn checks if combo is complete
+        return fn(game, this._combinedWith);
+      });
+    } else {
+      this._combinable = false;
+      this.removeKeyword(keyword);
+    }
   }
 
   setDroppable(game, { isDroppable = true, keyword, keywordDescription, fn }) {
     // add a drop keyword if item is currently in inventory
     if (isDroppable && game.inInventory(this._id)) {
       this._droppable = true;
-      this.addKeyword(keyword, keywordDescription, theGame => {
-        theGame.dropInventory(this._id, theGame.currentLocation);
+      this.addKeyword(keyword, keywordDescription, () => {
+        game.dropInventory(this._id, game.currentLocation);
         return fn(game);
       });
     } else {
@@ -66,8 +89,8 @@ class InventoryItem {
     // add a take keyword if game location has the item
     if (isTakeable && game.currentLocation.hasFloorItem(this._id)) {
       this._takeable = true;
-      this.addKeyword(keyword, keywordDescription, theGame => {
-        theGame.takeFromLocation(this._id, theGame.currentLocation);
+      this.addKeyword(keyword, keywordDescription, () => {
+        game.takeFromLocation(this._id, game.currentLocation);
         return fn(game);
       });
     } else {

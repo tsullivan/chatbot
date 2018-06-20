@@ -14,21 +14,17 @@ function getGameKeywords() {
         // show any items on the floor
         const {
           itemsCount: locItemsCount,
-          itemsHelp: locItemsHelp,
+          itemNames: locItemNames,
         } = game.currentLocation.getVisibleFloorItems(game).reduce(
-          ({ itemsHelp, itemsCount }, item) => {
-            let instructions = item.getInstructions(' - ');
-            if (instructions) {
-              instructions = '\n' + instructions;
-            }
+          ({ itemNames, itemsCount }, item) => {
             return {
               itemsCount: itemsCount + 1,
-              itemsHelp: itemsHelp.concat(
-                `${item.getName()} - ${item.getDescription()}${instructions}`
+              itemNames: itemNames.concat(
+                `${item.getName()} - ${item.getDescription()}`
               ),
             };
           },
-          { itemsHelp: [], itemsCount: 0 }
+          { itemNames: [], itemsCount: 0 }
         );
 
         if (locItemsCount > 0) {
@@ -36,7 +32,7 @@ function getGameKeywords() {
           if (locItemsCount > 1) {
             itemsPre = `There are ${locItemsCount} items here you may be interested in:`;
           }
-          ps.push(itemsPre + '\n' + locItemsHelp);
+          ps.push(itemsPre + '\n' + locItemNames.join('\n'));
         }
 
         return new KeywordResponse({

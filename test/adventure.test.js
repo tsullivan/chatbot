@@ -1,6 +1,6 @@
 const { app } = require('../server');
 const request = require('supertest');
-const { handshake } = require('./handshake');
+const { handshake } = require('./utils');
 
 describe('adventure', () => {
   test('start', async () => {

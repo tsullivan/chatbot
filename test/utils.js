@@ -18,4 +18,14 @@ const handshake = async () => {
   expect(sayName.body.message).toEqual('Hello, Tim! Nice to meet you.');
 };
 
-module.exports = { handshake };
+const send = message => {
+  return request(app)
+    .post('/chat')
+    .send({ format: 'user', message });
+};
+
+const checkResponses = resps => {
+  resps.forEach(({ body }) => expect(body.message).toMatchSnapshot());
+};
+
+module.exports = { handshake, send, checkResponses };

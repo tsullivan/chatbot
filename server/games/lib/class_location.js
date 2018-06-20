@@ -61,7 +61,7 @@ class Location {
   }
 
   getDescriptionInternal(game) {
-    return `${this._name}\n${this.getDescription(game)}`;
+    return `You are at: ${this._name}\n${this.getDescription(game)}`;
   }
 
   addFloorItem(id) {
