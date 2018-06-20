@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`adventure castle 1`] = `
-"Great Hall of the Castle
+"You are at: Great Hall of the Castle
 In the great hall of the castle, there are beautiful open-air windows with warm, nice-smelling air drifting through. Sunlight is catching a few specks of dust floating in the air. Not that much though, because it's pretty clean in here. There's also a nice looking comfy bed in the middle of the great hall. Hey wait - isn't it night time? Where is that light coming from?
 
 SLEEP - Sleep on the comfy bed
@@ -12,7 +12,7 @@ EXIT - Leave the beautful great hall and the castle."
 exports[`adventure castle look 1 1`] = `
 "They're nice windows and all, but it's so bright in here! What kind of weird forces are around that would make the sun so bright at this time of night!?Oh, also you notice that each window has a little socket in one corner, and that looks like the handle you're carrying in your pocket would fit in it! What do you say, want to give it a whirl???
 
-Great Hall of the Castle
+You are at: Great Hall of the Castle
 In the great hall of the castle, there are beautiful open-air windows with warm, nice-smelling air drifting through. Sunlight is catching a few specks of dust floating in the air. Not that much though, because it's pretty clean in here. There's also a nice looking comfy bed in the middle of the great hall. Hey wait - isn't it night time? Where is that light coming from?
 
 SLEEP - Sleep on the comfy bed
@@ -24,7 +24,7 @@ EXIT - Leave the beautful great hall and the castle."
 exports[`adventure castle look 2 1`] = `
 "It's nice and quiet here. The windows are closed and no longer letting in that abonimanimal light.
 
-Great Hall of the Castle
+You are at: Great Hall of the Castle
 In the great hall of the castle, there were beautiful open-air windows with warm, nice-smelling air that drifted through. Sunlight would catch a few specks of dust floating in the air.  Not that much though, because it's pretty clean in here. But the area is pretty dark, so you wouldn't even be able to tell. There's also a nice looking comfy bed in the middle of the great hall.
 
 SLEEP - Sleep on the comfy bed
@@ -54,7 +54,7 @@ That was fun, Tim!"
 `;
 
 exports[`adventure cave 1`] = `
-"Cheery Cave
+"You are at: Cheery Cave
 It's unnaturally cheery in this smelly old cave. Probably because of the tiny village of tiny dancing skeleton hands. So cute! So tiny! So skeleton handsy!
 
 There is an item here you may be interested in:
@@ -66,7 +66,7 @@ EXIT - Get out of the cheery smelly old cave."
 `;
 
 exports[`adventure cave exit 1`] = `
-"Dark Forest
+"You are at: Dark Forest
 It is the night time. You are outside, surrounded by dark trees, and you're very tired. There is a castle and a cave. Which way looks to be best to find a nice comfy bed to rest? I didn't mean for that to rhyme.
 
 CAVE - Go down into the cave
@@ -78,7 +78,7 @@ exports[`adventure cave look 1`] = `
 
 The tiny hotel building has a strange type of flagpole on the roof that looks like maybe a crank handle for a window. Maybe a castle window(s). However, it might be impossible to know for sure if that's what it really is, because this game is very limited. The crank handle to open or close castle windows might just be for decoration. That would be too bad.
 
-Cheery Cave
+You are at: Cheery Cave
 It's unnaturally cheery in this smelly old cave. Probably because of the tiny village of tiny dancing skeleton hands. So cute! So tiny! So skeleton handsy!
 
 There is an item here you may be interested in:
@@ -104,7 +104,7 @@ QUIT - Quit the game"
 exports[`adventure score 1`] = `"The average score of the games you plaid are : 47"`;
 
 exports[`adventure start 1`] = `
-"Dark Forest
+"You are at: Dark Forest
 It is the night time. You are outside, surrounded by dark trees, and you're very tired. There is a castle and a cave. Which way looks to be best to find a nice comfy bed to rest? I didn't mean for that to rhyme.
 
 CAVE - Go down into the cave
