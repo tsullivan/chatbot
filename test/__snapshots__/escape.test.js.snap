@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`escape-jail escape 1`] = `
+"\`play\`: Play a game with me!
+Usage: \`play <game name>\`
+Here are the games I have: adventure, bubble_gun, hiking, guess_number, batman"
+`;
+
+exports[`escape-jail escape 2`] = `"veil obligation"`;
+
+exports[`escape-jail escape 3`] = `"Would you still love me if I was helpless-ish?"`;
+
+exports[`escape-jail escape 4`] = `"Celery"`;
+
+exports[`escape-jail escape 5`] = `"Remember that time you said, \\"force_key\\"? I do."`;
+
+exports[`escape-jail escape 6`] = `"Just don't say \\"coinflip\\", I'll flip out!"`;
+
+exports[`escape-jail escape 7`] = `"Remember that time you said, \\"escape\\"? I do."`;
+
+exports[`escape-jail escape 8`] = `"Orange"`;
+
+exports[`escape-jail escape 9`] = `"A stinger‽ Really‽ A grave stinger‽"`;

@@ -7,36 +7,9 @@ function getGameKeywords() {
       key: 'LOOK',
       description: 'Look at the area you are currently in.',
       fn: game => {
-        const ps = [];
-        // get the area description
-        ps.push(game.currentLocation.getDescriptionInternal(game));
-
-        // show any items on the floor
-        const {
-          itemsCount: locItemsCount,
-          itemNames: locItemNames,
-        } = game.currentLocation.getVisibleFloorItems(game).reduce(
-          ({ itemNames, itemsCount }, item) => {
-            return {
-              itemsCount: itemsCount + 1,
-              itemNames: itemNames.concat(
-                `${item.getName()} - ${item.getDescription()}`
-              ),
-            };
-          },
-          { itemNames: [], itemsCount: 0 }
-        );
-
-        if (locItemsCount > 0) {
-          let itemsPre = `There is an item here you may be interested in:`;
-          if (locItemsCount > 1) {
-            itemsPre = `There are ${locItemsCount} items here you may be interested in:`;
-          }
-          ps.push(itemsPre + '\n' + locItemNames.join('\n'));
-        }
-
+        // get the area description + the available keyword commands
         return new KeywordResponse({
-          text: ps.join('\n\n'),
+          text: game.currentLocation.getDescriptionInternal(game),
           isCascade: true,
         });
       },
@@ -46,12 +19,10 @@ function getGameKeywords() {
       description: 'Things you can do with stuff you are holding or stuff you see.',
       fn: game => {
         const invItems = game.getVisibleInventoryItems();
-        const invItemsHelp = invItems
-          .reduce(
-            (accum, item) =>
-              (item.hasKeywords() && [...accum, item.getInstructions()]) || accum,
-            []
-          )
+        const invItemsInfos = invItems
+          .reduce((accum, item) => {
+            return [...accum, item.getInfo()];
+          }, [])
           .join('\n');
 
         const locItems = game.currentLocation.getVisibleFloorItems(game);
@@ -62,10 +33,10 @@ function getGameKeywords() {
         let itemsHelp;
 
         if (invItems.length > 0 && locItems.length > 0) {
-          itemsHelp = [invPre + invItemsHelp, locPre + locItemsHelp].join('\n\n');
+          itemsHelp = [invPre + invItemsInfos, locPre + locItemsHelp].join('\n\n');
         } else {
           itemsHelp =
-            (invItems.length > 0 && invPre + invItemsHelp) ||
+            (invItems.length > 0 && invPre + invItemsInfos) ||
             (locItems.length > 0 && locPre + locItemsHelp);
         }
 
@@ -83,7 +54,7 @@ function getGameKeywords() {
       key: 'HELP',
       description: 'See all the commands you can type',
       fn: game => {
-        const parts = [game.currentLocation.getInstructions(), game.getInstructions()];
+        const parts = [game.getLocationInstructions(), game.getInstructions()];
         return new KeywordResponse({
           text: parts.join('\n'),
           showInstructions: false,

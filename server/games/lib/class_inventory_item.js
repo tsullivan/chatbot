@@ -44,6 +44,14 @@ class InventoryItem {
     this.updateState(game);
   }
 
+  getInfo() {
+    let instructions = '';
+    if (this.hasKeywords()) {
+      instructions = '\n - ' + this.getInstructions();
+    }
+    return `${this.getName()} - ${this.getDescription()}` + instructions;
+  }
+
   updateState(game) {
     return this._setActions({
       setDroppable: partial(this.setDroppable, game).bind(this),

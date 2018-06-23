@@ -74,15 +74,15 @@ class Adventure extends ChatGame {
     input = input.toUpperCase();
     const responseSet = [];
     let response,
-      changeScore,
-      isDone = false,
+      changeScore, // FIXME should be independent of keyword response: game.updateScore()
+      isDone = false, // FIXME should be independent of keyword response game.isDone()
       showInstructions = true;
 
     /* array of functions to call to look through areas
      * for which the input can be a keyword */
     const checks = [
       {
-        inputCheck: () => this.hasKeyword(input),
+        inputCheck: () => this.hasKeyword(input), // game keyword (quit, look, score, etc)
         getResponder: () => this.getInputResponse(input, this),
       },
       {
@@ -99,7 +99,7 @@ class Adventure extends ChatGame {
       },
       {
         inputCheck: () => {
-          const locationItems = this.currentLocation.getVisibleFloorItems(this); // keyword of a visible item in the location
+          const locationItems = this.getVisibleLocationItems(); // keyword of a visible item in the location
           return this.getInputHandlerItem(locationItems, input);
         },
         getResponder: locationItem => locationItem.getInputResponse(input, this),
@@ -174,13 +174,13 @@ class Adventure extends ChatGame {
     return ItemCollection.getVisibleItemsFromSet(this._inventory, this);
   }
   getVisibleLocationItems() {
-    return ItemCollection.getVisibleItemsFromSet(this._inventory, this);
+    return this.currentLocation.getVisibleFloorItems(this);
   }
 
   getNext(prefix, showInstructions) {
     let next = prefix;
     if (showInstructions) {
-      next += '\n\n' + this.currentLocation.getInstructions();
+      next += '\n\n' + this.getLocationInstructions();
     }
     return next;
   }
@@ -188,6 +188,10 @@ class Adventure extends ChatGame {
   getLocationDescription() {
     const { response: locationText } = this.getInputResponse('LOOK', this, this);
     return locationText;
+  }
+
+  getLocationInstructions() {
+    return this.currentLocation.getInstructions();
   }
 
   getWelcome() {

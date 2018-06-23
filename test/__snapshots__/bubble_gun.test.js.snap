@@ -10,6 +10,9 @@ Off the corner of the road, there's a bridge leading out of Bubble Gun World.
 
 Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
 
+There is an item here you may be interested in:
+Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
 BRIDGE - Go to the bridge
 TREE_FORT - Climb the ladder up to the tree fort
 ELECTRONICS - Go to the Electronics store
@@ -29,6 +32,7 @@ There is an extremely strong fragrance of clean in this place.
 
 There is an item here you may be interested in:
 Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
+ - TAKE_SOAP - Help yourself to the bottle of liquid soap.
 
 PLAYGROUND - Go back to the playground
 ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
@@ -114,6 +118,9 @@ This playground is right in the center of Bubble Gun World. It has things that a
 Off the corner of the road, there's a bridge leading out of Bubble Gun World.
 
 Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+There is an item here you may be interested in:
+Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
 
 BRIDGE - Go to the bridge
 TREE_FORT - Climb the ladder up to the tree fort
@@ -260,8 +267,13 @@ Here at the Electronics store, their motto is: \\"Electronics - they're what we 
 
 There are 3 items here you may be interested in:
 Small LR41 Batteries. - The two LR41 batteries are the standard 1.5V button size batteries. They'd fit nicely into the battery holder of a very small piece of electronics.
+ - TAKE_LR41_BATTERIES - Obtain possession of the LR41 batteries.
 Medium-size AA Batteries. - The two AA batteries are the standard 1.5V medium-size batteries. They'd fit nicely into the battery holder of a medium-size piece of electronics.
+ - TAKE_AA_BATTERIES - Obtain possession of the AA batteries.
 LED - It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
+ - TAKE_LED - Take the LED.
+COMBINE_LED_AND_MAGNET - Stick the magnet onto the LED device.
+COMBINE_LED_AND_BATTERIES - Put the two LR41 batteries in the battery holder of the LED device.
 
 PLAYGROUND - Go back to the playground"
 `;
@@ -272,8 +284,13 @@ Here at the Electronics store, their motto is: \\"Electronics - they're what we 
 
 There are 3 items here you may be interested in:
 Small LR41 Batteries. - The two LR41 batteries are the standard 1.5V button size batteries. They'd fit nicely into the battery holder of a very small piece of electronics.
+ - TAKE_LR41_BATTERIES - Obtain possession of the LR41 batteries.
 Medium-size AA Batteries. - The two AA batteries are the standard 1.5V medium-size batteries. They'd fit nicely into the battery holder of a medium-size piece of electronics.
+ - TAKE_AA_BATTERIES - Obtain possession of the AA batteries.
 LED - It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
+ - TAKE_LED - Take the LED.
+COMBINE_LED_AND_MAGNET - Stick the magnet onto the LED device.
+COMBINE_LED_AND_BATTERIES - Put the two LR41 batteries in the battery holder of the LED device.
 
 PLAYGROUND - Go back to the playground"
 `;
@@ -322,6 +339,7 @@ There is an extremely strong fragrance of clean in this place.
 
 There is an item here you may be interested in:
 Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
+ - TAKE_SOAP - Help yourself to the bottle of liquid soap.
 
 PLAYGROUND - Go back to the playground
 ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
@@ -335,6 +353,7 @@ There is an extremely strong fragrance of clean in this place.
 
 There is an item here you may be interested in:
 Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
+ - TAKE_SOAP - Help yourself to the bottle of liquid soap.
 
 PLAYGROUND - Go back to the playground
 ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
@@ -382,6 +401,7 @@ Hold on to your metals, they got lots of magnets in here!
 
 There is an item here you may be interested in:
 Small magnet - This looks like a pretty handy little small magent! It has a sticker on for sticking onto a small device.
+ - TAKE_MAGNET - Take the magnet.
 
 PLAYGROUND - Go back to the playground"
 `;
@@ -392,6 +412,7 @@ Hold on to your metals, they got lots of magnets in here!
 
 There is an item here you may be interested in:
 Small magnet - This looks like a pretty handy little small magent! It has a sticker on for sticking onto a small device.
+ - TAKE_MAGNET - Take the magnet.
 
 PLAYGROUND - Go back to the playground"
 `;

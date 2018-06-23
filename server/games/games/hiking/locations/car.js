@@ -4,15 +4,19 @@ const { UP, DOWN, CAR } = require('../constants');
 
 class CarLocation extends Location {
   constructor(game) {
-    super({ game, name: 'Under the Mountain House' });
+    super({ game, name: 'In a cave under the mountain house' });
   }
 
   getDescription() {
     const ps = [
-      `The bottom of the hole is so deep, you'd have to use a ladder to get back up.`,
-      snl`There's a silver car here, at the start of a long tunnel into
-        darkness. The car is floating slightly, but it seems pretty easy to get
-        in if you want.`,
+      snl`The hole which you climbed down is the only source of light. You're at the dead-end of a
+        cave which goes one direction into a long tunnel of darkness. It would be very hard to
+        navigate through that without a light of some kind. The bottom of the hole is so deep,
+        you'd have to use a ladder to get back up. The only way that seems safe to try is the
+        ladder leading back up to the house.`,
+      snl`In the dim light, the only thing you can really tell is there's a silver car parked here.
+        It points straight in to the darkness of the cave tunnel. It's floating slightly, and seems
+        very ready to drive.`,
     ];
     return ps.join('\n\n');
   }
@@ -33,13 +37,6 @@ class CarLocation extends Location {
           out of the side of the mountain! You're now flying over the lake that you
           passed by on the beginning of this hiking journey.`;
         return this.followExit(DOWN, px);
-
-        /* FIXME this doesn't work, keyword responses are not composable
-        return new KeywordResponse({
-          text: this.followExit(DOWN),
-          changeScore: 5
-        });
-      */
       }
     );
   }

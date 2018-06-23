@@ -15,9 +15,6 @@ class HikingGame extends Adventure {
     const items = getItems(this);
     setItemsToLocations(items, locations, this);
 
-    this._locations = locations;
-    this._items = locations;
-
     this.updateState();
   }
 

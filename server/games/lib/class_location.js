@@ -28,15 +28,15 @@ class Location {
     throw new Error('updateState must be overridden in ' + this._name);
   }
 
-  followExitInternal(game, direction, prefix = '') {
+  followExitInternal(game, direction, suffix = '') {
     if (this._exits.has(direction)) {
       const exit = this._exits.get(direction);
       game.setLocation(exit);
       game.updateState();
 
       const ps = [game.getLocationDescription()];
-      if (prefix !== '') {
-        ps.unshift(prefix);
+      if (suffix !== '') {
+        ps.push(suffix);
       }
 
       return new KeywordResponse({
@@ -61,11 +61,33 @@ class Location {
   }
 
   getDescriptionInternal(game) {
-    return `You are at: ${this._name}\n${this.getDescription(game)}`;
+    const ps = [`You are at: ${this._name}\n${this.getDescription(game)}`];
+
+    // show any items on the floor
+    const {
+      itemsCount: locItemsCount,
+      itemInfos: locItemInfos,
+    } = game.currentLocation.getVisibleFloorItems(game).reduce(
+      ({ itemInfos, itemsCount }, item) => {
+        return {
+          itemsCount: itemsCount + 1,
+          itemInfos: itemInfos.concat(item.getInfo()),
+        };
+      },
+      { itemInfos: [], itemsCount: 0 }
+    );
+    if (locItemsCount > 0) {
+      let itemsPre = `There is an item here you may be interested in:`;
+      if (locItemsCount > 1) {
+        itemsPre = `There are ${locItemsCount} items here you may be interested in:`;
+      }
+      ps.push(itemsPre + '\n' + locItemInfos.join('\n'));
+    }
+
+    return ps.join('\n\n');
   }
 
   addFloorItem(id) {
-    // BUG this gets the readable name not the const
     this._floorItems.add(id);
   }
   hasFloorItem(id) {

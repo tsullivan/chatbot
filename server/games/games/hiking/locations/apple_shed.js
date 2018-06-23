@@ -4,31 +4,31 @@ const { EAST, APPLES, YOGURT } = require('../constants');
 
 class AppleShedLocation extends Location {
   constructor(game) {
-    super({ game, name: 'Apple Store' });
+    super({ game, name: 'The Apple Store' });
     this._numApples = 100;
-    this._yogurtSeen = false;
   }
 
   getDescription() {
     const ps = [
-      snl`This giant, giant circle in the trees at the top of the climbing
-        rope. is an Apple Store. It looks like a shed.  Inside there are many,
-        many shelves full of apples. It looks like there are exactly
+      snl`You're in a giant, giant red sphere in the trees. This is an Apple
+        Store. On the inside, it actually a shed. Inside there are many, many
+        shelves full of apples. It looks like there are exactly
         ${this._numApples} apples.`,
     ];
     if (this._numApples > 0) {
       ps.push(
-        snl`There's no one in the store, but there's a man out back. He looks
-          inside and sees you, then he comes in and says a friendly hello.`,
+        snl`There's no one in the store, but there's a man standing on a tree
+          branch out back. He looks inside a window and sees you, then he comes
+          in and says a friendly hello.`,
         snl`"Oh, a customer! Would you like to buy an apple?" he says.`
       );
+      // TODO npc class that knows if the character has said a certain thing yet
     }
     return ps.join('\n\n');
   }
 
   updateState(game) {
     const yogurt = game.getItemFromCollection(YOGURT);
-
     let pxEx;
     if (!game.inInventory(APPLES) || !game.inInventory(YOGURT)) {
       pxEx = snl`"Thanks for coming!" says the business man. "I still have a few items left for sale if

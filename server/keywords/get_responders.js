@@ -11,7 +11,7 @@ function getResponders() {
     {},
     {
       just_dont: require('./responders/just_dont'),
-      game: require('./responders/play'),
+      play: require('./responders/play'),
       help: require('./responders/help'),
       joke: require('./responders/joke'),
       random: require('./responders/random'),

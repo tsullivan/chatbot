@@ -1,24 +1,35 @@
 const snl = require('strip-newlines');
-const { Location /*, KeywordResponse */ } = require('../../../lib');
+const { Location, parajoin /*, KeywordResponse */ } = require('../../../lib');
 const { NORTH, WEST } = require('../constants');
 
 class StartLocation extends Location {
   constructor(game) {
-    super({ game, name: 'Escaping from the cops station' });
+    super({ game, name: 'Lost in a mountain' });
   }
 
   getDescription() {
-    const ps = [
-      snl`You've just escaped from a jail. You breathe a sigh of relief because
-        that part of your life is forever behind you. They'll never find you in
-        these woods. Plus, you stole the jail key, because you're not a bad guy.
-        You were put in jail accidentally. They made you steal the key.`,
-      snl`Now, all you have to do is hike...`,
-      snl`You're surrounded by trees and it's cloudy outside. To be honest,
-        it's a little scary because you really don't know what's out here. And
-        there's cops chasing you, but they're far behind. And you can go super fast.`,
+    const lns = [
+      snl`You find yourself on a big, big mountain. You can see the very top of
+        the mountain, but it's still so high up that it hurts your neck to look
+        at. The dark clouds in the sky seem to be afraid to come close to the
+        mountain, and it makes the mountain look impossbly looming.`,
+      snl`Around you, it's so green. The only sound you hear is the cold wind
+        swaying leaves and branches. Once in awhile, a few clouds part open a
+        blue sky and let in sharp bolts of sunlight. It's really nice when the
+        light hits the tops of the younger parts of the plants. It makes them
+        look like glowing gems.`,
+      snl`The ground has a lot of large bushes and lower down, there are a lot
+        of ferns and a lot of moss.`,
+      snl`Your standing on a trail, with only two directions to go. To one
+        direction there's a large lake, looking cold and gloomy under the clouds.
+        In another direction the trees make a large opening around a very rocky
+        place.`,
+      snl`You're not sure how you got here, and that makes you feel really
+        lost. You can go wherever you want. You're surrounded by trees and your
+        scared.`,
+      snl`You can also go really fast sometimes, and you have the Force sometimes.`,
     ];
-    return ps.join('\n\n');
+    return parajoin(lns);
   }
 
   updateState(/*game*/) {
@@ -39,3 +50,4 @@ class StartLocation extends Location {
 }
 
 module.exports = { StartLocation };
+/* vim auto-breakline */
