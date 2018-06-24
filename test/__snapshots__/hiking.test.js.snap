@@ -273,7 +273,10 @@ Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interestin
 With the magical strength gained from the waterfall spray, you climb up the very tall mountain.
 
 WATERFALL - To go back down to the waterfall
-HOUSE - Check out the mountain house up here."
+HOUSE - Check out the mountain house up here.
+
+Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+ - TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun."
 `;
 
 exports[`hiking fly a car back to the lake 4`] = `
@@ -287,7 +290,10 @@ Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interestin
  - TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.
 
 WATERFALL - To go back down to the waterfall
-HOUSE - Check out the mountain house up here."
+HOUSE - Check out the mountain house up here.
+
+Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+ - TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun."
 `;
 
 exports[`hiking fly a car back to the lake 5`] = `
@@ -299,7 +305,10 @@ Stuff you can see:
 TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.
 
 WATERFALL - To go back down to the waterfall
-HOUSE - Check out the mountain house up here."
+HOUSE - Check out the mountain house up here.
+
+Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+ - TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun."
 `;
 
 exports[`hiking fly a car back to the lake 6`] = `
@@ -353,7 +362,9 @@ Flying silver car - This car does not have wheels, instead it has flyers on the 
 Fortunately, there's a ladder leading straight down the hole, so you don't have to jump down an unknown distance through complete darkness.
 
 LADDER - Climb the ladder to get back up to the house
-DRIVE_THE_CAR - Get into the car and drive it, to see what's down this tunnel"
+DRIVE_THE_CAR - Get into the car and drive it, to see what's down this tunnel
+
+Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain."
 `;
 
 exports[`hiking fly a car back to the lake 10`] = `
@@ -402,7 +413,9 @@ Flying silver car - This car does not have wheels, instead it has flyers on the 
 Fortunately, there's a ladder leading straight down the hole, so you don't have to jump down an unknown distance through complete darkness.
 
 LADDER - Climb the ladder to get back up to the house
-DRIVE_THE_CAR - Get into the car and drive it, to see what's down this tunnel"
+DRIVE_THE_CAR - Get into the car and drive it, to see what's down this tunnel
+
+Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain."
 `;
 
 exports[`hiking fly a car back to the lake 13`] = `
@@ -415,7 +428,9 @@ There is an item here you may be interested in:
 Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
 
 LADDER - Climb the ladder to get back up to the house
-DRIVE_THE_CAR - Get into the car and drive it, to see what's down this tunnel"
+DRIVE_THE_CAR - Get into the car and drive it, to see what's down this tunnel
+
+Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain."
 `;
 
 exports[`hiking fly a car back to the lake 14`] = `
@@ -691,7 +706,10 @@ exports[`hiking items and drop key and pick up key 4`] = `
 
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
-SWIM - Swim around in the lake"
+SWIM - Swim around in the lake
+
+Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+ - TAKE_JAIL_KEY - Pick up the key you stole from the jail."
 `;
 
 exports[`hiking items and drop key and pick up key 5`] = `
@@ -706,7 +724,10 @@ Jail Key - The key you stole from the jail. Since you were put into jail acciden
 
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
-SWIM - Swim around in the lake"
+SWIM - Swim around in the lake
+
+Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+ - TAKE_JAIL_KEY - Pick up the key you stole from the jail."
 `;
 
 exports[`hiking items and drop key and pick up key 6`] = `
@@ -733,7 +754,10 @@ You're a careful sort of person, so you can easily get over the treacherous rock
 
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
-SWIM - Swim around in the lake"
+SWIM - Swim around in the lake
+
+Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+ - TAKE_JAIL_KEY - Pick up the key you stole from the jail."
 `;
 
 exports[`hiking items and drop key and pick up key 8`] = `
@@ -776,7 +800,9 @@ With the magical strength gained by the waterfall spray, you climb like Spider-M
 
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store
-BUY_APPLE - If you'd like to own one of these delicious apples."
+BUY_APPLE - If you'd like to own one of these delicious apples.
+
+Apples - 100 red apples."
 `;
 
 exports[`hiking purchase some items at the apple shop 2`] = `
@@ -794,7 +820,9 @@ Apples - 100 red apples.
 
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store
-BUY_APPLE - If you'd like to own one of these delicious apples."
+BUY_APPLE - If you'd like to own one of these delicious apples.
+
+Apples - 100 red apples."
 `;
 
 exports[`hiking purchase some items at the apple shop 3`] = `
@@ -811,7 +839,9 @@ exports[`hiking purchase some items at the apple shop 3`] = `
 GAIN 10 POINTS
 
 EXIT - If you want to leave the Apple Store
-LOOK - Look at the contents of the Apple Store"
+LOOK - Look at the contents of the Apple Store
+
+Apples - 100 red apples."
 `;
 
 exports[`hiking purchase some items at the apple shop 4`] = `
@@ -863,7 +893,9 @@ Apples - 100 red apples.
 With the magical strength gained by the waterfall spray, you climb like Spider-Man right up the rope to the giant circle.
 
 EXIT - If you want to leave the Apple Store
-LOOK - Look at the contents of the Apple Store"
+LOOK - Look at the contents of the Apple Store
+
+Apples - 100 red apples."
 `;
 
 exports[`hiking purchase some items at the apple shop 8`] = `
@@ -877,7 +909,10 @@ Apples - 100 red apples.
 
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store
-BUY_YOGURT - Purchase the yogurt with ghosts in it."
+BUY_YOGURT - Purchase the yogurt with ghosts in it.
+
+Apples - 100 red apples.
+Yogurt - This yogurt is haunted with ghosts. They look like they want to get out."
 `;
 
 exports[`hiking purchase some items at the apple shop 9`] = `
@@ -894,14 +929,22 @@ exports[`hiking purchase some items at the apple shop 9`] = `
 GAIN 6 POINTS
 
 EXIT - If you want to leave the Apple Store
-LOOK - Look at the contents of the Apple Store"
+LOOK - Look at the contents of the Apple Store
+
+Apples - 100 red apples.
+Yogurt - This yogurt is haunted with ghosts. They look like they want to get out."
 `;
 
 exports[`hiking purchase some items at the apple shop 10`] = `
 "The key has been dropped. You didn't need it anyways.
 
 EXIT - If you want to leave the Apple Store
-LOOK - Look at the contents of the Apple Store"
+LOOK - Look at the contents of the Apple Store
+
+Apples - 100 red apples.
+Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
+Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+ - TAKE_JAIL_KEY - Pick up the key you stole from the jail."
 `;
 
 exports[`hiking purchase some items at the apple shop 11`] = `
@@ -917,7 +960,12 @@ Jail Key - The key you stole from the jail. Since you were put into jail acciden
  - TAKE_JAIL_KEY - Pick up the key you stole from the jail.
 
 EXIT - If you want to leave the Apple Store
-LOOK - Look at the contents of the Apple Store"
+LOOK - Look at the contents of the Apple Store
+
+Apples - 100 red apples.
+Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
+Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+ - TAKE_JAIL_KEY - Pick up the key you stole from the jail."
 `;
 
 exports[`hiking purchase some items at the apple shop 12`] = `

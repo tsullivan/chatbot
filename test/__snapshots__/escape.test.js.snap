@@ -35,7 +35,10 @@ You hear a voice calling to you. \\"Use the FORCE, Tim.\\"
 Who said that? The Force? What is that??
 
 ESCAPE - Escape from the cell
-WAIT - Wait for the guards to stop watching you."
+WAIT - Wait for the guards to stop watching you.
+
+Jail Key - On a hook on a far wall, there is the key to open a jail cell.
+ - USE_THE_FORCE_TO_TAKE_JAIL_KEY - Use the Force to take the jail cell key."
 `;
 
 exports[`escape-jail escape 4`] = `
@@ -72,7 +75,10 @@ Jail Towel - A towel from the jail laundry van.
 
 There's a door at the end of the hallway - that must be the exit. You sneak past the cells towards the door.,Just before the door, there is a window to the outside. You can see that you are on the ground floor of the jail, and there is a van right outside. There is a guard walking towards the driver's door.,Thinking quickly, you quietly get outside, and get into the back of the van before the guard sees you.
 
-ESCAPE - Escape the jail van"
+ESCAPE - Escape the jail van
+
+Jail Towel - A towel from the jail laundry van.
+ - TAKE_TOWEL - Take one of the towels from the jail laundry van."
 `;
 
 exports[`escape-jail escape 8`] = `

@@ -62,7 +62,9 @@ Window crank handle - This looks like a pretty nice window crank handle
 
 DANCE - Dance with the tiny skeleton hands
 LOOK - Look closer at the tiny village
-EXIT - Get out of the cheery smelly old cave."
+EXIT - Get out of the cheery smelly old cave.
+
+Window crank handle - This looks like a pretty nice window crank handle"
 `;
 
 exports[`adventure cave exit 1`] = `
@@ -87,7 +89,9 @@ Window crank handle - This looks like a pretty nice window crank handle
 DANCE - Dance with the tiny skeleton hands
 LOOK - Look closer at the tiny village
 TAKE_HANDLE - Take the handle and put it in your pocket where it will be safe
-EXIT - Get out of the cheery smelly old cave."
+EXIT - Get out of the cheery smelly old cave.
+
+Window crank handle - This looks like a pretty nice window crank handle"
 `;
 
 exports[`adventure exit fail 1`] = `
