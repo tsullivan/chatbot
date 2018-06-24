@@ -1,26 +1,20 @@
 const snl = require('strip-newlines');
-const { Adventure, InventoryItem } = require('../../lib');
+const { Adventure } = require('../../lib');
 const { WINDOW_HANDLE } = require('./constants');
 const { getLocations } = require('./locations');
+const { getItems } = require('./items');
 
 class AdventureGame extends Adventure {
   constructor(session) {
     super(session);
-
     this.name = 'adventure';
 
-    this.locations = getLocations(this);
-    this.currentLocation = this.locations.startLocation;
+    const { startLocation, caveLocation } = getLocations(this);
+    this.currentLocation = startLocation;
 
-    this.addItemToCollection(
-      WINDOW_HANDLE,
-      new InventoryItem({
-        name: 'Window crank handle',
-        id: WINDOW_HANDLE,
-        description: 'This looks like a pretty nice window crank handle',
-        game: this,
-      })
-    );
+    const { windowHandleItem } = getItems(this);
+    this.addItemToCollection(WINDOW_HANDLE, windowHandleItem);
+    caveLocation.addFloorItem(WINDOW_HANDLE);
 
     this.updateState();
   }

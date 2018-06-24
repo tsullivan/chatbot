@@ -5,8 +5,6 @@ const { WEST, WINDOW_HANDLE } = require('../constants');
 class CaveLocation extends Location {
   constructor(game) {
     super({ game, name: 'Cheery Cave' });
-    this.addFloorItem(WINDOW_HANDLE);
-    this._handleSeen = false;
     this._danced = false;
   }
 
@@ -16,7 +14,7 @@ class CaveLocation extends Location {
       tiny! So skeleton handsy!`;
   }
 
-  updateState() {
+  updateState(game) {
     if (!this._danced) {
       this.addKeyword('DANCE', 'Dance with the tiny skeleton hands', () => {
         this._danced = true;
@@ -40,45 +38,29 @@ class CaveLocation extends Location {
     }
 
     this.addKeyword('LOOK', 'Look closer at the tiny village', () => {
-      const p = [];
-      p.push(snl`The tiny village has a tiny hotel with tiny beds made
-        for resting upon by tiny skeleton hands. It warms you heart to see, but
-        it makes you no less tired and your warmed heart is at the same time
-        shamed with the truthful knowledge that you can find no rest in this
-        enjoyable place.`);
+      const lns = [
+        snl`The tiny village has a tiny hotel with tiny beds made for resting
+          upon by tiny skeleton hands. It warms you heart to see, but it makes
+          you no less tired and your warmed heart is at the same time shamed
+          with the truthful knowledge that you can find no rest in this
+          enjoyable place.`,
+      ];
 
       if (this.hasFloorItem(WINDOW_HANDLE)) {
-        p.push(snl`The tiny hotel building has a strange type of flagpole
+        lns.push(snl`The tiny hotel building has a strange type of flagpole
           on the roof that looks like maybe a crank handle for a window. Maybe
           a castle window(s). However, it might be impossible to know for sure
           if that's what it really is, because this game is very limited. The
           crank handle to open or close castle windows might just be for
           decoration. That would be too bad.`);
-        this._handleSeen = true;
+        const handle = game.getItemFromCollection(WINDOW_HANDLE);
+        handle.see();
       }
 
       return new KeywordResponse({
-        text: p.join('\n\n'),
+        text: lns.join('\n\n'),
       });
     });
-
-    if (this._handleSeen && this.hasFloorItem(WINDOW_HANDLE)) {
-      this.addKeyword(
-        'TAKE_HANDLE',
-        'Take the handle and put it in your pocket where it will be safe',
-        game => {
-          game.addToInventory(WINDOW_HANDLE);
-          this.removeFloorItem(WINDOW_HANDLE);
-          this.removeKeyword('TAKE_HANDLE');
-
-          return new KeywordResponse({
-            text: snl`Can you handle the handle? I guess you can. The handle
-              has been taken by you.`,
-            changeScore: 2,
-          });
-        }
-      );
-    }
 
     this.addKeyword('EXIT', 'Get out of the cheery smelly old cave.', () =>
       this.followExit(WEST)
