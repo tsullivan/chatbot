@@ -1,10 +1,11 @@
 function getGames() {
   return {
     adventure: require('./games/adventure'),
-    bubble_gun: require('./games/bubble_gun'),
-    hiking: require('./games/hiking'),
-    guess_number: require('./games/guess_number'),
     batman: require('./games/batman'),
+    bubble_gun: require('./games/bubble_gun'),
+    escape_jail: require('./games/escape_jail'),
+    guess_number: require('./games/guess_number'),
+    hiking: require('./games/hiking'),
   };
 }
 module.exports = { getGames };
