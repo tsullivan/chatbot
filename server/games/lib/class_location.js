@@ -11,7 +11,8 @@ class Location {
       throw new Error('name must be string');
     }
 
-    Object.assign(this, getKeywordsHelper());
+    const keywordsHelper = getKeywordsHelper();
+    Object.assign(this, keywordsHelper);
 
     this._exits = new Map();
 
@@ -22,6 +23,25 @@ class Location {
       this.followExitInternal(game, direction, prefix);
 
     this.updateState(game);
+
+    /*
+     * For location, need the commands for the visible items in the room
+     */
+    this.getInstructions = (prefix = '') => {
+      const getInstructions = keywordsHelper.getInstructions.bind(this);
+      const locationInstructions = getInstructions(prefix);
+
+      const lns = [locationInstructions];
+      // show any items on the floor
+      const itemInfos = this.getVisibleFloorItems(game).reduce((accum, item) => {
+        return [...accum, item.getInfo()];
+      }, []);
+      if (itemInfos.length > 0) {
+        lns.push(itemInfos.join('\n'));
+      }
+
+      return lns.join('\n\n');
+    };
   }
 
   updateState() {
@@ -50,6 +70,9 @@ class Location {
   }
 
   addExit({ location, exit, inverseExit }) {
+    if (!(location instanceof Location)) {
+      throw new Error('bad location: ' + location);
+    }
     this._exits.set(exit, location);
 
     if (inverseExit) {
@@ -67,7 +90,7 @@ class Location {
     const {
       itemsCount: locItemsCount,
       itemInfos: locItemInfos,
-    } = game.currentLocation.getVisibleFloorItems(game).reduce(
+    } = this.getVisibleFloorItems(game).reduce(
       ({ itemInfos, itemsCount }, item) => {
         return {
           itemsCount: itemsCount + 1,

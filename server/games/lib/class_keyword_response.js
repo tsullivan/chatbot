@@ -14,16 +14,12 @@ class KeywordResponse {
   }
 
   static getResponseFromHandler(handler, game) {
-    const handlerResponse = handler(game);
+    const handlerResponse = handler(game); // what if this updates an item on the floor?
     if (handlerResponse instanceof KeywordResponse) {
       return handlerResponse;
     } else {
       throw new Error('Bad response: ' + JSON.stringify(handlerResponse));
     }
-  }
-
-  setText(text) {
-    this.text = text;
   }
 
   get() {
