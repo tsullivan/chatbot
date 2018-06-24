@@ -19,8 +19,9 @@ class Location {
     this._name = name;
     this._floorItems = new Set();
 
-    this.followExit = (direction, prefix) =>
-      this.followExitInternal(game, direction, prefix);
+    this.followExit = (direction, prefix) => {
+      return this.followExitInternal(game, direction, prefix);
+    };
 
     this.updateState(game);
 
