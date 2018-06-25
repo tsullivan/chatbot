@@ -41,7 +41,7 @@ class TheSunLocation extends Location {
 
     if (game.inInventory(YOGURT)) {
       this.addKeyword('THROW_YOGURT', `Throw the ghost yogurt onto the sun`, () => {
-        game.deleteInventory(YOGURT);
+        game.deleteFromInventory(YOGURT);
         this.removeKeyword('THROW_YOGURT');
         this._hasGhosts = true;
         const lns = [

@@ -61,8 +61,8 @@ class LakeLocation extends Location {
 
     if (game.inInventory(CAR) && game.inInventory(APPLES)) {
       this.addKeyword('THROW_APPLES', 'Throw the apples at the enemies', () => {
-        game.deleteInventory(APPLES);
-        game.deleteInventory(ENEMIES);
+        game.deleteFromInventory(APPLES);
+        game.deleteFromInventory(ENEMIES);
         this.removeKeyword('THROW_APPLES');
         const lns = [
           snl`You reach for an apple in your pocket, and give it a mighty hurl.

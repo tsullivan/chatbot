@@ -88,7 +88,7 @@ class CastleLocation extends Location {
           on the open windows in here`,
         () => {
           this._windowsOpen = false;
-          game.deleteInventory(WINDOW_HANDLE);
+          game.deleteFromInventory(WINDOW_HANDLE);
           this.removeKeyword('USE_WINDOW_HANDLE');
           const p = [
             snl`With a loud but suprisingly unrusty sounding "SSSSSSHNK" noise,

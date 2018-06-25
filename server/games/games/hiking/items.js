@@ -61,12 +61,12 @@ function getItems(game) {
         keywordDescription: 'Crash the silver flying car',
         fn: () => {
           carItem.setName('Flying silver car (destroyed)');
-          carItem.setDescription(snl`This flying silver car has been crashed into a
-          tree. It's flyers have become completely destroyed, and it will no
-          longer go fast or go at all.`);
+          carItem.setDescription(snl`This flying silver car has been crashed
+            into a tree. It's flyers have become completely destroyed, and it
+            will no longer go fast or go at all.`);
           return new KeywordResponse({
-            text: snl`You steer the car towards a tree, make it go really really
-            fast, then CRASH! EXPLODE! The flying car is destroyed.`,
+            text: snl`You steer the car towards a tree, make it go really
+              really fast, then CRASH! EXPLODE! The flying car is destroyed.`,
           });
         },
       });
@@ -103,8 +103,6 @@ function getItems(game) {
       setTakeable({
         keyword: 'TAKE_BUBBLE_GUN',
         keywordDescription: 'Pick up interesting looking bubble gun.',
-        // check for batteries in inventory
-        // check for bubble soap in inventory
         fn: () =>
           new KeywordResponse({
             text: snl`The bubble gun is now yours.`,
@@ -113,8 +111,6 @@ function getItems(game) {
       setDroppable({
         keyword: 'DROP_BUBBLE_GUN',
         keywordDescription: 'Drop the interesting looking bubble gun.',
-        // check for batteries in inventory
-        // check for bubble soap in inventory
         fn: () =>
           new KeywordResponse({
             text: snl`The bubble gun now belongs to the floor.`,

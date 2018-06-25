@@ -168,7 +168,7 @@ class Adventure extends ChatGame {
     this._inventory.add(id);
     location.removeFloorItem(id);
   }
-  deleteInventory(id) {
+  deleteFromInventory(id) {
     this._inventory.delete(id);
   }
   getVisibleInventoryItems() {
