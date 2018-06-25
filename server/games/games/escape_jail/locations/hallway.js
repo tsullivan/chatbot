@@ -24,7 +24,7 @@ class HallwayLocation extends Location {
         snl`Thinking quickly, you quietly get outside, and get into the back of
           the van before the guard sees you.`,
       ];
-      return this.followExit(SOUTH, px);
+      return this.followExit(SOUTH, px.join('\n'));
     });
   }
 }

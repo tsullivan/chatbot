@@ -20,7 +20,7 @@ QUIT - Quit the game"
 `;
 
 exports[`escape-jail escape 2`] = `
-"You can not escape while the guards are watching!
+"false
 
 ESCAPE - Escape from the cell
 TAKE_JAIL_KEY - Somehow take the jail key from the wall.
@@ -28,6 +28,14 @@ WAIT - Wait for the guards to stop watching you."
 `;
 
 exports[`escape-jail escape 3`] = `
+"You can not escape while the guards are watching!
+
+ESCAPE - Escape from the cell
+TAKE_JAIL_KEY - Somehow take the jail key from the wall.
+WAIT - Wait for the guards to stop watching you."
+`;
+
+exports[`escape-jail escape 4`] = `
 "The key is on a wall far out of reach of your cell bars. You have to be really sneaky to take the it. Hmm. how to do this?
 
 You hear a voice calling to you. \\"Use the FORCE, Tim.\\"
@@ -36,12 +44,10 @@ Who said that? The Force? What is that??
 
 ESCAPE - Escape from the cell
 WAIT - Wait for the guards to stop watching you.
-
-Jail Key - On a hook on a far wall, there is the key to open a jail cell.
- - USE_THE_FORCE_TO_TAKE_JAIL_KEY - Use the Force to take the jail cell key."
+USE_THE_FORCE_TO_TAKE_JAIL_KEY - Use the Force to take the jail cell key."
 `;
 
-exports[`escape-jail escape 4`] = `
+exports[`escape-jail escape 5`] = `
 "No time for questions. Time for escaping. You decide to put your trust in the mysterious voice. You close your eyes, and imagine the jail key floating up, off its hook, drift quietly through the air, and land in your open hand.
 
 When you open your eyes, the jail key is in your hand.
@@ -50,39 +56,40 @@ ESCAPE - Escape from the cell
 WAIT - Wait for the guards to stop watching you."
 `;
 
-exports[`escape-jail escape 5`] = `
+exports[`escape-jail escape 6`] = `
 "You pretend not to notice the guards watching you. They watch you for a little bit, then walk away to watch other prisoners.
 
 ESCAPE - Escape from the cell"
 `;
 
-exports[`escape-jail escape 6`] = `
-"You are at: The Jail Hallway
-You're outside of the jail cell in a hallway lined with many other jail cells. The other jail cells have people that belong here, but you only got here accidentally. Time to get out!
+exports[`escape-jail escape 7`] = `
+"You use the key to open the cell door, and quietly walk out.
 
-You use the key to open the cell door, and quietly walk out.
+You are at: The Jail Hallway
+You're outside of the jail cell in a hallway lined with many other jail cells. The other jail cells have people that belong here, but you only got here accidentally. Time to get out!
 
 ESCAPE - Escape down the hallway"
 `;
 
-exports[`escape-jail escape 7`] = `
-"You are at: The Jail Van
+exports[`escape-jail escape 8`] = `
+"There's a door at the end of the hallway - that must be the exit. You sneak past the cells towards the door.
+Just before the door, there is a window to the outside. You can see that you are on the ground floor of the jail, and there is a van right outside. There is a guard walking towards the driver's door.
+Thinking quickly, you quietly get outside, and get into the back of the van before the guard sees you.
+
+You are at: The Jail Van
 You're hiding in a jail van that's driving around the jail, making jail deliveries to the jail people.
 
 There is an item here you may be interested in:
 Jail Towel - A towel from the jail laundry van.
- - TAKE_TOWEL - Take one of the towels from the jail laundry van.
-
-There's a door at the end of the hallway - that must be the exit. You sneak past the cells towards the door.,Just before the door, there is a window to the outside. You can see that you are on the ground floor of the jail, and there is a van right outside. There is a guard walking towards the driver's door.,Thinking quickly, you quietly get outside, and get into the back of the van before the guard sees you.
 
 ESCAPE - Escape the jail van
-
-Jail Towel - A towel from the jail laundry van.
- - TAKE_TOWEL - Take one of the towels from the jail laundry van."
+TAKE_TOWEL - Take one of the towels from the jail laundry van."
 `;
 
-exports[`escape-jail escape 8`] = `
-"You are at: The Jail Fence
+exports[`escape-jail escape 9`] = `
+"You sneak out of the jail van and run over to a fence. You're almost out of here!
+
+You are at: The Jail Fence
 You've just escaped from a jail. You breathe a sigh of relief because that part of your life is forever behind you. They'll never find you in these woods. Plus, you stole the jail key, because you're not a bad guy. You were put in jail accidentally. They made you steal the key.
 
 Now, all you have to do is get over this fence...
@@ -91,14 +98,12 @@ To be honest, it's a little scary right now because you really don't know what's
 
 You're at the huge fence that goes all around the jail and keeps the prisoners inside. It's very tall and you would have to be a really good climber or a really good jumper, or both, to get over this thing. And you would have to be really really good to do it without getting noticed by a guard!
 
-You sneak out of the jail van and run over to a fence. You're almost out of here!
-
 JUMP_THE_FENCE - Jump over the jail fence
 CLIMB_THE_FENCE - Climb over the jail fence
 JUMP_AND_THEN_CLIMB_THE_FENCE - Jump and then climb over the jail fence"
 `;
 
-exports[`escape-jail escape 9`] = `
+exports[`escape-jail escape 10`] = `
 "Bad directions!!! south
 
 JUMP_THE_FENCE - Jump over the jail fence

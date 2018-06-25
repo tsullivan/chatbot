@@ -1,6 +1,5 @@
 const snl = require('strip-newlines');
 const { Location, KeywordResponse } = require('../../../lib');
-const { SOUTH } = require('../constants');
 
 class FenceLocation extends Location {
   constructor(game) {
@@ -28,12 +27,16 @@ class FenceLocation extends Location {
 
   updateState(/*game*/) {
     this.addKeyword(['JUMP_THE_FENCE', 'JUMP'], `Jump over the jail fence`, () => {
-      const px = snl`JUUUUMP! You made it!`;
-      return this.followExit(SOUTH, px);
+      return new KeywordResponse({
+        text: snl`JUUUUMP! Oh no! The top of the fence is still too high up to jump over.`,
+        isDone: true,
+      });
     });
     this.addKeyword(['CLIMB_THE_FENCE', 'CLIMB'], `Climb over the jail fence`, () => {
-      const px = snl`Climb, climb, climb! You made it!`;
-      return this.followExit(SOUTH, px);
+      return new KeywordResponse({
+        text: snl`CLIMB! Oh no! The top of the fence is still too high up to climb over.`,
+        isDone: true,
+      });
     });
     this.addKeyword(
       ['JUMP_AND_THEN_CLIMB_THE_FENCE', 'JUMP_CLIMB'],

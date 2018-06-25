@@ -81,9 +81,7 @@ It's unnaturally cheery in this smelly old cave. Probably because of the tiny vi
 DANCE - Dance with the tiny skeleton hands
 LOOK - Look closer at the tiny village
 EXIT - Get out of the cheery smelly old cave.
-
-Window crank handle - This looks like a pretty nice window crank handle
- - TAKE_HANDLE - Take the handle and put it in your pocket where it will be safe"
+TAKE_HANDLE - Take the handle and put it in your pocket where it will be safe"
 `;
 
 exports[`adventure exit fail 1`] = `

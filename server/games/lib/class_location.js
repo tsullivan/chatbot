@@ -32,16 +32,20 @@ class Location {
       const getInstructions = keywordsHelper.getInstructions.bind(this);
       const locationInstructions = getInstructions(prefix);
 
-      const lns = [locationInstructions];
       // show any items on the floor
       const itemInfos = this.getVisibleFloorItems(game).reduce((accum, item) => {
-        return [...accum, item.getInfo()];
+        if (item.hasKeywords()) {
+          return [...accum, item.getInstructions()];
+        }
+        return accum;
       }, []);
+
+      const lns = [];
       if (itemInfos.length > 0) {
         lns.push(itemInfos.join('\n'));
       }
-
-      return lns.join('\n\n');
+      lns.push(locationInstructions);
+      return lns.join('\n');
     };
   }
 
@@ -49,19 +53,20 @@ class Location {
     throw new Error('updateState must be overridden in ' + this._name);
   }
 
-  followExitInternal(game, direction, suffix = '') {
+  followExitInternal(game, direction, prefix = '') {
     if (this._exits.has(direction)) {
       const exit = this._exits.get(direction);
       game.setLocation(exit);
       game.updateState();
 
-      const ps = [game.getLocationDescription()];
-      if (suffix !== '') {
-        ps.push(suffix);
+      const lns = [];
+      if (prefix !== '') {
+        lns.push(prefix);
       }
+      lns.push(game.getLocationDescription());
 
       return new KeywordResponse({
-        text: ps.join('\n\n'),
+        text: lns.join('\n\n'),
       });
     }
 

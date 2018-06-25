@@ -12,6 +12,7 @@ describe('escape-jail', () => {
 
   test('escape', async () => {
     resps[resps.length] = await send('play escape_jail');
+    resps[resps.length] = await send('items');
     resps[resps.length] = await send('escape');
     resps[resps.length] = await send('take_jail_key');
     resps[resps.length] = await send('force_key');

@@ -44,12 +44,11 @@ class InventoryItem {
     this.updateState(game);
   }
 
+  /*
+   * Info that does not include the keyword instructions
+   */
   getInfo() {
-    let instructions = '';
-    if (this.hasKeywords()) {
-      instructions = '\n - ' + this.getInstructions();
-    }
-    return `${this.getName()} - ${this.getDescription()}` + instructions;
+    return `${this.getName()} - ${this.getDescription()}`;
   }
 
   updateState(game) {
