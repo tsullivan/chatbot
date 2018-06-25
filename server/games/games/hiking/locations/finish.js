@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location, KeywordResponse } = require('../../../lib');
+const { Location, KeywordResponse, parajoin } = require('../../../lib');
 const { SOUTH } = require('../constants');
 
 class FinishLocation extends Location {
@@ -8,12 +8,12 @@ class FinishLocation extends Location {
   }
 
   getDescription() {
-    const ps = [
+    const lns = [
       snl`The finish line looks like a robot. You can ask the robot to take out
         a flag, and that will finish this hiking game.`,
-      `Ready to end the hiking journey?`,
+      snl`Ready to end the hiking journey?`,
     ];
-    return ps.join('\n\n');
+    return parajoin(lns);
   }
 
   updateState(/*game*/) {

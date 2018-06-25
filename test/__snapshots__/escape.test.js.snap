@@ -3,8 +3,6 @@
 exports[`escape-jail escape 1`] = `
 "CRASH! Your body has tumbled down a mountainside, and you have crashed through the roof of a jail. Fortunately you are not hurt, but you are stuck in this cell! The guards don't know that you are not supposed to be here, and they are watching you.
 
-☞You are in JAIL☜
-
 You are at: The Jail Cell
 You're locked up securely in a jail cell. A hole in the ceiling marks where you crashed through accidentally when you got here.
 
@@ -20,7 +18,7 @@ QUIT - Quit the game"
 `;
 
 exports[`escape-jail escape 2`] = `
-"false
+"There aren't any items around or that you are holding that you can do anything with right now.
 
 ESCAPE - Escape from the cell
 TAKE_JAIL_KEY - Somehow take the jail key from the wall.
@@ -42,9 +40,9 @@ You hear a voice calling to you. \\"Use the FORCE, Tim.\\"
 
 Who said that? The Force? What is that??
 
+USE_THE_FORCE_TO_TAKE_JAIL_KEY - Use the Force to take the jail cell key.
 ESCAPE - Escape from the cell
-WAIT - Wait for the guards to stop watching you.
-USE_THE_FORCE_TO_TAKE_JAIL_KEY - Use the Force to take the jail cell key."
+WAIT - Wait for the guards to stop watching you."
 `;
 
 exports[`escape-jail escape 5`] = `
@@ -82,8 +80,8 @@ You're hiding in a jail van that's driving around the jail, making jail deliveri
 There is an item here you may be interested in:
 Jail Towel - A towel from the jail laundry van.
 
-ESCAPE - Escape the jail van
-TAKE_TOWEL - Take one of the towels from the jail laundry van."
+TAKE_TOWEL - Take one of the towels from the jail laundry van.
+ESCAPE - Escape the jail van"
 `;
 
 exports[`escape-jail escape 9`] = `
@@ -104,9 +102,8 @@ JUMP_AND_THEN_CLIMB_THE_FENCE - Jump and then climb over the jail fence"
 `;
 
 exports[`escape-jail escape 10`] = `
-"Bad directions!!! south
+"JUUUUMP! Oh no! The top of the fence is still too high up to jump over.
 
-JUMP_THE_FENCE - Jump over the jail fence
-CLIMB_THE_FENCE - Climb over the jail fence
-JUMP_AND_THEN_CLIMB_THE_FENCE - Jump and then climb over the jail fence"
+Looks like have escaped from JAIL! Turns: 8 Score: 50
+That was fun, Tim!"
 `;

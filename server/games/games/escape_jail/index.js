@@ -19,18 +19,11 @@ class EscapeJail extends Adventure {
   }
 
   getWelcome() {
-    const welcome = [
-      snl`CRASH! Your body has tumbled down a mountainside, and you have
-        crashed through the roof of a jail. Fortunately you are not hurt, but you
-        are stuck in this cell! The guards don't know that you are not supposed
-        to be here, and they are watching you.`,
-      `☞You are in JAIL☜`,
-    ].join('\n\n');
-
-    const locationDescription = this.currentLocation.getDescriptionInternal(this);
-    const { response: locationHelp } = this.getInputResponse('HELP', this, this);
-
-    return [welcome, locationDescription, locationHelp].join('\n\n');
+    const welcome = snl`CRASH! Your body has tumbled down a mountainside, and
+      you have crashed through the roof of a jail. Fortunately you are not hurt,
+      but you are stuck in this cell! The guards don't know that you are not
+      supposed to be here, and they are watching you.`;
+    return super.getWelcome(welcome);
   }
 
   lose(response) {

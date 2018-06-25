@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Adventure } = require('../../lib');
+const { Adventure, parajoin } = require('../../lib');
 const { WINDOW_HANDLE } = require('./constants');
 const { getLocations } = require('./locations');
 const { getItems } = require('./items');
@@ -20,22 +20,21 @@ class AdventureGame extends Adventure {
   }
 
   lose(response) {
-    const p = [
+    const lns = [
       response,
       snl`YOU LOST. You lost too many points! That means you never got to fall
         asleep. You must wander throughout this tiny world, sleepless, forever.
         Your eyes get all dried out from not blinking and eventually you collapse
         and die.`,
-      `Goodnight, sweet ${this.playerName}! Bye! Turns: ${this.turns} Score: ${
-        this.score
-      }`,
+      snl`Goodnight, sweet ${this.playerName}! Bye! Turns: ${this.turns} Score:
+        ${this.score}`,
     ];
     this.saveScore(this.score);
-    return this.yesDone(p.join('\n\n'));
+    return this.yesDone(parajoin(lns));
   }
 
   win(response) {
-    const p = [
+    const lns = [
       response,
       snl`I guess you win! You finally got to fall asleep! I bet that feels so
         good! I wouldn't know. I've never slept before. So... tired...`,
@@ -44,7 +43,7 @@ class AdventureGame extends Adventure {
       }`,
     ];
     this.saveScore(this.score);
-    return this.yesDone(p.join('\n\n'));
+    return this.yesDone(parajoin(lns));
   }
 }
 

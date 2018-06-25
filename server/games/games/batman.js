@@ -1,3 +1,4 @@
+const snl = require('strip-newlines');
 const { ChatGame } = require('../chat_game');
 
 const WIN_CODE = '77';
@@ -47,7 +48,8 @@ class GuessNumber extends ChatGame {
   }
 
   getWelcome() {
-    return `Let's play Batman. Type in stuff for the Batcave. Type "77" to keep your points or "kl" to throw it all away.`;
+    return snl`Let's play Batman. Type in stuff for the Batcave. Type "77" to
+      keep your points or "kl" to throw it all away.`;
   }
 }
 

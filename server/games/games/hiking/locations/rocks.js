@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location /*, KeywordResponse */ } = require('../../../lib');
+const { Location, parajoin /*, KeywordResponse */ } = require('../../../lib');
 const { EAST, WEST } = require('../constants');
 
 class RocksLocation extends Location {
@@ -8,12 +8,12 @@ class RocksLocation extends Location {
   }
 
   getDescription() {
-    const ps = [
+    const lns = [
       snl`There's rocks here. Be careful! You could trip, or if you horseplay,
         a rock could fall on your head.`,
       snl`If you are careful, you could cross the rocks to get to a waterfall.`,
     ];
-    return ps.join('\n\n');
+    return parajoin(lns);
   }
 
   updateState(/*game*/) {

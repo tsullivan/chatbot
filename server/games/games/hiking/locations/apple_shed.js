@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location, KeywordResponse } = require('../../../lib');
+const { Location, KeywordResponse, parajoin } = require('../../../lib');
 const { EAST, APPLES, YOGURT } = require('../constants');
 
 class AppleShedLocation extends Location {
@@ -9,14 +9,14 @@ class AppleShedLocation extends Location {
   }
 
   getDescription() {
-    const ps = [
+    const lns = [
       snl`You're in a giant, giant red sphere in the trees. This is an Apple
         Store. On the inside, it actually a shed. Inside there are many, many
         shelves full of apples. It looks like there are exactly
         ${this._numApples} apples.`,
     ];
     if (this._numApples > 0) {
-      ps.push(
+      lns.push(
         snl`There's no one in the store, but there's a man standing on a tree
           branch out back. He looks inside a window and sees you, then he comes
           in and says a friendly hello.`,
@@ -24,7 +24,7 @@ class AppleShedLocation extends Location {
       );
       // TODO npc class that knows if the character has said a certain thing yet
     }
-    return ps.join('\n\n');
+    return parajoin(lns);
   }
 
   updateState(game) {
@@ -67,7 +67,7 @@ class AppleShedLocation extends Location {
           this._numApples = 0;
           game.addToInventory(APPLES);
           this.removeKeyword('BUY_APPLE');
-          const ps = [
+          const lns = [
             snl`"Oh, you'd like to own one of these delicious apples?" says the man. "Well, you can have one. It costs $1,000."`,
             snl`"I have no money!" You tell him.`,
             snl`"Oh, well, you can still have one apple, for free." he says.`,
@@ -76,7 +76,7 @@ class AppleShedLocation extends Location {
             'GAIN 10 POINTS',
           ];
           return new KeywordResponse({
-            text: ps.join('\n\n'),
+            text: lns.join('\n\n'),
             changeScore: 10,
           });
         }
@@ -86,7 +86,7 @@ class AppleShedLocation extends Location {
         game.addToInventory(YOGURT);
         this.removeKeyword('BUY_YOGURT');
         this._hasYogurt = false;
-        const ps = [
+        const lns = [
           snl`"Oh, you'd like to own this yogurt?" says the man. "Well, you can have it for free, because it has ghosts in it."`,
           snl`"GHOSTS!?" You say.`,
           snl`"Yes, ghosts." he says.`,
@@ -95,7 +95,7 @@ class AppleShedLocation extends Location {
           'GAIN 6 POINTS',
         ];
         return new KeywordResponse({
-          text: ps.join('\n\n'),
+          text: lns.join('\n\n'),
           changeScore: 6,
         });
       });

@@ -1,6 +1,7 @@
 const { ItemCollection } = require('./class_item_collection');
 const { KeywordResponse } = require('./class_keyword_response');
 const { getKeywordsHelper } = require('./keywords_helper');
+const { parajoin } = require('./parajoin');
 
 class Location {
   constructor({ game, name }) {
@@ -66,7 +67,7 @@ class Location {
       lns.push(game.getLocationDescription());
 
       return new KeywordResponse({
-        text: lns.join('\n\n'),
+        text: parajoin(lns),
       });
     }
 
@@ -90,7 +91,7 @@ class Location {
   }
 
   getDescriptionInternal(game) {
-    const ps = [`You are at: ${this._name}\n${this.getDescription(game)}`];
+    const lns = [`You are at: ${this._name}\n${this.getDescription(game)}`];
 
     // show any items on the floor
     const {
@@ -110,10 +111,10 @@ class Location {
       if (locItemsCount > 1) {
         itemsPre = `There are ${locItemsCount} items here you may be interested in:`;
       }
-      ps.push(itemsPre + '\n' + locItemInfos.join('\n'));
+      lns.push(itemsPre + '\n' + locItemInfos.join('\n'));
     }
 
-    return ps.join('\n\n');
+    return parajoin(lns);
   }
 
   addFloorItem(id) {

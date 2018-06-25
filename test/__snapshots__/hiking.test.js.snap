@@ -271,9 +271,9 @@ Nearby is a blue house with a green roof. It has a lot of windows and only one d
 There is an item here you may be interested in:
 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
 
+TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.
 WATERFALL - To go back down to the waterfall
-HOUSE - Check out the mountain house up here.
-TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun."
+HOUSE - Check out the mountain house up here."
 `;
 
 exports[`hiking fly a car back to the lake 4`] = `
@@ -285,9 +285,9 @@ Nearby is a blue house with a green roof. It has a lot of windows and only one d
 There is an item here you may be interested in:
 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
 
+TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.
 WATERFALL - To go back down to the waterfall
-HOUSE - Check out the mountain house up here.
-TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun."
+HOUSE - Check out the mountain house up here."
 `;
 
 exports[`hiking fly a car back to the lake 5`] = `
@@ -298,9 +298,9 @@ Yogurt - This yogurt is haunted with ghosts. They look like they want to get out
 Stuff you can see:
 TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.
 
+TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.
 WATERFALL - To go back down to the waterfall
-HOUSE - Check out the mountain house up here.
-TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun."
+HOUSE - Check out the mountain house up here."
 `;
 
 exports[`hiking fly a car back to the lake 6`] = `
@@ -689,10 +689,10 @@ SWIM - Swim around in the lake"
 exports[`hiking items and drop key and pick up key 4`] = `
 "The key has been dropped. You didn't need it anyways.
 
+TAKE_JAIL_KEY - Pick up the key you stole from the jail.
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
-SWIM - Swim around in the lake
-TAKE_JAIL_KEY - Pick up the key you stole from the jail."
+SWIM - Swim around in the lake"
 `;
 
 exports[`hiking items and drop key and pick up key 5`] = `
@@ -704,10 +704,10 @@ There are enemies are in the lake. The shores of the lake are too far away from 
 There is an item here you may be interested in:
 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
 
+TAKE_JAIL_KEY - Pick up the key you stole from the jail.
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
-SWIM - Swim around in the lake
-TAKE_JAIL_KEY - Pick up the key you stole from the jail."
+SWIM - Swim around in the lake"
 `;
 
 exports[`hiking items and drop key and pick up key 6`] = `
@@ -731,10 +731,10 @@ There are enemies are in the lake. The shores of the lake are too far away from 
 There is an item here you may be interested in:
 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
 
+TAKE_JAIL_KEY - Pick up the key you stole from the jail.
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
-SWIM - Swim around in the lake
-TAKE_JAIL_KEY - Pick up the key you stole from the jail."
+SWIM - Swim around in the lake"
 `;
 
 exports[`hiking items and drop key and pick up key 8`] = `
@@ -901,9 +901,9 @@ LOOK - Look at the contents of the Apple Store"
 exports[`hiking purchase some items at the apple shop 10`] = `
 "The key has been dropped. You didn't need it anyways.
 
+TAKE_JAIL_KEY - Pick up the key you stole from the jail.
 EXIT - If you want to leave the Apple Store
-LOOK - Look at the contents of the Apple Store
-TAKE_JAIL_KEY - Pick up the key you stole from the jail."
+LOOK - Look at the contents of the Apple Store"
 `;
 
 exports[`hiking purchase some items at the apple shop 11`] = `
@@ -917,9 +917,9 @@ Apples - 100 red apples.
 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
 
+TAKE_JAIL_KEY - Pick up the key you stole from the jail.
 EXIT - If you want to leave the Apple Store
-LOOK - Look at the contents of the Apple Store
-TAKE_JAIL_KEY - Pick up the key you stole from the jail."
+LOOK - Look at the contents of the Apple Store"
 `;
 
 exports[`hiking purchase some items at the apple shop 12`] = `

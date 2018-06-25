@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location /*, KeywordResponse */ } = require('../../../lib');
+const { Location, parajoin /*, KeywordResponse */ } = require('../../../lib');
 const { DOWN, EAST } = require('../constants');
 
 class MountainLocation extends Location {
@@ -8,13 +8,13 @@ class MountainLocation extends Location {
   }
 
   getDescription() {
-    const ps = [
+    const lns = [
       snl`It was a long climb up to the really tall top of this mountain, so it
         feels so good to be up here.`,
       snl`Nearby is a blue house with a green roof. It has a lot of windows and
         only one door that is open. There is smoke coming out of the chimney.`,
     ];
-    return ps.join('\n\n');
+    return parajoin(lns);
   }
 
   updateState(/*game*/) {

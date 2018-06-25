@@ -2,6 +2,7 @@ const { ChatGame } = require('../chat_game');
 const { getKeywordsHelper } = require('./keywords_helper');
 const { getGameKeywords } = require('./game_keywords');
 const { ItemCollection } = require('./class_item_collection');
+const { parajoin } = require('./parajoin');
 
 class Adventure extends ChatGame {
   constructor(session) {
@@ -136,7 +137,7 @@ class Adventure extends ChatGame {
     }
 
     responseSet.reverse();
-    response = responseSet.join('\n\n');
+    response = parajoin(responseSet);
     this.score += changeScore;
 
     if (this.score <= 0) {
@@ -194,10 +195,16 @@ class Adventure extends ChatGame {
     return this.currentLocation.getInstructions();
   }
 
-  getWelcome() {
+  getWelcome(prefix = '') {
+    const lns = [];
+    if (prefix !== '') {
+      lns.push(prefix);
+    }
     const locationDescription = this.currentLocation.getDescriptionInternal(this);
     const { response: locationHelp } = this.getInputResponse('HELP', this, this);
-    return [locationDescription, locationHelp].join('\n\n');
+    lns.push(locationDescription);
+    lns.push(locationHelp);
+    return parajoin(lns);
   }
 }
 

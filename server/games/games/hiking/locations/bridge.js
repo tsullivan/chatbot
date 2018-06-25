@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location, KeywordResponse } = require('../../../lib');
+const { Location, KeywordResponse, parajoin } = require('../../../lib');
 const { SOUTH, NORTH, WEST, ENEMIES } = require('../constants');
 
 class BridgeLocation extends Location {
@@ -8,7 +8,7 @@ class BridgeLocation extends Location {
   }
 
   getDescription() {
-    const ps = [
+    const lns = [
       snl`The bridge is a really long way up, and then a really long way down.
         At the top of the bridge is a spaceship. This spaceship looks like a
         Sun Ship. The hatch is open, and from the outside, it looks pretty
@@ -22,7 +22,7 @@ class BridgeLocation extends Location {
       snl`There is a telescope perched on a rail here.`,
     ];
 
-    return ps.join('\n\n');
+    return parajoin(lns);
   }
 
   updateState(game) {

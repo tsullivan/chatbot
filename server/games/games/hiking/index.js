@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Adventure } = require('../../lib');
+const { Adventure, parajoin } = require('../../lib');
 const { setItemsToLocations, getItems } = require('./items');
 const { getLocations } = require('./locations');
 
@@ -18,23 +18,24 @@ class HikingGame extends Adventure {
   }
 
   lose(response) {
-    const p = [
+    const lns = [
       response,
-      'YOU LOST. You lost too many points!',
+      snl`YOU LOST. You lost too many points!`,
       snl`See ya, ${this.playerName}! Better luck next time! Turns:
         ${this.turns} Score: ${this.score}`,
     ];
     this.saveScore(this.score);
-    return this.yesDone(p.join('\n\n'));
+    return this.yesDone(parajoin(lns));
   }
 
   win(response) {
-    const p = [
+    const lns = [
       response,
-      `Looks like you're a winner! Turns: ${this.turns} Score: ${this.score}`,
+      snl`Looks like you're a winner! Turns: ${this.turns} Score:
+        ${this.score}`,
     ];
     this.saveScore(this.score);
-    return this.yesDone(p.join('\n\n'));
+    return this.yesDone(parajoin(lns));
   }
 
   getRandomLocation() {

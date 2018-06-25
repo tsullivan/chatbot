@@ -1,3 +1,4 @@
+const snl = require('strip-newlines');
 const { ChatGame } = require('../chat_game');
 
 const GUESS_BOUND = 20;
@@ -61,7 +62,8 @@ class GuessNumber extends ChatGame {
   }
 
   getWelcome() {
-    return `Let's play guess a number. I'm thinking of a number between 1 and ${GUESS_BOUND}. Try to guess it.`;
+    return snl`Let's play guess a number. I'm thinking of a number between 1
+      and ${GUESS_BOUND}. Try to guess it.`;
   }
 }
 

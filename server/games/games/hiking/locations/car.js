@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location /*, KeywordResponse*/ } = require('../../../lib');
+const { Location, parajoin /*, KeywordResponse*/ } = require('../../../lib');
 const { UP, DOWN, CAR } = require('../constants');
 
 class CarLocation extends Location {
@@ -8,7 +8,7 @@ class CarLocation extends Location {
   }
 
   getDescription() {
-    const ps = [
+    const lns = [
       snl`The hole which you climbed down is the only source of light. You're at the dead-end of a
         cave which goes one direction into a long tunnel of darkness. It would be very hard to
         navigate through that without a light of some kind. The bottom of the hole is so deep,
@@ -18,7 +18,7 @@ class CarLocation extends Location {
         It points straight in to the darkness of the cave tunnel. It's floating slightly, and seems
         very ready to drive.`,
     ];
-    return ps.join('\n\n');
+    return parajoin(lns);
   }
 
   updateState(game) {

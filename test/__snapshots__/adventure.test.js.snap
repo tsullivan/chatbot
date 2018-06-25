@@ -64,7 +64,9 @@ EXIT - Get out of the cheery smelly old cave."
 
 exports[`adventure cave exit 1`] = `
 "You are at: Dark Forest
-It is the night time. You are outside, surrounded by dark trees, and you're very tired. There is a castle and a cave. Which way looks to be best to find a nice comfy bed to rest? I didn't mean for that to rhyme.
+It is the night time. You are outside, surrounded by dark trees, and you're very tired. There is a castle and a cave.
+
+Which way looks to be best to find a nice comfy bed to rest? I didn't mean for that to rhyme.
 
 CAVE - Go down into the cave
 CASTLE - Head up to the castle."
@@ -78,10 +80,10 @@ The tiny hotel building has a strange type of flagpole on the roof that looks li
 You are at: Cheery Cave
 It's unnaturally cheery in this smelly old cave. Probably because of the tiny village of tiny dancing skeleton hands. So cute! So tiny! So skeleton handsy!
 
+TAKE_HANDLE - Take the handle and put it in your pocket where it will be safe
 DANCE - Dance with the tiny skeleton hands
 LOOK - Look closer at the tiny village
-EXIT - Get out of the cheery smelly old cave.
-TAKE_HANDLE - Take the handle and put it in your pocket where it will be safe"
+EXIT - Get out of the cheery smelly old cave."
 `;
 
 exports[`adventure exit fail 1`] = `
@@ -99,7 +101,9 @@ exports[`adventure score 1`] = `"The average score of the games you plaid are : 
 
 exports[`adventure start 1`] = `
 "You are at: Dark Forest
-It is the night time. You are outside, surrounded by dark trees, and you're very tired. There is a castle and a cave. Which way looks to be best to find a nice comfy bed to rest? I didn't mean for that to rhyme.
+It is the night time. You are outside, surrounded by dark trees, and you're very tired. There is a castle and a cave.
+
+Which way looks to be best to find a nice comfy bed to rest? I didn't mean for that to rhyme.
 
 CAVE - Go down into the cave
 CASTLE - Head up to the castle.

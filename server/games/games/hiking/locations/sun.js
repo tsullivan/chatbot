@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location, KeywordResponse } = require('../../../lib');
+const { Location, KeywordResponse, parajoin } = require('../../../lib');
 const { DOWN, YOGURT } = require('../constants');
 
 class TheSunLocation extends Location {
@@ -44,7 +44,7 @@ class TheSunLocation extends Location {
         game.deleteInventory(YOGURT);
         this.removeKeyword('THROW_YOGURT');
         this._hasGhosts = true;
-        const ps = [
+        const lns = [
           snl`You reach for the ghost yogurt in your pocket, open the hatch of
             the sunship, and with all your strength, you mightily hurl the yogurt
             onto the surface of the sun.`,
@@ -56,7 +56,7 @@ class TheSunLocation extends Location {
           'GAIN 20 POINTS',
         ];
         return new KeywordResponse({
-          text: ps.join('\n\n'),
+          text: parajoin(lns),
           changeScore: 20,
         });
       });

@@ -19,10 +19,7 @@ class BubbleGun extends Adventure {
   }
 
   getWelcome() {
-    const welcome = snl`!!!Welcome to Bubble Gun World!!!`;
-    const locationDescription = this.currentLocation.getDescriptionInternal(this);
-    const { response: locationHelp } = this.getInputResponse('HELP', this, this);
-    return [welcome, locationDescription, locationHelp].join('\n\n');
+    return super.getWelcome(`!!!Welcome to Bubble Gun World!!!`);
   }
 
   lose(response) {

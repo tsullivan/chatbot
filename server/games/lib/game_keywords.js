@@ -1,4 +1,5 @@
 const snl = require('strip-newlines');
+const { parajoin } = require('./parajoin');
 const { KeywordResponse } = require('./class_keyword_response');
 
 function getGameKeywords() {
@@ -26,18 +27,19 @@ function getGameKeywords() {
           .join('\n');
 
         const locItems = game.currentLocation.getVisibleFloorItems(game);
-        const locItemsHelp = locItems.map(item => item.getInstructions()).join('\n');
+        const locItemsHelp = parajoin(locItems.map(item => item.getInstructions()));
 
         const invPre = 'Stuff you are holding:\n';
         const locPre = 'Stuff you can see:\n';
         let itemsHelp;
 
         if (invItems.length > 0 && locItems.length > 0) {
-          itemsHelp = [invPre + invItemsInfos, locPre + locItemsHelp].join('\n\n');
+          itemsHelp = parajoin([invPre + invItemsInfos, locPre + locItemsHelp]);
         } else {
           itemsHelp =
             (invItems.length > 0 && invPre + invItemsInfos) ||
-            (locItems.length > 0 && locPre + locItemsHelp);
+            (locItems.length > 0 && locPre + locItemsHelp) ||
+            '';
         }
 
         if (itemsHelp === '') {

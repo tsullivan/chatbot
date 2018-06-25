@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location, KeywordResponse } = require('../../../lib');
+const { Location, KeywordResponse, parajoin } = require('../../../lib');
 const { WEST, EAST, UP } = require('../constants');
 
 class WaterfallLocation extends Location {
@@ -9,14 +9,14 @@ class WaterfallLocation extends Location {
   }
 
   getDescription() {
-    const ps = [
+    const lns = [
       snl`It is so magical here.`,
       snl`This waterfall is at the bottom of a giant mountain and a bunch of trees. There's a path up the mountain, and you can try to see the top of the mountain, but it's so tall that it hurts your neck to look at it.`,
       snl`There's a climbing rope that leads to a really big circle. You're not
         sure what it is, and you don't feel strong enough to climb up right now.`,
       snl`There's water spraying everywhere!`,
     ];
-    return ps.join('\n\n');
+    return parajoin(lns);
   }
 
   updateState(/*game*/) {

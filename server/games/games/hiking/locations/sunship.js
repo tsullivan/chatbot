@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location /*, KeywordResponse */ } = require('../../../lib');
+const { Location, parajoin /*, KeywordResponse */ } = require('../../../lib');
 const { EAST, UP } = require('../constants');
 
 class SunshipLocation extends Location {
@@ -8,11 +8,11 @@ class SunshipLocation extends Location {
   }
 
   getDescription() {
-    const ps = [
+    const lns = [
       snl`Pretty nice in here. Whatever alien species created this ship did a good job.`,
       snl`The controls here look pretty simple. There's just one big button that says "PUSH_ME"`,
     ];
-    return ps.join('\n\n');
+    return parajoin(lns);
   }
 
   // buy

@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location, KeywordResponse } = require('../../../lib');
+const { Location, KeywordResponse, parajoin } = require('../../../lib');
 const { SOUTH } = require('../constants');
 
 class SoapLocation extends Location {
@@ -10,13 +10,13 @@ class SoapLocation extends Location {
   }
 
   getDescription() {
-    const parts = [];
-    parts[parts.length] = snl`Oh my goodness, this store has so much soap! It
-      is by far the soapiest store you have ever been in!`;
-    parts[parts.length] = snl`There is an extremely strong fragrance of clean
-      in this place.`;
-
-    return parts.join('\n\n');
+    const lns = [
+      snl`Oh my goodness, this store has so much soap! It is by far the
+        soapiest store you have ever been in!`,
+      snl`Another thing you notice right away is that there is an extremely
+        strong fragrance of clean in this place.`,
+    ];
+    return parajoin(lns);
   }
 
   updateState(/*game*/) {

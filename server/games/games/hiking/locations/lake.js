@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { Location, KeywordResponse } = require('../../../lib');
+const { Location, KeywordResponse, parajoin } = require('../../../lib');
 const { SOUTH, NORTH, ENEMIES, CAR, APPLES } = require('../constants');
 
 class LakeLocation extends Location {
@@ -8,20 +8,20 @@ class LakeLocation extends Location {
   }
 
   getDescription(game) {
-    const ps = [
+    const lns = [
       snl`This lake is beautiful, but the cloudy sky gives it a grim
       appearance. This seems to be a place of battle.`,
     ];
     if (game.inInventory(ENEMIES) && !game.inInventory(CAR)) {
-      ps.push(snl`There are enemies are in the lake. The shores of the lake are
+      lns.push(snl`There are enemies are in the lake. The shores of the lake are
         too far away from them to do anything about them, though`);
     } else if (game.inInventory(CAR)) {
-      ps.push(snl`There are enemies are in the lake. You're floating over their
+      lns.push(snl`There are enemies are in the lake. You're floating over their
         heads in your flying car.`);
     } else {
-      ps.push('The enemies in the lake have been defeated!');
+      lns.push('The enemies in the lake have been defeated!');
     }
-    return ps.join('\n\n');
+    return parajoin(lns);
   }
 
   updateState(game) {
@@ -35,25 +35,25 @@ class LakeLocation extends Location {
     );
     this.addKeyword('SWIM', 'Swim around in the lake', () => {
       if (game.inInventory(ENEMIES)) {
-        const ps = [
+        const lns = [
           snl`As soon as you dip one toe in the water, the enemies come up and
             defeat you!`,
-          'LOSE 50 points',
+          snl`LOSE 50 points`,
         ];
         return new KeywordResponse({
-          text: ps.join('\n\n'),
+          text: parajoin(lns),
           changeScore: -50,
           isDone: true,
         });
       } else {
-        const ps = [
+        const lns = [
           snl`You swim around for a little bit, but the floating corpses
             of the defeated enemies gross you out and you get out of the water
             after a little bit.`,
-          'LOSE A POINT',
+          snl`LOSE A POINT`,
         ];
         return new KeywordResponse({
-          text: ps.join('\n\n'),
+          text: parajoin(lns),
           changeScore: -1,
         });
       }
@@ -64,7 +64,7 @@ class LakeLocation extends Location {
         game.deleteInventory(APPLES);
         game.deleteInventory(ENEMIES);
         this.removeKeyword('THROW_APPLES');
-        const ps = [
+        const lns = [
           snl`You reach for an apple in your pocket, and give it a mighty hurl.
             It knocks an enemy head! That enemy becomes defeated!`,
           snl`You continue on in this manner until all enemies are defeated.
@@ -72,7 +72,7 @@ class LakeLocation extends Location {
           'GAIN 35 points',
         ];
         return new KeywordResponse({
-          text: ps.join('\n\n'),
+          text: parajoin(lns),
           changeScore: 35,
         });
       });
