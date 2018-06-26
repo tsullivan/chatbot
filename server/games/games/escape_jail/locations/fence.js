@@ -1,9 +1,11 @@
 const snl = require('strip-newlines');
-const { Location, KeywordResponse } = require('../../../lib');
+const { Location, KeywordResponse, delayAndDie } = require('../../../lib');
 
 class FenceLocation extends Location {
   constructor(game) {
     super({ game, name: 'The Jail Fence' });
+    this._jumped = false;
+    this._climbed = false;
   }
 
   getDescription() {
@@ -29,25 +31,27 @@ class FenceLocation extends Location {
     this.addKeyword(['JUMP_THE_FENCE', 'JUMP'], `Jump over the jail fence`, () => {
       return new KeywordResponse({
         text: snl`JUUUUMP! Oh no! The top of the fence is still too high up to jump over.`,
-        isDone: true,
       });
     });
     this.addKeyword(['CLIMB_THE_FENCE', 'CLIMB'], `Climb over the jail fence`, () => {
       return new KeywordResponse({
         text: snl`CLIMB! Oh no! The top of the fence is still too high up to climb over.`,
-        isDone: true,
       });
     });
-    this.addKeyword(
-      ['JUMP_AND_THEN_CLIMB_THE_FENCE', 'JUMP_CLIMB'],
-      `Jump and then climb over the jail fence`,
-      () => {
-        return new KeywordResponse({
-          text: snl`JUUUUMP! Climb, climb, climb! You made it!`,
-          isDone: true,
-        });
-      }
-    );
+    if (this._jumped && this._climbed) {
+      this.addKeyword(
+        ['JUMP_AND_THEN_CLIMB_THE_FENCE', 'JUMP_CLIMB'],
+        `Jump and then climb over the jail fence`,
+        () => {
+          return new KeywordResponse({
+            text: snl`JUUUUMP! Climb, climb, climb! You made it!`,
+            isDone: true,
+          });
+        }
+      );
+
+      this.addKeyword(...delayAndDie());
+    }
   }
 }
 

@@ -67,6 +67,21 @@ class CellLocation extends Location {
             watch you for a little bit, then walk away to watch other prisoners.`,
         });
       });
+    } else {
+      this.addKeyword(
+        ['STAND_AROUND', 'WAIT'],
+        snl`Stand around and let the weight of feeling of excitement, exersion,
+          and curiousity resolve itself in your mind before deciding on something
+          clever to do`,
+        () => {
+          this._guardsWatching = true;
+          return new KeywordResponse({
+            text: snl`You stand around, doing nothing for awhile, The guards
+              come back on watch duty near your cell and start watch you some
+              more.`,
+          });
+        }
+      );
     }
   }
 }

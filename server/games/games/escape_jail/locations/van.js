@@ -1,11 +1,13 @@
 const snl = require('strip-newlines');
-const { Location /*, KeywordResponse*/ } = require('../../../lib');
+const { Location, delayAndDie } = require('../../../lib');
 const { SOUTH } = require('../constants');
 
 class VanLocation extends Location {
   constructor(game) {
     super({ game, name: 'The Jail Van' });
   }
+
+  // there's a towel item on the floor // BUG why not visible in the code
 
   getDescription() {
     return snl`You're hiding in a jail van that's driving around the jail,
@@ -18,6 +20,8 @@ class VanLocation extends Location {
         fence. You're almost out of here!`;
       return this.followExit(SOUTH, px);
     });
+
+    this.addKeyword(...delayAndDie());
   }
 }
 
