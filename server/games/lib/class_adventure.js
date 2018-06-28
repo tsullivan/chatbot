@@ -175,7 +175,7 @@ class Adventure extends ChatGame {
     return ItemCollection.getVisibleItemsFromSet(this._inventory, this);
   }
   getVisibleLocationItems() {
-    return this.currentLocation.getVisibleFloorItems(this);
+    return this.currentLocation.getVisibleFloorItems(this); // BUG not getting the ladder in the playground
   }
 
   getNext(prefix, showInstructions) {

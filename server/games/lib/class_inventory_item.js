@@ -34,10 +34,9 @@ class InventoryItem {
     this._description = description;
     this._seen = seen;
 
-    this._droppable = false;
-    this._takeable = false;
-    this._combinable = false;
     this._combinedWith = new Set();
+    this._combinesRequired = new Set();
+    this._isComplete = true;
 
     this._setActions = setActions;
 
@@ -59,50 +58,67 @@ class InventoryItem {
     });
   }
 
-  setCombinable(
-    game,
-    { isCombinable = true, combinesWith, keyword, keywordDescription, fn }
-  ) {
-    if (
-      isCombinable &&
-      (game.inInventory(this._id) || game.currentLocation.hasFloorItem(this._id))
-    ) {
-      this._combinable = true;
-      this.addKeyword(keyword, keywordDescription, () => {
-        this._combinedWith.add(combinesWith);
-        // fn checks if combo is complete
-        return fn(game, this._combinedWith);
+  /*
+   * You can only combine items when holding both of them
+   */
+  setCombinable(game, { combinesWith, keyword, keywordDescription, fn }) {
+    if (typeof combinesWith !== 'string') {
+      throw new Error('invalid combinesWith ' + combinesWith);
+    }
+    if (typeof keyword !== 'string') {
+      throw new Error('invalid keyword ' + keyword);
+    }
+    if (typeof keywordDescription !== 'string') {
+      throw new Error('invalid keywordDescription ' + keywordDescription);
+    }
+    if (typeof fn !== 'function') {
+      throw new Error('invalid function ' + fn);
+    }
+    const originalItem = this;
+
+    if (game.inInventory(originalItem._id) && game.inInventory(combinesWith)) {
+      originalItem._combinesRequired.add(combinesWith);
+      originalItem._isComplete = false;
+
+      originalItem.addKeyword(keyword, keywordDescription, () => {
+        originalItem._combinedWith.add(combinesWith);
+        game.deleteFromInventory(combinesWith);
+
+        // checks if combo is complete // BUG - this is probably broken
+        if (originalItem._combinedWith.size === originalItem._combinesRequired.size) {
+          originalItem._isComplete = true;
+        }
+
+        originalItem.removeKeyword(keyword);
+        return fn(originalItem, originalItem._combinedWith);
       });
-    } else {
-      this._combinable = false;
-      this.removeKeyword(keyword);
     }
   }
 
-  setDroppable(game, { isDroppable = true, keyword, keywordDescription, fn }) {
+  combineWith(combinesWith) {
+    this._combinesRequired.add(combinesWith);
+  }
+
+  isComplete() {
+    return this._isComplete;
+  }
+
+  setDroppable(game, { keyword, keywordDescription, fn }) {
     // add a drop keyword if item is currently in inventory
-    if (isDroppable && game.inInventory(this._id)) {
-      this._droppable = true;
+    if (game.inInventory(this._id)) {
       this.addKeyword(keyword, keywordDescription, () => {
         game.dropInventory(this._id, game.currentLocation);
-        return fn(game);
+        return fn(this);
       });
-    } else {
-      this._droppable = false;
-      this.removeKeyword(keyword);
     }
   }
-  setTakeable(game, { isTakeable = true, keyword, keywordDescription, fn }) {
+  setTakeable(game, { keyword, keywordDescription, fn }) {
     // add a take keyword if game location has the item
-    if (isTakeable && game.currentLocation.hasFloorItem(this._id)) {
-      this._takeable = true;
+    if (game.currentLocation.hasFloorItem(this._id)) {
       this.addKeyword(keyword, keywordDescription, () => {
         game.takeFromLocation(this._id, game.currentLocation);
-        return fn(game);
+        return fn(this);
       });
-    } else {
-      this._takeable = false;
-      this.removeKeyword(keyword);
     }
   }
 

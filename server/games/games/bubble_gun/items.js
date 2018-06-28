@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { InventoryItem, KeywordResponse } = require('../../lib');
+const { InventoryItem, KeywordResponse, parajoin } = require('../../lib');
 
 const {
   BUBBLE_GUN,
@@ -13,6 +13,50 @@ const {
   GARBAGE,
 } = require('./constants');
 
+const getCombiningState = (item, combinedSet, game) => {
+  const { _id: id } = item;
+  const lns = [];
+  if (item.isComplete()) {
+    if (id === BUBBLE_GUN) {
+      item.setDescription('Completely functional and working bubble gun');
+    } else if (id === LED) {
+      item.setDescription('Completely functional and working LED throwie');
+    }
+  }
+
+  if (combinedSet.has(BATTERY_AA)) {
+    item.setDescription('Bubble gun with batteries, but no soap.');
+    lns[lns.length] = snl`You unscrew the cover to the bubble gun, pop in the
+      AA batteries, and put the cover back on. It's nice and snug with the water
+      seal that will prevent corrosion in the batteries or the metal surfaces
+      inside the bubble gun's battery compartment.`;
+  } else if (combinedSet.has(SOAP)) {
+    item.setDescription('Bubble gun with soap, but no AA batteries.');
+    lns[lns.length] = snl`You fill up the bubble gun soap container with some
+      of the liquid soap.`;
+  } else if (combinedSet.has(MAGNET)) {
+    item.setDescription('Bubble gun with soap, but no AA batteries.');
+    lns[lns.length] = snl`You fill up the bubble gun soap container with some
+      of the liquid soap.`;
+  } else if (combinedSet.has(BATTERY_LR41)) {
+    item.setDescription('Bubble gun with soap, but no AA batteries.');
+    lns[lns.length] = snl`You fill up the bubble gun soap container with some
+      of the liquid soap.`;
+  } else {
+    throw new Error(`I don't know what to do with this combination.`);
+  }
+
+  const bubbleGunItem = game.getItemFromCollection(BUBBLE_GUN);
+  const ledItem = game.getItemFromCollection(LED);
+  if (bubbleGunItem.isComplete()) {
+    lns.join('The bubble gun is completely functional now!');
+  } else if (ledItem.isComplete()) {
+    lns.join('The LED Throwie is completely functional now!');
+  }
+
+  return new KeywordResponse({ text: parajoin(lns) });
+};
+
 function getItems(game) {
   const itemFactory = (id, itemArgs) => {
     const factoryArgs = Object.assign({}, itemArgs, { id, game });
@@ -23,38 +67,29 @@ function getItems(game) {
     bubbleGunItem: itemFactory(BUBBLE_GUN, {
       name: 'Bubble Gun',
       description: snl`It's a bubble gun for gunning out bubbles. If you have
-        soap and two AA batteries, it can fulfil the purpose of its existence.`,
+        soap and two AA batteries, it can fulfill the purpose of its existence.`,
       setActions: ({ setTakeable, setCombinable }) => {
         setTakeable({
           keyword: 'TAKE_BUBBLE_GUN',
           keywordDescription: 'Pick up bubble gun.',
           fn: () =>
             new KeywordResponse({
-              text: `The bubble gun is yours!`,
+              text: `The bubble gun is yours, as it was meant to be!`,
             }),
         });
-        // TODO create functioning bubble gun item
         setCombinable({
           combinesWith: BATTERY_AA,
           keyword: 'COMBINE_BUBBLE_GUN_AND_BATTERIES',
           keywordDescription: 'Put the AA batteries in the bubble gun.',
-          fn: (_game, _combinedWith) =>
-            new KeywordResponse({
-              text: snl`You unscrew the cover to the bubble gun, pop in the AA
-              batteries, and put the cover back on. It's nice and snug with the
-              water seal that will prevent corrosion in the batteries or the
-              metal surfaces inside the bubble gun's battery compartment.`,
-            }),
+          fn: (bubbleGunItem, combinedSet) =>
+            getCombiningState(bubbleGunItem, combinedSet, game),
         });
         setCombinable({
           combinesWith: SOAP,
           keyword: 'COMBINE_BUBBLE_GUN_AND_SOAP',
           keywordDescription: snl`Put the soap into the soap container of the bubble gun.`,
-          fn: (_game, _combinedWith) =>
-            new KeywordResponse({
-              text: snl`You fill up the bubble gun soap container with some of
-                the liquid soap.`,
-            }),
+          fn: (bubbleGunItem, combinedSet) =>
+            getCombiningState(bubbleGunItem, combinedSet, game),
         });
       },
     }),
@@ -111,25 +146,18 @@ function getItems(game) {
               text: `The LED is now yours, and yours alone.`,
             }),
         });
-        // TODO create throwie item
         setCombinable({
           combinesWith: MAGNET,
           keyword: 'COMBINE_LED_AND_MAGNET',
           keywordDescription: 'Stick the magnet onto the LED device.',
-          fn: (_game, _combinedWith) =>
-            new KeywordResponse({
-              text: snl`The LED device now has magnet powers!`,
-            }),
+          fn: (ledItem, combinedSet) => getCombiningState(ledItem, combinedSet, game),
         });
         setCombinable({
           combinesWith: BATTERY_LR41,
           keyword: 'COMBINE_LED_AND_BATTERIES',
           keywordDescription:
             'Put the two LR41 batteries in the battery holder of the LED device.',
-          fn: (_game, _combinedWith) =>
-            new KeywordResponse({
-              text: snl`The LED device is now powered with 3V of electric current!`,
-            }),
+          fn: (ledItem, combinedSet) => getCombiningState(ledItem, combinedSet, game),
         });
       },
     }),
@@ -143,8 +171,8 @@ function getItems(game) {
           keywordDescription: 'Take the magnet.',
           fn: () =>
             new KeywordResponse({
-              text: `I'm feeling generous, so I'm going to just let you have
-                the magnet. It's now yours!`,
+              text: snl`Since you have such a magnetic personality, it feels right
+                to let you have this magnet.`,
             }),
         });
       },

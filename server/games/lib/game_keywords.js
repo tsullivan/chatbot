@@ -27,7 +27,7 @@ function getGameKeywords() {
           .join('\n');
 
         const locItems = game.currentLocation.getVisibleFloorItems(game);
-        const locItemsHelp = parajoin(locItems.map(item => item.getInstructions()));
+        const locItemsHelp = parajoin(locItems.map(item => item.getInfo()));
 
         const invPre = 'Stuff you are holding:\n';
         const locPre = 'Stuff you can see:\n';
