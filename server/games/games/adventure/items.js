@@ -1,10 +1,10 @@
 const snl = require('strip-newlines');
 const { WINDOW_HANDLE } = require('./constants');
-const { InventoryItem, KeywordResponse } = require('../../lib');
+const { Item, KeywordResponse } = require('../../lib');
 
 function getItems(game) {
   return {
-    windowHandleItem: new InventoryItem({
+    windowHandleItem: new Item({
       name: 'Window crank handle',
       id: WINDOW_HANDLE,
       description: 'This looks like a pretty nice window crank handle',

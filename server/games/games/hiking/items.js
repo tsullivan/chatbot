@@ -1,12 +1,12 @@
 const snl = require('strip-newlines');
-const { InventoryItem, KeywordResponse } = require('../../lib');
+const { Item, KeywordResponse } = require('../../lib');
 const { ENEMIES, CAR, APPLES, YOGURT, KEY, BUBBLE_GUN } = require('./constants');
 
 function getItems(game) {
   /*
    * Enemies
    */
-  const enemiesItem = new InventoryItem({
+  const enemiesItem = new Item({
     name: 'Enemies',
     id: ENEMIES,
     description: snl`Tiny enemies have harbored in your pocket. They will jump
@@ -18,7 +18,7 @@ function getItems(game) {
   /*
    * Key
    */
-  const keyItem = new InventoryItem({
+  const keyItem = new Item({
     game,
     name: 'Jail Key',
     id: KEY,
@@ -48,7 +48,7 @@ function getItems(game) {
   /*
    * Car
    */
-  const carItem = new InventoryItem({
+  const carItem = new Item({
     name: 'Flying silver car',
     id: CAR,
     description: snl`This car does not have wheels, instead it has flyers on
@@ -76,13 +76,13 @@ function getItems(game) {
   /*
    * Apple & Yogurt
    */
-  const applesItem = new InventoryItem({
+  const applesItem = new Item({
     name: 'Apples',
     id: APPLES,
     description: '100 red apples.',
     game,
   });
-  const yogurtItem = new InventoryItem({
+  const yogurtItem = new Item({
     name: 'Yogurt',
     id: YOGURT,
     description: snl`This yogurt is haunted with ghosts. They look like they
@@ -94,7 +94,7 @@ function getItems(game) {
   /*
    * Random ones
    */
-  const bubbleGunItem = new InventoryItem({
+  const bubbleGunItem = new Item({
     name: 'Bubble Gun',
     id: BUBBLE_GUN,
     description: snl`It's a bubble gun for gunning out bubbles. It looks very interesting.`,

@@ -1,9 +1,9 @@
 const snl = require('strip-newlines');
-const { InventoryItem, KeywordResponse } = require('../../lib');
+const { Item, KeywordResponse } = require('../../lib');
 const { KEY, TOWEL, GUARDS } = require('./constants');
 
 function getItems(game) {
-  const keyItem = new InventoryItem({
+  const keyItem = new Item({
     name: 'Jail Key',
     id: KEY,
     description: snl`On a hook on a far wall, there is the key to open a jail cell.`,
@@ -27,7 +27,7 @@ function getItems(game) {
     seen: false,
     game,
   });
-  const towelItem = new InventoryItem({
+  const towelItem = new Item({
     name: 'Jail Towel',
     id: TOWEL,
     description: snl`A towel from the jail laundry van.`,
@@ -48,7 +48,7 @@ function getItems(game) {
   });
 
   // NPC
-  const guardsItem = new InventoryItem({
+  const guardsItem = new Item({
     name: 'Guards',
     id: GUARDS,
     description: snl`Guards are chasing you! They're trying to get you! They want you to stay in jail!`,

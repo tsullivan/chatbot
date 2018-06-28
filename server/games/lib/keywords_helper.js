@@ -25,22 +25,11 @@ const getKeywordsHelper = () => ({
   },
 
   getInstructions(prefix = '') {
-    const instructions = [];
-    const iterator = this._keywords.entries();
-    let loopDone = false;
-
-    while (!loopDone) {
-      const { value, done } = iterator.next();
-      loopDone = done;
-      if (loopDone) {
-        break;
-      } else {
-        const [keyword, { text }] = value;
-        instructions.push(`${prefix}${keyword} - ${text}`);
-      }
-    }
-
-    return instructions.join('\n');
+    return Array.from(this._keywords)
+      .reduce((accum, [command, { text }]) => {
+        return [...accum, `${prefix}${command} - ${text}`];
+      }, [])
+      .join('\n');
   },
 
   removeKeyword(keyword) {

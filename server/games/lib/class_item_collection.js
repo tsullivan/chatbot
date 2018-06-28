@@ -9,28 +9,14 @@ class ItemCollection {
     return this._items.get(id);
   }
 
-  static getAllItemsFromSet(collection, game, { pushCondition = null } = {}) {
-    if (pushCondition == null) {
-      pushCondition = () => true;
-    }
-
-    const items = [];
-    const iterator = collection.values(); // method of Set class
-    let loopDone = false;
-    while (!loopDone) {
-      const { value, done } = iterator.next();
-      loopDone = done;
-      if (loopDone) {
-        break;
-      } else {
-        const item = game.getItemFromCollection(value);
-        if (pushCondition(item)) {
-          items.push(item);
-        }
+  static getAllItemsFromSet(collection, game, { pushCondition = () => true } = {}) {
+    return Array.from(collection).reduce((accum, value) => {
+      const item = game.getItemFromCollection(value);
+      if (pushCondition(item)) {
+        return [...accum, item];
       }
-    }
-
-    return items;
+      return accum;
+    }, []);
   }
 
   static getVisibleItemsFromSet(collection, game) {

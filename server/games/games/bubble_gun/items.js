@@ -1,5 +1,5 @@
 const snl = require('strip-newlines');
-const { InventoryItem, KeywordResponse, parajoin } = require('../../lib');
+const { Item, KeywordResponse, parajoin } = require('../../lib');
 
 const {
   BUBBLE_GUN,
@@ -60,7 +60,7 @@ const getCombiningState = (item, combinedSet, game) => {
 function getItems(game) {
   const itemFactory = (id, itemArgs) => {
     const factoryArgs = Object.assign({}, itemArgs, { id, game });
-    return new InventoryItem(factoryArgs);
+    return new Item(factoryArgs);
   };
 
   return {

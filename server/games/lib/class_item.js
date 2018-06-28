@@ -3,7 +3,7 @@ const { getKeywordsHelper } = require('./keywords_helper');
 
 const noop = () => {};
 
-class InventoryItem {
+class Item {
   /*
    * name
    * description
@@ -150,4 +150,4 @@ class InventoryItem {
   }
 }
 
-module.exports = { InventoryItem };
+module.exports = { Item };
