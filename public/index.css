@@ -1,19 +1,31 @@
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+  background-color: #333c;
+}
 #main {
   height: 100%;
   display: flex;
   flex-flow: column;
   padding-bottom: 15px;
 }
+#chatWithAbot, #chat, #history {
+  background-color: #ccc9;
+  border-radius: 5px;
+  margin-bottom: 3px;
+}
+#chatWithAbot {
+  padding: 8px 6.5px;
+}
 #chatBtn {
   position: absolute;
   visibility: hidden;
 }
 #history {
-  flex: 1 1 20%; 
+  flex: 1 1 20%;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   overflow: auto;
+  padding: 1.5px;
 }
 .messageBody {
   white-space: pre-line;
