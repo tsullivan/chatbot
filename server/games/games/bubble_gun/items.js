@@ -125,7 +125,7 @@ function getItems(game) {
         liquid for a bubble gun to shoot out plenty of bubbles.`,
       setActions: ({ setTakeable }) => {
         setTakeable({
-          keyword: 'TAKE_SOAP',
+          keyword: ['STEAL_THE_SOAP', 'TAKE_SOAP'],
           keywordDescription: 'Help yourself to the bottle of liquid soap.',
           fn: () =>
             new KeywordResponse({
