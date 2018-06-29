@@ -4,6 +4,9 @@ exports[`adventure castle 1`] = `
 "You are at: Great Hall of the Castle
 In the great hall of the castle, there are beautiful open-air windows with warm, nice-smelling air drifting through. Sunlight is catching a few specks of dust floating in the air. Not that much though, because it's pretty clean in here. There's also a nice looking comfy bed in the middle of the great hall. Hey wait - isn't it night time? Where is that light coming from?
 
+Items in your inventory:
+〜 Window crank handle - This looks like a pretty nice window crank handle
+
 SLEEP - Sleep on the comfy bed
 LOOK - Look closer at the open-air windows
 EXIT - Leave the beautful great hall and the castle."
@@ -14,6 +17,9 @@ exports[`adventure castle look 1 1`] = `
 
 You are at: Great Hall of the Castle
 In the great hall of the castle, there are beautiful open-air windows with warm, nice-smelling air drifting through. Sunlight is catching a few specks of dust floating in the air. Not that much though, because it's pretty clean in here. There's also a nice looking comfy bed in the middle of the great hall. Hey wait - isn't it night time? Where is that light coming from?
+
+Items in your inventory:
+〜 Window crank handle - This looks like a pretty nice window crank handle
 
 SLEEP - Sleep on the comfy bed
 LOOK - Look closer at the open-air windows
@@ -67,6 +73,9 @@ exports[`adventure cave exit 1`] = `
 It is the night time. You are outside, surrounded by dark trees, and you're very tired. There is a castle and a cave.
 
 Which way looks to be best to find a nice comfy bed to rest? I didn't mean for that to rhyme.
+
+Items in your inventory:
+〜 Window crank handle - This looks like a pretty nice window crank handle
 
 CAVE - Go down into the cave
 CASTLE - Head up to the castle."

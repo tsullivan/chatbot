@@ -188,6 +188,7 @@ class Adventure extends ChatGame {
 
   getLocationDescription() {
     const { response: locationText } = this.getInputResponse('LOOK', this, this);
+    // TODO list keywords for items in inventory
     return locationText;
   }
 

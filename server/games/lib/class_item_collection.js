@@ -1,12 +1,40 @@
+const { UL, LI } = require('../../constants');
+
 class ItemCollection {
   constructor() {
     this._items = new Map();
   }
-  addItem(id, item) {
-    this._items.set(id, item);
-  }
-  get(id) {
-    return this._items.get(id);
+
+  static describeGameItems(game) {
+    const describeIt = item => {
+      let words = UL + item.getInfo();
+      const instructions = item.getInstructions(LI);
+      if (instructions && instructions.length) {
+        words += '\n' + instructions;
+      }
+      return words;
+    };
+    const getTheirInfo = (items, prefix) => {
+      let infos = '';
+      if (items.length) {
+        infos += `${prefix}\n`;
+        infos += items.map(describeIt).join('\n');
+      }
+      return infos;
+    };
+
+    const floorInfos = getTheirInfo(
+      game.currentLocation.getVisibleFloorItems(game),
+      `Items in ${game.currentLocation.getName()}`
+    );
+
+    const invInfos = getTheirInfo(
+      game.getVisibleInventoryItems(),
+      'Items in your inventory:'
+    );
+
+    const text = floorInfos + invInfos;
+    return text.length ? text : null;
   }
 
   static getAllItemsFromSet(collection, game, { pushCondition = () => true } = {}) {
@@ -25,6 +53,13 @@ class ItemCollection {
         return item.isSeen();
       },
     });
+  }
+
+  addItem(id, item) {
+    this._items.set(id, item);
+  }
+  get(id) {
+    return this._items.get(id);
   }
 }
 

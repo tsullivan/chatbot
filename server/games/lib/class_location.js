@@ -91,30 +91,17 @@ class Location {
   }
 
   getDescriptionInternal(game) {
-    const lns = [`You are at: ${this._name}\n${this.getDescription(game)}`];
-
-    // show any items on the floor
-    const {
-      itemsCount: locItemsCount,
-      itemInfos: locItemInfos,
-    } = this.getVisibleFloorItems(game).reduce(
-      ({ itemInfos, itemsCount }, item) => {
-        return {
-          itemsCount: itemsCount + 1,
-          itemInfos: itemInfos.concat(item.getInfo()),
-        };
-      },
-      { itemInfos: [], itemsCount: 0 }
-    );
-    if (locItemsCount > 0) {
-      let itemsPre = `There is an item here you may be interested in:`;
-      if (locItemsCount > 1) {
-        itemsPre = `There are ${locItemsCount} items here you may be interested in:`;
-      }
-      lns.push(itemsPre + '\n' + locItemInfos.join('\n'));
+    const lns = [`You are at: ${this.getName()}\n${this.getDescription(game)}`];
+    const text = ItemCollection.describeGameItems(game);
+    if (text) {
+      lns.push(text);
     }
 
     return parajoin(lns);
+  }
+
+  getName() {
+    return this._name;
   }
 
   addFloorItem(id) {

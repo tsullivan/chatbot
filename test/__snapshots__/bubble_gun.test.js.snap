@@ -10,8 +10,10 @@ Off the corner of the road, there's a bridge leading out of Bubble Gun World.
 
 Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
 
-There is an item here you may be interested in:
-Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+Items in The Playground
+〜 Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 BRIDGE - Go to the bridge
 TREE_FORT - Climb the ladder up to the tree fort
@@ -30,10 +32,13 @@ Oh my goodness, this store has so much soap! It is by far the soapiest store you
 
 Another thing you notice right away is that there is an extremely strong fragrance of clean in this place.
 
-There is an item here you may be interested in:
-Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
+Items in The Soap Store
+〜 Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
+  ⁓ STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
-TAKE_SOAP - Help yourself to the bottle of liquid soap.
+STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
 PLAYGROUND - Go back to the playground
 ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
@@ -41,7 +46,7 @@ ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will
 exports[`bubble_gun fall down in soap store 3`] = `
 "OOPSIE. You accidentally spilled some soap on the floor! Be careful now, the floor might be slippery.
 
-TAKE_SOAP - Help yourself to the bottle of liquid soap.
+STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
 PLAYGROUND - Go back to the playground
 DONT_BE_CAREFUL - You can accidentally not be careful. No one will blame you because it will be another accident."
 `;
@@ -51,7 +56,7 @@ exports[`bubble_gun fall down in soap store 4`] = `
 
 BAM! There goes your bottom!
 
-TAKE_SOAP - Help yourself to the bottle of liquid soap.
+STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
 PLAYGROUND - Go back to the playground
 ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
@@ -59,7 +64,7 @@ ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one
 exports[`bubble_gun fall down in soap store 5`] = `
 "OOPSIE. You accidentally spilled some soap on the floor! Be careful now, the floor might be slippery.
 
-TAKE_SOAP - Help yourself to the bottle of liquid soap.
+STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
 PLAYGROUND - Go back to the playground
 DONT_BE_CAREFUL - You can accidentally not be careful. No one will blame you because it will be another accident."
 `;
@@ -69,7 +74,7 @@ exports[`bubble_gun fall down in soap store 6`] = `
 
 BONK! There goes your head!
 
-TAKE_SOAP - Help yourself to the bottle of liquid soap.
+STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
 PLAYGROUND - Go back to the playground
 ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
@@ -77,7 +82,7 @@ ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one
 exports[`bubble_gun fall down in soap store 7`] = `
 "OOPSIE. You accidentally spilled some soap on the floor! Be careful now, the floor might be slippery.
 
-TAKE_SOAP - Help yourself to the bottle of liquid soap.
+STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
 PLAYGROUND - Go back to the playground
 DONT_BE_CAREFUL - You can accidentally not be careful. No one will blame you because it will be another accident."
 `;
@@ -87,7 +92,7 @@ exports[`bubble_gun fall down in soap store 8`] = `
 
 BAM! There goes your bottom!
 
-TAKE_SOAP - Help yourself to the bottle of liquid soap.
+STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
 PLAYGROUND - Go back to the playground
 ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
@@ -95,7 +100,7 @@ ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one
 exports[`bubble_gun fall down in soap store 9`] = `
 "OOPSIE. You accidentally spilled some soap on the floor! Be careful now, the floor might be slippery.
 
-TAKE_SOAP - Help yourself to the bottle of liquid soap.
+STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
 PLAYGROUND - Go back to the playground
 DONT_BE_CAREFUL - You can accidentally not be careful. No one will blame you because it will be another accident."
 `;
@@ -105,7 +110,7 @@ exports[`bubble_gun fall down in soap store 10`] = `
 
 BONK! There goes your head!
 
-TAKE_SOAP - Help yourself to the bottle of liquid soap.
+STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
 PLAYGROUND - Go back to the playground
 ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
@@ -127,8 +132,10 @@ Off the corner of the road, there's a bridge leading out of Bubble Gun World.
 
 Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
 
-There is an item here you may be interested in:
-Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+Items in The Playground
+〜 Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 BRIDGE - Go to the bridge
 TREE_FORT - Climb the ladder up to the tree fort
@@ -149,8 +156,10 @@ Off the corner of the road, there's a bridge leading out of Bubble Gun World.
 
 Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
 
-There is an item here you may be interested in:
-Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+Items in The Playground
+〜 Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 BRIDGE - Go to the bridge
 TREE_FORT - Climb the ladder up to the tree fort
@@ -167,6 +176,10 @@ There's no way out of town right now, Bubble Gun World Police have blocked the r
 
 The police have put up signs all along the bridge that say BRIDGE IS OUT!But it is too dark to even see them.
 
+Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
+
 PLAYGROUND - Go back to the playground
 CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
 `;
@@ -178,6 +191,10 @@ This long, long bridge carries the road over a very tall gorge that surrounds Bu
 There's no way out of town right now, Bubble Gun World Police have blocked the road to prevent anyone from using the road. A power outage in the streets has caused all the street lights to turn off in this area. The Police are saying it's too dark and unsafe to let anyone try to cross.
 
 The police have put up signs all along the bridge that say BRIDGE IS OUT!But it is too dark to even see them.
+
+Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 PLAYGROUND - Go back to the playground
 CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
@@ -191,8 +208,10 @@ Off the corner of the road, there's a bridge leading out of Bubble Gun World.
 
 Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
 
-There is an item here you may be interested in:
-Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+Items in The Playground
+〜 Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 BRIDGE - Go to the bridge
 TREE_FORT - Climb the ladder up to the tree fort
@@ -209,8 +228,10 @@ Off the corner of the road, there's a bridge leading out of Bubble Gun World.
 
 Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
 
-There is an item here you may be interested in:
-Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+Items in The Playground
+〜 Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 BRIDGE - Go to the bridge
 TREE_FORT - Climb the ladder up to the tree fort
@@ -223,12 +244,20 @@ exports[`bubble_gun walk around 7`] = `
 "You are at: The Tree Fort
 This tree fort is so tall! It has a big window with a clear view of the entire playground.
 
+Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
+
 PLAYGROUND - Go back to the playground"
 `;
 
 exports[`bubble_gun walk around 8`] = `
 "You are at: The Tree Fort
 This tree fort is so tall! It has a big window with a clear view of the entire playground.
+
+Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 PLAYGROUND - Go back to the playground"
 `;
@@ -241,8 +270,10 @@ Off the corner of the road, there's a bridge leading out of Bubble Gun World.
 
 Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
 
-There is an item here you may be interested in:
-Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+Items in The Playground
+〜 Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 BRIDGE - Go to the bridge
 TREE_FORT - Climb the ladder up to the tree fort
@@ -259,8 +290,10 @@ Off the corner of the road, there's a bridge leading out of Bubble Gun World.
 
 Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
 
-There is an item here you may be interested in:
-Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+Items in The Playground
+〜 Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 BRIDGE - Go to the bridge
 TREE_FORT - Climb the ladder up to the tree fort
@@ -273,16 +306,19 @@ exports[`bubble_gun walk around 11`] = `
 "You are at: The Electronics Store
 Here at the Electronics store, their motto is: \\"Electronics - they're what we sell!\\"
 
-There are 3 items here you may be interested in:
-Small LR41 Batteries. - The two LR41 batteries are the standard 1.5V button size batteries. They'd fit nicely into the battery holder of a very small piece of electronics.
-Medium-size AA Batteries. - The two AA batteries are the standard 1.5V medium-size batteries. They'd fit nicely into the battery holder of a medium-size piece of electronics.
-LED - It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
+Items in The Electronics Store
+〜 Small LR41 Batteries. - The two LR41 batteries are the standard 1.5V button size batteries. They'd fit nicely into the battery holder of a very small piece of electronics.
+  ⁓ TAKE_LR41_BATTERIES - Obtain possession of the LR41 batteries.
+〜 Medium-size AA Batteries. - The two AA batteries are the standard 1.5V medium-size batteries. They'd fit nicely into the battery holder of a medium-size piece of electronics.
+  ⁓ TAKE_AA_BATTERIES - Obtain possession of the AA batteries.
+〜 LED - It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
+  ⁓ TAKE_LED - Take the LED.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 TAKE_LR41_BATTERIES - Obtain possession of the LR41 batteries.
 TAKE_AA_BATTERIES - Obtain possession of the AA batteries.
 TAKE_LED - Take the LED.
-COMBINE_LED_AND_MAGNET - Stick the magnet onto the LED device.
-COMBINE_LED_AND_BATTERIES - Put the two LR41 batteries in the battery holder of the LED device.
 PLAYGROUND - Go back to the playground"
 `;
 
@@ -290,16 +326,19 @@ exports[`bubble_gun walk around 12`] = `
 "You are at: The Electronics Store
 Here at the Electronics store, their motto is: \\"Electronics - they're what we sell!\\"
 
-There are 3 items here you may be interested in:
-Small LR41 Batteries. - The two LR41 batteries are the standard 1.5V button size batteries. They'd fit nicely into the battery holder of a very small piece of electronics.
-Medium-size AA Batteries. - The two AA batteries are the standard 1.5V medium-size batteries. They'd fit nicely into the battery holder of a medium-size piece of electronics.
-LED - It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
+Items in The Electronics Store
+〜 Small LR41 Batteries. - The two LR41 batteries are the standard 1.5V button size batteries. They'd fit nicely into the battery holder of a very small piece of electronics.
+  ⁓ TAKE_LR41_BATTERIES - Obtain possession of the LR41 batteries.
+〜 Medium-size AA Batteries. - The two AA batteries are the standard 1.5V medium-size batteries. They'd fit nicely into the battery holder of a medium-size piece of electronics.
+  ⁓ TAKE_AA_BATTERIES - Obtain possession of the AA batteries.
+〜 LED - It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
+  ⁓ TAKE_LED - Take the LED.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 TAKE_LR41_BATTERIES - Obtain possession of the LR41 batteries.
 TAKE_AA_BATTERIES - Obtain possession of the AA batteries.
 TAKE_LED - Take the LED.
-COMBINE_LED_AND_MAGNET - Stick the magnet onto the LED device.
-COMBINE_LED_AND_BATTERIES - Put the two LR41 batteries in the battery holder of the LED device.
 PLAYGROUND - Go back to the playground"
 `;
 
@@ -311,8 +350,10 @@ Off the corner of the road, there's a bridge leading out of Bubble Gun World.
 
 Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
 
-There is an item here you may be interested in:
-Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+Items in The Playground
+〜 Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 BRIDGE - Go to the bridge
 TREE_FORT - Climb the ladder up to the tree fort
@@ -329,8 +370,10 @@ Off the corner of the road, there's a bridge leading out of Bubble Gun World.
 
 Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
 
-There is an item here you may be interested in:
-Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+Items in The Playground
+〜 Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 BRIDGE - Go to the bridge
 TREE_FORT - Climb the ladder up to the tree fort
@@ -345,10 +388,13 @@ Oh my goodness, this store has so much soap! It is by far the soapiest store you
 
 Another thing you notice right away is that there is an extremely strong fragrance of clean in this place.
 
-There is an item here you may be interested in:
-Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
+Items in The Soap Store
+〜 Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
+  ⁓ STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
-TAKE_SOAP - Help yourself to the bottle of liquid soap.
+STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
 PLAYGROUND - Go back to the playground
 ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
@@ -359,10 +405,13 @@ Oh my goodness, this store has so much soap! It is by far the soapiest store you
 
 Another thing you notice right away is that there is an extremely strong fragrance of clean in this place.
 
-There is an item here you may be interested in:
-Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
+Items in The Soap Store
+〜 Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
+  ⁓ STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
-TAKE_SOAP - Help yourself to the bottle of liquid soap.
+STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
 PLAYGROUND - Go back to the playground
 ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
@@ -375,8 +424,10 @@ Off the corner of the road, there's a bridge leading out of Bubble Gun World.
 
 Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
 
-There is an item here you may be interested in:
-Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+Items in The Playground
+〜 Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 BRIDGE - Go to the bridge
 TREE_FORT - Climb the ladder up to the tree fort
@@ -393,8 +444,10 @@ Off the corner of the road, there's a bridge leading out of Bubble Gun World.
 
 Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
 
-There is an item here you may be interested in:
-Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+Items in The Playground
+〜 Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 BRIDGE - Go to the bridge
 TREE_FORT - Climb the ladder up to the tree fort
@@ -407,8 +460,11 @@ exports[`bubble_gun walk around 19`] = `
 "You are at: The Magnet Store
 Hold on to your metals, they got lots of magnets in here!
 
-There is an item here you may be interested in:
-Small magnet - This looks like a pretty handy little small magent! It has a sticker on for sticking onto a small device.
+Items in The Magnet Store
+〜 Small magnet - This looks like a pretty handy little small magent! It has a sticker on for sticking onto a small device.
+  ⁓ TAKE_MAGNET - Take the magnet.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 TAKE_MAGNET - Take the magnet.
 PLAYGROUND - Go back to the playground"
@@ -418,8 +474,11 @@ exports[`bubble_gun walk around 20`] = `
 "You are at: The Magnet Store
 Hold on to your metals, they got lots of magnets in here!
 
-There is an item here you may be interested in:
-Small magnet - This looks like a pretty handy little small magent! It has a sticker on for sticking onto a small device.
+Items in The Magnet Store
+〜 Small magnet - This looks like a pretty handy little small magent! It has a sticker on for sticking onto a small device.
+  ⁓ TAKE_MAGNET - Take the magnet.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 TAKE_MAGNET - Take the magnet.
 PLAYGROUND - Go back to the playground"
@@ -433,8 +492,10 @@ Off the corner of the road, there's a bridge leading out of Bubble Gun World.
 
 Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
 
-There is an item here you may be interested in:
-Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+Items in The Playground
+〜 Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 BRIDGE - Go to the bridge
 TREE_FORT - Climb the ladder up to the tree fort
@@ -451,8 +512,10 @@ Off the corner of the road, there's a bridge leading out of Bubble Gun World.
 
 Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
 
-There is an item here you may be interested in:
-Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+Items in The Playground
+〜 Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+〜 Slingshot - This slingshot seems like it could really sling some shots.
 
 BRIDGE - Go to the bridge
 TREE_FORT - Climb the ladder up to the tree fort

@@ -10,6 +10,13 @@ The dark clouds open up this close to the mountain, and the sky is clear and bri
 
 There is a telescope perched on a rail here.
 
+Items in your inventory:
+〜 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ DROP_BUBBLE_GUN - Drop the interesting looking bubble gun.
+〜 Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
+  ⁓ CRASH_CAR - Crash the silver flying car
+
 SHIP - Enter the ship
 USE_TELESCOPE - Look through the telescope perched on a rail at the top of the bridge.
 LAKE - Go back down to the lake
@@ -22,6 +29,13 @@ Pretty nice in here. Whatever alien species created this ship did a good job.
 
 The controls here look pretty simple. There's just one big button that says \\"PUSH_ME\\"
 
+Items in your inventory:
+〜 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ DROP_BUBBLE_GUN - Drop the interesting looking bubble gun.
+〜 Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
+  ⁓ CRASH_CAR - Crash the silver flying car
+
 PUSH_ME - Push the control button
 EXIT - Jump out of the ship and back to the bridge"
 `;
@@ -31,6 +45,13 @@ exports[`hiking explode the ghosts on the sun 3`] = `
 
 You are at: The Sun, in the Sun Ship
 It's so hot on the Sun! Fear not, it's safe inside the sun ship. It's very bright, but the windows of the sunship make it safe to look at.
+
+Items in your inventory:
+〜 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ DROP_BUBBLE_GUN - Drop the interesting looking bubble gun.
+〜 Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
+  ⁓ CRASH_CAR - Crash the silver flying car
 
 BACK - Go back to Earth
 LOOK - Look at the sun (through the safety of the sunship windows)
@@ -42,6 +63,13 @@ exports[`hiking explode the ghosts on the sun 4`] = `
 
 You are at: The Sun, in the Sun Ship
 It's so hot on the Sun! Fear not, it's safe inside the sun ship. It's very bright, but the windows of the sunship make it safe to look at.
+
+Items in your inventory:
+〜 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ DROP_BUBBLE_GUN - Drop the interesting looking bubble gun.
+〜 Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
+  ⁓ CRASH_CAR - Crash the silver flying car
 
 BACK - Go back to Earth
 LOOK - Look at the sun (through the safety of the sunship windows)
@@ -69,6 +97,12 @@ exports[`hiking explode the ghosts on the sun 6`] = `
 You are at: The Sun, in the Sun Ship
 It's so hot on the Sun! Fear not, it's safe inside the sun ship. It's very bright, but the windows of the sunship make it safe to look at.
 
+Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ DROP_BUBBLE_GUN - Drop the interesting looking bubble gun.
+〜 Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
+  ⁓ CRASH_CAR - Crash the silver flying car
+
 BACK - Go back to Earth
 LOOK - Look at the sun (through the safety of the sunship windows)"
 `;
@@ -80,6 +114,12 @@ You are at: Sun Ship, on Earth
 Pretty nice in here. Whatever alien species created this ship did a good job.
 
 The controls here look pretty simple. There's just one big button that says \\"PUSH_ME\\"
+
+Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ DROP_BUBBLE_GUN - Drop the interesting looking bubble gun.
+〜 Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
+  ⁓ CRASH_CAR - Crash the silver flying car
 
 PUSH_ME - Push the control button
 EXIT - Jump out of the ship and back to the bridge"
@@ -96,6 +136,12 @@ From the top of the bridge, can can look down at the large lake. The lake is bea
 The dark clouds open up this close to the mountain, and the sky is clear and bright. The lake reflects the view to the top of the mountain, which makes this place of the game look very mirror-like. From up here, the lake looks just as serious and grim as the mountain it reflects.
 
 There is a telescope perched on a rail here.
+
+Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ DROP_BUBBLE_GUN - Drop the interesting looking bubble gun.
+〜 Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
+  ⁓ CRASH_CAR - Crash the silver flying car
 
 SHIP - Enter the ship
 USE_TELESCOPE - Look through the telescope perched on a rail at the top of the bridge.
@@ -117,6 +163,10 @@ You're not sure how you got here, and that makes you feel really lost. You can g
 
 You can also go really fast sometimes, and you have the Force sometimes.
 
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
+
 LAKE - You can see a lake in one direction. It looks pretty nice.
 ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly.
 LOOK - Look at the area you are currently in.
@@ -133,6 +183,10 @@ This lake is beautiful, but the cloudy sky gives it a grim appearance. This seem
 
 There are enemies are in the lake. The shores of the lake are too far away from them to do anything about them, though
 
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
+
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
 SWIM - Swim around in the lake"
@@ -148,6 +202,10 @@ The dark clouds open up this close to the mountain, and the sky is clear and bri
 
 There is a telescope perched on a rail here.
 
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
+
 SHIP - Enter the ship
 USE_TELESCOPE - Look through the telescope perched on a rail at the top of the bridge.
 LAKE - Go back down to the lake
@@ -160,6 +218,10 @@ Pretty nice in here. Whatever alien species created this ship did a good job.
 
 The controls here look pretty simple. There's just one big button that says \\"PUSH_ME\\"
 
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
+
 PUSH_ME - Push the control button
 EXIT - Jump out of the ship and back to the bridge"
 `;
@@ -170,6 +232,10 @@ exports[`hiking explore sun 5`] = `
 You are at: The Sun, in the Sun Ship
 It's so hot on the Sun! Fear not, it's safe inside the sun ship. It's very bright, but the windows of the sunship make it safe to look at.
 
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
+
 BACK - Go back to Earth
 LOOK - Look at the sun (through the safety of the sunship windows)"
 `;
@@ -179,6 +245,10 @@ exports[`hiking explore sun 6`] = `
 
 You are at: The Sun, in the Sun Ship
 It's so hot on the Sun! Fear not, it's safe inside the sun ship. It's very bright, but the windows of the sunship make it safe to look at.
+
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
 
 BACK - Go back to Earth
 LOOK - Look at the sun (through the safety of the sunship windows)"
@@ -191,6 +261,10 @@ You are at: Sun Ship, on Earth
 Pretty nice in here. Whatever alien species created this ship did a good job.
 
 The controls here look pretty simple. There's just one big button that says \\"PUSH_ME\\"
+
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
 
 PUSH_ME - Push the control button
 EXIT - Jump out of the ship and back to the bridge"
@@ -207,6 +281,10 @@ From the top of the bridge, can can look down at the large lake. The lake is bea
 The dark clouds open up this close to the mountain, and the sky is clear and bright. The lake reflects the view to the top of the mountain, which makes this place of the game look very mirror-like. From up here, the lake looks just as serious and grim as the mountain it reflects.
 
 There is a telescope perched on a rail here.
+
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
 
 SHIP - Enter the ship
 USE_TELESCOPE - Look through the telescope perched on a rail at the top of the bridge.
@@ -228,6 +306,12 @@ You are at: Finish Line
 The finish line looks like a robot. You can ask the robot to take out a flag, and that will finish this hiking game.
 
 Ready to end the hiking journey?
+
+Items in your inventory:
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ DROP_BUBBLE_GUN - Drop the interesting looking bubble gun.
+〜 Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
+  ⁓ CRASH_CAR - Crash the silver flying car
 
 ASK_THE_ROBOT_TO_TAKE_OUT_A_FLAG - Leave the hiking journey and save your points
 BRIDGE - Go back to the bridge, and keep playing the hiking game"
@@ -268,8 +352,11 @@ It was a long climb up to the really tall top of this mountain, so it feels so g
 
 Nearby is a blue house with a green roof. It has a lot of windows and only one door that is open. There is smoke coming out of the chimney.
 
-There is an item here you may be interested in:
-Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+Items in Top of the mountain
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.Items in your inventory:
+〜 Apples - 100 red apples.
+〜 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
 
 TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.
 WATERFALL - To go back down to the waterfall
@@ -282,8 +369,11 @@ It was a long climb up to the really tall top of this mountain, so it feels so g
 
 Nearby is a blue house with a green roof. It has a lot of windows and only one door that is open. There is smoke coming out of the chimney.
 
-There is an item here you may be interested in:
-Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+Items in Top of the mountain
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.Items in your inventory:
+〜 Apples - 100 red apples.
+〜 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
 
 TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.
 WATERFALL - To go back down to the waterfall
@@ -291,12 +381,11 @@ HOUSE - Check out the mountain house up here."
 `;
 
 exports[`hiking fly a car back to the lake 5`] = `
-"Stuff you are holding:
-Apples - 100 red apples.
-Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
-
-Stuff you can see:
-Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+"Items in Top of the mountain
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.Items in your inventory:
+〜 Apples - 100 red apples.
+〜 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
 
 TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.
 WATERFALL - To go back down to the waterfall
@@ -317,6 +406,12 @@ Inside the mountain house, the many windows create an atmosphere of light, but a
 There's a comfy-looking bed, in case you need a rest.
 
 There's a deep hole in the floor. You can't see the bottom, but you could fit yourself inside.
+
+Items in your inventory:
+〜 Apples - 100 red apples.
+〜 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ DROP_BUBBLE_GUN - Drop the interesting looking bubble gun.
 
 OUTSIDE - Go out to the top of the mountain
 DOWN_THE_HOLE - Take a look at what's down the hole
@@ -350,8 +445,12 @@ The hole which you climbed down is the only source of light. You're at the dead-
 
 In the dim light, the only thing you can really tell is there's a silver car parked here. It points straight in to the darkness of the cave tunnel. It's floating slightly, and seems very ready to drive.
 
-There is an item here you may be interested in:
-Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
+Items in In a cave under the mountain house
+〜 Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.Items in your inventory:
+〜 Apples - 100 red apples.
+〜 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ DROP_BUBBLE_GUN - Drop the interesting looking bubble gun.
 
 LADDER - Climb the ladder to get back up to the house
 DRIVE_THE_CAR - Get into the car and drive it, to see what's down this tunnel"
@@ -366,6 +465,12 @@ Inside the mountain house, the many windows create an atmosphere of light, but a
 There's a comfy-looking bed, in case you need a rest.
 
 There's a deep hole in the floor. You can't see the bottom, but you could fit yourself inside.
+
+Items in your inventory:
+〜 Apples - 100 red apples.
+〜 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ DROP_BUBBLE_GUN - Drop the interesting looking bubble gun.
 
 OUTSIDE - Go out to the top of the mountain
 DOWN_THE_HOLE - Take a look at what's down the hole
@@ -399,8 +504,12 @@ The hole which you climbed down is the only source of light. You're at the dead-
 
 In the dim light, the only thing you can really tell is there's a silver car parked here. It points straight in to the darkness of the cave tunnel. It's floating slightly, and seems very ready to drive.
 
-There is an item here you may be interested in:
-Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
+Items in In a cave under the mountain house
+〜 Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.Items in your inventory:
+〜 Apples - 100 red apples.
+〜 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ DROP_BUBBLE_GUN - Drop the interesting looking bubble gun.
 
 LADDER - Climb the ladder to get back up to the house
 DRIVE_THE_CAR - Get into the car and drive it, to see what's down this tunnel"
@@ -412,8 +521,12 @@ The hole which you climbed down is the only source of light. You're at the dead-
 
 In the dim light, the only thing you can really tell is there's a silver car parked here. It points straight in to the darkness of the cave tunnel. It's floating slightly, and seems very ready to drive.
 
-There is an item here you may be interested in:
-Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
+Items in In a cave under the mountain house
+〜 Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.Items in your inventory:
+〜 Apples - 100 red apples.
+〜 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ DROP_BUBBLE_GUN - Drop the interesting looking bubble gun.
 
 LADDER - Climb the ladder to get back up to the house
 DRIVE_THE_CAR - Get into the car and drive it, to see what's down this tunnel"
@@ -426,6 +539,14 @@ You are at: Lake
 This lake is beautiful, but the cloudy sky gives it a grim appearance. This seems to be a place of battle.
 
 There are enemies are in the lake. You're floating over their heads in your flying car.
+
+Items in your inventory:
+〜 Apples - 100 red apples.
+〜 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ DROP_BUBBLE_GUN - Drop the interesting looking bubble gun.
+〜 Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
+  ⁓ CRASH_CAR - Crash the silver flying car
 
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
@@ -443,6 +564,14 @@ The dark clouds open up this close to the mountain, and the sky is clear and bri
 
 There is a telescope perched on a rail here.
 
+Items in your inventory:
+〜 Apples - 100 red apples.
+〜 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ DROP_BUBBLE_GUN - Drop the interesting looking bubble gun.
+〜 Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
+  ⁓ CRASH_CAR - Crash the silver flying car
+
 SHIP - Enter the ship
 USE_TELESCOPE - Look through the telescope perched on a rail at the top of the bridge.
 LAKE - Go back down to the lake
@@ -456,6 +585,14 @@ You are at: Lake
 This lake is beautiful, but the cloudy sky gives it a grim appearance. This seems to be a place of battle.
 
 There are enemies are in the lake. You're floating over their heads in your flying car.
+
+Items in your inventory:
+〜 Apples - 100 red apples.
+〜 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
+〜 Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  ⁓ DROP_BUBBLE_GUN - Drop the interesting looking bubble gun.
+〜 Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
+  ⁓ CRASH_CAR - Crash the silver flying car
 
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
@@ -489,6 +626,10 @@ You're not sure how you got here, and that makes you feel really lost. You can g
 
 You can also go really fast sometimes, and you have the Force sometimes.
 
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
+
 LAKE - You can see a lake in one direction. It looks pretty nice.
 ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly.
 LOOK - Look at the area you are currently in.
@@ -505,6 +646,10 @@ This lake is beautiful, but the cloudy sky gives it a grim appearance. This seem
 
 There are enemies are in the lake. The shores of the lake are too far away from them to do anything about them, though
 
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
+
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
 SWIM - Swim around in the lake"
@@ -515,6 +660,10 @@ exports[`hiking get sprayed at the waterfall 3`] = `
 There's rocks here. Be careful! You could trip, or if you horseplay, a rock could fall on your head.
 
 If you are careful, you could cross the rocks to get to a waterfall.
+
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
 
 LAKE - Go to the lake
 WATERFALL - Check it out, you can see a waterfall beyond the rocks"
@@ -531,6 +680,10 @@ This waterfall is at the bottom of a giant mountain and a bunch of trees. There'
 There's a climbing rope that leads to a really big circle. You're not sure what it is, and you don't feel strong enough to climb up right now.
 
 There's water spraying everywhere!
+
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
 
 ROCKS - Go to the place that has a lot of rocks
 MOUNTAIN - Try to climb up the really tall mountain.
@@ -607,6 +760,10 @@ You're not sure how you got here, and that makes you feel really lost. You can g
 
 You can also go really fast sometimes, and you have the Force sometimes.
 
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
+
 LAKE - You can see a lake in one direction. It looks pretty nice.
 ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly.
 LOOK - Look at the area you are currently in.
@@ -656,6 +813,10 @@ You're not sure how you got here, and that makes you feel really lost. You can g
 
 You can also go really fast sometimes, and you have the Force sometimes.
 
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
+
 LAKE - You can see a lake in one direction. It looks pretty nice.
 ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly.
 LOOK - Look at the area you are currently in.
@@ -672,14 +833,19 @@ This lake is beautiful, but the cloudy sky gives it a grim appearance. This seem
 
 There are enemies are in the lake. The shores of the lake are too far away from them to do anything about them, though
 
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
+
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
 SWIM - Swim around in the lake"
 `;
 
 exports[`hiking items and drop key and pick up key 3`] = `
-"Stuff you are holding:
-Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+"Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
 
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.
@@ -701,8 +867,9 @@ This lake is beautiful, but the cloudy sky gives it a grim appearance. This seem
 
 There are enemies are in the lake. The shores of the lake are too far away from them to do anything about them, though
 
-There is an item here you may be interested in:
-Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+Items in Lake
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ TAKE_JAIL_KEY - Pick up the key you stole from the jail.
 
 TAKE_JAIL_KEY - Pick up the key you stole from the jail.
 ROCKS - Go to a place with a lot of rocks
@@ -728,8 +895,9 @@ This lake is beautiful, but the cloudy sky gives it a grim appearance. This seem
 
 There are enemies are in the lake. The shores of the lake are too far away from them to do anything about them, though
 
-There is an item here you may be interested in:
-Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+Items in Lake
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ TAKE_JAIL_KEY - Pick up the key you stole from the jail.
 
 TAKE_JAIL_KEY - Pick up the key you stole from the jail.
 ROCKS - Go to a place with a lot of rocks
@@ -750,6 +918,10 @@ exports[`hiking items and drop key and pick up key 9`] = `
 There's rocks here. Be careful! You could trip, or if you horseplay, a rock could fall on your head.
 
 If you are careful, you could cross the rocks to get to a waterfall.
+
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
 
 LAKE - Go to the lake
 WATERFALL - Check it out, you can see a waterfall beyond the rocks"
@@ -772,8 +944,10 @@ There's no one in the store, but there's a man standing on a tree branch out bac
 
 \\"Oh, a customer! Would you like to buy an apple?\\" he says.
 
-There is an item here you may be interested in:
-Apples - 100 red apples.
+Items in The Apple Store
+〜 Apples - 100 red apples.Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
 
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store
@@ -790,8 +964,10 @@ There's no one in the store, but there's a man standing on a tree branch out bac
 
 \\"Oh, a customer! Would you like to buy an apple?\\" he says.
 
-There is an item here you may be interested in:
-Apples - 100 red apples.
+Items in The Apple Store
+〜 Apples - 100 red apples.Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
 
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store
@@ -827,6 +1003,11 @@ There's a climbing rope that leads to a really big circle. You're not sure what 
 
 There's water spraying everywhere!
 
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
+〜 Apples - 100 red apples.
+
 ROCKS - Go to the place that has a lot of rocks
 MOUNTAIN - Try to climb up the really tall mountain.
 ROPE - Try to climb the rope
@@ -860,8 +1041,11 @@ exports[`hiking purchase some items at the apple shop 7`] = `
 You are at: The Apple Store
 You're in a giant, giant red sphere in the trees. This is an Apple Store. On the inside, it actually a shed. Inside there are many, many shelves full of apples. It looks like there are exactly 0 apples.
 
-There is an item here you may be interested in:
-Apples - 100 red apples.
+Items in The Apple Store
+〜 Apples - 100 red apples.Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
+〜 Apples - 100 red apples.
 
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store"
@@ -873,8 +1057,11 @@ exports[`hiking purchase some items at the apple shop 8`] = `
 You are at: The Apple Store
 You're in a giant, giant red sphere in the trees. This is an Apple Store. On the inside, it actually a shed. Inside there are many, many shelves full of apples. It looks like there are exactly 0 apples.
 
-There is an item here you may be interested in:
-Apples - 100 red apples.
+Items in The Apple Store
+〜 Apples - 100 red apples.Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
+〜 Apples - 100 red apples.
 
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store
@@ -912,10 +1099,13 @@ exports[`hiking purchase some items at the apple shop 11`] = `
 You are at: The Apple Store
 You're in a giant, giant red sphere in the trees. This is an Apple Store. On the inside, it actually a shed. Inside there are many, many shelves full of apples. It looks like there are exactly 0 apples.
 
-There are 3 items here you may be interested in:
-Apples - 100 red apples.
-Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
-Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+Items in The Apple Store
+〜 Apples - 100 red apples.
+〜 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ TAKE_JAIL_KEY - Pick up the key you stole from the jail.Items in your inventory:
+〜 Apples - 100 red apples.
+〜 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
 
 TAKE_JAIL_KEY - Pick up the key you stole from the jail.
 EXIT - If you want to leave the Apple Store
@@ -931,6 +1121,10 @@ This waterfall is at the bottom of a giant mountain and a bunch of trees. There'
 There's a climbing rope that leads to a really big circle. You're not sure what it is, and you don't feel strong enough to climb up right now.
 
 There's water spraying everywhere!
+
+Items in your inventory:
+〜 Apples - 100 red apples.
+〜 Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
 
 ROCKS - Go to the place that has a lot of rocks
 MOUNTAIN - Try to climb up the really tall mountain.
@@ -955,6 +1149,10 @@ You're not sure how you got here, and that makes you feel really lost. You can g
 
 You can also go really fast sometimes, and you have the Force sometimes.
 
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
+
 LAKE - You can see a lake in one direction. It looks pretty nice.
 ROCKS - You can see precarious rocks on the trail in another direction. They look scrambly.
 LOOK - Look at the area you are currently in.
@@ -970,6 +1168,10 @@ You are at: Lake
 This lake is beautiful, but the cloudy sky gives it a grim appearance. This seems to be a place of battle.
 
 There are enemies are in the lake. The shores of the lake are too far away from them to do anything about them, though
+
+Items in your inventory:
+〜 Jail Key - The key you stole from the jail. Since you were put into jail accidentally, you had to steal the key because the bad guys made you.
+  ⁓ DROP_JAIL_KEY - Drop the key you stole from the jail.
 
 ROCKS - Go to a place with a lot of rocks
 BRIDGE - A giant bridge looks like it crosses right over the entire lake.

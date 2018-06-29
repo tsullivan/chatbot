@@ -1,6 +1,6 @@
 const snl = require('strip-newlines');
-const { parajoin } = require('./parajoin');
 const { KeywordResponse } = require('./class_keyword_response');
+const { ItemCollection } = require('./class_item_collection');
 
 function getGameKeywords() {
   return [
@@ -17,39 +17,16 @@ function getGameKeywords() {
     },
     {
       key: 'ITEMS',
-      description: 'Things you can do with stuff you are holding or stuff you see.',
+      description: snl`Things you can do with stuff you are holding or stuff
+        you see.`,
       fn: game => {
-        const invItems = game.getVisibleInventoryItems();
-        const invItemsInfos = invItems
-          .reduce((accum, item) => {
-            return [...accum, item.getInfo()];
-          }, [])
-          .join('\n');
-
-        const locItems = game.currentLocation.getVisibleFloorItems(game);
-        const locItemsHelp = parajoin(locItems.map(item => item.getInfo()));
-
-        const invPre = 'Stuff you are holding:\n';
-        const locPre = 'Stuff you can see:\n';
-        let itemsHelp;
-
-        if (invItems.length > 0 && locItems.length > 0) {
-          itemsHelp = parajoin([invPre + invItemsInfos, locPre + locItemsHelp]);
-        } else {
-          itemsHelp =
-            (invItems.length > 0 && invPre + invItemsInfos) ||
-            (locItems.length > 0 && locPre + locItemsHelp) ||
-            '';
-        }
-
-        if (itemsHelp === '') {
-          return new KeywordResponse({
-            text: snl`There aren't any items around or that you are holding
-              that you can do anything with right now.`,
-          });
-        }
-
-        return new KeywordResponse({ text: itemsHelp });
+        const text = ItemCollection.describeGameItems(game);
+        return new KeywordResponse({
+          text:
+            text ||
+            snl`There aren't any items around or that you are holding that
+              you can do anything with right now.`,
+        });
       },
     },
     {
