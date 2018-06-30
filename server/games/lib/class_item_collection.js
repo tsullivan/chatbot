@@ -1,4 +1,5 @@
 const { UL, LI } = require('../../constants');
+const { parajoin } = require('./parajoin');
 
 class ItemCollection {
   constructor() {
@@ -33,7 +34,7 @@ class ItemCollection {
       'Items in your inventory:'
     );
 
-    const text = floorInfos + invInfos;
+    const text = parajoin([floorInfos, invInfos]);
     return text.length ? text : null;
   }
 

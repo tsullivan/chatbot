@@ -8,6 +8,10 @@ You're locked up securely in a jail cell. A hole in the ceiling marks where you 
 
 There is a jail key on a far wall across the hallway from your jail cell.
 
+
+
+
+
 ESCAPE - Escape from the cell
 TAKE_JAIL_KEY - Somehow take the jail key from the wall.
 WAIT - Wait for the guards to stop watching you.
@@ -18,7 +22,9 @@ QUIT - Quit the game"
 `;
 
 exports[`escape-jail escape 2`] = `
-"There aren't any items around or that you are holding that you can do anything with right now.
+"
+
+
 
 ESCAPE - Escape from the cell
 TAKE_JAIL_KEY - Somehow take the jail key from the wall.
@@ -71,6 +77,8 @@ There's a door at the end of the hallway - that must be the exit.
 
 Just before the door, there is a window to the outside. You can see that you are on the ground floor of the jail, and there is a van right outside. There is a guard walking towards the driver's door.
 
+
+
 Items in your inventory:
 〜 Jail Key - On a hook on a far wall, there is the key to open a jail cell.
 
@@ -88,7 +96,9 @@ You're hiding in a jail van that's driving around the jail, making jail deliveri
 
 Items in The Jail Van
 〜 Jail Towel - A towel from the jail laundry van.
-  ⁓ TAKE_TOWEL - Take one of the towels from the jail laundry van.Items in your inventory:
+  ⁓ TAKE_TOWEL - Take one of the towels from the jail laundry van.
+
+Items in your inventory:
 〜 Jail Key - On a hook on a far wall, there is the key to open a jail cell.
 
 TAKE_TOWEL - Take one of the towels from the jail laundry van.
@@ -107,6 +117,8 @@ Now, all you have to do is get over this fence...
 To be honest, it's a little scary right now because you really don't know what's out here. And there's cops chasing you, but they're far behind. You have the Force and you can go super fast...
 
 You're at the huge fence that goes all around the jail and keeps the prisoners inside. It's very tall and you would have to be a really good climber or a really good jumper, or both, to get over this thing. And you would have to be really really good to do it without getting noticed by a guard!
+
+
 
 Items in your inventory:
 〜 Jail Key - On a hook on a far wall, there is the key to open a jail cell.
