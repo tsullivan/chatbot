@@ -1,6 +1,7 @@
 const snl = require('strip-newlines');
 const { KeywordResponse } = require('./class_keyword_response');
 const { ItemCollection } = require('./class_item_collection');
+const { parajoin } = require('./parajoin');
 
 function getGameKeywords() {
   return [
@@ -9,8 +10,11 @@ function getGameKeywords() {
       description: 'Look at the area you are currently in.',
       fn: game => {
         // get the area description + the available keyword commands
+        const { currentLocation } = game;
+        const descriptionInternal = currentLocation.getDescriptionInternal(game);
+        const itemsInternal = ItemCollection.describeGameItems(game);
         return new KeywordResponse({
-          text: game.currentLocation.getDescriptionInternal(game),
+          text: parajoin([descriptionInternal, itemsInternal].filter(Boolean)), // (2)
           isCascade: true,
         });
       },
@@ -20,7 +24,7 @@ function getGameKeywords() {
       description: snl`Things you can do with stuff you are holding or stuff
         you see.`,
       fn: game => {
-        const text = ItemCollection.describeGameItems(game);
+        const text = ItemCollection.describeGameItemsFull(game); // 3
         return new KeywordResponse({
           text:
             text ||

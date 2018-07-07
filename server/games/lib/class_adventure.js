@@ -175,7 +175,7 @@ class Adventure extends ChatGame {
     return ItemCollection.getVisibleItemsFromSet(this._inventory, this);
   }
   getVisibleLocationItems() {
-    return this.currentLocation.getVisibleFloorItems(this); // BUG not getting the ladder in the playground
+    return this.currentLocation.getVisibleFloorItems(this);
   }
 
   getNext(prefix, showInstructions) {
@@ -188,7 +188,6 @@ class Adventure extends ChatGame {
 
   getLocationDescription() {
     const { response: locationText } = this.getInputResponse('LOOK', this, this);
-    // TODO list keywords for items in inventory
     return locationText;
   }
 

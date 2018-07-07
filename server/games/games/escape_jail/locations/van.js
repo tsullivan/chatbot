@@ -7,8 +7,6 @@ class VanLocation extends Location {
     super({ game, name: 'The Jail Van' });
   }
 
-  // there's a towel item on the floor // BUG why not visible in the code
-
   getDescription() {
     return snl`You're hiding in a jail van that's driving around the jail,
       making jail deliveries to the jail people.`;

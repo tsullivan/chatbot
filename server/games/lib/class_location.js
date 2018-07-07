@@ -91,13 +91,7 @@ class Location {
   }
 
   getDescriptionInternal(game) {
-    const lns = [`You are at: ${this.getName()}\n${this.getDescription(game)}`];
-    const text = ItemCollection.describeGameItems(game);
-    if (text) {
-      lns.push(text);
-    }
-
-    return parajoin(lns);
+    return `You are at: ${this.getName()}\n${this.getDescription(game)}`;
   }
 
   getName() {

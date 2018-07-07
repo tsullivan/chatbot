@@ -1,12 +1,50 @@
+const { values: getValues } = require('lodash');
 const { UL, LI } = require('../../constants');
 const { parajoin } = require('./parajoin');
+
+// give name and instructions for each inventory and floor item
+function describeItSimple(item) {
+  return UL + item.getInfo();
+}
+// just mention visible items, ignore inventory
+function prefixItSimple({ floorItems /*, inventoryItems */ }) {
+  return { floorItems: floorItems != null ? 'You see:\n' + floorItems : floorItems };
+}
 
 class ItemCollection {
   constructor() {
     this._items = new Map();
   }
 
-  static describeGameItems(game) {
+  /*
+   * Get the stuff to say about the items, but get them prefixed in a specific
+   * way determined by the caller
+   * @return {String}
+   */
+  static describeGameItems(
+    game,
+    describeIt = describeItSimple,
+    prefixIt = prefixItSimple
+  ) {
+    const getTheirInfo = items => {
+      return items.length ? items.map(describeIt).join('\n') : null;
+    };
+    const blocks = getValues(
+      prefixIt({
+        floorItems: getTheirInfo(game.currentLocation.getVisibleFloorItems(game)),
+        inventoryItems: getTheirInfo(game.getVisibleInventoryItems()),
+      })
+    ).filter(Boolean); // drop null info
+
+    return blocks.length > 0 ? parajoin(blocks) : null;
+  }
+
+  /*
+   * Get the stuff to say about the items, prefixed for where the item is, with the instructions for each item
+   * @return {String}
+   */
+  static describeGameItemsFull(game) {
+    // give name and instructions for each inventory and floor item
     const describeIt = item => {
       let words = UL + item.getInfo();
       const instructions = item.getInstructions(LI);
@@ -15,27 +53,19 @@ class ItemCollection {
       }
       return words;
     };
-    const getTheirInfo = (items, prefix) => {
-      let infos = '';
-      if (items.length) {
-        infos += `${prefix}\n`;
-        infos += items.map(describeIt).join('\n');
-      }
-      return infos;
+    const prefixIt = ({ floorItems, inventoryItems }) => {
+      return {
+        floorItems:
+          floorItems != null
+            ? `In ${game.currentLocation.getName()}, You see:\n` + floorItems
+            : floorItems,
+        inventoryItems:
+          inventoryItems != null
+            ? 'You are holding:\n' + inventoryItems
+            : inventoryItems,
+      };
     };
-
-    const floorInfos = getTheirInfo(
-      game.currentLocation.getVisibleFloorItems(game),
-      `Items in ${game.currentLocation.getName()}`
-    );
-
-    const invInfos = getTheirInfo(
-      game.getVisibleInventoryItems(),
-      'Items in your inventory:'
-    );
-
-    const text = parajoin([floorInfos, invInfos]);
-    return text.length ? text : null;
+    return ItemCollection.describeGameItems(game, describeIt, prefixIt);
   }
 
   static getAllItemsFromSet(collection, game, { pushCondition = () => true } = {}) {
