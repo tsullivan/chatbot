@@ -1,22 +1,15 @@
-html, body {
-  height: 100%;
+body {
+  background-color: #98441c66;
 }
-
 #main {
-  height: 100%;
   display: flex;
   flex-flow: column;
-  padding-bottom: 15px;
 }
-  #chat, #history {
-    margin-bottom: 3px;
-  }
   #history {
     display: flex;
     flex: 1 1 20%;
     flex-direction: column;
     overflow: auto;
-    padding: 1.5px;
   }
   #chat {
     display: flex;
@@ -29,7 +22,6 @@ html, body {
     #chatBtnContainer {
       flex-grow: 0;
     }
-
 .userMessageBody {
   text-align: right;
 }
