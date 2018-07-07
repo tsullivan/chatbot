@@ -6,7 +6,7 @@
   "scripts": {
     "test": "yarn run lint & yarn run jest",
     "lint": "eslint .",
-    "jest": "NODE_ENV=test jest ./*/*.test.js ",
+    "jest": "NODE_ENV=test jest --verbose ./*/*.test.js ",
     "start": "node index.js",
     "debug": "node --inspect-brk index.js",
     "dev": "nodemon index.js",
