@@ -14,6 +14,7 @@ function initRoutes(app, chatPromise) {
       console.log({ error: err }); // eslint-disable-line no-console
       res.statusCode = err.status || 500;
       res.end(err.message);
+      throw err;
     }
 
     apm.setUserContext({
