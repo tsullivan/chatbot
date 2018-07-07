@@ -1,38 +1,38 @@
 html, body {
   height: 100%;
-  background-color: #333c;
 }
+
 #main {
   height: 100%;
   display: flex;
   flex-flow: column;
   padding-bottom: 15px;
 }
-#chatWithAbot, #chat, #history {
-  background-color: #cccccce3;
-  border-radius: 5px;
-  margin-bottom: 3px;
-}
-#chatWithAbot {
-  padding: 8px 6.5px;
-}
-#chatBtn {
-  position: absolute;
-  visibility: hidden;
-}
-#history {
-  flex: 1 1 20%;
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-  padding: 1.5px;
+  #chat, #history {
+    margin-bottom: 3px;
+  }
+  #history {
+    display: flex;
+    flex: 1 1 20%;
+    flex-direction: column;
+    overflow: auto;
+    padding: 1.5px;
+  }
+  #chat {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+    #typeSomethingContainer {
+      flex-grow: 1;
+    }
+    #chatBtnContainer {
+      flex-grow: 0;
+    }
+
+.userMessageBody {
+  text-align: right;
 }
 .messageBody {
   white-space: pre-line;
-}
-.messageName {
-  font-weight: bold;
-}
-.userMessageBody {
-  text-align: right;
 }

@@ -2,28 +2,16 @@
 
 window.messageFormatter = (() => {
   $.templates({
-    user: `
-      <div class="panel panel-default">
-        <div class="panel-body userMessageBody">
-          <span class="messageName">You:</span>
-          <div class="messageBody">{{>message}}</div>
-      </div>
-    `,
+    user: `<p class="userMessageBody">{{>message}}</p>`,
     help: `
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <span class="messageName">Keyword help:</span>
-          <div class="messageBody">{{>message}}</div>
-        </div>
-      </div>
+      <blockquote>
+        <p class="messageBody">{{>message}}</p>
+      </blockquote>
     `,
     plain: `
-      <div class="panel panel-primary">
-        <div class="panel-body">
-          <span class="messageName">{{>name}}:</span>
-          <div class="messageBody">{{>message}}</div>
-        </div>
-      </div>
+      <blockquote>
+        <p class="messageBody">{{>message}}</p>
+      </blockquote>
     `,
   });
 

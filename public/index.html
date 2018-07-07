@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ChatBot</title>
   <link rel="stylesheet" type="text/css" href="vendor/bootstrap.min.css">
-  <link rel="stylesheet"  rel="stylesheet"href="./index.css">
+  <link rel="stylesheet" type="text/css" href="./index.css">
   <script type="text/javascript" src="vendor/jquery.min.js"></script>
   <script type="text/javascript" src="vendor/bootstrap.min.js"></script>
   <script type="text/javascript" src="vendor/jsrender.min.js"></script>
@@ -13,23 +15,29 @@
 <body>
 
   <div id="main" class="container">
-    <div id="chatWithAbot">
-      <h2 class="panel-title">Chat with a Bot</h2>
-    </div>
-    <form id="chat" class="form-group">
-      <input
-        type="text"
-        id="userText"
-        class="form-control"
-        placeholder="Type something"
-        autocomplete="off"
-        autocorrect="off"
-        autocapitalize="off"
-      />
-      <button type="submit" id="chatBtn" class="btn btn-default">Send</button>
-    </form>
-
     <div id="history" aria-atomic="false" aria-live="polite"></div>
+    <form id="chat" class="form-group">
+      <div id="typeSomethingContainer">
+        <input
+          type="text"
+          id="userText"
+          class="form-control input-lg"
+          placeholder="Type something"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+        />
+      </div>
+      <div id="chatBtnContainer">
+        <button
+          type="submit"
+          id="chatBtn"
+          class="btn btn-default input-lg"
+        >
+          Send
+        </button>
+      </div>
+    </form>
   </div>
 
   <script type="text/javascript" src="js/ajax.js"></script>

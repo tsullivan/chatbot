@@ -1,15 +1,19 @@
 /* global $ */
 function Ajax() {
   let lastText = '';
-  function updateHistory(message, $container) {
-    const html = window.messageFormatter(message);
-    if (html) {
-      const $html = $(`<div role="log">${html}</div>`);
-      $container.prepend($html); // add to page
+  function updateHistory($container, ...messages) {
+    $container.empty();
 
-      const fadeTo = message.format === 'user' ? 0 : 1200;
-      $html.fadeTo(0, 0); // make invisible
-      $html.fadeTo(fadeTo, 1); // make visible
+    for (const message of messages) {
+      const html = window.messageFormatter(message);
+      if (html) {
+        const $html = $(`<div role="log">${html}</div>`);
+        $container.prepend($html); // add to page
+
+        const fadeTo = message.format === 'user' ? 0 : 1200;
+        $html.fadeTo(0, 0); // make invisible
+        $html.fadeTo(fadeTo, 1); // make visible
+      }
     }
   }
 
@@ -49,9 +53,8 @@ function Ajax() {
 
       sendMessage(messageText, 'user', (message, response) => {
         lastText = messageText;
-        updateHistory(message, $history);
         $userText.val('');
-        updateHistory(response, $history);
+        updateHistory($history, message, response);
       });
     };
   }
@@ -61,7 +64,7 @@ function Ajax() {
       $('#chat').on('submit', handleSubmit($userText, $history));
 
       sendMessage('HELO', 'syn', (message, response) => {
-        updateHistory(response, $history);
+        updateHistory($history, response);
       });
     },
   };
