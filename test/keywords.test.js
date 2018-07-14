@@ -1,9 +1,10 @@
-const { runServer } = require('../server');
 const request = require('supertest');
+const { runServer } = require('../server');
 const { utilFactory } = require('./utils');
 
 const app = runServer();
-const { handshake } = utilFactory(app);
+const agent = request.agent(app);
+const { handshake } = utilFactory(agent);
 
 describe('Keywords', () => {
   let message;
@@ -12,11 +13,9 @@ describe('Keywords', () => {
   });
 
   test('should make some random phrase', async () => {
-    await handshake(app);
+    await handshake();
 
-    const res = await request(app)
-      .post('/chat')
-      .send({ format: 'user', message: 'phrase' });
+    const res = await agent.post('/chat').send({ format: 'user', message: 'phrase' });
     expect(res.statusCode).toEqual(200);
     message = res.body.message;
   });

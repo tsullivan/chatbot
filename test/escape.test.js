@@ -1,18 +1,15 @@
+const request = require('supertest');
 const { runServer } = require('../server');
 const { utilFactory } = require('./utils');
 
 const app = runServer();
-const { handshake, send, checkResponses } = utilFactory(app);
+const agent = request.agent(app);
+const { handshake, send, checkResponses } = utilFactory(agent);
 
 describe('escape-jail', () => {
-  beforeEach(() => handshake(app));
-
-  let resps;
-  beforeEach(() => {
-    resps = [];
-  });
-
   test('escape', async () => {
+    await handshake(app);
+    const resps = [];
     resps[resps.length] = await send('play escape_jail');
     resps[resps.length] = await send('items');
     resps[resps.length] = await send('escape');

@@ -1,32 +1,31 @@
-const request = require('supertest');
-
-const utilFactory = app => {
-  if (!app) {
-    throw new Error('app param required');
+const utilFactory = agent => {
+  if (!agent) {
+    throw new Error('agent param required');
   }
 
   return {
     handshake: async () => {
-      const greetHello = await request(app)
+      await agent
         .post('/chat')
-        .send({ format: 'syn', message: 'HELO' });
+        .send({ format: 'syn', message: 'HELO' })
+        .expect(200)
+        .then(res => {
+          expect(res.body.format).toEqual('plain');
+          expect(res.body.message).toEqual('Hello! What is your name?');
+          expect(res.body.name).toEqual('Beep Beep Beep');
+        });
 
-      expect(greetHello.statusCode).toEqual(200);
-      expect(greetHello.body.format).toEqual('plain');
-      expect(greetHello.body.message).toEqual('Hello! What is your name?');
-      expect(greetHello.body.name).toEqual('Beep Beep Beep');
-
-      const sayName = await request(app)
+      await agent
         .post('/chat')
-        .send({ format: 'user', message: 'Tim' });
-
-      expect(sayName.body.message).toEqual('Hello, Tim! Nice to meet you.');
+        .send({ format: 'user', message: 'Tim' })
+        .expect(200)
+        .then(res => {
+          expect(res.body.message).toEqual('Hello, Tim! Nice to meet you.');
+        });
     },
 
     send: message => {
-      return request(app)
-        .post('/chat')
-        .send({ format: 'user', message });
+      return agent.post('/chat').send({ format: 'user', message });
     },
 
     checkResponses: resps => {

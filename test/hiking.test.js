@@ -1,8 +1,10 @@
+const request = require('supertest');
 const { runServer } = require('../server');
 const { utilFactory } = require('./utils');
 
 const app = runServer();
-const { handshake, send, checkResponses } = utilFactory(app);
+const agent = request.agent(app);
+const { handshake, send, checkResponses } = utilFactory(agent);
 
 describe('hiking', () => {
   beforeEach(() => handshake());
