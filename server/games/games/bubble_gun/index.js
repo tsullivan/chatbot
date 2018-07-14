@@ -7,7 +7,7 @@ class BubbleGun extends Adventure {
   constructor(session) {
     super(session);
 
-    this.name = 'bubble-gun';
+    this.name = 'bubble_gun';
 
     const locations = getLocations(this);
     this.currentLocation = locations.playgroundLocation;

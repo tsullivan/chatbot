@@ -7,7 +7,7 @@ class EscapeJail extends Adventure {
   constructor(session) {
     super(session);
 
-    this.name = 'escape-jail';
+    this.name = 'escape_jail';
 
     const locations = getLocations(this);
     this.currentLocation = locations.cellLocation;
