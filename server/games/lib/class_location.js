@@ -24,30 +24,11 @@ class Location {
       return this.followExitInternal(game, direction, prefix);
     };
 
-    this.updateState(game);
-
-    /*
-     * For location, need the commands for the visible items in the room
-     */
-    this.getInstructions = (prefix = '') => {
-      const getInstructions = keywordsHelper.getInstructions.bind(this);
-      const locationInstructions = getInstructions(prefix);
-
-      // show any items on the floor
-      const itemInfos = this.getVisibleFloorItems(game).reduce((accum, item) => {
-        if (item.hasKeywords()) {
-          return [...accum, item.getInstructions()];
-        }
-        return accum;
-      }, []);
-
-      const lns = [];
-      if (itemInfos.length > 0) {
-        lns.push(itemInfos.join('\n'));
-      }
-      lns.push(locationInstructions);
-      return lns.join('\n');
+    this.getInstructions = (...args) => {
+      return this.getInstructionsInternal(game, keywordsHelper, ...args);
     };
+
+    this.updateState(game);
   }
 
   updateState() {
@@ -74,6 +55,29 @@ class Location {
     return new KeywordResponse({
       text: 'Bad directions!!! ' + direction,
     });
+  }
+
+  /*
+   * For location, need the commands for the visible items in the room
+   */
+  getInstructionsInternal(game, keywordsHelper, prefix = '') {
+    const getInstructions = keywordsHelper.getInstructions.bind(this);
+    const locationInstructions = getInstructions(prefix);
+
+    // show any items on the floor
+    const itemInfos = this.getVisibleFloorItems(game).reduce((accum, item) => {
+      if (item.hasKeywords()) {
+        return [...accum, item.getInstructions()];
+      }
+      return accum;
+    }, []);
+
+    const lns = [];
+    if (itemInfos.length > 0) {
+      lns.push(itemInfos.join('\n'));
+    }
+    lns.push(locationInstructions);
+    return lns.join('\n');
   }
 
   addExit({ location, exit, inverseExit }) {
