@@ -1,9 +1,11 @@
-const { handshake, send, checkResponses } = require('./utils');
+const { runServer } = require('../server');
+const { utilFactory } = require('./utils');
+
+const app = runServer();
+const { handshake, send, checkResponses } = utilFactory(app);
 
 describe('bubble_gun', () => {
-  beforeAll(() => {
-    return handshake();
-  });
+  beforeEach(() => handshake(app));
 
   let resps;
   beforeEach(() => {

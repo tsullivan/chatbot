@@ -1,5 +1,7 @@
-const { app } = require('../server');
+const { runServer } = require('../server');
 const request = require('supertest');
+
+const app = runServer();
 
 describe('Chatbot', () => {
   test('should respond with the time and the bot name', async () => {
@@ -9,6 +11,5 @@ describe('Chatbot', () => {
 
     expect(res.statusCode).toEqual(200);
     expect(res.body.name).toEqual('Beep Beep Beep');
-    expect(res.body.time).toMatch('2018');
   });
 });

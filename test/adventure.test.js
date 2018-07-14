@@ -1,10 +1,13 @@
-const { app } = require('../server');
+const { runServer } = require('../server');
 const request = require('supertest');
-const { handshake } = require('./utils');
+const { utilFactory } = require('./utils');
+
+const app = runServer();
+const { handshake } = utilFactory(app);
 
 describe('adventure', () => {
   test('start', async () => {
-    await handshake();
+    await handshake(app);
 
     const { body } = await request(app)
       .post('/chat')

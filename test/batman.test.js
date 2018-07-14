@@ -1,10 +1,13 @@
-const { app } = require('../server');
+const { runServer } = require('../server');
 const request = require('supertest');
-const { handshake } = require('./utils');
+const { utilFactory } = require('./utils');
+
+const app = runServer();
+const { handshake } = utilFactory(app);
 
 describe('batman', () => {
   test('should win at the batman game', async () => {
-    await handshake();
+    await handshake(app);
 
     const startGame = await request(app)
       .post('/chat')
@@ -26,7 +29,7 @@ describe('batman', () => {
   });
 
   test('should lose at the batman game', async () => {
-    await handshake();
+    await handshake(app);
 
     const startGame = await request(app)
       .post('/chat')

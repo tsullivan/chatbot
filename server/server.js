@@ -3,20 +3,27 @@ const apm = require('elastic-apm-node').start(apmConfig);
 
 const { join } = require('path');
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const { initSession } = require('./session');
 const { initRoutes } = require('./routes');
 
-const app = express();
-const pubs = join(__dirname, '..', 'public');
+function runServer() {
+  const app = express();
 
-app.use(express.static(pubs)); // home html page, static js
-app.use(apm.middleware.connect());
+  const pubs = join(__dirname, '..', 'public');
+  app.use(express.static(pubs)); // home html page, static js
 
-app.get('/', (req, res) => {
-  res.sendFile(join(pubs, 'index.html'));
-});
+  app.use(cookieParser());
+  app.use(apm.middleware.connect());
 
-// init chat route
-initRoutes(app, initSession(app));
+  app.get('/', (req, res) => {
+    res.sendFile(join(pubs, 'index.html'));
+  });
 
-module.exports = { app };
+  // init chat route
+  initRoutes(app, initSession(app));
+
+  return app;
+}
+
+module.exports = { runServer };
