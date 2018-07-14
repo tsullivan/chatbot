@@ -1,3 +1,4 @@
+const { get } = require('lodash');
 const session = require('express-session');
 const { session_secret: sessionSecret } = require('../../config');
 const { ChatSession } = require('./chat_session');
@@ -24,9 +25,15 @@ function initSession(app) {
         req.session.chat = chat.getResumed(req.session);
         // resume game
         if (req.session.chat.game !== null) {
-          const game = new games[req.session.chat.game.name].Game(req.session.chat);
-          game.resume(req.session.chat.game);
-          req.session.chat.game = game;
+          const sessionGame = get(req, 'session.chat.game', null);
+          if (sessionGame != null) {
+            if (!sessionGame.name || !games[sessionGame.name]) {
+              throw new Error('Bad game name in session! ' + sessionGame.name);
+            }
+            const game = new games[sessionGame.name].Game(req.session.chat);
+            game.resume(sessionGame);
+            req.session.chat.game = game;
+          }
         }
       }
 
