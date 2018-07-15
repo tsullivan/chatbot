@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Keywords should give a requested joke 1`] = `
+"Here is joke number 5:
+Why did the man throw a butterfly out of the window?
+Because he wanted it to be able to smell around the world!"
+`;
