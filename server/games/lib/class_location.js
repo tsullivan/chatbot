@@ -24,7 +24,7 @@ class Location {
       return this.followExitInternal(game, direction, prefix);
     };
 
-    this.getInstructions = (...args) => {
+    this.getInstructions = (_game, ...args) => {
       return this.getInstructionsInternal(game, keywordsHelper, ...args);
     };
 

@@ -2,6 +2,7 @@ const { ChatGame } = require('../chat_game');
 const { getKeywordsHelper } = require('./keywords_helper');
 const { getGameKeywords } = require('./game_keywords');
 const { ItemCollection } = require('./class_item_collection');
+const { Location } = require('./class_location');
 const { parajoin } = require('./parajoin');
 
 class Adventure extends ChatGame {
@@ -16,6 +17,7 @@ class Adventure extends ChatGame {
     this.yesDone = response => ({ response, isDone: true });
 
     // should override
+    this._currentLocation = null;
     this.name = 'unknown game';
     this.locations = {};
   }
@@ -36,11 +38,18 @@ class Adventure extends ChatGame {
     items.forEach(item => item.updateState(this));
 
     // update location states
-    this.currentLocation.clearKeywords();
-    this.currentLocation.setLocationKeywords(this);
-    this.currentLocation.setVisibleItemKeywords(this);
+    this._currentLocation.clearKeywords();
+    this._currentLocation.setLocationKeywords(this);
+    this._currentLocation.setVisibleItemKeywords(this);
 
     // update npc states
+  }
+
+  getCurrentLocation() {
+    if (!(this._currentLocation instanceof Location)) {
+      throw new Error('_currentLocation is not a Location instance');
+    }
+    return this._currentLocation;
   }
 
   getInputHandlerItem(items, input) {
@@ -68,7 +77,7 @@ class Adventure extends ChatGame {
   }
 
   setLocation(location) {
-    this.currentLocation = location;
+    this._currentLocation = location;
   }
 
   testInput(input) {
@@ -88,7 +97,7 @@ class Adventure extends ChatGame {
       },
       {
         inputCheck: game =>
-          game.currentLocation.hasKeyword(input) && game.currentLocation, // location keyword
+          game.getCurrentLocation().hasKeyword(input) && game.getCurrentLocation(), // location keyword
         getResponder: currentLocation => currentLocation.getInputResponse(input, this),
       },
       {
@@ -175,7 +184,7 @@ class Adventure extends ChatGame {
     return ItemCollection.getVisibleItemsFromSet(this._inventory, this);
   }
   getVisibleLocationItems() {
-    return this.currentLocation.getVisibleFloorItems(this);
+    return this._currentLocation.getVisibleFloorItems(this);
   }
 
   getNext(prefix, showInstructions) {
@@ -192,7 +201,7 @@ class Adventure extends ChatGame {
   }
 
   getLocationInstructions() {
-    return this.currentLocation.getInstructions();
+    return this._currentLocation.getInstructions(this);
   }
 
   getWelcome(prefix = '') {
@@ -200,7 +209,7 @@ class Adventure extends ChatGame {
     if (prefix !== '') {
       lns.push(prefix);
     }
-    const locationDescription = this.currentLocation.getDescriptionInternal(this);
+    const locationDescription = this._currentLocation.getDescriptionInternal(this);
     const { response: locationHelp } = this.getInputResponse('HELP', this, this);
     lns.push(locationDescription);
     lns.push(locationHelp);

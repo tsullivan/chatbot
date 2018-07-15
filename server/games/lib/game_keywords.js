@@ -10,8 +10,9 @@ function getGameKeywords() {
       description: 'Look at the area you are currently in.',
       fn: game => {
         // get the area description + the available keyword commands
-        const { currentLocation } = game;
-        const descriptionInternal = currentLocation.getDescriptionInternal(game);
+        const descriptionInternal = game
+          .getCurrentLocation()
+          .getDescriptionInternal(game);
         const itemsInternal = ItemCollection.describeGameItems(game);
         return new KeywordResponse({
           text: parajoin([descriptionInternal, itemsInternal].filter(Boolean)), // (2)

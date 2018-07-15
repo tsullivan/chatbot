@@ -10,8 +10,7 @@ class EscapeJail extends Adventure {
     this.name = 'escape_jail';
 
     const locations = getLocations(this);
-    this.currentLocation = locations.cellLocation;
-
+    this.setLocation(locations.cellLocation);
     const items = getItems(this);
     setItemsToLocations(items, locations, this);
 

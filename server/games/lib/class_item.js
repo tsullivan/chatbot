@@ -15,7 +15,7 @@ class Item {
     if (!(game instanceof Object)) {
       throw new Error('game must be an Adventure object');
     }
-    if (!game.currentLocation) {
+    if (!game.getCurrentLocation()) {
       throw new Error('need a current location for the game');
     }
     if (typeof name !== 'string') {
@@ -107,16 +107,16 @@ class Item {
     // add a drop keyword if item is currently in inventory
     if (game.inInventory(this._id)) {
       this.addKeyword(keyword, keywordDescription, () => {
-        game.dropInventory(this._id, game.currentLocation);
+        game.dropInventory(this._id, game.getCurrentLocation());
         return fn(this);
       });
     }
   }
   setTakeable(game, { keyword, keywordDescription, fn }) {
     // add a take keyword if game location has the item
-    if (game.currentLocation.hasFloorItem(this._id)) {
+    if (game.getCurrentLocation().hasFloorItem(this._id)) {
       this.addKeyword(keyword, keywordDescription, () => {
-        game.takeFromLocation(this._id, game.currentLocation);
+        game.takeFromLocation(this._id, game.getCurrentLocation());
         return fn(this);
       });
     }

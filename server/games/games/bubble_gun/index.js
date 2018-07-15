@@ -10,7 +10,7 @@ class BubbleGun extends Adventure {
     this.name = 'bubble_gun';
 
     const locations = getLocations(this);
-    this.currentLocation = locations.playgroundLocation;
+    this.setLocation(locations.playgroundLocation);
 
     const items = getItems(this);
     setItemsToLocations(items, locations, this);

@@ -31,7 +31,7 @@ class ItemCollection {
     };
     const blocks = getValues(
       prefixIt({
-        floorItems: getTheirInfo(game.currentLocation.getVisibleFloorItems(game)),
+        floorItems: getTheirInfo(game.getCurrentLocation().getVisibleFloorItems(game)),
         inventoryItems: getTheirInfo(game.getVisibleInventoryItems()),
       })
     ).filter(Boolean); // drop null info
@@ -57,7 +57,7 @@ class ItemCollection {
       return {
         floorItems:
           floorItems != null
-            ? `In ${game.currentLocation.getName()}, You see:\n` + floorItems
+            ? `In ${game.getCurrentLocation().getName()}, You see:\n` + floorItems
             : floorItems,
         inventoryItems:
           inventoryItems != null

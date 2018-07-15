@@ -10,7 +10,7 @@ class AdventureGame extends Adventure {
     this.name = 'adventure';
 
     const { startLocation, caveLocation } = getLocations(this);
-    this.currentLocation = startLocation;
+    this.setLocation(startLocation);
 
     const { windowHandleItem } = getItems(this);
     this.addItemToCollection(WINDOW_HANDLE, windowHandleItem);
