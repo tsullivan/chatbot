@@ -18,7 +18,7 @@ class Adventure extends ChatGame {
 
     // should override
     this._currentLocation = null;
-    this.name = 'unknown game';
+    this.name = null;
     this.locations = {};
   }
 

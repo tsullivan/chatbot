@@ -6,8 +6,7 @@ const { getLocations } = require('./locations');
 class BubbleGun extends Adventure {
   constructor(session) {
     super(session);
-
-    this.name = 'bubble_gun';
+    this.setName('bubble_gun');
 
     const locations = getLocations(this);
     this.setLocation(locations.playgroundLocation);

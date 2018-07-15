@@ -7,7 +7,7 @@ const { getItems } = require('./items');
 class AdventureGame extends Adventure {
   constructor(session) {
     super(session);
-    this.name = 'adventure';
+    this.setName('adventure');
 
     const { startLocation, caveLocation } = getLocations(this);
     this.setLocation(startLocation);

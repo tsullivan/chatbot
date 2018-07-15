@@ -6,7 +6,7 @@ const { getLocations } = require('./locations');
 class HikingGame extends Adventure {
   constructor(session) {
     super(session);
-    this.name = 'hiking';
+    this.setName('hiking');
 
     const locations = getLocations(this);
     this.setLocation(locations.start);

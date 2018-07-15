@@ -17,8 +17,12 @@ class ChatGame {
     };
   }
 
+  setName(name) {
+    this._name = name;
+    return name;
+  }
   getName() {
-    return this.name;
+    return this._name;
   }
 
   resume(chat) {

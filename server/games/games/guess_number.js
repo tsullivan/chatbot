@@ -10,7 +10,7 @@ const notDone = response => ({ response, isDone: false });
 class GuessNumber extends ChatGame {
   constructor(session) {
     super(session);
-    this.name = 'guess_number';
+    this.setName('guess_number');
   }
 
   init() {

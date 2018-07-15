@@ -6,8 +6,7 @@ const { setItemsToLocations, getItems } = require('./items');
 class EscapeJail extends Adventure {
   constructor(session) {
     super(session);
-
-    this.name = 'escape_jail';
+    this.setName('escape_jail');
 
     const locations = getLocations(this);
     this.setLocation(locations.cellLocation);
