@@ -74,6 +74,11 @@ class Adventure extends ChatGame {
   init() {
     this.score = 50;
     this.turns = 0;
+
+    if (this.postInit) {
+      this.postInit();
+    }
+    this.updateState();
   }
 
   setLocation(location) {

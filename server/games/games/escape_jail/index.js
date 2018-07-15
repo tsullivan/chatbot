@@ -7,13 +7,14 @@ class EscapeJail extends Adventure {
   constructor(session) {
     super(session);
     this.setName('escape_jail');
+  }
 
+  postInit() {
     const locations = getLocations(this);
     this.setLocation(locations.cellLocation);
+
     const items = getItems(this);
     setItemsToLocations(items, locations, this);
-
-    this.updateState();
   }
 
   getWelcome() {

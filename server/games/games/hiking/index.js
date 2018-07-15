@@ -7,14 +7,14 @@ class HikingGame extends Adventure {
   constructor(session) {
     super(session);
     this.setName('hiking');
+  }
 
+  postInit() {
     const locations = getLocations(this);
     this.setLocation(locations.start);
 
     const items = getItems(this);
     setItemsToLocations(items, locations, this);
-
-    this.updateState();
   }
 
   lose(response) {

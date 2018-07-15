@@ -7,14 +7,14 @@ class BubbleGun extends Adventure {
   constructor(session) {
     super(session);
     this.setName('bubble_gun');
+  }
 
+  postInit() {
     const locations = getLocations(this);
     this.setLocation(locations.playgroundLocation);
 
     const items = getItems(this);
     setItemsToLocations(items, locations, this);
-
-    this.updateState();
   }
 
   getWelcome() {

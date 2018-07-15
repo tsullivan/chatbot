@@ -8,15 +8,15 @@ class AdventureGame extends Adventure {
   constructor(session) {
     super(session);
     this.setName('adventure');
+  }
 
+  postInit() {
     const { startLocation, caveLocation } = getLocations(this);
     this.setLocation(startLocation);
 
     const { windowHandleItem } = getItems(this);
     this.addItemToCollection(WINDOW_HANDLE, windowHandleItem);
     caveLocation.addFloorItem(WINDOW_HANDLE);
-
-    this.updateState();
   }
 
   lose(response) {
