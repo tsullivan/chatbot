@@ -40,7 +40,7 @@ class Item {
 
     this._setActions = setActions;
 
-    this.updateState(game);
+    this.setItemActions(game);
   }
 
   /*
@@ -50,7 +50,7 @@ class Item {
     return `${this.getName()} - ${this.getDescription()}`;
   }
 
-  updateState(game) {
+  setItemActions(game) {
     return this._setActions({
       setDroppable: partial(this.setDroppable, game).bind(this),
       setTakeable: partial(this.setTakeable, game).bind(this),

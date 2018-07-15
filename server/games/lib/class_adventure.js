@@ -35,7 +35,7 @@ class Adventure extends ChatGame {
 
     // update inventory item states
     const items = ItemCollection.getAllItemsFromSet(this._inventory, this);
-    items.forEach(item => item.updateState(this));
+    items.forEach(item => item.setItemActions(this));
 
     // update location states
     this._currentLocation.clearKeywords();

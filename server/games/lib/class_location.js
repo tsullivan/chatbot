@@ -116,7 +116,7 @@ class Location {
   }
   setVisibleItemKeywords(game) {
     const items = ItemCollection.getVisibleItemsFromSet(this._floorItems, game);
-    items.forEach(item => item.updateState(game));
+    items.forEach(item => item.setItemActions(game));
   }
 }
 
