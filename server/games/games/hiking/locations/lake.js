@@ -24,7 +24,7 @@ class LakeLocation extends Location {
     return parajoin(lns);
   }
 
-  updateState(game) {
+  setLocationKeywords(game) {
     this.addKeyword('ROCKS', 'Go to a place with a lot of rocks', () =>
       this.followExit(SOUTH)
     );

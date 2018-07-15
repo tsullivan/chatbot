@@ -20,7 +20,7 @@ class HallwayLocation extends Location {
     return parajoin(lns);
   }
 
-  updateState(/*game*/) {
+  setLocationKeywords(/*game*/) {
     this.addKeyword(
       'ESCAPE',
       snl`Escape down the hallway and quickly jump into the back of the van`,

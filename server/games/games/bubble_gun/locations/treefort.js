@@ -12,7 +12,7 @@ class TreeFortLocation extends Location {
       of the entire playground.`;
   }
 
-  updateState(/*game*/) {
+  setLocationKeywords(/*game*/) {
     this.addKeyword('PLAYGROUND', 'Go back to the playground', () => {
       return this.followExit(DOWN);
     });

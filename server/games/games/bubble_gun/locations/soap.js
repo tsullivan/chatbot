@@ -19,7 +19,7 @@ class SoapLocation extends Location {
     return parajoin(lns);
   }
 
-  updateState(/*game*/) {
+  setLocationKeywords(/*game*/) {
     this.addKeyword('PLAYGROUND', 'Go back to the playground', () => {
       return this.followExit(SOUTH);
     });

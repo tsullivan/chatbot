@@ -12,7 +12,7 @@ class MagnetLocation extends Location {
     return snl`Hold on to your metals, they got lots of magnets in here!`;
   }
 
-  updateState(/*game*/) {
+  setLocationKeywords(/*game*/) {
     this.addKeyword('PLAYGROUND', 'Go back to the playground', () => {
       return this.followExit(WEST);
     });

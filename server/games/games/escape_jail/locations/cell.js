@@ -21,7 +21,7 @@ class CellLocation extends Location {
     return desc.join('\n\n');
   }
 
-  updateState(game) {
+  setLocationKeywords(game) {
     this.addKeyword('ESCAPE', `Escape from the cell`, () => {
       if (!this._guardsWatching && game.inInventory(KEY)) {
         const px = snl`You use the key to open the cell door, and quietly walk out.`;

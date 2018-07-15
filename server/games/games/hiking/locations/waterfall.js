@@ -19,7 +19,7 @@ class WaterfallLocation extends Location {
     return parajoin(lns);
   }
 
-  updateState(/*game*/) {
+  setLocationKeywords(/*game*/) {
     this.addKeyword('ROCKS', `Go to the place that has a lot of rocks`, () =>
       this.followExit(EAST)
     );

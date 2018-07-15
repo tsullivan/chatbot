@@ -32,7 +32,7 @@ class StartLocation extends Location {
     return parajoin(lns);
   }
 
-  updateState(/*game*/) {
+  setLocationKeywords(/*game*/) {
     const pxLake = snl`Your hiking adventure begins! Off to the lake we go.`;
     const pxRocks = snl`Your hiking adventure begins! Starting out with a
       scrambly feeling, you make your way over to the rocks.`;

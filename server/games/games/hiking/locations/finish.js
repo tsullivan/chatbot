@@ -16,7 +16,7 @@ class FinishLocation extends Location {
     return parajoin(lns);
   }
 
-  updateState(/*game*/) {
+  setLocationKeywords(/*game*/) {
     this.addKeyword(
       ['ASK_THE_ROBOT_TO_TAKE_OUT_A_FLAG', 'ROBOT', 'FLAG', 'FINISH'],
       `Leave the hiking journey and save your points`,

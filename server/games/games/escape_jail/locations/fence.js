@@ -27,7 +27,7 @@ class FenceLocation extends Location {
     return nls.join('\n\n');
   }
 
-  updateState(/*game*/) {
+  setLocationKeywords(/*game*/) {
     this.addKeyword(['JUMP_THE_FENCE', 'JUMP'], `Jump over the jail fence`, () => {
       return new KeywordResponse({
         text: snl`JUUUUMP! Oh no! The top of the fence is still too high up to jump over.`,

@@ -27,7 +27,7 @@ class AppleShedLocation extends Location {
     return parajoin(lns);
   }
 
-  updateState(game) {
+  setLocationKeywords(game) {
     const yogurt = game.getItemFromCollection(YOGURT);
     let pxEx;
     if (!game.inInventory(APPLES) || !game.inInventory(YOGURT)) {

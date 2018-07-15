@@ -25,7 +25,7 @@ class BridgeLocation extends Location {
     return parajoin(lns);
   }
 
-  updateState(game) {
+  setLocationKeywords(game) {
     this.addKeyword('SHIP', `Enter the ship`, () => this.followExit(WEST));
     this.addKeyword(
       'USE_TELESCOPE',

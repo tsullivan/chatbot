@@ -26,7 +26,7 @@ class CastleLocation extends Location {
     }
   }
 
-  updateState(game) {
+  setLocationKeywords(game) {
     this.addKeyword('SLEEP', 'Sleep on the comfy bed', () => {
       if (this._windowsOpen) {
         const p = [

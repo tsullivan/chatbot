@@ -37,7 +37,7 @@ class BridgeLocation extends Location {
     return parts.join('\n\n');
   }
 
-  updateState(game) {
+  setLocationKeywords(game) {
     this.addKeyword('PLAYGROUND', 'Go back to the playground', () => {
       return this.followExit(NORTH);
     });

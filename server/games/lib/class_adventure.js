@@ -37,7 +37,7 @@ class Adventure extends ChatGame {
 
     // update location states
     this.currentLocation.clearKeywords();
-    this.currentLocation.updateState(this);
+    this.currentLocation.setLocationKeywords(this);
     this.currentLocation.setVisibleItemKeywords(this);
 
     // update npc states

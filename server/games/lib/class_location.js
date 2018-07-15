@@ -28,18 +28,18 @@ class Location {
       return this.getInstructionsInternal(game, keywordsHelper, ...args);
     };
 
-    this.updateState(game);
+    this.setLocationKeywords(game);
   }
 
-  updateState() {
-    throw new Error('updateState must be overridden in ' + this._name);
+  setLocationKeywords() {
+    throw new Error('setLocationKeywords must be overridden in ' + this._name);
   }
 
   followExitInternal(game, direction, prefix = '') {
     if (this._exits.has(direction)) {
       const exit = this._exits.get(direction);
       game.setLocation(exit);
-      game.updateState();
+      game.updateState(exit);
 
       const lns = [];
       if (prefix !== '') {

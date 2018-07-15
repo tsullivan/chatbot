@@ -12,7 +12,7 @@ class VanLocation extends Location {
       making jail deliveries to the jail people.`;
   }
 
-  updateState(/*game*/) {
+  setLocationKeywords(/*game*/) {
     this.addKeyword('ESCAPE', `Escape the jail van`, () => {
       const px = snl`You sneak out of the jail van and run over to a
         fence. You're almost out of here!`;

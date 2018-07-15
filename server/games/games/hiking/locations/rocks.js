@@ -16,7 +16,7 @@ class RocksLocation extends Location {
     return parajoin(lns);
   }
 
-  updateState(/*game*/) {
+  setLocationKeywords(/*game*/) {
     const px = snl`You're a careful sort of person, so you can easily get over
       the treacherous rocks to go where you want to go.`;
     this.addKeyword('LAKE', 'Go to the lake', () => this.followExit(EAST, px));

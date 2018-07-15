@@ -17,7 +17,7 @@ class StartLocation extends Location {
     return parajoin(lns);
   }
 
-  updateState() {
+  setLocationKeywords() {
     this.addKeyword('CAVE', 'Go down into the cave', () => this.followExit(EAST));
     this.addKeyword('CASTLE', 'Head up to the castle.', () => this.followExit(NORTH));
   }

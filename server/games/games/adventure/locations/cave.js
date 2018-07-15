@@ -14,7 +14,7 @@ class CaveLocation extends Location {
       tiny! So skeleton handsy!`;
   }
 
-  updateState(game) {
+  setLocationKeywords(game) {
     if (!this._danced) {
       this.addKeyword('DANCE', 'Dance with the tiny skeleton hands', () => {
         this._danced = true;

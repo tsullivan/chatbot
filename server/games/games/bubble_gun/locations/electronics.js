@@ -12,7 +12,7 @@ class ElectronicsLocation extends Location {
         they're what we sell!"`;
   }
 
-  updateState(/*game*/) {
+  setLocationKeywords(/*game*/) {
     this.addKeyword('PLAYGROUND', 'Go back to the playground', () => {
       return this.followExit(EAST);
     });
