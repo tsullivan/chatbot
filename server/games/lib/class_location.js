@@ -112,10 +112,18 @@ class Location {
     this._floorItems.delete(id);
   }
   getVisibleFloorItems(game) {
-    return ItemCollection.getVisibleItemsFromSet(this._floorItems, game);
+    if (game == null) {
+      throw new Error('game param not given');
+    }
+
+    return ItemCollection.getVisibleItemsFromSet(game, this._floorItems);
   }
   setVisibleItemKeywords(game) {
-    const items = ItemCollection.getVisibleItemsFromSet(this._floorItems, game);
+    if (game == null) {
+      throw new Error('game param not given');
+    }
+
+    const items = ItemCollection.getVisibleItemsFromSet(game, this._floorItems);
     items.forEach(item => item.setItemActions(game));
   }
 }

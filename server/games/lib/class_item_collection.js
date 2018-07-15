@@ -68,7 +68,7 @@ class ItemCollection {
     return ItemCollection.describeGameItems(game, describeIt, prefixIt);
   }
 
-  static getAllItemsFromSet(collection, game, { pushCondition = () => true } = {}) {
+  static getAllItemsFromSet(game, collection, { pushCondition = () => true } = {}) {
     return Array.from(collection).reduce((accum, value) => {
       const item = game.getItemFromCollection(value);
       if (pushCondition(item)) {
@@ -78,8 +78,12 @@ class ItemCollection {
     }, []);
   }
 
-  static getVisibleItemsFromSet(collection, game) {
-    return ItemCollection.getAllItemsFromSet(collection, game, {
+  static getVisibleItemsFromSet(game, collection) {
+    if (game == null) {
+      throw new Error('game param not given');
+    }
+
+    return ItemCollection.getAllItemsFromSet(game, collection, {
       pushCondition(item) {
         return item.isSeen();
       },

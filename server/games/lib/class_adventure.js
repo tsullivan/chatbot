@@ -34,7 +34,7 @@ class Adventure extends ChatGame {
     });
 
     // update inventory item states
-    const items = ItemCollection.getAllItemsFromSet(this._inventory, this);
+    const items = ItemCollection.getAllItemsFromSet(this, this._inventory);
     items.forEach(item => item.setItemActions(this));
 
     // update location states
@@ -181,7 +181,7 @@ class Adventure extends ChatGame {
     this._inventory.delete(id);
   }
   getVisibleInventoryItems() {
-    return ItemCollection.getVisibleItemsFromSet(this._inventory, this);
+    return ItemCollection.getVisibleItemsFromSet(this, this._inventory);
   }
   getVisibleLocationItems() {
     return this._currentLocation.getVisibleFloorItems(this);
