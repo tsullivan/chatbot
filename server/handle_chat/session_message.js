@@ -27,11 +27,12 @@ class SessionMessage extends ResponseMessage {
       return this.plain(nextBotMessage);
     }
 
-    if (chat.game !== null) {
-      apm.setTag('game', chat.game.getName());
-      const { isDone, response } = chat.game.testInput(this.userMessage);
+    if (chat.getGame() != null) {
+      const game = chat.getGame();
+      apm.setTag('game', game.getName());
+      const { isDone, response } = game.testInput(this.userMessage);
       let modResponse = response;
-      chat.game.save();
+      game.save();
       if (isDone === true) {
         modResponse += `\nThat was fun, ${chat.getName()}!`;
         chat.endGame();

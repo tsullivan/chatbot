@@ -20,8 +20,8 @@ function runServer() {
     res.sendFile(join(pubs, 'index.html'));
   });
 
-  // init chat route
-  initRoutes(app, initSession(app));
+  initSession(app);
+  initRoutes(app);
 
   return app;
 }

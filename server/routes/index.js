@@ -3,13 +3,12 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json({ type: 'application/json' });
 const { handleChat } = require('../handle_chat');
 
-function initRoutes(app, chatPromise) {
-  const routeHandler = async ({ body }, res) => {
+function initRoutes(app) {
+  const routeHandler = async (req, res) => {
     apm.startTransaction();
 
-    const chat = await chatPromise;
     try {
-      res.json(handleChat(body, chat));
+      res.json(handleChat(req.body, req.session.chat));
     } catch (err) {
       console.log({ error: err }); // eslint-disable-line no-console
       res.statusCode = err.status || 500;
@@ -18,11 +17,11 @@ function initRoutes(app, chatPromise) {
     }
 
     apm.setUserContext({
-      username: chat.getName(),
+      username: req.session.chat.getName(),
     });
     apm.setCustomContext({
-      num_messages: chat.getHistory().length,
-      avg_score: chat.getAverageScore(),
+      num_messages: req.session.chat.getHistory().length,
+      avg_score: req.session.chat.getAverageScore(),
     });
     apm.endTransaction();
   };

@@ -4,6 +4,8 @@ const { defaultsDeep, mean } = require('lodash');
 const { mapFieldToResponse } = require('./map_field_to_response');
 const { getGames } = require('../games');
 
+const sessionGames = new Map(); // memory leak
+
 const proto = {
   name: null,
   waitingOn: null,
@@ -20,6 +22,8 @@ const games = getGames();
 class ChatSession {
   constructor(session) {
     this.initialized = false;
+    this.sessionId = session.id;
+    this._game = null;
 
     this.save = () => {
       if (!this.initialized) {
@@ -41,6 +45,7 @@ class ChatSession {
   getResumed({ chat }) {
     defaultsDeep(this, chat, proto);
     this.save();
+    this._game = sessionGames.get(this.sessionId);
     return this;
   }
 
@@ -121,15 +126,20 @@ class ChatSession {
   }
 
   setGame(game) {
-    this.game = new games[game].Game(this);
-    this.game.init();
+    this._game = new games[game].Game(this);
+    this._game.init();
     this.save();
+    sessionGames.set(this.sessionId, this._game); // store game data in server memory
+  }
+  getGame() {
+    return this._game;
   }
 
   endGame() {
-    this.addScore(this.game.score);
-    this.game = null;
+    this.addScore(this._game.score);
+    this._game = null;
     this.save();
+    sessionGames.delete(this.sessionId);
   }
 
   addScore(score) {
@@ -142,9 +152,8 @@ class ChatSession {
   }
 
   getGameWelcome() {
-    const game = this.game;
-    if (game !== null) {
-      return this.game.getWelcome();
+    if (this._game != null) {
+      return this._game.getWelcome();
     } else {
       return `Weird, I don't know what game you wanted to play.`;
     }
