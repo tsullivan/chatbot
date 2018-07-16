@@ -28,7 +28,6 @@ class BubbleGun extends Adventure {
       snl`See ya, ${this.playerName}! Better luck next time! Turns:
         ${this.turns} Score: ${this.score}`,
     ];
-    this.saveScore(this.score);
     return this.yesDone(p.join('\n\n'));
   }
 
@@ -37,7 +36,6 @@ class BubbleGun extends Adventure {
       response,
       `Looks like you're a winner! Turns: ${this.turns} Score: ${this.score}`,
     ];
-    this.saveScore(this.score);
     return this.yesDone(p.join('\n\n'));
   }
 }

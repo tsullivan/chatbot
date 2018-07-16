@@ -50,14 +50,11 @@ class GuessNumber extends ChatGame {
       }
     }
 
-    this.saveScore(this.score);
     return {
       isDone: true,
       response: `You got it! ${input} is the right number. You guessed ${
         this.guesses
-      } times. Your score is ${
-        this.score
-      }. Average of all your scores is ${this.getAverageScore()}`,
+      } times. Your score is ${this.score}.`,
     };
   }
 

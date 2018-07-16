@@ -24,7 +24,6 @@ class HikingGame extends Adventure {
       snl`See ya, ${this.playerName}! Better luck next time! Turns:
         ${this.turns} Score: ${this.score}`,
     ];
-    this.saveScore(this.score);
     return this.yesDone(parajoin(lns));
   }
 
@@ -34,7 +33,6 @@ class HikingGame extends Adventure {
       snl`Looks like you're a winner! Turns: ${this.turns} Score:
         ${this.score}`,
     ];
-    this.saveScore(this.score);
     return this.yesDone(parajoin(lns));
   }
 

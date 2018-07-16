@@ -7,14 +7,6 @@ class ChatGame {
     this.save = () => {
       chat.save();
     };
-
-    this.saveScore = score => {
-      chat.addScore(score);
-    };
-
-    this.getAverageScore = () => {
-      return chat.getAverageScore();
-    };
   }
 
   setName(name) {

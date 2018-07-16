@@ -32,7 +32,6 @@ class EscapeJail extends Adventure {
       snl`See ya, ${this.playerName}! Better luck next time! Turns:
         ${this.turns} Score: ${this.score}`,
     ];
-    this.saveScore(this.score);
     return this.yesDone(p.join('\n\n'));
   }
 
@@ -41,7 +40,6 @@ class EscapeJail extends Adventure {
       response,
       `Looks like have escaped from JAIL! Turns: ${this.turns} Score: ${this.score}`,
     ];
-    this.saveScore(this.score);
     return this.yesDone(p.join('\n\n'));
   }
 }

@@ -127,6 +127,7 @@ class ChatSession {
   }
 
   endGame() {
+    this.addScore(this.game.score);
     this.game = null;
     this.save();
   }

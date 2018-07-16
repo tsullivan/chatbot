@@ -30,14 +30,11 @@ class GuessNumber extends ChatGame {
         this.score = 0;
         response = 'Type "kl" and you lose the Batgame :(';
       }
-      this.saveScore(this.score);
 
       return yesDone(
         `${response} "${input}" ended the Batgame. Your Batstuff is: ${this.batStuff.join(
           ', '
-        )}. Your Batscore is ${
-          this.score
-        }. Average of all your Batscores is ${this.getAverageScore()}.`
+        )}. Your Batscore is ${this.score}.`
       );
     } else {
       this.score += 1;

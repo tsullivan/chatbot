@@ -29,7 +29,6 @@ class AdventureGame extends Adventure {
       snl`Goodnight, sweet ${this.playerName}! Bye! Turns: ${this.turns} Score:
         ${this.score}`,
     ];
-    this.saveScore(this.score);
     return this.yesDone(parajoin(lns));
   }
 
@@ -42,7 +41,6 @@ class AdventureGame extends Adventure {
         this.score
       }`,
     ];
-    this.saveScore(this.score);
     return this.yesDone(parajoin(lns));
   }
 }
