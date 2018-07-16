@@ -26,23 +26,30 @@ class Adventure extends ChatGame {
     this._itemCollection.addItem(id, item);
   }
 
-  updateState() {
+  setGameKeywords() {
     // set game keywords
     this.clearKeywords();
     getGameKeywords(this).forEach(({ key, description, fn }) => {
       this.addKeyword(key, description, fn);
     });
+  }
 
-    // update inventory item states
-    const items = ItemCollection.getAllItemsFromSet(this, this._inventory);
-    items.forEach(item => item.setItemActions(this));
+  updateState() {
+    this.setGameKeywords();
+    this.updateInventoryItems();
+    this.updateLocation();
+  }
 
-    // update location states
+  updateLocation() {
     this._currentLocation.clearKeywords();
     this._currentLocation.setLocationKeywords(this);
     this._currentLocation.setVisibleItemKeywords(this);
+  }
 
-    // update npc states
+  updateInventoryItems() {
+    // update inventory item states
+    const items = ItemCollection.getAllItemsFromSet(this, this._inventory);
+    items.forEach(item => item.setItemActions(this));
   }
 
   getCurrentLocation() {
