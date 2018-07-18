@@ -8,9 +8,8 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN npm install
-# If you are building your code for production
-# RUN npm install --only=production
+# TODO yarn
+RUN npm install --only=production
 
 # Bundle app source
 COPY . .
@@ -19,4 +18,4 @@ EXPOSE 8080
 
 ENV NODE_ENV=docker
 
-CMD [ "npm", "start" ]
+CMD [ "node", "index.js" ]
