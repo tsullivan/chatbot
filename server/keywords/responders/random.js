@@ -29,7 +29,7 @@ class RandomResponder extends KeywordResponder {
 
   getResponse() {
     const responder = this.getRandomResponder();
-    return responder.getResponse();
+    return responder.getRandom();
   }
 }
 

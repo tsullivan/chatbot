@@ -7,6 +7,15 @@ class DictionaryResponder extends KeywordResponder {
     this.requested = null;
   }
 
+  setName(name) {
+    this.name = name;
+    return this;
+  }
+  setDictionary(dictionary) {
+    this.dictionary = dictionary;
+    return this;
+  }
+
   isImpromptu() {
     return true;
   }
@@ -26,15 +35,21 @@ class DictionaryResponder extends KeywordResponder {
     return `Type \`${this.name}\`, or \`${this.name} <some number>\`, and see what happens...`; // prettier-ignore
   }
 
-  getRandomOrRequested({ prefix, dictionary }) {
-    const indices = Object.keys(dictionary);
+  getRandom() {
+    const indices = Object.keys(this.dictionary);
+    const index = parseInt(sample(indices), 10);
+    return this.dictionary[index];
+  }
+
+  getRequested(prefix) {
+    const indices = Object.keys(this.dictionary);
     let index;
     if (this.requested !== null) {
       index = this.requested - 1;
     } else {
       index = parseInt(sample(indices), 10);
     }
-    return prefix(index + 1) + ':\n' + dictionary[index];
+    return prefix(index + 1) + ':\n' + this.dictionary[index];
   }
 }
 

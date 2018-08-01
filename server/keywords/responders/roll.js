@@ -20,10 +20,6 @@ class RollResponder extends KeywordResponder {
     return input.match(/^roll\b/);
   }
 
-  isImpromptu() {
-    return true;
-  }
-
   justDont() {
     return `Just don't say "roll 7". I don't have a d7!`;
   }

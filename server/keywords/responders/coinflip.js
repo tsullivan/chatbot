@@ -11,10 +11,6 @@ class CoinFlipResponder extends KeywordResponder {
     return input.match(/^coinflip\b/);
   }
 
-  isImpromptu() {
-    return true;
-  }
-
   justDont() {
     return `Just don't say "coinflip", I'll flip out!`;
   }

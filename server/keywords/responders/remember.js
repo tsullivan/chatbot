@@ -19,10 +19,6 @@ class RememberResponder extends KeywordResponder {
   justDont() {
     return `Just don't ask me "remember that one time." I probably don't.`;
   }
-
-  isImpromptu() {
-    return true;
-  }
 }
 
 module.exports = { KeywordResponder: RememberResponder };

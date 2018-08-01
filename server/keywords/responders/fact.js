@@ -21,7 +21,11 @@ class FactResponder extends KeywordResponder {
 
   getResponse() {
     const responder = this.getFactResponder();
-    return responder.getResponse();
+    return responder.getRandom();
+  }
+
+  isImpromptu() {
+    return true;
   }
 }
 

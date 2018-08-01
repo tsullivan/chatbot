@@ -12,10 +12,6 @@ class JustDontResponder extends KeywordResponder {
     return input.match(/^just_dont\b/);
   }
 
-  isImpromptu() {
-    return true;
-  }
-
   isListed() {
     return false;
   }

@@ -5,6 +5,7 @@ class JokeResponder extends DictionaryResponder {
   constructor(input) {
     super(input);
     this.name = 'joke';
+    this.dictionary = jokes;
   }
 
   testMatch(input) {
@@ -17,12 +18,7 @@ class JokeResponder extends DictionaryResponder {
   }
 
   getResponse() {
-    return this.getRandomOrRequested({
-      prefix(index) {
-        return `Here is joke number ${index}`;
-      },
-      dictionary: jokes,
-    });
+    return this.getRequested(i => `Here is joke number ${i}`);
   }
 }
 

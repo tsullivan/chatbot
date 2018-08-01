@@ -4,7 +4,8 @@ const { pokemonfacts } = require('../dictionary');
 class PokemonFactResponder extends DictionaryResponder {
   constructor(input) {
     super(input);
-    this.name = 'pokemonfact';
+    this.setName('pokemonfact');
+    this.setDictionary(pokemonfacts);
   }
 
   testMatch(input) {
@@ -13,12 +14,7 @@ class PokemonFactResponder extends DictionaryResponder {
   }
 
   getResponse() {
-    return this.getRandomOrRequested({
-      prefix(index) {
-        return `Here is pokemon fact number ${index}`;
-      },
-      dictionary: pokemonfacts,
-    });
+    return this.getRequested(i => `Here is pokemon fact number ${i}`);
   }
 }
 

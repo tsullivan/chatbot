@@ -33,10 +33,6 @@ class GameResponder extends KeywordResponder {
       ', '
     )}`;
   }
-
-  isImpromptu() {
-    return false;
-  }
 }
 
 module.exports = { KeywordResponder: GameResponder };
