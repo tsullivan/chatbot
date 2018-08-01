@@ -1,5 +1,5 @@
 const apm = require('elastic-apm-node');
-const { KeywordResponder } = require('../keyword_responder');
+const { KeywordResponder } = require('../class_keyword_responder');
 
 class NameResponder extends KeywordResponder {
   constructor(input, chat) {

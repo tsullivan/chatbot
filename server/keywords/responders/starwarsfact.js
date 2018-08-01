@@ -1,4 +1,4 @@
-const { DictionaryResponder } = require('../dictionary_responder');
+const { DictionaryResponder } = require('../class_keyword_dictionary_responder');
 const { starwarsfacts } = require('../dictionary');
 
 class StarWarsFactResponder extends DictionaryResponder {

@@ -1,4 +1,4 @@
-const { KeywordResponder } = require('../keyword_responder');
+const { KeywordResponder } = require('../class_keyword_responder');
 
 class SayResponder extends KeywordResponder {
   constructor(input) {

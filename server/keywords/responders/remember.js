@@ -1,5 +1,5 @@
 const { sample } = require('lodash');
-const { KeywordResponder } = require('../keyword_responder');
+const { KeywordResponder } = require('../class_keyword_responder');
 
 class RememberResponder extends KeywordResponder {
   constructor(input, chat) {

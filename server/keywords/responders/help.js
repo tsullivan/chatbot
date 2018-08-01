@@ -1,4 +1,4 @@
-const { KeywordResponder } = require('../keyword_responder');
+const { KeywordResponder } = require('../class_keyword_responder');
 const { getResponders } = require('../get_responders');
 
 class HelpResponder extends KeywordResponder {

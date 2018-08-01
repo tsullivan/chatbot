@@ -1,4 +1,4 @@
-const { KeywordResponder } = require('../keyword_responder');
+const { KeywordResponder } = require('../class_keyword_responder');
 const { roll } = require('../../roll');
 
 class CoinFlipResponder extends KeywordResponder {
