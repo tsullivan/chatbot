@@ -36,6 +36,10 @@ class KeywordResponder {
     return 'Nothing to say.';
   }
 
+  getRandom() {
+    return this.getResponse();
+  }
+
   runKeyword() {
     const needsHelpMatches = this.input.match(/ help\b$/);
     if (needsHelpMatches !== null) {

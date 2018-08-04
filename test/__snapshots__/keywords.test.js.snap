@@ -2,6 +2,6 @@
 
 exports[`Keywords should give a requested joke 1`] = `
 "Here is joke number 5:
-Why did the man throw a butterfly out of the window?
-Because he wanted it to be able to smell around the world!"
+Why did the \${noun:man} \${verb:throw} a \${noun:butterfly} out of the \${noun:window}?
+Because he \${verb:wanted} it to be able to \${verb:smell} around the \${noun:world}!"
 `;
