@@ -6,12 +6,17 @@ function keywordTester(input, chat) {
     if (responders[keyword] == null || responders[keyword] == null) {
       throw new Error('Bad keyword responder: ' + keyword);
     }
-    const responder = new responders[keyword].KeywordResponder(input, chat);
-    if (responder.inputMatches()) {
-      return {
-        isKeyword: true,
-        responder,
-      };
+
+    try {
+      const responder = new responders[keyword].KeywordResponder(input, chat);
+      if (responder.inputMatches()) {
+        return {
+          isKeyword: true,
+          responder,
+        };
+      }
+    } catch (err) {
+      throw new Error('Bad keyword responder constructor: ' + keyword);
     }
   }
   return { isKeyword: false };
