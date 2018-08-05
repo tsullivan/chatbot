@@ -1,4 +1,5 @@
-const { cloneDeep, sample } = require('lodash');
+const { capitalize, cloneDeep, sample } = require('lodash');
+const { roll } = require('../../roll');
 const getData = () => cloneDeep(require('./dictionary'));
 
 function reduce(cb, accum) {
@@ -37,9 +38,19 @@ function runDictionary(kSet = '') {
     if (data[myKSet][i] == null) {
       throw new Error(`Need a string: ${[myKSet, i]}, ${Object.keys(data[myKSet])}`);
     }
+
     const currValue = data[myKSet][i];
-    const replacer = sample(_vocabulary[kind]);
-    const newValue = currValue.replace(`\${${kind}:${thing}}`, replacer);
+    let newValue;
+    if (roll(2).result === 1) {
+      let replacer = sample(_vocabulary[kind]);
+      if (thing.match(/^[A-Z]/)) {
+        replacer = capitalize(replacer);
+      }
+      newValue = currValue.replace(`\${${kind}:${thing}}`, replacer);
+    } else {
+      newValue = currValue.replace(`\${${kind}:${thing}}`, thing);
+    }
+
     if (accum[myKSet]) {
       accum[myKSet][i] = newValue;
     } else {
