@@ -1,48 +1,54 @@
-const { sample } = require('lodash');
-const data = require('./dictionary');
+const { cloneDeep, sample } = require('lodash');
+const getData = () => cloneDeep(require('./dictionary'));
 
-// match the regexes against the data and signal the parsed info via callback
-function findVocabulary(rawData, cb) {
-  Object.keys(rawData).forEach(kSet => {
-    data[kSet].forEach((s, i) => {
+function reduce(cb, accum) {
+  const data = getData();
+  for (let kI = 0; kI < Object.keys(data).length; kI++) {
+    const kSet = Object.keys(data)[kI];
+
+    for (let sI = 0; sI < data[kSet].length; sI++) {
+      const s = data[kSet][sI];
       const matches = s.match(/\${\S+:[^}]+}/g);
       if (matches) {
-        matches.forEach(m => {
+        for (let mI = 0; mI < matches.length; mI++) {
+          const m = matches[mI];
           const [_match, kind, thing] = m.match(/\${(\S+):([^}]+)}/);
-          cb(kSet, kind, thing, i);
-        });
+          accum = cb(accum, kSet, kind, thing, sI);
+        }
       }
-    }, []);
-  });
+    }
+  }
+  return accum;
 }
 
-/*
- * @param myKSet - caller ask to destructure a kSet
- */
-function runDictionary(myKSet = '') {
-  const found = {};
-  findVocabulary(data, (kSet, kind, thing) => {
-    if (found[kind]) {
-      found[kind].push(thing);
-    } else {
-      found[kind] = [];
-      found[kind].push(thing);
-    }
-  });
-
-  const newDictionary = Object.assign({}, data);
-  findVocabulary(data, (kSet, kind, thing, i) => {
-    const currValue = newDictionary[kSet][i];
-    newDictionary[kSet][i] = currValue.replace(
-      `\${${kind}:${thing}}`,
-      sample(found[kind])
-    );
-  });
-
-  if (myKSet) {
-    return newDictionary[myKSet];
+const _vocabulary = reduce((accum, _kSet, kind, thing) => {
+  if (accum[kind]) {
+    accum[kind].push(thing);
+  } else {
+    accum[kind] = [];
+    accum[kind].push(thing);
   }
-  return newDictionary;
+  return accum;
+}, {});
+
+function runDictionary(kSet = '') {
+  const data = getData();
+  const dictionary = reduce((accum, myKSet, kind, thing, i) => {
+    if (data[myKSet][i] == null) {
+      throw new Error(`Need a string: ${[myKSet, i]}, ${Object.keys(data[myKSet])}`);
+    }
+    const currValue = data[myKSet][i];
+    const replacer = sample(_vocabulary[kind]);
+    const newValue = currValue.replace(`\${${kind}:${thing}}`, replacer);
+    if (accum[myKSet]) {
+      accum[myKSet][i] = newValue;
+    } else {
+      accum[myKSet] = [newValue];
+    }
+    return accum;
+  }, data);
+
+  return kSet ? dictionary[kSet] : dictionary;
 }
 
 module.exports = { runDictionary };
