@@ -1,11 +1,9 @@
 const { DictionaryResponder } = require('../class_keyword_dictionary_responder');
-const { pokemonfacts } = require('../dictionary');
 
 class PokemonFactResponder extends DictionaryResponder {
   constructor(input) {
     super(input);
-    this.setName('pokemonfact');
-    this.setDictionary(pokemonfacts);
+    this.setName('pokemonfact').setDictionary('pokemonfacts');
   }
 
   testMatch(input) {

@@ -1,3 +1,1 @@
-const { runDictionary } = require('./run_dictionary');
-
-module.exports = runDictionary();
+module.exports = require('./run_dictionary');

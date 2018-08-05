@@ -16,7 +16,10 @@ function findVocabulary(rawData, cb) {
   });
 }
 
-function runDictionary() {
+/*
+ * @param myKSet - caller ask to destructure a kSet
+ */
+function runDictionary(myKSet = '') {
   const found = {};
   findVocabulary(data, (kSet, kind, thing) => {
     if (found[kind]) {
@@ -35,6 +38,10 @@ function runDictionary() {
       sample(found[kind])
     );
   });
+
+  if (myKSet) {
+    return newDictionary[myKSet];
+  }
   return newDictionary;
 }
 

@@ -1,5 +1,6 @@
 const { sample } = require('lodash');
 const { KeywordResponder } = require('./class_keyword_responder');
+const { runDictionary } = require('./dictionary');
 
 class DictionaryResponder extends KeywordResponder {
   constructor(input) {
@@ -12,6 +13,9 @@ class DictionaryResponder extends KeywordResponder {
     return this;
   }
   setDictionary(dictionary) {
+    if (typeof dictionary !== 'string') {
+      throw new Error('need to set a keyword string as the dictionary');
+    }
     this.dictionary = dictionary;
     return this;
   }
@@ -36,12 +40,13 @@ class DictionaryResponder extends KeywordResponder {
   }
 
   getRandom() {
-    const indices = Object.keys(this.dictionary);
+    const dictionary = runDictionary(this.dictionary);
+    const indices = Object.keys(dictionary);
     const index = parseInt(sample(indices), 10);
-    return this.dictionary[index];
+    return dictionary[index];
   }
 
-  getRequested(prefix) {
+  getRequested(prefixFn) {
     const indices = Object.keys(this.dictionary);
     let index;
     if (this.requested !== null) {
@@ -49,7 +54,7 @@ class DictionaryResponder extends KeywordResponder {
     } else {
       index = parseInt(sample(indices), 10);
     }
-    return prefix(index + 1) + ':\n' + this.dictionary[index];
+    return prefixFn(index + 1) + ':\n' + this.dictionary[index];
   }
 }
 
