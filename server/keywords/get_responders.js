@@ -1,17 +1,21 @@
 function getResponders() {
   return {
-    just_dont: require('./responders/just_dont'),
-    play: require('./responders/play'),
+    coinflip: require('./responders/coinflip'),
     help: require('./responders/help'),
     joke: require('./responders/joke'),
-    random: require('./responders/random'),
-    repeat: require('./responders/repeat'),
-    say: require('./responders/say'),
+    just_dont: require('./responders/just_dont'),
     name: require('./responders/name'),
-    coinflip: require('./responders/coinflip'),
+    ninjafact: require('./responders/ninjafact'),
+    play: require('./responders/play'),
+    pokemonfact: require('./responders/pokemonfact'),
+    random: require('./responders/random'),
     remember: require('./responders/remember'),
+    repeat: require('./responders/repeat'),
     roll: require('./responders/roll'),
+    say: require('./responders/say'),
     score: require('./responders/score'),
+    starwarsfact: require('./responders/starwarsfact'),
+    superherofact: require('./responders/superherofact'),
   };
 }
 
