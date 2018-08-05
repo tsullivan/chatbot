@@ -11,16 +11,19 @@ const utilFactory = agent => {
         .expect(200)
         .then(res => {
           expect(res.body.format).toEqual('plain');
-          expect(res.body.message).toEqual('Hello! What is your name?');
           expect(res.body.name).toEqual('Beep Beep Beep');
-        });
 
-      await agent
-        .post('/chat')
-        .send({ format: 'user', message: 'Tim' })
-        .expect(200)
-        .then(res => {
-          expect(res.body.message).toEqual('Hello, Tim! Nice to meet you.');
+          if (res.body.message === 'Hello! What is your name?') {
+            return agent
+              .post('/chat')
+              .send({ format: 'user', message: 'Tim' })
+              .expect(200)
+              .then(ret => {
+                expect(ret.body.message).toEqual('Hello, Tim! Nice to meet you.');
+              });
+          } else {
+            expect(res.body.message).toEqual('Hello again, Tim!');
+          }
         });
     },
 

@@ -8,8 +8,12 @@ class SessionMessage extends ResponseMessage {
 
   makeResponse(chat) {
     if (this.userFormat === 'syn') {
-      chat.setWaitOnName();
-      return this.plain('Hello! What is your name?');
+      if (chat.validateSession().isValid) {
+        return this.plain(`Hello again, ${chat.getName()}!`);
+      } else {
+        chat.setWaitOnName();
+        return this.plain('Hello! What is your name?');
+      }
     } else if (this.userFormat === 'hup') {
       chat.hangup();
       return this.plain('Bye!');
