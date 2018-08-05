@@ -26,6 +26,12 @@ function initRoutes(app) {
     apm.endTransaction();
   };
   app.post('/chat', jsonParser, routeHandler);
+
+  app.get('/stats', function(req, res) {
+    res.json({
+      session_expires_in_sec: req.session.cookie.maxAge / 1000,
+    });
+  });
 }
 
 module.exports = { initRoutes };
