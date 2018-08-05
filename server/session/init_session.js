@@ -6,7 +6,7 @@ function initSession(app) {
   app.use(
     session({
       secret: sessionSecret,
-      cookie: { maxAge: 60000 },
+      cookie: { maxAge: 86000 * 1000 },
       resave: true,
       saveUninitialized: true,
     })
