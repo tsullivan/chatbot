@@ -140,7 +140,11 @@ class ChatSession {
   }
 
   setGame(game) {
-    this._game = new games[game].Game(this);
+    const gameModule = games[game];
+    if (!gameModule || !gameModule.Game) {
+      throw new Error('Invalid game string: ' + game);
+    }
+    this._game = new gameModule.Game(this);
     this._game.init();
     this.save();
     sessionGames.set(this.sessionId, this._game); // store game data in server memory

@@ -110,6 +110,5 @@ CLIMB_THE_FENCE - Climb over the jail fence"
 exports[`escape-jail escape 10`] = `
 "JUUUUMP! Oh no! The top of the fence is still too high up to jump over.
 
-JUMP_THE_FENCE - Jump over the jail fence
 CLIMB_THE_FENCE - Climb over the jail fence"
 `;

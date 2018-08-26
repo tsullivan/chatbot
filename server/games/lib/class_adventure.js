@@ -1,5 +1,6 @@
 const { ChatGame } = require('../chat_game');
 const { getKeywordsHelper } = require('./keywords_helper');
+const { KeywordResponse } = require('./class_keyword_response');
 const { getGameKeywords } = require('./game_keywords');
 const { ItemCollection } = require('./class_item_collection');
 const { Location } = require('./class_location');
@@ -13,12 +14,24 @@ class Adventure extends ChatGame {
     this._itemCollection = new ItemCollection();
     this._inventory = new Set(); // ids of items in the collection
 
+    // KeywordResponse helpers
     this.notDone = response => ({ response, isDone: false });
     this.yesDone = response => ({ response, isDone: true });
+    this.branchToGame = (BranchGame, prefix) => {
+      const newGame = new BranchGame(session);
+      newGame.startFromTrunk(this);
+      return new KeywordResponse({
+        text: prefix ? parajoin([prefix, newGame.getWelcome()]) : newGame.getWelcome(),
+      });
+    };
+    this.startFromTrunk = () => {
+      this.init();
+      session.setGame(this.getName());
+    };
 
     // should override
     this._currentLocation = null;
-    this.name = null;
+    this.setName(null);
     this.locations = {};
   }
 

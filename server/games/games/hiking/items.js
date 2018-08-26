@@ -1,6 +1,6 @@
 const snl = require('strip-newlines');
 const { Item, KeywordResponse } = require('../../lib');
-const { ENEMIES, CAR, APPLES, YOGURT, KEY, BUBBLE_GUN } = require('./constants');
+const { ENEMIES, CAR, APPLES, YOGURT, BUBBLE_GUN } = require('./constants');
 
 function getItems(game) {
   /*
@@ -13,36 +13,6 @@ function getItems(game) {
       out and grow to full size if there is water.`,
     seen: false,
     game,
-  });
-
-  /*
-   * Key
-   */
-  const keyItem = new Item({
-    game,
-    name: 'Jail Key',
-    id: KEY,
-    description: snl`The key you stole from the jail. Since you were put into
-      jail accidentally, you had to steal the key because the bad guys made
-      you.`,
-    setActions: ({ setDroppable, setTakeable }) => {
-      setDroppable({
-        keyword: 'DROP_JAIL_KEY',
-        keywordDescription: 'Drop the key you stole from the jail.',
-        fn: () =>
-          new KeywordResponse({
-            text: snl`The key has been dropped. You didn't need it anyways.`,
-          }),
-      });
-      setTakeable({
-        keyword: 'TAKE_JAIL_KEY',
-        keywordDescription: 'Pick up the key you stole from the jail.',
-        fn: () =>
-          new KeywordResponse({
-            text: snl`You now have the key. Again.`,
-          }),
-      });
-    },
   });
 
   /*
@@ -121,7 +91,6 @@ function getItems(game) {
 
   return {
     enemiesItem,
-    keyItem,
     carItem,
     applesItem,
     yogurtItem,
@@ -130,7 +99,7 @@ function getItems(game) {
 }
 
 function setItemsToLocations(
-  { enemiesItem, keyItem, carItem, applesItem, yogurtItem, bubbleGunItem },
+  { enemiesItem, carItem, applesItem, yogurtItem, bubbleGunItem },
   { appleShed, car: garage, mountain },
   game
 ) {
@@ -138,14 +107,12 @@ function setItemsToLocations(
    * Set to game
    */
   game.addItemToCollection(ENEMIES, enemiesItem);
-  game.addItemToCollection(KEY, keyItem);
   game.addItemToCollection(CAR, carItem);
   game.addItemToCollection(APPLES, applesItem);
   game.addItemToCollection(YOGURT, yogurtItem);
   game.addItemToCollection(BUBBLE_GUN, bubbleGunItem);
 
   // starting inventory items
-  game.addToInventory(KEY);
   game.addToInventory(ENEMIES); // global item
 
   // starting location items

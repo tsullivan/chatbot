@@ -29,15 +29,21 @@ describe('hiking', () => {
     checkResponses(resps);
   });
 
+  test('fall down', async () => {
+    resps[resps.length] = await send('play hiking');
+    resps[resps.length] = await send('rocks');
+    resps[resps.length] = await send('fall_down');
+    resps[resps.length] = await send('quit');
+    checkResponses(resps);
+  });
+
   test('items and drop key and pick up key', async () => {
     resps[resps.length] = await send('play hiking');
     resps[resps.length] = await send('lake');
     resps[resps.length] = await send('items');
-    resps[resps.length] = await send('drop_jail_key');
     resps[resps.length] = await send('look');
     resps[resps.length] = await send('rocks');
     resps[resps.length] = await send('lake');
-    resps[resps.length] = await send('take_jail_key');
     resps[resps.length] = await send('rocks');
     resps[resps.length] = await send('quit');
     checkResponses(resps);
@@ -79,7 +85,6 @@ describe('hiking', () => {
     resps[resps.length] = await send('rope');
     resps[resps.length] = await send('look');
     resps[resps.length] = await send('buy_yogurt');
-    resps[resps.length] = await send('drop_jail_key');
     resps[resps.length] = await send('look');
     resps[resps.length] = await send('exit');
     checkResponses(resps);

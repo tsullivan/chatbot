@@ -1,5 +1,6 @@
 const snl = require('strip-newlines');
-const { Location, KeywordResponse, delayAndDie } = require('../../../lib');
+const { Location, KeywordResponse, parajoin, delayAndDie } = require('../../../lib');
+const { Game: BubbleGunWorld } = require('../../bubble_gun');
 
 class FenceLocation extends Location {
   constructor(game) {
@@ -27,27 +28,36 @@ class FenceLocation extends Location {
     return nls.join('\n\n');
   }
 
-  setLocationKeywords(/*game*/) {
-    this.addKeyword(['JUMP_THE_FENCE', 'JUMP'], `Jump over the jail fence`, () => {
-      return new KeywordResponse({
-        text: snl`JUUUUMP! Oh no! The top of the fence is still too high up to jump over.`,
+  setLocationKeywords(game) {
+    if (!this._jumped) {
+      this.addKeyword(['JUMP_THE_FENCE', 'JUMP'], `Jump over the jail fence`, () => {
+        this._jumped = true;
+        return new KeywordResponse({
+          text: snl`JUUUUMP! Oh no! The top of the fence is still too high up to jump over.`,
+        });
       });
-    });
-    this.addKeyword(['CLIMB_THE_FENCE', 'CLIMB'], `Climb over the jail fence`, () => {
-      return new KeywordResponse({
-        text: snl`CLIMB! Oh no! The top of the fence is still too high up to climb over.`,
+    }
+    if (!this._climbed) {
+      this.addKeyword(['CLIMB_THE_FENCE', 'CLIMB'], `Climb over the jail fence`, () => {
+        this._climbed = true;
+        return new KeywordResponse({
+          text: snl`CLIMB! Oh no! The top of the fence is still too high up to climb over.`,
+        });
       });
-    });
+    }
     if (this._jumped && this._climbed) {
       this.addKeyword(
-        ['JUMP_AND_THEN_CLIMB_THE_FENCE', 'JUMP_CLIMB'],
+        ['RUN_JUMP_AND_CLIMB_THE_FENCE', 'JUMP_CLIMB'],
         `Jump and then climb over the jail fence`,
-        () => {
-          return new KeywordResponse({
-            text: snl`JUUUUMP! Climb, climb, climb! You made it!`,
-            isDone: true,
-          });
-        }
+        () =>
+          game.branchToGame(
+            BubbleGunWorld,
+            parajoin([
+              snl`RUN RUN RUN JUUUUMP! Climb, climb, climb! You made it!`,
+              snl`You run and run and run for a long time. You find yourself in
+              a strange new place. It looks very exciting and new!`,
+            ])
+          )
       );
 
       this.addKeyword(...delayAndDie());

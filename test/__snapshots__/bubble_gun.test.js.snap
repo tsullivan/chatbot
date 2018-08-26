@@ -23,7 +23,7 @@ QUIT - Quit the game"
 
 exports[`bubble_gun fall down in soap store 2`] = `
 "You are at: The Soap Store
-Oh my goodness, this store has so much soap! It is by far the soapiest store you have ever been in!
+Oh my goodness, this store has so much soap! It is by far the soapiest place you have ever been in!
 
 Another thing you notice right away is that there is an extremely strong fragrance of clean in this place.
 
@@ -400,7 +400,7 @@ MAGNETS - Go to the Magnet store"
 
 exports[`bubble_gun walk around 22`] = `
 "You are at: The Soap Store
-Oh my goodness, this store has so much soap! It is by far the soapiest store you have ever been in!
+Oh my goodness, this store has so much soap! It is by far the soapiest place you have ever been in!
 
 Another thing you notice right away is that there is an extremely strong fragrance of clean in this place.
 
@@ -413,7 +413,7 @@ ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will
 `;
 
 exports[`bubble_gun walk around 23`] = `
-"You wanted the soap, you got it. It's your problem now.
+"Did you forget that I said everything in this town is FREE!? Oh well. You wanted the soap, you got it. It's your problem now.
 
 PLAYGROUND - Go back to the playground
 ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."

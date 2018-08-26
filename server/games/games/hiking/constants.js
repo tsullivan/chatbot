@@ -6,7 +6,6 @@ const WEST = 'west';
 const UP = 'up';
 const DOWN = 'down';
 
-const KEY = 'key';
 const APPLES = 'apples';
 const YOGURT = 'yogurt';
 const ENEMIES = 'enemies';
@@ -21,7 +20,6 @@ module.exports = {
   WEST,
   UP,
   DOWN,
-  KEY,
   APPLES,
   ENEMIES,
   CAR,

@@ -3,7 +3,7 @@ const { Adventure } = require('../../lib');
 const { setItemsToLocations, getItems } = require('./items');
 const { getLocations } = require('./locations');
 
-class BubbleGun extends Adventure {
+class BubbleGunWorld extends Adventure {
   constructor(session) {
     super(session);
     this.setName('bubble_gun');
@@ -40,4 +40,4 @@ class BubbleGun extends Adventure {
   }
 }
 
-module.exports = { Game: BubbleGun };
+module.exports = { Game: BubbleGunWorld };
