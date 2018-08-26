@@ -49,7 +49,14 @@ class Item {
     return this._setActions({
       setDroppable: partial(this.setDroppable, game).bind(this),
       setTakeable: partial(this.setTakeable, game).bind(this),
-      setCombinable: partial(this.setCombinable, game).bind(this),
+      setCombinables: combinableArray => {
+        for (const combinable of combinableArray) {
+          const updatedComb = Object.assign({}, combinable, {
+            numberToCombineWith: combinableArray.length,
+          });
+          this.setCombinable(game, updatedComb);
+        }
+      },
     });
   }
 
@@ -77,7 +84,7 @@ class Item {
       self.addKeyword(keyword, keywordDescription, () => {
         self.removeKeyword(keyword);
         self._combinedWith.add(combinesWith);
-        self._isComplete = self._combinedWith.size >= numberToCombineWith; // might not work
+        self._isComplete = self._combinedWith.size >= numberToCombineWith; // TODO
         game.deleteFromInventory(combinesWith);
         return fn(self, self._combinedWith);
       });
