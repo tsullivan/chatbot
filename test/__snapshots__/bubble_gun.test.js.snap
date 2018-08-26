@@ -270,7 +270,7 @@ Here at the Electronics store, their motto is: \\"Electronics - they're what we 
 You see:
 → Small LR41 Batteries. - The two LR41 batteries are the standard 1.5V button size batteries. They'd fit nicely into the battery holder of a very small piece of electronics.
 → Medium-size AA Batteries. - The two AA batteries are the standard 1.5V medium-size batteries. They'd fit nicely into the battery holder of a medium-size piece of electronics.
-→ LED - It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
+→ Light-emitting Diode - A semiconductor diode which glows when a voltage is applied. It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
 
 TAKE_LR41_BATTERIES - Obtain possession of the LR41 batteries.
 TAKE_AA_BATTERIES - Obtain possession of the AA batteries.
@@ -279,39 +279,34 @@ PLAYGROUND - Go back to the playground"
 `;
 
 exports[`bubble_gun walk around 12`] = `
-"You are at: The Electronics Store
-Here at the Electronics store, their motto is: \\"Electronics - they're what we sell!\\"
+"The LR41 batteries are now yours!
 
-You see:
-→ Small LR41 Batteries. - The two LR41 batteries are the standard 1.5V button size batteries. They'd fit nicely into the battery holder of a very small piece of electronics.
-→ Medium-size AA Batteries. - The two AA batteries are the standard 1.5V medium-size batteries. They'd fit nicely into the battery holder of a medium-size piece of electronics.
-→ LED - It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
-
-TAKE_LR41_BATTERIES - Obtain possession of the LR41 batteries.
 TAKE_AA_BATTERIES - Obtain possession of the AA batteries.
 TAKE_LED - Take the LED.
 PLAYGROUND - Go back to the playground"
 `;
 
 exports[`bubble_gun walk around 13`] = `
-"You are at: The Playground
-This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+"The AA batteries are now yours!
 
-Off the corner of the road, there's a bridge leading out of Bubble Gun World.
-
-Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
-
-You see:
-→ Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
-
-BRIDGE - Go to the bridge
-TREE_FORT - Climb the ladder up to the tree fort
-ELECTRONICS - Go to the Electronics store
-SOAPS - Go to the Soaps store
-MAGNETS - Go to the Magnet store"
+TAKE_LED - Take the LED.
+PLAYGROUND - Go back to the playground"
 `;
 
 exports[`bubble_gun walk around 14`] = `
+"The LED is now yours, and yours alone.
+
+PLAYGROUND - Go back to the playground"
+`;
+
+exports[`bubble_gun walk around 15`] = `
+"You are at: The Electronics Store
+Here at the Electronics store, their motto is: \\"Electronics - they're what we sell!\\"
+
+PLAYGROUND - Go back to the playground"
+`;
+
+exports[`bubble_gun walk around 16`] = `
 "You are at: The Playground
 This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
 
@@ -329,44 +324,18 @@ SOAPS - Go to the Soaps store
 MAGNETS - Go to the Magnet store"
 `;
 
-exports[`bubble_gun walk around 15`] = `
-"You are at: The Soap Store
-Oh my goodness, this store has so much soap! It is by far the soapiest store you have ever been in!
-
-Another thing you notice right away is that there is an extremely strong fragrance of clean in this place.
-
-You see:
-→ Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
-
-STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-PLAYGROUND - Go back to the playground
-ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
-`;
-
-exports[`bubble_gun walk around 16`] = `
-"You are at: The Soap Store
-Oh my goodness, this store has so much soap! It is by far the soapiest store you have ever been in!
-
-Another thing you notice right away is that there is an extremely strong fragrance of clean in this place.
-
-You see:
-→ Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
-
-STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-PLAYGROUND - Go back to the playground
-ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
-`;
-
 exports[`bubble_gun walk around 17`] = `
-"You are at: The Playground
-This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
-
-Off the corner of the road, there's a bridge leading out of Bubble Gun World.
-
-Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
-
-You see:
+"In The Playground, You see:
 → Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+You are holding:
+→ Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+  ⇒ COMBINE_BUBBLE_GUN_AND_BATTERIES - Put the AA batteries in the bubble gun.
+→ Slingshot - This slingshot seems like it could really sling some shots.
+→ Small LR41 Batteries. - The two LR41 batteries are the standard 1.5V button size batteries. They'd fit nicely into the battery holder of a very small piece of electronics.
+→ Medium-size AA Batteries. - The two AA batteries are the standard 1.5V medium-size batteries. They'd fit nicely into the battery holder of a medium-size piece of electronics.
+→ Light-emitting Diode - A semiconductor diode which glows when a voltage is applied. It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
+  ⇒ COMBINE_LED_AND_BATTERIES - Put the two LR41 batteries in the battery holder of the LED device.
 
 BRIDGE - Go to the bridge
 TREE_FORT - Climb the ladder up to the tree fort
@@ -376,15 +345,7 @@ MAGNETS - Go to the Magnet store"
 `;
 
 exports[`bubble_gun walk around 18`] = `
-"You are at: The Playground
-This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
-
-Off the corner of the road, there's a bridge leading out of Bubble Gun World.
-
-Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
-
-You see:
-→ Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+"You unscrew the cover to the bubble gun, pop in the AA batteries, and put the cover back on. It's nice and snug with the water seal that will prevent corrosion in the batteries or the metal surfaces inside the bubble gun's battery compartment.
 
 BRIDGE - Go to the bridge
 TREE_FORT - Climb the ladder up to the tree fort
@@ -394,25 +355,29 @@ MAGNETS - Go to the Magnet store"
 `;
 
 exports[`bubble_gun walk around 19`] = `
-"You are at: The Magnet Store
-Hold on to your metals, they got lots of magnets in here!
+"You fill up the bubble gun soap container with some of the liquid soap.
 
-You see:
-→ Small magnet - This looks like a pretty handy little small magent! It has a sticker on for sticking onto a small device.
-
-TAKE_MAGNET - Take the magnet.
-PLAYGROUND - Go back to the playground"
+BRIDGE - Go to the bridge
+TREE_FORT - Climb the ladder up to the tree fort
+ELECTRONICS - Go to the Electronics store
+SOAPS - Go to the Soaps store
+MAGNETS - Go to the Magnet store"
 `;
 
 exports[`bubble_gun walk around 20`] = `
-"You are at: The Magnet Store
-Hold on to your metals, they got lots of magnets in here!
+"In The Playground, You see:
+→ Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
 
-You see:
-→ Small magnet - This looks like a pretty handy little small magent! It has a sticker on for sticking onto a small device.
+You are holding:
+→ Bubble Gun - Bubble gun with batteries, but no soap.
+→ Slingshot - This slingshot seems like it could really sling some shots.
+→ Light-emitting Diode - Bubble gun with soap, but no AA batteries.
 
-TAKE_MAGNET - Take the magnet.
-PLAYGROUND - Go back to the playground"
+BRIDGE - Go to the bridge
+TREE_FORT - Climb the ladder up to the tree fort
+ELECTRONICS - Go to the Electronics store
+SOAPS - Go to the Soaps store
+MAGNETS - Go to the Magnet store"
 `;
 
 exports[`bubble_gun walk around 21`] = `
@@ -434,6 +399,34 @@ MAGNETS - Go to the Magnet store"
 `;
 
 exports[`bubble_gun walk around 22`] = `
+"You are at: The Soap Store
+Oh my goodness, this store has so much soap! It is by far the soapiest store you have ever been in!
+
+Another thing you notice right away is that there is an extremely strong fragrance of clean in this place.
+
+You see:
+→ Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
+
+STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
+PLAYGROUND - Go back to the playground
+ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
+`;
+
+exports[`bubble_gun walk around 23`] = `
+"You are at: The Soap Store
+Oh my goodness, this store has so much soap! It is by far the soapiest store you have ever been in!
+
+Another thing you notice right away is that there is an extremely strong fragrance of clean in this place.
+
+You see:
+→ Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
+
+STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
+PLAYGROUND - Go back to the playground
+ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
+`;
+
+exports[`bubble_gun walk around 24`] = `
 "You are at: The Playground
 This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
 
@@ -451,9 +444,85 @@ SOAPS - Go to the Soaps store
 MAGNETS - Go to the Magnet store"
 `;
 
-exports[`bubble_gun walk around 23`] = `
+exports[`bubble_gun walk around 25`] = `
+"You are at: The Playground
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+You see:
+→ Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+BRIDGE - Go to the bridge
+TREE_FORT - Climb the ladder up to the tree fort
+ELECTRONICS - Go to the Electronics store
+SOAPS - Go to the Soaps store
+MAGNETS - Go to the Magnet store"
+`;
+
+exports[`bubble_gun walk around 26`] = `
+"You are at: The Magnet Store
+Hold on to your metals, they got lots of magnets in here!
+
+You see:
+→ Small magnet - This looks like a pretty handy little small magent! It has a sticker on for sticking onto a small device.
+
+TAKE_MAGNET - Take the magnet.
+PLAYGROUND - Go back to the playground"
+`;
+
+exports[`bubble_gun walk around 27`] = `
+"You are at: The Magnet Store
+Hold on to your metals, they got lots of magnets in here!
+
+You see:
+→ Small magnet - This looks like a pretty handy little small magent! It has a sticker on for sticking onto a small device.
+
+TAKE_MAGNET - Take the magnet.
+PLAYGROUND - Go back to the playground"
+`;
+
+exports[`bubble_gun walk around 28`] = `
+"You are at: The Playground
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+You see:
+→ Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+BRIDGE - Go to the bridge
+TREE_FORT - Climb the ladder up to the tree fort
+ELECTRONICS - Go to the Electronics store
+SOAPS - Go to the Soaps store
+MAGNETS - Go to the Magnet store"
+`;
+
+exports[`bubble_gun walk around 29`] = `
+"You are at: The Playground
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+You see:
+→ Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+BRIDGE - Go to the bridge
+TREE_FORT - Climb the ladder up to the tree fort
+ELECTRONICS - Go to the Electronics store
+SOAPS - Go to the Soaps store
+MAGNETS - Go to the Magnet store"
+`;
+
+exports[`bubble_gun walk around 30`] = `
 "I guess you don't want to hike any more. See ya!
 
-Looks like you're a winner! Turns: 21 Score: 50
+Looks like you're a winner! Turns: 28 Score: 50
 That was fun, Tim!"
 `;

@@ -7,9 +7,7 @@ class Item {
   /*
    * name
    * description
-   * seen
-   * droppable
-   * takeable
+   * options
    */
   constructor({ game, name, id, description, seen = true, setActions = noop }) {
     if (!(game instanceof Object)) {
@@ -33,12 +31,9 @@ class Item {
     this._id = id;
     this._description = description;
     this._seen = seen;
+    this._setActions = setActions;
 
     this._combinedWith = new Set();
-    this._combinesRequired = new Set();
-    this._isComplete = true;
-
-    this._setActions = setActions;
 
     this.setItemActions(game);
   }
@@ -61,7 +56,10 @@ class Item {
   /*
    * You can only combine items when holding both of them
    */
-  setCombinable(game, { combinesWith, keyword, keywordDescription, fn }) {
+  setCombinable(
+    game,
+    { combinesWith, keyword, keywordDescription, fn, numberToCombineWith = 0 }
+  ) {
     if (typeof combinesWith !== 'string') {
       throw new Error('invalid combinesWith ' + combinesWith);
     }
@@ -74,33 +72,24 @@ class Item {
     if (typeof fn !== 'function') {
       throw new Error('invalid function ' + fn);
     }
-    const originalItem = this;
-
-    if (game.inInventory(originalItem._id) && game.inInventory(combinesWith)) {
-      originalItem._combinesRequired.add(combinesWith);
-      originalItem._isComplete = false;
-
-      originalItem.addKeyword(keyword, keywordDescription, () => {
-        originalItem._combinedWith.add(combinesWith);
+    const self = this;
+    if (game.inInventory(self._id) && game.inInventory(combinesWith)) {
+      self.addKeyword(keyword, keywordDescription, () => {
+        self.removeKeyword(keyword);
+        self._combinedWith.add(combinesWith);
+        self._isComplete = self._combinedWith.size >= numberToCombineWith; // might not work
         game.deleteFromInventory(combinesWith);
-
-        // checks if combo is complete // BUG - this is probably broken
-        if (originalItem._combinedWith.size === originalItem._combinesRequired.size) {
-          originalItem._isComplete = true;
-        }
-
-        originalItem.removeKeyword(keyword);
-        return fn(originalItem, originalItem._combinedWith);
+        return fn(self, self._combinedWith);
       });
     }
   }
 
-  combineWith(combinesWith) {
-    this._combinesRequired.add(combinesWith);
+  isComplete() {
+    return this._isComplete === true;
   }
 
-  isComplete() {
-    return this._isComplete;
+  combineWith(combinesWith) {
+    this._combinedWith.add(combinesWith);
   }
 
   setDroppable(game, { keyword, keywordDescription, fn }) {
