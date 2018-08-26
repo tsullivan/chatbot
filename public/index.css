@@ -4,6 +4,7 @@ body {
 #main {
   display: flex;
   flex-flow: column;
+  padding: 10px 20px;
 }
   #history {
     display: flex;

@@ -8,7 +8,7 @@ function Ajax() {
       const html = window.messageFormatter(message);
       if (html) {
         const $html = $(`<div role="log">${html}</div>`);
-        $container.prepend($html); // add to page
+        $container.append($html); // add to page
 
         const fadeTo = message.format === 'user' ? 0 : 1200;
         $html.fadeTo(0, 0); // make invisible
