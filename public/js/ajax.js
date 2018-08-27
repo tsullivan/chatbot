@@ -1,6 +1,5 @@
 /* global $ */
 function Ajax() {
-  let lastText = '';
   function updateHistory($container, ...messages) {
     $container.empty();
 
@@ -39,20 +38,20 @@ function Ajax() {
     );
   }
 
-  function handleSubmit($userText, $history) {
+  function handleSubmit($userText, $history, historyRecaller) {
     return e => {
       e.preventDefault();
 
       let messageText = $userText.val();
       if (messageText === '') {
         // prefill with last message, and stop
-        messageText = lastText;
-        $userText.val(messageText);
+        $userText.val(historyRecaller.getEarlierText());
         return false;
+      } else {
+        historyRecaller.addHistory(messageText);
       }
 
       sendMessage(messageText, 'user', (message, response) => {
-        lastText = messageText;
         $userText.val('');
         updateHistory($history, message, response);
       });
@@ -60,8 +59,8 @@ function Ajax() {
   }
 
   return {
-    initAjax($userText, $history) {
-      $('#chat').on('submit', handleSubmit($userText, $history));
+    initAjax($userText, $history, historyRecaller) {
+      $('#chat').on('submit', handleSubmit($userText, $history, historyRecaller));
 
       sendMessage('HELO', 'syn', (message, response) => {
         updateHistory($history, response);

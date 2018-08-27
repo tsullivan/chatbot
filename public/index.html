@@ -10,6 +10,7 @@
   <script type="text/javascript" src="vendor/jquery.min.js"></script>
   <script type="text/javascript" src="vendor/bootstrap.min.js"></script>
   <script type="text/javascript" src="vendor/jsrender.min.js"></script>
+  <script type="text/javascript" src="js/history_recaller.js"></script>
   <script type="text/javascript" src="js/message_formatter.js"></script>
 </head>
 <body>
@@ -45,8 +46,17 @@
     $(document).ready(() => {
       const $userText = $('#userText');
       const $history = $('#history');
-      Ajax().initAjax($userText, $history);
+      const historyRecaller = new HistoryRecaller();
+
+      Ajax().initAjax($userText, $history, historyRecaller);
       $userText.focus();
+
+      const UP_ARROW = 38;
+      $userText.keydown(e => {
+        if (e.which === UP_ARROW) {
+          $userText.val(historyRecaller.getEarlierText());
+        }
+      });
     });
   </script>
 </body>
