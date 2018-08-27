@@ -145,14 +145,18 @@ function getItems(game) {
           keywordDescription: 'Help yourself to the bottle of liquid soap.',
           fn: () =>
             new KeywordResponse({
-              text: `You wanted the soap, you got it. It's your problem now.`,
+              text: snl`Did you forget that I said everything in this town is
+              FREE!? Oh well. You wanted the soap, you got it. It's your
+              problem now.`,
             }),
         });
       },
     }),
     ledItem: itemFactory(LED, {
       name: 'Light-emitting Diode',
-      description: `A semiconductor diode which glows when a voltage is applied. It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.`,
+      description: snl`A semiconductor diode which glows when a voltage is
+      applied. It's an LED connected to a circuit board for making it flashy,
+      and battery holder for LR41s.`,
       setActions: ({ setTakeable, setCombinables }) => {
         setTakeable({
           keyword: 'TAKE_LED',
