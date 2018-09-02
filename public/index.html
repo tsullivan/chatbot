@@ -52,10 +52,18 @@
       $userText.focus();
 
       const UP_ARROW = 38;
+      const DOWN_ARROW = 40;
       $userText.keydown(e => {
+        let setted = false;
         if (e.which === UP_ARROW) {
           $userText.val(historyRecaller.getEarlierText());
+          setted = true;
         }
+        if (e.which === DOWN_ARROW) {
+          $userText.val(historyRecaller.getLaterText());
+          setted = true;
+        }
+        return !setted;
       });
     });
   </script>
