@@ -6,7 +6,7 @@ function Ajax() {
     for (const message of messages) {
       const html = window.messageFormatter(message);
       if (html) {
-        const $html = $(`<div role="log">${html}</div>`);
+        const $html = $(html);
         $container.append($html); // add to page
 
         const fadeTo = message.format === 'user' ? 0 : 1200;
