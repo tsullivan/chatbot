@@ -6,7 +6,7 @@ class RememberResponder extends KeywordResponder {
     super(input);
     this.name = 'remember';
     this.getResponse = () => {
-      const history = chat.getHistory();
+      const history = chat.getUserHistory();
       const thingSaid = String(sample(history)).trim();
       return `Remember that time you said, "${thingSaid}"? I do.`;
     };

@@ -12,7 +12,8 @@ const proto = {
   _game: null,
   _scores: [],
   _messages: {
-    history: [],
+    user_history: [],
+    prev: [],
     next: [],
   },
 };
@@ -121,13 +122,21 @@ class ChatSession {
     return nextMessage;
   }
 
-  addHistory(message) {
-    this._messages.history.push(message);
+  addUserHistory(message) {
+    this._messages.user_history.push(message);
     this.save();
   }
+  getUserHistory() {
+    return this._messages.user_history;
+  }
 
-  getHistory() {
-    return this._messages.history;
+  addBotMessage(message) {
+    this._messages.prev.push(message);
+    this.save();
+  }
+  getPrevBotMessage() {
+    const { prev } = this._messages;
+    return prev[prev.length - 1];
   }
 
   setGame(game) {

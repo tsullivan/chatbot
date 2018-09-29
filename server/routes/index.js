@@ -20,7 +20,7 @@ function initRoutes(app) {
       username: req.session.chat.getName(),
     });
     apm.setCustomContext({
-      num_messages: req.session.chat.getHistory().length,
+      num_messages: req.session.chat.getUserHistory().length,
       avg_score: req.session.chat.getAverageScore(),
     });
     apm.endTransaction();

@@ -15,6 +15,8 @@ function handleChat(body, chat) {
   let response;
 
   const { message, format } = body;
+  chat.addUserHistory(message);
+
   if (message && format) {
     let workIdx = 0;
     while (workIdx < responseWorkers.length) {
@@ -22,8 +24,9 @@ function handleChat(body, chat) {
       const worker = new Worker(chat, message, format);
       const test = worker.getResponse();
       if (test !== null) {
-        apm.setTag('responder', worker.getName());
         response = test;
+        chat.addBotMessage(response.message);
+        apm.setTag('responder', worker.getName());
         break;
       }
       workIdx++;

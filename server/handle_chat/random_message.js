@@ -4,7 +4,6 @@ const { KeywordResponder: Impromptu } = require('../keywords/responders/random')
 class RandomMessage extends ResponseMessage {
   constructor(chat, message, format) {
     super('random', chat, message, format);
-    chat.addHistory(message);
   }
 
   makeResponse(chat) {
