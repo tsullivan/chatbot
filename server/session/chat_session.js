@@ -9,12 +9,12 @@ const sessionGames = new Map(); // memory leak
 const proto = {
   name: null,
   waitingOn: null,
+  game: null,
   scores: [],
   messages: {
     history: [],
     next: [],
   },
-  _game: null,
 };
 
 const games = getGames();
@@ -45,7 +45,7 @@ class ChatSession {
   getResumed({ chat }) {
     defaultsDeep(this, chat, proto);
     this.save();
-    this._game = sessionGames.get(this.sessionId) || null;
+    this._game = sessionGames.get(this.sessionId);
     return this;
   }
 
@@ -63,22 +63,28 @@ class ChatSession {
     return this.name;
   }
 
-  validateSession() {
-    if (this.waitingOn === null && this.name === null) {
-      // somehow lost session data!
-      const err = new Error('Session data got lost!');
-      apm.captureError(err);
+  validateSession(format) {
+    if (this.name === null) {
+      if (format === 'syn') {
+        // browser refresh
+        return false;
+      }
 
-      this.setWaitOnName();
-      return {
-        isValid: false,
-        revalidateResponse: 'Wait, who are you? What is your name?',
-      };
+      if (this.waitingOn === null) {
+        // somehow lost session data!
+        const err = new Error('Session data got lost!');
+        apm.captureError(err);
+
+        this.setWaitOnName();
+        return {
+          isValid: false,
+          revalidateResponse:
+            'My brain hurts!!! I think I just lost all of my memory!!!\n What is your name?',
+        };
+      }
     }
-    return {
-      isValid: true,
-      revalidateResponse: null,
-    };
+
+    return { isValid: true };
   }
 
   fulfillWait(input) {

@@ -7,24 +7,24 @@ class SessionMessage extends ResponseMessage {
   }
 
   makeResponse(chat) {
-    if (this.userFormat === 'syn') {
-      if (chat.validateSession().isValid) {
+    const format = this.userFormat;
+    const { isValid, revalidateResponse } = chat.validateSession(format);
+
+    if (format === 'syn') {
+      if (isValid) {
         return this.plain(`Hello again, ${chat.getName()}!`);
       } else {
         chat.setWaitOnName();
         return this.plain('Hello! What is your name?');
       }
-    } else if (this.userFormat === 'hup') {
+    } else if (format === 'hup') {
       chat.hangup();
       return this.plain('Bye!');
-    }
-
-    const { isValid, revalidateResponse } = chat.validateSession();
-    if (isValid) {
-      chat.fulfillWait(this.userMessage);
-    } else {
+    } else if (!isValid) {
       return this.plain(revalidateResponse);
     }
+
+    chat.fulfillWait(this.userMessage);
 
     const nextBotMessage = chat.popNextBotMessage();
     if (nextBotMessage !== null) {
