@@ -9,12 +9,12 @@ const sessionGames = new Map(); // memory leak
 const proto = {
   name: null,
   waitingOn: null,
-  game: null,
   scores: [],
   messages: {
     history: [],
     next: [],
   },
+  _game: null,
 };
 
 const games = getGames();
@@ -45,7 +45,7 @@ class ChatSession {
   getResumed({ chat }) {
     defaultsDeep(this, chat, proto);
     this.save();
-    this._game = sessionGames.get(this.sessionId);
+    this._game = sessionGames.get(this.sessionId) || null;
     return this;
   }
 
