@@ -7,11 +7,11 @@ const { getGames } = require('../games');
 const sessionGames = new Map(); // memory leak
 
 const proto = {
-  name: null,
-  waitingOn: null,
-  game: null,
-  scores: [],
-  messages: {
+  _name: null,
+  _waitingOn: null,
+  _game: null,
+  _scores: [],
+  _messages: {
     history: [],
     next: [],
   },
@@ -23,7 +23,6 @@ class ChatSession {
   constructor(session) {
     this.initialized = false;
     this.sessionId = session.id;
-    this._game = null;
 
     this.save = () => {
       if (!this.initialized) {
@@ -50,27 +49,27 @@ class ChatSession {
   }
 
   setWaitOnName() {
-    this.waitingOn = 'name';
+    this._waitingOn = 'name';
     this.save();
   }
 
   setName(name) {
-    this.name = name;
+    this._name = name;
     this.save();
   }
 
   getName() {
-    return this.name;
+    return this._name;
   }
 
   validateSession(format) {
-    if (this.name === null) {
+    if (this._name === null) {
       if (format === 'syn') {
         // browser refresh
         return false;
       }
 
-      if (this.waitingOn === null) {
+      if (this._waitingOn === null) {
         // somehow lost session data!
         const err = new Error('Session data got lost!');
         apm.captureError(err);
@@ -88,15 +87,15 @@ class ChatSession {
   }
 
   fulfillWait(input) {
-    if (this.waitingOn !== null) {
-      const field = this.waitingOn;
+    if (this._waitingOn !== null) {
+      const field = this._waitingOn;
       const { response, method } = mapFieldToResponse(field, input);
 
       if (response !== null && this[method] !== undefined) {
         const fn = this[method].bind(this);
         fn(input);
 
-        this.waitingOn = null;
+        this._waitingOn = null;
         this.pushNextBotMessage(response);
         this.save();
       }
@@ -105,7 +104,7 @@ class ChatSession {
 
   pushNextBotMessage(message) {
     if (this.initialized) {
-      this.messages.next.push(message);
+      this._messages.next.push(message);
       this.save();
     }
   }
@@ -113,7 +112,7 @@ class ChatSession {
   popNextBotMessage() {
     let nextMessage = null;
     if (this.initialized) {
-      const test = this.messages.next.pop();
+      const test = this._messages.next.pop();
       if (test !== undefined) {
         nextMessage = test;
       }
@@ -123,12 +122,12 @@ class ChatSession {
   }
 
   addHistory(message) {
-    this.messages.history.push(message);
+    this._messages.history.push(message);
     this.save();
   }
 
   getHistory() {
-    return this.messages.history;
+    return this._messages.history;
   }
 
   setGame(game) {
@@ -149,12 +148,12 @@ class ChatSession {
   }
 
   addScore(score) {
-    this.scores.push(score);
+    this._scores.push(score);
     this.save();
   }
 
   getAverageScore() {
-    return mean(this.scores);
+    return mean(this._scores);
   }
 
   getGameWelcome() {
