@@ -61,7 +61,7 @@ const throwieCombinings = (item, combinedSet) => {
 };
 
 const getCombiningResponse = (item, combinedSet) => {
-  const { _id: id } = item;
+  const id = item.getId();
   if (id === BUBBLE_GUN) {
     const lns = bubbleGunCombinings(item, combinedSet);
     return new KeywordResponse({ text: parajoin(lns) });
