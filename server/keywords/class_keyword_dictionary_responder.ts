@@ -1,18 +1,17 @@
-const { sample } = require('lodash');
-const { KeywordResponder } = require('./class_keyword_responder');
-const { runDictionary } = require('./dictionary');
+import { sample } from 'lodash';
+import { KeywordResponder } from './class_keyword_responder';
+import { runDictionary } from './dictionary';
 
-class DictionaryResponder extends KeywordResponder {
+export class DictionaryResponder extends KeywordResponder {
+  private requested: number | null;
+  private dictionary: string;
+
   constructor(input) {
     super(input);
     this.requested = null;
   }
 
-  setName(name) {
-    this.name = name;
-    return this;
-  }
-  setDictionary(dictionary) {
+  public setDictionary(dictionary: string) {
     if (typeof dictionary !== 'string') {
       throw new Error('need to set a keyword string as the dictionary');
     }
@@ -20,33 +19,33 @@ class DictionaryResponder extends KeywordResponder {
     return this;
   }
 
-  isImpromptu() {
+  public isImpromptu() {
     return true;
   }
 
-  setParsedRequestedDictionaryItem(input, regex) {
+  public setParsedRequestedDictionaryItem(input, regex) {
     const matches = input.match(regex);
     if (matches !== null) {
-      const [_matched, requested] = matches;
-      const parsedRequested = parseInt(requested);
-      if (!Number.isNaN(parsedRequested, 10)) {
+      const requested = matches[1];
+      const parsedRequested = parseInt(requested, 10);
+      if (!Number.isNaN(parsedRequested)) {
         this.requested = parsedRequested;
       }
     }
   }
 
-  help() {
-    return `Type \`${this.name}\`, or \`${this.name} <some number>\`, and see what happens...`; // prettier-ignore
+  public help() {
+    return `Type \`${this.getName()}\`, or \`${this.getName()} <some number>\`, and see what happens...`;
   }
 
-  getRandom() {
+  public getRandom() {
     const dictionary = runDictionary(this.dictionary);
     const indices = Object.keys(dictionary);
     const index = parseInt(sample(indices), 10);
     return dictionary[index];
   }
 
-  getRequested(prefixFn) {
+  public getRequested(prefixFn) {
     const dictionary = runDictionary(this.dictionary);
     const indices = Object.keys(dictionary);
     let index;
@@ -58,5 +57,3 @@ class DictionaryResponder extends KeywordResponder {
     return prefixFn(index + 1) + ':\n' + dictionary[index];
   }
 }
-
-module.exports = { DictionaryResponder };

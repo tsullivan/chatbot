@@ -1,56 +1,64 @@
-class KeywordResponder {
+export class KeywordResponder {
+  private input: string;
+  private name: string | null;
+  private format: string;
+
   constructor(input) {
-    this.input = input;
     this.name = null;
+    this.input = input;
     this.format = 'plain';
   }
 
-  getName() {
+  public setName(name) {
+    this.name = name;
+    return this;
+  }
+  public getName() {
     return this.name;
   }
 
-  setFormat(format) {
+  public setFormat(format) {
     this.format = format;
     return this;
   }
 
-  getFormat() {
+  public getFormat() {
     return this.format;
   }
 
-  isImpromptu() {
+  public isImpromptu() {
     return false;
   }
 
-  isListed() {
+  public isListed() {
     return true;
   }
 
-  testMatch(input) {
+  public testMatch(input) {
     return input.match(/^$/);
   }
 
-  inputMatches() {
+  public inputMatches() {
     return this.testMatch(this.input) !== null;
   }
 
-  help() {
+  public help() {
     return `Type \`${this.name}\` and see what happens...`;
   }
 
-  justDont() {
+  public justDont() {
     return `Just don't.`;
   }
 
-  getResponse() {
+  public getResponse() {
     return 'Nothing to say.';
   }
 
-  getRandom() {
+  public getRandom() {
     return this.getResponse();
   }
 
-  runKeyword() {
+  public runKeyword() {
     const needsHelpMatches = this.input.match(/ help\b$/);
     if (needsHelpMatches !== null) {
       return this.help();
@@ -59,5 +67,3 @@ class KeywordResponder {
     return this.getResponse();
   }
 }
-
-module.exports = { KeywordResponder };
