@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "yarn run lint & yarn run jest",
-    "lint": "eslint .",
+    "lint": "eslint . && tslint -p tsconfig.json --exclude node_modules",
     "jest": "NODE_ENV=test jest --ci --verbose ./*/*.test.js ",
     "start": "node index.js",
     "debug": "node --inspect-brk index.js",
@@ -18,27 +18,31 @@
   "engines": {
     "node": ">=8.11 <9"
   },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
   "prettier": {
     "printWidth": 88,
     "singleQuote": true,
     "trailingComma": "es5"
   },
   "devDependencies": {
+    "@types/cookie-parser": "^1.4.1",
+    "@types/express": "^4.16.0",
+    "@types/node": "^10.11.3",
     "chai": "^4.1.2",
     "eslint": "^4.15.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-prettier": "^2.6.0",
     "husky": "^0.14.3",
-    "jest": "^22.4.4",
+    "jest": "^23.6.0",
     "nodemon": "^1.14.11",
     "prettier": "^1.13.4",
-    "supertest": "^3.1.0"
-  },
-  "prettier": {
-    "printWidth": 88,
-    "singleQuote": true,
-    "trailingComma": "es5"
+    "supertest": "^3.1.0",
+    "ts-jest": "^23.10.3",
+    "tslint": "^5.11.0"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -48,6 +52,8 @@
     "express-session": "^1.15.6",
     "lodash": "^4.17.4",
     "moment": "^2.20.1",
-    "strip-newlines": "^1.0.1"
+    "strip-newlines": "^1.0.1",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.1"
   }
 }
