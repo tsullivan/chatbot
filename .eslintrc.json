@@ -1,0 +1,78 @@
+{
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "prettier"
+  ],
+  "overrides": [
+    {
+      "env": {
+        "jest": true
+      },
+      "files": [
+        "**/*.test.js"
+      ]
+    }
+  ],
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
+  "plugins": [
+    "prettier",
+    "node"
+  ],
+  "rules": {
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "no-shadow": [
+      "error"
+    ],
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "node/exports-style": [
+      "error",
+      "module.exports"
+    ],
+    "node/no-missing-require": [
+      "error",
+      {
+        "allowModules": [],
+        "resolvePaths": [
+          "/path/to/a/modules/directory"
+        ],
+        "tryExtensions": [
+          ".js",
+          ".json",
+          ".ts"
+        ]
+      }
+    ],
+    "prettier/prettier": 2,
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "semi": [
+      "error",
+      "always"
+    ]
+  }
+}
