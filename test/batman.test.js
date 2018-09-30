@@ -6,44 +6,41 @@ const app = runServer();
 const agent = request.agent(app);
 const { handshake } = utilFactory(agent);
 
+const testFields = body => ({
+  message: body.message,
+  format: body.format,
+});
+
+const sendTest = message =>
+  agent
+    .post('/chat')
+    .send({ format: 'user', message })
+    .expect(200);
+
 describe('batman', () => {
   test('should win at the batman game', async () => {
     await handshake();
 
-    const startGame = await agent
-      .post('/chat')
-      .send({ format: 'user', message: 'play batman' });
+    const { body: a1 } = await sendTest('play batman');
+    expect(testFields(a1)).toMatchSnapshot();
 
-    expect(startGame.body.message).toMatchSnapshot();
+    const { body: b1 } = await sendTest('batmobile');
+    expect(testFields(b1)).toMatchSnapshot();
 
-    const sayBatmobile = await agent
-      .post('/chat')
-      .send({ format: 'user', message: 'batmobile' });
-
-    expect(sayBatmobile.body.message).toMatchSnapshot();
-
-    const winGame = await agent.post('/chat').send({ format: 'user', message: '77' });
-
-    expect(winGame.body.message).toMatchSnapshot();
+    const { body: c1 } = await sendTest('77');
+    expect(testFields(c1)).toMatchSnapshot();
   });
 
   test('should lose at the batman game', async () => {
     await handshake(app);
 
-    const startGame = await agent
-      .post('/chat')
-      .send({ format: 'user', message: 'play batman' });
+    const { body: a2 } = await sendTest('play batman');
+    expect(testFields(a2)).toMatchSnapshot();
 
-    expect(startGame.body.message).toMatchSnapshot();
+    const { body: b2 } = await sendTest('batgirl');
+    expect(testFields(b2)).toMatchSnapshot();
 
-    const sayBatmobile = await agent
-      .post('/chat')
-      .send({ format: 'user', message: 'batgirl' });
-
-    expect(sayBatmobile.body.message).toMatchSnapshot();
-
-    const loseGame = await agent.post('/chat').send({ format: 'user', message: 'kl' });
-
-    expect(loseGame.body.message).toMatchSnapshot();
+    const { body: c2 } = await sendTest('kl');
+    expect(testFields(c2)).toMatchSnapshot();
   });
 });

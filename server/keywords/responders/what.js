@@ -5,6 +5,7 @@ class WhatResponder extends KeywordResponder {
   constructor(input, chat) {
     super(input);
     this.name = 'what';
+    this.setFormat('markdown');
 
     this.getResponse = () => {
       let prevMessage;
@@ -19,7 +20,7 @@ class WhatResponder extends KeywordResponder {
       if (prevMessage === null) {
         return `I didn't say anything.`;
       }
-      return `I said: ${prevMessage}`;
+      return `I said:\n> ${prevMessage}`;
     };
   }
 

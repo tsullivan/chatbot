@@ -7,7 +7,8 @@ class RandomMessage extends ResponseMessage {
   }
 
   makeResponse(chat) {
-    return this.plain(new Impromptu(null, chat).getResponse());
+    const responder = new Impromptu(null, chat);
+    return this.respond(responder.getResponse(), responder.getFormat());
   }
 }
 

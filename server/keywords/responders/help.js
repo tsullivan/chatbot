@@ -5,6 +5,7 @@ class HelpResponder extends KeywordResponder {
   constructor(input) {
     super(input);
     this.name = 'help';
+    this.setFormat('markdown');
   }
 
   testMatch(input) {
@@ -30,7 +31,8 @@ class HelpResponder extends KeywordResponder {
       }
     }
 
-    return 'Here are keywords you can use:\n' + usableResponders.join(', ');
+    const items = usableResponders.reduce((accum, curr) => `${accum}\n- ${curr}`, '');
+    return 'Here are keywords you can use:\n' + items;
   }
 }
 
