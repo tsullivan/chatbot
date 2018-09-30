@@ -27,7 +27,8 @@ class StartLocation extends Location {
       snl`You're not sure how you got here, and that makes you feel really
         lost. You can go wherever you want. You're surrounded by trees and your
         scared.`,
-      snl`You can also go really fast sometimes, and you have the Force sometimes.`,
+      snl`You can also go really fast sometimes, and you have the Force
+        sometimes. But that's actually for a different game.`,
     ];
     return parajoin(lns);
   }
