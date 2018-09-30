@@ -16,6 +16,7 @@ function getResponders() {
     score: require('./responders/score'),
     starwarsfact: require('./responders/starwarsfact'),
     superherofact: require('./responders/superherofact'),
+    what: require('./responders/what'),
   };
 }
 

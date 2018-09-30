@@ -1,12 +1,14 @@
 class KeywordResponse {
   constructor({
     text = 'Not sure',
+    format = 'markdown',
     changeScore = 0,
     isDone = false,
     showInstructions = true,
     isCascade = false,
   }) {
     this.text = text;
+    this.format = format;
     this.changeScore = changeScore;
     this.isDone = isDone;
     this.showInstructions = showInstructions;
@@ -23,9 +25,10 @@ class KeywordResponse {
   }
 
   get() {
-    const { text, changeScore, isDone, showInstructions, isCascade } = this;
+    const { text, format, changeScore, isDone, showInstructions, isCascade } = this;
     return {
       response: text,
+      format,
       changeScore,
       isDone,
       showInstructions,

@@ -28,4 +28,11 @@ body {
 }
 .messageBody {
   white-space: pre-line;
+  background-color: #ffffffcc;
+  margin: 0 0 15px 0;
+  padding: 0 15px;
+}
+
+.messageBody p {
+  margin: 10px;
 }

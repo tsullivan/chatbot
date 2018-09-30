@@ -19,13 +19,30 @@ class ResponseMessage {
     return this.name;
   }
 
-  plain(message) {
+  _plain(message) {
     this.response = {
       format: 'plain',
       message,
     };
 
     return this.response;
+  }
+
+  _markdown(message) {
+    this.response = {
+      format: 'markdown',
+      message,
+    };
+
+    return this.response;
+  }
+
+  respond(message, format = 'plain') {
+    if (format === 'plain') {
+      return this._plain(message);
+    } else {
+      return this._markdown(message);
+    }
   }
 
   getResponse() {

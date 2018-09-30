@@ -34,6 +34,19 @@ describe('Keywords', () => {
     expect(body.message).toMatchSnapshot();
   });
 
+  test('should what', async () => {
+    await handshake();
+    const { body: body1 } = await agent
+      .post('/chat')
+      .send({ format: 'user', message: 'say 🍍' });
+    expect(body1.message).toMatchSnapshot();
+
+    const { body: body2 } = await agent
+      .post('/chat')
+      .send({ format: 'user', message: 'what' });
+    expect(body2.message).toMatchSnapshot();
+  });
+
   test('should name', async () => {
     await handshake();
 

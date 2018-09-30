@@ -7,6 +7,7 @@ class GameResponder extends KeywordResponder {
   constructor(input, session) {
     super(input);
     this.name = 'play';
+    this.setFormat('markdown');
 
     this.getResponse = () => {
       const game = input.replace(/^play /, '');

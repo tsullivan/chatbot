@@ -2,10 +2,20 @@ class KeywordResponder {
   constructor(input) {
     this.input = input;
     this.name = null;
+    this.format = 'plain';
   }
 
   getName() {
     return this.name;
+  }
+
+  setFormat(format) {
+    this.format = format;
+    return this;
+  }
+
+  getFormat() {
+    return this.format;
   }
 
   isImpromptu() {

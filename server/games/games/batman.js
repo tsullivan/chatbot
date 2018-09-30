@@ -4,13 +4,13 @@ const { ChatGame } = require('../chat_game');
 const WIN_CODE = '77';
 const LOSE_CODE = 'kl';
 
-const notDone = response => ({ response, isDone: false });
-const yesDone = response => ({ response, isDone: true });
+const notDone = response => ({ response, format: 'markdown', isDone: false });
+const yesDone = response => ({ response, format: 'markdown', isDone: true });
 
 /*
  * Let user guess a number between 1 and GUESS_BOUND
  */
-class GuessNumber extends ChatGame {
+class Batman extends ChatGame {
   constructor(session) {
     super(session);
     this.setName('batman');
@@ -31,10 +31,11 @@ class GuessNumber extends ChatGame {
         response = 'Type "kl" and you lose the Batgame :(';
       }
 
+      const items = this.batStuff.reduce((accum, curr) => `${accum}\n- ${curr}`, '');
       return yesDone(
-        `${response} "${input}" ended the Batgame. Your Batstuff is: ${this.batStuff.join(
-          ', '
-        )}. Your Batscore is ${this.score}.`
+        `${response} "${input}" ended the Batgame. Your Batstuff is:\n${items}\n\nYour Batscore is ${
+          this.score
+        }.`
       );
     } else {
       this.score += 1;
@@ -50,4 +51,4 @@ class GuessNumber extends ChatGame {
   }
 }
 
-module.exports = { Game: GuessNumber };
+module.exports = { Game: Batman };

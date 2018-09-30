@@ -96,6 +96,7 @@ class Adventure extends ChatGame {
     input = input.toUpperCase();
     const responseSet = [];
     let response,
+      format,
       changeScore, // FIXME should be independent of keyword response: game.updateScore()
       isDone = false, // FIXME should be independent of keyword response game.isDone()
       showInstructions = true;
@@ -134,9 +135,14 @@ class Adventure extends ChatGame {
       const contextResult = inputCheck(this);
       if (contextResult) {
         let isCascade = false;
-        ({ response, changeScore, isDone, showInstructions, isCascade } = getResponder(
-          contextResult
-        ));
+        ({
+          response,
+          format,
+          changeScore,
+          isDone,
+          showInstructions,
+          isCascade,
+        } = getResponder(contextResult));
 
         foundResponse = true;
 
@@ -162,12 +168,12 @@ class Adventure extends ChatGame {
     this.score += changeScore;
 
     if (this.score <= 0) {
-      return this.lose(response);
+      return this.lose(response, format);
     } else if (isDone) {
-      return this.win(response);
+      return this.win(response, format);
     } else {
       this.turns += 1;
-      return this.notDone(this.getNext(response, showInstructions));
+      return this.notDone(this.getNext(response, showInstructions), format);
     }
   }
 

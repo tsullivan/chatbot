@@ -7,41 +7,46 @@ class SessionMessage extends ResponseMessage {
   }
 
   makeResponse(chat) {
-    if (this.userFormat === 'syn') {
-      if (chat.validateSession().isValid) {
-        return this.plain(`Hello again, ${chat.getName()}!`);
+    const userFormat = this.userFormat;
+    const { isValid, revalidateResponse } = chat.validateSession(userFormat);
+
+    if (userFormat === 'syn') {
+      if (isValid) {
+        return this.respond(`Hello again, ${chat.getName()}!`, 'plain');
       } else {
         chat.setWaitOnName();
-        return this.plain('Hello! What is your name?');
+        return this.respond('Hello! What is your name?', 'plain');
       }
-    } else if (this.userFormat === 'hup') {
+    } else if (userFormat === 'hup') {
       chat.hangup();
-      return this.plain('Bye!');
+      return this.respond('Bye!', 'plain');
+    } else if (!isValid) {
+      return this.respond(revalidateResponse);
     }
 
-    const { isValid, revalidateResponse } = chat.validateSession();
-    if (isValid) {
-      chat.fulfillWait(this.userMessage);
-    } else {
-      return this.plain(revalidateResponse);
-    }
+    chat.fulfillWait(this.userMessage);
 
     const nextBotMessage = chat.popNextBotMessage();
     if (nextBotMessage !== null) {
-      return this.plain(nextBotMessage);
+      return this.respond(nextBotMessage);
     }
 
+    let response;
+    let isDone = false;
+    let responseFormat;
     if (chat.getGame() != null) {
       const game = chat.getGame();
       apm.setTag('game', game.getName());
-      const { isDone, response } = game.testInput(this.userMessage);
-      let modResponse = response;
+      ({ isDone, response, format: responseFormat } = game.testInput(this.userMessage));
+
       game.save();
+
       if (isDone === true) {
-        modResponse += `\nThat was fun, ${chat.getName()}!`;
+        response += `\nThat was fun, ${chat.getName()}!`;
         chat.endGame();
       }
-      return this.plain(modResponse);
+
+      return this.respond(response, responseFormat);
     }
 
     return null;

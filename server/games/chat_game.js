@@ -2,7 +2,7 @@ const { defaults } = require('lodash');
 
 class ChatGame {
   constructor(chat) {
-    this.playerName = chat.name;
+    this.playerName = chat.getName();
 
     this.save = () => {
       chat.save();
