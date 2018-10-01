@@ -1,8 +1,6 @@
-import { partial } from 'lodash';
+import { noop, partial } from 'lodash';
 import { Keywordable } from './keywordable';
 import { getKeywordsHelper } from './keywords_helper';
-
-const noop = () => {/*nothing*/};
 
 interface ICombinable {
   combinesWith: Item;
@@ -23,7 +21,7 @@ interface IOpts {
   id: string;
   description: string;
   seen?: boolean;
-  setActions?: (opts: IActionOpts) => void;
+  setActions?: (opts: IActionOpts, item: Item) => void;
 }
 
 export class Item implements Keywordable {
@@ -37,7 +35,7 @@ export class Item implements Keywordable {
   private calculatedIsComplete: boolean;
   private seen: boolean;
   private combinedWith: Set<any>;
-  private setActions: (actions: IActionOpts) => void;
+  private setActions: (actions: IActionOpts, item: Item) => void;
 
   constructor(options: IOpts) {
     const { game, name, id, description, seen = true, setActions = noop } = options;
@@ -64,9 +62,7 @@ export class Item implements Keywordable {
     this.description = description;
     this.seen = seen;
     this.setActions = setActions;
-
     this.combinedWith = new Set();
-
     this.setItemActions(game);
   }
 
@@ -93,7 +89,7 @@ export class Item implements Keywordable {
       },
       setDroppable: partial(this.setDroppable, game).bind(this),
       setTakeable: partial(this.setTakeable, game).bind(this),
-    });
+    }, this);
   }
 
   /*
@@ -120,7 +116,7 @@ export class Item implements Keywordable {
       self.addKeyword(keyword, keywordDescription, () => {
         self.removeKeyword(keyword);
         self.combinedWith.add(combinesWith);
-        self.calculatedIsComplete = self.combinedWith.size >= numberToCombineWith; // TODO
+        self.calculatedIsComplete = self.combinedWith.size >= numberToCombineWith;
         game.deleteFromInventory(combinesWith);
         return fn(self, self.combinedWith);
       });

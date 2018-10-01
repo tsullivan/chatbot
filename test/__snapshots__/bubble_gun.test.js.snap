@@ -431,6 +431,7 @@ ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will
 exports[`bubble_gun walk around 25`] = `
 "You are holding:
 → Bubble Gun - Completely functional and working bubble gun
+  ⇒ BUBBLE_BLASTER - Blast bubbles out the bubble gun
 → Slingshot - This slingshot seems like it could really sling some shots.
 → Light-emitting Diode - LED throwie that has batteries, but you can't do anything else with it.
 
