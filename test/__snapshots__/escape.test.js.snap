@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`escape-jail escape 1`] = `
-"CRASH! Your body has tumbled down a mountainside, and you have crashed through the roof of a jail. Fortunately you are not hurt, but you are stuck in this cell! The guards don't know that you are not supposed to be here, and they are watching you.
+"# CRASH!!!
+
+Your body has tumbled down a mountainside, and you have crashed through the roof of a jail. Fortunately you are not hurt, but you are stuck in this cell! The guards don't know that you are not supposed to be here, and they are watching you.
 
 You are at: The Jail Cell
 You're locked up securely in a jail cell. A hole in the ceiling marks where you crashed through accidentally when you got here.
@@ -84,7 +86,8 @@ You are at: The Jail Van
 You're hiding in a jail van that's driving around the jail, making jail deliveries to the jail people.
 
 You see:
-→ Jail Towel - A towel from the jail laundry van.
+
+- Jail Towel - A towel from the jail laundry van.
 
 TAKE_TOWEL - Take one of the towels from the jail laundry van.
 ESCAPE - Escape the jail van

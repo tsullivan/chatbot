@@ -9,7 +9,7 @@
     "jest": "NODE_ENV=test jest --ci --verbose ./*/*.test.js ",
     "start": "node index.js",
     "debug": "node --inspect-brk index.js",
-    "dev": "nodemon index.js",
+    "dev": "nodemon -e js,ts,json index.js",
     "precommit": "yarn run lint",
     "prepush": "yarn run test"
   },

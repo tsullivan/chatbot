@@ -323,7 +323,8 @@ It was a long climb up to the really tall top of this mountain, so it feels so g
 Nearby is a blue house with a green roof. It has a lot of windows and only one door that is open. There is smoke coming out of the chimney.
 
 You see:
-→ Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+
+- Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
 
 TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.
 WATERFALL - To go back down to the waterfall
@@ -337,7 +338,8 @@ It was a long climb up to the really tall top of this mountain, so it feels so g
 Nearby is a blue house with a green roof. It has a lot of windows and only one door that is open. There is smoke coming out of the chimney.
 
 You see:
-→ Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+
+- Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
 
 TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.
 WATERFALL - To go back down to the waterfall
@@ -346,12 +348,12 @@ HOUSE - Check out the mountain house up here."
 
 exports[`hiking fly a car back to the lake 5`] = `
 "In Top of the mountain, You see:
-→ Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
-  ⇒ TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.
+- Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+  - TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.
 
 You are holding:
-→ Apples - 100 red apples.
-→ Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
+- Apples - 100 red apples.
+- Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
 
 TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.
 WATERFALL - To go back down to the waterfall
@@ -406,7 +408,8 @@ The hole which you climbed down is the only source of light. You're at the dead-
 In the dim light, the only thing you can really tell is there's a silver car parked here. It points straight in to the darkness of the cave tunnel. It's floating slightly, and seems very ready to drive.
 
 You see:
-→ Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
+
+- Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
 
 LADDER - Climb the ladder to get back up to the house
 DRIVE_THE_CAR - Get into the car and drive it, to see what's down this tunnel"
@@ -455,7 +458,8 @@ The hole which you climbed down is the only source of light. You're at the dead-
 In the dim light, the only thing you can really tell is there's a silver car parked here. It points straight in to the darkness of the cave tunnel. It's floating slightly, and seems very ready to drive.
 
 You see:
-→ Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
+
+- Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
 
 LADDER - Climb the ladder to get back up to the house
 DRIVE_THE_CAR - Get into the car and drive it, to see what's down this tunnel"
@@ -468,7 +472,8 @@ The hole which you climbed down is the only source of light. You're at the dead-
 In the dim light, the only thing you can really tell is there's a silver car parked here. It points straight in to the darkness of the cave tunnel. It's floating slightly, and seems very ready to drive.
 
 You see:
-→ Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
+
+- Flying silver car - This car does not have wheels, instead it has flyers on the bottom that point at the ground and lift it up, making it go really fast. It is created inside the tall mountain.
 
 LADDER - Climb the ladder to get back up to the house
 DRIVE_THE_CAR - Get into the car and drive it, to see what's down this tunnel"
@@ -805,7 +810,8 @@ There's no one in the store, but there's a man standing on a tree branch out bac
 \\"Oh, a customer! Would you like to buy an apple?\\" he says.
 
 You see:
-→ Apples - 100 red apples.
+
+- Apples - 100 red apples.
 
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store
@@ -823,7 +829,8 @@ There's no one in the store, but there's a man standing on a tree branch out bac
 \\"Oh, a customer! Would you like to buy an apple?\\" he says.
 
 You see:
-→ Apples - 100 red apples.
+
+- Apples - 100 red apples.
 
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store
@@ -893,7 +900,8 @@ You are at: The Apple Store
 You're in a giant, giant red sphere in the trees. This is an Apple Store. On the inside, it actually a shed. Inside there are many, many shelves full of apples. It looks like there are exactly 0 apples.
 
 You see:
-→ Apples - 100 red apples.
+
+- Apples - 100 red apples.
 
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store"
@@ -906,7 +914,8 @@ You are at: The Apple Store
 You're in a giant, giant red sphere in the trees. This is an Apple Store. On the inside, it actually a shed. Inside there are many, many shelves full of apples. It looks like there are exactly 0 apples.
 
 You see:
-→ Apples - 100 red apples.
+
+- Apples - 100 red apples.
 
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store
@@ -937,8 +946,9 @@ You are at: The Apple Store
 You're in a giant, giant red sphere in the trees. This is an Apple Store. On the inside, it actually a shed. Inside there are many, many shelves full of apples. It looks like there are exactly 0 apples.
 
 You see:
-→ Apples - 100 red apples.
-→ Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
+
+- Apples - 100 red apples.
+- Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
 
 EXIT - If you want to leave the Apple Store
 LOOK - Look at the contents of the Apple Store"

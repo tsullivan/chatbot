@@ -6,7 +6,7 @@ export class KeywordResponder {
   constructor(input) {
     this.name = null;
     this.input = input;
-    this.format = 'plain';
+    this.format = 'markdown';
   }
 
   public setName(name) {

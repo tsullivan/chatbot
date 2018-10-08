@@ -3,7 +3,9 @@
 exports[`batman should lose at the batman game 1`] = `
 Object {
   "format": "markdown",
-  "message": "Let's play Batman. Type in stuff for the Batcave. Type \\"77\\" to keep your points or \\"kl\\" to throw it all away.",
+  "message": "# Let's play Batman.
+Type in stuff for the Batcave. Type \\"77\\" to
+      keep your points or \\"kl\\" to throw it all away.",
 }
 `;
 
@@ -29,7 +31,9 @@ That was fun, Tim!",
 exports[`batman should win at the batman game 1`] = `
 Object {
   "format": "markdown",
-  "message": "Let's play Batman. Type in stuff for the Batcave. Type \\"77\\" to keep your points or \\"kl\\" to throw it all away.",
+  "message": "# Let's play Batman.
+Type in stuff for the Batcave. Type \\"77\\" to
+      keep your points or \\"kl\\" to throw it all away.",
 }
 `;
 

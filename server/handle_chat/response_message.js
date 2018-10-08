@@ -37,7 +37,7 @@ class ResponseMessage {
     return this.response;
   }
 
-  respond(message, format = 'plain') {
+  respond(message, format = 'markdown') {
     if (format === 'plain') {
       return this._plain(message);
     } else {

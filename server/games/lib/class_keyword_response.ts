@@ -1,3 +1,12 @@
+export interface IKeywordResponseValue {
+  changeScore?: number;
+  format?: string;
+  isCascade: boolean;
+  isDone: boolean;
+  showInstructions: boolean;
+  response: string;
+}
+
 export class KeywordResponse {
 
   public static getResponseFromHandler(handler, game) {
@@ -32,7 +41,7 @@ export class KeywordResponse {
     this.isCascade = isCascade;
   }
 
-  public get() {
+  public get(): IKeywordResponseValue {
     const { changeScore, format, isCascade, isDone, showInstructions, text } = this;
     return {
       changeScore,

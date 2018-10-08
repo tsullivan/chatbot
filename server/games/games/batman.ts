@@ -1,28 +1,28 @@
-const snl = require('strip-newlines');
-const { ChatGame } = require('../chat_game');
+import { ChatGame } from '../';
+import { ChatSession } from '../../session';
 
 const WIN_CODE = '77';
 const LOSE_CODE = 'kl';
 
-const notDone = response => ({ response, format: 'markdown', isDone: false });
-const yesDone = response => ({ response, format: 'markdown', isDone: true });
+const notDone = (response) => ({ response, format: 'markdown', isDone: false });
+const yesDone = (response) => ({ response, format: 'markdown', isDone: true });
 
-/*
- * Let user guess a number between 1 and GUESS_BOUND
- */
-class Batman extends ChatGame {
-  constructor(session) {
+export class Game extends ChatGame {
+  public score: number;
+  private batStuff: string[];
+
+  constructor(session: ChatSession) {
     super(session);
     this.setName('batman');
   }
 
-  init() {
+  public init() {
     this.score = 0;
     this.batStuff = [];
   }
 
-  testInput(input) {
-    if ([WIN_CODE, LOSE_CODE].includes(input)) {
+  public testInput(input) {
+    if (input === WIN_CODE || input === LOSE_CODE) {
       let response;
       if (input === WIN_CODE) {
         response = 'You won! Right now!!';
@@ -35,7 +35,7 @@ class Batman extends ChatGame {
       return yesDone(
         `${response} "${input}" ended the Batgame. Your Batstuff is:\n${items}\n\nYour Batscore is ${
           this.score
-        }.`
+        }.`,
       );
     } else {
       this.score += 1;
@@ -45,10 +45,8 @@ class Batman extends ChatGame {
     }
   }
 
-  getWelcome() {
-    return snl`Let's play Batman. Type in stuff for the Batcave. Type "77" to
+  public getWelcome() {
+    return `# Let's play Batman.\nType in stuff for the Batcave. Type "77" to
       keep your points or "kl" to throw it all away.`;
   }
 }
-
-module.exports = { Game: Batman };

@@ -9,10 +9,10 @@ function describeItSimple(item: Item) {
 }
 // just mention visible items, ignore inventory
 function prefixItSimple({ floorItems, inventoryItems }) {
-  return { floorItems: floorItems != null ? 'You see:\n' + floorItems : floorItems };
+  return { floorItems: floorItems != null ? 'You see:\n\n' + floorItems : floorItems };
 }
 
-class ItemCollection {
+export class ItemCollection {
 
   /*
    * Get the stuff to say about the items, but get them prefixed in a specific
@@ -102,5 +102,3 @@ class ItemCollection {
     return this.items.get(id);
   }
 }
-
-module.exports = { ItemCollection };

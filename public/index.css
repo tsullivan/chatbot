@@ -1,5 +1,6 @@
 body {
   background-color: #81c56a;
+  font-size: 18px;
 }
 #main {
   display: flex;
@@ -26,13 +27,9 @@ body {
 .userMessageBody {
   text-align: right;
 }
-.messageBody {
-  white-space: pre-line;
-  background-color: #ffffffcc;
-  margin: 0 0 15px 0;
-  padding: 0 15px;
+.messageBody * {
+  font-size: 18px;
 }
-
-.messageBody p {
-  margin: 10px;
+.messagePlain p {
+  white-space: pre-line;
 }

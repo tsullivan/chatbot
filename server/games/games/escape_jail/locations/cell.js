@@ -51,7 +51,7 @@ class CellLocation extends Location {
             snl`The key is on a wall far out of reach of your cell bars.
             You have to be really sneaky to take the it. Hmm. how to do
             this?`,
-            snl`You hear a voice calling to you. "Use the FORCE, ${game.playerName}."`,
+            snl`You hear a voice calling to you. "Use the FORCE, ${game.getPlayerName()}."`,
             snl`Who said that? The Force? What is that??`,
           ];
           return new KeywordResponse({ text: res.join('\n\n') });

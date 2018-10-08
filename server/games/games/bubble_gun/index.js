@@ -18,14 +18,14 @@ class BubbleGunWorld extends Adventure {
   }
 
   getWelcome() {
-    return super.getWelcome(`!!!Welcome to Bubble Gun World!!!`);
+    return super.getWelcome(`# Welcome to Bubble Gun World`);
   }
 
   lose(response) {
     const p = [
       response,
       'YOU LOST. You lost too many points!',
-      snl`See ya, ${this.playerName}! Better luck next time! Turns:
+      snl`See ya, ${this.getPlayerName()}! Better luck next time! Turns:
         ${this.turns} Score: ${this.score}`,
     ];
     return this.yesDone(p.join('\n\n'));

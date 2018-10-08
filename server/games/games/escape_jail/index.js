@@ -1,4 +1,5 @@
 const snl = require('strip-newlines');
+const { parajoin } = require('../../lib/parajoin');
 const { Adventure } = require('../../lib');
 const { getLocations } = require('./locations');
 const { setItemsToLocations, getItems } = require('./items');
@@ -18,10 +19,13 @@ class EscapeJail extends Adventure {
   }
 
   getWelcome() {
-    const welcome = snl`CRASH! Your body has tumbled down a mountainside, and
-      you have crashed through the roof of a jail. Fortunately you are not hurt,
-      but you are stuck in this cell! The guards don't know that you are not
-      supposed to be here, and they are watching you.`;
+    const welcome = parajoin([
+      '# CRASH!!!',
+      snl`Your body has tumbled down a mountainside, and
+        you have crashed through the roof of a jail. Fortunately you are not
+        hurt, but you are stuck in this cell! The guards don't know that you
+        are not supposed to be here, and they are watching you.`,
+    ]);
     return super.getWelcome(welcome);
   }
 
@@ -29,7 +33,7 @@ class EscapeJail extends Adventure {
     const p = [
       response,
       'YOU LOST. You lost too many points!',
-      snl`See ya, ${this.playerName}! Better luck next time! Turns:
+      snl`See ya, ${this.getPlayerName()}! Better luck next time! Turns:
         ${this.turns} Score: ${this.score}`,
     ];
     return this.yesDone(p.join('\n\n'));

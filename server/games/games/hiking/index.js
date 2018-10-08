@@ -21,7 +21,7 @@ class HikingGame extends Adventure {
     const lns = [
       response,
       snl`YOU LOST. You lost too many points!`,
-      snl`See ya, ${this.playerName}! Better luck next time! Turns:
+      snl`See ya, ${this.getPlayerName()}! Better luck next time! Turns:
         ${this.turns} Score: ${this.score}`,
     ];
     return this.yesDone(parajoin(lns));

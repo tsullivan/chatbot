@@ -1,4 +1,3 @@
-const snl = require('strip-newlines');
 const { ChatGame } = require('../chat_game');
 
 const GUESS_BOUND = 20;
@@ -28,15 +27,13 @@ class GuessNumber extends ChatGame {
 
     if (Number.isNaN(guess)) {
       this.score -= 3;
-      return notDone(`WRONG. "${input}" is not a number, ${this.playerName}!`);
+      return notDone(`WRONG. "${input}" is not a number, ${this.getPlayerName()}!`);
     }
 
     if (guess < 1 || guess > GUESS_BOUND) {
       this.score -= 2;
       return notDone(
-        `WRONG. The number is between 1 and ${GUESS_BOUND}. ${guess} isn't that, ${
-          this.playerName
-        }!`
+        `WRONG. The number is between 1 and ${GUESS_BOUND}. ${guess} isn't that, ${this.getPlayerName()}!`
       );
     }
 
@@ -59,8 +56,7 @@ class GuessNumber extends ChatGame {
   }
 
   getWelcome() {
-    return snl`Let's play guess a number. I'm thinking of a number between 1
-      and ${GUESS_BOUND}. Try to guess it.`;
+    return `# Let's play guess a number.\nI'm thinking of a number between 1 and ${GUESS_BOUND}. Try to guess it.`;
   }
 }
 

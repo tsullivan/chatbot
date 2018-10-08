@@ -6,10 +6,12 @@ window.messageFormatter = (() => {
   $.templates({
     user: `<p class="userMessageBody" data-template-type="user">{{>message}}</p>`,
     plain: `
-      <div class="messageBody" data-template-type="plain">
+      <div class="messageBody messagePlain" data-template-type="plain">
         <p>{{>message}}</p>
       </div>`,
-    markdown: `<div class="messageBody" data-template-type="markdown">{{:message}}</div>`,
+    markdown: `<div class=" messageBody messageMarkdown" data-template-type="markdown">
+        {{:message}}
+      </div>`,
   });
 
   const formatters = {
