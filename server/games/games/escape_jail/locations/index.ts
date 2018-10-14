@@ -1,34 +1,32 @@
-const { SOUTH } = require('../constants');
-const { CellLocation } = require('./cell');
-const { HallwayLocation } = require('./hallway');
-const { VanLocation } = require('./van');
-const { FenceLocation } = require('./fence');
+import { SOUTH } from '../constants';
+import { CellLocation } from './cell';
+import { FenceLocation } from './fence';
+import { HallwayLocation } from './hallway';
+import { VanLocation } from './van';
 
-function getLocations(game) {
+export function getLocations(game) {
   const cellLocation = new CellLocation(game);
   const hallwayLocation = new HallwayLocation(game);
   const vanLocation = new VanLocation(game);
   const fenceLocation = new FenceLocation(game);
 
   cellLocation.addExit({
-    location: hallwayLocation,
     exit: SOUTH,
+    location: hallwayLocation,
   });
   hallwayLocation.addExit({
-    location: vanLocation,
     exit: SOUTH,
+    location: vanLocation,
   });
   vanLocation.addExit({
-    location: fenceLocation,
     exit: SOUTH,
+    location: fenceLocation,
   });
 
   return {
     cellLocation,
+    fenceLocation,
     hallwayLocation,
     vanLocation,
-    fenceLocation,
   };
 }
-
-module.exports = { getLocations };

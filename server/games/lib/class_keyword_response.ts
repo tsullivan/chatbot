@@ -18,12 +18,12 @@ export class KeywordResponse {
     }
   }
 
-  private text;
-  private format;
-  private changeScore;
-  private isDone;
-  private showInstructions;
-  private isCascade;
+  private changeScore: number;
+  private format: string;
+  private isCascade: boolean;
+  private isDone: boolean;
+  private response: string;
+  private showInstructions: boolean;
 
   constructor({
     text = 'Not sure',
@@ -33,22 +33,22 @@ export class KeywordResponse {
     showInstructions = true,
     isCascade = false,
   }) {
-    this.text = text;
-    this.format = format;
     this.changeScore = changeScore;
-    this.isDone = isDone;
-    this.showInstructions = showInstructions;
+    this.format = format;
     this.isCascade = isCascade;
+    this.isDone = isDone;
+    this.response = text;
+    this.showInstructions = showInstructions;
   }
 
-  public get(): IKeywordResponseValue {
-    const { changeScore, format, isCascade, isDone, showInstructions, text } = this;
+  public getFields(): IKeywordResponseValue {
+    const { changeScore, format, isCascade, isDone, showInstructions, response } = this;
     return {
       changeScore,
       format,
       isCascade,
       isDone,
-      response: text,
+      response,
       showInstructions,
     };
   }

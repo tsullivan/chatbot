@@ -62,7 +62,7 @@ const getKeywordsHelper = () => ({
     this.clearKeywords();
     game.updateState();
 
-    return response.get();
+    return response;
   },
 });
 

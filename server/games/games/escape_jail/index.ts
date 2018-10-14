@@ -1,24 +1,24 @@
-const snl = require('strip-newlines');
-const { parajoin } = require('../../lib/parajoin');
-const { Adventure } = require('../../lib');
-const { getLocations } = require('./locations');
-const { setItemsToLocations, getItems } = require('./items');
+import * as snl from 'strip-newlines';
+import { Adventure, KeywordResponse } from '../../lib';
+import { parajoin } from '../../lib/parajoin';
+import { getItems, setItemsToLocations } from './items';
+import { getLocations } from './locations';
 
-class EscapeJail extends Adventure {
+export class Game extends Adventure {
   constructor(session) {
     super(session);
     this.setName('escape_jail');
+
+    this.postInit = () => {
+      const locations = getLocations(this);
+      this.setLocation(locations.cellLocation);
+
+      const items = getItems(this);
+      setItemsToLocations(items, locations, this);
+    };
   }
 
-  postInit() {
-    const locations = getLocations(this);
-    this.setLocation(locations.cellLocation);
-
-    const items = getItems(this);
-    setItemsToLocations(items, locations, this);
-  }
-
-  getWelcome() {
+  public getWelcome() {
     const welcome = parajoin([
       '# CRASH!!!',
       snl`Your body has tumbled down a mountainside, and
@@ -29,23 +29,27 @@ class EscapeJail extends Adventure {
     return super.getWelcome(welcome);
   }
 
-  lose(response) {
+  public lose(response) {
     const p = [
       response,
       'YOU LOST. You lost too many points!',
       snl`See ya, ${this.getPlayerName()}! Better luck next time! Turns:
         ${this.turns} Score: ${this.score}`,
     ];
-    return this.yesDone(p.join('\n\n'));
+    return new KeywordResponse({
+      isDone: true,
+      text: p.join('\n\n'),
+    });
   }
 
-  win(response) {
+  public win(response) {
     const p = [
       response,
       `Looks like have escaped from JAIL! Turns: ${this.turns} Score: ${this.score}`,
     ];
-    return this.yesDone(p.join('\n\n'));
+    return new KeywordResponse({
+      isDone: true,
+      text: p.join('\n\n'),
+    });
   }
 }
-
-module.exports = { Game: EscapeJail };

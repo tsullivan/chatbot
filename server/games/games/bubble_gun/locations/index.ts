@@ -1,13 +1,13 @@
-const { NORTH, SOUTH, EAST, WEST, UP, DOWN } = require('../constants');
+import { DOWN, EAST, NORTH, SOUTH, UP, WEST } from '../constants';
 
-const { PlaygroundLocation } = require('./playground');
-const { ElectronicsLocation } = require('./electronics');
-const { SoapLocation } = require('./soap');
-const { MagnetLocation } = require('./magnet');
-const { TreeFortLocation } = require('./treefort');
-const { BridgeLocation } = require('./bridge');
+import { BridgeLocation } from './bridge';
+import { ElectronicsLocation } from './electronics';
+import { MagnetLocation } from './magnet';
+import { PlaygroundLocation } from './playground';
+import { SoapLocation } from './soap';
+import { TreeFortLocation } from './treefort';
 
-function getLocations(game) {
+export function getLocations(game) {
   const playgroundLocation = new PlaygroundLocation(game);
   const bridgeLocation = new BridgeLocation(game);
   const electronicsLocation = new ElectronicsLocation(game);
@@ -16,39 +16,37 @@ function getLocations(game) {
   const treeFortLocation = new TreeFortLocation(game);
 
   playgroundLocation.addExit({
-    location: bridgeLocation,
     exit: SOUTH,
     inverseExit: NORTH,
+    location: bridgeLocation,
   });
   playgroundLocation.addExit({
-    location: treeFortLocation,
     exit: UP,
     inverseExit: DOWN,
+    location: treeFortLocation,
   });
   playgroundLocation.addExit({
-    location: electronicsLocation,
     exit: WEST,
     inverseExit: EAST,
+    location: electronicsLocation,
   });
   playgroundLocation.addExit({
-    location: soapLocation,
     exit: NORTH,
     inverseExit: SOUTH,
+    location: soapLocation,
   });
   playgroundLocation.addExit({
-    location: magnetLocation,
     exit: EAST,
     inverseExit: WEST,
+    location: magnetLocation,
   });
 
   return {
-    playgroundLocation,
-    soapLocation,
+    bridgeLocation,
     electronicsLocation,
     magnetLocation,
+    playgroundLocation,
+    soapLocation,
     treeFortLocation,
-    bridgeLocation,
   };
 }
-
-module.exports = { getLocations };

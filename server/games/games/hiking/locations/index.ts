@@ -1,19 +1,19 @@
-const { NORTH, SOUTH, EAST, WEST, UP, DOWN } = require('../constants');
+import { DOWN, EAST, NORTH, SOUTH, UP, WEST } from '../constants';
 
-const { StartLocation } = require('./start');
-const { RocksLocation } = require('./rocks');
-const { WaterfallLocation } = require('./waterfall');
-const { AppleShedLocation } = require('./apple_shed');
-const { LakeLocation } = require('./lake');
-const { BridgeLocation } = require('./bridge');
-const { SunshipLocation } = require('./sunship');
-const { TheSunLocation } = require('./sun');
-const { MountainLocation } = require('./mountain');
-const { MountainHouseLocation } = require('./mountain_house');
-const { CarLocation } = require('./car');
-const { FinishLocation } = require('./finish');
+import { AppleShedLocation } from './apple_shed';
+import { BridgeLocation } from './bridge';
+import { CarLocation } from './car';
+import { FinishLocation } from './finish';
+import { LakeLocation } from './lake';
+import { MountainLocation } from './mountain';
+import { MountainHouseLocation } from './mountain_house';
+import { RocksLocation } from './rocks';
+import { StartLocation } from './start';
+import { TheSunLocation } from './sun';
+import { SunshipLocation } from './sunship';
+import { WaterfallLocation } from './waterfall';
 
-function getLocations(game) {
+export function getLocations(game) {
   const start = new StartLocation(game);
   const rocks = new RocksLocation(game);
   const waterfall = new WaterfallLocation(game);
@@ -28,89 +28,87 @@ function getLocations(game) {
   const finish = new FinishLocation(game);
 
   start.addExit({
-    location: lake,
     exit: NORTH,
+    location: lake,
   });
   start.addExit({
-    location: rocks,
     exit: WEST,
+    location: rocks,
   });
   rocks.addExit({
-    location: lake, // no getting back to start
     exit: EAST,
     inverseExit: SOUTH, // trail bends
+    location: lake, // no getting back to start
   });
   rocks.addExit({
+    exit: WEST,
+    inverseExit: EAST,
     location: waterfall,
-    exit: WEST,
-    inverseExit: EAST,
   });
   waterfall.addExit({
+    exit: WEST,
+    inverseExit: EAST,
     location: appleShed, // dead end
-    exit: WEST,
-    inverseExit: EAST,
   });
   waterfall.addExit({
-    location: mountain,
     exit: UP,
     inverseExit: DOWN,
+    location: mountain,
   });
   lake.addExit({
+    exit: NORTH,
+    inverseExit: SOUTH,
     location: bridge,
-    exit: NORTH,
-    inverseExit: SOUTH,
   });
   bridge.addExit({
+    exit: NORTH,
+    inverseExit: SOUTH,
     location: finish, // dead end
-    exit: NORTH,
-    inverseExit: SOUTH,
   });
   bridge.addExit({
-    location: sunship,
     exit: WEST,
     inverseExit: EAST,
+    location: sunship,
   });
   sunship.addExit({
-    location: theSun, // dead end
     exit: UP,
     inverseExit: DOWN,
+    location: theSun, // dead end
   });
   sunship.addExit({
-    location: bridge,
     exit: EAST,
     inverseExit: WEST,
+    location: bridge,
   });
   mountain.addExit({
-    location: mountainHouse,
     exit: EAST,
     inverseExit: WEST,
+    location: mountainHouse,
   });
   mountainHouse.addExit({
-    location: car,
     exit: DOWN,
     inverseExit: UP,
+    location: car,
   });
   car.addExit({
-    location: lake,
     exit: DOWN, // no way back to the car
+    location: lake,
   });
 
   // any location that game init needs to know about
   // e.g. if you need to add floor items to the location
   return {
-    start,
-    rocks,
-    waterfall,
     appleShed,
-    lake,
     bridge,
-    sunship,
-    theSun,
-    mountain,
-    mountainHouse,
     car,
     finish,
+    lake,
+    mountain,
+    mountainHouse,
+    rocks,
+    start,
+    sunship,
+    theSun,
+    waterfall,
   };
 }
-
-module.exports = { getLocations };

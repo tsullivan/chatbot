@@ -221,14 +221,12 @@ export function setItemsToLocations(
     soapItem,
     magnetItem,
     ledItem,
-    garbageItem,
   },
   {
     playgroundLocation,
     electronicsLocation,
     soapLocation,
     magnetLocation,
-    // garbageLocation,
   },
   game,
 ) {

@@ -14,7 +14,9 @@ export class Location {
   public followExit: (direction: string, prefix: string) => KeywordResponse;
   public getDescription: (game: ChatGame) => string;
   public getInstructions: (chatGame: ChatGame) => string;
+  public hasKeyword: (keyword: string) => boolean;
   public clearKeywords: () => void;
+  public getInputResponse: (input: string, game: ChatGame) => KeywordResponse;
 
   private name: string;
   private exits: Map<string, Location>;

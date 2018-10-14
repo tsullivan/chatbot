@@ -8,8 +8,6 @@ import { getKeywordsHelper, IKeywordResponseValue } from './keywords_helper';
 import { parajoin } from './parajoin';
 
 export class Adventure extends ChatGame {
-  public notDone: (response: KeywordResponse) => { response: KeywordResponse; isDone: false; };
-  public yesDone: (response: KeywordResponse) => { response: KeywordResponse; isDone: true; };
   public branchToGame: (BranchGame: (session: any) => void, prefix: string) => KeywordResponse;
   public clearKeywords: () => void;
   public getInputResponse: (input: string, game: ChatGame) => IKeywordResponseValue;
@@ -32,8 +30,6 @@ export class Adventure extends ChatGame {
     this.inventory = new Set(); // ids of items in the collection
 
     // KeywordResponse helpers
-    this.notDone = (response) => ({ response, isDone: false });
-    this.yesDone = (response) => ({ response, isDone: true });
     this.branchToGame = (BranchGame, prefix) => {
       const newGame = new BranchGame(session);
       newGame.startFromTrunk(this);
@@ -99,10 +95,10 @@ export class Adventure extends ChatGame {
     return foundItem;
   }
 
-  public win(response?: string, format?: string) {
+  public win(response?: string, format?: string): KeywordResponse {
     throw new Error('win method is to override');
   }
-  public lose(response?: string, format?: string) {
+  public lose(response?: string, format?: string): KeywordResponse {
     throw new Error('lose method is to override');
   }
 
@@ -120,7 +116,7 @@ export class Adventure extends ChatGame {
     this.currentLocation = location;
   }
 
-  public testInput(input) {
+  public testInput(input): KeywordResponse {
     input = input.toUpperCase();
     const responseSet = [];
     let response;
@@ -129,9 +125,15 @@ export class Adventure extends ChatGame {
     let isDone = false; // FIXME should be independent of keyword response game.isDone()
     let showInstructions = true;
 
-    /* array of functions to call to look through areas
+    interface ICheck {
+      getResponder: (contextResult?: any) => KeywordResponse;
+      inputCheck: (game?: Adventure) => any;
+    }
+
+    /* Array of functions to call to look through areas
      * for which the input can be a keyword */
-    const checks = [
+    let checks: ICheck[];
+    checks = [
       {
         getResponder: () => this.getInputResponse(input, this),
         inputCheck: () => this.hasKeyword(input), // game keyword (quit, look, score, etc)
@@ -163,6 +165,7 @@ export class Adventure extends ChatGame {
       const contextResult = inputCheck(this);
       if (contextResult) {
         let isCascade = false;
+        const responder = getResponder(contextResult);
         ({
           changeScore,
           format,
@@ -170,7 +173,7 @@ export class Adventure extends ChatGame {
           isDone,
           response,
           showInstructions,
-        } = getResponder(contextResult));
+        } = responder.getFields());
 
         foundResponse = true;
 
@@ -201,7 +204,10 @@ export class Adventure extends ChatGame {
       return this.win(response, format);
     } else {
       this.turns += 1;
-      return this.notDone(this.getNext(response, showInstructions));
+      return new KeywordResponse({
+        isDone: false,
+        text: this.getNext(response, showInstructions),
+      });
     }
   }
 

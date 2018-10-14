@@ -1,12 +1,12 @@
-const apm = require('elastic-apm-node');
-const { ResponseMessage } = require('./response_message');
+import * as apm from 'elastic-apm-node';
+import { IResponse, ResponseMessage } from './response_message';
 
-class SessionMessage extends ResponseMessage {
+export class SessionMessage extends ResponseMessage {
   constructor(chat, userMessage, userFormat) {
     super('session', chat, userMessage, userFormat);
   }
 
-  makeResponse(chat) {
+  public makeResponse(chat): IResponse | null {
     const userFormat = this.userFormat;
     const { isValid, revalidateResponse } = chat.validateSession(userFormat);
 
@@ -52,5 +52,3 @@ class SessionMessage extends ResponseMessage {
     return null;
   }
 }
-
-module.exports = { SessionMessage };
