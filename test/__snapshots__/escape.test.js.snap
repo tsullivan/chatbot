@@ -5,7 +5,8 @@ exports[`escape-jail escape 1`] = `
 
 Your body has tumbled down a mountainside, and you have crashed through the roof of a jail. Fortunately you are not hurt, but you are stuck in this cell! The guards don't know that you are not supposed to be here, and they are watching you.
 
-You are at: The Jail Cell
+You are at: **The Jail Cell**
+
 You're locked up securely in a jail cell. A hole in the ceiling marks where you crashed through accidentally when you got here.
 
 There is a jail key on a far wall across the hallway from your jail cell.
@@ -66,7 +67,8 @@ STAND_AROUND - Stand around and let the weight of feeling of excitement, exersio
 exports[`escape-jail escape 7`] = `
 "You use the key to open the cell door, and quietly walk out.
 
-You are at: The Jail Hallway
+You are at: **The Jail Hallway**
+
 You're outside of the jail cell in a hallway lined with many other jail cells. The other jail cells have people that belong here, but you only got here accidentally. Time to get out!
 
 There's a door at the end of the hallway - that must be the exit.
@@ -82,7 +84,8 @@ exports[`escape-jail escape 8`] = `
 
 Thinking quickly, you quietly get outside, and get into the back of the van before the guard sees you.
 
-You are at: The Jail Van
+You are at: **The Jail Van**
+
 You're hiding in a jail van that's driving around the jail, making jail deliveries to the jail people.
 
 You see:
@@ -97,7 +100,8 @@ STAND_AROUND - Stand around and let the weight of feeling of excitement, exersio
 exports[`escape-jail escape 9`] = `
 "You sneak out of the jail van and run over to a fence. You're almost out of here!
 
-You are at: The Jail Fence
+You are at: **The Jail Fence**
+
 You've just escaped from a jail. You breathe a sigh of relief because that part of your life is forever behind you. They'll never find you in these woods. Plus, you stole the jail key, because you're not a bad guy. You were put in jail accidentally. They made you steal the key.
 
 Now, all you have to do is get over this fence...

@@ -3,7 +3,8 @@
 exports[`bubble_gun fall down in soap store 1`] = `
 "# Welcome to Bubble Gun World
 
-You are at: The Playground
+You are at: **The Playground**
+
 This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
 
 Off the corner of the road, there's a bridge leading out of Bubble Gun World.
@@ -22,7 +23,8 @@ QUIT - Quit the game"
 `;
 
 exports[`bubble_gun fall down in soap store 2`] = `
-"You are at: The Soap Store
+"You are at: **The Soap Store**
+
 Oh my goodness, this store has so much soap! It is by far the soapiest place you have ever been in!
 
 Another thing you notice right away is that there is an extremely strong fragrance of clean in this place.
@@ -118,7 +120,8 @@ That was fun, Tim!"
 exports[`bubble_gun walk around 1`] = `
 "# Welcome to Bubble Gun World
 
-You are at: The Playground
+You are at: **The Playground**
+
 This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
 
 Off the corner of the road, there's a bridge leading out of Bubble Gun World.
@@ -137,7 +140,8 @@ QUIT - Quit the game"
 `;
 
 exports[`bubble_gun walk around 2`] = `
-"You are at: The Playground
+"You are at: **The Playground**
+
 This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
 
 Off the corner of the road, there's a bridge leading out of Bubble Gun World.
@@ -156,7 +160,8 @@ MAGNETS - Go to the Magnet store"
 `;
 
 exports[`bubble_gun walk around 3`] = `
-"You are at: The Bridge Out Of Town
+"You are at: **The Bridge Out Of Town**
+
 This long, long bridge carries the road over a very tall gorge that surrounds Bubble Gun World. It is the only way out of town.
 
 There's no way out of town right now, Bubble Gun World Police have blocked the road to prevent anyone from using the road. A power outage in the streets has caused all the street lights to turn off in this area. The Police are saying it's too dark and unsafe to let anyone try to cross.
@@ -168,7 +173,8 @@ CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
 `;
 
 exports[`bubble_gun walk around 4`] = `
-"You are at: The Bridge Out Of Town
+"You are at: **The Bridge Out Of Town**
+
 This long, long bridge carries the road over a very tall gorge that surrounds Bubble Gun World. It is the only way out of town.
 
 There's no way out of town right now, Bubble Gun World Police have blocked the road to prevent anyone from using the road. A power outage in the streets has caused all the street lights to turn off in this area. The Police are saying it's too dark and unsafe to let anyone try to cross.
@@ -180,7 +186,8 @@ CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
 `;
 
 exports[`bubble_gun walk around 5`] = `
-"You are at: The Playground
+"You are at: **The Playground**
+
 This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
 
 Off the corner of the road, there's a bridge leading out of Bubble Gun World.
@@ -199,7 +206,8 @@ MAGNETS - Go to the Magnet store"
 `;
 
 exports[`bubble_gun walk around 6`] = `
-"You are at: The Playground
+"You are at: **The Playground**
+
 This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
 
 Off the corner of the road, there's a bridge leading out of Bubble Gun World.
@@ -218,21 +226,24 @@ MAGNETS - Go to the Magnet store"
 `;
 
 exports[`bubble_gun walk around 7`] = `
-"You are at: The Tree Fort
+"You are at: **The Tree Fort**
+
 This tree fort is so tall! It has a big window with a clear view of the entire playground.
 
 PLAYGROUND - Go back to the playground"
 `;
 
 exports[`bubble_gun walk around 8`] = `
-"You are at: The Tree Fort
+"You are at: **The Tree Fort**
+
 This tree fort is so tall! It has a big window with a clear view of the entire playground.
 
 PLAYGROUND - Go back to the playground"
 `;
 
 exports[`bubble_gun walk around 9`] = `
-"You are at: The Playground
+"You are at: **The Playground**
+
 This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
 
 Off the corner of the road, there's a bridge leading out of Bubble Gun World.
@@ -251,7 +262,8 @@ MAGNETS - Go to the Magnet store"
 `;
 
 exports[`bubble_gun walk around 10`] = `
-"You are at: The Playground
+"You are at: **The Playground**
+
 This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
 
 Off the corner of the road, there's a bridge leading out of Bubble Gun World.
@@ -270,7 +282,8 @@ MAGNETS - Go to the Magnet store"
 `;
 
 exports[`bubble_gun walk around 11`] = `
-"You are at: The Electronics Store
+"You are at: **The Electronics Store**
+
 Here at the Electronics store, their motto is: \\"Electronics - they're what we sell!\\"
 
 You see:
@@ -307,14 +320,16 @@ PLAYGROUND - Go back to the playground"
 `;
 
 exports[`bubble_gun walk around 15`] = `
-"You are at: The Electronics Store
+"You are at: **The Electronics Store**
+
 Here at the Electronics store, their motto is: \\"Electronics - they're what we sell!\\"
 
 PLAYGROUND - Go back to the playground"
 `;
 
 exports[`bubble_gun walk around 16`] = `
-"You are at: The Playground
+"You are at: **The Playground**
+
 This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
 
 Off the corner of the road, there's a bridge leading out of Bubble Gun World.
@@ -387,7 +402,8 @@ MAGNETS - Go to the Magnet store"
 `;
 
 exports[`bubble_gun walk around 21`] = `
-"You are at: The Playground
+"You are at: **The Playground**
+
 This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
 
 Off the corner of the road, there's a bridge leading out of Bubble Gun World.
@@ -406,7 +422,8 @@ MAGNETS - Go to the Magnet store"
 `;
 
 exports[`bubble_gun walk around 22`] = `
-"You are at: The Soap Store
+"You are at: **The Soap Store**
+
 Oh my goodness, this store has so much soap! It is by far the soapiest place you have ever been in!
 
 Another thing you notice right away is that there is an extremely strong fragrance of clean in this place.
@@ -447,7 +464,8 @@ ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will
 `;
 
 exports[`bubble_gun walk around 26`] = `
-"You are at: The Playground
+"You are at: **The Playground**
+
 This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
 
 Off the corner of the road, there's a bridge leading out of Bubble Gun World.
@@ -466,7 +484,8 @@ MAGNETS - Go to the Magnet store"
 `;
 
 exports[`bubble_gun walk around 27`] = `
-"You are at: The Playground
+"You are at: **The Playground**
+
 This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
 
 Off the corner of the road, there's a bridge leading out of Bubble Gun World.
@@ -485,7 +504,8 @@ MAGNETS - Go to the Magnet store"
 `;
 
 exports[`bubble_gun walk around 28`] = `
-"You are at: The Magnet Store
+"You are at: **The Magnet Store**
+
 Hold on to your metals, they got lots of magnets in here!
 
 You see:
@@ -497,7 +517,8 @@ PLAYGROUND - Go back to the playground"
 `;
 
 exports[`bubble_gun walk around 29`] = `
-"You are at: The Magnet Store
+"You are at: **The Magnet Store**
+
 Hold on to your metals, they got lots of magnets in here!
 
 You see:
@@ -509,7 +530,8 @@ PLAYGROUND - Go back to the playground"
 `;
 
 exports[`bubble_gun walk around 30`] = `
-"You are at: The Playground
+"You are at: **The Playground**
+
 This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
 
 Off the corner of the road, there's a bridge leading out of Bubble Gun World.
@@ -528,7 +550,8 @@ MAGNETS - Go to the Magnet store"
 `;
 
 exports[`bubble_gun walk around 31`] = `
-"You are at: The Playground
+"You are at: **The Playground**
+
 This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
 
 Off the corner of the road, there's a bridge leading out of Bubble Gun World.

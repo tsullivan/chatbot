@@ -94,7 +94,7 @@ export class Location {
   }
 
   public getDescriptionInternal(game) {
-    return `You are at: ${this.getName()}\n${this.getDescription(game)}`;
+    return `You are at: **${this.getName()}**\n\n${this.getDescription(game)}`;
   }
 
   public getName() {
