@@ -5,11 +5,9 @@ import {
   BATTERY_AA,
   BATTERY_LR41,
   BUBBLE_GUN,
-  GARBAGE,
   LADDER,
   LED,
   MAGNET,
-  SLINGSHOT,
   SOAP,
 } from './constants';
 
@@ -39,15 +37,11 @@ const bubbleGunCombinings = (item, combinedSet) => {
 const throwieCombinings = (item, combinedSet) => {
   const lns = [];
   if (combinedSet.has(MAGNET)) {
-    item.setDescription(snl`LED throwie with a magnet stuck on. It still has no
-      batteries.`);
-    lns.push(snl`The magnet sticks right on to the battery holder of the LED. That was
-      easy!`);
+    item.setDescription(`LED throwie with a magnet stuck on. It still has no batteries.`);
+    lns.push(`The magnet sticks right on to the battery holder of the LED. That was easy!`);
   } else if (combinedSet.has(BATTERY_LR41)) {
-    item.setDescription(snl`LED throwie that has batteries, but you can't do
-      anything else with it.`);
-    lns.push(snl`The batteries go right on in to the LED's battery holder. Nice and
-      simple.`);
+    item.setDescription(`LED throwie that has batteries, but you can't do anything else with it.`);
+    lns.push(`The batteries go right on in to the LED's battery holder. Nice and simple.`);
   }
   if (item.isComplete()) {
     item.setDescription('Completely functional and working LED throwie');
@@ -139,15 +133,10 @@ export function getItems(game) {
         if (item.isComplete()) {
           item.addKeyword('BUBBLE_BLASTER', 'Blast bubbles out the bubble gun', () =>
             new KeywordResponse({
-              text: snl`Hundreds of bubbles blast out of the bubble gun and cover
-              everything!`,
+              text: snl`Hundreds of bubbles blast out of the bubble gun and cover everything!`,
             }));
         }
       },
-    }),
-    garbageItem: itemFactory(GARBAGE, {
-      description: snl`Just a pile of stinky garbage.`,
-      name: 'Garbage',
     }),
     ladderItem: itemFactory(LADDER, {
       description: snl`This is one sturdy ladder. The bottom part of the ladder is
@@ -203,10 +192,6 @@ export function getItems(game) {
         });
       },
     }),
-    slingShotItem: itemFactory(SLINGSHOT, {
-      description: snl`This slingshot seems like it could really sling some shots.`,
-      name: 'Slingshot',
-    }),
     soapItem: itemFactory(SOAP, {
       description: snl`This small bottle of liquid soap has more than enough
         liquid for a bubble gun to shoot out plenty of bubbles.`,
@@ -234,7 +219,6 @@ export function setItemsToLocations(
     batteryLr41Item,
     batteryAaItem,
     soapItem,
-    slingShotItem,
     magnetItem,
     ledItem,
     garbageItem,
@@ -250,18 +234,15 @@ export function setItemsToLocations(
 ) {
   // set everything into the game collection
   game.addItemToCollection(BUBBLE_GUN, bubbleGunItem);
-  game.addItemToCollection(SLINGSHOT, slingShotItem);
   game.addItemToCollection(LADDER, ladderItem);
   game.addItemToCollection(BATTERY_LR41, batteryLr41Item);
   game.addItemToCollection(BATTERY_AA, batteryAaItem);
   game.addItemToCollection(SOAP, soapItem);
   game.addItemToCollection(MAGNET, magnetItem);
   game.addItemToCollection(LED, ledItem);
-  game.addItemToCollection(GARBAGE, garbageItem);
 
   // starting inventory items
   game.addToInventory(BUBBLE_GUN);
-  game.addToInventory(SLINGSHOT);
 
   // starting location items
   playgroundLocation.addFloorItem(LADDER);
@@ -272,5 +253,4 @@ export function setItemsToLocations(
 
   soapLocation.addFloorItem(SOAP);
   magnetLocation.addFloorItem(MAGNET);
-  // garbageLocation.addFloorItem(GARBAGE);
 }

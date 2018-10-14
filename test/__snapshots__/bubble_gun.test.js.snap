@@ -339,7 +339,6 @@ exports[`bubble_gun walk around 17`] = `
 You are holding:
 - Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
   - COMBINE_BUBBLE_GUN_AND_BATTERIES - Put the AA batteries in the bubble gun.
-- Slingshot - This slingshot seems like it could really sling some shots.
 - Small LR41 Batteries. - The two LR41 batteries are the standard 1.5V button size batteries. They'd fit nicely into the battery holder of a very small piece of electronics.
 - Medium-size AA Batteries. - The two AA batteries are the standard 1.5V medium-size batteries. They'd fit nicely into the battery holder of a medium-size piece of electronics.
 - Light-emitting Diode - A semiconductor diode which glows when a voltage is applied. It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
@@ -378,7 +377,6 @@ exports[`bubble_gun walk around 20`] = `
 
 You are holding:
 - Bubble Gun - Bubble gun with batteries, but no soap.
-- Slingshot - This slingshot seems like it could really sling some shots.
 - Light-emitting Diode - LED throwie that has batteries, but you can't do anything else with it.
 
 BRIDGE - Go to the bridge
@@ -442,7 +440,6 @@ exports[`bubble_gun walk around 25`] = `
 "You are holding:
 - Bubble Gun - Completely functional and working bubble gun
   - BUBBLE_BLASTER - Blast bubbles out the bubble gun
-- Slingshot - This slingshot seems like it could really sling some shots.
 - Light-emitting Diode - LED throwie that has batteries, but you can't do anything else with it.
 
 PLAYGROUND - Go back to the playground
