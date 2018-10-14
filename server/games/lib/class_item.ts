@@ -9,10 +9,16 @@ interface ICombinable {
   fn: () => void;
 }
 
+interface IInteractable {
+  fn: () => void;
+  keyword: string;
+  keywordDescription: string;
+}
+
 interface IActionOpts {
   setCombinables: (combinableArray: ICombinable[]) => void;
-  setDroppable: () => void;
-  setTakeable: () => void;
+  setDroppable: (opts: IInteractable) => void;
+  setTakeable: (opts: IInteractable) => void;
 }
 
 interface IOpts {

@@ -1,34 +1,32 @@
-const snl = require('strip-newlines');
-const { Item, KeywordResponse } = require('../../lib');
-const { ENEMIES, CAR, APPLES, YOGURT, BUBBLE_GUN } = require('./constants');
+import * as snl from 'strip-newlines';
+import { Item, KeywordResponse } from '../../lib';
+import { APPLES, BUBBLE_GUN, CAR, ENEMIES, YOGURT } from './constants';
 
-function getItems(game) {
+export function getItems(game) {
   /*
    * Enemies
    */
   const enemiesItem = new Item({
-    name: 'Enemies',
-    id: ENEMIES,
     description: snl`Tiny enemies have harbored in your pocket. They will jump
       out and grow to full size if there is water.`,
-    seen: false,
     game,
+    id: ENEMIES,
+    name: 'Enemies',
+    seen: false,
   });
 
   /*
    * Car
    */
   const carItem = new Item({
-    name: 'Flying silver car',
-    id: CAR,
     description: snl`This car does not have wheels, instead it has flyers on
       the bottom that point at the ground and lift it up, making it go really
       fast. It is created inside the tall mountain.`,
     game,
+    id: CAR,
+    name: 'Flying silver car',
     setActions: ({ setDroppable }) => {
       setDroppable({
-        keyword: 'CRASH_CAR',
-        keywordDescription: 'Crash the silver flying car',
         fn: () => {
           carItem.setName('Flying silver car (destroyed)');
           carItem.setDescription(snl`This flying silver car has been crashed
@@ -39,6 +37,8 @@ function getItems(game) {
               really fast, then CRASH! EXPLODE! The flying car is destroyed.`,
           });
         },
+        keyword: 'CRASH_CAR',
+        keywordDescription: 'Crash the silver flying car',
       });
     },
   });
@@ -47,61 +47,61 @@ function getItems(game) {
    * Apple & Yogurt
    */
   const applesItem = new Item({
-    name: 'Apples',
-    id: APPLES,
     description: '100 red apples.',
     game,
+    id: APPLES,
+    name: 'Apples',
   });
   const yogurtItem = new Item({
-    name: 'Yogurt',
-    id: YOGURT,
     description: snl`This yogurt is haunted with ghosts. They look like they
       want to get out.`,
-    seen: false,
     game,
+    id: YOGURT,
+    name: 'Yogurt',
+    seen: false,
   });
 
   /*
    * Random ones
    */
   const bubbleGunItem = new Item({
-    name: 'Bubble Gun',
-    id: BUBBLE_GUN,
     description: snl`It's a bubble gun for gunning out bubbles. It looks very interesting.`,
     game,
+    id: BUBBLE_GUN,
+    name: 'Bubble Gun',
     setActions: ({ setTakeable, setDroppable }) => {
       setTakeable({
-        keyword: 'TAKE_BUBBLE_GUN',
-        keywordDescription: 'Pick up interesting looking bubble gun.',
         fn: () =>
           new KeywordResponse({
             text: snl`The bubble gun is now yours.`,
           }),
+        keyword: 'TAKE_BUBBLE_GUN',
+        keywordDescription: 'Pick up interesting looking bubble gun.',
       });
       setDroppable({
-        keyword: 'DROP_BUBBLE_GUN',
-        keywordDescription: 'Drop the interesting looking bubble gun.',
         fn: () =>
           new KeywordResponse({
             text: snl`The bubble gun now belongs to the floor.`,
           }),
+        keyword: 'DROP_BUBBLE_GUN',
+        keywordDescription: 'Drop the interesting looking bubble gun.',
       });
     },
   });
 
   return {
-    enemiesItem,
-    carItem,
     applesItem,
-    yogurtItem,
     bubbleGunItem,
+    carItem,
+    enemiesItem,
+    yogurtItem,
   };
 }
 
-function setItemsToLocations(
+export function setItemsToLocations(
   { enemiesItem, carItem, applesItem, yogurtItem, bubbleGunItem },
   { appleShed, car: garage, mountain },
-  game
+  game,
 ) {
   /*
    * Set to game
@@ -121,5 +121,3 @@ function setItemsToLocations(
   garage.addFloorItem(CAR);
   mountain.addFloorItem(BUBBLE_GUN);
 }
-
-module.exports = { setItemsToLocations, getItems };
