@@ -1,7 +1,9 @@
 import { values as getValues } from 'lodash';
-import { LI, UL } from '../../constants';
 import { Item } from './class_item';
 import { parajoin } from './parajoin';
+
+const UL: string = '- ';
+const LI: string = '  - ';
 
 // give name and instructions for each inventory and floor item
 function describeItSimple(item: Item) {

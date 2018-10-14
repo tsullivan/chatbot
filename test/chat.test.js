@@ -1,7 +1,7 @@
 const request = require('supertest');
-const { runServer } = require('../server');
+const { getServer } = require('../server');
 
-const app = runServer();
+const app = getServer();
 const agent = request.agent(app);
 
 describe('Chatbot', () => {

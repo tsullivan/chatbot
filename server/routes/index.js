@@ -8,7 +8,8 @@ function initRoutes(app) {
     apm.startTransaction();
 
     try {
-      res.json(handleChat(req.body, req.session.chat));
+      const result = handleChat(req.body, req.session.chat);
+      res.json(result);
     } catch (err) {
       console.log({ error: err }); // eslint-disable-line no-console
       res.statusCode = err.status || 500;

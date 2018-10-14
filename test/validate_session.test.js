@@ -1,9 +1,9 @@
 const request = require('supertest');
-const { runServer } = require('../server');
+const { getServer } = require('../server');
 
 describe('detect invalid session', () => {
   it('double syn', async () => {
-    const app = runServer();
+    const app = getServer();
     const agent = request.agent(app);
 
     const { body: syn1 } = await agent
@@ -26,7 +26,7 @@ describe('detect invalid session', () => {
   });
 
   it('recover invalid session', async () => {
-    const app = runServer();
+    const app = getServer();
     const agent = request.agent(app);
 
     const { body: plain1 } = await agent

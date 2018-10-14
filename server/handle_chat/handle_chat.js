@@ -1,6 +1,6 @@
 const apm = require('elastic-apm-node');
 const moment = require('moment');
-const { DATE_FORMAT, BOT_NAME } = require('../constants');
+const { DATE_FORMAT, BOT_NAME } = require('../../constants');
 const { SessionMessage } = require('./session_message');
 const { SmartMessage } = require('./smart_message');
 const { RandomMessage } = require('./random_message');

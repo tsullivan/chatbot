@@ -1,5 +1,5 @@
 module.exports = {
-  env: 'docker',
+  env: 'production',
   session_secret: process.env.SESSION_SECRET,
   apm: {
     serviceName: 'chatbot',

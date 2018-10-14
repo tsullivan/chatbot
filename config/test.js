@@ -1,6 +1,6 @@
 module.exports = {
   env: 'test',
-  session_secret: 'POQ3RnCYf6GwnMRbjyjf409nVtRTYB7P',
+  session_secret: process.env.SESSION_SECRET,
   apm: {
     serviceName: 'chatbot-test',
     active: false,
