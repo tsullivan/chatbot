@@ -25,7 +25,7 @@ exports[`adventure castle look 2 1`] = `
 "It's nice and quiet here. The windows are closed and no longer letting in that abonimanimal light.
 
 You are at: Great Hall of the Castle
-In the great hall of the castle, there were beautiful open-air windows with warm, nice-smelling air that drifted through. Sunlight would catch a few specks of dust floating in the air.  Not that much though, because it's pretty clean in here. But the area is pretty dark, so you wouldn't even be able to tell. There's also a nice looking comfy bed in the middle of the great hall.
+In the great hall of the castle, there were beautiful open-air windows with warm, nice-smelling air that drifted through. Sunlight would catch a few specks of dust floating in the air. Not that much though, because it's pretty clean in here. But the area is pretty dark, so you wouldn't even be able to tell. There's also a nice looking comfy bed in the middle of the great hall.
 
 SLEEP - Sleep on the comfy bed
 LOOK - Look closer at the open-air windows
@@ -134,7 +134,7 @@ QUIT - Quit the game"
 `;
 
 exports[`adventure use_window_handle 2`] = `
-"With a loud but suprisingly unrusty sounding \\"SSSSSSHNK\\" noise, metal roller doors slide down to cover the open-air windows.  The windows are now closed-air windows. The room has much more cozy and relaxed lighting!
+"With a loud but suprisingly unrusty sounding \\"SSSSSSHNK\\" noise, metal roller doors slide down to cover the open-air windows. The windows are now closed-air windows. The room has much more cozy and relaxed lighting!
 
 Woah, the crank handle somehow became a permanent part of the castle window. Yeah, actually there was just one window and now the crank handle can never be retrieved from it. Want it back? Too bad.
 

@@ -11,11 +11,13 @@ interface IAddExit {
 }
 
 export class Location {
-  public followExit: (direction: string, prefix: string) => KeywordResponse;
+  public followExit: (direction: string, prefix?: string) => KeywordResponse;
   public getDescription: (game: ChatGame) => string;
   public getInstructions: (chatGame: ChatGame) => string;
   public hasKeyword: (keyword: string) => boolean;
+  public addKeyword: (keyword: string, keywordDescription: string, fn: () => KeywordResponse) => void;
   public clearKeywords: () => void;
+  public removeKeyword: (keyword: string) => void;
   public getInputResponse: (input: string, game: ChatGame) => KeywordResponse;
 
   private name: string;
