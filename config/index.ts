@@ -15,7 +15,7 @@ interface IConfig {
 function getEnvConfig(envString: string): IConfig {
   const envDependencies = [
     'SESSION_SECRET',
-    'SLACK_BOT_TOKEN',
+    'SLACK_BOT_NAME',
     'SLACK_BOT_TOKEN',
   ];
 
