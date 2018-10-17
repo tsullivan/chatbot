@@ -38,5 +38,3 @@ export class ChatGame {
     this.name = name;
   }
 }
-
-module.exports = { ChatGame };
