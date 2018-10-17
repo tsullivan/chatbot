@@ -48,12 +48,7 @@ export class DictionaryResponder extends KeywordResponder {
   public getRequested(prefixFn) {
     const dictionary = runDictionary(this.dictionary);
     const indices = Object.keys(dictionary);
-    let index;
-    if (this.requested !== null) {
-      index = this.requested - 1;
-    } else {
-      index = parseInt(sample(indices), 10);
-    }
+    const index = this.requested !== null ? this.requested - 1 : parseInt(sample(indices), 10);
     return prefixFn(index + 1) + ':\n' + dictionary[index];
   }
 }

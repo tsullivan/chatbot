@@ -63,7 +63,7 @@ const getCombiningResponse = (item, combinedSet) => {
 
 export function getItems(game) {
   const itemFactory = (id, itemArgs) => {
-    const factoryArgs = Object.assign({}, itemArgs, { id, game });
+    const factoryArgs = {...itemArgs,  id, game};
     return new Item(factoryArgs);
   };
 

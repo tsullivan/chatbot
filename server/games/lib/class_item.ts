@@ -1,4 +1,5 @@
 import { noop, partial } from 'lodash';
+import { Adventure as AdventureGame } from './';
 import { Keywordable } from './keywordable';
 import { getKeywordsHelper } from './keywords_helper';
 
@@ -87,9 +88,8 @@ export class Item implements Keywordable {
     return this.setActions({
       setCombinables: (combinableArray: ICombinable[]) => {
         for (const combinable of combinableArray) {
-          const updatedComb = Object.assign({}, combinable, {
-            numberToCombineWith: combinableArray.length,
-          });
+          const updatedComb = {...combinable,
+            numberToCombineWith: combinableArray.length};
           this.setCombinable(game, updatedComb);
         }
       },
@@ -102,7 +102,7 @@ export class Item implements Keywordable {
    * You can only combine items when holding both of them
    */
   public setCombinable(
-    game,
+    game: AdventureGame,
     { combinesWith, keyword, keywordDescription, fn, numberToCombineWith = 0 },
   ) {
     if (typeof combinesWith !== 'string') {
@@ -117,14 +117,13 @@ export class Item implements Keywordable {
     if (typeof fn !== 'function') {
       throw new Error('invalid function ' + fn);
     }
-    const self = this;
-    if (game.inInventory(self.id) && game.inInventory(combinesWith)) {
-      self.addKeyword(keyword, keywordDescription, () => {
-        self.removeKeyword(keyword);
-        self.combinedWith.add(combinesWith);
-        self.calculatedIsComplete = self.combinedWith.size >= numberToCombineWith;
+    if (game.inInventory(this.id) && game.inInventory(combinesWith)) {
+      this.addKeyword(keyword, keywordDescription, () => {
+        this.removeKeyword(keyword);
+        this.combinedWith.add(combinesWith);
+        this.calculatedIsComplete = this.combinedWith.size >= numberToCombineWith;
         game.deleteFromInventory(combinesWith);
-        return fn(self, self.combinedWith);
+        return fn(this, this.combinedWith);
       });
     }
   }

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "yarn run lint & yarn run jest",
+    "test": "yarn run lint && yarn run jest",
     "lint": "eslint . && tslint -p tsconfig.json --exclude node_modules",
     "jest": "NODE_ENV=test jest --ci --verbose ./*/*.test.js ",
     "slack": "node index.js --slack",
@@ -26,7 +26,8 @@
   "prettier": {
     "printWidth": 88,
     "singleQuote": true,
-    "trailingComma": "es5"
+    "trailingComma": "es5",
+    "parser": "typescript"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.1",
@@ -41,9 +42,11 @@
     "jest": "^23.6.0",
     "nodemon": "^1.14.11",
     "prettier": "^1.13.4",
+    "prettier-tslint": "^0.4.0",
     "supertest": "^3.1.0",
     "ts-jest": "^23.10.3",
-    "tslint": "^5.11.0"
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -56,6 +59,7 @@
     "slackbots": "^1.1.0",
     "strip-newlines": "^1.0.1",
     "ts-node": "^7.0.1",
-    "typescript": "^3.1.1"
+    "typescript": "^3.1.1",
+    "yargs": "^12.0.2"
   }
 }

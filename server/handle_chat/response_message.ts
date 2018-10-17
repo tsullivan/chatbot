@@ -47,11 +47,7 @@ export class ResponseMessage {
   }
 
   public respond(message, format = 'markdown'): IResponse {
-    if (format === 'plain') {
-      this.response = this.getPlain(message);
-    } else {
-      this.response = this.getMarkdown(message);
-    }
+    this.response = format === 'plain' ? this.getPlain(message) : this.getMarkdown(message);
     return this.response;
   }
 

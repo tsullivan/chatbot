@@ -8,7 +8,6 @@ export interface IKeywordResponseValue {
 }
 
 export class KeywordResponse {
-
   public static getResponseFromHandler(handler, game) {
     const handlerResponse: KeywordResponse = handler(game); // what if this updates an item on the floor?
     if (handlerResponse instanceof KeywordResponse) {
@@ -42,14 +41,13 @@ export class KeywordResponse {
   }
 
   public getFields(): IKeywordResponseValue {
-    const { changeScore, format, isCascade, isDone, showInstructions, response } = this;
     return {
-      changeScore,
-      format,
-      isCascade,
-      isDone,
-      response,
-      showInstructions,
+      changeScore: this.changeScore,
+      format: this.format,
+      isCascade: this.isCascade,
+      isDone: this.isDone,
+      response: this.response,
+      showInstructions: this.showInstructions,
     };
   }
 }

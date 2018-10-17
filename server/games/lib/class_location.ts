@@ -1,4 +1,4 @@
-import { ChatGame } from '../chat_game';
+import { Adventure as AdventureGame } from './class_adventure';
 import { ItemCollection } from './class_item_collection';
 import { KeywordResponse } from './class_keyword_response';
 import { getKeywordsHelper } from './keywords_helper';
@@ -12,13 +12,13 @@ interface IAddExit {
 
 export class Location {
   public followExit: (direction: string, prefix?: string) => KeywordResponse;
-  public getDescription: (game: ChatGame) => string;
-  public getInstructions: (chatGame: ChatGame) => string;
+  public getDescription: (game: AdventureGame) => string;
+  public getInstructions: (chatGame: AdventureGame) => string;
   public hasKeyword: (keyword: string) => boolean;
   public addKeyword: (keyword: string, keywordDescription: string, fn: () => KeywordResponse) => void;
   public clearKeywords: () => void;
   public removeKeyword: (keyword: string) => void;
-  public getInputResponse: (input: string, game: ChatGame) => KeywordResponse;
+  public getInputResponse: (input: string, game: AdventureGame) => KeywordResponse;
 
   private name: string;
   private exits: Map<string, Location>;
