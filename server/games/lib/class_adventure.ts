@@ -1,5 +1,6 @@
 import { ChatGame } from '../';
 import { ChatSession } from '../../session';
+import { Item } from './class_item';
 import { ItemCollection } from './class_item_collection';
 import { KeywordResponse } from './class_keyword_response';
 import { Location } from './class_location';
@@ -11,6 +12,7 @@ export class Adventure extends ChatGame {
   public branchToGame: (BranchGame: (session: any) => void, prefix: string) => KeywordResponse;
   public clearKeywords: () => void;
   public getInputResponse: (input: string, game: ChatGame) => IKeywordResponseValue;
+  public getInstructions: () => string;
   public addKeyword: (key: string, description: string, fn: () => KeywordResponse) => string;
   public hasKeyword: (key: string) => boolean;
   public score: number;
@@ -47,14 +49,14 @@ export class Adventure extends ChatGame {
     this.setName(null);
   }
 
-  public addItemToCollection(id, item) {
+  public addItemToCollection(id: string, item: Item) {
     this.itemCollection.addItem(id, item);
   }
 
   public setGameKeywords() {
     // set game keywords
     this.clearKeywords();
-    getGameKeywords(this).forEach(({ key, description, fn }) => {
+    getGameKeywords().forEach(({ key, description, fn }) => {
       this.addKeyword(key, description, fn);
     });
   }
@@ -84,7 +86,7 @@ export class Adventure extends ChatGame {
     return this.currentLocation;
   }
 
-  public getInputHandlerItem(items, input) {
+  public getInputHandlerItem(items, input: string) {
     let foundItem = null;
     for (const item of items) {
       if (item.hasKeyword(input)) {
@@ -112,11 +114,11 @@ export class Adventure extends ChatGame {
     this.updateState();
   }
 
-  public setLocation(location) {
+  public setLocation(location: Location) {
     this.currentLocation = location;
   }
 
-  public testInput(input): KeywordResponse {
+  public testInput(input: string): KeywordResponse {
     input = input.toUpperCase();
     const responseSet = [];
     let response;
@@ -211,38 +213,38 @@ export class Adventure extends ChatGame {
     }
   }
 
-  public getItemFromCollection(id) {
+  public getItemFromCollection(id: string): Item {
     return this.itemCollection.get(id);
   }
 
-  public addToInventory(id) {
+  public addToInventory(id: string) {
     this.inventory.add(id);
   }
-  public inInventory(id) {
+  public inInventory(id: string): boolean {
     return this.inventory.has(id);
   }
-  public dropInventory(id, location) {
+  public dropInventory(id: string, location: Location) {
     this.inventory.delete(id);
     location.addFloorItem(id);
   }
-  public takeFromLocation(id, location) {
+  public takeFromLocation(id: string, location: Location) {
     this.inventory.add(id);
     location.removeFloorItem(id);
   }
-  public deleteFromInventory(id) {
+  public deleteFromInventory(id: string) {
     this.inventory.delete(id);
   }
-  public getVisibleInventoryItems() {
+  public getVisibleInventoryItems(): Item[] {
     return ItemCollection.getVisibleItemsFromSet(this, this.inventory);
   }
-  public getVisibleLocationItems() {
+  public getVisibleLocationItems(): Item[] {
     return this.currentLocation.getVisibleFloorItems(this);
   }
 
-  public getNext(prefix, showInstructions) {
+  public getNext(prefix, showInstructions): string {
     let next = prefix;
     if (showInstructions) {
-      next += '\n\n' + this.getLocationInstructions();
+      next += '\n---\nYou can:\n' + this.getLocationInstructions();
     }
     return next;
   }

@@ -35,6 +35,8 @@ export class Item implements Keywordable {
 
   public addKeyword: (keyword: string, keywordDescription: string, fn: () => void) => void;
   public removeKeyword: (keyword: string) => void;
+  public hasKeywords: () => boolean;
+  public getInstructions: (prefix?: string) => string;
 
   private name: string;
   private id: string;

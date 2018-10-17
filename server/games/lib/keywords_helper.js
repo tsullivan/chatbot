@@ -24,7 +24,7 @@ const getKeywordsHelper = () => ({
     }
   },
 
-  getInstructions(prefix = '') {
+  getInstructions(prefix = '- ') {
     return Array.from(this._keywords)
       .reduce((accum, [command, { text }]) => {
         return [...accum, `${prefix}${command} - ${text}`];

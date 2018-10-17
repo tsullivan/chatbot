@@ -11,29 +11,24 @@ You're locked up securely in a jail cell. A hole in the ceiling marks where you 
 
 There is a jail key on a far wall across the hallway from your jail cell.
 
-ESCAPE - Escape from the cell
-TAKE_JAIL_KEY - Somehow take the jail key from the wall.
-WAIT - Wait for the guards to stop watching you.
-LOOK - Look at the area you are currently in.
-ITEMS - Things you can do with stuff you are holding or stuff you see.
-HELP - See all the commands you can type
-QUIT - Quit the game"
+- ESCAPE - Escape from the cell
+- TAKE_JAIL_KEY - Somehow take the jail key from the wall.
+- WAIT - Wait for the guards to stop watching you.
+- LOOK - Look at the area you are currently in.
+- ITEMS - Things you can do with stuff you are holding or stuff you see.
+- HELP - See all the commands you can type
+- QUIT - Quit the game"
 `;
 
-exports[`escape-jail escape 2`] = `
-"There aren't any items around or that you are holding that you can do anything with right now.
-
-ESCAPE - Escape from the cell
-TAKE_JAIL_KEY - Somehow take the jail key from the wall.
-WAIT - Wait for the guards to stop watching you."
-`;
+exports[`escape-jail escape 2`] = `"There aren't any items around or that you are holding that you can do anything with right now."`;
 
 exports[`escape-jail escape 3`] = `
 "You can not escape while the guards are watching!
-
-ESCAPE - Escape from the cell
-TAKE_JAIL_KEY - Somehow take the jail key from the wall.
-WAIT - Wait for the guards to stop watching you."
+---
+You can:
+- ESCAPE - Escape from the cell
+- TAKE_JAIL_KEY - Somehow take the jail key from the wall.
+- WAIT - Wait for the guards to stop watching you."
 `;
 
 exports[`escape-jail escape 4`] = `
@@ -42,26 +37,29 @@ exports[`escape-jail escape 4`] = `
 You hear a voice calling to you. \\"Use the FORCE, Tim.\\"
 
 Who said that? The Force? What is that??
-
-USE_THE_FORCE_TO_TAKE_JAIL_KEY - Use the Force to take the jail cell key.
-ESCAPE - Escape from the cell
-WAIT - Wait for the guards to stop watching you."
+---
+You can:
+- USE_THE_FORCE_TO_TAKE_JAIL_KEY - Use the Force to take the jail cell key.
+- - ESCAPE - Escape from the cell
+- WAIT - Wait for the guards to stop watching you."
 `;
 
 exports[`escape-jail escape 5`] = `
 "No time for questions. Time for escaping. You decide to put your trust in the mysterious voice. You close your eyes, and imagine the jail key floating up, off its hook, drift quietly through the air, and land in your open hand.
 
 When you open your eyes, the jail key is in your hand.
-
-ESCAPE - Escape from the cell
-WAIT - Wait for the guards to stop watching you."
+---
+You can:
+- ESCAPE - Escape from the cell
+- WAIT - Wait for the guards to stop watching you."
 `;
 
 exports[`escape-jail escape 6`] = `
 "You pretend not to notice the guards watching you. They watch you for a little bit, then walk away to watch other prisoners.
-
-ESCAPE - Escape from the cell
-STAND_AROUND - Stand around and let the weight of feeling of excitement, exersion, and curiousity resolve itself in your mind before deciding on something clever to do"
+---
+You can:
+- ESCAPE - Escape from the cell
+- STAND_AROUND - Stand around and let the weight of feeling of excitement, exersion, and curiousity resolve itself in your mind before deciding on something clever to do"
 `;
 
 exports[`escape-jail escape 7`] = `
@@ -74,9 +72,10 @@ You're outside of the jail cell in a hallway lined with many other jail cells. T
 There's a door at the end of the hallway - that must be the exit.
 
 Just before the door, there is a window to the outside. You can see that you are on the ground floor of the jail, and there is a van right outside. There is a guard walking towards the driver's door.
-
-ESCAPE - Escape down the hallway and quickly jump into the back of the van
-STAND_AROUND - Stand around and let the weight of feeling of excitement, exersion, and curiousity resolve itself in your mind before deciding on something clever to do"
+---
+You can:
+- ESCAPE - Escape down the hallway and quickly jump into the back of the van
+- STAND_AROUND - Stand around and let the weight of feeling of excitement, exersion, and curiousity resolve itself in your mind before deciding on something clever to do"
 `;
 
 exports[`escape-jail escape 8`] = `
@@ -91,10 +90,11 @@ You're hiding in a jail van that's driving around the jail, making jail deliveri
 You see:
 
 - Jail Towel - A towel from the jail laundry van.
-
-TAKE_TOWEL - Take one of the towels from the jail laundry van.
-ESCAPE - Escape the jail van
-STAND_AROUND - Stand around and let the weight of feeling of excitement, exersion, and curiousity resolve itself in your mind before deciding on something clever to do"
+---
+You can:
+- TAKE_TOWEL - Take one of the towels from the jail laundry van.
+- - ESCAPE - Escape the jail van
+- STAND_AROUND - Stand around and let the weight of feeling of excitement, exersion, and curiousity resolve itself in your mind before deciding on something clever to do"
 `;
 
 exports[`escape-jail escape 9`] = `
@@ -109,13 +109,15 @@ Now, all you have to do is get over this fence...
 To be honest, it's a little scary right now because you really don't know what's out here. And there's cops chasing you, but they're far behind. You have the Force and you can go super fast...
 
 You're at the huge fence that goes all around the jail and keeps the prisoners inside. It's very tall and you would have to be a really good climber or a really good jumper, or both, to get over this thing. And you would have to be really really good to do it without getting noticed by a guard!
-
-JUMP_THE_FENCE - Jump over the jail fence
-CLIMB_THE_FENCE - Climb over the jail fence"
+---
+You can:
+- JUMP_THE_FENCE - Jump over the jail fence
+- CLIMB_THE_FENCE - Climb over the jail fence"
 `;
 
 exports[`escape-jail escape 10`] = `
 "JUUUUMP! Oh no! The top of the fence is still too high up to jump over.
-
-CLIMB_THE_FENCE - Climb over the jail fence"
+---
+You can:
+- CLIMB_THE_FENCE - Climb over the jail fence"
 `;

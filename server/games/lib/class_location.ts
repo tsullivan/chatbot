@@ -4,18 +4,16 @@ import { KeywordResponse } from './class_keyword_response';
 import { getKeywordsHelper } from './keywords_helper';
 import { parajoin } from './parajoin';
 
-interface IAddExit {
-  location: Location;
-  exit: string;
-  inverseExit?: string;
-}
-
 export class Location {
   public followExit: (direction: string, prefix?: string) => KeywordResponse;
   public getDescription: (game: AdventureGame) => string;
-  public getInstructions: (chatGame: AdventureGame) => string;
+  public getInstructions: (game: AdventureGame) => string;
   public hasKeyword: (keyword: string) => boolean;
-  public addKeyword: (keyword: string, keywordDescription: string, fn: () => KeywordResponse) => void;
+  public addKeyword: (
+    keyword: string,
+    keywordDescription: string,
+    fn: () => KeywordResponse
+  ) => void;
   public clearKeywords: () => void;
   public removeKeyword: (keyword: string) => void;
   public getInputResponse: (input: string, game: AdventureGame) => KeywordResponse;
@@ -24,14 +22,7 @@ export class Location {
   private exits: Map<string, Location>;
   private floorItems: Set<string>;
 
-  constructor({ game, name }) {
-    if (!(game instanceof Object)) {
-      throw new Error('game must be an Adventure object');
-    }
-    if (typeof name !== 'string') {
-      throw new Error('name must be string');
-    }
-
+  constructor({ game, name }: { game: AdventureGame; name: string }) {
     const keywordsHelper = getKeywordsHelper();
     Object.assign(this, keywordsHelper);
 
@@ -44,23 +35,23 @@ export class Location {
       return this.followExitInternal(game, direction, prefix);
     };
 
-    this.getInstructions = (chatGame, ...args) => {
-      return this.getInstructionsInternal(game, keywordsHelper, ...args);
+    this.getInstructions = (adventureGame: AdventureGame) => {
+      return this.getInstructionsInternal(game, keywordsHelper);
     };
 
     this.setLocationKeywords(game);
   }
 
-  public setLocationKeywords(chatGame) {
+  public setLocationKeywords(adventureGame: AdventureGame) {
     throw new Error('setLocationKeywords must be overridden in ' + this.name);
   }
 
   /*
    * For location, need the commands for the visible items in the room
    */
-  public getInstructionsInternal(game, keywordsHelper, prefix = '') {
+  public getInstructionsInternal(game: AdventureGame, keywordsHelper) {
     const getInstructions = keywordsHelper.getInstructions.bind(this);
-    const locationInstructions = getInstructions(prefix);
+    const locationInstructions = getInstructions();
 
     // show any items on the floor
     const itemInfos = this.getVisibleFloorItems(game).reduce((accum, item) => {
@@ -72,17 +63,21 @@ export class Location {
 
     const lns = [];
     if (itemInfos.length > 0) {
-      lns.push(itemInfos.join('\n'));
+      lns.push(itemInfos.join('\n- ')); // render as markdown ul
     }
     lns.push(locationInstructions);
-    return lns.join('\n');
+    return lns.join('\n- '); // render as markdown ul
   }
 
-  public addExit(opts: IAddExit) {
-    const { location, exit, inverseExit } = opts;
-    if (!(location instanceof Location)) {
-      throw new Error('bad location: ' + location);
-    }
+  public addExit({
+    location,
+    exit,
+    inverseExit,
+  }: {
+    location: Location;
+    exit: string;
+    inverseExit?: string;
+  }) {
     this.exits.set(exit, location);
 
     if (inverseExit) {
@@ -93,7 +88,7 @@ export class Location {
     }
   }
 
-  public getDescriptionInternal(game) {
+  public getDescriptionInternal(game: AdventureGame) {
     return `You are at: **${this.getName()}**\n\n${this.getDescription(game)}`;
   }
 
@@ -101,36 +96,28 @@ export class Location {
     return this.name;
   }
 
-  public addFloorItem(id) {
+  public addFloorItem(id: string) {
     this.floorItems.add(id);
   }
-  public hasFloorItem(id) {
+  public hasFloorItem(id: string) {
     return this.floorItems.has(id);
   }
-  public removeFloorItem(id) {
+  public removeFloorItem(id: string) {
     this.floorItems.delete(id);
   }
-  public getVisibleFloorItems(game) {
-    if (game == null) {
-      throw new Error('game param not given');
-    }
-
+  public getVisibleFloorItems(game: AdventureGame) {
     return ItemCollection.getVisibleItemsFromSet(game, this.floorItems);
   }
-  public setVisibleItemKeywords(game) {
-    if (game == null) {
-      throw new Error('game param not given');
-    }
-
+  public setVisibleItemKeywords(game: AdventureGame) {
     const items = ItemCollection.getVisibleItemsFromSet(game, this.floorItems);
-    items.forEach((item) => item.setItemActions(game));
+    items.forEach(item => item.setItemActions(game));
   }
 
-  private followExitInternal(game, direction, prefix = '') {
+  private followExitInternal(game: AdventureGame, direction, prefix = '') {
     if (this.exits.has(direction)) {
       const exit = this.exits.get(direction);
       game.setLocation(exit);
-      game.updateState(exit);
+      game.updateState();
 
       const lns = [];
       if (prefix !== '') {

@@ -69,7 +69,7 @@ export class ItemCollection {
     return ItemCollection.describeGameItems(game, describeIt, prefixIt);
   }
 
-  public static getAllItemsFromSet(game, collection: Set<string>, { pushCondition = (item?: any) => true } = {}) {
+  public static getAllItemsFromSet(game, collection: Set<string>, { pushCondition = (item?: any) => true } = {}): Item[] {
     return Array.from(collection).reduce((accum: Item[], value) => {
       const item = game.getItemFromCollection(value);
       if (pushCondition(item)) {
@@ -79,7 +79,7 @@ export class ItemCollection {
     }, []);
   }
 
-  public static getVisibleItemsFromSet(game, collection: Set<string>) {
+  public static getVisibleItemsFromSet(game, collection: Set<string>): Item[] {
     if (game == null) {
       throw new Error('game param not given');
     }
