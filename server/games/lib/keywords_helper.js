@@ -1,5 +1,6 @@
 const { MultiMap } = require('../../../lib');
 const { KeywordResponse } = require('./class_keyword_response');
+const { UL } = require('../../../constants');
 
 const getKeywordsHelper = () => ({
   _keywords: new MultiMap(),
@@ -24,7 +25,7 @@ const getKeywordsHelper = () => ({
     }
   },
 
-  getInstructions(prefix = '- ') {
+  getInstructions(prefix = UL) {
     return Array.from(this._keywords)
       .reduce((accum, [command, { text }]) => {
         return [...accum, `${prefix}${command} - ${text}`];

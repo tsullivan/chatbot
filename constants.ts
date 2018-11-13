@@ -1,3 +1,5 @@
-export const PORT: number = 8080;
-export const DATE_FORMAT: string = 'MMMM Do YYYY, h:mm:ss a';
-export const BOT_NAME: string = 'Beep Beep Beep';
+export const PORT = 8080;
+export const DATE_FORMAT = 'MMMM Do YYYY, h:mm:ss a';
+export const BOT_NAME = 'Beep Beep Beep';
+export const UL = '- ';
+export const LI = '  - ';

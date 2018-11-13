@@ -244,7 +244,7 @@ export class Adventure extends ChatGame {
   public getNext(prefix, showInstructions): string {
     let next = prefix;
     if (showInstructions) {
-      next += '\n---\nYou can:\n' + this.getLocationInstructions();
+      next += ['\n\n---', 'You can:', this.getLocationInstructions()].join('\n\n');
     }
     return next;
   }

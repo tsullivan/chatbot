@@ -63,10 +63,10 @@ export class Location {
 
     const lns = [];
     if (itemInfos.length > 0) {
-      lns.push(itemInfos.join('\n- ')); // render as markdown ul
+      lns.push(itemInfos.join('\n'));
     }
     lns.push(locationInstructions);
-    return lns.join('\n- '); // render as markdown ul
+    return lns.join('\n');
   }
 
   public addExit({

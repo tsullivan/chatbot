@@ -4,8 +4,11 @@ exports[`adventure castle 1`] = `
 "You are at: **Great Hall of the Castle**
 
 In the great hall of the castle, there are beautiful open-air windows with warm, nice-smelling air drifting through. Sunlight is catching a few specks of dust floating in the air. Not that much though, because it's pretty clean in here. There's also a nice looking comfy bed in the middle of the great hall. Hey wait - isn't it night time? Where is that light coming from?
+
 ---
+
 You can:
+
 - SLEEP - Sleep on the comfy bed
 - LOOK - Look closer at the open-air windows
 - EXIT - Leave the beautful great hall and the castle."
@@ -17,8 +20,11 @@ exports[`adventure castle look 1 1`] = `
 You are at: **Great Hall of the Castle**
 
 In the great hall of the castle, there are beautiful open-air windows with warm, nice-smelling air drifting through. Sunlight is catching a few specks of dust floating in the air. Not that much though, because it's pretty clean in here. There's also a nice looking comfy bed in the middle of the great hall. Hey wait - isn't it night time? Where is that light coming from?
+
 ---
+
 You can:
+
 - SLEEP - Sleep on the comfy bed
 - LOOK - Look closer at the open-air windows
 - USE_WINDOW_HANDLE - See if the handle in your pocket does anything against the sockets on the open windows in here
@@ -31,8 +37,11 @@ exports[`adventure castle look 2 1`] = `
 You are at: **Great Hall of the Castle**
 
 In the great hall of the castle, there were beautiful open-air windows with warm, nice-smelling air that drifted through. Sunlight would catch a few specks of dust floating in the air. Not that much though, because it's pretty clean in here. But the area is pretty dark, so you wouldn't even be able to tell. There's also a nice looking comfy bed in the middle of the great hall.
+
 ---
+
 You can:
+
 - SLEEP - Sleep on the comfy bed
 - LOOK - Look closer at the open-air windows
 - EXIT - Leave the beautful great hall and the castle."
@@ -42,8 +51,11 @@ exports[`adventure castle sleep fail 1`] = `
 "There is too much light coming in through the open-air windows. You'll never be able to enjoy even a minute's rest in this spectacular great hall! Oh yeah, and there are no other beds in this castle and all the rooms will kill you if you try to go in them because there are poison arrow traps everywhere.
 
 LOSE A POINT
+
 ---
+
 You can:
+
 - SLEEP - Sleep on the comfy bed
 - LOOK - Look closer at the open-air windows
 - EXIT - Leave the beautful great hall and the castle."
@@ -64,8 +76,11 @@ exports[`adventure cave 1`] = `
 "You are at: **Cheery Cave**
 
 It's unnaturally cheery in this smelly old cave. Probably because of the tiny village of tiny dancing skeleton hands. So cute! So tiny! So skeleton handsy!
+
 ---
+
 You can:
+
 - DANCE - Dance with the tiny skeleton hands
 - LOOK - Look closer at the tiny village
 - EXIT - Get out of the cheery smelly old cave."
@@ -77,8 +92,11 @@ exports[`adventure cave exit 1`] = `
 It is the night time. You are outside, surrounded by dark trees, and you're very tired. There is a castle and a cave.
 
 Which way looks to be best to find a nice comfy bed to rest? I didn't mean for that to rhyme.
+
 ---
+
 You can:
+
 - CAVE - Go down into the cave
 - CASTLE - Head up to the castle."
 `;
@@ -91,10 +109,13 @@ The tiny hotel building has a strange type of flagpole on the roof that looks li
 You are at: **Cheery Cave**
 
 It's unnaturally cheery in this smelly old cave. Probably because of the tiny village of tiny dancing skeleton hands. So cute! So tiny! So skeleton handsy!
+
 ---
+
 You can:
+
 - TAKE_HANDLE - Take the handle and put it in your pocket where it will be safe
-- - DANCE - Dance with the tiny skeleton hands
+- DANCE - Dance with the tiny skeleton hands
 - LOOK - Look closer at the tiny village
 - EXIT - Get out of the cheery smelly old cave."
 `;
@@ -129,8 +150,11 @@ Which way looks to be best to find a nice comfy bed to rest? I didn't mean for t
 
 exports[`adventure take_handle 1`] = `
 "Can you handle the handle? I guess you can. The handle has been taken by you.
+
 ---
+
 You can:
+
 - DANCE - Dance with the tiny skeleton hands
 - LOOK - Look closer at the tiny village
 - EXIT - Get out of the cheery smelly old cave."
@@ -152,8 +176,11 @@ exports[`adventure use_window_handle 2`] = `
 "With a loud but suprisingly unrusty sounding \\"SSSSSSHNK\\" noise, metal roller doors slide down to cover the open-air windows. The windows are now closed-air windows. The room has much more cozy and relaxed lighting!
 
 Woah, the crank handle somehow became a permanent part of the castle window. Yeah, actually there was just one window and now the crank handle can never be retrieved from it. Want it back? Too bad.
+
 ---
+
 You can:
+
 - SLEEP - Sleep on the comfy bed
 - LOOK - Look closer at the open-air windows
 - EXIT - Leave the beautful great hall and the castle."

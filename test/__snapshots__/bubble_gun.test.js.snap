@@ -32,19 +32,25 @@ Another thing you notice right away is that there is an extremely strong fragran
 You see:
 
 - Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
+
 ---
+
 You can:
+
 - STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- - PLAYGROUND - Go back to the playground
+- PLAYGROUND - Go back to the playground
 - ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
 
 exports[`bubble_gun fall down in soap store 3`] = `
 "OOPSIE. You accidentally spilled some soap on the floor! Be careful now, the floor might be slippery.
+
 ---
+
 You can:
+
 - STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- - PLAYGROUND - Go back to the playground
+- PLAYGROUND - Go back to the playground
 - DONT_BE_CAREFUL - You can accidentally not be careful. No one will blame you because it will be another accident."
 `;
 
@@ -52,19 +58,25 @@ exports[`bubble_gun fall down in soap store 4`] = `
 "OOPSIE. You accidentally weren't careful and slipped on the soap that you spilled on the floor!
 
 BAM! There goes your bottom!
+
 ---
+
 You can:
+
 - STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- - PLAYGROUND - Go back to the playground
+- PLAYGROUND - Go back to the playground
 - ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
 
 exports[`bubble_gun fall down in soap store 5`] = `
 "OOPSIE. You accidentally spilled some soap on the floor! Be careful now, the floor might be slippery.
+
 ---
+
 You can:
+
 - STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- - PLAYGROUND - Go back to the playground
+- PLAYGROUND - Go back to the playground
 - DONT_BE_CAREFUL - You can accidentally not be careful. No one will blame you because it will be another accident."
 `;
 
@@ -72,19 +84,25 @@ exports[`bubble_gun fall down in soap store 6`] = `
 "OOPSIE. You accidentally weren't careful and slipped on the soap that you spilled on the floor!
 
 BONK! There goes your head!
+
 ---
+
 You can:
+
 - STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- - PLAYGROUND - Go back to the playground
+- PLAYGROUND - Go back to the playground
 - ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
 
 exports[`bubble_gun fall down in soap store 7`] = `
 "OOPSIE. You accidentally spilled some soap on the floor! Be careful now, the floor might be slippery.
+
 ---
+
 You can:
+
 - STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- - PLAYGROUND - Go back to the playground
+- PLAYGROUND - Go back to the playground
 - DONT_BE_CAREFUL - You can accidentally not be careful. No one will blame you because it will be another accident."
 `;
 
@@ -92,19 +110,25 @@ exports[`bubble_gun fall down in soap store 8`] = `
 "OOPSIE. You accidentally weren't careful and slipped on the soap that you spilled on the floor!
 
 BAM! There goes your bottom!
+
 ---
+
 You can:
+
 - STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- - PLAYGROUND - Go back to the playground
+- PLAYGROUND - Go back to the playground
 - ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
 
 exports[`bubble_gun fall down in soap store 9`] = `
 "OOPSIE. You accidentally spilled some soap on the floor! Be careful now, the floor might be slippery.
+
 ---
+
 You can:
+
 - STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- - PLAYGROUND - Go back to the playground
+- PLAYGROUND - Go back to the playground
 - DONT_BE_CAREFUL - You can accidentally not be careful. No one will blame you because it will be another accident."
 `;
 
@@ -112,10 +136,13 @@ exports[`bubble_gun fall down in soap store 10`] = `
 "OOPSIE. You accidentally weren't careful and slipped on the soap that you spilled on the floor!
 
 BONK! There goes your head!
+
 ---
+
 You can:
+
 - STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- - PLAYGROUND - Go back to the playground
+- PLAYGROUND - Go back to the playground
 - ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
 
@@ -160,8 +187,11 @@ Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope 
 You see:
 
 - Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
 ---
+
 You can:
+
 - BRIDGE - Go to the bridge
 - TREE_FORT - Climb the ladder up to the tree fort
 - ELECTRONICS - Go to the Electronics store
@@ -177,8 +207,11 @@ This long, long bridge carries the road over a very tall gorge that surrounds Bu
 There's no way out of town right now, Bubble Gun World Police have blocked the road to prevent anyone from using the road. A power outage in the streets has caused all the street lights to turn off in this area. The Police are saying it's too dark and unsafe to let anyone try to cross.
 
 The police have put up signs all along the bridge that say BRIDGE IS OUT!But it is too dark to even see them.
+
 ---
+
 You can:
+
 - PLAYGROUND - Go back to the playground
 - CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
 `;
@@ -191,8 +224,11 @@ This long, long bridge carries the road over a very tall gorge that surrounds Bu
 There's no way out of town right now, Bubble Gun World Police have blocked the road to prevent anyone from using the road. A power outage in the streets has caused all the street lights to turn off in this area. The Police are saying it's too dark and unsafe to let anyone try to cross.
 
 The police have put up signs all along the bridge that say BRIDGE IS OUT!But it is too dark to even see them.
+
 ---
+
 You can:
+
 - PLAYGROUND - Go back to the playground
 - CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
 `;
@@ -209,8 +245,11 @@ Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope 
 You see:
 
 - Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
 ---
+
 You can:
+
 - BRIDGE - Go to the bridge
 - TREE_FORT - Climb the ladder up to the tree fort
 - ELECTRONICS - Go to the Electronics store
@@ -230,8 +269,11 @@ Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope 
 You see:
 
 - Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
 ---
+
 You can:
+
 - BRIDGE - Go to the bridge
 - TREE_FORT - Climb the ladder up to the tree fort
 - ELECTRONICS - Go to the Electronics store
@@ -243,8 +285,11 @@ exports[`bubble_gun walk around 7`] = `
 "You are at: **The Tree Fort**
 
 This tree fort is so tall! It has a big window with a clear view of the entire playground.
+
 ---
+
 You can:
+
 - PLAYGROUND - Go back to the playground"
 `;
 
@@ -252,8 +297,11 @@ exports[`bubble_gun walk around 8`] = `
 "You are at: **The Tree Fort**
 
 This tree fort is so tall! It has a big window with a clear view of the entire playground.
+
 ---
+
 You can:
+
 - PLAYGROUND - Go back to the playground"
 `;
 
@@ -269,8 +317,11 @@ Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope 
 You see:
 
 - Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
 ---
+
 You can:
+
 - BRIDGE - Go to the bridge
 - TREE_FORT - Climb the ladder up to the tree fort
 - ELECTRONICS - Go to the Electronics store
@@ -290,8 +341,11 @@ Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope 
 You see:
 
 - Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
 ---
+
 You can:
+
 - BRIDGE - Go to the bridge
 - TREE_FORT - Climb the ladder up to the tree fort
 - ELECTRONICS - Go to the Electronics store
@@ -309,35 +363,47 @@ You see:
 - Small LR41 Batteries. - The two LR41 batteries are the standard 1.5V button size batteries. They'd fit nicely into the battery holder of a very small piece of electronics.
 - Medium-size AA Batteries. - The two AA batteries are the standard 1.5V medium-size batteries. They'd fit nicely into the battery holder of a medium-size piece of electronics.
 - Light-emitting Diode - A semiconductor diode which glows when a voltage is applied. It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
+
 ---
+
 You can:
+
 - TAKE_LR41_BATTERIES - Obtain possession of the LR41 batteries.
-- - TAKE_AA_BATTERIES - Obtain possession of the AA batteries.
-- - TAKE_LED - Take the LED.
-- - PLAYGROUND - Go back to the playground"
+- TAKE_AA_BATTERIES - Obtain possession of the AA batteries.
+- TAKE_LED - Take the LED.
+- PLAYGROUND - Go back to the playground"
 `;
 
 exports[`bubble_gun walk around 12`] = `
 "The LR41 batteries are now yours!
+
 ---
+
 You can:
+
 - TAKE_AA_BATTERIES - Obtain possession of the AA batteries.
-- - TAKE_LED - Take the LED.
-- - PLAYGROUND - Go back to the playground"
+- TAKE_LED - Take the LED.
+- PLAYGROUND - Go back to the playground"
 `;
 
 exports[`bubble_gun walk around 13`] = `
 "The AA batteries are now yours!
+
 ---
+
 You can:
+
 - TAKE_LED - Take the LED.
-- - PLAYGROUND - Go back to the playground"
+- PLAYGROUND - Go back to the playground"
 `;
 
 exports[`bubble_gun walk around 14`] = `
 "The LED is now yours, and yours alone.
+
 ---
+
 You can:
+
 - PLAYGROUND - Go back to the playground"
 `;
 
@@ -345,8 +411,11 @@ exports[`bubble_gun walk around 15`] = `
 "You are at: **The Electronics Store**
 
 Here at the Electronics store, their motto is: \\"Electronics - they're what we sell!\\"
+
 ---
+
 You can:
+
 - PLAYGROUND - Go back to the playground"
 `;
 
@@ -362,8 +431,11 @@ Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope 
 You see:
 
 - Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
 ---
+
 You can:
+
 - BRIDGE - Go to the bridge
 - TREE_FORT - Climb the ladder up to the tree fort
 - ELECTRONICS - Go to the Electronics store
@@ -377,17 +449,20 @@ exports[`bubble_gun walk around 17`] = `
 
 You are holding:
 - Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
-  - COMBINE_BUBBLE_GUN_AND_BATTERIES - Put the AA batteries in the bubble gun.
+  - COMBINE_BUBBLE_GUN_AND_BATTERIES - Put the AA batteries in the bubble gun.
 - Small LR41 Batteries. - The two LR41 batteries are the standard 1.5V button size batteries. They'd fit nicely into the battery holder of a very small piece of electronics.
 - Medium-size AA Batteries. - The two AA batteries are the standard 1.5V medium-size batteries. They'd fit nicely into the battery holder of a medium-size piece of electronics.
 - Light-emitting Diode - A semiconductor diode which glows when a voltage is applied. It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
-  - COMBINE_LED_AND_BATTERIES - Put the two LR41 batteries in the battery holder of the LED device."
+  - COMBINE_LED_AND_BATTERIES - Put the two LR41 batteries in the battery holder of the LED device."
 `;
 
 exports[`bubble_gun walk around 18`] = `
 "You slide off the cover to the bubble gun, pop in the AA batteries, and put the cover back on. It's nice and snug with the water seal that will prevent corrosion in the batteries or the metal surfaces inside the bubble gun's battery compartment.
+
 ---
+
 You can:
+
 - BRIDGE - Go to the bridge
 - TREE_FORT - Climb the ladder up to the tree fort
 - ELECTRONICS - Go to the Electronics store
@@ -397,8 +472,11 @@ You can:
 
 exports[`bubble_gun walk around 19`] = `
 "The batteries go right on in to the LED's battery holder. Nice and simple.
+
 ---
+
 You can:
+
 - BRIDGE - Go to the bridge
 - TREE_FORT - Climb the ladder up to the tree fort
 - ELECTRONICS - Go to the Electronics store
@@ -427,8 +505,11 @@ Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope 
 You see:
 
 - Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
 ---
+
 You can:
+
 - BRIDGE - Go to the bridge
 - TREE_FORT - Climb the ladder up to the tree fort
 - ELECTRONICS - Go to the Electronics store
@@ -446,17 +527,23 @@ Another thing you notice right away is that there is an extremely strong fragran
 You see:
 
 - Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
+
 ---
+
 You can:
+
 - STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- - PLAYGROUND - Go back to the playground
+- PLAYGROUND - Go back to the playground
 - ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
 
 exports[`bubble_gun walk around 23`] = `
 "Did you forget that I said everything in this town is FREE!? Oh well. You wanted the soap, you got it. It's your problem now.
+
 ---
+
 You can:
+
 - PLAYGROUND - Go back to the playground
 - ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
@@ -465,8 +552,11 @@ exports[`bubble_gun walk around 24`] = `
 "You slide off the cover to the bubble gun, pop in the AA batteries, and put the cover back on. It's nice and snug with the water seal that will prevent corrosion in the batteries or the metal surfaces inside the bubble gun's battery compartment.
 
 The bubble gun is completely functional now!
+
 ---
+
 You can:
+
 - PLAYGROUND - Go back to the playground
 - ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
@@ -474,7 +564,7 @@ You can:
 exports[`bubble_gun walk around 25`] = `
 "You are holding:
 - Bubble Gun - Completely functional and working bubble gun
-  - BUBBLE_BLASTER - Blast bubbles out the bubble gun
+  - BUBBLE_BLASTER - Blast bubbles out the bubble gun
 - Light-emitting Diode - LED throwie that has batteries, but you can't do anything else with it."
 `;
 
@@ -490,8 +580,11 @@ Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope 
 You see:
 
 - Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
 ---
+
 You can:
+
 - BRIDGE - Go to the bridge
 - TREE_FORT - Climb the ladder up to the tree fort
 - ELECTRONICS - Go to the Electronics store
@@ -511,8 +604,11 @@ Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope 
 You see:
 
 - Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
 ---
+
 You can:
+
 - BRIDGE - Go to the bridge
 - TREE_FORT - Climb the ladder up to the tree fort
 - ELECTRONICS - Go to the Electronics store
@@ -528,10 +624,13 @@ Hold on to your metals, they got lots of magnets in here!
 You see:
 
 - Small magnet - This looks like a pretty handy little small magent! It has a sticker on for sticking onto a small device.
+
 ---
+
 You can:
+
 - TAKE_MAGNET - Take the magnet.
-- - PLAYGROUND - Go back to the playground"
+- PLAYGROUND - Go back to the playground"
 `;
 
 exports[`bubble_gun walk around 29`] = `
@@ -542,10 +641,13 @@ Hold on to your metals, they got lots of magnets in here!
 You see:
 
 - Small magnet - This looks like a pretty handy little small magent! It has a sticker on for sticking onto a small device.
+
 ---
+
 You can:
+
 - TAKE_MAGNET - Take the magnet.
-- - PLAYGROUND - Go back to the playground"
+- PLAYGROUND - Go back to the playground"
 `;
 
 exports[`bubble_gun walk around 30`] = `
@@ -560,8 +662,11 @@ Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope 
 You see:
 
 - Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
 ---
+
 You can:
+
 - BRIDGE - Go to the bridge
 - TREE_FORT - Climb the ladder up to the tree fort
 - ELECTRONICS - Go to the Electronics store
@@ -581,8 +686,11 @@ Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope 
 You see:
 
 - Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
 ---
+
 You can:
+
 - BRIDGE - Go to the bridge
 - TREE_FORT - Climb the ladder up to the tree fort
 - ELECTRONICS - Go to the Electronics store
