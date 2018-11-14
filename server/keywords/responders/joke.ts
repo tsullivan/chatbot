@@ -16,4 +16,4 @@ class JokeResponder extends DictionaryResponder {
   }
 }
 
-module.exports = { KeywordResponder: JokeResponder };
+export const KeywordResponder = JokeResponder;

@@ -1,7 +1,7 @@
 import { sample } from 'lodash';
-import { KeywordResponder } from '../class_keyword_responder';
+import { KeywordResponder as CKeywordResponder} from '../class_keyword_responder';
 
-class RememberResponder extends KeywordResponder {
+class RememberResponder extends CKeywordResponder {
   constructor(input, chat) {
     super(input);
     this.setName('remember');
@@ -21,4 +21,4 @@ class RememberResponder extends KeywordResponder {
   }
 }
 
-module.exports = { KeywordResponder: RememberResponder };
+export const KeywordResponder = RememberResponder;

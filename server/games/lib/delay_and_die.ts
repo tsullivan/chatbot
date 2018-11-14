@@ -1,7 +1,7 @@
 import * as snl from 'strip-newlines';
 import { KeywordResponse } from './class_keyword_response';
 
-const delayAndDie = () => {
+export const delayAndDie = () => {
   return {
     description: snl`Stand around and let the weight of feeling of excitement,
       exersion, and curiousity resolve itself in your mind before deciding on
@@ -15,5 +15,3 @@ const delayAndDie = () => {
     keyword: ['STAND_AROUND', 'WAIT'],
   };
 };
-
-module.exports = { delayAndDie };

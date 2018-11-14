@@ -2,7 +2,7 @@ import * as session from 'express-session';
 import { session_secret as sessionSecret } from '../../config';
 import { ChatSession } from './chat_session';
 
-function initSession(app) {
+export function initSession(app) {
   app.use(
     session({
       cookie: { maxAge: 86000 * 1000 },
@@ -23,5 +23,3 @@ function initSession(app) {
     next();
   });
 }
-
-module.exports = { initSession };

@@ -2,7 +2,7 @@ import * as apm from 'elastic-apm-node';
 import { keywordTester } from '../keywords';
 import { ResponseMessage } from './response_message';
 
-class SmartMessage extends ResponseMessage {
+export class SmartMessage extends ResponseMessage {
   constructor(chat, message, format) {
     super('smart', chat, message, format);
   }
@@ -17,5 +17,3 @@ class SmartMessage extends ResponseMessage {
     return null;
   }
 }
-
-module.exports = { SmartMessage };

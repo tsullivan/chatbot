@@ -1,6 +1,6 @@
-import { KeywordResponder } from '../class_keyword_responder';
+import { KeywordResponder as CKeywordResponder } from '../class_keyword_responder';
 
-class ScoreResponder extends KeywordResponder {
+class ScoreResponder extends CKeywordResponder {
   constructor(input, chat) {
     super(input);
     this.setName('score');
@@ -15,4 +15,4 @@ class ScoreResponder extends KeywordResponder {
   }
 }
 
-module.exports = { KeywordResponder: ScoreResponder };
+export const KeywordResponder = ScoreResponder;
