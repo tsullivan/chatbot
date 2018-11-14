@@ -452,12 +452,14 @@ You can:
 
 exports[`hiking fly a car back to the lake 5`] = `
 "In Top of the mountain, You see:
-- Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
+
+Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
   - TAKE_BUBBLE_GUN - Pick up interesting looking bubble gun.
 
 You are holding:
-- Apples - 100 red apples.
-- Yogurt - This yogurt is haunted with ghosts. They look like they want to get out."
+
+Apples - 100 red apples.
+Yogurt - This yogurt is haunted with ghosts. They look like they want to get out."
 `;
 
 exports[`hiking fly a car back to the lake 6`] = `

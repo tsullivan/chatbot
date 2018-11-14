@@ -4,7 +4,7 @@ import { Keywordable } from './keywordable';
 import { getKeywordsHelper } from './keywords_helper';
 
 interface ICombinable {
-  combinesWith: Item;
+  combinesWith: string;
   keyword: string;
   keywordDescription: string;
   fn: () => void;
@@ -32,8 +32,11 @@ interface IOpts {
 }
 
 export class Item implements Keywordable {
-
-  public addKeyword: (keyword: string, keywordDescription: string, fn: () => void) => void;
+  public addKeyword: (
+    keyword: string,
+    keywordDescription: string,
+    fn: () => void
+  ) => void;
   public removeKeyword: (keyword: string) => void;
   public hasKeywords: () => boolean;
   public getInstructions: (prefix?: string) => string;
@@ -75,29 +78,35 @@ export class Item implements Keywordable {
     this.setItemActions(game);
   }
 
-  public getId() {
+  public getId(): string {
     return this.id;
   }
 
   /*
    * Info that does not include the keyword instructions
    */
-  public getInfo() {
-    return `${this.getName()} - ${this.getDescription()}`;
+  public getInfo(prefix?: string): string {
+    const prefFull = prefix ? prefix : '';
+    return `${prefFull}${this.getName()} - ${this.getDescription()}`;
   }
 
-  public setItemActions(game) {
-    return this.setActions({
-      setCombinables: (combinableArray: ICombinable[]) => {
-        for (const combinable of combinableArray) {
-          const updatedComb = {...combinable,
-            numberToCombineWith: combinableArray.length};
-          this.setCombinable(game, updatedComb);
-        }
+  public setItemActions(game: AdventureGame) {
+    return this.setActions(
+      {
+        setCombinables: (combinableArray: ICombinable[]) => {
+          for (const combinable of combinableArray) {
+            const updatedComb = {
+              ...combinable,
+              numberToCombineWith: combinableArray.length,
+            };
+            this.setCombinable(game, updatedComb);
+          }
+        },
+        setDroppable: partial(this.setDroppable, game).bind(this),
+        setTakeable: partial(this.setTakeable, game).bind(this),
       },
-      setDroppable: partial(this.setDroppable, game).bind(this),
-      setTakeable: partial(this.setTakeable, game).bind(this),
-    }, this);
+      this
+    );
   }
 
   /*
@@ -105,20 +114,20 @@ export class Item implements Keywordable {
    */
   public setCombinable(
     game: AdventureGame,
-    { combinesWith, keyword, keywordDescription, fn, numberToCombineWith = 0 },
+    {
+      combinesWith,
+      keyword,
+      keywordDescription,
+      fn,
+      numberToCombineWith = 0,
+    }: {
+      combinesWith: string;
+      keyword: string;
+      keywordDescription: string;
+      fn: (item: Item, combinedWith: Set<any>) => void;
+      numberToCombineWith: number;
+    }
   ) {
-    if (typeof combinesWith !== 'string') {
-      throw new Error('invalid combinesWith ' + combinesWith);
-    }
-    if (typeof keyword !== 'string') {
-      throw new Error('invalid keyword ' + keyword);
-    }
-    if (typeof keywordDescription !== 'string') {
-      throw new Error('invalid keywordDescription ' + keywordDescription);
-    }
-    if (typeof fn !== 'function') {
-      throw new Error('invalid function ' + fn);
-    }
     if (game.inInventory(this.id) && game.inInventory(combinesWith)) {
       this.addKeyword(keyword, keywordDescription, () => {
         this.removeKeyword(keyword);
@@ -130,11 +139,11 @@ export class Item implements Keywordable {
     }
   }
 
-  public isComplete() {
+  public isComplete(): boolean {
     return this.calculatedIsComplete === true;
   }
 
-  public combineWith(combinesWith) {
+  public combineWith(combinesWith: string) {
     this.combinedWith.add(combinesWith);
   }
 

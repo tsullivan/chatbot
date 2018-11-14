@@ -445,14 +445,16 @@ You can:
 
 exports[`bubble_gun walk around 17`] = `
 "In The Playground, You see:
-- Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
 
 You are holding:
-- Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
+
+Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
   - COMBINE_BUBBLE_GUN_AND_BATTERIES - Put the AA batteries in the bubble gun.
-- Small LR41 Batteries. - The two LR41 batteries are the standard 1.5V button size batteries. They'd fit nicely into the battery holder of a very small piece of electronics.
-- Medium-size AA Batteries. - The two AA batteries are the standard 1.5V medium-size batteries. They'd fit nicely into the battery holder of a medium-size piece of electronics.
-- Light-emitting Diode - A semiconductor diode which glows when a voltage is applied. It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
+Small LR41 Batteries. - The two LR41 batteries are the standard 1.5V button size batteries. They'd fit nicely into the battery holder of a very small piece of electronics.
+Medium-size AA Batteries. - The two AA batteries are the standard 1.5V medium-size batteries. They'd fit nicely into the battery holder of a medium-size piece of electronics.
+Light-emitting Diode - A semiconductor diode which glows when a voltage is applied. It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
   - COMBINE_LED_AND_BATTERIES - Put the two LR41 batteries in the battery holder of the LED device."
 `;
 
@@ -486,11 +488,13 @@ You can:
 
 exports[`bubble_gun walk around 20`] = `
 "In The Playground, You see:
-- Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
 
 You are holding:
-- Bubble Gun - Bubble gun with batteries, but no soap.
-- Light-emitting Diode - LED throwie that has batteries, but you can't do anything else with it."
+
+Bubble Gun - Bubble gun with batteries, but no soap.
+Light-emitting Diode - LED throwie that has batteries, but you can't do anything else with it."
 `;
 
 exports[`bubble_gun walk around 21`] = `
@@ -563,9 +567,10 @@ You can:
 
 exports[`bubble_gun walk around 25`] = `
 "You are holding:
-- Bubble Gun - Completely functional and working bubble gun
+
+Bubble Gun - Completely functional and working bubble gun
   - BUBBLE_BLASTER - Blast bubbles out the bubble gun
-- Light-emitting Diode - LED throwie that has batteries, but you can't do anything else with it."
+Light-emitting Diode - LED throwie that has batteries, but you can't do anything else with it."
 `;
 
 exports[`bubble_gun walk around 26`] = `
@@ -699,8 +704,92 @@ You can:
 `;
 
 exports[`bubble_gun walk around 32`] = `
+"You are at: **The Bridge Out Of Town**
+
+This long, long bridge carries the road over a very tall gorge that surrounds Bubble Gun World. It is the only way out of town.
+
+There's no way out of town right now, Bubble Gun World Police have blocked the road to prevent anyone from using the road. A power outage in the streets has caused all the street lights to turn off in this area. The Police are saying it's too dark and unsafe to let anyone try to cross.
+
+The police have put up signs all along the bridge that say BRIDGE IS OUT!But it is too dark to even see them.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
+`;
+
+exports[`bubble_gun walk around 33`] = `
+"The police officers assigned to watch the road here see you try to cross, and they don't let you.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
+`;
+
+exports[`bubble_gun walk around 34`] = `
+"You are at: **The Bridge Out Of Town**
+
+This long, long bridge carries the road over a very tall gorge that surrounds Bubble Gun World. It is the only way out of town.
+
+There's no way out of town right now, Bubble Gun World Police have blocked the road to prevent anyone from using the road. A power outage in the streets has caused all the street lights to turn off in this area. The Police are saying it's too dark and unsafe to let anyone try to cross.
+
+The police have put up signs all along the bridge that say BRIDGE IS OUT!But it is too dark to even see them.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
+`;
+
+exports[`bubble_gun walk around 35`] = `
+"As the bubbles zip out of the bubble blaster and float into the air, they seem attracted to the darkened street lights. When they touch the fixtures, they stick there and begin to glow. First dimly, the brighter and brighter.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
+`;
+
+exports[`bubble_gun walk around 36`] = `
+"You are at: **The Bridge Out Of Town**
+
+This long, long bridge carries the road over a very tall gorge that surrounds Bubble Gun World. It is the only way out of town.
+
+There's no way out of town right now, Bubble Gun World Police have blocked the road to prevent anyone from using the road. A power outage in the streets has caused all the street lights to turn off in this area. The Police are saying it's too dark and unsafe to let anyone try to cross.
+
+The police have put up signs all along the bridge that say BRIDGE IS OUT!But it is too dark to even see them.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
+`;
+
+exports[`bubble_gun walk around 37`] = `
+"The police officers assigned to watch the road here see you try to cross, and they don't let you.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
+`;
+
+exports[`bubble_gun walk around 38`] = `
 "I guess you don't want to hike any more. See ya!
 
-Looks like you're a winner! Turns: 30 Score: 50
+Looks like you're a winner! Turns: 36 Score: 50
 That was fun, Tim!"
 `;

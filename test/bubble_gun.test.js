@@ -46,6 +46,12 @@ describe('bubble_gun', () => {
     resps[resps.length] = await send('look');
     resps[resps.length] = await send('playground');
     resps[resps.length] = await send('look');
+    resps[resps.length] = await send('bridge');
+    resps[resps.length] = await send('cross_bridge');
+    resps[resps.length] = await send('look');
+    resps[resps.length] = await send('bubble_blaster');
+    resps[resps.length] = await send('look');
+    resps[resps.length] = await send('cross_bridge');
     resps[resps.length] = await send('quit');
     checkResponses(resps);
   });
