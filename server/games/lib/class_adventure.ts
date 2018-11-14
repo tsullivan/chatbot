@@ -79,7 +79,7 @@ export class Adventure extends ChatGame {
     items.forEach((item) => item.setItemActions(this));
   }
 
-  public getCurrentLocation() {
+  public getCurrentLocation(): Location {
     if (!(this.currentLocation instanceof Location)) {
       throw new Error('currentLocation is not a Location instance');
     }

@@ -1,5 +1,11 @@
 import * as snl from 'strip-newlines';
-import { Item, KeywordResponse, parajoin } from '../../lib';
+import {
+  Adventure as AdventureGame,
+  Item,
+  KeywordResponse,
+  Location,
+  parajoin,
+} from '../../lib';
 
 import {
   BATTERY_AA,
@@ -11,7 +17,9 @@ import {
   SOAP,
 } from './constants';
 
-const bubbleGunCombinings = (item, combinedSet) => {
+import { BridgeLocation } from './locations/bridge';
+
+const bubbleGunCombinings = (item: Item, combinedSet: Set<string>) => {
   const lns = [];
   if (combinedSet.has(BATTERY_AA)) {
     item.setDescription(`Bubble gun with batteries, but no soap.`);
@@ -19,13 +27,13 @@ const bubbleGunCombinings = (item, combinedSet) => {
       snl`You slide off the cover to the bubble gun, pop in the AA batteries,
         and put the cover back on. It's nice and snug with the water seal that
         will prevent corrosion in the batteries or the metal surfaces inside the
-        bubble gun's battery compartment.`,
+        bubble gun's battery compartment.`
     );
   } else if (combinedSet.has(SOAP)) {
     item.setDescription(`Bubble gun with soap, but no AA batteries.`);
     lns.push(
       snl`You open up the cap on the bubble gun and fill up its soap container
-        with your liquid soap. Glug glug glug.`,
+        with your liquid soap. Glug glug glug.`
     );
   }
   if (item.isComplete()) {
@@ -34,14 +42,22 @@ const bubbleGunCombinings = (item, combinedSet) => {
   }
   return lns;
 };
-const throwieCombinings = (item, combinedSet) => {
+const throwieCombinings = (item: Item, combinedSet: Set<string>) => {
   const lns = [];
   if (combinedSet.has(MAGNET)) {
-    item.setDescription(`LED throwie with a magnet stuck on. It still has no batteries.`);
-    lns.push(`The magnet sticks right on to the battery holder of the LED. That was easy!`);
+    item.setDescription(
+      snl`LED throwie with a magnet stuck on. It still has no batteries.`
+    );
+    lns.push(
+     snl`The magnet sticks right on to the battery holder of the LED. That was easy!`
+    );
   } else if (combinedSet.has(BATTERY_LR41)) {
-    item.setDescription(`LED throwie that has batteries, but you can't do anything else with it.`);
-    lns.push(`The batteries go right on in to the LED's battery holder. Nice and simple.`);
+    item.setDescription(
+      snl`LED throwie that has batteries, but you can't do anything else with it.`
+    );
+    lns.push(
+      snl`The batteries go right on in to the LED's battery holder. Nice and simple.`
+    );
   }
   if (item.isComplete()) {
     item.setDescription('Completely functional and working LED throwie');
@@ -50,7 +66,7 @@ const throwieCombinings = (item, combinedSet) => {
   return lns;
 };
 
-const getCombiningResponse = (item, combinedSet) => {
+const getCombiningResponse = (item: Item, combinedSet: Set<string>) => {
   const id = item.getId();
   if (id === BUBBLE_GUN) {
     const lns = bubbleGunCombinings(item, combinedSet);
@@ -61,9 +77,9 @@ const getCombiningResponse = (item, combinedSet) => {
   }
 };
 
-export function getItems(game) {
+export function getItems(game: AdventureGame) {
   const itemFactory = (id, itemArgs) => {
-    const factoryArgs = {...itemArgs,  id, game};
+    const factoryArgs = { ...itemArgs, id, game };
     return new Item(factoryArgs);
   };
 
@@ -131,10 +147,18 @@ export function getItems(game) {
         ]);
 
         if (item.isComplete()) {
-          item.addKeyword('BUBBLE_BLASTER', 'Blast bubbles out the bubble gun', () =>
-            new KeywordResponse({
+          item.addKeyword('BUBBLE_BLASTER', 'Blast bubbles out the bubble gun', () => {
+            if (game.getCurrentLocation() instanceof BridgeLocation) {
+              return new KeywordResponse({
+                text: snl`As the bubbles zip out of the bubble blaster and
+                  float into the air, they seem attracted to the darkened
+                  street lights. When they touch the fixtures, they stick there
+                  and begin to glow. First dimly, the brighter and brighter.`,
+              }); }
+            return new KeywordResponse({
               text: snl`Hundreds of bubbles blast out of the bubble gun and cover everything!`,
-            }));
+            });
+          });
         }
       },
     }),
@@ -160,15 +184,13 @@ export function getItems(game) {
         setCombinables([
           {
             combinesWith: MAGNET,
-            fn: (ledItem, combinedSet) =>
-              getCombiningResponse(ledItem, combinedSet),
+            fn: (ledItem, combinedSet) => getCombiningResponse(ledItem, combinedSet),
             keyword: 'COMBINE_LED_AND_MAGNET',
             keywordDescription: 'Stick the magnet onto the LED device.',
           },
           {
             combinesWith: BATTERY_LR41,
-            fn: (ledItem, combinedSet) =>
-              getCombiningResponse(ledItem, combinedSet),
+            fn: (ledItem, combinedSet) => getCombiningResponse(ledItem, combinedSet),
             keyword: 'COMBINE_LED_AND_BATTERIES',
             keywordDescription:
               'Put the two LR41 batteries in the battery holder of the LED device.',
@@ -184,8 +206,8 @@ export function getItems(game) {
         setTakeable({
           fn: () =>
             new KeywordResponse({
-              text: snl`Since you have such a magnetic personality, it feels right
-                to let you have this magnet.`,
+              text: snl`Since you have such a magnetic personality, it feels
+                right to let you have this magnet.`,
             }),
           keyword: 'TAKE_MAGNET',
           keywordDescription: 'Take the magnet.',
@@ -201,8 +223,8 @@ export function getItems(game) {
           fn: () =>
             new KeywordResponse({
               text: snl`Did you forget that I said everything in this town is
-              FREE!? Oh well. You wanted the soap, you got it. It's your
-              problem now.`,
+                FREE!? Oh well. You wanted the soap, you got it. It's your
+                problem now.`,
             }),
           keyword: ['STEAL_THE_SOAP', 'TAKE_SOAP'],
           keywordDescription: 'Help yourself to the bottle of liquid soap.',
@@ -221,14 +243,28 @@ export function setItemsToLocations(
     soapItem,
     magnetItem,
     ledItem,
+  }: {
+    bubbleGunItem: Item;
+    ladderItem: Item;
+    batteryLr41Item: Item;
+    batteryAaItem: Item;
+    soapItem: Item;
+    magnetItem: Item;
+    ledItem: Item;
   },
   {
     playgroundLocation,
     electronicsLocation,
     soapLocation,
     magnetLocation,
+  }: {
+    playgroundLocation: Location;
+    electronicsLocation: Location;
+    soapLocation: Location;
+    magnetLocation: Location;
+    bridgeLocation: Location;
   },
-  game,
+  game: AdventureGame
 ) {
   // set everything into the game collection
   game.addItemToCollection(BUBBLE_GUN, bubbleGunItem);

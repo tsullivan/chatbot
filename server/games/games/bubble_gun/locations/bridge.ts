@@ -21,6 +21,13 @@ export class BridgeLocation extends Location {
           road. A power outage in the streets has caused all the street lights to
           turn off in this area. The Police are saying it's too dark and unsafe to
           let anyone try to cross.`;
+      } else {
+        parts[parts.length] = snl`The power is still out all over the streets,
+          but magically, the street lights are glowing! There are strange
+          bubbles stuck to them which light up the whole area.`;
+        parts[parts.length] = snl`Will Bubble Gun World Police accept this
+          reality and decide that it's safe enough for you to cross the bridge?
+          You don't want to be stuck here forever!`;
       }
 
       const signs = parts.length;
@@ -28,8 +35,8 @@ export class BridgeLocation extends Location {
       if (this.isDark) {
         parts[signs] += snl` But it is too dark to even see them.`;
       } else {
-        parts[signs] += snl` The LEDs stuck to the signs are the only way to even see them!`;
-        parts[parts.length] = snl`Hey, you can see the way across the bridge safely now, because of your LEDs!`;
+        parts[signs] += snl` The signs are clearly legible in the light of the
+          magical glowing bubbles. Neat!`;
       }
 
       return parts.join('\n\n');
@@ -51,14 +58,19 @@ export class BridgeLocation extends Location {
               you try to cross, and they don't let you.`,
           });
         } else {
-          // distract the police first?
           return this.followExit(
             NORTH,
-            snl`The police officers let you cross over since you helped light
-              up the bridge and make it safe!`,
+            snl`Bubble Gun World Police are just doing what they're told: to
+              not let anyone cross. It will be safe though, because there is a
+              magical eery glow coming from the bubbles you dispensed from your
+              bubble gun! Rude!`,
           );
         }
       },
     );
+  }
+
+  public lightUp() {
+    this.isDark = true;
   }
 }
