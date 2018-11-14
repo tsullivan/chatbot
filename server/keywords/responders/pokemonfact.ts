@@ -1,4 +1,4 @@
-const { DictionaryResponder } = require('../class_keyword_dictionary_responder');
+import { DictionaryResponder } from '../class_keyword_dictionary_responder';
 
 class PokemonFactResponder extends DictionaryResponder {
   constructor(input) {
@@ -6,14 +6,14 @@ class PokemonFactResponder extends DictionaryResponder {
     this.setName('pokemonfact').setDictionary('pokemonfacts');
   }
 
-  testMatch(input) {
+  public testMatch(input) {
     this.setParsedRequestedDictionaryItem(input, /^pokemonfact ([1-9]+[0-9]?)$/);
     return input.match(/^pokemonfact\b/);
   }
 
-  getResponse() {
+  public getResponse() {
     return this.getRequested(i => `Here is pokemon fact number ${i}`);
   }
 }
 
-module.exports = { KeywordResponder: PokemonFactResponder };
+export const KeywordResponder = PokemonFactResponder;
