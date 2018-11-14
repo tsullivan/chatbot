@@ -1,4 +1,4 @@
-const { DictionaryResponder } = require('../class_keyword_dictionary_responder');
+import { DictionaryResponder } from '../class_keyword_dictionary_responder';
 
 class JokeResponder extends DictionaryResponder {
   constructor(input) {
@@ -6,12 +6,12 @@ class JokeResponder extends DictionaryResponder {
     this.setName('joke').setDictionary('jokes');
   }
 
-  testMatch(input) {
+  public testMatch(input) {
     this.setParsedRequestedDictionaryItem(input, /^joke ([1-9]+[0-9]?)$/);
     return input.match(/^joke\b/);
   }
 
-  getResponse() {
+  public getResponse() {
     return this.getRequested(i => `Here is joke number ${i}`);
   }
 }

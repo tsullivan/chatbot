@@ -1,4 +1,4 @@
-function getResponders() {
+export function getResponders() {
   return {
     coinflip: require('./responders/coinflip'),
     help: require('./responders/help'),
@@ -19,5 +19,3 @@ function getResponders() {
     what: require('./responders/what'),
   };
 }
-
-module.exports = { getResponders };

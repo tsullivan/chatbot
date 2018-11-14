@@ -1,4 +1,4 @@
-function roll(numSides) {
+export function roll(numSides) {
   const { floor, random } = Math;
   const result = floor(random() * numSides) + 1;
 
@@ -12,5 +12,3 @@ function roll(numSides) {
     },
   };
 }
-
-module.exports = { roll };

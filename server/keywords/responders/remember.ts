@@ -1,10 +1,10 @@
-const { sample } = require('lodash');
-const { KeywordResponder } = require('../class_keyword_responder');
+import { sample } from 'lodash';
+import { KeywordResponder } from '../class_keyword_responder';
 
 class RememberResponder extends KeywordResponder {
   constructor(input, chat) {
     super(input);
-    this.name = 'remember';
+    this.setName('remember');
     this.getResponse = () => {
       const history = chat.getUserHistory();
       const thingSaid = String(sample(history)).trim();
@@ -12,11 +12,11 @@ class RememberResponder extends KeywordResponder {
     };
   }
 
-  testMatch(input) {
+  public testMatch(input) {
     return input.match(/^remember\b/);
   }
 
-  justDont() {
+  public justDont() {
     return `Just don't ask me "remember that one time." I probably don't.`;
   }
 }

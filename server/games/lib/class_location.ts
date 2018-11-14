@@ -10,7 +10,7 @@ export class Location {
   public getInstructions: (game: AdventureGame) => string;
   public hasKeyword: (keyword: string) => boolean;
   public addKeyword: (
-    keyword: string,
+    keyword: string | string[],
     keywordDescription: string,
     fn: () => KeywordResponse
   ) => void;

@@ -1,13 +1,13 @@
-const apm = require('elastic-apm-node');
-const { ResponseMessage } = require('./response_message');
-const { keywordTester } = require('../keywords');
+import * as apm from 'elastic-apm-node';
+import { keywordTester } from '../keywords';
+import { ResponseMessage } from './response_message';
 
 class SmartMessage extends ResponseMessage {
   constructor(chat, message, format) {
     super('smart', chat, message, format);
   }
 
-  makeResponse(chat) {
+  public makeResponse(chat) {
     const { isKeyword, responder } = keywordTester(this.userMessage, chat);
 
     if (isKeyword) {

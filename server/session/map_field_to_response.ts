@@ -1,4 +1,4 @@
-const mapFieldToResponse = (field, value) => {
+export const mapFieldToResponse = (field, value) => {
   const map = {
     name: {
       method: 'setName',
@@ -8,5 +8,3 @@ const mapFieldToResponse = (field, value) => {
   const noMapping = { response: null };
   return map[field] || noMapping;
 };
-
-module.exports = { mapFieldToResponse };

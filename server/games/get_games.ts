@@ -1,4 +1,4 @@
-function getGames() {
+export function getGames() {
   return {
     adventure: require('./games/adventure'),
     batman: require('./games/batman'),
@@ -8,4 +8,3 @@ function getGames() {
     hiking: require('./games/hiking'),
   };
 }
-module.exports = { getGames };

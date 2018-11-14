@@ -1,16 +1,16 @@
-const { KeywordResponder } = require('../class_keyword_responder');
+import { KeywordResponder } from '../class_keyword_responder';
 
 class ScoreResponder extends KeywordResponder {
   constructor(input, chat) {
     super(input);
-    this.name = 'score';
+    this.setName('score');
 
     this.getResponse = () => {
       return `The average score of the games you plaid are : ${chat.getAverageScore()}`;
     };
   }
 
-  testMatch(input) {
+  public testMatch(input) {
     return input.match(/^score\b/);
   }
 }

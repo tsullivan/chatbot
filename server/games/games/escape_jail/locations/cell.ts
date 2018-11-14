@@ -1,34 +1,37 @@
-const snl = require('strip-newlines');
-const { Location, KeywordResponse } = require('../../../lib');
-const { KEY, SOUTH } = require('../constants');
+import * as snl from 'strip-newlines';
+import { KeywordResponse, Location } from '../../../lib';
+import { KEY, SOUTH } from '../constants';
 
-class CellLocation extends Location {
+export class CellLocation extends Location {
+  private guardsWatching = false;
+  private forceAware = false;
+
   constructor(game) {
     super({ game, name: 'The Jail Cell' });
-    this._guardsWatching = true;
-    this._forceAware = false;
+    this.guardsWatching = true;
+    this.forceAware = false;
+
+    this.getDescription = () => {
+      const desc = [
+        snl`You're locked up securely in a jail cell. A hole in the ceiling
+          marks where you crashed through accidentally when you got here.`,
+      ];
+      if (!this.forceAware) {
+        desc.push(snl`There is a jail key on a far wall across the hallway from
+                  your jail cell.`);
+      }
+      return desc.join('\n\n');
+    };
   }
 
-  getDescription() {
-    const desc = [
-      snl`You're locked up securely in a jail cell. A hole in the ceiling marks
-        where you crashed through accidentally when you got here.`,
-    ];
-    if (!this._forceAware) {
-      desc.push(snl`There is a jail key on a far wall across the hallway from
-        your jail cell.`);
-    }
-    return desc.join('\n\n');
-  }
-
-  setLocationKeywords(game) {
+  public setLocationKeywords(game) {
     this.addKeyword('ESCAPE', `Escape from the cell`, () => {
-      if (!this._guardsWatching && game.inInventory(KEY)) {
+      if (!this.guardsWatching && game.inInventory(KEY)) {
         const px = snl`You use the key to open the cell door, and quietly walk out.`;
         return this.followExit(SOUTH, px);
       }
 
-      if (this._guardsWatching) {
+      if (this.guardsWatching) {
         return new KeywordResponse({
           text: 'You can not escape while the guards are watching!',
         });
@@ -39,13 +42,13 @@ class CellLocation extends Location {
         });
       }
     });
-    if (!this._forceAware) {
+    if (!this.forceAware) {
       const key = game.getItemFromCollection(KEY);
       this.addKeyword(
         'TAKE_JAIL_KEY',
         `Somehow take the jail key from the wall.`,
         () => {
-          this._forceAware = true;
+          this.forceAware = true;
           key.see();
           const res = [
             snl`The key is on a wall far out of reach of your cell bars.
@@ -59,9 +62,9 @@ class CellLocation extends Location {
       );
     }
 
-    if (this._guardsWatching) {
+    if (this.guardsWatching) {
       this.addKeyword('WAIT', `Wait for the guards to stop watching you.`, () => {
-        this._guardsWatching = false;
+        this.guardsWatching = false;
         return new KeywordResponse({
           text: snl`You pretend not to notice the guards watching you. They
             watch you for a little bit, then walk away to watch other prisoners.`,
@@ -74,7 +77,7 @@ class CellLocation extends Location {
           and curiousity resolve itself in your mind before deciding on something
           clever to do`,
         () => {
-          this._guardsWatching = true;
+          this.guardsWatching = true;
           return new KeywordResponse({
             text: snl`You stand around, doing nothing for awhile, The guards
               come back on watch duty near your cell and start watch you some
@@ -85,5 +88,3 @@ class CellLocation extends Location {
     }
   }
 }
-
-module.exports = { CellLocation };
