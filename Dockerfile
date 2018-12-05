@@ -18,4 +18,4 @@ EXPOSE 8080
 
 ENV NODE_ENV=docker
 
-CMD [ "node", "index.js" ]
+CMD [ "node", "index.js", "--web" ]
