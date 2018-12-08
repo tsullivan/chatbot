@@ -1,4 +1,8 @@
-import { Log } from './lib';
+import * as express from 'express-session';
+
+export interface IMetrics {
+  session_expires_in_sec: number;
+}
 
 export interface ILogLine {
   timestamp: Date;
@@ -15,6 +19,6 @@ export interface ILog {
 }
 
 export interface IBot {
-  getMetrics: () => void;
+  getMetrics: (req: express.Request) => IMetrics;
   getLogger: () => ILog;
 }

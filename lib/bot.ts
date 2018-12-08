@@ -1,20 +1,21 @@
-import { IBot } from '../types';
-import { Log } from './';
+import * as express from 'express-session';
+import { IBot, ILog, IMetrics } from '../types';
+import { Log, Metrics } from './';
 
 export class Bot implements IBot {
-  private metrics: any;
+  private metrics: Metrics;
   private logger: Log;
 
   constructor() {
     this.logger = new Log();
-    this.metrics = {};
+    this.metrics = new Metrics();
   }
 
-  public getMetrics() {
-    return this.metrics;
+  public getMetrics(req: express.Request): IMetrics {
+    return this.metrics.getStats();
   }
 
-  public getLogger(): Log {
+  public getLogger(): ILog {
     return this.logger;
   }
 
