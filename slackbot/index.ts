@@ -1,16 +1,19 @@
 import Slackbot from 'slackbots';
 import { slack } from '../config';
 import { BOT_NAME } from '../constants';
+import { IBot } from '../types';
 
-export function runBot(): { bot: Slackbot; name: string; } {
-  const bot = new Slackbot(slack);
-  bot.on('start', () => {
-      bot.postMessageToChannel('test-', 'meow!');
-      console.log(`${BOT_NAME} on Slack as [${bot.name}]`); // eslint-disable-line no-console
+export function runBot(bot: IBot): { bot: Slackbot; name: string; } {
+  const sbot = new Slackbot(slack);
+  const log = bot.getLogger();
+
+  sbot.on('start', () => {
+      sbot.postMessageToChannel('test-', 'meow!');
+      log.info([], `${BOT_NAME} on Slack as [${sbot.name}]`);
   });
 
   return {
-    bot,
+    bot: sbot,
     name: slack.name,
   };
 }

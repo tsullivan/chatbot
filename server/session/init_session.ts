@@ -1,8 +1,9 @@
 import * as session from 'express-session';
 import { session_secret as sessionSecret } from '../../config';
+import { IBot } from '../../types';
 import { ChatSession } from './chat_session';
 
-export function initSession(app) {
+export function initSession(app, bot: IBot) {
   app.use(
     session({
       cookie: { maxAge: 86000 * 1000 },
