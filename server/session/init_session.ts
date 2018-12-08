@@ -1,9 +1,9 @@
 import * as session from 'express-session';
 import { session_secret as sessionSecret } from '../../config';
-import { IBot } from '../../types';
+import { Bot } from '../../lib';
 import { ChatSession } from './chat_session';
 
-export function initSession(app, bot: IBot) {
+export function initSession(bot: Bot, app: session.Application) {
   app.use(
     session({
       cookie: { maxAge: 86000 * 1000 },
@@ -14,7 +14,7 @@ export function initSession(app, bot: IBot) {
   );
 
   app.use((req, res, next) => {
-    const chat = new ChatSession(req.session); // new instance for every request
+    const chat = new ChatSession(bot, req.session); // new instance for every request
     // tslint:disable-next-line prefer-conditional-expression
     if (!req.session.chat) {
       req.session.chat = chat.save();

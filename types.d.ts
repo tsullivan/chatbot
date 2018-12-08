@@ -1,5 +1,7 @@
 import * as express from 'express-session';
 
+export type TSessionGames = Map<string, string>;
+
 export interface IMetrics {
   session_expires_in_sec: number;
 }

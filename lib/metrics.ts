@@ -1,11 +1,10 @@
+import * as express from 'express-session';
 import { IMetrics } from '../types';
 
 export class Metrics  {
-  private sessionExpiresInMillis = 3600000;
-
-  public getStats(): IMetrics {
+  public getStats(req: express.Request, sessionGames): IMetrics {
     return {
-      session_expires_in_sec: this.sessionExpiresInMillis / 1000
+      session_expires_in_sec: req.session.cookie.maxAge / 1000,
     };
   }
 }

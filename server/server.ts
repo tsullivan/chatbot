@@ -5,7 +5,6 @@ import { join } from 'path';
 import { apm as apmConfig } from '../config';
 import { BOT_NAME, PORT } from '../constants';
 import { Bot } from '../lib';
-import { IBot } from '../types';
 import { initRoutes } from './routes';
 import { initSession } from './session';
 
@@ -14,7 +13,7 @@ const apm = apmNode.start(apmConfig);
 /*
  * Exported for tests
  */
-export function getServer(bot: IBot = new Bot()): express.Application {
+export function getServer(bot: Bot = new Bot()): express.Application {
   const app = express();
 
   const pubs = join(__dirname, '..', 'public');
@@ -27,13 +26,13 @@ export function getServer(bot: IBot = new Bot()): express.Application {
     res.sendFile(join(pubs, 'index.html'));
   });
 
-  initSession(app, bot);
-  initRoutes(app, bot);
+  initSession(bot, app);
+  initRoutes(bot, app);
 
   return app;
 }
 
-export function runServer(bot: IBot): void {
+export function runServer(bot: Bot): void {
   const app = getServer(bot);
   const log = bot.getLogger();
 
