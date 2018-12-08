@@ -3,6 +3,9 @@ import { IBot, ILog, IMetrics, TSessionGames } from '../types';
 import { Log, Metrics } from './';
 
 export class Bot implements IBot {
+  public runningSlack = false;
+  public runningWeb = false;
+
   private metrics: Metrics;
   private logger: Log;
   private sessionGames: TSessionGames;

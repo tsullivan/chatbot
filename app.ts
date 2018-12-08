@@ -3,14 +3,20 @@ import { Bot } from './lib/bot';
 import { runServer } from './server';
 import { runBot } from './slackbot';
 
-const beepBeepBeep = new Bot();
+const b = new Bot();
+
+if (argv.web !== false) {
+  runServer(b);
+  b.runningWeb = true;
+}
 
 if (argv.slack) {
-  runBot(beepBeepBeep);
-}
-if (argv.web) {
-  runServer(beepBeepBeep);
+  runBot(b);
+  b.runningSlack = true;
 }
 
-const log = beepBeepBeep.getLogger();
-log.info([], 'So far so good');
+const log = b.getLogger();
+log.info(['start'], 'So far so good ' + JSON.stringify({
+  slack: b.runningSlack,
+  web: b.runningWeb,
+}));
