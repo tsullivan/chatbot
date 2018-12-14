@@ -4,12 +4,16 @@ import * as express from 'express';
 import { join } from 'path';
 import { apm as apmConfig } from '../config';
 import { BOT_NAME, PORT } from '../constants';
+import { Bot } from '../lib';
 import { initRoutes } from './routes';
 import { initSession } from './session';
 
 const apm = apmNode.start(apmConfig);
 
-export function getServer(): express.Application {
+/*
+ * Exported for tests
+ */
+export function getServer(bot: Bot = new Bot()): express.Application {
   const app = express();
 
   const pubs = join(__dirname, '..', 'public');
@@ -22,15 +26,17 @@ export function getServer(): express.Application {
     res.sendFile(join(pubs, 'index.html'));
   });
 
-  initSession(app);
-  initRoutes(app);
+  initSession(bot, app);
+  initRoutes(bot, app);
 
   return app;
 }
 
-export function runServer(): void {
-  const app = getServer();
+export function runServer(bot: Bot): void {
+  const app = getServer(bot);
+  const log = bot.getLogger();
+
   app.listen(PORT, () => {
-    console.log(`${BOT_NAME} listening on [:${PORT}]`); // eslint-disable-line no-console
+    log.info([], `${BOT_NAME} listening on [:${PORT}]`);
   });
 }
