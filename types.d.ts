@@ -23,7 +23,7 @@ export interface ILog {
   debug: (tags: string[], message: string) => void;
   warn: (tags: string[], message: string) => void;
   error: (tags: string[], err: Error) => void;
-  fatal: (tags: string[], message: string) => void;
+  fatal: (tags: string[], message: string, err: Error) => void;
 }
 
 export interface IBot {

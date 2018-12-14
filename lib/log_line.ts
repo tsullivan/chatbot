@@ -3,15 +3,13 @@ import { ILogLine } from '../types';
 export class LogLine implements ILogLine {
   public readonly timestamp: Date;
 
-  constructor(public tags: string[], public message: string) {
+  constructor(public tags: string[], public message: string, logger) {
     this.timestamp = new Date();
-    console.log(
-      JSON.stringify({
-        message,
-        tags,
-        timestamp: this.timestamp,
-      })
-    );
+    logger('%o', {
+      message: this.message,
+      tags: this.tags,
+      timestamp: this.timestamp,
+    });
   }
 
   get log() {
