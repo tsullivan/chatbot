@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 const request = require('supertest');
-const { getServer } = require('../server');
+const { getServer } = require('../src/server');
 const { utilFactory } = require('./utils');
 
 const app = getServer();

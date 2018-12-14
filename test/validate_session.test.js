@@ -1,5 +1,5 @@
 const request = require('supertest');
-const { getServer } = require('../server');
+const { getServer } = require('../src/server');
 
 describe('detect invalid session', () => {
   it('double syn', async () => {

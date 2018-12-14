@@ -1,5 +1,5 @@
 import Slackbot from 'slackbots';
-import { slack } from '../config';
+import { slack } from '../../config';
 import { BOT_NAME } from '../constants';
 import { IBot } from '../types';
 
