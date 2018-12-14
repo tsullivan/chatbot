@@ -5,8 +5,6 @@ import { getGames } from '../games';
 import { ChatGame } from '../games/chat_game';
 import { mapFieldToResponse } from './map_field_to_response';
 
-const sessionGames = new Map(); // memory leak
-
 const proto = {
   game: null,
   messages: {
@@ -41,7 +39,6 @@ export class ChatSession {
   constructor(private bot: Bot, session) {
     this.initialized = false;
     this.sessionId = session.id;
-    this.bot.setSessionGames(sessionGames);
 
     this.save = () => {
       if (!this.initialized) {
@@ -63,7 +60,8 @@ export class ChatSession {
   public getResumed({ chat }) {
     defaultsDeep(this, chat, proto);
     this.save();
-    this.game = sessionGames.get(this.sessionId);
+
+    this.game = this.bot.getSessionGame(this.sessionId);
     return this;
   }
 
@@ -157,7 +155,7 @@ export class ChatSession {
     return prev[prev.length - 1];
   }
 
-  public setGame(game) {
+  public setGame(game: string) {
     const gameModule = games[game];
     if (!gameModule || !gameModule.Game) {
       throw new Error('Invalid game string: ' + game);
@@ -165,7 +163,7 @@ export class ChatSession {
     this.game = new gameModule.Game(this);
     this.game.init();
     this.save();
-    sessionGames.set(this.sessionId, this.game); // store game data in server memory
+    this.bot.setGame(this.sessionId, this.game);
   }
   public getGame() {
     return this.game;
@@ -175,7 +173,7 @@ export class ChatSession {
     this.addScore(this.game.score);
     this.game = null;
     this.save();
-    sessionGames.delete(this.sessionId);
+    this.bot.removeGame(this.sessionId);
   }
 
   public addScore(score) {

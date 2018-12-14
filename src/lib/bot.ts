@@ -1,6 +1,9 @@
 import * as express from 'express-session';
-import { IBot, ILog, IMetrics, TSessionGames } from '../types';
+import { ChatGame } from '../server/games';
+import { IBot, ILog, IMetrics } from '../types';
 import { Log, Metrics } from './';
+
+const sessionGames = new Map(); // memory leak
 
 export class Bot implements IBot {
   public runningSlack = false;
@@ -8,22 +11,29 @@ export class Bot implements IBot {
 
   private metrics: Metrics;
   private logger: Log;
-  private sessionGames: TSessionGames;
 
   constructor() {
     this.logger = new Log();
     this.metrics = new Metrics();
   }
 
-  public setSessionGames(sessionGames: TSessionGames) {
-    this.sessionGames = sessionGames;
-  }
-
   public getMetrics(req: express.Request): IMetrics {
-    return this.metrics.getStats(req, this.sessionGames);
+    return this.metrics.getStats(req, sessionGames);
   }
 
   public getLogger(): ILog {
     return this.logger;
+  }
+
+  public getSessionGame(sessionId: string): ChatGame {
+    return sessionGames.get(sessionId);
+  }
+
+  public setGame(sessionId: string, game: ChatGame) {
+    sessionGames.set(sessionId, game);
+  }
+
+  public removeGame(sessionId: string) {
+    sessionGames.delete(sessionId);
   }
 }

@@ -1,6 +1,7 @@
 import * as express from 'express-session';
+import { ChatGame } from '../server/games';
 
-export type TSessionGames = Map<string, string>;
+export type TSessionGames = Map<string, ChatGame>;
 
 export interface IMetrics {
   session_expires_in_sec: number;
