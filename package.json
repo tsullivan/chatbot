@@ -7,10 +7,10 @@
     "jest": "NODE_ENV=test jest --ci --verbose ./*/*.test.js ",
     "lint": "eslint . && tslint -p tsconfig.json",
     "test": "yarn run lint && yarn run jest",
-    "slack": "DEBUG='chatbot:*' nodemon -e js,ts,json index.js --slack --web=false",
+    "slack": "DEBUG='chatbot:*' NODE_ENV=development nodemon -e js,ts,json index.js --slack --web=false",
     "start": "node index.js --web",
     "debug": "node --inspect-brk index.js --web",
-    "dev": "DEBUG='chatbot:*' nodemon -e js,ts,json index.js --web",
+    "dev": "DEBUG='chatbot:*' NODE_ENV=development nodemon -e js,ts,json index.js --web",
     "precommit": "yarn run lint",
     "prepush": "yarn run test"
   },

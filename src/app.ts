@@ -8,8 +8,6 @@ const log = b.getLogger();
 
 log.debug(['start'], 'Bot initialized');
 
-log.debug([], argv);
-
 if (argv.web !== 'false') {
   log.info(['web', 'start'], 'Starting web...');
   runWeb(b);

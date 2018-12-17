@@ -1,3 +1,5 @@
+import { defaultsDeep } from 'lodash';
+
 interface IConfig {
   env: string;
   session_secret: string;
@@ -8,7 +10,6 @@ interface IConfig {
   slack: {
     name: string;
     token: string;
-    hangoutRoom: string;
   };
   port: number;
 }
@@ -18,11 +19,16 @@ const baseConfig = {
 };
 
 function getEnvConfig(envString: string): IConfig {
-  const envDependencies = ['SESSION_SECRET', 'SLACK_BOT_NAME', 'SLACK_BOT_TOKEN'];
+  const envDependencies = [
+    'SESSION_SECRET',
+    'APM_TOKEN',
+    'SLACK_BOT_TOKEN',
+    'NODE_ENV',
+  ];
 
   for (const envDep of envDependencies) {
     if (!Boolean(process.env[envDep])) {
-      throw new Error('missing env dependency: ' + envDep);
+      throw new Error('Missing env dependency: ' + envDep);
     }
   }
 
@@ -30,15 +36,10 @@ function getEnvConfig(envString: string): IConfig {
     case 'docker':
     case 'production':
     case 'test':
-      return {
-        ...baseConfig,
-        ...require(`./${envString}`),
-      };
+    case 'development':
+      return defaultsDeep(baseConfig, require(`./${envString}`));
     default:
-      return {
-        ...baseConfig,
-        ...require(`./development`),
-      };
+      throw new Error('Invalid NODE_ENV'); // don't log it, might be weird
   }
 }
 
