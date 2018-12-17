@@ -1,22 +1,21 @@
 import { argv } from 'yargs';
 import { Bot } from './lib/bot';
-import { runServer } from './server';
-import { runBot } from './slackbot';
+import { runServer as runWeb } from './server';
+import { runBot as runSlack} from './slackbot';
 
 const b = new Bot();
+const log = b.getLogger();
 
-if (argv.web !== false) {
-  runServer(b);
-  b.runningWeb = true;
+log.debug(['start'], 'Bot initialized');
+
+log.debug([], argv);
+
+if (argv.web !== 'false') {
+  log.info(['web', 'start'], 'Starting web...');
+  runWeb(b);
 }
 
 if (argv.slack) {
-  runBot(b);
-  b.runningSlack = true;
+  log.info(['slack', 'start'], 'Starting slack...');
+  runSlack(b);
 }
-
-const log = b.getLogger();
-log.info(['start'], 'So far so good ' + JSON.stringify({
-  slack: b.runningSlack,
-  web: b.runningWeb,
-}));

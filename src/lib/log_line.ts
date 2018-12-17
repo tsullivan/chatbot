@@ -2,21 +2,31 @@ import { ILogLine } from '../types';
 
 export class LogLine implements ILogLine {
   public readonly timestamp: Date;
+  public message: string;
 
-  constructor(public tags: string[], public message: string, logger) {
+  constructor(public tags: string[], private logger: any) {
     this.timestamp = new Date();
-    logger('%o', {
+  }
+
+  public logString(message: string): ILogLine {
+    this.message = message;
+    this.logger('%o', {
       message: this.message,
       tags: this.tags,
       timestamp: this.timestamp,
     });
+
+    return this;
   }
 
-  get log() {
-    return {
-      message: this.message,
+  public logObject(obj: any): ILogLine {
+    this.message = '[Object object]';
+    this.logger('%O', {
+      obj,
       tags: this.tags,
       timestamp: this.timestamp,
-    };
+    });
+
+    return this;
   }
 }

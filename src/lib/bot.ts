@@ -6,9 +6,6 @@ import { Log, Metrics } from './';
 const sessionGames = new Map(); // memory leak
 
 export class Bot implements IBot {
-  public runningSlack = false;
-  public runningWeb = false;
-
   private metrics: Metrics;
   private logger: Log;
 

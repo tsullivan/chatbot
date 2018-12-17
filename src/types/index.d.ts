@@ -20,11 +20,11 @@ export interface ILogLine {
 }
 
 export interface ILog {
-  info: (tags: string[], message: string) => void;
-  debug: (tags: string[], message: string) => void;
-  warn: (tags: string[], message: string) => void;
-  error: (tags: string[], err: Error) => void;
-  fatal: (tags: string[], message: string, err: Error) => void;
+  info: (tags: string[], message: string) => ILogLine;
+  debug: (tags: string[], message: string) => ILogLine;
+  json: (tags: string[], obj: any) => ILogLine;
+  warn: (tags: string[], message: string) => ILogLine;
+  error: (tags: string[], err: Error) => ILogLine;
 }
 
 export interface IBot {

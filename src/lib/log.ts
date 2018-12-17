@@ -6,29 +6,25 @@ const infoLogger = debug('chatbot:info');
 const debugLogger = debug('chatbot:debug');
 const warnLogger = debug('chatbot:warn');
 const errorLogger = debug('chatbot:error');
-const fatalLogger = debug('chatbot:fatal');
 
 export class Log implements ILog {
   public info(tags: string[], message: string): ILogLine {
-    return new LogLine(['info', ...tags], message, infoLogger).log;
+    return (new LogLine(['info', ...tags], infoLogger)).logString(message);
   }
 
   public debug(tags: string[], message: string): ILogLine {
-    return new LogLine(['debug', ...tags], message, debugLogger).log;
+    return (new LogLine(['debug', ...tags], debugLogger)).logString(message);
+  }
+
+  public json(tags: string[], obj: any): ILogLine {
+    return (new LogLine(['debug', 'json', ...tags], debugLogger)).logObject(obj);
   }
 
   public warn(tags: string[], message: string): ILogLine {
-    return new LogLine(['debug', ...tags], message, warnLogger).log;
+    return (new LogLine(['warn', ...tags], warnLogger)).logString(message);
   }
 
   public error(tags: string[], err: Error): ILogLine {
-    errorLogger('%O', err);
-    const message = err.message;
-    return new LogLine(['debug', ...tags], message, errorLogger).log;
-  }
-
-  public fatal(tags: string[], message: string, err: Error): ILogLine {
-    fatalLogger('%O', err);
-    return new LogLine(['debug', ...tags], message, fatalLogger).log;
+    return (new LogLine(['error', ...tags], errorLogger)).logObject(err);
   }
 }
