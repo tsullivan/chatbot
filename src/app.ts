@@ -1,7 +1,7 @@
 import { argv } from 'yargs';
 import { Bot } from './lib/bot';
-import { runServer as runWeb } from './server';
 import { runBot as runSlack} from './slackbot';
+import { runServer as runWeb } from './web';
 
 const b = new Bot();
 const log = b.getLogger();

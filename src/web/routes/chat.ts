@@ -1,8 +1,8 @@
 import { json as parseJson } from 'body-parser';
 import * as apm from 'elastic-apm-node';
 import * as express from 'express-session';
+import { handleChat } from '../../handle_chat';
 import { IBot } from '../../types';
-import { handleChat } from '../handle_chat';
 
 const jsonParser = parseJson({ type: 'application/json' });
 

@@ -1,5 +1,5 @@
 const { KeywordResponder } = require('../class_keyword_responder');
-const { roll } = require('../../../lib');
+const { roll } = require('../../lib');
 
 class CoinFlipResponder extends KeywordResponder {
   constructor(input) {

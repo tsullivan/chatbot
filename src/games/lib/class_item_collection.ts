@@ -1,5 +1,5 @@
 import { values as getValues } from 'lodash';
-import { LI, UL } from '../../../constants';
+import { LI, UL } from '../../constants';
 import { Item } from './class_item';
 import { parajoin } from './parajoin';
 

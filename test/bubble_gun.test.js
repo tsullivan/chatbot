@@ -1,5 +1,5 @@
 const request = require('supertest');
-const { getServer } = require('../src/server');
+const { getServer } = require('../src/web');
 const { utilFactory } = require('./utils');
 
 const app = getServer();

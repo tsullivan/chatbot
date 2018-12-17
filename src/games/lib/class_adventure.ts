@@ -1,5 +1,5 @@
 import { ChatGame } from '../';
-import { ChatSession } from '../../session';
+import { ChatSession } from '../../web/session';
 import { Item } from './class_item';
 import { ItemCollection } from './class_item_collection';
 import { KeywordResponse } from './class_keyword_response';

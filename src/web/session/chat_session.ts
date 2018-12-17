@@ -1,8 +1,8 @@
 import * as apm from 'elastic-apm-node';
 import { defaultsDeep, mean } from 'lodash';
+import { getGames } from '../../games';
+import { ChatGame } from '../../games/chat_game';
 import { Bot } from '../../lib';
-import { getGames } from '../games';
-import { ChatGame } from '../games/chat_game';
 import { mapFieldToResponse } from './map_field_to_response';
 
 const proto = {

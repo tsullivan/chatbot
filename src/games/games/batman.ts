@@ -1,5 +1,5 @@
 import { ChatGame } from '../';
-import { ChatSession } from '../../session';
+import { ChatSession } from '../../web/session';
 
 const WIN_CODE = '77';
 const LOSE_CODE = 'kl';

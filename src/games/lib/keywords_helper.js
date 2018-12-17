@@ -1,6 +1,6 @@
-const { MultiMap } = require('../../../lib');
 const { KeywordResponse } = require('./class_keyword_response');
-const { UL } = require('../../../constants');
+const { MultiMap } = require('../../lib/');
+const { UL } = require('../../constants');
 
 const getKeywordsHelper = () => ({
   _keywords: new MultiMap(),
