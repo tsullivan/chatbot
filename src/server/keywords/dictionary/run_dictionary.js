@@ -1,5 +1,5 @@
 const { capitalize, cloneDeep, sample } = require('lodash');
-const { roll } = require('../../roll');
+const { roll } = require('../../../lib');
 const getData = () => cloneDeep(require('./dictionary'));
 
 function reduce(cb, accum) {

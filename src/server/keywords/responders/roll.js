@@ -1,5 +1,5 @@
 const { KeywordResponder } = require('../class_keyword_responder');
-const { roll } = require('../../roll');
+const { roll } = require('../../../lib');
 
 const DEFAULT_SIDES = 20;
 
