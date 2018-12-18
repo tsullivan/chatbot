@@ -1,5 +1,5 @@
 import * as express from 'express-session';
-import { ChatGame } from '../server/games';
+import { ChatGame } from '../games';
 import { IBot, ILog, IMetrics } from '../types';
 import { Log, Metrics } from './';
 
