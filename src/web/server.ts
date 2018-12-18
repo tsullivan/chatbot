@@ -34,9 +34,9 @@ export function getServer(bot: Bot = new Bot()): express.Application {
 
 export function runServer(bot: Bot): void {
   const app = getServer(bot);
-  const log = bot.getLogger();
+  const log = bot.getLogger(['web', 'server']);
 
   app.listen(PORT, () => {
-    log.info([], `${BOT_NAME} listening on [:${PORT}]`);
+    log.info(['listen'], `${BOT_NAME} listening on [:${PORT}]`);
   });
 }

@@ -5,6 +5,12 @@ import { ChatGame } from '../../games/chat_game';
 import { Bot } from '../../lib';
 import { mapFieldToResponse } from './map_field_to_response';
 
+export interface IWebSession {
+  id: string;
+  chat: string;
+  destroy: () => void;
+}
+
 const proto = {
   game: null,
   messages: {
@@ -36,7 +42,7 @@ export class ChatSession {
     user_history: string[],
   };
 
-  constructor(private bot: Bot, session) {
+  constructor(private bot: Bot, session: IWebSession) {
     this.initialized = false;
     this.sessionId = session.id;
 

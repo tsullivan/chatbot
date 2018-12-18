@@ -1,9 +1,10 @@
-const apm = require('elastic-apm-node');
-const moment = require('moment');
-const { DATE_FORMAT, BOT_NAME } = require('../constants');
-const { SessionMessage } = require('./session_message');
-const { SmartMessage } = require('./smart_message');
-const { RandomMessage } = require('./random_message');
+import * as apm from 'elastic-apm-node';
+import * as moment from 'moment';
+import { BOT_NAME, DATE_FORMAT } from '../constants';
+import { ChatSession } from '../web/session';
+import { RandomMessage } from './random_message';
+import { SessionMessage } from './session_message';
+import { SmartMessage } from './smart_message';
 
 const responseWorkers = [
   { Worker: SessionMessage },
@@ -11,7 +12,13 @@ const responseWorkers = [
   { Worker: RandomMessage },
 ];
 
-function handleChat(body, chat) {
+interface IBody {
+  message: string;
+  format: string;
+  time: Date;
+}
+
+export function handleChat(body: IBody, chat: ChatSession) {
   let response;
 
   const { message, format } = body;
@@ -33,11 +40,9 @@ function handleChat(body, chat) {
     }
   }
 
-  const json = Object.assign({}, response, {
+  return {
+    ...response,
     name: BOT_NAME,
     time: moment(body.time).format(DATE_FORMAT),
-  });
-  return json;
+  };
 }
-
-module.exports = { handleChat };

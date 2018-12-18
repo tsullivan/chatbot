@@ -8,7 +8,6 @@ interface IConfig {
     active: boolean;
   };
   slack: {
-    name: string;
     token: string;
   };
   port: number;

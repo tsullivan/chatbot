@@ -5,4 +5,7 @@ module.exports = {
     serviceName: 'chatbot-test',
     active: false,
   },
+  slack: {
+    token: '123abc',
+  },
 };

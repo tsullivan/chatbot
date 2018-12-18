@@ -9,7 +9,7 @@ const jsonParser = parseJson({ type: 'application/json' });
 export function chatRoute(app: express.Application, bot: IBot) {
   app.post('/chat', jsonParser, async (req, res) => {
     apm.startTransaction();
-    const log = bot.getLogger();
+    const log = bot.getLogger(['web', 'routes']);
 
     try {
       const result = handleChat(req.body, req.session.chat);

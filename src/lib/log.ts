@@ -8,23 +8,29 @@ const warnLogger = debug('chatbot:warn');
 const errorLogger = debug('chatbot:error');
 
 export class Log implements ILog {
+  private tags = [];
+
+  public addTags(tags: string[]) {
+    this.tags = [].concat(this.tags, tags);
+  }
+
   public info(tags: string[], message: string): ILogLine {
-    return (new LogLine(['info', ...tags], infoLogger)).logString(message);
+    return (new LogLine(['info', ...tags, ...this.tags], infoLogger)).logString(message);
   }
 
   public debug(tags: string[], message: string): ILogLine {
-    return (new LogLine(['debug', ...tags], debugLogger)).logString(message);
+    return (new LogLine(['debug', ...tags, ...this.tags], debugLogger)).logString(message);
   }
 
   public json(tags: string[], obj: any): ILogLine {
-    return (new LogLine(['debug', 'json', ...tags], debugLogger)).logObject(obj);
+    return (new LogLine(['debug', 'json', ...tags, ...this.tags], debugLogger)).logObject(obj);
   }
 
   public warn(tags: string[], message: string): ILogLine {
-    return (new LogLine(['warn', ...tags], warnLogger)).logString(message);
+    return (new LogLine(['warn', ...tags, ...this.tags], warnLogger)).logString(message);
   }
 
   public error(tags: string[], err: Error): ILogLine {
-    return (new LogLine(['error', ...tags], errorLogger)).logObject(err);
+    return (new LogLine(['error', ...tags, ...this.tags], errorLogger)).logObject(err);
   }
 }

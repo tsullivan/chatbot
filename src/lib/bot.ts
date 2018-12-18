@@ -8,6 +8,8 @@ const sessionGames = new Map(); // memory leak
 export class Bot implements IBot {
   private metrics: Metrics;
   private logger: Log;
+  private slackChannelId;
+  private slackBotId;
 
   constructor() {
     this.logger = new Log();
@@ -18,7 +20,10 @@ export class Bot implements IBot {
     return this.metrics.getStats(req, sessionGames);
   }
 
-  public getLogger(): ILog {
+  public getLogger(tags?: string[]): ILog {
+    if (tags) {
+      this.logger.addTags(tags);
+    }
     return this.logger;
   }
 
@@ -32,5 +37,18 @@ export class Bot implements IBot {
 
   public removeGame(sessionId: string) {
     sessionGames.delete(sessionId);
+  }
+
+  public setSlackChannel(channelId: string) {
+    this.slackChannelId = channelId;
+  }
+  public getSlackChannel() {
+    return this.slackChannelId;
+  }
+  public setSlackBotId(botId: string) {
+    this.slackBotId = botId;
+  }
+  public getSlackBotId() {
+    return this.slackBotId;
   }
 }

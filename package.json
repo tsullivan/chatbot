@@ -49,6 +49,7 @@
     "@slack/client": "^4.8.0",
     "@types/cookie-parser": "^1.4.1",
     "@types/express": "^4.16.0",
+    "@types/jest": "^23.3.10",
     "@types/node": "^10.11.3",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
