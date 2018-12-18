@@ -52,7 +52,9 @@ export class ResponseMessage {
   }
 
   public getResponse(): IResponse {
-    this.span.end();
+    if (this.span) {
+      this.span.end();
+    }
     return this.response;
   }
 }
