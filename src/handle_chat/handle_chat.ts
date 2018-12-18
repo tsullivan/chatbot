@@ -18,7 +18,11 @@ interface IBody {
   time: Date;
 }
 
-export function handleChat(body: IBody, chat: ChatSession) {
+export interface IChatResponse {
+  message: string;
+}
+
+export function handleChat(body: IBody, chat: ChatSession): Promise<IChatResponse> {
   let response;
 
   const { message, format } = body;

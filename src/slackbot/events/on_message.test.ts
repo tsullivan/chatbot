@@ -1,3 +1,4 @@
+import { RTMClient } from '@slack/client';
 import { Bot } from '../../lib';
 import { onMessageFactory } from './on_message';
 
@@ -6,7 +7,11 @@ const bot = new Bot();
 bot.setSlackChannel('CUTC234A');
 bot.setSlackBotId('B345ISJ38');
 
-const rtm = { sendMessage: () => Promise.resolve(true) };
+const rtm = new RTMClient('test 123');
+jest
+  .spyOn(rtm, 'sendMessage')
+  .mockImplementation(() => Promise.resolve('send message test complete'));
+jest.spyOn(rtm, 'start').mockImplementation(() => Promise.resolve(true));
 
 describe('Slackbot / RTM / On Message', () => {
   beforeEach(() => {
@@ -29,7 +34,7 @@ describe('Slackbot / RTM / On Message', () => {
     expect(sendMsgSpy).not.toHaveBeenCalled();
   });
 
-  it.skip('should reply to mention', async () => {
+  it('should reply to mention', async () => {
     const sendMsgSpy = jest.spyOn(rtm, 'sendMessage');
 
     // @ts-ignore
@@ -43,31 +48,40 @@ describe('Slackbot / RTM / On Message', () => {
     expect(sendMsgSpy).not.toHaveBeenCalled();
     await onMessage(event);
     expect(sendMsgSpy).toHaveBeenCalledTimes(1);
-    expect(sendMsgSpy).lastCalledWith(
-      `My brain hurts!!! I think I just lost all of my memory!!!
- What is your name?`,
-      'CUTC234A'
-    );
   });
 
-  it.skip('should reply to direct message', async () => {
+  it('should reply to direct message', async () => {
     const sendMsgSpy = jest.spyOn(rtm, 'sendMessage');
 
     // @ts-ignore
     const onMessage = onMessageFactory(bot, rtm);
-    const event = {
-      channel: 'DPGYRT3485',
-      text: `Test message, bot`,
-      user: 'U123TSTTSTTS',
-    };
+    const events = [
+      {
+        channel: 'DPGYRT3485',
+        text: `Test message, bot`,
+        user: 'U123TSTT',
+      },
+      {
+        channel: 'DPGYRT3485',
+        text: `Thor`,
+        user: 'U123TSTT',
+      },
+    ];
 
     expect(sendMsgSpy).not.toHaveBeenCalled();
-    await onMessage(event);
+
+    await onMessage(events[0]);
     expect(sendMsgSpy).toHaveBeenCalledTimes(1);
     expect(sendMsgSpy).lastCalledWith(
-      `My brain hurts!!! I think I just lost all of my memory!!!
- What is your name?`,
-      'DPGYRT3485'
+      `I think your name is ${events[0].user}. What is it really?`,
+      events[0].channel
+    );
+
+    await onMessage(events[1]);
+    expect(sendMsgSpy).toHaveBeenCalledTimes(2);
+    expect(sendMsgSpy).lastCalledWith(
+      `Hello, ${events[1].text}! Nice to meet you.`,
+      events[1].channel
     );
   });
 });

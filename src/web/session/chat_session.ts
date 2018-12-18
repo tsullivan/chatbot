@@ -7,11 +7,15 @@ import { mapFieldToResponse } from './map_field_to_response';
 
 export interface IWebSession {
   id: string;
-  chat: string;
+  chat: ChatSession;
   destroy: () => void;
 }
 
-const proto = {
+interface IChatSessionInit {
+  name?: string;
+}
+
+export const ChatSessionProto = {
   game: null,
   messages: {
     next: [],
@@ -28,7 +32,6 @@ const games = getGames();
 export class ChatSession {
   public save: () => ChatSession;
   public hangup: () => ChatSession;
-  public init: () => void;
 
   private initialized: boolean;
   private sessionId: string;
@@ -49,7 +52,7 @@ export class ChatSession {
     this.save = () => {
       if (!this.initialized) {
         this.initialized = true;
-        defaultsDeep(this, proto);
+        defaultsDeep(this, ChatSessionProto);
       }
       defaultsDeep(session.chat, this);
       return this;
@@ -58,13 +61,20 @@ export class ChatSession {
     this.hangup = () => {
       session.destroy();
       this.initialized = false;
-      Object.assign(this, proto);
+      Object.assign(this, ChatSessionProto);
       return this.save();
     };
   }
 
+  public init (opts: IChatSessionInit = {}): void {
+    if (opts.name) {
+      this.setName(opts.name);
+    }
+    this.save();
+  }
+
   public getResumed({ chat }) {
-    defaultsDeep(this, chat, proto);
+    defaultsDeep(this, chat, ChatSessionProto);
     this.save();
 
     this.game = this.bot.getSessionGame(this.sessionId);
