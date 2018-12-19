@@ -6,4 +6,8 @@ module.exports = {
     secretToken: process.env.APM_TOKEN,
     serverUrl: process.env.ELASTIC_APM_SERVER_URL,
   },
+  slack: {
+    token: process.env.SLACK_BOT_TOKEN,
+    name: process.env.SLACK_BOT_NAME,
+  },
 };
