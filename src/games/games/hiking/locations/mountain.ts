@@ -17,7 +17,7 @@ export class MountainLocation extends Location {
     return parajoin(lns);
   }
 
-  public setLocationKeywords(/*game*/) {
+  public setLocationKeywords(game) {
     this.addKeyword('WATERFALL', `To go back down to the waterfall`, () =>
       this.followExit(DOWN)
     );

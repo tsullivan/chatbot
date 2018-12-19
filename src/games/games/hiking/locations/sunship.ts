@@ -17,7 +17,7 @@ export class SunshipLocation extends Location {
     return parajoin(lns);
   }
 
-  public setLocationKeywords(/*game*/) {
+  public setLocationKeywords(game) {
     const pxUp = snl`You close your eyes, hold your breath, and slam your hand
       on the PUSH_ME button. The ship's engine's rumble and your insides suddenly
       feel like cooked noodles as the ship rises up into the sky, and KSHOOOOM!

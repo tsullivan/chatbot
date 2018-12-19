@@ -11,7 +11,7 @@ export class MagnetLocation extends Location {
     return `Hold on to your metals, they got lots of magnets in here!`;
   }
 
-  public setLocationKeywords(/*game*/) {
+  public setLocationKeywords(game) {
     this.addKeyword('PLAYGROUND', 'Go back to the playground', () => {
       return this.followExit(WEST);
     });

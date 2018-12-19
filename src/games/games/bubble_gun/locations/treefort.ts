@@ -12,7 +12,7 @@ export class TreeFortLocation extends Location {
       view of the entire playground.`;
   }
 
-  public setLocationKeywords(/*game*/) {
+  public setLocationKeywords(game) {
     this.addKeyword('PLAYGROUND', 'Go back to the playground', () => {
       return this.followExit(DOWN);
     });

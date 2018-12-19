@@ -20,7 +20,7 @@ export class PlaygroundLocation extends Location {
     return parts.join('\n\n');
   }
 
-  public setLocationKeywords(/*game*/) {
+  public setLocationKeywords(game) {
     this.addKeyword('BRIDGE', 'Go to the bridge', () => {
       return this.followExit(SOUTH);
     });

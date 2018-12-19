@@ -20,7 +20,7 @@ export class HallwayLocation extends Location {
     return parajoin(lns);
   }
 
-  public setLocationKeywords(/*game*/) {
+  public setLocationKeywords(game) {
     this.addKeyword(
       'ESCAPE',
       `Escape down the hallway and quickly jump into the back of the van`,

@@ -23,7 +23,7 @@ export class WaterfallLocation extends Location {
     return parajoin(lns);
   }
 
-  public setLocationKeywords(/*game*/) {
+  public setLocationKeywords(game) {
     this.addKeyword('ROCKS', `Go to the place that has a lot of rocks`, () =>
       this.followExit(EAST)
     );

@@ -33,7 +33,7 @@ export class StartLocation extends Location {
     return parajoin(lns);
   }
 
-  public setLocationKeywords(/*game*/) {
+  public setLocationKeywords(game) {
     const pxLake = snl`Your hiking adventure begins! Off to the lake we go.`;
     this.addKeyword(
       'LAKE',

@@ -10,7 +10,7 @@ export class ElectronicsLocation extends Location {
     return `Here at the Electronics store, their motto is: "Electronics - they're what we sell!"`;
   }
 
-  public setLocationKeywords(/*game*/) {
+  public setLocationKeywords(game) {
     this.addKeyword('PLAYGROUND', 'Go back to the playground', () => {
       return this.followExit(EAST);
     });

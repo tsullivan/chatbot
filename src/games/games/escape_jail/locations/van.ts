@@ -10,7 +10,7 @@ export class VanLocation extends Location {
     return `You're hiding in a jail van that's driving around the jail, making jail deliveries to the jail people.`;
   }
 
-  public setLocationKeywords(/*game*/) {
+  public setLocationKeywords(game) {
     this.addKeyword('ESCAPE', `Escape the jail van`, () => {
       const px = `You sneak out of the jail van and run over to a fence. You're almost out of here!`;
       return this.followExit(SOUTH, px);
