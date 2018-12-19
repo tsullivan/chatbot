@@ -7,9 +7,9 @@ const getKeywordsHelper = () => {
     _keywords: new MultiMap(),
 
     /*
-   * text {String} text used for getInstructions
-   * fn {Function} function that must return KeywordResponse
-   */
+     * text {String} text used for getInstructions
+     * fn {Function} function that must return KeywordResponse
+     */
     addKeyword(keyword, text, fn) {
       if (typeof keyword === undefined) {
         throw new Error('Keyword was undefined');

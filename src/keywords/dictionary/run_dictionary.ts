@@ -39,7 +39,7 @@ const vocabulary = reduce((accum, kSet, kind, thing) => {
   return accum;
 }, {});
 
-function runDictionary(kSet = '') {
+export function runDictionary(kSet = '') {
   const data = getData();
   const dictionary = reduce((accum, myKSet, kind, thing, i) => {
     if (data[myKSet][i] == null) {
@@ -68,5 +68,3 @@ function runDictionary(kSet = '') {
 
   return kSet ? dictionary[kSet] : dictionary;
 }
-
-module.exports = { runDictionary };
