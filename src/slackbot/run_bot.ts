@@ -21,7 +21,7 @@ async function findBotId(web: WebClient): Promise<string> {
 }
 
 export async function runBot(bot: Bot): Promise<void> {
-  const log = bot.getLogger(['slack', 'start']);
+  const log = bot.getLogger(['slack', 'runbot']);
   log.info([], `Starting ${BOT_NAME} on Slack...`);
 
   let channelId;
@@ -38,8 +38,8 @@ export async function runBot(bot: Bot): Promise<void> {
   }
   bot.setSlackChannel(channelId);
   bot.setSlackBotId(botId);
-  log.info(['users'], `Found member channel ID: ${channelId}`);
-  log.info(['users'], `Found bot user ID: ${botId}`);
+  log.info(['users-api'], `Found member channel ID: ${channelId}`);
+  log.info(['users-api'], `Found bot user ID: ${botId}`);
 
   // The client is initialized and then started to get an active connection to the platform
   const rtm = new RTMClient(slack.token);

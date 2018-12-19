@@ -4,16 +4,16 @@ import { runBot as runSlack} from './slackbot';
 import { runServer as runWeb } from './web';
 
 const b = new Bot();
-const log = b.getLogger(['start']);
+const log = b.getLogger(['main']);
 
-log.debug([], 'Bot initialized');
+log.debug([], 'Initializing');
 
 if (argv.web !== 'false') {
-  log.info(['web'], 'Starting web...');
+  log.info(['start', 'web'], 'Starting web...');
   runWeb(b);
 }
 
 if (argv.slack) {
-  log.info(['slack'], 'Starting slack...');
+  log.info(['start', 'slack'], 'Starting slack...');
   runSlack(b);
 }

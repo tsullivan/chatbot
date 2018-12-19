@@ -11,13 +11,13 @@ const slackSessions = new Map();
 
 export class Bot implements IBot {
   private metrics: Metrics;
-  private logger: Log;
   private slackChannelId;
   private slackBotId;
+  private log: ILog;
 
   constructor() {
-    this.logger = new Log();
     this.metrics = new Metrics();
+    this.log = this.getLogger(['bot', 'internal']);
   }
 
   public handleSlackChat(userId: string, chatBody): Promise<IChatResponse> {
@@ -52,10 +52,11 @@ export class Bot implements IBot {
   }
 
   public getLogger(tags?: string[]): ILog {
+    const logger = new Log();
     if (tags) {
-      this.logger.addTags(tags);
+      logger.addTags(tags);
     }
-    return this.logger;
+    return logger;
   }
 
   public getSessionGame(sessionId: string): ChatGame {
