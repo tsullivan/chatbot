@@ -1,4 +1,4 @@
-const { MultiMap } = require('../lib/');
+import { MultiMap } from './';
 
 describe('MultiMap', () => {
   it('should get by alias', () => {

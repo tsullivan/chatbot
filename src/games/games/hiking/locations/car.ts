@@ -1,27 +1,26 @@
-const snl = require('strip-newlines');
-const { Location, parajoin /*, KeywordResponse*/ } = require('../../../lib');
-const { UP, DOWN, CAR } = require('../constants');
+import * as snl from 'strip-newlines';
+import { Location, parajoin /*, KeywordResponse*/ } from '../../../lib';
+import { CAR, DOWN, UP } from '../constants';
 
-class CarLocation extends Location {
+export class CarLocation extends Location {
   constructor(game) {
     super({ game, name: 'In a cave under the mountain house' });
-  }
-
-  getDescription() {
-    const lns = [
-      snl`The hole which you climbed down is the only source of light. You're at the dead-end of a
+    this.getDescription = () => {
+      const lns = [
+        snl`The hole which you climbed down is the only source of light. You're at the dead-end of a
         cave which goes one direction into a long tunnel of darkness. It would be very hard to
         navigate through that without a light of some kind. The bottom of the hole is so deep,
         you'd have to use a ladder to get back up. The only way that seems safe to try is the
         ladder leading back up to the house.`,
-      snl`In the dim light, the only thing you can really tell is there's a silver car parked here.
-        It points straight in to the darkness of the cave tunnel. It's floating slightly, and seems
+        snl`In the dim light, the only thing you can really tell is there's a silver car parked here.
+          It points straight in to the darkness of the cave tunnel. It's floating slightly, and seems
         very ready to drive.`,
-    ];
-    return parajoin(lns);
+      ];
+      return parajoin(lns);
+    };
   }
 
-  setLocationKeywords(game) {
+  public setLocationKeywords(game) {
     this.addKeyword('LADDER', `Climb the ladder to get back up to the house`, () =>
       this.followExit(UP, 'Climb, climb, climb.')
     );
@@ -41,5 +40,3 @@ class CarLocation extends Location {
     );
   }
 }
-
-module.exports = { CarLocation };

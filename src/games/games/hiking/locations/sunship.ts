@@ -1,24 +1,23 @@
-const snl = require('strip-newlines');
-const { Location, parajoin /*, KeywordResponse */ } = require('../../../lib');
-const { EAST, UP } = require('../constants');
+import * as snl from 'strip-newlines';
+import { Location, parajoin /*, KeywordResponse */ } from '../../../lib';
+import { EAST, UP } from '../constants';
 
-class SunshipLocation extends Location {
+export class SunshipLocation extends Location {
   constructor(game) {
     super({ game, name: 'Sun Ship, on Earth' });
-  }
-
-  getDescription() {
-    const lns = [
-      snl`Pretty nice in here. Whatever alien species created this ship did a good job.`,
-      snl`The controls here look pretty simple. There's just one big button that says "PUSH_ME"`,
-    ];
-    return parajoin(lns);
+    this.getDescription = () => {
+      const lns = [
+        snl`Pretty nice in here. Whatever alien species created this ship did a good job.`,
+        snl`The controls here look pretty simple. There's just one big button that says "PUSH_ME"`,
+      ];
+      return parajoin(lns);
+    };
   }
 
   // buy
   // talk
 
-  setLocationKeywords(/*game*/) {
+  public setLocationKeywords(/*game*/) {
     const pxUp = snl`You close your eyes, hold your breath, and slam your hand
       on the PUSH_ME button. The ship's engine's rumble and your insides suddenly
       feel like cooked noodles as the ship rises up into the sky, and KSHOOOOM!
@@ -33,5 +32,3 @@ class SunshipLocation extends Location {
     );
   }
 }
-
-module.exports = { SunshipLocation };

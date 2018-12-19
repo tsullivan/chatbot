@@ -1,31 +1,30 @@
-const snl = require('strip-newlines');
-const { Location, KeywordResponse, parajoin } = require('../../../lib');
-const { SOUTH, NORTH, WEST, ENEMIES } = require('../constants');
+import * as snl from 'strip-newlines';
+import { KeywordResponse, Location, parajoin } from '../../../lib';
+import { ENEMIES, NORTH, SOUTH, WEST } from '../constants';
 
-class BridgeLocation extends Location {
+export class BridgeLocation extends Location {
   constructor(game) {
     super({ game, name: 'On the bridge top' });
-  }
-
-  getDescription() {
-    const lns = [
-      snl`The bridge is a really long way up, and then a really long way down.
-        At the top of the bridge is a spaceship. This spaceship looks like a
+    this.getDescription = () => {
+      const lns = [
+        snl`The bridge is a really long way up, and then a really long way down.
+          At the top of the bridge is a spaceship. This spaceship looks like a
         Sun Ship. The hatch is open, and from the outside, it looks pretty
         functional.`,
-      snl`From the top of the bridge, can can look down at the large lake. The
-      lake is beautiful, and very clear.`,
-      snl`The dark clouds open up this close to the mountain, and the sky is
+        snl`From the top of the bridge, can can look down at the large lake. The
+        lake is beautiful, and very clear.`,
+        snl`The dark clouds open up this close to the mountain, and the sky is
         clear and bright. The lake reflects the view to the top of the mountain,
         which makes this place of the game look very mirror-like. From up here,
         the lake looks just as serious and grim as the mountain it reflects.`,
-      snl`There is a telescope perched on a rail here.`,
-    ];
+        snl`There is a telescope perched on a rail here.`,
+      ];
 
-    return parajoin(lns);
+      return parajoin(lns);
+    };
   }
 
-  setLocationKeywords(game) {
+  public setLocationKeywords(game) {
     this.addKeyword('SHIP', `Enter the ship`, () => this.followExit(WEST));
     this.addKeyword(
       'USE_TELESCOPE',
@@ -58,5 +57,3 @@ class BridgeLocation extends Location {
     );
   }
 }
-
-module.exports = { BridgeLocation };

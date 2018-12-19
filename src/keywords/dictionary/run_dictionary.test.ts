@@ -1,4 +1,4 @@
-const { runDictionary } = require('./run_dictionary');
+import { runDictionary } from './run_dictionary';
 
 describe('run_dictionary', () => {
   it('should run up a nice dictionary', () => {
@@ -20,10 +20,12 @@ describe('run_dictionary', () => {
   });
 
   it('should change in consecutive runs', () => {
-    const dictionary_1 = runDictionary('jokes');
-    const dictionary_2 = runDictionary('jokes');
-    expect(dictionary_1[0]).not.toEqual(undefined);
-    expect(dictionary_2[0]).not.toEqual(undefined);
-    expect(dictionary_1[0]).not.toEqual(dictionary_2[0]);
+    const dictionary = [
+      runDictionary('jokes'),
+      runDictionary('jokes'),
+    ];
+    expect(dictionary[0][0]).not.toEqual(undefined);
+    expect(dictionary[1][0]).not.toEqual(undefined);
+    expect(dictionary[0][0]).not.toEqual(dictionary[1][0]);
   });
 });
