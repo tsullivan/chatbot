@@ -1,30 +1,29 @@
-const snl = require('strip-newlines');
-const { Location, KeywordResponse, parajoin } = require('../../../lib');
-const { SOUTH, NORTH, ENEMIES, CAR, APPLES } = require('../constants');
+import * as snl from 'strip-newlines';
+import { KeywordResponse, Location, parajoin } from '../../../lib';
+import { APPLES, CAR, ENEMIES, NORTH, SOUTH } from '../constants';
 
-class LakeLocation extends Location {
+export class LakeLocation extends Location {
   constructor(game) {
     super({ game, name: 'Lake' });
+    this.getDescription = () => {
+      const lns = [
+        snl`This lake is beautiful, but the cloudy sky gives it a grim
+        appearance. This seems to be a place of battle.`,
+      ];
+      if (game.inInventory(ENEMIES) && !game.inInventory(CAR)) {
+        lns.push(snl`There are enemies are in the lake. The shores of the lake are
+          too far away from them to do anything about them, though`);
+      } else if (game.inInventory(CAR)) {
+        lns.push(snl`There are enemies are in the lake. You're floating over their
+          heads in your flying car.`);
+      } else {
+        lns.push('The enemies in the lake have been defeated!');
+      }
+      return parajoin(lns);
+    };
   }
 
-  getDescription(game) {
-    const lns = [
-      snl`This lake is beautiful, but the cloudy sky gives it a grim
-      appearance. This seems to be a place of battle.`,
-    ];
-    if (game.inInventory(ENEMIES) && !game.inInventory(CAR)) {
-      lns.push(snl`There are enemies are in the lake. The shores of the lake are
-        too far away from them to do anything about them, though`);
-    } else if (game.inInventory(CAR)) {
-      lns.push(snl`There are enemies are in the lake. You're floating over their
-        heads in your flying car.`);
-    } else {
-      lns.push('The enemies in the lake have been defeated!');
-    }
-    return parajoin(lns);
-  }
-
-  setLocationKeywords(game) {
+  public setLocationKeywords(game) {
     this.addKeyword('ROCKS', 'Go to a place with a lot of rocks', () =>
       this.followExit(SOUTH)
     );
@@ -41,9 +40,9 @@ class LakeLocation extends Location {
           snl`LOSE 50 points`,
         ];
         return new KeywordResponse({
-          text: parajoin(lns),
           changeScore: -50,
           isDone: true,
+          text: parajoin(lns),
         });
       } else {
         const lns = [
@@ -53,8 +52,8 @@ class LakeLocation extends Location {
           snl`LOSE A POINT`,
         ];
         return new KeywordResponse({
-          text: parajoin(lns),
           changeScore: -1,
+          text: parajoin(lns),
         });
       }
     });
@@ -72,12 +71,10 @@ class LakeLocation extends Location {
           'GAIN 35 points',
         ];
         return new KeywordResponse({
-          text: parajoin(lns),
           changeScore: 35,
+          text: parajoin(lns),
         });
       });
     }
   }
 }
-
-module.exports = { LakeLocation };

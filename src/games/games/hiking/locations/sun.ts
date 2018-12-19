@@ -1,21 +1,19 @@
-const snl = require('strip-newlines');
-const { Location, KeywordResponse, parajoin } = require('../../../lib');
-const { DOWN, YOGURT } = require('../constants');
+import * as snl from 'strip-newlines';
+import { KeywordResponse, Location, parajoin } from '../../../lib';
+import { DOWN, YOGURT } from '../constants';
 
-class TheSunLocation extends Location {
+export class TheSunLocation extends Location {
+  private hasGhosts: boolean = false;
+
   constructor(game) {
     super({ game, name: 'The Sun, in the Sun Ship' });
-    this._hasGhosts = false;
+    this.getDescription = () => {
+      return snl`It's so hot on the Sun! Fear not, it's safe inside the sun ship.
+        It's very bright, but the windows of the sunship make it safe to look at.`;
+    };
   }
 
-  getDescription() {
-    return snl`It's so hot on the Sun! Fear not, it's safe inside the sun ship.
-      It's very bright, but the windows of the sunship make it safe to look at.`;
-  }
-
-  // walk
-
-  setLocationKeywords(game) {
+  public setLocationKeywords(game) {
     this.addKeyword('BACK', `Go back to Earth`, () => {
       const px = snl`KSHOOOOM!! Back down to Earth you go in the sun ship. Hope
         you enjoyed your stay on the sun! Come back soon!`;
@@ -25,7 +23,7 @@ class TheSunLocation extends Location {
       'LOOK',
       `Look at the sun (through the safety of the sunship windows)`,
       () => {
-        if (this._hasGhosts) {
+        if (this.hasGhosts) {
           return new KeywordResponse({
             text: snl`On the surface of the sun, there is melted yogurt and the
             remains of exploded ghosts.`,
@@ -43,7 +41,7 @@ class TheSunLocation extends Location {
       this.addKeyword('THROW_YOGURT', `Throw the ghost yogurt onto the sun`, () => {
         game.deleteFromInventory(YOGURT);
         this.removeKeyword('THROW_YOGURT');
-        this._hasGhosts = true;
+        this.hasGhosts = true;
         const lns = [
           snl`You reach for the ghost yogurt in your pocket, open the hatch of
             the sunship, and with all your strength, you mightily hurl the yogurt
@@ -56,12 +54,10 @@ class TheSunLocation extends Location {
           'GAIN 20 POINTS',
         ];
         return new KeywordResponse({
-          text: parajoin(lns),
           changeScore: 20,
+          text: parajoin(lns),
         });
       });
     }
   }
 }
-
-module.exports = { TheSunLocation };

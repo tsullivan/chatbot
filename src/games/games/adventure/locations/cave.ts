@@ -1,23 +1,23 @@
-const snl = require('strip-newlines');
-const { Location, KeywordResponse } = require('../../../lib');
-const { WEST, WINDOW_HANDLE } = require('../constants');
+import * as snl from 'strip-newlines';
+import { KeywordResponse, Location } from '../../../lib';
+import { WEST, WINDOW_HANDLE } from '../constants';
 
-class CaveLocation extends Location {
+export class CaveLocation extends Location {
+  private danced = false;
+
   constructor(game) {
     super({ game, name: 'Cheery Cave' });
-    this._danced = false;
-  }
-
-  getDescription() {
-    return snl`It's unnaturally cheery in this smelly old cave. Probably
+    this.getDescription = () => {
+      return snl`It's unnaturally cheery in this smelly old cave. Probably
       because of the tiny village of tiny dancing skeleton hands. So cute! So
       tiny! So skeleton handsy!`;
+    };
   }
 
-  setLocationKeywords(game) {
-    if (!this._danced) {
+  public setLocationKeywords(game) {
+    if (!this.danced) {
       this.addKeyword('DANCE', 'Dance with the tiny skeleton hands', () => {
-        this._danced = true;
+        this.danced = true;
         this.removeKeyword('DANCE');
         const p = [
           snl`The dance is beautiful, with flowing, synchronized forms.
@@ -31,8 +31,8 @@ class CaveLocation extends Location {
           'GAIN A POINT',
         ];
         return new KeywordResponse({
-          text: p.join('\n\n'),
           changeScore: 1, // add a point for the heck of it
+          text: p.join('\n\n'),
         });
       });
     }
@@ -67,5 +67,3 @@ class CaveLocation extends Location {
     );
   }
 }
-
-module.exports = { CaveLocation };

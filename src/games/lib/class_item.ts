@@ -5,14 +5,14 @@ import { getKeywordsHelper } from './keywords_helper';
 
 interface ICombinable {
   combinesWith: Item;
-  keyword: string;
+  keyword: string | string[];
   keywordDescription: string;
   fn: () => void;
 }
 
 interface IInteractable {
   fn: () => void;
-  keyword: string;
+  keyword: string | string[];
   keywordDescription: string;
 }
 

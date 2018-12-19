@@ -1,24 +1,23 @@
-const snl = require('strip-newlines');
-const { Location, KeywordResponse } = require('../../../lib');
-const { WEST, DOWN } = require('../constants');
+import * as snl from 'strip-newlines';
+import { KeywordResponse, Location } from '../../../lib';
+import { DOWN, WEST } from '../constants';
 
-class MountainHouseLocation extends Location {
+export class MountainHouseLocation extends Location {
   constructor(game) {
     super({ game, name: 'Mountain House' });
+    this.getDescription = () => {
+      const ps = [
+        snl`Inside the mountain house, the many windows create an atmosphere of
+          light, but as it is cloudy outside, you find yourself wishing for a
+          little more.`,
+        snl`There's a comfy-looking bed, in case you need a rest.`,
+        snl`There's a deep hole in the floor. You can't see the bottom, but you could fit yourself inside.`,
+      ];
+      return ps.join('\n\n');
+    };
   }
 
-  getDescription() {
-    const ps = [
-      snl`Inside the mountain house, the many windows create an atmosphere of
-        light, but as it is cloudy outside, you find yourself wishing for a
-        little more.`,
-      snl`There's a comfy-looking bed, in case you need a rest.`,
-      snl`There's a deep hole in the floor. You can't see the bottom, but you could fit yourself inside.`,
-    ];
-    return ps.join('\n\n');
-  }
-
-  setLocationKeywords(game) {
+  public setLocationKeywords(game) {
     this.addKeyword(['OUTSIDE', 'EXIT'], `Go out to the top of the mountain`, () =>
       this.followExit(WEST)
     );
@@ -71,11 +70,9 @@ class MountainHouseLocation extends Location {
       }
 
       return new KeywordResponse({
-        text: ps.join('\n\n'),
         changeScore,
+        text: ps.join('\n\n'),
       });
     });
   }
 }
-
-module.exports = { MountainHouseLocation };

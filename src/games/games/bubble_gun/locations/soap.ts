@@ -1,32 +1,32 @@
-const snl = require('strip-newlines');
-const { Location, KeywordResponse, parajoin } = require('../../../lib');
-const { SOUTH } = require('../constants');
+import * as snl from 'strip-newlines';
+import { KeywordResponse, Location, parajoin } from '../../../lib';
+import { SOUTH } from '../constants';
 
-class SoapLocation extends Location {
+export class SoapLocation extends Location {
+  private soapExperiences: number = 0;
+
   constructor(game) {
     super({ game, name: 'The Soap Store' });
-    this._isSoapy = false;
-    this._soapExperiences = 0;
-  }
 
-  getDescription() {
-    const lns = [
-      snl`Oh my goodness, this store has so much soap! It is by far the
+    this.getDescription = () => {
+      const lns = [
+        snl`Oh my goodness, this store has so much soap! It is by far the
         soapiest place you have ever been in!`,
-      snl`Another thing you notice right away is that there is an extremely
+        snl`Another thing you notice right away is that there is an extremely
         strong fragrance of clean in this place.`,
-    ];
-    return parajoin(lns);
+      ];
+      return parajoin(lns);
+    };
   }
 
-  setLocationKeywords(/*game*/) {
+  public setLocationKeywords(/*game*/) {
     this.addKeyword('PLAYGROUND', 'Go back to the playground', () => {
       return this.followExit(SOUTH);
     });
-    if (this._soapExperiences % 2 === 0) {
+    if (this.soapExperiences % 2 === 0) {
       this.addKeyword(
         [
-          this._soapExperiences === 0
+          this.soapExperiences === 0
             ? 'ACCIDENTALLY_SPILL_SOME_SOAP'
             : 'ACCIDENTALLY_SPILL_SOME_MORE_SOAP',
           'SPILL',
@@ -34,7 +34,7 @@ class SoapLocation extends Location {
         snl`You can accidentally spill some soap. No one will blame you because
           it will be an accident.`,
         () => {
-          this._soapExperiences++;
+          this.soapExperiences++;
           return new KeywordResponse({
             text: snl`OOPSIE. You accidentally spilled some soap on the floor!
               Be careful now, the floor might be slippery.`,
@@ -50,11 +50,11 @@ class SoapLocation extends Location {
           const parts = [
             snl`OOPSIE. You accidentally weren't careful and slipped on the
               soap that you spilled on the floor!`,
-            this._soapExperiences % 4 === 1
+            this.soapExperiences % 4 === 1
               ? snl`BAM! There goes your bottom!`
               : snl`BONK! There goes your head!`,
           ];
-          this._soapExperiences++;
+          this.soapExperiences++;
           return new KeywordResponse({
             text: parts.join('\n\n'),
           });
@@ -63,5 +63,3 @@ class SoapLocation extends Location {
     }
   }
 }
-
-module.exports = { SoapLocation };
