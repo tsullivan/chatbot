@@ -15,22 +15,22 @@ export class Log implements ILog {
   }
 
   public info(tags: string[], message: string): ILogLine {
-    return (new LogLine(['info', ...tags, ...this.tags], infoLogger)).logString(message);
+    return (new LogLine([...tags, ...this.tags], infoLogger)).logString(message);
   }
 
   public debug(tags: string[], message: string): ILogLine {
-    return (new LogLine(['debug', ...tags, ...this.tags], debugLogger)).logString(message);
+    return (new LogLine([...tags, ...this.tags], debugLogger)).logString(message);
   }
 
   public json(tags: string[], obj: any): ILogLine {
-    return (new LogLine(['debug', 'json', ...tags, ...this.tags], debugLogger)).logObject(obj);
+    return (new LogLine([...tags, ...this.tags], debugLogger)).logObject(obj);
   }
 
   public warn(tags: string[], message: string): ILogLine {
-    return (new LogLine(['warn', ...tags, ...this.tags], warnLogger)).logString(message);
+    return (new LogLine([...tags, ...this.tags], warnLogger)).logString(message);
   }
 
   public error(tags: string[], err: Error): ILogLine {
-    return (new LogLine(['error', ...tags, ...this.tags], errorLogger)).logObject(err);
+    return (new LogLine([...tags, ...this.tags], errorLogger)).logObject(err);
   }
 }

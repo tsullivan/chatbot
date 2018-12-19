@@ -1,5 +1,14 @@
 import { ILogLine } from '../types';
 
+// make tags unique
+const uniq = tags =>
+  tags.reduce((items, item) => {
+    if (items.includes(item)) {
+      return items;
+    }
+    return [...items, item];
+  }, []);
+
 export class LogLine implements ILogLine {
   public readonly timestamp: Date;
   public message: string;
@@ -12,7 +21,7 @@ export class LogLine implements ILogLine {
     this.message = message;
     this.logger('%o', {
       message: this.message,
-      tags: this.tags,
+      tags: uniq(this.tags),
       timestamp: this.timestamp,
     });
 
@@ -23,7 +32,7 @@ export class LogLine implements ILogLine {
     this.message = '[Object object]';
     this.logger('%O', {
       obj,
-      tags: this.tags,
+      tags: uniq(this.tags),
       timestamp: this.timestamp,
     });
 
