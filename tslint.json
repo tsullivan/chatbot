@@ -6,11 +6,16 @@
   ],
   "jsRules": {},
   "rules": {
-    "no-console": false,
+    "no-console": [
+      false
+    ],
     "quotemark": [
       true,
       "single",
       "avoid-escape"
+    ],
+    "object-literal-sort-keys": [
+      false
     ]
   },
   "rulesDirectory": []

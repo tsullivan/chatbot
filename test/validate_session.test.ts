@@ -1,5 +1,5 @@
-const request = require('supertest');
-const { getServer } = require('../src/web');
+import * as request from 'supertest';
+import { getServer } from '../src/web';
 
 describe('detect invalid session', () => {
   it('double syn', async () => {

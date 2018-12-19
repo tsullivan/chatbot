@@ -1,4 +1,4 @@
-const utilFactory = agent => {
+export const utilFactory = agent => {
   if (!agent) {
     throw new Error('agent param required');
   }
@@ -36,5 +36,3 @@ const utilFactory = agent => {
     },
   };
 };
-
-module.exports = { utilFactory };

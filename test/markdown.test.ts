@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const request = require('supertest');
 const { getServer } = require('../src/web');
 const { utilFactory } = require('./utils');

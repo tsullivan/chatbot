@@ -1,6 +1,6 @@
-const request = require('supertest');
-const { getServer } = require('../src/web');
-const { utilFactory } = require('./utils');
+import * as request from 'supertest';
+import { getServer } from '../src/web';
+import { utilFactory } from './utils';
 
 const app = getServer();
 const agent = request.agent(app);

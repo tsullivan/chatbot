@@ -1,14 +1,14 @@
-const request = require('supertest');
-const { getServer } = require('../src/web');
-const { utilFactory } = require('./utils');
+import * as request from 'supertest';
+import { getServer } from '../src/web';
+import { utilFactory } from './utils';
 
 const app = getServer();
 const agent = request.agent(app);
 const { handshake } = utilFactory(agent);
 
 const testFields = body => ({
-  message: body.message,
   format: body.format,
+  message: body.message,
 });
 
 const sendTest = message =>

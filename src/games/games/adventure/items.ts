@@ -4,8 +4,8 @@ import { WINDOW_HANDLE } from './constants';
 export function getItems(game) {
   return {
     windowHandleItem: new Item({
-      description: 'This looks like a pretty nice window crank handle',
       game,
+      description: 'This looks like a pretty nice window crank handle',
       id: WINDOW_HANDLE,
       name: 'Window crank handle',
       seen: false,
