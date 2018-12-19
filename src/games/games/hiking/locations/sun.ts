@@ -7,10 +7,11 @@ export class TheSunLocation extends Location {
 
   constructor(game) {
     super({ game, name: 'The Sun, in the Sun Ship' });
-    this.getDescription = () => {
-      return snl`It's so hot on the Sun! Fear not, it's safe inside the sun ship.
-        It's very bright, but the windows of the sunship make it safe to look at.`;
-    };
+  }
+
+  public getDescription(game) {
+    return snl`It's so hot on the Sun! Fear not, it's safe inside the sun ship.
+      It's very bright, but the windows of the sunship make it safe to look at.`;
   }
 
   public setLocationKeywords(game) {

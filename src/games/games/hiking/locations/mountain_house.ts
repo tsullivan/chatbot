@@ -5,16 +5,18 @@ import { DOWN, WEST } from '../constants';
 export class MountainHouseLocation extends Location {
   constructor(game) {
     super({ game, name: 'Mountain House' });
-    this.getDescription = () => {
-      const ps = [
-        snl`Inside the mountain house, the many windows create an atmosphere of
-          light, but as it is cloudy outside, you find yourself wishing for a
-          little more.`,
-        snl`There's a comfy-looking bed, in case you need a rest.`,
-        snl`There's a deep hole in the floor. You can't see the bottom, but you could fit yourself inside.`,
-      ];
-      return ps.join('\n\n');
-    };
+  }
+
+  public getDescription(game) {
+    const ps = [
+      snl`Inside the mountain house, the many windows create an atmosphere of
+        light, but as it is cloudy outside, you find yourself wishing for a
+        little more.`,
+      snl`There's a comfy-looking bed, in case you need a rest.`,
+      snl`There's a deep hole in the floor. You can't see the bottom, but you
+        could fit yourself inside.`,
+    ];
+    return ps.join('\n\n');
   }
 
   public setLocationKeywords(game) {
@@ -28,8 +30,8 @@ export class MountainHouseLocation extends Location {
         this.followExit(
           DOWN,
           snl`Fortunately, there's a ladder leading straight down the hole, so
-          you don't have to jump down an unknown distance through complete
-          darkness.`
+            you don't have to jump down an unknown distance through complete
+            darkness.`
         )
     );
     this.addKeyword(['SLEEP', 'BED'], `Take a rest on the comfy-looking bed`, () => {

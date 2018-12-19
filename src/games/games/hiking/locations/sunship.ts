@@ -5,17 +5,17 @@ import { EAST, UP } from '../constants';
 export class SunshipLocation extends Location {
   constructor(game) {
     super({ game, name: 'Sun Ship, on Earth' });
-    this.getDescription = () => {
-      const lns = [
-        snl`Pretty nice in here. Whatever alien species created this ship did a good job.`,
-        snl`The controls here look pretty simple. There's just one big button that says "PUSH_ME"`,
-      ];
-      return parajoin(lns);
-    };
   }
 
-  // buy
-  // talk
+  public getDescription(game) {
+    const lns = [
+      snl`Pretty nice in here. Whatever alien species created this ship did a
+        good job.`,
+      snl`The controls here look pretty simple. There's just one big button
+        that says "PUSH_ME"`,
+    ];
+    return parajoin(lns);
+  }
 
   public setLocationKeywords(/*game*/) {
     const pxUp = snl`You close your eyes, hold your breath, and slam your hand

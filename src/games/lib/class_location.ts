@@ -6,7 +6,6 @@ import { parajoin } from './parajoin';
 
 export class Location {
   public followExit: (direction: string, prefix?: string) => KeywordResponse;
-  public getDescription: (game: AdventureGame) => string;
   public getInstructions: (game: AdventureGame) => string;
   public hasKeyword: (keyword: string) => boolean;
   public addKeyword: (
@@ -86,6 +85,10 @@ export class Location {
         location: this,
       });
     }
+  }
+
+  public getDescription(game: AdventureGame) {
+    throw new Error('Location superclass has no description of its own');
   }
 
   public getDescriptionInternal(game: AdventureGame) {

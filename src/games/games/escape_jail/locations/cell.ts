@@ -10,18 +10,18 @@ export class CellLocation extends Location {
     super({ game, name: 'The Jail Cell' });
     this.guardsWatching = true;
     this.forceAware = false;
+  }
 
-    this.getDescription = () => {
-      const desc = [
-        snl`You're locked up securely in a jail cell. A hole in the ceiling
-          marks where you crashed through accidentally when you got here.`,
-      ];
-      if (!this.forceAware) {
-        desc.push(snl`There is a jail key on a far wall across the hallway from
-                  your jail cell.`);
-      }
-      return desc.join('\n\n');
-    };
+  public getDescription(game) {
+    const desc = [
+      snl`You're locked up securely in a jail cell. A hole in the ceiling
+        marks where you crashed through accidentally when you got here.`,
+    ];
+    if (!this.forceAware) {
+      desc.push(snl`There is a jail key on a far wall across the hallway from
+                your jail cell.`);
+    }
+    return desc.join('\n\n');
   }
 
   public setLocationKeywords(game) {
@@ -88,3 +88,4 @@ export class CellLocation extends Location {
     }
   }
 }
+

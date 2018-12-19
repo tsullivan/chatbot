@@ -8,7 +8,7 @@ const { handshake, send, checkResponses } = utilFactory(agent);
 
 describe('escape-jail', () => {
   test('escape', async () => {
-    await handshake(app);
+    await handshake();
     const resps = [];
     resps[resps.length] = await send('play escape_jail');
     resps[resps.length] = await send('items');

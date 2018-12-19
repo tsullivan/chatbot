@@ -5,22 +5,23 @@ import { APPLES, CAR, ENEMIES, NORTH, SOUTH } from '../constants';
 export class LakeLocation extends Location {
   constructor(game) {
     super({ game, name: 'Lake' });
-    this.getDescription = () => {
-      const lns = [
-        snl`This lake is beautiful, but the cloudy sky gives it a grim
-        appearance. This seems to be a place of battle.`,
-      ];
-      if (game.inInventory(ENEMIES) && !game.inInventory(CAR)) {
-        lns.push(snl`There are enemies are in the lake. The shores of the lake are
-          too far away from them to do anything about them, though`);
-      } else if (game.inInventory(CAR)) {
-        lns.push(snl`There are enemies are in the lake. You're floating over their
-          heads in your flying car.`);
-      } else {
-        lns.push('The enemies in the lake have been defeated!');
-      }
-      return parajoin(lns);
-    };
+  }
+
+  public getDescription(game) {
+    const lns = [
+      snl`This lake is beautiful, but the cloudy sky gives it a grim
+      appearance. This seems to be a place of battle.`,
+    ];
+    if (game.inInventory(ENEMIES) && !game.inInventory(CAR)) {
+      lns.push(snl`There are enemies are in the lake. The shores of the lake are
+        too far away from them to do anything about them, though`);
+    } else if (game.inInventory(CAR)) {
+      lns.push(snl`There are enemies are in the lake. You're floating over their
+        heads in your flying car.`);
+    } else {
+      lns.push('The enemies in the lake have been defeated!');
+    }
+    return parajoin(lns);
   }
 
   public setLocationKeywords(game) {

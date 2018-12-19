@@ -6,15 +6,16 @@ import { EAST, WEST } from '../constants';
 export class RocksLocation extends Location {
   constructor(game) {
     super({ game, name: 'Rocky place' });
-    this.getDescription = () => {
-      const lns = [
-        snl`There's rocks everywhere on the path here. Be careful! You could
+  }
+
+  public getDescription(game) {
+    const lns = [
+      snl`There's rocks everywhere on the path here. Be careful! You could
         trip, or if you horseplay, a rock could fall on your head, or you could
-          fall off the path and down a cliff.`,
-        snl`If you are careful, you could cross the rocks to get to a waterfall.`,
-      ];
-    return parajoin(lns);
-    };
+        fall off the path and down a cliff.`,
+      snl`If you are careful, you could cross the rocks to get to a waterfall.`,
+    ];
+  return parajoin(lns);
   }
 
   public setLocationKeywords(game) {
@@ -33,9 +34,9 @@ export class RocksLocation extends Location {
         game.branchToGame(
           EscapeJail,
           snl`You start slapping yourself in the face, and get dizzy. You can't
-          control where you're going and suddenly you start to fall! You aren't
-          sure what happens next, but there are a lot of thuds and bumbs. That
-          goes on for a long time. Then you find yourself in a new place...`
+            control where you're going and suddenly you start to fall! You aren't
+            sure what happens next, but there are a lot of thuds and bumbs. That
+            goes on for a long time. Then you find yourself in a new place...`
         )
     );
   }

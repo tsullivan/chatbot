@@ -7,16 +7,16 @@ export class SoapLocation extends Location {
 
   constructor(game) {
     super({ game, name: 'The Soap Store' });
+  }
 
-    this.getDescription = () => {
-      const lns = [
-        snl`Oh my goodness, this store has so much soap! It is by far the
-        soapiest place you have ever been in!`,
-        snl`Another thing you notice right away is that there is an extremely
-        strong fragrance of clean in this place.`,
-      ];
-      return parajoin(lns);
-    };
+  public getDescription(game) {
+    const lns = [
+      snl`Oh my goodness, this store has so much soap! It is by far the
+      soapiest place you have ever been in!`,
+      snl`Another thing you notice right away is that there is an extremely
+      strong fragrance of clean in this place.`,
+    ];
+    return parajoin(lns);
   }
 
   public setLocationKeywords(/*game*/) {

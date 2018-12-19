@@ -7,11 +7,12 @@ export class CaveLocation extends Location {
 
   constructor(game) {
     super({ game, name: 'Cheery Cave' });
-    this.getDescription = () => {
-      return snl`It's unnaturally cheery in this smelly old cave. Probably
-      because of the tiny village of tiny dancing skeleton hands. So cute! So
-      tiny! So skeleton handsy!`;
-    };
+  }
+
+  public getDescription(game) {
+    return snl`It's unnaturally cheery in this smelly old cave. Probably
+    because of the tiny village of tiny dancing skeleton hands. So cute! So
+    tiny! So skeleton handsy!`;
   }
 
   public setLocationKeywords(game) {

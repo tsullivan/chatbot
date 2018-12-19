@@ -7,19 +7,20 @@ export class WaterfallLocation extends Location {
 
   constructor(game) {
     super({ game, name: 'Really giant waterfall' });
-    this.getDescription = () => {
-      const lns = [
-        snl`It is so magical here.`,
-        snl`This waterfall is at the bottom of a giant mountain and a bunch of
-          trees. There's a path up the mountain, and you can try to see the top
-          of the mountain, but it's so tall that it hurts your neck to look at
-          it.`,
-        snl`There's a climbing rope that leads to a really big circle. You're not
-        sure what it is, and you don't feel strong enough to climb up right now.`,
-        snl`There's water spraying everywhere!`,
-      ];
-      return parajoin(lns);
-    };
+  }
+
+  public getDescription(game) {
+    const lns = [
+      snl`It is so magical here.`,
+      snl`This waterfall is at the bottom of a giant mountain and a bunch of
+        trees. There's a path up the mountain, and you can try to see the top
+        of the mountain, but it's so tall that it hurts your neck to look at
+        it.`,
+      snl`There's a climbing rope that leads to a really big circle. You're not
+      sure what it is, and you don't feel strong enough to climb up right now.`,
+      snl`There's water spraying everywhere!`,
+    ];
+    return parajoin(lns);
   }
 
   public setLocationKeywords(/*game*/) {

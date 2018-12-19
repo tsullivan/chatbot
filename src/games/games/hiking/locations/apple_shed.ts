@@ -8,24 +8,25 @@ export class AppleShedLocation extends Location {
 
   constructor(game) {
     super({ game, name: 'The Apple Store' });
-    this.getDescription = () => {
-      const lns = [
-        snl`You're in a giant, giant red sphere in the trees. This is an Apple
-          Store. On the inside, it actually a shed. Inside there are many, many
-          shelves full of apples. It looks like there are exactly
-          ${this.numApples} apples.`,
-      ];
-      if (this.numApples > 0) {
-        lns.push(
-          snl`There's no one in the store, but there's a man standing on a tree
-            branch out back. He looks inside a window and sees you, then he comes
-            in and says a friendly hello.`,
-          snl`"Oh, a customer! Would you like to buy an apple?" he says.`
-        );
-        // TODO npc class that knows if the character has said a certain thing yet
-      }
-      return parajoin(lns);
-    };
+  }
+
+  public getDescription(game) {
+    const lns = [
+      snl`You're in a giant, giant red sphere in the trees. This is an Apple
+        Store. On the inside, it actually a shed. Inside there are many, many
+        shelves full of apples. It looks like there are exactly
+        ${this.numApples} apples.`,
+    ];
+    if (this.numApples > 0) {
+      lns.push(
+        snl`There's no one in the store, but there's a man standing on a tree
+          branch out back. He looks inside a window and sees you, then he comes
+          in and says a friendly hello.`,
+        snl`"Oh, a customer! Would you like to buy an apple?" he says.`
+      );
+      // TODO npc class that knows if the character has said a certain thing yet
+    }
+    return parajoin(lns);
   }
 
   public setLocationKeywords(game) {

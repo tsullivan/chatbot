@@ -32,7 +32,7 @@ describe('batman', () => {
   });
 
   test('should lose at the batman game', async () => {
-    await handshake(app);
+    await handshake();
 
     const { body: a2 } = await sendTest('play batman');
     expect(testFields(a2)).toMatchSnapshot();

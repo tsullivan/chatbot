@@ -5,10 +5,11 @@ import { DOWN } from '../constants';
 export class TreeFortLocation extends Location {
   constructor(game) {
     super({ game, name: 'The Tree Fort' });
-    this.getDescription = () => {
-      return snl`This tree fort is so tall! It has a big window with a clear
-        view of the entire playground.`;
-    };
+  }
+
+  public getDescription(game) {
+    return snl`This tree fort is so tall! It has a big window with a clear
+      view of the entire playground.`;
   }
 
   public setLocationKeywords(/*game*/) {

@@ -5,15 +5,16 @@ import { EAST, NORTH } from '../constants';
 export class StartLocation extends Location {
   constructor(game) {
     super({ game, name: 'Dark Forest' });
-    this.getDescription = () => {
-      const lns = [
-        snl`It is the night time. You are outside, surrounded by dark trees, and
-         you're very tired. There is a castle and a cave.`,
-        snl`Which way looks to be best to find a nice comfy bed to rest? I didn't
-          mean for that to rhyme.`,
-      ];
-      return parajoin(lns);
-    };
+  }
+
+  public getDescription(game) {
+    const lns = [
+      snl`It is the night time. You are outside, surrounded by dark trees, and
+       you're very tired. There is a castle and a cave.`,
+      snl`Which way looks to be best to find a nice comfy bed to rest? I didn't
+        mean for that to rhyme.`,
+    ];
+    return parajoin(lns);
   }
 
   public setLocationKeywords() {

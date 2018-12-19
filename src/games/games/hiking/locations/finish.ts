@@ -5,14 +5,15 @@ import { SOUTH } from '../constants';
 export class FinishLocation extends Location {
   constructor(game) {
     super({ game, name: 'Finish Line' });
-    this.getDescription = () => {
-      const lns = [
-        snl`The finish line looks like a robot. You can ask the robot to take out
+  }
+
+  public getDescription(game) {
+    const lns = [
+      snl`The finish line looks like a robot. You can ask the robot to take out
         a flag, and that will finish this hiking game.`,
-        snl`Ready to end the hiking journey?`,
-      ];
-      return parajoin(lns);
-    };
+      snl`Ready to end the hiking journey?`,
+    ];
+    return parajoin(lns);
   }
 
   public setLocationKeywords(/*game*/) {

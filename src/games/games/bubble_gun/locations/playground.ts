@@ -5,18 +5,19 @@ import { EAST, NORTH, SOUTH, UP, WEST } from '../constants';
 export class PlaygroundLocation extends Location {
   constructor(game) {
     super({ game, name: 'The Playground' });
-    this.getDescription = () => {
-      const parts = [];
-      parts[parts.length] = snl`This playground is right in the center of Bubble
-      Gun World. It has things that are fun for kids, and there's a ladder to a
-        tree fort!!!`;
-      parts[parts.length] = snl`Off the corner of the road, there's a bridge
-      leading out of Bubble Gun World.`;
-      parts[parts.length] = snl`Nearby is also an Electronics store, a Soaps
-      store, and a Magnets store. I hope you like stores! There are a lot of
-      stores in this game. But guess what: everything in them is FREE!!`;
-      return parts.join('\n\n');
-    };
+  }
+
+  public getDescription(game) {
+    const parts = [
+      snl`This playground is right in the center of Bubble Gun World. It has
+        things that are fun for kids, and there's a ladder to a tree fort!!!`,
+      snl`Off the corner of the road, there's a bridge leading out of Bubble
+        Gun World.`,
+      snl`Nearby is also an Electronics store, a Soaps store, and a Magnets
+        store. I hope you like stores! There are a lot of stores in this game.
+        But guess what: everything in them is FREE!!`,
+    ];
+    return parts.join('\n\n');
   }
 
   public setLocationKeywords(/*game*/) {
