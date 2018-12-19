@@ -1,16 +1,18 @@
-const { KeywordResponder } = require('../class_keyword_responder');
+import { KeywordResponder as CKeywordResponder} from '../class_keyword_responder';
 
-class SayResponder extends KeywordResponder {
+class SayResponder extends CKeywordResponder {
+  private thingToSay: string;
+
   constructor(input) {
     super(input);
-    this.name = 'say';
+    this.setName('say');
     this.thingToSay = null;
   }
 
-  testMatch(input) {
+  public testMatch(input) {
     const matches = input.match(/^say (.*)$/);
     if (matches !== null) {
-      const [_matched, thingToSay] = matches;
+      const thingToSay = matches[1];
       if (thingToSay.trim() !== '') {
         this.thingToSay = thingToSay;
       }
@@ -19,15 +21,15 @@ class SayResponder extends KeywordResponder {
     return input.match(/^say\b(.*)$/);
   }
 
-  help() {
+  public help() {
     return `\`say\`: Type \`say something\` and see what happens.`;
   }
 
-  justDont() {
+  public justDont() {
     return `Just don't tell me to say something.`;
   }
 
-  getResponse() {
+  public getResponse() {
     if (this.thingToSay === null) {
       return this.help();
     }
@@ -36,4 +38,4 @@ class SayResponder extends KeywordResponder {
   }
 }
 
-module.exports = { KeywordResponder: SayResponder };
+export const KeywordResponder = SayResponder;

@@ -1,10 +1,10 @@
-const apm = require('elastic-apm-node');
-const { KeywordResponder } = require('../class_keyword_responder');
+import * as apm from 'elastic-apm-node';
+import { KeywordResponder as CKeywordResponder} from '../class_keyword_responder';
 
-class WhatResponder extends KeywordResponder {
+class WhatResponder extends CKeywordResponder {
   constructor(input, chat) {
     super(input);
-    this.name = 'what';
+    this.setName('what');
     this.setFormat('markdown');
 
     this.getResponse = () => {
@@ -24,9 +24,9 @@ class WhatResponder extends KeywordResponder {
     };
   }
 
-  testMatch(input) {
+  public testMatch(input) {
     return input.match(/^what\b/);
   }
 }
 
-module.exports = { KeywordResponder: WhatResponder };
+export const KeywordResponder = WhatResponder;

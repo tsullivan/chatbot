@@ -1,18 +1,18 @@
-const { KeywordResponder } = require('../class_keyword_responder');
-const { getResponders } = require('../get_responders');
+import { KeywordResponder as CKeywordResponder} from '../class_keyword_responder';
+import { getResponders } from '../get_responders';
 
-class HelpResponder extends KeywordResponder {
+class HelpResponder extends CKeywordResponder {
   constructor(input) {
     super(input);
-    this.name = 'help';
+    this.setName('help');
     this.setFormat('markdown');
   }
 
-  testMatch(input) {
+  public testMatch(input) {
     return input.match(/^help\b/);
   }
 
-  getResponse() {
+  public getResponse() {
     const responders = getResponders();
     const responderKeys = Object.keys(responders);
     const usableResponders = responderKeys.filter(key => {
@@ -23,7 +23,7 @@ class HelpResponder extends KeywordResponder {
     // check if ask for help about keyword
     const keywordMatches = this.input.match(/^help (\S+)$/);
     if (keywordMatches !== null) {
-      const [_match, keyword] = keywordMatches;
+      const keyword = keywordMatches[1];
 
       if (responders[keyword] !== undefined) {
         const responder = new responders[keyword].KeywordResponder();
@@ -36,4 +36,4 @@ class HelpResponder extends KeywordResponder {
   }
 }
 
-module.exports = { KeywordResponder: HelpResponder };
+export const KeywordResponder = HelpResponder;

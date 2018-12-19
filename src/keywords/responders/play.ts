@@ -1,17 +1,17 @@
-const { KeywordResponder } = require('../class_keyword_responder');
-const { getGames } = require('../../games');
+import { getGames } from '../../games';
+import { KeywordResponder as CKeywordResponder} from '../class_keyword_responder';
 
 const games = getGames();
 
-class GameResponder extends KeywordResponder {
+class GameResponder extends CKeywordResponder {
   constructor(input, session) {
     super(input);
-    this.name = 'play';
+    this.setName('play');
     this.setFormat('markdown');
 
     this.getResponse = () => {
       const game = input.replace(/^play /, '');
-      if (Object.keys(games).includes(game)) {
+      if (Object.keys(games).indexOf(game) >= 0) {
         session.setGame(game);
         return session.getGameWelcome();
       } else {
@@ -20,15 +20,15 @@ class GameResponder extends KeywordResponder {
     };
   }
 
-  testMatch(input) {
+  public testMatch(input) {
     return input.match(/^play\b/);
   }
 
-  justDont() {
+  public justDont() {
     return `Just don't say "play batman"`;
   }
 
-  help() {
+  public help() {
     const gameKeys = Object.keys(games);
     return `\`play\`: Play a game with me!\nUsage: \`play <game name>\`\nHere are the games I have: ${gameKeys.join(
       ', '
@@ -36,4 +36,4 @@ class GameResponder extends KeywordResponder {
   }
 }
 
-module.exports = { KeywordResponder: GameResponder };
+export const KeywordResponder = GameResponder;

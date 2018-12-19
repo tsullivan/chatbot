@@ -1,11 +1,13 @@
-const { sample } = require('lodash');
-const { KeywordResponder } = require('../class_keyword_responder');
-const { getResponders } = require('../get_responders');
+import { sample } from 'lodash';
+import { KeywordResponder as CKeywordResponder} from '../class_keyword_responder';
+import { getResponders } from '../get_responders';
 
-class RandomResponder extends KeywordResponder {
+class RandomResponder extends CKeywordResponder {
+  private getRandomResponder: () => CKeywordResponder;
+
   constructor(input, chat) {
     super(input);
-    this.name = 'random';
+    this.setName('random');
 
     this.getRandomResponder = () => {
       const responders = getResponders();
@@ -19,18 +21,18 @@ class RandomResponder extends KeywordResponder {
     };
   }
 
-  testMatch(input) {
+  public testMatch(input) {
     return input.match(/^random\b/);
   }
 
-  justDont() {
+  public justDont() {
     return `Just don't say "random". I'm not sure what will happen!`;
   }
 
-  getResponse() {
+  public getResponse() {
     const responder = this.getRandomResponder();
     return responder.getRandom();
   }
 }
 
-module.exports = { KeywordResponder: RandomResponder };
+export const KeywordResponder = RandomResponder;

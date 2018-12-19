@@ -1,5 +1,5 @@
 export class KeywordResponder {
-  private input: string;
+  protected input: string;
   private name: string | null;
   private format: string;
 

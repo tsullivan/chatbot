@@ -1,16 +1,20 @@
-const { KeywordResponder } = require('../class_keyword_responder');
+import { KeywordResponder as CKeywordResponder} from '../class_keyword_responder';
 
-class RepeatResponder extends KeywordResponder {
+class RepeatResponder extends CKeywordResponder {
+  private num: number;
+  private phrase: string;
+
   constructor(input) {
     super(input);
-    this.name = 'repeat';
+    this.setName('repeat');
     this.phrase = null;
   }
 
-  testMatch(input) {
-    const _matches = input.match(/^repeat ([0-9]+) ([\S ]+)$/);
-    if (_matches !== null) {
-      const [_matched, num, phrase] = _matches;
+  public testMatch(input) {
+    const matches = input.match(/^repeat ([0-9]+) ([\S ]+)$/);
+    if (matches !== null) {
+      const num = matches[1];
+      const phrase = matches[2];
       if (num > 0 && num <= 1000) {
         this.num = num;
         this.phrase = phrase;
@@ -20,16 +24,16 @@ class RepeatResponder extends KeywordResponder {
     return input.match(/^repeat\b/);
   }
 
-  help() {
+  public help() {
     return `\`repeat\`: Repeats a phrase between 1-1000 times.
       Usage: \`repeat <NUM> <PHRASE>\``;
   }
 
-  justDont() {
+  public justDont() {
     return `Just don't say "repeat 50 blah"`;
   }
 
-  getResponse() {
+  public getResponse() {
     if (this.phrase === null) {
       return this.help();
     }
@@ -42,4 +46,4 @@ class RepeatResponder extends KeywordResponder {
   }
 }
 
-module.exports = { KeywordResponder: RepeatResponder };
+export const KeywordResponder = RepeatResponder;
