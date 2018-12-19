@@ -26,7 +26,7 @@ export class DictionaryResponder extends KeywordResponder {
   public setParsedRequestedDictionaryItem(input, regex) {
     const matches = input.match(regex);
     if (matches !== null) {
-      const requested = matches[1];
+      const requested = matches.splice(1, 1);
       const parsedRequested = parseInt(requested, 10);
       if (!Number.isNaN(parsedRequested)) {
         this.requested = parsedRequested;

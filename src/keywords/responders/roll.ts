@@ -15,7 +15,7 @@ class RollResponder extends CKeywordResponder {
   public testMatch(input) {
     const matches = input.match(/^roll ([1-9]+[0-9]?)/);
     if (matches !== null) {
-      const sides = matches[1];
+      const sides = matches.splice(1, 1);
       this.sides = parseInt(sides, 10);
     }
 

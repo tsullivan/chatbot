@@ -1,20 +1,27 @@
-const { capitalize, cloneDeep, sample } = require('lodash');
-const { roll } = require('../../lib');
+import { capitalize, cloneDeep, sample } from 'lodash';
+import { roll } from '../../lib';
+
 const getData = () => cloneDeep(require('./dictionary'));
 
 function reduce(cb, accum) {
   const data = getData();
-  for (let kI = 0; kI < Object.keys(data).length; kI++) {
-    const kSet = Object.keys(data)[kI];
+  const dataKeys = Object.keys(data);
+  for (const kI in dataKeys) {
+    if (dataKeys.hasOwnProperty(kI)) {
+      const kSet = dataKeys[kI];
 
-    for (let sI = 0; sI < data[kSet].length; sI++) {
-      const s = data[kSet][sI];
-      const matches = s.match(/\${\S+:[^}]+}/g);
-      if (matches) {
-        for (let mI = 0; mI < matches.length; mI++) {
-          const m = matches[mI];
-          const [_match, kind, thing] = m.match(/\${(\S+):([^}]+)}/);
-          accum = cb(accum, kSet, kind, thing, sI);
+      for (let sI = 0; sI < data[kSet].length; sI++) {
+        const s = data[kSet][sI];
+        const matches = s.match(/\${\S+:[^}]+}/g);
+        if (matches) {
+          for (const mI in matches) {
+            if (matches.hasOwnProperty(mI)) {
+              const m = matches[mI];
+              const subMatches = m.match(/\${(\S+):([^}]+)}/);
+              const [ kind, thing ] = subMatches.splice(1, 2);
+              accum = cb(accum, kSet, kind, thing, sI);
+            }
+          }
         }
       }
     }
@@ -22,7 +29,7 @@ function reduce(cb, accum) {
   return accum;
 }
 
-const _vocabulary = reduce((accum, _kSet, kind, thing) => {
+const vocabulary = reduce((accum, kSet, kind, thing) => {
   if (accum[kind]) {
     accum[kind].push(thing);
   } else {
@@ -42,7 +49,7 @@ function runDictionary(kSet = '') {
     const currValue = data[myKSet][i];
     let newValue;
     if (roll(2).result === 1) {
-      let replacer = sample(_vocabulary[kind]);
+      let replacer = sample(vocabulary[kind]);
       if (thing.match(/^[A-Z]/)) {
         replacer = capitalize(replacer);
       }
