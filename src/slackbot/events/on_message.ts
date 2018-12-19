@@ -25,11 +25,9 @@ export function onMessageFactory(
 
     let response;
     if (isDm) {
-      log.debug(['message', 'dm'], `Direct Message from ${user}`);
       response = await bot.handleSlackChat(user, chatBody);
     } else {
       if (isMention) {
-        log.debug(['message', 'mention'], `Mention from ${user} in ${channel}`);
         const rMessage = new RandomMessage(chatBody, text, 'user');
         response = rMessage.makeResponse(chatBody);
       }

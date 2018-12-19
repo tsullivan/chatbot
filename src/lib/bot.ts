@@ -13,22 +13,18 @@ export class Bot implements IBot {
   private metrics: Metrics;
   private slackChannelId;
   private slackBotId;
-  private log: ILog;
 
   constructor() {
     this.metrics = new Metrics();
-    this.log = this.getLogger(['bot', 'internal']);
   }
 
   public handleSlackChat(userId: string, chatBody): Promise<IChatResponse> {
     if (slackSessions.has(userId)) {
-      this.log.debug(['slack', 'session'], `Found slack session ${userId}`);
       const sess = slackSessions.get(userId);
       return handleChat(chatBody, sess.chat);
     }
 
     // default, initialize
-    this.log.debug(['slack', 'session'], `Create new slack session for ${userId}`);
     const slackSession = new SlackSession(userId, this);
     const chatSession = new ChatSession(this, slackSession);
 
