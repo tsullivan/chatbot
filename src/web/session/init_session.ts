@@ -1,5 +1,5 @@
 import * as session from 'express-session';
-import { session_secret as sessionSecret } from '../../../config';
+import { sessionSecret } from '../../../config';
 import { Bot } from '../../lib';
 import { ChatSession } from './chat_session';
 

@@ -2,7 +2,7 @@ import { defaultsDeep } from 'lodash';
 
 interface IConfig {
   env: string;
-  session_secret: string;
+  sessionSecret: string;
   apm: {
     serviceName: string;
     active: boolean;
@@ -42,6 +42,6 @@ function getEnvConfig(envString: string): IConfig {
   }
 }
 
-export const { apm, env, port, session_secret, slack } = getEnvConfig(
+export const { apm, env, port, sessionSecret, slack } = getEnvConfig(
   process.env.NODE_ENV
 );
