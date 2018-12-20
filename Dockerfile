@@ -17,5 +17,6 @@ COPY . .
 EXPOSE 8080
 
 ENV NODE_ENV=docker
+ENV DEBUG=chatbot:*
 
-CMD [ "node", "index.js", "--web" ]
+CMD [ "node", "index.js", "--web", "--slack" ]

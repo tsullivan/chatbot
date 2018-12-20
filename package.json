@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production node index.js --web --slack",
     "test": "yarn run lint && yarn run jest",
     "dev": "DEBUG='chatbot:*' NODE_ENV=development nodemon -e js,ts,json index.js --web",
     "dev-slack": "DEBUG='chatbot:*' NODE_ENV=development nodemon -e js,ts,json index.js --slack --web=false",
