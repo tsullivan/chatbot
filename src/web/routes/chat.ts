@@ -1,18 +1,17 @@
 import { json as parseJson } from 'body-parser';
 import * as apm from 'elastic-apm-node';
 import * as express from 'express-session';
-import { handleChat } from '../../handle_chat';
-import { IBot } from '../../types';
+import { Bot } from '../..//bot';
 
 const jsonParser = parseJson({ type: 'application/json' });
 
-export function chatRoute(app: express.Application, bot: IBot) {
+export function chatRoute(app: express.Application, bot: Bot) {
   app.post('/chat', jsonParser, async (req, res) => {
     apm.startTransaction();
     const log = bot.getLogger(['web', 'routes']);
 
     try {
-      const result = handleChat(req.body, req.session.chat);
+      const result = bot.handleChat(req.body, req.session.chat);
       res.json(result);
     } catch (err) {
       log.error([], err);
@@ -31,3 +30,6 @@ export function chatRoute(app: express.Application, bot: IBot) {
     apm.endTransaction();
   });
 }
+
+// method to handle chat: Bot:handleChat
+// pass in the session object and the chat message object

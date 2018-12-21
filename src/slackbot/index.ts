@@ -1,1 +1,1 @@
-export { runBot } from './run_bot';
+export { SlackBot } from './slackbot';

@@ -1,5 +1,5 @@
 import * as apm from 'elastic-apm-node';
-import { keywordTester } from '../keywords';
+import { keywordTester } from '../../keywords';
 import { ResponseMessage } from './response_message';
 
 export class SmartMessage extends ResponseMessage {

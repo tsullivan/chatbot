@@ -1,5 +1,5 @@
 import { defaultsDeep } from 'lodash';
-import { Bot } from '../../lib';
+import { Bot } from '../../bot';
 import { ChatSession, ChatSessionProto, IWebSession } from '../../web/session';
 
 export class SlackSession implements IWebSession {

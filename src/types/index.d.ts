@@ -1,5 +1,6 @@
 import * as express from 'express-session';
 import { ChatGame } from '../games';
+import { ChatSession } from '../web/session';
 
 export type TSessionGames = Map<string, ChatGame>;
 
@@ -27,10 +28,12 @@ export interface ILog {
   error: (tags: string[], err: Error) => ILogLine;
 }
 
-export interface IBot {
-  getLogger: (tag?: string[]) => ILog;
-  getMetrics: (req: express.Request) => IMetrics;
-  getSessionGame: (sessionId: string) => ChatGame;
-  setGame: (sessionId: string, game: ChatGame) => void;
-  removeGame: (sessionId: string) => void;
+export interface IChatBody {
+  message: string;
+  format: string;
+  time: Date;
+}
+
+export interface IChatResponse {
+  message: string;
 }

@@ -1,4 +1,4 @@
-import { KeywordResponder as Impromptu } from '../keywords/responders/random';
+import { KeywordResponder as Impromptu } from '../../keywords/responders/random';
 import { ResponseMessage } from './response_message';
 
 export class RandomMessage extends ResponseMessage {

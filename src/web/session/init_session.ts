@@ -1,6 +1,6 @@
 import * as session from 'express-session';
 import { sessionSecret } from '../../../config';
-import { Bot } from '../../lib';
+import { Bot } from '../../bot';
 import { ChatSession } from './chat_session';
 
 export function initSession(bot: Bot, app: session.Application) {

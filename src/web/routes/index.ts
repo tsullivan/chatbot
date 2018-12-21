@@ -1,5 +1,5 @@
 import * as express from 'express-session';
-import { Bot } from '../../lib';
+import { Bot } from '../../bot';
 import { chatRoute } from './chat';
 import { statsRoute } from './stats';
 

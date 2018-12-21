@@ -3,8 +3,8 @@ import * as apmNode from 'elastic-apm-node';
 import * as express from 'express';
 import { join } from 'path';
 import { apm as apmConfig } from '../../config';
+import { Bot } from '../bot';
 import { BOT_NAME, PORT } from '../constants';
-import { Bot } from '../lib';
 import { initRoutes } from './routes';
 import { initSession } from './session';
 

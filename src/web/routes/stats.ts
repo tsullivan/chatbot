@@ -1,7 +1,7 @@
 import * as express from 'express-session';
-import { IBot } from '../../types';
+import { Bot } from '../..//bot';
 
-export function statsRoute(app: express.Application, bot: IBot) {
+export function statsRoute(app: express.Application, bot: Bot) {
   app.get('/stats', (req: express.Request, res) => {
     res.json(bot.getMetrics(req));
   });

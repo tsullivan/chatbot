@@ -1,11 +1,12 @@
 import { RTMClient } from '@slack/client';
-import { Bot } from '../../lib';
+import { Bot } from '../../bot';
+import { SlackBot } from '../slackbot';
 import { onMessageFactory } from './on_message';
 
 // mocks
-const bot = new Bot();
-bot.setSlackChannel('CUTC234A');
-bot.setSlackBotId('B345ISJ38');
+const slackBot = new SlackBot(new Bot());
+slackBot.setSlackChannel('CUTC234A');
+slackBot.setSlackBotId('B345ISJ38');
 
 const rtm = new RTMClient('test 123');
 jest
@@ -22,9 +23,9 @@ describe('Slackbot / RTM / On Message', () => {
     const sendMsgSpy = jest.spyOn(rtm, 'sendMessage');
 
     // @ts-ignore
-    const onMessage = onMessageFactory(bot, rtm);
+    const onMessage = onMessageFactory(slackBot, rtm);
     const event = {
-      channel: bot.getSlackChannel(),
+      channel: slackBot.getSlackChannel(),
       text: `Test message with nothing interesting for the day`,
       user: 'U123TSTTSTTS',
     };
@@ -38,10 +39,10 @@ describe('Slackbot / RTM / On Message', () => {
     const sendMsgSpy = jest.spyOn(rtm, 'sendMessage');
 
     // @ts-ignore
-    const onMessage = onMessageFactory(bot, rtm);
+    const onMessage = onMessageFactory(slackBot, rtm);
     const event = {
-      channel: bot.getSlackChannel(),
-      text: `Test message to ${bot.getSlackBotId()} for the day`,
+      channel: slackBot.getSlackChannel(),
+      text: `Test message to ${slackBot.getSlackBotId()} for the day`,
       user: 'U123TSTTSTTS',
     };
 
@@ -54,11 +55,11 @@ describe('Slackbot / RTM / On Message', () => {
     const sendMsgSpy = jest.spyOn(rtm, 'sendMessage');
 
     // @ts-ignore
-    const onMessage = onMessageFactory(bot, rtm);
+    const onMessage = onMessageFactory(slackBot, rtm);
     const events = [
       {
         channel: 'DPGYRT3485',
-        text: `Test message, bot`,
+        text: `Test message, slackBot`,
         user: 'U123TSTT',
       },
       {

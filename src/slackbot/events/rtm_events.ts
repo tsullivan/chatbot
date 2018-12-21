@@ -1,19 +1,19 @@
 import { RTMClient } from '@slack/client';
-import { Bot } from '../../lib';
+import { SlackBot } from '../slackbot';
 import { onMessageFactory } from './on_message';
 
-export async function initRTMEvents(bot: Bot, rtm: RTMClient) {
-  const log = bot.getLogger(['slack', 'rtm', 'events']);
+export async function initRTMEvents(slackBot: SlackBot, rtm: RTMClient) {
+  const log = slackBot.getLogger(['slack', 'rtm', 'events']);
   rtm.start();
 
   // Do hello message
   const currentTime = new Date().toTimeString();
   await rtm.sendMessage(
-    `Hello, ${bot.getSlackChannel()} the current time is ${currentTime}`,
-    bot.getSlackChannel()
+    `Hello, ${slackBot.getSlackChannel()} the current time is ${currentTime}`,
+    slackBot.getSlackChannel()
   );
 
-  rtm.on('message', onMessageFactory(bot, rtm));
+  rtm.on('message', onMessageFactory(slackBot, rtm));
 
   /* debug */
   rtm.on('hello', event => {

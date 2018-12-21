@@ -1,8 +1,8 @@
 import * as apm from 'elastic-apm-node';
 import { defaultsDeep, mean } from 'lodash';
+import { Bot } from '../../bot';
 import { getGames } from '../../games';
 import { ChatGame } from '../../games/chat_game';
-import { Bot } from '../../lib';
 import { mapFieldToResponse } from './map_field_to_response';
 
 export interface IWebSession {

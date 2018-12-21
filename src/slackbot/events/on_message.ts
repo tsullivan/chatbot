@@ -1,16 +1,16 @@
 import { RTMClient } from '@slack/client';
-import { RandomMessage } from '../../handle_chat';
-import { Bot } from '../../lib';
+import { RandomMessage } from '../../bot';
+import { SlackBot } from '../slackbot';
 
 interface IMessagePayload {
   message: string;
 }
 
 export function onMessageFactory(
-  bot: Bot,
+  slackBot: SlackBot,
   rtm: RTMClient
 ): (event: any) => Promise<IMessagePayload> {
-  const log = bot.getLogger(['slack', 'onmessage']);
+  const log = slackBot.getLogger(['slack', 'onmessage']);
 
   return async event => {
     const { user, text, channel } = event;
@@ -21,11 +21,11 @@ export function onMessageFactory(
     };
 
     const isDm = event.channel.indexOf('D') === 0;
-    const isMention = event.text.indexOf(`${bot.getSlackBotId()}`) > 0;
+    const isMention = event.text.indexOf(`${slackBot.getSlackBotId()}`) > 0;
 
     let response;
     if (isDm) {
-      response = await bot.handleSlackChat(user, chatBody);
+      response = await slackBot.handleSlackChat(user, chatBody);
     } else {
       if (isMention) {
         const rMessage = new RandomMessage(chatBody, text, 'user');
