@@ -34,7 +34,7 @@ class GuessNumber extends ChatGame {
     if (guess < 1 || guess > GUESS_BOUND) {
       this.score -= 2;
       return notDone(
-        `WRONG. The number is between 1 and ${GUESS_BOUND}. ${guess} isn't that, ${this.getPlayerName()}!`
+        `WRONG. The number is between 1 and ${GUESS_BOUND}. ${guess} isn't that, ${this.getPlayerName()}!`,
       );
     }
 

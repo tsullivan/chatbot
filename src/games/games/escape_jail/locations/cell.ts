@@ -58,7 +58,7 @@ export class CellLocation extends Location {
             snl`Who said that? The Force? What is that??`,
           ];
           return new KeywordResponse({ text: res.join('\n\n') });
-        }
+        },
       );
     }
 
@@ -83,7 +83,7 @@ export class CellLocation extends Location {
               come back on watch duty near your cell and start watch you some
               more.`,
           });
-        }
+        },
       );
     }
   }

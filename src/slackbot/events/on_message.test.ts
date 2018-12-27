@@ -75,14 +75,14 @@ describe('Slackbot / RTM / On Message', () => {
     expect(sendMsgSpy).toHaveBeenCalledTimes(1);
     expect(sendMsgSpy).lastCalledWith(
       `I think your name is ${events[0].user}. What is it really?`,
-      events[0].channel
+      events[0].channel,
     );
 
     await onMessage(events[1]);
     expect(sendMsgSpy).toHaveBeenCalledTimes(2);
     expect(sendMsgSpy).lastCalledWith(
       `Hello, ${events[1].text}! Nice to meet you.`,
-      events[1].channel
+      events[1].channel,
     );
   });
 });

@@ -42,19 +42,19 @@ export class BridgeLocation extends Location {
             defeated corpses float in the water.`;
         }
         return new KeywordResponse({ text });
-      }
+      },
     );
     this.addKeyword('LAKE', `Go back down to the lake`, () =>
       this.followExit(
         SOUTH,
         snl`Down, down, down you go. Down the
-        bridge, bridge, bridge to the lake, lake, lake.`
-      )
+        bridge, bridge, bridge to the lake, lake, lake.`,
+      ),
     );
     this.addKeyword(
       'FINISH_LINE',
       'From up here on the bridge, you can see the finish line of this entire game!',
-      () => this.followExit(NORTH, 'Leaving so soon?')
+      () => this.followExit(NORTH, 'Leaving so soon?'),
     );
   }
 }

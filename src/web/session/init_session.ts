@@ -10,7 +10,7 @@ export function initSession(bot: Bot, app: session.Application) {
       resave: true,
       saveUninitialized: true,
       secret: sessionSecret,
-    })
+    }),
   );
 
   app.use((req, res, next) => {

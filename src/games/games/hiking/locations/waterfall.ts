@@ -25,7 +25,7 @@ export class WaterfallLocation extends Location {
 
   public setLocationKeywords(game) {
     this.addKeyword('ROCKS', `Go to the place that has a lot of rocks`, () =>
-      this.followExit(EAST)
+      this.followExit(EAST),
     );
     this.addKeyword('MOUNTAIN', `Try to climb up the really tall mountain.`, () => {
       if (this.gotSprayed) {
@@ -86,7 +86,7 @@ export class WaterfallLocation extends Location {
             are quite dry. You are not feeling magical.`,
           });
         }
-      }
+      },
     );
   }
 }

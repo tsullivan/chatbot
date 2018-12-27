@@ -20,7 +20,7 @@ async function findBotId(web: WebClient): Promise<string> {
   const users = await web.users.list();
   // @ts-ignore
   const { id: botId } = users.members.find(
-    u => u.name === 'beepbeepbeep' && u.is_bot === true
+    u => u.name === 'beepbeepbeep' && u.is_bot === true,
   );
   return botId;
 }

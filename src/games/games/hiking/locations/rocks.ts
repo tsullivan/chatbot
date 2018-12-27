@@ -25,7 +25,7 @@ export class RocksLocation extends Location {
     this.addKeyword(
       'WATERFALL',
       `Check it out, you can see a waterfall beyond the rocks`,
-      () => this.followExit(WEST, px)
+      () => this.followExit(WEST, px),
     );
     this.addKeyword(
       'HORSEPLAY',
@@ -36,8 +36,8 @@ export class RocksLocation extends Location {
           snl`You start slapping yourself in the face, and get dizzy. You can't
             control where you're going and suddenly you start to fall! You aren't
             sure what happens next, but there are a lot of thuds and bumbs. That
-            goes on for a long time. Then you find yourself in a new place...`
-        )
+            goes on for a long time. Then you find yourself in a new place...`,
+        ),
     );
   }
 }

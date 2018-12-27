@@ -8,7 +8,7 @@ interface IMessagePayload {
 
 export function onMessageFactory(
   slackBot: SlackBot,
-  rtm: RTMClient
+  rtm: RTMClient,
 ): (event: any) => Promise<IMessagePayload> {
   const log = slackBot.getLogger(['slack', 'onmessage']);
 

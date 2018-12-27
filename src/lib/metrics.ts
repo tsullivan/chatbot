@@ -10,7 +10,7 @@ export class Metrics  {
       session_expires_in_sec: req.session.cookie.maxAge / 1000,
       users: {
         names: ['tim', 'brach', 'spethen'],
-      }
+      },
     };
   }
 }

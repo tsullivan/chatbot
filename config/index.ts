@@ -43,5 +43,5 @@ function getEnvConfig(envString: string): IConfig {
 }
 
 export const { apm, env, port, sessionSecret, slack } = getEnvConfig(
-  process.env.NODE_ENV
+  process.env.NODE_ENV,
 );

@@ -35,7 +35,7 @@ export class TheSunLocation extends Location {
             plain, like plain yogurt.`,
           });
         }
-      }
+      },
     );
 
     if (game.inInventory(YOGURT)) {

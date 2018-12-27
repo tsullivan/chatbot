@@ -21,7 +21,7 @@ export class MountainHouseLocation extends Location {
 
   public setLocationKeywords(game) {
     this.addKeyword(['OUTSIDE', 'EXIT'], `Go out to the top of the mountain`, () =>
-      this.followExit(WEST)
+      this.followExit(WEST),
     );
     this.addKeyword(
       ['DOWN_THE_HOLE', 'DOWN', 'HOLE'],
@@ -31,8 +31,8 @@ export class MountainHouseLocation extends Location {
           DOWN,
           snl`Fortunately, there's a ladder leading straight down the hole, so
             you don't have to jump down an unknown distance through complete
-            darkness.`
-        )
+            darkness.`,
+        ),
     );
     this.addKeyword(['SLEEP', 'BED'], `Take a rest on the comfy-looking bed`, () => {
       const ps = [

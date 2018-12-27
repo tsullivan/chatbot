@@ -9,13 +9,20 @@
     "no-console": [
       false
     ],
+    "object-literal-sort-keys": [
+      false
+    ],
     "quotemark": [
       true,
       "single",
       "avoid-escape"
     ],
-    "object-literal-sort-keys": [
-      false
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
     ]
   },
   "rulesDirectory": []

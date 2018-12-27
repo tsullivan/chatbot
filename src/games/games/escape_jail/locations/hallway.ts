@@ -31,7 +31,7 @@ export class HallwayLocation extends Location {
             of the van before the guard sees you.`,
         ];
         return this.followExit(SOUTH, parajoin(lns));
-      }
+      },
     );
 
     const { keyword, description, fn } = delayAndDie();

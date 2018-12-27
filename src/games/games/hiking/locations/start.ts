@@ -38,7 +38,7 @@ export class StartLocation extends Location {
     this.addKeyword(
       'LAKE',
       `You can see a lake in one direction. It looks pretty nice.`,
-      () => this.followExit(NORTH, pxLake)
+      () => this.followExit(NORTH, pxLake),
     );
 
     const pxRocks = snl`Your hiking adventure begins! Starting out with a
@@ -46,7 +46,7 @@ export class StartLocation extends Location {
     this.addKeyword(
       'ROCKS',
       `You can see precarious rocks on the trail in another direction. They look scrambly.`,
-      () => this.followExit(WEST, pxRocks)
+      () => this.followExit(WEST, pxRocks),
     );
   }
 }

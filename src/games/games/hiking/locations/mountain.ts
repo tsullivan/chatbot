@@ -19,10 +19,10 @@ export class MountainLocation extends Location {
 
   public setLocationKeywords(game) {
     this.addKeyword('WATERFALL', `To go back down to the waterfall`, () =>
-      this.followExit(DOWN)
+      this.followExit(DOWN),
     );
     this.addKeyword('HOUSE', 'Check out the mountain house up here.', () =>
-      this.followExit(EAST)
+      this.followExit(EAST),
     );
   }
 }

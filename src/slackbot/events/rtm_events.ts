@@ -10,7 +10,7 @@ export async function initRTMEvents(slackBot: SlackBot, rtm: RTMClient) {
   const currentTime = new Date().toTimeString();
   await rtm.sendMessage(
     `Hello, ${slackBot.getSlackChannel()} the current time is ${currentTime}`,
-    slackBot.getSlackChannel()
+    slackBot.getSlackChannel(),
   );
 
   rtm.on('message', onMessageFactory(slackBot, rtm));

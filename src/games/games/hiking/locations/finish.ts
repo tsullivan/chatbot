@@ -26,12 +26,12 @@ export class FinishLocation extends Location {
           text: snl`The robot takes out a flag, and swishes it over your head.
             This takes you to the end of the hiking journey.`,
         });
-      }
+      },
     );
     this.addKeyword(
       'BRIDGE',
       `Go back to the bridge, and keep playing the hiking game`,
-      () => this.followExit(SOUTH)
+      () => this.followExit(SOUTH),
     );
   }
 }

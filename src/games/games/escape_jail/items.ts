@@ -65,7 +65,7 @@ export function getItems(game) {
 export function setItemsToLocations(
   { keyItem, towelItem, guardsItem },
   { cellLocation, vanLocation },
-  game
+  game,
 ) {
   /*
    * Set to game

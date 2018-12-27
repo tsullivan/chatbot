@@ -58,8 +58,8 @@ export class FenceLocation extends Location {
               snl`RUN RUN RUN JUUUUMP! Climb, climb, climb! You made it!`,
               snl`You run and run and run for a long time. You find yourself in
               a strange new place. It looks very exciting and new!`,
-            ])
-          )
+            ]),
+          ),
       );
 
       const { keyword, description, fn } = delayAndDie();

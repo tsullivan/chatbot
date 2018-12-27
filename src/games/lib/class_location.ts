@@ -11,7 +11,7 @@ export class Location {
   public addKeyword: (
     keyword: string | string[],
     keywordDescription: string,
-    fn: () => KeywordResponse
+    fn: () => KeywordResponse,
   ) => void;
   public clearKeywords: () => void;
   public removeKeyword: (keyword: string) => void;

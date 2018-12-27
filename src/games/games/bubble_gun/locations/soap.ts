@@ -39,7 +39,7 @@ export class SoapLocation extends Location {
             text: snl`OOPSIE. You accidentally spilled some soap on the floor!
               Be careful now, the floor might be slippery.`,
           });
-        }
+        },
       );
     } else {
       this.addKeyword(
@@ -58,7 +58,7 @@ export class SoapLocation extends Location {
           return new KeywordResponse({
             text: parts.join('\n\n'),
           });
-        }
+        },
       );
     }
   }

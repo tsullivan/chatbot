@@ -27,13 +27,13 @@ const bubbleGunCombinings = (item: Item, combinedSet: Set<string>) => {
       snl`You slide off the cover to the bubble gun, pop in the AA batteries,
         and put the cover back on. It's nice and snug with the water seal that
         will prevent corrosion in the batteries or the metal surfaces inside the
-        bubble gun's battery compartment.`
+        bubble gun's battery compartment.`,
     );
   } else if (combinedSet.has(SOAP)) {
     item.setDescription(`Bubble gun with soap, but no AA batteries.`);
     lns.push(
       snl`You open up the cap on the bubble gun and fill up its soap container
-        with your liquid soap. Glug glug glug.`
+        with your liquid soap. Glug glug glug.`,
     );
   }
   if (item.isComplete()) {
@@ -46,17 +46,17 @@ const throwieCombinings = (item: Item, combinedSet: Set<string>) => {
   const lns = [];
   if (combinedSet.has(MAGNET)) {
     item.setDescription(
-      snl`LED throwie with a magnet stuck on. It still has no batteries.`
+      snl`LED throwie with a magnet stuck on. It still has no batteries.`,
     );
     lns.push(
-     snl`The magnet sticks right on to the battery holder of the LED. That was easy!`
+     snl`The magnet sticks right on to the battery holder of the LED. That was easy!`,
     );
   } else if (combinedSet.has(BATTERY_LR41)) {
     item.setDescription(
-      snl`LED throwie that has batteries, but you can't do anything else with it.`
+      snl`LED throwie that has batteries, but you can't do anything else with it.`,
     );
     lns.push(
-      snl`The batteries go right on in to the LED's battery holder. Nice and simple.`
+      snl`The batteries go right on in to the LED's battery holder. Nice and simple.`,
     );
   }
   if (item.isComplete()) {
@@ -264,7 +264,7 @@ export function setItemsToLocations(
     magnetLocation: Location;
     bridgeLocation: Location;
   },
-  game: AdventureGame
+  game: AdventureGame,
 ) {
   // set everything into the game collection
   game.addItemToCollection(BUBBLE_GUN, bubbleGunItem);

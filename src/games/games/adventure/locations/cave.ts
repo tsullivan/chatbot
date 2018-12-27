@@ -64,7 +64,7 @@ export class CaveLocation extends Location {
     });
 
     this.addKeyword('EXIT', 'Get out of the cheery smelly old cave.', () =>
-      this.followExit(WEST)
+      this.followExit(WEST),
     );
   }
 }

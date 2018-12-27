@@ -26,12 +26,12 @@ export class LakeLocation extends Location {
 
   public setLocationKeywords(game) {
     this.addKeyword('ROCKS', 'Go to a place with a lot of rocks', () =>
-      this.followExit(SOUTH)
+      this.followExit(SOUTH),
     );
     this.addKeyword(
       'BRIDGE',
       `A giant bridge looks like it crosses right over the entire lake.`,
-      () => this.followExit(NORTH)
+      () => this.followExit(NORTH),
     );
     this.addKeyword('SWIM', 'Swim around in the lake', () => {
       if (game.inInventory(ENEMIES)) {
