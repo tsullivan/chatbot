@@ -11,7 +11,7 @@ export function chatRoute(app: express.Application, bot: Bot) {
     const log = bot.getLogger(['web', 'routes']);
 
     try {
-      const result = bot.handleChat(req.body, req.session.chat);
+      const result = await bot.handleChat(req.body, req.session.chat);
       res.json(result);
     } catch (err) {
       log.error([], err);

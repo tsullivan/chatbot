@@ -16,7 +16,7 @@ class JustDontResponder extends CKeywordResponder {
     return false;
   }
 
-  public getResponse() {
+  public async getResponse(): Promise<string> {
     // get a random "just dont" message
     const responders = getResponders();
     const responderKey = sample(Object.keys(responders));

@@ -12,7 +12,7 @@ class HelpResponder extends CKeywordResponder {
     return input.match(/^help\b/);
   }
 
-  public getResponse() {
+  public async getResponse(): Promise<string> {
     const responders = getResponders();
     const responderKeys = Object.keys(responders);
     const usableResponders = responderKeys.filter(key => {

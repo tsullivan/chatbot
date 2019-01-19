@@ -11,7 +11,7 @@ class NinjaFactResponder extends DictionaryResponder {
     return input.match(/^ninjafact\b/);
   }
 
-  public getResponse() {
+  public async getResponse(): Promise<string> {
     return this.getRequested(i => `Here is ninja fact number ${i}`);
   }
 }

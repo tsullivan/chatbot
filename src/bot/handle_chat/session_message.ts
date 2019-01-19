@@ -6,7 +6,7 @@ export class SessionMessage extends ResponseMessage {
     super('session', chat, userMessage, userFormat);
   }
 
-  public makeResponse(chat): IResponse | null {
+  public async makeResponse(chat): Promise<IResponse | null> {
     const userFormat = this.userFormat;
     const { isValid, revalidateResponse } = chat.validateSession(userFormat);
 

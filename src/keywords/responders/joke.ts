@@ -11,7 +11,7 @@ class JokeResponder extends DictionaryResponder {
     return input.match(/^joke\b/);
   }
 
-  public getResponse() {
+  public async getResponse(): Promise<string> {
     return this.getRequested(i => `Here is joke number ${i}`);
   }
 }

@@ -15,7 +15,7 @@ class CoinFlipResponder extends CKeywordResponder {
     return `Just don't say "coinflip", I'll flip out!`;
   }
 
-  public getResponse() {
+  public async getResponse(): Promise<string> {
     const result = roll(2).result === 1 ? 'HEADS' : 'TAILS';
     return `Flipping a coin... ${result}!`;
   }

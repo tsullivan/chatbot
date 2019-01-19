@@ -11,7 +11,7 @@ class StarWarsFactResponder extends DictionaryResponder {
     return input.match(/^starwarsfact\b/);
   }
 
-  public getResponse() {
+  public async getResponse(): Promise<string> {
     return this.getRequested(i => `Here is superhero fact number ${i}`);
   }
 }

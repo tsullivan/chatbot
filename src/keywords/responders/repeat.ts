@@ -33,7 +33,7 @@ class RepeatResponder extends CKeywordResponder {
     return `Just don't say "repeat 50 blah"`;
   }
 
-  public getResponse() {
+  public async getResponse(): Promise<string> {
     if (this.phrase === null) {
       return this.help();
     }

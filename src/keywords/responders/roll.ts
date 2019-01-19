@@ -26,7 +26,7 @@ class RollResponder extends CKeywordResponder {
     return `Just don't say "roll 7". I don't have a d7!`;
   }
 
-  public getResponse() {
+  public async getResponse(): Promise<string> {
     const sides = this.sides;
     const result = roll(sides).result;
 

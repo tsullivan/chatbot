@@ -14,7 +14,7 @@ export class Bot {
     this.metrics = new Metrics();
   }
 
-  public handleChat(body: IChatBody, session: ChatSession): IChatResponse {
+  public handleChat(body: IChatBody, session: ChatSession): Promise<IChatResponse> {
     return handleChat(body, session);
   }
 

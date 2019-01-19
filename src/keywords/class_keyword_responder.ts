@@ -50,7 +50,7 @@ export class KeywordResponder {
     return `Just don't.`;
   }
 
-  public getResponse() {
+  public async getResponse(): Promise<string> {
     return 'Nothing to say.';
   }
 
@@ -58,7 +58,7 @@ export class KeywordResponder {
     return this.getResponse();
   }
 
-  public runKeyword() {
+  public async runKeyword(): Promise<string> {
     const needsHelpMatches = this.input.match(/ help\b$/);
     if (needsHelpMatches !== null) {
       return this.help();

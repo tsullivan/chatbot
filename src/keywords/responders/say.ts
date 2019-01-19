@@ -29,7 +29,7 @@ class SayResponder extends CKeywordResponder {
     return `Just don't tell me to say something.`;
   }
 
-  public getResponse() {
+  public async getResponse(): Promise<string> {
     if (this.thingToSay === null) {
       return this.help();
     }

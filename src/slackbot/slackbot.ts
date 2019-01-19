@@ -79,7 +79,7 @@ export class SlackBot {
     }
   }
 
-  public handleSlackChat(userId: string, chatBody): IChatResponse {
+  public handleSlackChat(userId: string, chatBody): Promise<IChatResponse> {
     if (slackSessions.has(userId)) {
       const sess = slackSessions.get(userId);
       return this.bot.handleChat(chatBody, sess.chat);
