@@ -1,4 +1,4 @@
-import { ChatSession } from '../../web/session';
+import { ChatSession } from '../../bot';
 import { ChatGame } from '../chat_game';
 
 const WIN_CODE = '77';

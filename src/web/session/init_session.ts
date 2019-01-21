@@ -1,8 +1,7 @@
 import * as express from 'express';
 import * as session from 'express-session';
 import { sessionSecret } from '../../../config';
-import { Bot } from '../../bot';
-import { ChatSession  } from './chat_session';
+import { Bot, ChatSession } from '../../bot';
 
 export function initSession(bot: Bot, app: express.Application) {
   app.use(

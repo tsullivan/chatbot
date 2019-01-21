@@ -1,8 +1,9 @@
 import * as apm from 'elastic-apm-node';
 import 'express'
 import * as _ from 'lodash';
-import { Bot } from '../../bot';
-import { ChatGame, getGames } from '../../games';
+import { ChatGame, getGames } from '../games';
+import { SlackSession } from '../slackbot';
+import { Bot } from './bot';
 import { mapFieldToResponse } from './map_field_to_response';
 
 export interface IWebSession extends Express.Session {
@@ -43,7 +44,7 @@ export class ChatSession {
     user_history: string[],
   };
 
-  constructor(private bot: Bot, session: IWebSession) {
+  constructor(private bot: Bot, session: IWebSession | SlackSession) {
     this.initialized = false;
     this.sessionId = session.id;
 

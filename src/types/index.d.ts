@@ -1,6 +1,5 @@
-import * as express from 'express-session';
 import { ChatGame } from '../games';
-import { ChatSession } from '../web/session';
+import { ChatSession } from '../bot';
 
 export type TSessionGames = Map<string, ChatGame>;
 

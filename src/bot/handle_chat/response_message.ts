@@ -1,5 +1,5 @@
 import * as apm from 'elastic-apm-node';
-import { ChatSession } from '../../web/session';
+import { ChatSession } from '../chat_session';
 
 export interface IResponse {
   format: string;

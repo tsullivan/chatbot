@@ -1,8 +1,8 @@
 import * as apm from 'elastic-apm-node';
 import * as moment from 'moment';
+import { ChatSession } from '../../bot';
 import { BOT_NAME, DATE_FORMAT } from '../../constants';
 import { IChatBody, IChatResponse } from '../../types';
-import { ChatSession } from '../../web/session';
 import { RandomMessage } from './random_message';
 import { SessionMessage } from './session_message';
 import { SmartMessage } from './smart_message';

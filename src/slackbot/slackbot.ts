@@ -1,10 +1,9 @@
 import { RTMClient, WebClient } from '@slack/client';
 import { slack } from '../../config';
-import { Bot } from '../bot';
+import { Bot, ChatSession } from '../bot';
 import { BOT_NAME } from '../constants';
 import { SlackSession } from '../slackbot/lib';
 import { IChatResponse } from '../types';
-import { ChatSession } from '../web/session';
 import { initRTMEvents } from './events';
 
 const slackSessions = new Map(); // memory leak

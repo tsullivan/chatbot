@@ -1,4 +1,4 @@
-import { ChatSession } from '../../web/session';
+import { ChatSession } from '../../bot';
 import { ChatGame } from '../chat_game';
 import { Item } from './class_item';
 import { ItemCollection } from './class_item_collection';

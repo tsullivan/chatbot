@@ -2,7 +2,7 @@ import * as express from 'express';
 import { ChatGame } from '../games';
 import { Log, Metrics } from '../lib';
 import { IChatBody, IChatResponse, ILog, IMetrics } from '../types';
-import { ChatSession } from '../web/session';
+import { ChatSession } from './chat_session';
 import { handleChat } from './handle_chat';
 
 const sessionGames = new Map(); // memory leak

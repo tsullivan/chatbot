@@ -1,8 +1,7 @@
 import { defaultsDeep } from 'lodash';
-import { Bot } from '../../bot';
-import { ChatSession, ChatSessionProto, IWebSession } from '../../web/session';
+import { Bot, ChatSession, ChatSessionProto } from '../../bot';
 
-export class SlackSession implements IWebSession {
+export class SlackSession {
   get id() {
     return this.userId;
   }
