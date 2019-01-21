@@ -6,12 +6,15 @@
     "forceConsistentCasingInFileNames": true,
     "module": "commonjs",
     "moduleResolution": "node",
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "pretty": true,
     "target": "es6",
     "plugins": [
       { "name": "typescript-tslint-plugin" }
-    ]
+    ],
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "pretty": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "alwaysStrict": true
   }
 }
