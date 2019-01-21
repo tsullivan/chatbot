@@ -619,7 +619,7 @@ You can:
 exports[`bubble_gun walk around 28`] = `
 "You are at: **The Magnet Store**
 
-Hold on to your metals, they got lots of magnets in here!
+There are lots and lots of metal shelves in here. The entire surfaces of all the shelves have magnets stuck to them. The aisles and aisles of shelves create a mysterious atmosphere, where anything could be hiding. Behind a leaning shelf is a wall with a small door. You can crouch down to enter the door, and descend the well-lit stairs.
 
 You see:
 
@@ -630,13 +630,14 @@ You see:
 You can:
 
 - TAKE_MAGNET - Take the magnet.
-- PLAYGROUND - Go back to the playground"
+- PLAYGROUND - Go back to the playground
+- EXPLORE - See what could be hiding in this strange shop."
 `;
 
 exports[`bubble_gun walk around 29`] = `
 "You are at: **The Magnet Store**
 
-Hold on to your metals, they got lots of magnets in here!
+There are lots and lots of metal shelves in here. The entire surfaces of all the shelves have magnets stuck to them. The aisles and aisles of shelves create a mysterious atmosphere, where anything could be hiding. Behind a leaning shelf is a wall with a small door. You can crouch down to enter the door, and descend the well-lit stairs.
 
 You see:
 
@@ -647,7 +648,8 @@ You see:
 You can:
 
 - TAKE_MAGNET - Take the magnet.
-- PLAYGROUND - Go back to the playground"
+- PLAYGROUND - Go back to the playground
+- EXPLORE - See what could be hiding in this strange shop."
 `;
 
 exports[`bubble_gun walk around 30`] = `
