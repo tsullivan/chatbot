@@ -38,7 +38,7 @@ export class DictionaryResponder extends KeywordResponder {
     return `Type \`${this.getName()}\`, or \`${this.getName()} <some number>\`, and see what happens...`;
   }
 
-  public getRandom() {
+  public async getRandom() {
     const dictionary = runDictionary(this.dictionary);
     const indices = Object.keys(dictionary);
     const index = parseInt(sample(indices), 10);

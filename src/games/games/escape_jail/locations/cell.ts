@@ -41,6 +41,9 @@ export class CellLocation extends Location {
           text: 'The door is locked.',
         });
       }
+      return new KeywordResponse({
+        text: 'You still need to escape.',
+      });
     });
     if (!this.forceAware) {
       const key = game.getItemFromCollection(KEY);

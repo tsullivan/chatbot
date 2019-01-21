@@ -1,4 +1,4 @@
-import * as express from 'express-session';
+import * as express from 'express';
 import { Bot } from '../..//bot';
 
 export function statsRoute(app: express.Application, bot: Bot) {

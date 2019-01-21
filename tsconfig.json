@@ -3,8 +3,10 @@
     "lib": [
       "es6"
     ],
+    "forceConsistentCasingInFileNames": true,
     "module": "commonjs",
     "moduleResolution": "node",
+    "noImplicitReturns": true,
     "noUnusedLocals": true,
     "pretty": true,
     "target": "es6",

@@ -75,6 +75,7 @@ const getCombiningResponse = (item: Item, combinedSet: Set<string>) => {
     const lns = throwieCombinings(item, combinedSet);
     return new KeywordResponse({ text: parajoin(lns) });
   }
+  return new KeywordResponse({ text: 'I have no idea what just happened.' });
 };
 
 export function getItems(game: AdventureGame) {

@@ -5,7 +5,7 @@ class RememberResponder extends CKeywordResponder {
   constructor(input, chat) {
     super(input);
     this.setName('remember');
-    this.getResponse = () => {
+    this.getResponse = async () => {
       const history = chat.getUserHistory();
       const thingSaid = String(sample(history)).trim();
       return `Remember that time you said, "${thingSaid}"? I do.`;

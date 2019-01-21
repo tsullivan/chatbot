@@ -1,4 +1,4 @@
-import * as express from 'express-session';
+import * as express from 'express';
 import { IMetrics, TSessionGames } from '../types';
 
 export class Metrics  {

@@ -5,7 +5,7 @@ class ScoreResponder extends CKeywordResponder {
     super(input);
     this.setName('score');
 
-    this.getResponse = () => {
+    this.getResponse = async () => {
       return `The average score of the games you plaid are : ${chat.getAverageScore()}`;
     };
   }

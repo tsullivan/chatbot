@@ -1,14 +1,12 @@
 import * as apm from 'elastic-apm-node';
-import { defaultsDeep, mean } from 'lodash';
+import 'express'
+import * as _ from 'lodash';
 import { Bot } from '../../bot';
-import { getGames } from '../../games';
-import { ChatGame } from '../../games/chat_game';
+import { ChatGame, getGames } from '../../games';
 import { mapFieldToResponse } from './map_field_to_response';
 
-export interface IWebSession {
-  id: string;
-  chat: ChatSession;
-  destroy: () => void;
+export interface IWebSession extends Express.Session {
+  chat?: ChatSession;
 }
 
 interface IChatSessionInit {
@@ -52,14 +50,14 @@ export class ChatSession {
     this.save = () => {
       if (!this.initialized) {
         this.initialized = true;
-        defaultsDeep(this, ChatSessionProto);
+        _.defaultsDeep(this, ChatSessionProto);
       }
-      defaultsDeep(session.chat, this);
+      _.defaultsDeep(session.chat, this);
       return this;
     };
 
     this.hangup = () => {
-      session.destroy();
+      session.destroy(_.noop);
       this.initialized = false;
       Object.assign(this, ChatSessionProto);
       return this.save();
@@ -73,8 +71,8 @@ export class ChatSession {
     this.save();
   }
 
-  public getResumed({ chat }) {
-    defaultsDeep(this, chat, ChatSessionProto);
+  public getResumed({ chat }: IWebSession) {
+    _.defaultsDeep(this, chat, ChatSessionProto);
     this.save();
 
     this.game = this.bot.getSessionGame(this.sessionId);
@@ -198,7 +196,7 @@ export class ChatSession {
   }
 
   public getAverageScore() {
-    return mean(this.scores);
+    return _.mean(this.scores);
   }
 
   public getGameWelcome() {

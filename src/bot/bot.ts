@@ -1,4 +1,4 @@
-import * as express from 'express-session';
+import * as express from 'express';
 import { ChatGame } from '../games';
 import { Log, Metrics } from '../lib';
 import { IChatBody, IChatResponse, ILog, IMetrics } from '../types';

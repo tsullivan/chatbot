@@ -7,7 +7,7 @@ class WhatResponder extends CKeywordResponder {
     this.setName('what');
     this.setFormat('markdown');
 
-    this.getResponse = () => {
+    this.getResponse = async () => {
       let prevMessage;
 
       try {

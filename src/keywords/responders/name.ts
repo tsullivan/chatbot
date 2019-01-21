@@ -6,7 +6,7 @@ class NameResponder extends CKeywordResponder {
     super(input);
     this.setName('name');
 
-    this.getResponse = () => {
+    this.getResponse = async () => {
       let name;
 
       try {

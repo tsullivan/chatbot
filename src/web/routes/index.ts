@@ -1,4 +1,4 @@
-import * as express from 'express-session';
+import * as express from 'express';
 import { Bot } from '../../bot';
 import { chatRoute } from './chat';
 import { statsRoute } from './stats';

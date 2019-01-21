@@ -54,7 +54,7 @@ export class KeywordResponder {
     return 'Nothing to say.';
   }
 
-  public getRandom() {
+  public async getRandom() {
     return this.getResponse();
   }
 

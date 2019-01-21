@@ -1,6 +1,6 @@
 import { json as parseJson } from 'body-parser';
 import * as apm from 'elastic-apm-node';
-import * as express from 'express-session';
+import * as express from 'express';
 import { Bot } from '../..//bot';
 
 const jsonParser = parseJson({ type: 'application/json' });

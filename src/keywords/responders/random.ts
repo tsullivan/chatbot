@@ -3,13 +3,13 @@ import { KeywordResponder as CKeywordResponder} from '../class_keyword_responder
 import { getResponders } from '../get_responders';
 
 class RandomResponder extends CKeywordResponder {
-  private getRandomResponder: () => CKeywordResponder;
+  private getRandomResponder: () => Promise<CKeywordResponder>;
 
   constructor(input, chat) {
     super(input);
     this.setName('random');
 
-    this.getRandomResponder = () => {
+    this.getRandomResponder = async () => {
       const responders = getResponders();
       const names = Object.keys(responders);
       const name = sample(names);
@@ -29,8 +29,8 @@ class RandomResponder extends CKeywordResponder {
     return `Just don't say "random". I'm not sure what will happen!`;
   }
 
-  public getResponse() {
-    const responder = this.getRandomResponder();
+  public async getResponse() {
+    const responder = await this.getRandomResponder();
     return responder.getRandom();
   }
 }
