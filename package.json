@@ -19,7 +19,7 @@
   "author": "Tim Sullivan",
   "license": "ISC",
   "engines": {
-    "node": ">=8.11 <9"
+    "node": ">=10.14 <12"
   },
   "jest": {
     "preset": "ts-jest",
