@@ -3,6 +3,7 @@ import { DOWN, EAST, NORTH, SOUTH, UP, WEST } from '../constants';
 import { BridgeLocation } from './bridge';
 import { ElectronicsLocation } from './electronics';
 import { MagnetLocation } from './magnet';
+import { MagnetBasementLocation } from './magnet_basement';
 import { PlaygroundLocation } from './playground';
 import { SoapLocation } from './soap';
 import { TreeFortLocation } from './treefort';
@@ -13,6 +14,7 @@ export function getLocations(game) {
   const electronicsLocation = new ElectronicsLocation(game);
   const soapLocation = new SoapLocation(game);
   const magnetLocation = new MagnetLocation(game);
+  const magnetBasementLocation = new MagnetBasementLocation(game);
   const treeFortLocation = new TreeFortLocation(game);
 
   playgroundLocation.addExit({
@@ -40,11 +42,17 @@ export function getLocations(game) {
     inverseExit: WEST,
     location: magnetLocation,
   });
+  magnetLocation.addExit({
+    exit: DOWN,
+    inverseExit: UP,
+    location: magnetBasementLocation,
+  });
 
   return {
     bridgeLocation,
     electronicsLocation,
     magnetLocation,
+    magnetBasementLocation,
     playgroundLocation,
     soapLocation,
     treeFortLocation,

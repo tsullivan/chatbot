@@ -24,7 +24,7 @@ export async function handleChat(body: IChatBody, chat: ChatSession): Promise<IC
     while (workIdx < responseWorkers.length) {
       const { Worker } = responseWorkers[workIdx];
       const worker = new Worker(chat, message, format);
-      const test = await worker.getResponse();
+      const test: IChatResponse = await worker.getResponse(); // should resolve response.message
       if (test !== null) {
         response = test;
         chat.addBotMessage(response.message);
