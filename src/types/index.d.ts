@@ -34,5 +34,7 @@ export interface IChatBody {
 }
 
 export interface IChatResponse {
+  name?: string;
+  format: string;
   message: string;
 }

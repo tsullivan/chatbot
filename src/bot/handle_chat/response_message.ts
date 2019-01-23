@@ -1,15 +1,11 @@
 import * as apm from 'elastic-apm-node';
+import { IChatResponse } from '../../types';
 import { ChatSession } from '../chat_session';
-
-export interface IResponse {
-  format: string;
-  message: string;
-}
 
 export class ResponseMessage {
   protected userMessage: string;
   protected userFormat: string;
-  protected response: IResponse;
+  protected response: IChatResponse;
   private span: any;
   private name: string;
   private chat: ChatSession;
@@ -22,46 +18,42 @@ export class ResponseMessage {
     this.userFormat = userFormat;
   }
 
-  public makeResponse(chat): Promise<IResponse> {
+  public async makeResponse(chat): Promise<IChatResponse> {
     // override this
-    return Promise.resolve({
+    return {
       format: null,
       message: null,
-    });
+    };
   }
 
   public getName() {
     return this.name;
   }
 
-  public getPlain(message): IResponse {
+  public getPlain(message): IChatResponse {
     return {
       format: 'plain',
       message,
     };
   }
 
-  public getMarkdown(message): IResponse {
+  public getMarkdown(message): IChatResponse {
     return {
       format: 'markdown',
       message,
     };
   }
 
-  public respond(message, format = 'markdown'): IResponse {
+  public respond(message, format = 'markdown'): IChatResponse {
     this.response = format === 'plain' ? this.getPlain(message) : this.getMarkdown(message);
     return this.response;
   }
 
-  public async getResponse(): Promise<IResponse> {
+  public async getResponse(): Promise<IChatResponse> {
     if (this.span) {
       this.span.end();
     }
-
-    return this.makeResponse(this.chat)
-    .then((response:IResponse) => {
-      this.response = response;
-      return this.response;
-    });
+    this.response = await this.makeResponse(this.chat);
+    return this.response;
   }
 }
