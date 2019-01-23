@@ -1,4 +1,4 @@
-const { KeywordResponse } = require('./class_keyword_response');
+const { KeywordResponse } = require('./keyword_response');
 const { MultiMap } = require('../../lib/multi_map');
 const { UL } = require('../../constants');
 

@@ -1,5 +1,5 @@
 import * as snl from 'strip-newlines';
-import { KeywordResponse } from './class_keyword_response';
+import { KeywordResponse } from './keyword_response';
 
 export const delayAndDie = () => {
   return {

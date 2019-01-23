@@ -1,5 +1,5 @@
 import * as apm from 'elastic-apm-node';
-import { KeywordResponder as CKeywordResponder} from '../class_keyword_responder';
+import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
 
 class NameResponder extends CKeywordResponder {
   constructor(input, chat) {

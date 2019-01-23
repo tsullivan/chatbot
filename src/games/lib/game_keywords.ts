@@ -1,6 +1,6 @@
-import { Adventure as AdventureGame } from './class_adventure';
-import { ItemCollection } from './class_item_collection';
-import { KeywordResponse } from './class_keyword_response';
+import { Adventure as AdventureGame } from './adventure';
+import { ItemCollection } from './item_collection';
+import { KeywordResponse } from './keyword_response';
 import { parajoin } from './parajoin';
 
 interface IGameKeywordOpts {

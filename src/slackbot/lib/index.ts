@@ -1,1 +1,1 @@
-export { SlackSession } from './class_slack_session';
+export { SlackSession } from './slack_session';

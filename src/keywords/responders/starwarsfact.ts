@@ -1,4 +1,4 @@
-import { DictionaryResponder } from '../class_keyword_dictionary_responder';
+import { DictionaryResponder } from '../dictionary';
 
 class StarWarsFactResponder extends DictionaryResponder {
   constructor(input) {

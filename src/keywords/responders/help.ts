@@ -1,5 +1,5 @@
-import { KeywordResponder as CKeywordResponder} from '../class_keyword_responder';
-import { getResponders } from '../get_responders';
+import { getResponders } from '../';
+import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
 
 class HelpResponder extends CKeywordResponder {
   constructor(input) {

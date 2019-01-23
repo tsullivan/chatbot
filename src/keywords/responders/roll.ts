@@ -1,5 +1,5 @@
 import { roll } from '../../lib';
-import { KeywordResponder as CKeywordResponder} from '../class_keyword_responder';
+import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
 
 const DEFAULT_SIDES = 20;
 

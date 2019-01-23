@@ -1,6 +1,6 @@
 import { sample } from 'lodash';
-import { KeywordResponder as CKeywordResponder} from '../class_keyword_responder';
-import { getResponders } from '../get_responders';
+import { getResponders } from '../';
+import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
 
 class RandomResponder extends CKeywordResponder {
   private getRandomResponder: () => Promise<CKeywordResponder>;
