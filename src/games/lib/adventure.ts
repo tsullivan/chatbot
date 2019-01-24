@@ -26,6 +26,7 @@ export class Adventure extends ChatGame {
 
   private itemCollection: ItemCollection;
   private inventory: Set<string>;
+  private locationsMap: Map<string, Location>;
   private currentLocation: Location;
 
   constructor(session: ChatSession) {
@@ -84,9 +85,6 @@ export class Adventure extends ChatGame {
   }
 
   public getCurrentLocation(): Location {
-    if (!(this.currentLocation instanceof Location)) {
-      throw new Error('currentLocation is not a Location instance');
-    }
     return this.currentLocation;
   }
 
@@ -108,7 +106,7 @@ export class Adventure extends ChatGame {
     throw new Error('lose method is to override');
   }
 
-  public init() {
+  public init(): void {
     this.score = 50;
     this.turns = 0;
 
@@ -118,7 +116,11 @@ export class Adventure extends ChatGame {
     this.updateState();
   }
 
-  public setLocation(location: Location) {
+  public setLocationsMap(locationsMap: Map<string, Location>): void {
+    this.locationsMap = locationsMap;
+  }
+
+  public setLocation(location: Location): void {
     this.currentLocation = location;
   }
 
@@ -217,8 +219,12 @@ export class Adventure extends ChatGame {
     }
   }
 
-  public getItemFromCollection(id: string): Item {
+  public getItemFromCollection(id: string): Item | undefined {
     return this.itemCollection.get(id);
+  }
+
+  public getLocationById(id: string): Location {
+    return this.locationsMap.get(id);
   }
 
   public addToInventory(id: string) {

@@ -1,5 +1,19 @@
-import { DOWN, EAST, NORTH, SOUTH, UP, WEST } from '../constants';
-
+import { Location } from '../../lib/location';
+import {
+  BASEMENT,
+  BRIDGE,
+  DOWN,
+  EAST,
+  ELECTRONICS,
+  MAGNET,
+  NORTH,
+  PLAYGROUND,
+  SOAP,
+  SOUTH,
+  TREEFORT,
+  UP,
+  WEST,
+} from '../constants';
 import { BridgeLocation } from './bridge';
 import { ElectronicsLocation } from './electronics';
 import { MagnetLocation } from './magnet';
@@ -8,7 +22,7 @@ import { PlaygroundLocation } from './playground';
 import { SoapLocation } from './soap';
 import { TreeFortLocation } from './treefort';
 
-export function getLocations(game) {
+export function getLocationsMap(game): Map<string, Location> {
   const playgroundLocation = new PlaygroundLocation(game);
   const bridgeLocation = new BridgeLocation(game);
   const electronicsLocation = new ElectronicsLocation(game);
@@ -48,13 +62,14 @@ export function getLocations(game) {
     location: magnetBasementLocation,
   });
 
-  return {
-    bridgeLocation,
-    electronicsLocation,
-    magnetLocation,
-    magnetBasementLocation,
-    playgroundLocation,
-    soapLocation,
-    treeFortLocation,
-  };
+  const locationMap = new Map();
+  locationMap.set(BRIDGE, bridgeLocation);
+  locationMap.set(ELECTRONICS, electronicsLocation);
+  locationMap.set(MAGNET, magnetLocation);
+  locationMap.set(BASEMENT, magnetBasementLocation);
+  locationMap.set(PLAYGROUND, playgroundLocation);
+  locationMap.set(SOAP, soapLocation);
+  locationMap.set(TREEFORT, treeFortLocation);
+
+  return locationMap;
 }

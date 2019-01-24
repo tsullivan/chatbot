@@ -14,45 +14,87 @@ describe('bubble_gun', () => {
     resps = [];
   });
 
-  test('walk around', async () => {
+  test('default bridge', async () => {
     resps[resps.length] = await send('play bubble_gun');
     resps[resps.length] = await send('look');
     resps[resps.length] = await send('bridge');
     resps[resps.length] = await send('look');
+    resps[resps.length] = await send('quit');
+    checkResponses(resps);
+  });
+
+  test('magneted bridge', async () => {
+    resps[resps.length] = await send('play bubble_gun');
+    resps[resps.length] = await send('look');
+    resps[resps.length] = await send('magnets');
+    resps[resps.length] = await send('look');
+    resps[resps.length] = await send('explore');
+    resps[resps.length] = await send('look');
+    resps[resps.length] = await send('secret_door');
+    resps[resps.length] = await send('status_cycle'); // doors open
+    resps[resps.length] = await send('status_cycle'); // building crashes up
+    resps[resps.length] = await send('status_cycle'); // zaps up the playground
+    resps[resps.length] = await send('status_cycle'); // zaps up the bridge
+    resps[resps.length] = await send('up');
+    resps[resps.length] = await send('playground');
+    resps[resps.length] = await send('bridge');
+    resps[resps.length] = await send('look');
+    resps[resps.length] = await send('quit');
+    checkResponses(resps);
+  });
+
+  /*
+  test('lighted bridge', async () => {
+    resps[resps.length] = await send('play bubble_gun');
+    resps[resps.length] = await send('quit');
+    checkResponses(resps);
+  });
+   */
+
+  test('magneted playground', async () => {
+    resps[resps.length] = await send('play bubble_gun');
+    resps[resps.length] = await send('magnets');
+    resps[resps.length] = await send('look');
+    resps[resps.length] = await send('explore');
+    resps[resps.length] = await send('look');
+    resps[resps.length] = await send('secret_door');
+    resps[resps.length] = await send('status_cycle'); // doors open
+    resps[resps.length] = await send('status_cycle'); // building crashes up
+    resps[resps.length] = await send('status_cycle'); // zaps up the playground
+    resps[resps.length] = await send('up');
     resps[resps.length] = await send('playground');
     resps[resps.length] = await send('look');
-    resps[resps.length] = await send('tree_fort');
-    resps[resps.length] = await send('look');
-    resps[resps.length] = await send('playground');
-    resps[resps.length] = await send('look');
-    resps[resps.length] = await send('electronics');
-    resps[resps.length] = await send('take_lr41_batteries');
-    resps[resps.length] = await send('take_aa_batteries');
-    resps[resps.length] = await send('take_led');
-    resps[resps.length] = await send('look');
-    resps[resps.length] = await send('playground');
-    resps[resps.length] = await send('items');
-    resps[resps.length] = await send('combine_bubble_gun_and_batteries');
-    resps[resps.length] = await send('combine_led_and_batteries');
-    resps[resps.length] = await send('items');
-    resps[resps.length] = await send('look');
-    resps[resps.length] = await send('soaps');
-    resps[resps.length] = await send('steal_the_soap');
-    resps[resps.length] = await send('combine_bubble_gun_and_soap');
-    resps[resps.length] = await send('items');
-    resps[resps.length] = await send('playground');
-    resps[resps.length] = await send('look');
+    resps[resps.length] = await send('quit');
+    checkResponses(resps);
+  });
+
+  /*
+  test('lighted playground', async () => {
+    resps[resps.length] = await send('play bubble_gun');
+    resps[resps.length] = await send('quit');
+    checkResponses(resps);
+  });
+   */
+
+  test('crashed magnet store and basement', async () => {
+    resps[resps.length] = await send('play bubble_gun');
     resps[resps.length] = await send('magnets');
     resps[resps.length] = await send('explore');
     resps[resps.length] = await send('secret_door');
-    resps[resps.length] = await send('examine_control_panel');
     resps[resps.length] = await send('status_cycle');
+    resps[resps.length] = await send('up');
+    resps[resps.length] = await send('look'); // normal
+    resps[resps.length] = await send('secret_door');
+    resps[resps.length] = await send('look'); // opened floor
     resps[resps.length] = await send('status_cycle');
-    resps[resps.length] = await send('status_cycle');
-    resps[resps.length] = await send('status_cycle');
-    resps[resps.length] = await send('status_cycle');
-    resps[resps.length] = await send('playground');
-    resps[resps.length] = await send('look');
+    resps[resps.length] = await send('up');
+    resps[resps.length] = await send('look'); // crashed up the ceiling
+    resps[resps.length] = await send('secret_door');
+    resps[resps.length] = await send('look'); // machine extended
+    resps[resps.length] = await send('status_cycle'); // zaps 1
+    resps[resps.length] = await send('status_cycle'); // zaps 2
+    resps[resps.length] = await send('up');
+    resps[resps.length] = await send('look'); // crashed and emptied of magnets
     resps[resps.length] = await send('quit');
     checkResponses(resps);
   });

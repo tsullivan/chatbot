@@ -1,5 +1,451 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`bubble_gun crashed magnet store and basement 1`] = `
+"# Welcome to Bubble Gun World
+
+You are at: **The Playground**
+
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+Bubble Gun world is very dark right now. All the power seems to be off in this entire neighborhood.
+
+It's a pretty normal-looking playground, with the typical offerings of swings, a slide, and jungle gyms. There's even a tree fort!
+
+- BRIDGE - Go to the bridge
+- TREE_FORT - Climb the ladder up to the tree fort
+- ELECTRONICS - Go to the Electronics store
+- SOAPS - Go to the Soaps store
+- MAGNETS - Go to the Magnet store
+- LOOK - Look at the area you are currently in.
+- ITEMS - Things you can do with stuff you are holding or stuff you see.
+- HELP - See all the commands you can type
+- QUIT - Quit the game"
+`;
+
+exports[`bubble_gun crashed magnet store and basement 2`] = `
+"You are at: **The Magnet Store**
+
+No one is in this store. It seems to be completely self-operational. When you have a town where all the stores only have free items, that kind of makes sense.
+
+There are lots and lots of metal shelves in here - maybe hundreds. The entire surfaces of all the shelves have magnets stuck to them.
+
+This is a very clean area. Running a magnet store must not be a very messy business.
+
+As packed as it is with shelves full of magnets, you're sure that if you explore a bit, you will find there is more to this store.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- EXPLORE - See what could be hiding in this strange shop."
+`;
+
+exports[`bubble_gun crashed magnet store and basement 3`] = `
+"The magnet store has the feel of a place where anything could be hiding. It's time to get to the bottom of this mystery.
+
+You wander around some aisles, go around some corners, look around. You're not exactly sure what you're looking for. You are keeping your eyes open for anything that seems out of place in this strange store.
+
+Right when you start to think maybe this is just a normal self-operational magnet store, you discover a small door on a wall. It is almost completely hidden behind a shelf leaning against the wall.
+
+You should get extra points! You get 3 points.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+`;
+
+exports[`bubble_gun crashed magnet store and basement 4`] = `
+"The door leads directly to a case of stairs going down. There are many stairs to walk down, and it takes time to get all the way to the bottom.
+
+You are at: **The Secret Basement of the Magnet Store**
+
+You're at the bottom of a long set of stairs, in a room with a wide, open floor, and a very tall ceiling.
+
+A metal box on the wall stands out as it is the only thing that makes out a shape in the room. The section of wall with the box is protected by a guard rail, which you can walk behind to access the control panel. There are many magnets stuck to the box and the guard rail, just like the shelves upstairs.
+
+It is a very well-lit and clean place - it almost feels sterile.
+
+---
+
+You can:
+
+- UP - Go back to the magnet store
+- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
+- STATUS_CYCLE - Press the STATUS_CYCLE button"
+`;
+
+exports[`bubble_gun crashed magnet store and basement 5`] = `
+"The bright florescent lights suddently shut off. Red alerting lights turn on and paint the large room with red light and long shadows.
+
+The floor starts to shake, and it becomes necessary for you to grab onto the guard rail to remain standing. The floor starts to separate in the middle - opening like cargo doors - to reveal complicated-looking machinery beneath the floor.
+
+In the glow of the red light, you can still read the message on the control panel status screen. It has changed to: **STATUS: EXPOSED**
+
+---
+
+You can:
+
+- UP - Go back to the magnet store
+- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
+- STATUS_CYCLE - Press the STATUS_CYCLE button"
+`;
+
+exports[`bubble_gun crashed magnet store and basement 6`] = `
+"You are at: **The Magnet Store**
+
+No one is in this store. It seems to be completely self-operational. When you have a town where all the stores only have free items, that kind of makes sense.
+
+There are lots and lots of metal shelves in here - maybe hundreds. The entire surfaces of all the shelves have magnets stuck to them.
+
+This is a very clean area. Running a magnet store must not be a very messy business.
+
+Behind a leaning shelf is a wall with a small door. You can crouch down to enter the door, and descend the well-lit stairs.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+`;
+
+exports[`bubble_gun crashed magnet store and basement 7`] = `
+"You are at: **The Magnet Store**
+
+No one is in this store. It seems to be completely self-operational. When you have a town where all the stores only have free items, that kind of makes sense.
+
+There are lots and lots of metal shelves in here - maybe hundreds. The entire surfaces of all the shelves have magnets stuck to them.
+
+This is a very clean area. Running a magnet store must not be a very messy business.
+
+Behind a leaning shelf is a wall with a small door. You can crouch down to enter the door, and descend the well-lit stairs.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+`;
+
+exports[`bubble_gun crashed magnet store and basement 8`] = `
+"The door leads directly to a case of stairs going down. There are many stairs to walk down, and it takes time to get all the way to the bottom.
+
+You are at: **The Secret Basement of the Magnet Store**
+
+You're at the bottom of a long set of stairs, in a room with a wide, open floor, and a very tall ceiling.
+
+A metal box on the wall stands out as it is the only thing that makes out a shape in the room. The section of wall with the box is protected by a guard rail, which you can walk behind to access the control panel. There are many magnets stuck to the box and the guard rail, just like the shelves upstairs.
+
+There is a lot of complicated machinery curled up in a really big hole in the floor. The room is a bit dusty now. It seems like this floor hasn't been opened up in a long time: maybe ever.
+
+---
+
+You can:
+
+- UP - Go back to the magnet store
+- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
+- STATUS_CYCLE - Press the STATUS_CYCLE button"
+`;
+
+exports[`bubble_gun crashed magnet store and basement 9`] = `
+"You are at: **The Secret Basement of the Magnet Store**
+
+You're at the bottom of a long set of stairs, in a room with a wide, open floor, and a very tall ceiling.
+
+A metal box on the wall stands out as it is the only thing that makes out a shape in the room. The section of wall with the box is protected by a guard rail, which you can walk behind to access the control panel. There are many magnets stuck to the box and the guard rail, just like the shelves upstairs.
+
+There is a lot of complicated machinery curled up in a really big hole in the floor. The room is a bit dusty now. It seems like this floor hasn't been opened up in a long time: maybe ever.
+
+---
+
+You can:
+
+- UP - Go back to the magnet store
+- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
+- STATUS_CYCLE - Press the STATUS_CYCLE button"
+`;
+
+exports[`bubble_gun crashed magnet store and basement 10`] = `
+"Gears in the machinery start to slowly turn, and parts of the machine start to unfold. First, metal arms and cranks reach out of the separated floor, into the air, higher and higher. It crashes the ceiling, and creates a new window into the Magnet Store above. Magnets are wapping off the shelves and wapping onto the machine arm. But the machine arm still goes up and up and up. It crashes out of the roof of the building, and then finally becomes still.
+
+All the crashing has created a lot of debris, rubble and dust in the basement around you. But the control panel is still working. Now the status screen reads: **STATUS: UNDEFINED**
+
+It seems this part of the machine functionality has never been tested before. That would explain why the ceilings and roof wasn't destroyed when you got into town.
+
+The Playground and the Bridge on the map of the control panel have their targets blinking.
+
+---
+
+You can:
+
+- UP - Go back to the magnet store
+- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
+- STATUS_CYCLE - Press the STATUS_CYCLE button"
+`;
+
+exports[`bubble_gun crashed magnet store and basement 11`] = `
+"You are at: **The Magnet Store**
+
+No one is in this store. It seems to be completely self-operational. When you have a town where all the stores only have free items, that kind of makes sense.
+
+There are lots and lots of metal shelves in here - maybe hundreds. The entire surfaces of all the shelves have magnets stuck to them.
+
+Another very noticeable thing about this place is a huge machine has crashed out of the floor and extended itself up through the ceiling. It is a bit messy in here now, to be honest.
+
+Behind a leaning shelf is a wall with a small door. You can crouch down to enter the door, and descend the well-lit stairs.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+`;
+
+exports[`bubble_gun crashed magnet store and basement 12`] = `
+"You are at: **The Magnet Store**
+
+No one is in this store. It seems to be completely self-operational. When you have a town where all the stores only have free items, that kind of makes sense.
+
+There are lots and lots of metal shelves in here - maybe hundreds. The entire surfaces of all the shelves have magnets stuck to them.
+
+Another very noticeable thing about this place is a huge machine has crashed out of the floor and extended itself up through the ceiling. It is a bit messy in here now, to be honest.
+
+Behind a leaning shelf is a wall with a small door. You can crouch down to enter the door, and descend the well-lit stairs.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+`;
+
+exports[`bubble_gun crashed magnet store and basement 13`] = `
+"The door leads directly to a case of stairs going down. There are many stairs to walk down, and it takes time to get all the way to the bottom.
+
+You are at: **The Secret Basement of the Magnet Store**
+
+You're at the bottom of a long set of stairs, in a room with a wide, open floor, and a very tall ceiling.
+
+A metal box on the wall stands out as it is the only thing that makes out a shape in the room. The section of wall with the box is protected by a guard rail, which you can walk behind to access the control panel. There are many magnets stuck to the box and the guard rail, just like the shelves upstairs.
+
+An enormous machine arm has extended out of the floor, crashed through the ceiling, and crashed through both the inside of and the roof of the magnet store.
+
+---
+
+You can:
+
+- UP - Go back to the magnet store
+- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
+- STATUS_CYCLE - Press the STATUS_CYCLE button"
+`;
+
+exports[`bubble_gun crashed magnet store and basement 14`] = `
+"You are at: **The Secret Basement of the Magnet Store**
+
+You're at the bottom of a long set of stairs, in a room with a wide, open floor, and a very tall ceiling.
+
+A metal box on the wall stands out as it is the only thing that makes out a shape in the room. The section of wall with the box is protected by a guard rail, which you can walk behind to access the control panel. There are many magnets stuck to the box and the guard rail, just like the shelves upstairs.
+
+An enormous machine arm has extended out of the floor, crashed through the ceiling, and crashed through both the inside of and the roof of the magnet store.
+
+---
+
+You can:
+
+- UP - Go back to the magnet store
+- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
+- STATUS_CYCLE - Press the STATUS_CYCLE button"
+`;
+
+exports[`bubble_gun crashed magnet store and basement 15`] = `
+"Magnets start flying off the control panel box and the guard rail, hit the machine in the center of the room, and slide up and up the machine. You watch them go up through the ceiling and into the store, where more magnets are crashing into the machine and sliding up, up, up.
+
+Suddenly, a loud noise blasts your ears: THUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUD. The noise is coming from high above you, in the air above the building.
+
+The Playground's icon on the map changed from a target to an X.
+
+What have you done?
+
+---
+
+You can:
+
+- UP - Go back to the magnet store
+- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
+- STATUS_CYCLE - Press the STATUS_CYCLE button"
+`;
+
+exports[`bubble_gun crashed magnet store and basement 16`] = `
+"Again a loud noise blasts your ears: THUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUD. It's just as loud and long as last time.
+
+The Bridge's icon on the map changed from a target to an X.
+
+What. Have. You. Done.
+
+---
+
+You can:
+
+- UP - Go back to the magnet store
+- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
+- STATUS_CYCLE - Press the STATUS_CYCLE button"
+`;
+
+exports[`bubble_gun crashed magnet store and basement 17`] = `
+"You are at: **The Magnet Store**
+
+No one is in this store. It seems to be completely self-operational. When you have a town where all the stores only have free items, that kind of makes sense.
+
+The hundreds of metal shelves look very strange. It's mostly empty here, since all of the magnets have left the building.
+
+Another very noticeable thing about this place is a huge machine has crashed out of the floor and extended itself up through the ceiling. It is a bit messy in here now, to be honest.
+
+Behind a leaning shelf is a wall with a small door. You can crouch down to enter the door, and descend the well-lit stairs.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+`;
+
+exports[`bubble_gun crashed magnet store and basement 18`] = `
+"You are at: **The Magnet Store**
+
+No one is in this store. It seems to be completely self-operational. When you have a town where all the stores only have free items, that kind of makes sense.
+
+The hundreds of metal shelves look very strange. It's mostly empty here, since all of the magnets have left the building.
+
+Another very noticeable thing about this place is a huge machine has crashed out of the floor and extended itself up through the ceiling. It is a bit messy in here now, to be honest.
+
+Behind a leaning shelf is a wall with a small door. You can crouch down to enter the door, and descend the well-lit stairs.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+`;
+
+exports[`bubble_gun crashed magnet store and basement 19`] = `
+"I guess you don't want to hike any more. See ya!
+
+Looks like you're a winner! Turns: 17 Score: 53
+That was fun, Tim!"
+`;
+
+exports[`bubble_gun default bridge 1`] = `
+"# Welcome to Bubble Gun World
+
+You are at: **The Playground**
+
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+Bubble Gun world is very dark right now. All the power seems to be off in this entire neighborhood.
+
+It's a pretty normal-looking playground, with the typical offerings of swings, a slide, and jungle gyms. There's even a tree fort!
+
+- BRIDGE - Go to the bridge
+- TREE_FORT - Climb the ladder up to the tree fort
+- ELECTRONICS - Go to the Electronics store
+- SOAPS - Go to the Soaps store
+- MAGNETS - Go to the Magnet store
+- LOOK - Look at the area you are currently in.
+- ITEMS - Things you can do with stuff you are holding or stuff you see.
+- HELP - See all the commands you can type
+- QUIT - Quit the game"
+`;
+
+exports[`bubble_gun default bridge 2`] = `
+"You are at: **The Playground**
+
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+Bubble Gun world is very dark right now. All the power seems to be off in this entire neighborhood.
+
+It's a pretty normal-looking playground, with the typical offerings of swings, a slide, and jungle gyms. There's even a tree fort!
+
+You see:
+
+- Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+---
+
+You can:
+
+- BRIDGE - Go to the bridge
+- TREE_FORT - Climb the ladder up to the tree fort
+- ELECTRONICS - Go to the Electronics store
+- SOAPS - Go to the Soaps store
+- MAGNETS - Go to the Magnet store"
+`;
+
+exports[`bubble_gun default bridge 3`] = `
+"You are at: **The Bridge Out Of Town**
+
+This long, long bridge carries the road over a very tall gorge that surrounds Bubble Gun World. It is the only way out of town.
+
+There's no way out of town right now, Bubble Gun World Police have blocked the road to prevent anyone from using the road. A power outage in the streets has caused all the street lights to turn off in this area. The Police are saying it's too dark and unsafe to let anyone try to cross.
+
+Other than being disturbingly dark, this is a pretty normal bridge.
+
+The police have put up signs all along the bridge that say BRIDGE IS OUT!...but it is kind of too dark to really be able to read them.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
+`;
+
+exports[`bubble_gun default bridge 4`] = `
+"You are at: **The Bridge Out Of Town**
+
+This long, long bridge carries the road over a very tall gorge that surrounds Bubble Gun World. It is the only way out of town.
+
+There's no way out of town right now, Bubble Gun World Police have blocked the road to prevent anyone from using the road. A power outage in the streets has caused all the street lights to turn off in this area. The Police are saying it's too dark and unsafe to let anyone try to cross.
+
+Other than being disturbingly dark, this is a pretty normal bridge.
+
+The police have put up signs all along the bridge that say BRIDGE IS OUT!...but it is kind of too dark to really be able to read them.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
+`;
+
+exports[`bubble_gun default bridge 5`] = `
+"I guess you don't want to hike any more. See ya!
+
+Looks like you're a winner! Turns: 3 Score: 50
+That was fun, Tim!"
+`;
+
 exports[`bubble_gun fall down in soap store 1`] = `
 "# Welcome to Bubble Gun World
 
@@ -10,6 +456,10 @@ This playground is right in the center of Bubble Gun World. It has things that a
 Off the corner of the road, there's a bridge leading out of Bubble Gun World.
 
 Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+Bubble Gun world is very dark right now. All the power seems to be off in this entire neighborhood.
+
+It's a pretty normal-looking playground, with the typical offerings of swings, a slide, and jungle gyms. There's even a tree fort!
 
 - BRIDGE - Go to the bridge
 - TREE_FORT - Climb the ladder up to the tree fort
@@ -153,7 +603,7 @@ Looks like you're a winner! Turns: 9 Score: 50
 That was fun, Tim!"
 `;
 
-exports[`bubble_gun walk around 1`] = `
+exports[`bubble_gun magneted bridge 1`] = `
 "# Welcome to Bubble Gun World
 
 You are at: **The Playground**
@@ -163,6 +613,10 @@ This playground is right in the center of Bubble Gun World. It has things that a
 Off the corner of the road, there's a bridge leading out of Bubble Gun World.
 
 Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+Bubble Gun world is very dark right now. All the power seems to be off in this entire neighborhood.
+
+It's a pretty normal-looking playground, with the typical offerings of swings, a slide, and jungle gyms. There's even a tree fort!
 
 - BRIDGE - Go to the bridge
 - TREE_FORT - Climb the ladder up to the tree fort
@@ -175,7 +629,7 @@ Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope 
 - QUIT - Quit the game"
 `;
 
-exports[`bubble_gun walk around 2`] = `
+exports[`bubble_gun magneted bridge 2`] = `
 "You are at: **The Playground**
 
 This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
@@ -184,63 +638,9 @@ Off the corner of the road, there's a bridge leading out of Bubble Gun World.
 
 Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
 
-You see:
+Bubble Gun world is very dark right now. All the power seems to be off in this entire neighborhood.
 
-- Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
-
----
-
-You can:
-
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store"
-`;
-
-exports[`bubble_gun walk around 3`] = `
-"You are at: **The Bridge Out Of Town**
-
-This long, long bridge carries the road over a very tall gorge that surrounds Bubble Gun World. It is the only way out of town.
-
-There's no way out of town right now, Bubble Gun World Police have blocked the road to prevent anyone from using the road. A power outage in the streets has caused all the street lights to turn off in this area. The Police are saying it's too dark and unsafe to let anyone try to cross.
-
-The police have put up signs all along the bridge that say BRIDGE IS OUT!But it is too dark to even see them.
-
----
-
-You can:
-
-- PLAYGROUND - Go back to the playground
-- CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
-`;
-
-exports[`bubble_gun walk around 4`] = `
-"You are at: **The Bridge Out Of Town**
-
-This long, long bridge carries the road over a very tall gorge that surrounds Bubble Gun World. It is the only way out of town.
-
-There's no way out of town right now, Bubble Gun World Police have blocked the road to prevent anyone from using the road. A power outage in the streets has caused all the street lights to turn off in this area. The Police are saying it's too dark and unsafe to let anyone try to cross.
-
-The police have put up signs all along the bridge that say BRIDGE IS OUT!But it is too dark to even see them.
-
----
-
-You can:
-
-- PLAYGROUND - Go back to the playground
-- CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
-`;
-
-exports[`bubble_gun walk around 5`] = `
-"You are at: **The Playground**
-
-This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
-
-Off the corner of the road, there's a bridge leading out of Bubble Gun World.
-
-Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+It's a pretty normal-looking playground, with the typical offerings of swings, a slide, and jungle gyms. There's even a tree fort!
 
 You see:
 
@@ -257,401 +657,82 @@ You can:
 - MAGNETS - Go to the Magnet store"
 `;
 
-exports[`bubble_gun walk around 6`] = `
-"You are at: **The Playground**
-
-This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
-
-Off the corner of the road, there's a bridge leading out of Bubble Gun World.
-
-Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
-
-You see:
-
-- Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
-
----
-
-You can:
-
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store"
-`;
-
-exports[`bubble_gun walk around 7`] = `
-"You are at: **The Tree Fort**
-
-This tree fort is so tall! It has a big window with a clear view of the entire playground.
-
----
-
-You can:
-
-- PLAYGROUND - Go back to the playground"
-`;
-
-exports[`bubble_gun walk around 8`] = `
-"You are at: **The Tree Fort**
-
-This tree fort is so tall! It has a big window with a clear view of the entire playground.
-
----
-
-You can:
-
-- PLAYGROUND - Go back to the playground"
-`;
-
-exports[`bubble_gun walk around 9`] = `
-"You are at: **The Playground**
-
-This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
-
-Off the corner of the road, there's a bridge leading out of Bubble Gun World.
-
-Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
-
-You see:
-
-- Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
-
----
-
-You can:
-
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store"
-`;
-
-exports[`bubble_gun walk around 10`] = `
-"You are at: **The Playground**
-
-This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
-
-Off the corner of the road, there's a bridge leading out of Bubble Gun World.
-
-Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
-
-You see:
-
-- Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
-
----
-
-You can:
-
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store"
-`;
-
-exports[`bubble_gun walk around 11`] = `
-"You are at: **The Electronics Store**
-
-Here at the Electronics store, their motto is: \\"Electronics - they're what we sell!\\"
-
-You see:
-
-- Small LR41 Batteries. - The two LR41 batteries are the standard 1.5V button size batteries. They'd fit nicely into the battery holder of a very small piece of electronics.
-- Medium-size AA Batteries. - The two AA batteries are the standard 1.5V medium-size batteries. They'd fit nicely into the battery holder of a medium-size piece of electronics.
-- Light-emitting Diode - A semiconductor diode which glows when a voltage is applied. It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
-
----
-
-You can:
-
-- TAKE_LR41_BATTERIES - Obtain possession of the LR41 batteries.
-- TAKE_AA_BATTERIES - Obtain possession of the AA batteries.
-- TAKE_LED - Take the LED.
-- PLAYGROUND - Go back to the playground"
-`;
-
-exports[`bubble_gun walk around 12`] = `
-"The LR41 batteries are now yours!
-
----
-
-You can:
-
-- TAKE_AA_BATTERIES - Obtain possession of the AA batteries.
-- TAKE_LED - Take the LED.
-- PLAYGROUND - Go back to the playground"
-`;
-
-exports[`bubble_gun walk around 13`] = `
-"The AA batteries are now yours!
-
----
-
-You can:
-
-- TAKE_LED - Take the LED.
-- PLAYGROUND - Go back to the playground"
-`;
-
-exports[`bubble_gun walk around 14`] = `
-"The LED is now yours, and yours alone.
-
----
-
-You can:
-
-- PLAYGROUND - Go back to the playground"
-`;
-
-exports[`bubble_gun walk around 15`] = `
-"You are at: **The Electronics Store**
-
-Here at the Electronics store, their motto is: \\"Electronics - they're what we sell!\\"
-
----
-
-You can:
-
-- PLAYGROUND - Go back to the playground"
-`;
-
-exports[`bubble_gun walk around 16`] = `
-"You are at: **The Playground**
-
-This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
-
-Off the corner of the road, there's a bridge leading out of Bubble Gun World.
-
-Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
-
-You see:
-
-- Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
-
----
-
-You can:
-
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store"
-`;
-
-exports[`bubble_gun walk around 17`] = `
-"In The Playground, You see:
-- Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
-
-You are holding:
-- Bubble Gun - It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.
-  - COMBINE_BUBBLE_GUN_AND_BATTERIES - Put the AA batteries in the bubble gun.
-- Small LR41 Batteries. - The two LR41 batteries are the standard 1.5V button size batteries. They'd fit nicely into the battery holder of a very small piece of electronics.
-- Medium-size AA Batteries. - The two AA batteries are the standard 1.5V medium-size batteries. They'd fit nicely into the battery holder of a medium-size piece of electronics.
-- Light-emitting Diode - A semiconductor diode which glows when a voltage is applied. It's an LED connected to a circuit board for making it flashy, and battery holder for LR41s.
-  - COMBINE_LED_AND_BATTERIES - Put the two LR41 batteries in the battery holder of the LED device."
-`;
-
-exports[`bubble_gun walk around 18`] = `
-"You slide off the cover to the bubble gun, pop in the AA batteries, and put the cover back on. It's nice and snug with the water seal that will prevent corrosion in the batteries or the metal surfaces inside the bubble gun's battery compartment.
-
----
-
-You can:
-
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store"
-`;
-
-exports[`bubble_gun walk around 19`] = `
-"The batteries go right on in to the LED's battery holder. Nice and simple.
-
----
-
-You can:
-
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store"
-`;
-
-exports[`bubble_gun walk around 20`] = `
-"In The Playground, You see:
-- Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
-
-You are holding:
-- Bubble Gun - Bubble gun with batteries, but no soap.
-- Light-emitting Diode - LED throwie that has batteries, but you can't do anything else with it."
-`;
-
-exports[`bubble_gun walk around 21`] = `
-"You are at: **The Playground**
-
-This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
-
-Off the corner of the road, there's a bridge leading out of Bubble Gun World.
-
-Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
-
-You see:
-
-- Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
-
----
-
-You can:
-
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store"
-`;
-
-exports[`bubble_gun walk around 22`] = `
-"You are at: **The Soap Store**
-
-Oh my goodness, this store has so much soap! It is by far the soapiest place you have ever been in!
-
-Another thing you notice right away is that there is an extremely strong fragrance of clean in this place.
-
-You see:
-
-- Bottle of liquid soap - This small bottle of liquid soap has more than enough liquid for a bubble gun to shoot out plenty of bubbles.
-
----
-
-You can:
-
-- STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- PLAYGROUND - Go back to the playground
-- ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
-`;
-
-exports[`bubble_gun walk around 23`] = `
-"Did you forget that I said everything in this town is FREE!? Oh well. You wanted the soap, you got it. It's your problem now.
-
----
-
-You can:
-
-- PLAYGROUND - Go back to the playground
-- ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
-`;
-
-exports[`bubble_gun walk around 24`] = `
-"You slide off the cover to the bubble gun, pop in the AA batteries, and put the cover back on. It's nice and snug with the water seal that will prevent corrosion in the batteries or the metal surfaces inside the bubble gun's battery compartment.
-
-The bubble gun is completely functional now!
-
----
-
-You can:
-
-- PLAYGROUND - Go back to the playground
-- ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
-`;
-
-exports[`bubble_gun walk around 25`] = `
-"You are holding:
-- Bubble Gun - Completely functional and working bubble gun
-  - BUBBLE_BLASTER - Blast bubbles out the bubble gun
-- Light-emitting Diode - LED throwie that has batteries, but you can't do anything else with it."
-`;
-
-exports[`bubble_gun walk around 26`] = `
-"You are at: **The Playground**
-
-This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
-
-Off the corner of the road, there's a bridge leading out of Bubble Gun World.
-
-Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
-
-You see:
-
-- Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
-
----
-
-You can:
-
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store"
-`;
-
-exports[`bubble_gun walk around 27`] = `
-"You are at: **The Playground**
-
-This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
-
-Off the corner of the road, there's a bridge leading out of Bubble Gun World.
-
-Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
-
-You see:
-
-- Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
-
----
-
-You can:
-
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store"
-`;
-
-exports[`bubble_gun walk around 28`] = `
+exports[`bubble_gun magneted bridge 3`] = `
 "You are at: **The Magnet Store**
 
-There are lots and lots of metal shelves in here. The entire surfaces of all the shelves have magnets stuck to them. The aisles and aisles of shelves create a mysterious atmosphere, where anything could be hiding. Perhaps if you explore a bit, you could find there is more to this store.
+No one is in this store. It seems to be completely self-operational. When you have a town where all the stores only have free items, that kind of makes sense.
 
-You see:
+There are lots and lots of metal shelves in here - maybe hundreds. The entire surfaces of all the shelves have magnets stuck to them.
 
-- Small magnet - This looks like a pretty handy little small magent! It has a sticker on for sticking onto a small device.
+This is a very clean area. Running a magnet store must not be a very messy business.
+
+As packed as it is with shelves full of magnets, you're sure that if you explore a bit, you will find there is more to this store.
 
 ---
 
 You can:
 
-- TAKE_MAGNET - Take the magnet.
 - PLAYGROUND - Go back to the playground
 - EXPLORE - See what could be hiding in this strange shop."
 `;
 
-exports[`bubble_gun walk around 29`] = `
-"The magnet store has the feel of a place where anything could be hiding. It's time to get to the bottom of this mystery.
+exports[`bubble_gun magneted bridge 4`] = `
+"You are at: **The Magnet Store**
 
-You wander around some aisles, go around some corners, look around. You're not exactly sure what you're looking for. You are keeping your eyes open for anything that seems out of place in this strange store.
+No one is in this store. It seems to be completely self-operational. When you have a town where all the stores only have free items, that kind of makes sense.
 
-Just when you think maybe this is a normal magnet store after all, you discover a small door on a wall. It is almost completely hidden behind a shelf leaning against the wall.
+There are lots and lots of metal shelves in here - maybe hundreds. The entire surfaces of all the shelves have magnets stuck to them.
+
+This is a very clean area. Running a magnet store must not be a very messy business.
+
+As packed as it is with shelves full of magnets, you're sure that if you explore a bit, you will find there is more to this store.
 
 ---
 
 You can:
 
-- TAKE_MAGNET - Take the magnet.
+- PLAYGROUND - Go back to the playground
+- EXPLORE - See what could be hiding in this strange shop."
+`;
+
+exports[`bubble_gun magneted bridge 5`] = `
+"The magnet store has the feel of a place where anything could be hiding. It's time to get to the bottom of this mystery.
+
+You wander around some aisles, go around some corners, look around. You're not exactly sure what you're looking for. You are keeping your eyes open for anything that seems out of place in this strange store.
+
+Right when you start to think maybe this is just a normal self-operational magnet store, you discover a small door on a wall. It is almost completely hidden behind a shelf leaning against the wall.
+
+You should get extra points! You get 3 points.
+
+---
+
+You can:
+
 - PLAYGROUND - Go back to the playground
 - SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
 `;
 
-exports[`bubble_gun walk around 30`] = `
-"The door leads directly to a case of stairs going down. There are many stairs to walk down, and it takes time to get all the way to the bottom. Finally, you make it to the bottom where there is a room with a wide, open floor, and a very tall ceiling.
+exports[`bubble_gun magneted bridge 6`] = `
+"You are at: **The Magnet Store**
+
+No one is in this store. It seems to be completely self-operational. When you have a town where all the stores only have free items, that kind of makes sense.
+
+There are lots and lots of metal shelves in here - maybe hundreds. The entire surfaces of all the shelves have magnets stuck to them.
+
+This is a very clean area. Running a magnet store must not be a very messy business.
+
+Behind a leaning shelf is a wall with a small door. You can crouch down to enter the door, and descend the well-lit stairs.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+`;
+
+exports[`bubble_gun magneted bridge 7`] = `
+"The door leads directly to a case of stairs going down. There are many stairs to walk down, and it takes time to get all the way to the bottom.
 
 You are at: **The Secret Basement of the Magnet Store**
 
@@ -670,21 +751,10 @@ You can:
 - STATUS_CYCLE - Press the STATUS_CYCLE button"
 `;
 
-exports[`bubble_gun walk around 31`] = `
-"The panel has a small screen and a button of about the same size. The screen reads one message: **STATUS: LOOMING**. The button is labeled **STATUS_CYCLE**. There is another slightly larger screen on the control panel: a map showing all of Bubble Gun World. It shows targets on the Playground and the Bridge.
-
----
-
-You can:
-
-- UP - Go back to the magnet store
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
-`;
-
-exports[`bubble_gun walk around 32`] = `
+exports[`bubble_gun magneted bridge 8`] = `
 "The bright florescent lights suddently shut off. Red alerting lights turn on and paint the large room with red light and long shadows.
 
-The floor starts to shake, and it becomes necessary for you to grab onto the guard rail to remain standing. The floor starts to separate in the middle - opening like cargo doors - to reveal machinery beneath the floor.
+The floor starts to shake, and it becomes necessary for you to grab onto the guard rail to remain standing. The floor starts to separate in the middle - opening like cargo doors - to reveal complicated-looking machinery beneath the floor.
 
 In the glow of the red light, you can still read the message on the control panel status screen. It has changed to: **STATUS: EXPOSED**
 
@@ -693,10 +763,11 @@ In the glow of the red light, you can still read the message on the control pane
 You can:
 
 - UP - Go back to the magnet store
+- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
 - STATUS_CYCLE - Press the STATUS_CYCLE button"
 `;
 
-exports[`bubble_gun walk around 33`] = `
+exports[`bubble_gun magneted bridge 9`] = `
 "Gears in the machinery start to slowly turn, and parts of the machine start to unfold. First, metal arms and cranks reach out of the separated floor, into the air, higher and higher. It crashes the ceiling, and creates a new window into the Magnet Store above. Magnets are wapping off the shelves and wapping onto the machine arm. But the machine arm still goes up and up and up. It crashes out of the roof of the building, and then finally becomes still.
 
 All the crashing has created a lot of debris, rubble and dust in the basement around you. But the control panel is still working. Now the status screen reads: **STATUS: UNDEFINED**
@@ -710,59 +781,240 @@ The Playground and the Bridge on the map of the control panel have their targets
 You can:
 
 - UP - Go back to the magnet store
+- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
 - STATUS_CYCLE - Press the STATUS_CYCLE button"
 `;
 
-exports[`bubble_gun walk around 34`] = `
-"Suddenly, a loud noise blasts your ears: THUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUD. The noise is coming from high above you, outside the building. After about a minute, the noise stops.
+exports[`bubble_gun magneted bridge 10`] = `
+"Magnets start flying off the control panel box and the guard rail, hit the machine in the center of the room, and slide up and up the machine. You watch them go up through the ceiling and into the store, where more magnets are crashing into the machine and sliding up, up, up.
+
+Suddenly, a loud noise blasts your ears: THUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUD. The noise is coming from high above you, in the air above the building.
 
 The Playground's icon on the map changed from a target to an X.
 
+What have you done?
+
 ---
 
 You can:
 
 - UP - Go back to the magnet store
+- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
 - STATUS_CYCLE - Press the STATUS_CYCLE button"
 `;
 
-exports[`bubble_gun walk around 35`] = `
-"Again a loud noise blasts your ears: THUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUD. It's just as loud and long as last time. This time, when the THUDs stop, you hear some clicks, and then that's it.
+exports[`bubble_gun magneted bridge 11`] = `
+"Again a loud noise blasts your ears: THUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUD. It's just as loud and long as last time.
 
 The Bridge's icon on the map changed from a target to an X.
 
----
-
-You can:
-
-- UP - Go back to the magnet store
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
-`;
-
-exports[`bubble_gun walk around 36`] = `
-"When you push the button now, the machine shakes a little bit and makes some clunking sounds, but nothing happens. It seems to be out of ammunition.
+What. Have. You. Done.
 
 ---
 
 You can:
 
 - UP - Go back to the magnet store
+- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
 - STATUS_CYCLE - Press the STATUS_CYCLE button"
 `;
 
-exports[`bubble_gun walk around 37`] = `
-"ERROR! LOSE 2 POINTS. Type HELP to show all the commands
+exports[`bubble_gun magneted bridge 12`] = `
+"You are at: **The Magnet Store**
 
-- UP - Go back to the magnet store
-- STATUS_CYCLE - Press the STATUS_CYCLE button
+No one is in this store. It seems to be completely self-operational. When you have a town where all the stores only have free items, that kind of makes sense.
+
+The hundreds of metal shelves look very strange. It's mostly empty here, since all of the magnets have left the building.
+
+Another very noticeable thing about this place is a huge machine has crashed out of the floor and extended itself up through the ceiling. It is a bit messy in here now, to be honest.
+
+Behind a leaning shelf is a wall with a small door. You can crouch down to enter the door, and descend the well-lit stairs.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+`;
+
+exports[`bubble_gun magneted bridge 13`] = `
+"You are at: **The Playground**
+
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+Bubble Gun world is very dark right now. All the power seems to be off in this entire neighborhood.
+
+Hundreds of magnets are stuck to all the metal surfaces of the playground.
+
+You see:
+
+- Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+---
+
+You can:
+
+- BRIDGE - Go to the bridge
+- TREE_FORT - Climb the ladder up to the tree fort
+- ELECTRONICS - Go to the Electronics store
+- SOAPS - Go to the Soaps store
+- MAGNETS - Go to the Magnet store"
+`;
+
+exports[`bubble_gun magneted bridge 14`] = `
+"You are at: **The Bridge Out Of Town**
+
+This long, long bridge carries the road over a very tall gorge that surrounds Bubble Gun World. It is the only way out of town.
+
+Barely visible in the darkness, hundreds of magnets are stuck to all the metal surfaces of the bridge.
+
+Other than being disturbingly dark and heavily magneted, this is a pretty normal bridge.
+
+The police have put up signs all along the bridge that say BRIDGE IS OUT!...but it is kind of too dark to really be able to read them.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
+`;
+
+exports[`bubble_gun magneted bridge 15`] = `
+"You are at: **The Bridge Out Of Town**
+
+This long, long bridge carries the road over a very tall gorge that surrounds Bubble Gun World. It is the only way out of town.
+
+Barely visible in the darkness, hundreds of magnets are stuck to all the metal surfaces of the bridge.
+
+Other than being disturbingly dark and heavily magneted, this is a pretty normal bridge.
+
+The police have put up signs all along the bridge that say BRIDGE IS OUT!...but it is kind of too dark to really be able to read them.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
+`;
+
+exports[`bubble_gun magneted bridge 16`] = `
+"I guess you don't want to hike any more. See ya!
+
+Looks like you're a winner! Turns: 14 Score: 53
+That was fun, Tim!"
+`;
+
+exports[`bubble_gun magneted playground 1`] = `
+"# Welcome to Bubble Gun World
+
+You are at: **The Playground**
+
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+Bubble Gun world is very dark right now. All the power seems to be off in this entire neighborhood.
+
+It's a pretty normal-looking playground, with the typical offerings of swings, a slide, and jungle gyms. There's even a tree fort!
+
+- BRIDGE - Go to the bridge
+- TREE_FORT - Climb the ladder up to the tree fort
+- ELECTRONICS - Go to the Electronics store
+- SOAPS - Go to the Soaps store
+- MAGNETS - Go to the Magnet store
 - LOOK - Look at the area you are currently in.
 - ITEMS - Things you can do with stuff you are holding or stuff you see.
 - HELP - See all the commands you can type
 - QUIT - Quit the game"
 `;
 
-exports[`bubble_gun walk around 38`] = `
-"You are at: **The Secret Basement of the Magnet Store**
+exports[`bubble_gun magneted playground 2`] = `
+"You are at: **The Magnet Store**
+
+No one is in this store. It seems to be completely self-operational. When you have a town where all the stores only have free items, that kind of makes sense.
+
+There are lots and lots of metal shelves in here - maybe hundreds. The entire surfaces of all the shelves have magnets stuck to them.
+
+This is a very clean area. Running a magnet store must not be a very messy business.
+
+As packed as it is with shelves full of magnets, you're sure that if you explore a bit, you will find there is more to this store.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- EXPLORE - See what could be hiding in this strange shop."
+`;
+
+exports[`bubble_gun magneted playground 3`] = `
+"You are at: **The Magnet Store**
+
+No one is in this store. It seems to be completely self-operational. When you have a town where all the stores only have free items, that kind of makes sense.
+
+There are lots and lots of metal shelves in here - maybe hundreds. The entire surfaces of all the shelves have magnets stuck to them.
+
+This is a very clean area. Running a magnet store must not be a very messy business.
+
+As packed as it is with shelves full of magnets, you're sure that if you explore a bit, you will find there is more to this store.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- EXPLORE - See what could be hiding in this strange shop."
+`;
+
+exports[`bubble_gun magneted playground 4`] = `
+"The magnet store has the feel of a place where anything could be hiding. It's time to get to the bottom of this mystery.
+
+You wander around some aisles, go around some corners, look around. You're not exactly sure what you're looking for. You are keeping your eyes open for anything that seems out of place in this strange store.
+
+Right when you start to think maybe this is just a normal self-operational magnet store, you discover a small door on a wall. It is almost completely hidden behind a shelf leaning against the wall.
+
+You should get extra points! You get 3 points.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+`;
+
+exports[`bubble_gun magneted playground 5`] = `
+"You are at: **The Magnet Store**
+
+No one is in this store. It seems to be completely self-operational. When you have a town where all the stores only have free items, that kind of makes sense.
+
+There are lots and lots of metal shelves in here - maybe hundreds. The entire surfaces of all the shelves have magnets stuck to them.
+
+This is a very clean area. Running a magnet store must not be a very messy business.
+
+Behind a leaning shelf is a wall with a small door. You can crouch down to enter the door, and descend the well-lit stairs.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+`;
+
+exports[`bubble_gun magneted playground 6`] = `
+"The door leads directly to a case of stairs going down. There are many stairs to walk down, and it takes time to get all the way to the bottom.
+
+You are at: **The Secret Basement of the Magnet Store**
 
 You're at the bottom of a long set of stairs, in a room with a wide, open floor, and a very tall ceiling.
 
@@ -775,12 +1027,140 @@ It is a very well-lit and clean place - it almost feels sterile.
 You can:
 
 - UP - Go back to the magnet store
+- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
 - STATUS_CYCLE - Press the STATUS_CYCLE button"
 `;
 
-exports[`bubble_gun walk around 39`] = `
+exports[`bubble_gun magneted playground 7`] = `
+"The bright florescent lights suddently shut off. Red alerting lights turn on and paint the large room with red light and long shadows.
+
+The floor starts to shake, and it becomes necessary for you to grab onto the guard rail to remain standing. The floor starts to separate in the middle - opening like cargo doors - to reveal complicated-looking machinery beneath the floor.
+
+In the glow of the red light, you can still read the message on the control panel status screen. It has changed to: **STATUS: EXPOSED**
+
+---
+
+You can:
+
+- UP - Go back to the magnet store
+- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
+- STATUS_CYCLE - Press the STATUS_CYCLE button"
+`;
+
+exports[`bubble_gun magneted playground 8`] = `
+"Gears in the machinery start to slowly turn, and parts of the machine start to unfold. First, metal arms and cranks reach out of the separated floor, into the air, higher and higher. It crashes the ceiling, and creates a new window into the Magnet Store above. Magnets are wapping off the shelves and wapping onto the machine arm. But the machine arm still goes up and up and up. It crashes out of the roof of the building, and then finally becomes still.
+
+All the crashing has created a lot of debris, rubble and dust in the basement around you. But the control panel is still working. Now the status screen reads: **STATUS: UNDEFINED**
+
+It seems this part of the machine functionality has never been tested before. That would explain why the ceilings and roof wasn't destroyed when you got into town.
+
+The Playground and the Bridge on the map of the control panel have their targets blinking.
+
+---
+
+You can:
+
+- UP - Go back to the magnet store
+- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
+- STATUS_CYCLE - Press the STATUS_CYCLE button"
+`;
+
+exports[`bubble_gun magneted playground 9`] = `
+"Magnets start flying off the control panel box and the guard rail, hit the machine in the center of the room, and slide up and up the machine. You watch them go up through the ceiling and into the store, where more magnets are crashing into the machine and sliding up, up, up.
+
+Suddenly, a loud noise blasts your ears: THUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUDUD. The noise is coming from high above you, in the air above the building.
+
+The Playground's icon on the map changed from a target to an X.
+
+What have you done?
+
+---
+
+You can:
+
+- UP - Go back to the magnet store
+- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
+- STATUS_CYCLE - Press the STATUS_CYCLE button"
+`;
+
+exports[`bubble_gun magneted playground 10`] = `
+"You are at: **The Magnet Store**
+
+No one is in this store. It seems to be completely self-operational. When you have a town where all the stores only have free items, that kind of makes sense.
+
+There are lots and lots of metal shelves in here - maybe hundreds. The entire surfaces of all the shelves have magnets stuck to them.
+
+Another very noticeable thing about this place is a huge machine has crashed out of the floor and extended itself up through the ceiling. It is a bit messy in here now, to be honest.
+
+Behind a leaning shelf is a wall with a small door. You can crouch down to enter the door, and descend the well-lit stairs.
+
+---
+
+You can:
+
+- PLAYGROUND - Go back to the playground
+- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+`;
+
+exports[`bubble_gun magneted playground 11`] = `
+"You are at: **The Playground**
+
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+Bubble Gun world is very dark right now. All the power seems to be off in this entire neighborhood.
+
+Hundreds of magnets are stuck to all the metal surfaces of the playground.
+
+You see:
+
+- Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+---
+
+You can:
+
+- BRIDGE - Go to the bridge
+- TREE_FORT - Climb the ladder up to the tree fort
+- ELECTRONICS - Go to the Electronics store
+- SOAPS - Go to the Soaps store
+- MAGNETS - Go to the Magnet store"
+`;
+
+exports[`bubble_gun magneted playground 12`] = `
+"You are at: **The Playground**
+
+This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!
+
+Off the corner of the road, there's a bridge leading out of Bubble Gun World.
+
+Nearby is also an Electronics store, a Soaps store, and a Magnets store. I hope you like stores! There are a lot of stores in this game. But guess what: everything in them is FREE!!
+
+Bubble Gun world is very dark right now. All the power seems to be off in this entire neighborhood.
+
+Hundreds of magnets are stuck to all the metal surfaces of the playground.
+
+You see:
+
+- Ladder - This is one sturdy ladder. The bottom part of the ladder is on the ground, and the top part of the ladder leads to the tree fort.
+
+---
+
+You can:
+
+- BRIDGE - Go to the bridge
+- TREE_FORT - Climb the ladder up to the tree fort
+- ELECTRONICS - Go to the Electronics store
+- SOAPS - Go to the Soaps store
+- MAGNETS - Go to the Magnet store"
+`;
+
+exports[`bubble_gun magneted playground 13`] = `
 "I guess you don't want to hike any more. See ya!
 
-Looks like you're a winner! Turns: 37 Score: 48
+Looks like you're a winner! Turns: 11 Score: 53
 That was fun, Tim!"
 `;

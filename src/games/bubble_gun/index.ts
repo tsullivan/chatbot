@@ -1,14 +1,24 @@
 import * as snl from 'strip-newlines';
 import { Adventure, KeywordResponse } from '../lib';
+import { ELECTRONICS, MAGNET, PLAYGROUND, SOAP } from './constants';
 import { getItems, setItemsToLocations } from './items';
-import { getLocations } from './locations';
+import { getLocationsMap } from './locations';
 
 export class Game extends Adventure {
   constructor(session) {
     super(session);
     this.setName('bubble_gun');
     this.postInit = () => {
-      const locations = getLocations(this);
+      const locationsMap = getLocationsMap(this);
+      this.setLocationsMap(locationsMap);
+      const locations = {
+          playgroundLocation: locationsMap.get(PLAYGROUND),
+          bridgeLocation: locationsMap.get(PLAYGROUND),
+          electronicsLocation: locationsMap.get(ELECTRONICS),
+          soapLocation: locationsMap.get(SOAP),
+          magnetLocation: locationsMap.get(MAGNET),
+        };
+
       this.setLocation(locations.playgroundLocation);
 
       const items = getItems(this);

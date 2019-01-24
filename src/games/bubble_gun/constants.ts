@@ -13,4 +13,9 @@ export const LADDER = 'ladder';
 export const LED = 'led';
 export const MAGNET = 'magnet';
 export const SOAP = 'soap';
-export const THROWIE = 'throwie';
+
+export const BRIDGE = 'bridge';
+export const ELECTRONICS = 'electronics';
+export const BASEMENT = 'basement';
+export const PLAYGROUND = 'playground';
+export const TREEFORT = 'treefort';
