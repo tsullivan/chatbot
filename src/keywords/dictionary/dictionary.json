@@ -46,7 +46,7 @@
     "${noun:Darth Maul} ${verb:has} two ${noun:lightsaber}s that ${verb:come} out of his ${noun:lightsaber hilt}.",
     "${noun:Darth Vader} is ${noun:a good guy} at the ${noun:end} but most of the time he was ${noun:a bad guy} except when he was ${noun:Anakin}",
     "${noun:Kylo Ren} ${noun:broke} his ${noun:mask} by ${verb:hitting} it on ${noun:a wall} and then ${verb:throwing} it on the ${noun:ground} really hard.",
-    "${noun:Storm Troopers} are just ${noun:people} ${verb:wearing armor}. They do not have ${noun:super powers}.",
+    "${noun:Storm Troopers} are just ${noun:people} wearing armor. They do not have ${noun:super powers}.",
     "${noun:Leia} is ${noun:a princess} ${noun:Jedi}.",
     "${noun:Darth Vader} ${verb:cut} ${noun:Luke Skywalker}'s ${noun:hand} off."
   ],
@@ -79,7 +79,7 @@
     "The best ${noun:food} is ${noun:pho}",
     "${noun:Vegetable}s make you ${adjective:healthy}",
     "${noun:Fish} has ${noun:omega 3}. That's a type of ${noun:oil} that's ${adjective:good} for ${noun:your body}.",
-    "${noun:Superheroe}s are just from televisions, books and legos",
+    "${noun:Superhero}es are just from televisions, books and legos",
     "${noun:Earth} is ${adjective:the best} ${noun:planet}",
     "${noun:Pluto} is ${adjective:the second best} ${noun:planet.} You could make ${noun:snow mans}",
     "${noun:Rock}s are ${adjective:hard}. Sometimes you could make them into ${noun:lava}",

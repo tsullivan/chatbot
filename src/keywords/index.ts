@@ -6,7 +6,6 @@ import * as just_dont from './responders/just_dont';
 import * as name from './responders/name';
 import * as ninjafact from './responders/ninjafact';
 import * as play from './responders/play';
-import * as pokemonfact from './responders/pokemonfact';
 import * as random from './responders/random';
 import * as remember from './responders/remember';
 import * as repeat from './responders/repeat';
@@ -16,6 +15,7 @@ import * as score from './responders/score';
 import * as starwarsfact from './responders/starwarsfact';
 import * as superherofact from './responders/superherofact';
 import * as what from './responders/what';
+import * as worldfact from './responders/worldfacts';
 
 export function keywordTester(input, chat) {
   const responders = getResponders();
@@ -46,7 +46,7 @@ export function getResponders() {
     name,
     ninjafact,
     play,
-    pokemonfact,
+    worldfact,
     random,
     remember,
     repeat,

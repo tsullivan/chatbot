@@ -12,11 +12,9 @@ describe('run_dictionary', () => {
       'worldfacts',
     ]);
     expect(dictionary.jokes.length).toBeGreaterThan(10);
-    expect(dictionary.jokes.length).toBeLessThan(22);
     expect(dictionary.superherofacts.length).toBeGreaterThan(10);
-    expect(dictionary.superherofacts.length).toBeLessThan(34);
     expect(dictionary.starwarsfacts.length).toBeGreaterThan(7);
-    expect(dictionary.starwarsfacts.length).toBeLessThan(22);
+    expect(dictionary.worldfacts.length).toBeGreaterThan(17);
   });
 
   it('should change in consecutive runs', () => {
