@@ -30,7 +30,7 @@ const configMap = {
 };
 
 function getEnvConfig(envString: string): IConfig {
-  const envDependencies = [ 'SESSION_SECRET', 'APM_TOKEN', 'SLACK_BOT_TOKEN', 'NODE_ENV' ];
+  const envDependencies = [ 'SESSION_SECRET', 'APM_TOKEN', 'APM_URL', 'SLACK_BOT_TOKEN', 'NODE_ENV' ];
 
   for (const envDep of envDependencies) {
     if (!Boolean(process.env[envDep])) {
