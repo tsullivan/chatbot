@@ -5,16 +5,10 @@ describe('run_dictionary', () => {
     const dictionary = runDictionary();
     expect(Object.keys(dictionary)).toEqual([
       'jokes',
-      'superherofacts',
-      'starwarsfacts',
-      'pokemonfacts',
-      'ninjafacts',
-      'worldfacts',
+      'facts',
+      'pretend',
     ]);
     expect(dictionary.jokes.length).toBeGreaterThan(10);
-    expect(dictionary.superherofacts.length).toBeGreaterThan(10);
-    expect(dictionary.starwarsfacts.length).toBeGreaterThan(7);
-    expect(dictionary.worldfacts.length).toBeGreaterThan(17);
   });
 
   it('should change in consecutive runs', () => {
