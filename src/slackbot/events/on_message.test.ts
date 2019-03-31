@@ -11,8 +11,8 @@ slackBot.setSlackBotId('B345ISJ38');
 const rtm = new RTMClient('test 123');
 jest
   .spyOn(rtm, 'sendMessage')
-  .mockImplementation(() => Promise.resolve('send message test complete'));
-jest.spyOn(rtm, 'start').mockImplementation(() => Promise.resolve(true));
+  .mockImplementation(() => Promise.resolve({ ts: 'send message test complete' }));
+jest.spyOn(rtm, 'start').mockImplementation(() => Promise.resolve({ ok: true }));
 
 describe('Slackbot / RTM / On Message', () => {
   beforeEach(() => {

@@ -8,9 +8,11 @@ import { initRTMEvents } from './events';
 
 const slackSessions = new Map(); // memory leak
 
+interface ISlackChannel { id: string; is_member: boolean; }
+
 async function findChannel(web: WebClient): Promise<string> {
   // @ts-ignore
-  const { channels } = await web.channels.list();
+  const { channels } = await web.channels.list() as { channels: ISlackChannel[] };
   const { id: channelId } = channels.find(c => c.is_member);
   return channelId;
 }
