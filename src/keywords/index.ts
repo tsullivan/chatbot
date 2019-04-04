@@ -1,4 +1,5 @@
 import { KeywordResponder } from './keyword_responder';
+import * as alien from './responders/alien';
 import * as coinflip from './responders/coinflip';
 import * as help from './responders/help';
 import * as joke from './responders/joke';
@@ -39,6 +40,7 @@ export function keywordTester(input, chat) {
 
 export function getResponders() {
   return {
+    alien,
     coinflip,
     help,
     joke,

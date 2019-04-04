@@ -1,4 +1,6 @@
-import { KeywordResponder as Impromptu } from '../../keywords/responders/random';
+import { sample } from 'lodash';
+import { KeywordResponder as AlienImpromptu } from '../../keywords/responders/alien';
+import { KeywordResponder as HumanImpromptu } from '../../keywords/responders/random';
 import { IChatResponse } from '../../types';
 import { ResponseMessage } from './response_message';
 
@@ -8,7 +10,11 @@ export class RandomMessage extends ResponseMessage {
   }
 
   public async makeResponse(chat): Promise<IChatResponse> {
-    const responder = new Impromptu(null, chat);
+    const language = sample(['alien'/*, 'human'*/]);
+    const responder =
+      language === 'alien'
+        ? new AlienImpromptu(null, chat)
+        : new HumanImpromptu(null, chat);
     return this.respond(await responder.getResponse(), responder.getFormat());
   }
 }
