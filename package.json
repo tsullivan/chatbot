@@ -10,12 +10,6 @@
     "jest": "NODE_ENV=test SESSION_SECRET=testsess APM_TOKEN=testtoke  SLACK_BOT_TOKEN=testtoke jest --ci --verbose '\\.test\\.[jt]s'",
     "lint": "eslint . && tslint -p tsconfig.json"
   },
-  "husky": {
-    "hooks": {
-      "precommit": "yarn run lint",
-      "prepush": "yarn run test"
-    }
-  },
   "author": "Tim Sullivan",
   "license": "ISC",
   "engines": {
@@ -36,7 +30,6 @@
     "eslint-config-prettier": "~3.3",
     "eslint-plugin-node": "~8.0",
     "eslint-plugin-prettier": "~3.0",
-    "husky": "~1.3",
     "jest": "~23.6",
     "nodemon": "~1.18",
     "prettier": "~1.15",
