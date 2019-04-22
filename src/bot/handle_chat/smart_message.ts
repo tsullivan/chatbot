@@ -1,6 +1,6 @@
 import * as apm from 'elastic-apm-node';
 import { keywordTester } from '../../keywords';
-import { IChatResponse } from '../../types';
+import { ChatResponse } from '../../types';
 import { ResponseMessage } from './response_message';
 
 export class SmartMessage extends ResponseMessage {
@@ -8,7 +8,7 @@ export class SmartMessage extends ResponseMessage {
     super('smart', chat, message, format);
   }
 
-  public makeResponse(chat): Promise<IChatResponse> {
+  public makeResponse(chat): Promise<ChatResponse> {
     const { isKeyword, responder } = keywordTester(this.userMessage, chat);
 
     if (isKeyword) {

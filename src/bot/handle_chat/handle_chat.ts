@@ -2,7 +2,7 @@ import * as apm from 'elastic-apm-node';
 import * as moment from 'moment';
 import { ChatSession } from '../../bot';
 import { BOT_NAME, DATE_FORMAT } from '../../constants';
-import { IChatBody, IChatResponse } from '../../types';
+import { ChatBody, ChatResponse } from '../../types';
 import { RandomMessage } from './random_message';
 import { SessionMessage } from './session_message';
 import { SmartMessage } from './smart_message';
@@ -13,7 +13,7 @@ const responseWorkers = [
   { Worker: RandomMessage },
 ];
 
-export async function handleChat(body: IChatBody, chat: ChatSession): Promise<IChatResponse> {
+export async function handleChat(body: ChatBody, chat: ChatSession): Promise<ChatResponse> {
   let response;
 
   const { message, format } = body;
@@ -24,7 +24,7 @@ export async function handleChat(body: IChatBody, chat: ChatSession): Promise<IC
     while (workIdx < responseWorkers.length) {
       const { Worker } = responseWorkers[workIdx];
       const worker = new Worker(chat, message, format);
-      const test: IChatResponse = await worker.getResponse(); // should resolve response.message
+      const test: ChatResponse = await worker.getResponse(); // should resolve response.message
       if (test !== null) {
         response = test;
         chat.addBotMessage(response.message);

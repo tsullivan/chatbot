@@ -3,7 +3,7 @@ import { Item, KeywordResponse, Location, parajoin } from './';
 import { ChatGame } from './chat_game'; // FIXME why does everything break if this is collapsed into previous import?
 import { getGameKeywords } from './game_keywords';
 import { ItemCollection } from './item_collection';
-import { IKeywordResponseValue } from './keyword_response';
+import { KeywordResponseValue } from './keyword_response';
 import { getKeywordsHelper } from './keywords_helper';
 
 export class Adventure extends ChatGame {
@@ -12,7 +12,7 @@ export class Adventure extends ChatGame {
     prefix: string,
   ) => KeywordResponse;
   public clearKeywords: () => void;
-  public getInputResponse: (input: string, game: ChatGame) => IKeywordResponseValue;
+  public getInputResponse: (input: string, game: ChatGame) => KeywordResponseValue;
   public getInstructions: () => string;
   public addKeyword: (
     key: string,
@@ -30,7 +30,7 @@ export class Adventure extends ChatGame {
   private locationsMap: Map<string, Location>;
   private currentLocation: Location;
 
-  constructor(session: ChatSession) {
+  public constructor(session: ChatSession) {
     super(session);
     Object.assign(this, getKeywordsHelper());
 
@@ -100,9 +100,11 @@ export class Adventure extends ChatGame {
     return foundItem;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public win(response?: string, format?: string): KeywordResponse {
     throw new Error('win method is to override');
   }
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public lose(response?: string, format?: string): KeywordResponse {
     throw new Error('lose method is to override');
   }
@@ -134,14 +136,14 @@ export class Adventure extends ChatGame {
     let isDone = false; // FIXME should be independent of keyword response game.isDone()
     let showInstructions = true;
 
-    interface ICheck {
+    interface CheckMethods {
       getResponder: (contextResult?: any) => KeywordResponse;
       inputCheck: (game?: Adventure) => any;
     }
 
     /* Array of functions to call to look through areas
      * for which the input can be a keyword */
-    let checks: ICheck[];
+    let checks: CheckMethods[];
     checks = [
       {
         getResponder: () => this.getInputResponse(input, this),

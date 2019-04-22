@@ -1,11 +1,11 @@
 import * as apm from 'elastic-apm-node';
-import { IChatResponse } from '../../types';
+import { ChatResponse } from '../../types';
 import { ChatSession } from '../chat_session';
 
 export class ResponseMessage {
   protected userMessage: string;
   protected userFormat: string;
-  protected response: IChatResponse;
+  protected response: ChatResponse;
   private span: any;
   private name: string;
   private chat: ChatSession;
@@ -18,7 +18,7 @@ export class ResponseMessage {
     this.userFormat = userFormat;
   }
 
-  public async makeResponse(chat): Promise<IChatResponse> {
+  public async makeResponse(chat): Promise<ChatResponse> {
     // override this
     return {
       format: null,
@@ -30,26 +30,26 @@ export class ResponseMessage {
     return this.name;
   }
 
-  public getPlain(message): IChatResponse {
+  public getPlain(message): ChatResponse {
     return {
       format: 'plain',
       message,
     };
   }
 
-  public getMarkdown(message): IChatResponse {
+  public getMarkdown(message): ChatResponse {
     return {
       format: 'markdown',
       message,
     };
   }
 
-  public respond(message, format = 'markdown'): IChatResponse {
+  public respond(message, format = 'markdown'): ChatResponse {
     this.response = format === 'plain' ? this.getPlain(message) : this.getMarkdown(message);
     return this.response;
   }
 
-  public async getResponse(): Promise<IChatResponse> {
+  public async getResponse(): Promise<ChatResponse> {
     if (this.span) {
       this.span.end();
     }

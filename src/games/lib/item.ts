@@ -3,37 +3,40 @@ import { Adventure as AdventureGame } from './';
 import { Keywordable } from './keywordable';
 import { getKeywordsHelper } from './keywords_helper';
 
-interface ICombinable {
+interface Combinable {
   combinesWith: Item;
   keyword: string | string[];
   keywordDescription: string;
   fn: () => void;
 }
 
-interface IInteractable {
+interface Interactable {
   fn: () => void;
   keyword: string | string[];
   keywordDescription: string;
 }
 
-interface IActionOpts {
-  setCombinables: (combinableArray: ICombinable[]) => void;
-  setDroppable: (opts: IInteractable) => void;
-  setTakeable: (opts: IInteractable) => void;
+interface ActionOpts {
+  setCombinables: (combinableArray: Combinable[]) => void;
+  setDroppable: (opts: Interactable) => void;
+  setTakeable: (opts: Interactable) => void;
 }
 
-interface IOpts {
+interface ConstructOpts {
   game: any;
   name: string;
   id: string;
   description: string;
   seen?: boolean;
-  setActions?: (opts: IActionOpts, item: Item) => void;
+  setActions?: (opts: ActionOpts, item: Item) => void;
 }
 
 export class Item implements Keywordable {
-
-  public addKeyword: (keyword: string, keywordDescription: string, fn: () => void) => void;
+  public addKeyword: (
+    keyword: string,
+    keywordDescription: string,
+    fn: () => void
+  ) => void;
   public removeKeyword: (keyword: string) => void;
   public hasKeywords: () => boolean;
   public getInstructions: (prefix?: string) => string;
@@ -44,9 +47,9 @@ export class Item implements Keywordable {
   private calculatedIsComplete: boolean;
   private seen: boolean;
   private combinedWith: Set<any>;
-  private setActions: (actions: IActionOpts, item: Item) => void;
+  private setActions: (actions: ActionOpts, item: Item) => void;
 
-  constructor(options: IOpts) {
+  public constructor(options: ConstructOpts) {
     const { game, name, id, description, seen = true, setActions = noop } = options;
 
     if (!(game instanceof Object)) {
@@ -87,17 +90,22 @@ export class Item implements Keywordable {
   }
 
   public setItemActions(game) {
-    return this.setActions({
-      setCombinables: (combinableArray: ICombinable[]) => {
-        for (const combinable of combinableArray) {
-          const updatedComb = {...combinable,
-            numberToCombineWith: combinableArray.length};
-          this.setCombinable(game, updatedComb);
-        }
+    return this.setActions(
+      {
+        setCombinables: (combinableArray: Combinable[]) => {
+          for (const combinable of combinableArray) {
+            const updatedComb = {
+              ...combinable,
+              numberToCombineWith: combinableArray.length,
+            };
+            this.setCombinable(game, updatedComb);
+          }
+        },
+        setDroppable: partial(this.setDroppable, game).bind(this),
+        setTakeable: partial(this.setTakeable, game).bind(this),
       },
-      setDroppable: partial(this.setDroppable, game).bind(this),
-      setTakeable: partial(this.setTakeable, game).bind(this),
-    }, this);
+      this
+    );
   }
 
   /*
@@ -105,7 +113,7 @@ export class Item implements Keywordable {
    */
   public setCombinable(
     game: AdventureGame,
-    { combinesWith, keyword, keywordDescription, fn, numberToCombineWith = 0 },
+    { combinesWith, keyword, keywordDescription, fn, numberToCombineWith = 0 }
   ) {
     if (typeof combinesWith !== 'string') {
       throw new Error('invalid combinesWith ' + combinesWith);

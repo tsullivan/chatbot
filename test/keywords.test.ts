@@ -6,14 +6,14 @@ const app = getServer();
 const agent = request.agent(app);
 const { handshake } = utilFactory(agent);
 
-interface IChatbotRes extends request.Response {
+interface ChatbotRes extends request.Response {
   statusCode?: number;
 }
 
 describe('Keywords', () => {
   test('should repeat', async () => {
     await handshake();
-    const res: IChatbotRes = await agent
+    const res: ChatbotRes = await agent
       .post('/chat')
       .send({ format: 'user', message: 'repeat 450 💀' });
     const { statusCode, body } = res;
@@ -23,7 +23,7 @@ describe('Keywords', () => {
 
   test('should help', async () => {
     await handshake();
-    const res: IChatbotRes = await agent
+    const res: ChatbotRes = await agent
       .post('/chat')
       .send({ format: 'user', message: 'help' });
     const { statusCode, body } = res;
@@ -33,7 +33,7 @@ describe('Keywords', () => {
 
   test('should say', async () => {
     await handshake();
-    const res: IChatbotRes = await agent
+    const res: ChatbotRes = await agent
       .post('/chat')
       .send({ format: 'user', message: 'say mama say mama saw' });
     const { statusCode, body } = res;
@@ -58,7 +58,7 @@ describe('Keywords', () => {
     await handshake();
 
     (async () => {
-    const res: IChatbotRes = await agent
+    const res: ChatbotRes = await agent
         .post('/chat')
         .send({ format: 'user', message: 'name' });
     const { statusCode, body } = res;
@@ -66,7 +66,7 @@ describe('Keywords', () => {
       expect(body.message).toMatchSnapshot();
     })();
     (async () => {
-    const res: IChatbotRes = await agent
+    const res: ChatbotRes = await agent
         .post('/chat')
         .send({ format: 'user', message: 'Mit' });
     const { statusCode, body } = res;
@@ -74,7 +74,7 @@ describe('Keywords', () => {
       expect(body.message).toMatchSnapshot();
     })();
     (async () => {
-    const res: IChatbotRes = await agent
+    const res: ChatbotRes = await agent
         .post('/chat')
         .send({ format: 'user', message: 'name' });
     const { statusCode, body } = res;
@@ -82,7 +82,7 @@ describe('Keywords', () => {
       expect(body.message).toMatchSnapshot();
     })();
     (async () => {
-    const res: IChatbotRes = await agent
+    const res: ChatbotRes = await agent
         .post('/chat')
         .send({ format: 'user', message: 'Tim' }); // reset
     const { statusCode, body } = res;

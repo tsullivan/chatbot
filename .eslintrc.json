@@ -1,12 +1,11 @@
 {
   "env": {
-    "commonjs": true,
-    "es6": true,
     "node": true
   },
   "extends": [
-    "eslint:recommended",
-    "prettier"
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
   ],
   "overrides": [
     {
@@ -23,13 +22,17 @@
     "ecmaFeatures": {
       "jsx": false
     },
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.json",
+    "sourceType": "module"
   },
   "plugins": [
+    "node",
     "prettier",
-    "node"
+    "@typescript-eslint"
   ],
   "rules": {
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-explicit-any": 0,
     "indent": [
       "error",
       2
@@ -41,32 +44,6 @@
     "no-shadow": [
       "error"
     ],
-    "no-unused-vars": [
-      "error",
-      {
-        "argsIgnorePattern": "^_",
-        "varsIgnorePattern": "^_"
-      }
-    ],
-    "node/exports-style": [
-      "error",
-      "module.exports"
-    ],
-    "node/no-missing-require": [
-      "error",
-      {
-        "allowModules": [],
-        "resolvePaths": [
-          "/path/to/a/modules/directory"
-        ],
-        "tryExtensions": [
-          ".js",
-          ".json",
-          ".ts"
-        ]
-      }
-    ],
-    "prettier/prettier": 2,
     "quotes": [
       "error",
       "single",

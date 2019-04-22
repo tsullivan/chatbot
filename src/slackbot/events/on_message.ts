@@ -2,14 +2,14 @@ import { RTMClient } from '@slack/client';
 import { RandomMessage } from '../../bot';
 import { SlackBot } from '../slackbot';
 
-interface IMessagePayload {
+interface MessagePayload {
   message: string;
 }
 
 export function onMessageFactory(
   slackBot: SlackBot,
   rtm: RTMClient,
-): (event: any) => Promise<IMessagePayload> {
+): (event: any) => Promise<MessagePayload> {
   const log = slackBot.getLogger(['slack', 'onmessage']);
 
   return async event => {

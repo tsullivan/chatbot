@@ -5,7 +5,7 @@ import * as configTest from './test';
 
 import { defaultsDeep } from 'lodash';
 
-interface IConfig {
+interface Config {
   env: string;
   sessionSecret: string;
   apm: {
@@ -29,7 +29,7 @@ const configMap = {
   test: configTest,
 };
 
-function getEnvConfig(envString: string): IConfig {
+function getEnvConfig(envString: string): Config {
   const envDependencies = [ 'SESSION_SECRET', 'APM_TOKEN', 'APM_URL', 'SLACK_BOT_TOKEN', 'NODE_ENV' ];
 
   for (const envDep of envDependencies) {

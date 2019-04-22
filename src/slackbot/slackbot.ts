@@ -3,16 +3,19 @@ import { slack } from '../../config';
 import { Bot, ChatSession } from '../bot';
 import { BOT_NAME } from '../constants';
 import { SlackSession } from '../slackbot/lib';
-import { IChatResponse } from '../types';
+import { ChatResponse } from '../types';
 import { initRTMEvents } from './events';
 
 const slackSessions = new Map(); // memory leak
 
-interface ISlackChannel { id: string; is_member: boolean; }
+interface SlackChannel {
+  id: string;
+  is_member: boolean;
+}
 
 async function findChannel(web: WebClient): Promise<string> {
   // @ts-ignore
-  const { channels } = await web.channels.list() as { channels: ISlackChannel[] };
+  const { channels } = (await web.channels.list()) as { channels: SlackChannel[] };
   const { id: channelId } = channels.find(c => c.is_member);
   return channelId;
 }
@@ -21,7 +24,7 @@ async function findBotId(web: WebClient): Promise<string> {
   const users = await web.users.list();
   // @ts-ignore
   const { id: botId } = users.members.find(
-    u => u.name === 'beepbeepbeep' && u.is_bot === true,
+    u => u.name === 'beepbeepbeep' && u.is_bot === true
   );
   return botId;
 }
@@ -29,8 +32,11 @@ async function findBotId(web: WebClient): Promise<string> {
 export class SlackBot {
   private slackChannelId;
   private slackBotId;
+  private bot;
 
-  constructor(private bot: Bot) {}
+  public constructor(bot: Bot) {
+    this.bot = bot;
+  }
 
   public getLogger(...args: any) {
     return this.bot.getLogger(...args);
@@ -80,7 +86,7 @@ export class SlackBot {
     }
   }
 
-  public handleSlackChat(userId: string, chatBody): Promise<IChatResponse> {
+  public handleSlackChat(userId: string, chatBody): Promise<ChatResponse> {
     if (slackSessions.has(userId)) {
       const sess = slackSessions.get(userId);
       return this.bot.handleChat(chatBody, sess.chat);

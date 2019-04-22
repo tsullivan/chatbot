@@ -1,16 +1,16 @@
 import * as apm from 'elastic-apm-node';
-import 'express'
+import 'express';
 import * as _ from 'lodash';
 import { ChatGame, getGames } from '../games';
 import { SlackSession } from '../slackbot';
 import { Bot } from './bot';
 import { mapFieldToResponse } from './map_field_to_response';
 
-export interface IWebSession extends Express.Session {
+export interface WebSession extends Express.Session {
   chat?: ChatSession;
 }
 
-interface IChatSessionInit {
+interface ChatSessionInit {
   name?: string;
 }
 
@@ -19,7 +19,7 @@ export const ChatSessionProto = {
   messages: {
     next: [],
     prev: [],
-    user_history: [],
+    user_history: [], // eslint-disable-line @typescript-eslint/camelcase
   },
   name: null,
   scores: [],
@@ -43,10 +43,12 @@ export class ChatSession {
     prev: string[],
     user_history: string[],
   };
+  private bot;
 
-  constructor(private bot: Bot, session: IWebSession | SlackSession) {
+  public constructor(bot: Bot, session: WebSession | SlackSession) {
     this.initialized = false;
     this.sessionId = session.id;
+    this.bot = bot;
 
     this.save = () => {
       if (!this.initialized) {
@@ -65,14 +67,14 @@ export class ChatSession {
     };
   }
 
-  public init (opts: IChatSessionInit = {}): void {
+  public init (opts: ChatSessionInit = {}): void {
     if (opts.name) {
       this.setName(opts.name);
     }
     this.save();
   }
 
-  public getResumed({ chat }: IWebSession) {
+  public getResumed({ chat }: WebSession) {
     _.defaultsDeep(this, chat, ChatSessionProto);
     this.save();
 

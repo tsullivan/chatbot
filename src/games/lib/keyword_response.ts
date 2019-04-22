@@ -1,4 +1,4 @@
-export interface IKeywordResponseValue {
+export interface KeywordResponseValue {
   changeScore?: number;
   format?: string;
   isCascade: boolean;
@@ -40,7 +40,7 @@ export class KeywordResponse {
     this.showInstructions = showInstructions;
   }
 
-  public getFields(): IKeywordResponseValue {
+  public getFields(): KeywordResponseValue {
     return {
       changeScore: this.changeScore,
       format: this.format,

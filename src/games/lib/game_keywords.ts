@@ -3,13 +3,13 @@ import { ItemCollection } from './item_collection';
 import { KeywordResponse } from './keyword_response';
 import { parajoin } from './parajoin';
 
-interface IGameKeywordOpts {
+interface GameKeywordOpts {
   key: string;
   description: string;
   fn: (game?: AdventureGame) => KeywordResponse;
 }
 
-export function getGameKeywords(): IGameKeywordOpts[] {
+export function getGameKeywords(): GameKeywordOpts[] {
   return [
     {
       description: 'Look at the area you are currently in.',

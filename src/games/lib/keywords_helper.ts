@@ -2,7 +2,7 @@ import { UL }  from '../../constants';
 import { MultiMap }  from '../../lib/multi_map';
 import { KeywordResponse }  from './keyword_response';
 
-type TKeywordFromMap = [ string, { text: string } ]
+type KeywordFromMap = [ string, { text: string } ]
 
 export const getKeywordsHelper = () => {
   return {
@@ -29,7 +29,7 @@ export const getKeywordsHelper = () => {
     },
 
     getInstructions(prefix = UL) {
-      const keywordsArray = Array.from(this._keywords) as TKeywordFromMap[];
+      const keywordsArray = Array.from(this._keywords) as KeywordFromMap[];
       return keywordsArray
         .reduce((accum: string[], keywordInfo) => {
           const [command, { text }] = keywordInfo;

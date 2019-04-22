@@ -1,7 +1,7 @@
 import * as express from 'express';
 import { ChatGame } from '../games';
 import { Log, Metrics } from '../lib';
-import { IChatBody, IChatResponse, ILog, IMetrics } from '../types';
+import { ChatBody, ChatResponse } from '../types';
 import { ChatSession } from './chat_session';
 import { handleChat } from './handle_chat';
 
@@ -10,19 +10,19 @@ const sessionGames = new Map(); // memory leak
 export class Bot {
   private metrics: Metrics;
 
-  constructor() {
+  public constructor() {
     this.metrics = new Metrics();
   }
 
-  public handleChat(body: IChatBody, session: ChatSession): Promise<IChatResponse> {
+  public handleChat(body: ChatBody, session: ChatSession): Promise<ChatResponse> {
     return handleChat(body, session);
   }
 
-  public getMetrics(req: express.Request): IMetrics {
+  public getMetrics(req: express.Request) {
     return this.metrics.getStats(req, sessionGames);
   }
 
-  public getLogger(tags?: string[]): ILog {
+  public getLogger(tags?: string[]): Log {
     const logger = new Log();
     if (tags) {
       logger.addTags(tags);

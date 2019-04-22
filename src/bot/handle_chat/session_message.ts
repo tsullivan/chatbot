@@ -1,5 +1,5 @@
 import * as apm from 'elastic-apm-node';
-import { IChatResponse } from '../../types';
+import { ChatResponse } from '../../types';
 import { ResponseMessage } from './response_message';
 
 export class SessionMessage extends ResponseMessage {
@@ -7,7 +7,7 @@ export class SessionMessage extends ResponseMessage {
     super('session', chat, userMessage, userFormat);
   }
 
-  public async makeResponse(chat): Promise<IChatResponse | null> {
+  public async makeResponse(chat): Promise<ChatResponse | null> {
     const userFormat = this.userFormat;
     const { isValid, revalidateResponse } = chat.validateSession(userFormat);
 
