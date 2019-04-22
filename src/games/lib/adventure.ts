@@ -3,7 +3,8 @@ import { Item, KeywordResponse, Location, parajoin } from './';
 import { ChatGame } from './chat_game'; // FIXME why does everything break if this is collapsed into previous import?
 import { getGameKeywords } from './game_keywords';
 import { ItemCollection } from './item_collection';
-import { getKeywordsHelper, IKeywordResponseValue } from './keywords_helper';
+import { IKeywordResponseValue } from './keyword_response';
+import { getKeywordsHelper } from './keywords_helper';
 
 export class Adventure extends ChatGame {
   public branchToGame: (

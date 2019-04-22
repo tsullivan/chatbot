@@ -1,8 +1,10 @@
-const { KeywordResponse } = require('./keyword_response');
-const { MultiMap } = require('../../lib/multi_map');
-const { UL } = require('../../constants');
+import { UL }  from '../../constants';
+import { MultiMap }  from '../../lib/multi_map';
+import { KeywordResponse }  from './keyword_response';
 
-const getKeywordsHelper = () => {
+type TKeywordFromMap = [ string, { text: string } ]
+
+export const getKeywordsHelper = () => {
   return {
     _keywords: new MultiMap(),
 
@@ -18,8 +20,8 @@ const getKeywordsHelper = () => {
       if (Array.isArray(keyword)) {
         const [primary, ...aliases] = keyword;
         this._keywords.set(primary, { text, fn });
-        for (let i = 0; i < aliases.length; i++) {
-          this._keywords.addAlias(aliases[i], primary);
+        for (const alias of aliases) {
+          this._keywords.addAlias(alias, primary);
         }
       } else {
         this._keywords.set(keyword, { text, fn });
@@ -27,8 +29,10 @@ const getKeywordsHelper = () => {
     },
 
     getInstructions(prefix = UL) {
-      return Array.from(this._keywords)
-        .reduce((accum, [command, { text }]) => {
+      const keywordsArray = Array.from(this._keywords) as TKeywordFromMap[];
+      return keywordsArray
+        .reduce((accum: string[], keywordInfo) => {
+          const [command, { text }] = keywordInfo;
           return [...accum, `${prefix}${command} - ${text}`];
         }, [])
         .join('\n');
@@ -68,5 +72,3 @@ const getKeywordsHelper = () => {
     },
   };
 };
-
-module.exports = { getKeywordsHelper };
