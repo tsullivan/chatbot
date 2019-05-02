@@ -1,13 +1,26 @@
 /* global $ */
 function Ajax() {
-  function updateHistory($container, ...messages) {
+  function prepareHistory($container) {
     $container.empty();
+    $container.append(`<div id="history-user" aria-hidden="true"></div> <div id="history-bot" aria-live="polite"></div>`);
+  }
+
+  function updateHistory($container, ...messages) {
+    prepareHistory($container);
 
     for (const message of messages) {
       const html = window.messageFormatter(message);
       if (html) {
         const $html = $(html);
-        $container.append($html); // add to page
+
+        $userContainer = $container.find('#history-user');
+        $botContainer = $container.find('#history-bot');
+
+        if (message.format === 'user') {
+          $userContainer.append($html); // add to page
+        } else {
+          $botContainer.append($html); // add to page
+        }
 
         const fadeTo = message.format === 'user' ? 0 : 1200;
         $html.fadeTo(0, 0); // make invisible
