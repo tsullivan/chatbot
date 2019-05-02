@@ -9,7 +9,7 @@ const { handshake, send, checkResponses } = utilFactory(agent);
 describe('hiking', () => {
   beforeEach(() => handshake());
 
-  let resps;
+  let resps: string[];
   beforeEach(() => {
     resps = [];
   });

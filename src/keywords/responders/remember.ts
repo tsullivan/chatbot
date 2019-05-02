@@ -1,8 +1,9 @@
-import { sample } from 'lodash';
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
+import { Session } from '../../bot';
+import { sample } from 'lodash';
 
 class RememberResponder extends CKeywordResponder {
-  constructor(input, chat) {
+  public constructor(input: string, chat: Session) {
     super(input);
     this.setName('remember');
     this.getResponse = async () => {
@@ -12,7 +13,7 @@ class RememberResponder extends CKeywordResponder {
     };
   }
 
-  public testMatch(input) {
+  public testMatch(input: string) {
     return input.match(/^remember\b/);
   }
 

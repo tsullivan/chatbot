@@ -1,9 +1,8 @@
-import { KeywordResponder } from './keyword_responder';
 import * as alien from './responders/alien';
 import * as coinflip from './responders/coinflip';
 import * as help from './responders/help';
 import * as joke from './responders/joke';
-import * as just_dont from './responders/just_dont';
+import * as just_dont from './responders/just_dont'; // eslint-disable-line @typescript-eslint/camelcase
 import * as name from './responders/name';
 import * as ninjafact from './responders/ninjafact';
 import * as play from './responders/play';
@@ -17,34 +16,19 @@ import * as starwarsfact from './responders/starwarsfact';
 import * as superherofact from './responders/superherofact';
 import * as what from './responders/what';
 import * as worldfact from './responders/worldfacts';
+import { Session } from '../bot';
+import { KeywordResponder } from './keyword_responder';
 
-export function keywordTester(input, chat) {
-  const responders = getResponders();
-  for (const keyword in responders) {
-    if (responders.hasOwnProperty(keyword)) {
-      try {
-        const responder: KeywordResponder = new responders[keyword].KeywordResponder(input, chat);
-        if (responder.inputMatches()) {
-          return {
-            isKeyword: true,
-            responder,
-          };
-        }
-      } catch (err) {
-        throw new Error('Bad keyword responder constructor: ' + keyword);
-      }
-    }
-  }
-  return { isKeyword: false };
+interface ResponderSet {
+  [responderKey: string]: any;
 }
-
-export function getResponders() {
+export function getResponders(): ResponderSet {
   return {
     alien,
     coinflip,
     help,
     joke,
-    just_dont,
+    just_dont, // eslint-disable-line @typescript-eslint/camelcase
     name,
     ninjafact,
     play,
@@ -59,4 +43,27 @@ export function getResponders() {
     superherofact,
     what,
   };
+}
+
+export function keywordTester(input: string, chat: Session) {
+  const responders = getResponders();
+  for (const keyword in responders) {
+    if (responders.hasOwnProperty(keyword)) {
+      try {
+        const responder: KeywordResponder = new responders[keyword].KeywordResponder(
+          input,
+          chat
+        );
+        if (responder.inputMatches()) {
+          return {
+            isKeyword: true,
+            responder,
+          };
+        }
+      } catch (err) {
+        throw new Error('Bad keyword responder constructor: ' + keyword);
+      }
+    }
+  }
+  return { isKeyword: false };
 }

@@ -1,6 +1,7 @@
-import { sample } from 'lodash';
-import { getResponders } from '../';
 import { KeywordResponder as CKeywordResponder } from '../keyword_responder';
+import { Session } from '../../bot';
+import { getResponders } from '../';
+import { sample } from 'lodash';
 
 // prettier-ignore
 const charGroups = {
@@ -23,8 +24,8 @@ const cleanWord = (word: string) => {
     const inject = allVowels
       ? sample(charGroups.consos[0])
       : allConsos
-      ? sample(charGroups.vowels[0])
-      : '';
+        ? sample(charGroups.vowels[0])
+        : '';
     newWord += chars.slice(0, 1) + inject + chars.slice(1).join('');
 
     word = word.slice(3); // next page
@@ -33,17 +34,24 @@ const cleanWord = (word: string) => {
   return newWord;
 };
 
+type LetterType = 'vowels' | 'consos';
+type LetterValues = string[][];
+
 const alienTalk = (text: string) => {
   const words = [];
   let source = [...text]
     .map(char => {
-      const kind = sample(['vowels', 'consos']);
-      return [
+      const kind = sample(['vowels', 'consos']) as LetterType;
+      const ready = [
         char,
-        sample(charGroups.vowels),
-        sample(sample(charGroups[kind])),
-        sample(sample(charGroups[kind]) + sample(charGroups.vowels)),
-      ].join('');
+        sample(charGroups.vowels) as string[],
+        sample(sample(charGroups[kind] as LetterValues)) as string,
+      ] as [
+        string,
+        string[],
+        string
+      ];
+      return ready.join('');
     })
     .join('')
     .toLowerCase()
@@ -62,7 +70,7 @@ const alienTalk = (text: string) => {
 class AlienTalkResponder extends CKeywordResponder {
   private getRandomResponder: () => Promise<CKeywordResponder>;
 
-  constructor(input, chat) {
+  public constructor(input: string, chat: Session) {
     super(input);
     this.setName('alientalk');
 
@@ -70,7 +78,8 @@ class AlienTalkResponder extends CKeywordResponder {
       const responders = getResponders();
       const names = Object.keys(responders);
       const name = sample(names);
-      const responder = new responders[name].KeywordResponder(null, chat);
+      const { KeywordResponder } = responders[name];
+      const responder = new KeywordResponder(null, chat);
       if (responder.isImpromptu()) {
         return responder;
       }

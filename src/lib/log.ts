@@ -1,5 +1,5 @@
-import debug from 'debug';
 import { LogEvent } from './log_line';
+import debug from 'debug';
 
 const infoLogger = debug('chatbot:info');
 const debugLogger = debug('chatbot:debug');
@@ -7,7 +7,7 @@ const warnLogger = debug('chatbot:warn');
 const errorLogger = debug('chatbot:error');
 
 export class Log {
-  private tags = [];
+  private tags: string[] = [];
 
   public addTags(tags: string[]): void {
     this.tags = [].concat(this.tags, tags);

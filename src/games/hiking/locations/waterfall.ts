@@ -1,15 +1,16 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { KeywordResponse, Location, parajoin } from '../../lib';
+import { KeywordResponse, Location, parajoin, Adventure } from '../../lib';
 import { EAST, UP, WEST } from '../constants';
 
 export class WaterfallLocation extends Location {
   private gotSprayed: boolean = false;
 
-  constructor(game) {
+  public constructor(game: Adventure) {
     super({ game, name: 'Really giant waterfall' });
   }
 
-  public getDescription(game) {
+  public getDescription(game: Adventure) {
     const lns = [
       snl`It is so magical here.`,
       snl`This waterfall is at the bottom of a giant mountain and a bunch of
@@ -23,7 +24,7 @@ export class WaterfallLocation extends Location {
     return parajoin(lns);
   }
 
-  public setLocationKeywords(game) {
+  public setLocationKeywords(game: Adventure) {
     this.addKeyword('ROCKS', `Go to the place that has a lot of rocks`, () =>
       this.followExit(EAST),
     );

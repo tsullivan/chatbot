@@ -1,4 +1,4 @@
-export const utilFactory = agent => {
+export const utilFactory = (agent: any) => {
   if (!agent) {
     throw new Error('agent param required');
   }
@@ -9,7 +9,7 @@ export const utilFactory = agent => {
         .post('/chat')
         .send({ format: 'syn', message: 'HELO' })
         .expect(200)
-        .then(res => {
+        .then((res: any) => {
           expect(res.body.format).toEqual('plain');
           expect(res.body.name).toEqual('Beep Beep Beep');
 
@@ -18,7 +18,7 @@ export const utilFactory = agent => {
               .post('/chat')
               .send({ format: 'user', message: 'Tim' })
               .expect(200)
-              .then(ret => {
+              .then((ret: any) => {
                 expect(ret.body.message).toEqual('Hello, Tim! Nice to meet you.');
               });
           } else {
@@ -27,12 +27,14 @@ export const utilFactory = agent => {
         });
     },
 
-    send: message => {
+    send: (message: string) => {
       return agent.post('/chat').send({ format: 'user', message });
     },
 
-    checkResponses: resps => {
-      resps.forEach(({ body }) => expect(body.message).toMatchSnapshot());
+    checkResponses: (resps: any[]) => {
+      resps.forEach(({ body }: { body: any }) =>
+        expect(body.message).toMatchSnapshot()
+      );
     },
   };
 };

@@ -1,13 +1,13 @@
-import { roll } from '../../lib';
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
+import { roll } from '../../lib';
 
 class CoinFlipResponder extends CKeywordResponder {
-  constructor(input) {
+  public constructor(input: string) {
     super(input);
     this.setName('coinflip');
   }
 
-  public testMatch(input) {
+  public testMatch(input: string) {
     return input.match(/^coinflip\b/);
   }
 

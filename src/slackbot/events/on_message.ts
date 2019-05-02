@@ -20,27 +20,31 @@ export function onMessageFactory(
       time: new Date(),
     };
 
-    const isDm = event.channel.indexOf('D') === 0;
-    const isMention = event.text.indexOf(`${slackBot.getSlackBotId()}`) > 0;
+    const isDm = channel.indexOf('D') === 0;
+    const isMention = text.indexOf(`${slackBot.getSlackBotId()}`) > 0;
+
+    debugger;
 
     let response;
     if (isDm) {
       response = await slackBot.handleSlackChat(user, chatBody);
-    } else {
-      if (isMention) {
-        const rMessage = new RandomMessage(chatBody, text, 'user');
-        response = rMessage.makeResponse(chatBody);
-      }
+    } else if (isMention) {
+      const { slackSession } = slackBot.getSessionObjects(user);
+      const rMessage = new RandomMessage(slackSession.chat, text, 'user');
+      response = await rMessage.makeResponse(slackSession.chat);
     }
 
     if (response) {
       try {
         await rtm.sendMessage(response.message, channel);
-        return response.message;
+        return response;
       } catch (err) {
         log.error(['sendMessage'], err);
         throw err;
       }
     }
+
+    return undefined;
   };
 }
+

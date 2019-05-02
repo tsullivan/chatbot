@@ -1,33 +1,32 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import {
-  Adventure as AdventureGame,
-  Item,
-  KeywordResponse,
-  Location,
-  parajoin,
-} from '../lib';
+import { Adventure, Item, KeywordResponse, Location, parajoin } from '../lib';
 
-import {
-  BATTERY_AA,
-  BATTERY_LR41,
-  BUBBLE_GUN,
-  LADDER,
-  LED,
-  SOAP,
-} from './constants';
+import { BATTERY_AA, BATTERY_LR41, BUBBLE_GUN, LADDER, LED, SOAP } from './constants';
 
-const bubbleGunCombinings = (item: Item, combinedSet: Set<string>) => {
+interface ItemArgs {
+  description: any;
+  name: string;
+  setActions?: (
+    { setTakeable, setCombinables }: { setTakeable?: any; setCombinables?: any },
+    item?: Item
+  ) => void;
+}
+
+type CombinedSet = Set<string>;
+
+const bubbleGunCombinings = (item: Item, combinedSet: CombinedSet) => {
   const lns = [];
   if (combinedSet.has(BATTERY_AA)) {
     item.setDescription(`Bubble gun with batteries, but no soap.`);
     lns.push(
       snl`You slide off the cover to the bubble gun, pop in the AA batteries, and put the cover back on. It's nice and snug with the water seal that will
-      prevent corrosion in the batteries or the metal surfaces inside the bubble gun's battery compartment.`,
+      prevent corrosion in the batteries or the metal surfaces inside the bubble gun's battery compartment.`
     );
   } else if (combinedSet.has(SOAP)) {
     item.setDescription(`Bubble gun with soap, but no AA batteries.`);
     lns.push(
-      snl`You open up the cap on the bubble gun and fill up its soap container with your liquid soap. Glug glug glug.`,
+      snl`You open up the cap on the bubble gun and fill up its soap container with your liquid soap. Glug glug glug.`
     );
   }
   if (item.isComplete()) {
@@ -36,14 +35,14 @@ const bubbleGunCombinings = (item: Item, combinedSet: Set<string>) => {
   }
   return lns;
 };
-const throwieCombinings = (item: Item, combinedSet: Set<string>) => {
+const throwieCombinings = (item: Item, combinedSet: CombinedSet) => {
   const lns = [];
   if (combinedSet.has(BATTERY_LR41)) {
     item.setDescription(
-      snl`LED throwie that has batteries, but you can't do anything else with it.`,
+      snl`LED throwie that has batteries, but you can't do anything else with it.`
     );
     lns.push(
-      snl`The batteries go right on in to the LED's battery holder. Nice and simple.`,
+      snl`The batteries go right on in to the LED's battery holder. Nice and simple.`
     );
   }
   if (item.isComplete()) {
@@ -53,7 +52,7 @@ const throwieCombinings = (item: Item, combinedSet: Set<string>) => {
   return lns;
 };
 
-const getCombiningResponse = (item: Item, combinedSet: Set<string>) => {
+const getCombiningResponse = (item: Item, combinedSet: CombinedSet) => {
   const id = item.getId();
   if (id === BUBBLE_GUN) {
     const lns = bubbleGunCombinings(item, combinedSet);
@@ -65,8 +64,8 @@ const getCombiningResponse = (item: Item, combinedSet: Set<string>) => {
   throw new Error('Tried to get response for item that could not be combined');
 };
 
-export function getItems(game: AdventureGame) {
-  const itemFactory = (id, itemArgs) => {
+export function getItems(game: Adventure) {
+  const itemFactory = (id: string, itemArgs: ItemArgs) => {
     const factoryArgs = { ...itemArgs, id, game };
     return new Item(factoryArgs);
   };
@@ -103,7 +102,7 @@ export function getItems(game: AdventureGame) {
     bubbleGunItem: itemFactory(BUBBLE_GUN, {
       description: snl`It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.`,
       name: 'Bubble Gun',
-      setActions: ({ setTakeable, setCombinables }, item) => {
+      setActions: ({ setTakeable, setCombinables }, item: Item) => {
         setTakeable({
           fn: () =>
             new KeywordResponse({
@@ -115,14 +114,14 @@ export function getItems(game: AdventureGame) {
         setCombinables([
           {
             combinesWith: BATTERY_AA,
-            fn: (bubbleGunItem, combinedSet) =>
+            fn: (bubbleGunItem: Item, combinedSet: CombinedSet) =>
               getCombiningResponse(bubbleGunItem, combinedSet),
             keyword: 'COMBINE_BUBBLE_GUN_AND_BATTERIES',
             keywordDescription: 'Put the AA batteries in the bubble gun.',
           },
           {
             combinesWith: SOAP,
-            fn: (bubbleGunItem, combinedSet) =>
+            fn: (bubbleGunItem: Item, combinedSet: CombinedSet) =>
               getCombiningResponse(bubbleGunItem, combinedSet),
             keyword: 'COMBINE_BUBBLE_GUN_AND_SOAP',
             keywordDescription: snl`Put the soap into the soap container of the bubble gun.`,
@@ -152,7 +151,7 @@ export function getItems(game: AdventureGame) {
         setCombinables([
           {
             combinesWith: BATTERY_LR41,
-            fn: (ledItem, combinedSet) => getCombiningResponse(ledItem, combinedSet),
+            fn: (ledItem: Item, combinedSet: CombinedSet) => getCombiningResponse(ledItem, combinedSet),
             keyword: 'COMBINE_LED_AND_BATTERIES',
             keywordDescription:
               'Put the two LR41 batteries in the battery holder of the LED device.',
@@ -186,12 +185,7 @@ export function setItemsToLocations(
     soapItem,
     ledItem,
   }: {
-    bubbleGunItem: Item;
-    ladderItem: Item;
-    batteryLr41Item: Item;
-    batteryAaItem: Item;
-    soapItem: Item;
-    ledItem: Item;
+    [itemName: string]: Item;
   },
   {
     playgroundLocation,
@@ -199,13 +193,9 @@ export function setItemsToLocations(
     soapLocation,
     magnetLocation,
   }: {
-    playgroundLocation: Location;
-    electronicsLocation: Location;
-    soapLocation: Location;
-    magnetLocation: Location;
-    bridgeLocation: Location;
+    [itemName: string]: Location;
   },
-  game: AdventureGame,
+  game: Adventure
 ) {
   // set everything into the game collection
   game.addItemToCollection(BUBBLE_GUN, bubbleGunItem);

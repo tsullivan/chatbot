@@ -1,16 +1,17 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
+import { Adventure, KeywordResponse, Location, delayAndDie, parajoin } from '../../lib';
 import { Game as BubbleGunWorld } from '../../bubble_gun';
-import { delayAndDie, KeywordResponse, Location, parajoin } from '../../lib';
 
 export class FenceLocation extends Location {
   private jumped = false;
   private climbed = false;
 
-  constructor(game) {
+  public constructor(game: Adventure) {
     super({ game, name: 'The Jail Fence' });
   }
 
-  public getDescription(game) {
+  public getDescription(game: Adventure) {
     const nls = [
       snl`You've just escaped from a jail. You breathe a sigh of relief
         because that part of your life is forever behind you. They'll never
@@ -30,7 +31,7 @@ export class FenceLocation extends Location {
     return nls.join('\n\n');
   }
 
-  public setLocationKeywords(game) {
+  public setLocationKeywords(game: Adventure) {
     if (!this.jumped) {
       this.addKeyword(['JUMP_THE_FENCE', 'JUMP'], `Jump over the jail fence`, () => {
         this.jumped = true;

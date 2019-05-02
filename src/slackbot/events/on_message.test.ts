@@ -1,5 +1,5 @@
-import { RTMClient } from '@slack/client';
 import { Bot } from '../../bot';
+import { RTMClient } from '@slack/client';
 import { SlackBot } from '../slackbot';
 import { onMessageFactory } from './on_message';
 

@@ -1,13 +1,14 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { KeywordResponse, Location, parajoin } from '../../lib';
+import { KeywordResponse, Location, parajoin, Adventure } from '../../lib';
 import { ENEMIES, NORTH, SOUTH, WEST } from '../constants';
 
 export class BridgeLocation extends Location {
-  constructor(game) {
+  public constructor(game: Adventure) {
     super({ game, name: 'On the bridge top' });
   }
 
-  public getDescription(game) {
+  public getDescription(game: Adventure) {
     const lns = [
       snl`The bridge is a really long way up, and then a really long way down.
         At the top of the bridge is a spaceship. This spaceship looks like a
@@ -25,7 +26,7 @@ export class BridgeLocation extends Location {
     return parajoin(lns);
   }
 
-  public setLocationKeywords(game) {
+  public setLocationKeywords(game: Adventure) {
     this.addKeyword('SHIP', `Enter the ship`, () => this.followExit(WEST));
     this.addKeyword(
       'USE_TELESCOPE',

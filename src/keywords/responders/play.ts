@@ -1,15 +1,16 @@
-import { getGames } from '../../games';
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
+import { Session } from '../../bot';
+import { getGames } from '../../games';
 
 const games = getGames();
 
 class GameResponder extends CKeywordResponder {
-  constructor(input, session) {
+  public constructor(input: string, session: Session) {
     super(input);
     this.setName('play');
     this.setFormat('markdown');
 
-    this.getResponse = () => {
+    this.getResponse = async () => {
       const game = input.replace(/^play /, '');
       if (Object.keys(games).indexOf(game) >= 0) {
         session.setGame(game);
@@ -20,7 +21,7 @@ class GameResponder extends CKeywordResponder {
     };
   }
 
-  public testMatch(input) {
+  public testMatch(input: string) {
     return input.match(/^play\b/);
   }
 

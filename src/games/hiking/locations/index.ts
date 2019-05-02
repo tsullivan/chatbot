@@ -1,19 +1,20 @@
 import { DOWN, EAST, NORTH, SOUTH, UP, WEST } from '../constants';
 
+import { Adventure } from '../../lib';
 import { AppleShedLocation } from './apple_shed';
 import { BridgeLocation } from './bridge';
 import { CarLocation } from './car';
 import { FinishLocation } from './finish';
 import { LakeLocation } from './lake';
-import { MountainLocation } from './mountain';
 import { MountainHouseLocation } from './mountain_house';
+import { MountainLocation } from './mountain';
 import { RocksLocation } from './rocks';
 import { StartLocation } from './start';
-import { TheSunLocation } from './sun';
 import { SunshipLocation } from './sunship';
+import { TheSunLocation } from './sun';
 import { WaterfallLocation } from './waterfall';
 
-export function getLocations(game) {
+export function getLocations(game: Adventure) {
   const start = new StartLocation(game);
   const rocks = new RocksLocation(game);
   const waterfall = new WaterfallLocation(game);

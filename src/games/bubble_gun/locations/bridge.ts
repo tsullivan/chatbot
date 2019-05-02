@@ -1,5 +1,6 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { Item, KeywordResponse, Location, parajoin } from '../../lib';
+import { Item, KeywordResponse, Location, parajoin, Adventure } from '../../lib';
 import { BUBBLE_GUN, LED, NORTH } from '../constants';
 
 export class BridgeLocation extends Location {
@@ -7,11 +8,11 @@ export class BridgeLocation extends Location {
   private isThrowied: boolean = false;
   private isMagneted: boolean = false;
 
-  constructor(game) {
+  public constructor(game: Adventure) {
     super({ game, name: 'The Bridge Out Of Town' });
   }
 
-  public getDescription(game) {
+  public getDescription(game: Adventure) {
     return parajoin([
       snl`This long, long bridge carries the road over a very tall gorge that surrounds Bubble Gun World. It is the only way out of town.`,
       [
@@ -32,7 +33,7 @@ export class BridgeLocation extends Location {
     ]);
   }
 
-  public setLocationKeywords(game) {
+  public setLocationKeywords(game: Adventure) {
     this.addKeyword('PLAYGROUND', 'Go back to the playground', () => {
       return this.followExit(NORTH);
     });

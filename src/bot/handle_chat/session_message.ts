@@ -1,13 +1,14 @@
 import * as apm from 'elastic-apm-node';
 import { ChatResponse } from '../../types';
+import { Session } from '..';
 import { ResponseMessage } from './response_message';
 
 export class SessionMessage extends ResponseMessage {
-  constructor(chat, userMessage, userFormat) {
+  public constructor(chat: Session, userMessage: string, userFormat: string) {
     super('session', chat, userMessage, userFormat);
   }
 
-  public async makeResponse(chat): Promise<ChatResponse | null> {
+  public async makeResponse(chat: Session): Promise<ChatResponse | null> {
     const userFormat = this.userFormat;
     const { isValid, revalidateResponse } = chat.validateSession(userFormat);
 

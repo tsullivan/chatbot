@@ -1,18 +1,19 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { KeywordResponse, Location } from '../../lib';
+import { KeywordResponse, Location, Adventure } from '../../lib';
 import { KEY, SOUTH } from '../constants';
 
 export class CellLocation extends Location {
   private guardsWatching = false;
   private forceAware = false;
 
-  constructor(game) {
+  public constructor(game: Adventure) {
     super({ game, name: 'The Jail Cell' });
     this.guardsWatching = true;
     this.forceAware = false;
   }
 
-  public getDescription(game) {
+  public getDescription(game: Adventure) {
     const desc = [
       snl`You're locked up securely in a jail cell. A hole in the ceiling
         marks where you crashed through accidentally when you got here.`,
@@ -24,7 +25,7 @@ export class CellLocation extends Location {
     return desc.join('\n\n');
   }
 
-  public setLocationKeywords(game) {
+  public setLocationKeywords(game: Adventure) {
     this.addKeyword('ESCAPE', `Escape from the cell`, () => {
       if (!this.guardsWatching && game.inInventory(KEY)) {
         const px = snl`You use the key to open the cell door, and quietly walk out.`;

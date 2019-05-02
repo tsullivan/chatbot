@@ -13,7 +13,7 @@ export class LogEvent {
   public tags: string[];
   private logger: any;
 
-  constructor(tags: string[], logger: any) {
+  public constructor(tags: string[], logger: any) {
     this.timestamp = new Date();
     this.tags = tags;
     this.logger = logger;

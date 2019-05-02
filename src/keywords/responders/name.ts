@@ -1,8 +1,9 @@
 import * as apm from 'elastic-apm-node';
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
+import { Session } from '../../bot';
 
 class NameResponder extends CKeywordResponder {
-  constructor(input, chat) {
+  public constructor(input: string, chat: Session) {
     super(input);
     this.setName('name');
 
@@ -24,7 +25,7 @@ class NameResponder extends CKeywordResponder {
     };
   }
 
-  public testMatch(input) {
+  public testMatch(input: string) {
     return input.match(/^name\b/);
   }
 }

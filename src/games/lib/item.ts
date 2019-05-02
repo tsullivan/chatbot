@@ -1,5 +1,5 @@
 import { noop, partial } from 'lodash';
-import { Adventure as AdventureGame } from './';
+import { Adventure } from './';
 import { Keywordable } from './keywordable';
 import { getKeywordsHelper } from './keywords_helper';
 
@@ -7,11 +7,12 @@ interface Combinable {
   combinesWith: Item;
   keyword: string | string[];
   keywordDescription: string;
-  fn: () => void;
+  fn: (context: Item, combineWith: Set<Combinable>) => void;
+  numberToCombineWith: number;
 }
 
 interface Interactable {
-  fn: () => void;
+  fn: (item: Item) => void;
   keyword: string | string[];
   keywordDescription: string;
 }
@@ -22,22 +23,14 @@ interface ActionOpts {
   setTakeable: (opts: Interactable) => void;
 }
 
-interface ConstructOpts {
-  game: any;
-  name: string;
-  id: string;
-  description: string;
-  seen?: boolean;
-  setActions?: (opts: ActionOpts, item: Item) => void;
-}
-
 export class Item implements Keywordable {
   public addKeyword: (
-    keyword: string,
+    keyword: string | string[],
     keywordDescription: string,
     fn: () => void
   ) => void;
   public removeKeyword: (keyword: string) => void;
+  public hasKeyword: (keyword: string) => boolean;
   public hasKeywords: () => boolean;
   public getInstructions: (prefix?: string) => string;
 
@@ -46,10 +39,17 @@ export class Item implements Keywordable {
   private description: string;
   private calculatedIsComplete: boolean;
   private seen: boolean;
-  private combinedWith: Set<any>;
+  private combinedWith: Set<Combinable>;
   private setActions: (actions: ActionOpts, item: Item) => void;
 
-  public constructor(options: ConstructOpts) {
+  public constructor(options: {
+  game: Adventure;
+  name: string;
+  id: string;
+  description: string;
+  seen?: boolean;
+  setActions?: (opts: ActionOpts, item: Item) => void;
+}) {
     const { game, name, id, description, seen = true, setActions = noop } = options;
 
     if (!(game instanceof Object)) {
@@ -89,7 +89,7 @@ export class Item implements Keywordable {
     return `${this.getName()} - ${this.getDescription()}`;
   }
 
-  public setItemActions(game) {
+  public setItemActions(game: Adventure) {
     return this.setActions(
       {
         setCombinables: (combinableArray: Combinable[]) => {
@@ -112,8 +112,8 @@ export class Item implements Keywordable {
    * You can only combine items when holding both of them
    */
   public setCombinable(
-    game: AdventureGame,
-    { combinesWith, keyword, keywordDescription, fn, numberToCombineWith = 0 }
+    game: Adventure,
+    { combinesWith, keyword, keywordDescription, fn, numberToCombineWith = 0 }: Combinable
   ) {
     if (typeof combinesWith !== 'string') {
       throw new Error('invalid combinesWith ' + combinesWith);
@@ -142,11 +142,11 @@ export class Item implements Keywordable {
     return this.calculatedIsComplete === true;
   }
 
-  public combineWith(combinesWith) {
+  public combineWith(combinesWith: Combinable) {
     this.combinedWith.add(combinesWith);
   }
 
-  public setDroppable(game, { keyword, keywordDescription, fn }) {
+  public setDroppable(game: Adventure, { keyword, keywordDescription, fn }: Interactable) {
     // add a drop keyword if item is currently in inventory
     if (game.inInventory(this.id)) {
       this.addKeyword(keyword, keywordDescription, () => {
@@ -155,7 +155,7 @@ export class Item implements Keywordable {
       });
     }
   }
-  public setTakeable(game, { keyword, keywordDescription, fn }) {
+  public setTakeable(game: Adventure, { keyword, keywordDescription, fn }: Interactable) {
     // add a take keyword if game location has the item
     if (game.getCurrentLocation().hasFloorItem(this.id)) {
       this.addKeyword(keyword, keywordDescription, () => {
@@ -179,10 +179,10 @@ export class Item implements Keywordable {
     return this.seen === true;
   }
 
-  public setName(name) {
+  public setName(name: string) {
     this.name = name;
   }
-  public setDescription(description) {
+  public setDescription(description: string) {
     this.description = description;
   }
   public getName() {

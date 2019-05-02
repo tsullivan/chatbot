@@ -1,5 +1,6 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { Item, KeywordResponse, Location, parajoin } from '../../lib';
+import { Item, KeywordResponse, Location, parajoin, Adventure } from '../../lib';
 import { BUBBLE_GUN, EAST, LED, NORTH, SOUTH, UP, WEST } from '../constants';
 
 export class PlaygroundLocation extends Location {
@@ -7,11 +8,11 @@ export class PlaygroundLocation extends Location {
   private isThrowied: boolean = false;
   private isMagneted: boolean = false;
 
-  constructor(game) {
+  public constructor(game: Adventure) {
     super({ game, name: 'The Playground' });
   }
 
-  public getDescription(game) {
+  public getDescription(game: Adventure) {
     return parajoin([
       snl`This playground is right in the center of Bubble Gun World. It has things that are fun for kids, and there's a ladder to a tree fort!!!`,
       snl`Off the corner of the road, there's a bridge leading out of Bubble Gun World.`,
@@ -30,7 +31,7 @@ export class PlaygroundLocation extends Location {
     ]);
   }
 
-  public setLocationKeywords(game) {
+  public setLocationKeywords(game: Adventure) {
     this.addKeyword('BRIDGE', 'Go to the bridge', () => {
       return this.followExit(SOUTH);
     });

@@ -1,12 +1,12 @@
-import { Adventure as AdventureGame } from './adventure';
+import { KeywordsHelper, getKeywordsHelper } from './keywords_helper';
+import { Adventure } from './adventure';
 import { ItemCollection } from './item_collection';
 import { KeywordResponse } from './keyword_response';
-import { getKeywordsHelper } from './keywords_helper';
 import { parajoin } from './parajoin';
 
 export class Location {
   public followExit: (direction: string, prefix?: string) => KeywordResponse;
-  public getInstructions: (game: AdventureGame) => string;
+  public getInstructions: (game: Adventure) => string;
   public hasKeyword: (keyword: string) => boolean;
   public addKeyword: (
     keyword: string | string[],
@@ -15,13 +15,13 @@ export class Location {
   ) => void;
   public clearKeywords: () => void;
   public removeKeyword: (keyword: string) => void;
-  public getInputResponse: (input: string, game: AdventureGame) => KeywordResponse;
+  public getInputResponse: (input: string, game: Adventure) => KeywordResponse;
 
   private name: string;
   private exits: Map<string, Location>;
   private floorItems: Set<string>;
 
-  constructor({ game, name }: { game: AdventureGame; name: string }) {
+  public constructor({ game, name }: { game: Adventure; name: string }) {
     const keywordsHelper = getKeywordsHelper();
     Object.assign(this, keywordsHelper);
 
@@ -34,21 +34,21 @@ export class Location {
       return this.followExitInternal(game, direction, prefix);
     };
 
-    this.getInstructions = (adventureGame: AdventureGame) => {
+    this.getInstructions = (adventureGame: Adventure) => {
       return this.getInstructionsInternal(game, keywordsHelper);
     };
 
     this.setLocationKeywords(game);
   }
 
-  public setLocationKeywords(adventureGame: AdventureGame) {
+  public setLocationKeywords(adventureGame: Adventure) {
     throw new Error('setLocationKeywords must be overridden in ' + this.name);
   }
 
   /*
    * For location, need the commands for the visible items in the room
    */
-  public getInstructionsInternal(game: AdventureGame, keywordsHelper) {
+  public getInstructionsInternal(game: Adventure, keywordsHelper: KeywordsHelper) {
     const getInstructions = keywordsHelper.getInstructions.bind(this);
     const locationInstructions = getInstructions();
 
@@ -87,11 +87,11 @@ export class Location {
     }
   }
 
-  public getDescription(game: AdventureGame) {
+  public getDescription(game: Adventure) {
     throw new Error('Location superclass has no description of its own');
   }
 
-  public getDescriptionInternal(game: AdventureGame) {
+  public getDescriptionInternal(game: Adventure) {
     return `You are at: **${this.getName()}**\n\n${this.getDescription(game)}`;
   }
 
@@ -108,15 +108,15 @@ export class Location {
   public removeFloorItem(id: string) {
     this.floorItems.delete(id);
   }
-  public getVisibleFloorItems(game: AdventureGame) {
+  public getVisibleFloorItems(game: Adventure) {
     return ItemCollection.getVisibleItemsFromSet(game, this.floorItems);
   }
-  public setVisibleItemKeywords(game: AdventureGame) {
+  public setVisibleItemKeywords(game: Adventure) {
     const items = ItemCollection.getVisibleItemsFromSet(game, this.floorItems);
     items.forEach(item => item.setItemActions(game));
   }
 
-  private followExitInternal(game: AdventureGame, direction, prefix = '') {
+  private followExitInternal(game: Adventure, direction: string, prefix = '') {
     if (this.exits.has(direction)) {
       const exit = this.exits.get(direction);
       game.setLocation(exit);

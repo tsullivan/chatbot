@@ -1,23 +1,26 @@
+import { Bot, Session, SessionProto } from '../../bot';
 import { defaultsDeep } from 'lodash';
-import { Bot, ChatSession, ChatSessionProto } from '../../bot';
 
 export class SlackSession {
-  get id() {
+  public readonly userId: string;
+  
+  public get id() {
     return this.userId;
   }
 
-  get chat() {
+  public get chat() {
     return this.chatSession;
   }
 
   public destroy: () => void;
-  private chatSession: ChatSession;
+  private chatSession: Session;
 
-  constructor(public readonly userId: string, bot: Bot) {
-    this.chatSession = defaultsDeep({}, ChatSessionProto);
+  public constructor(userId: string, bot: Bot) {
+    this.chatSession = defaultsDeep({}, SessionProto);
+    this.userId = userId;
   }
 
-  public setChatSession(chatSession: ChatSession) {
+  public setChatSession(chatSession: Session) {
     this.chatSession = chatSession;
   }
 }

@@ -1,6 +1,7 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
 import {
-  Adventure as AdventureGame,
+  Adventure,
   KeywordResponse,
   Location,
   parajoin,
@@ -12,11 +13,11 @@ export class MagnetLocation extends Location {
   private isMachined = false;
   private stairsUncovered = false;
 
-  constructor(game: AdventureGame) {
+  public constructor(game: Adventure) {
     super({ game, name: 'The Magnet Store' });
   }
 
-  public getDescription(game: AdventureGame) {
+  public getDescription(game: Adventure) {
     return parajoin([
       snl`No one is in this store. It seems to be completely self-operational. When you have a town where all the stores only have free items, that kind of
       makes sense.`,
@@ -36,7 +37,7 @@ export class MagnetLocation extends Location {
     ]);
   }
 
-  public setLocationKeywords(game: AdventureGame) {
+  public setLocationKeywords(game: Adventure) {
     this.addKeyword('PLAYGROUND', 'Go back to the playground', () => {
       return this.followExit(WEST);
     });

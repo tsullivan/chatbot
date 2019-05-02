@@ -1,18 +1,18 @@
 import { DictionaryResponder } from '../dictionary';
 
 class WorldFactResponder extends DictionaryResponder {
-  constructor(input) {
+  public constructor(input: string) {
     super(input);
     this.setName('worldfact').setDictionary('worldfacts');
   }
 
-  public testMatch(input) {
+  public testMatch(input: string) {
     this.setParsedRequestedDictionaryItem(input, /^worldfact ([1-9]+[0-9]?)$/);
     return input.match(/^worldfact\b/);
   }
 
   public async getResponse(): Promise<string> {
-    return this.getRequested(i => `Here is world fact number ${i}`);
+    return this.getRequested((i: number) => `Here is world fact number ${i}`);
   }
 }
 

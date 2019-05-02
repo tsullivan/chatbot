@@ -1,16 +1,17 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { KeywordResponse, Location, parajoin } from '../../lib';
+import { KeywordResponse, Location, parajoin, Adventure } from '../../lib';
 import { APPLES, EAST, YOGURT } from '../constants';
 
 export class AppleShedLocation extends Location {
   private hasYogurt: boolean = false;
   private numApples: number = 100;
 
-  constructor(game) {
+  public constructor(game: Adventure) {
     super({ game, name: 'The Apple Store' });
   }
 
-  public getDescription(game) {
+  public getDescription(game: Adventure) {
     const lns = [
       snl`You're in a giant, giant red sphere in the trees. This is an Apple
         Store. On the inside, it actually a shed. Inside there are many, many
@@ -29,9 +30,9 @@ export class AppleShedLocation extends Location {
     return parajoin(lns);
   }
 
-  public setLocationKeywords(game) {
+  public setLocationKeywords(game: Adventure) {
     const yogurt = game.getItemFromCollection(YOGURT);
-    let pxEx;
+    let pxEx: string;
     if (!game.inInventory(APPLES) || !game.inInventory(YOGURT)) {
       pxEx = snl`"Thanks for coming!" says the business man. "I still have a few items left for sale if
         you're ever interested!"`;

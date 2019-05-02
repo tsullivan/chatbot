@@ -1,21 +1,21 @@
-import { roll } from '../../lib';
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
+import { roll } from '../../lib';
 
 const DEFAULT_SIDES = 20;
 
 class RollResponder extends CKeywordResponder {
   private sides: number;
 
-  constructor(input) {
+  public constructor(input: string) {
     super(input);
     this.setName('roll');
     this.sides = DEFAULT_SIDES;
   }
 
-  public testMatch(input) {
+  public testMatch(input: string) {
     const matches = input.match(/^roll ([1-9]+[0-9]?)/);
     if (matches !== null) {
-      const sides = matches.splice(1, 1);
+      const [ sides] = matches.splice(1, 1);
       this.sides = parseInt(sides, 10);
     }
 

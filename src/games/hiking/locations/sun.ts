@@ -1,20 +1,21 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { KeywordResponse, Location, parajoin } from '../../lib';
+import { KeywordResponse, Location, parajoin, Adventure } from '../../lib';
 import { DOWN, YOGURT } from '../constants';
 
 export class TheSunLocation extends Location {
   private hasGhosts: boolean = false;
 
-  constructor(game) {
+  public constructor(game: Adventure) {
     super({ game, name: 'The Sun, in the Sun Ship' });
   }
 
-  public getDescription(game) {
+  public getDescription(game: Adventure) {
     return snl`It's so hot on the Sun! Fear not, it's safe inside the sun ship.
       It's very bright, but the windows of the sunship make it safe to look at.`;
   }
 
-  public setLocationKeywords(game) {
+  public setLocationKeywords(game: Adventure) {
     this.addKeyword('BACK', `Go back to Earth`, () => {
       const px = snl`KSHOOOOM!! Back down to Earth you go in the sun ship. Hope
         you enjoyed your stay on the sun! Come back soon!`;

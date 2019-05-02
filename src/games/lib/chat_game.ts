@@ -1,3 +1,5 @@
+import { KeywordResponse } from './keyword_response';
+import { Session } from '../../bot/session';
 import { defaults } from 'lodash';
 
 export class ChatGame {
@@ -6,7 +8,7 @@ export class ChatGame {
   private playerName: string;
   private name: string;
 
-  constructor(chat) {
+  public constructor(chat: Session) {
     this.playerName = chat.getName();
 
     this.save = () => {
@@ -30,11 +32,22 @@ export class ChatGame {
     return this.playerName;
   }
 
-  public resume(chat) {
+  public resume(chat: Session) {
     defaults(this, chat);
   }
 
-  protected setName(name) {
+  protected setName(name: string) {
     this.name = name;
   }
+
+  public updateState() {
+  }
+
+  public testInput(userMessage: string): KeywordResponse {
+    throw new Error('Unexpected call to testInput');
+  }
 }
+
+export interface ChatGameClass {
+  new (session: Session): ChatGame;
+};

@@ -3,13 +3,13 @@ import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
 class SayResponder extends CKeywordResponder {
   private thingToSay: string;
 
-  constructor(input) {
+  public constructor(input: string) {
     super(input);
     this.setName('say');
     this.thingToSay = null;
   }
 
-  public testMatch(input) {
+  public testMatch(input: string) {
     const matches = input.match(/^say (.*)$/);
     if (matches !== null) {
       const thingToSay = matches[1];

@@ -1,16 +1,16 @@
-import { delayAndDie, Location } from '../../lib';
+import { delayAndDie, Location, Adventure } from '../../lib';
 import { SOUTH } from '../constants';
 
 export class VanLocation extends Location {
-  constructor(game) {
+  public constructor(game: Adventure) {
     super({ game, name: 'The Jail Van' });
   }
 
-  public getDescription(game) {
+  public getDescription(game: Adventure) {
     return `You're hiding in a jail van that's driving around the jail, making jail deliveries to the jail people.`;
   }
 
-  public setLocationKeywords(game) {
+  public setLocationKeywords(game: Adventure) {
     this.addKeyword('ESCAPE', `Escape the jail van`, () => {
       const px = `You sneak out of the jail van and run over to a fence. You're almost out of here!`;
       return this.followExit(SOUTH, px);

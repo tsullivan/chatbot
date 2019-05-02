@@ -1,7 +1,7 @@
-import { Item, KeywordResponse } from '../lib';
+import { Adventure, Item, KeywordResponse } from '../lib';
 import { WINDOW_HANDLE } from './constants';
 
-export function getItems(game) {
+export function getItems(game: Adventure) {
   return {
     windowHandleItem: new Item({
       game,

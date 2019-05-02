@@ -1,8 +1,8 @@
 import * as express from 'express';
-import { ChatGame } from '../games';
-import { Log, Metrics } from '../lib';
 import { ChatBody, ChatResponse } from '../types';
-import { ChatSession } from './chat_session';
+import { Log, Metrics } from '../lib';
+import { ChatGame } from '../games';
+import { Session } from './session';
 import { handleChat } from './handle_chat';
 
 const sessionGames = new Map(); // memory leak
@@ -14,7 +14,7 @@ export class Bot {
     this.metrics = new Metrics();
   }
 
-  public handleChat(body: ChatBody, session: ChatSession): Promise<ChatResponse> {
+  public handleChat(body: ChatBody, session: Session): Promise<ChatResponse> {
     return handleChat(body, session);
   }
 

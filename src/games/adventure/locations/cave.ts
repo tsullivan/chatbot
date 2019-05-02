@@ -1,21 +1,22 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { KeywordResponse, Location } from '../../lib';
+import { KeywordResponse, Location, Adventure } from '../../lib';
 import { WEST, WINDOW_HANDLE } from '../constants';
 
 export class CaveLocation extends Location {
   private danced = false;
 
-  constructor(game) {
+  public constructor(game: Adventure) {
     super({ game, name: 'Cheery Cave' });
   }
 
-  public getDescription(game) {
+  public getDescription(game: Adventure) {
     return snl`It's unnaturally cheery in this smelly old cave. Probably
     because of the tiny village of tiny dancing skeleton hands. So cute! So
     tiny! So skeleton handsy!`;
   }
 
-  public setLocationKeywords(game) {
+  public setLocationKeywords(game: Adventure) {
     if (!this.danced) {
       this.addKeyword('DANCE', 'Dance with the tiny skeleton hands', () => {
         this.danced = true;

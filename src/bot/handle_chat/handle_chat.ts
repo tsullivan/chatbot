@@ -1,8 +1,8 @@
 import * as apm from 'elastic-apm-node';
 import * as moment from 'moment';
-import { ChatSession } from '../../bot';
 import { BOT_NAME, DATE_FORMAT } from '../../constants';
 import { ChatBody, ChatResponse } from '../../types';
+import { Session } from '../../bot';
 import { RandomMessage } from './random_message';
 import { SessionMessage } from './session_message';
 import { SmartMessage } from './smart_message';
@@ -13,7 +13,11 @@ const responseWorkers = [
   { Worker: RandomMessage },
 ];
 
-export async function handleChat(body: ChatBody, chat: ChatSession): Promise<ChatResponse> {
+type TimedChatResponse = ChatResponse & {
+  time: string;
+};
+
+export async function handleChat(body: ChatBody, chat: Session): Promise<TimedChatResponse> {
   let response;
 
   const { message, format } = body;

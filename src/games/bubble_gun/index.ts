@@ -1,11 +1,13 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
 import { Adventure, KeywordResponse } from '../lib';
 import { ELECTRONICS, MAGNET, PLAYGROUND, SOAP } from './constants';
 import { getItems, setItemsToLocations } from './items';
 import { getLocationsMap } from './locations';
+import { Session } from '../../bot';
 
 export class Game extends Adventure {
-  constructor(session) {
+  public constructor(session: Session) {
     super(session);
     this.setName('bubble_gun');
     this.postInit = () => {
@@ -30,7 +32,7 @@ export class Game extends Adventure {
     return super.getWelcome(`# Welcome to Bubble Gun World`);
   }
 
-  public lose(response) {
+  public lose(response: string) {
     const p = [
       response,
       'YOU LOST. You lost too many points!',
@@ -43,7 +45,7 @@ export class Game extends Adventure {
     });
   }
 
-  public win(response) {
+  public win(response: string) {
     const p = [
       response,
       `Looks like you're a winner! Turns: ${this.turns} Score: ${this.score}`,

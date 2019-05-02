@@ -1,11 +1,13 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
 import { Adventure, KeywordResponse, parajoin } from '../lib';
+import { Session } from '../../bot';
 import { WINDOW_HANDLE } from './constants';
 import { getItems } from './items';
 import { getLocations } from './locations';
 
 export class Game extends Adventure {
-  constructor(session) {
+  public constructor(session: Session) {
     super(session);
     this.setName('adventure');
     this.postInit = () => {
@@ -18,7 +20,7 @@ export class Game extends Adventure {
     };
   }
 
-  public lose(response) {
+  public lose(response: string) {
     const lns = [
       response,
       snl`YOU LOST. You lost too many points! That means you never got to fall
@@ -34,7 +36,7 @@ export class Game extends Adventure {
     });
   }
 
-  public win(response) {
+  public win(response: string) {
     const lns = [
       response,
       snl`I guess you win! You finally got to fall asleep! I bet that feels so

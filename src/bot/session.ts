@@ -1,20 +1,34 @@
-import * as apm from 'elastic-apm-node';
 import 'express';
 import * as _ from 'lodash';
+import * as apm from 'elastic-apm-node';
 import { ChatGame, getGames } from '../games';
-import { SlackSession } from '../slackbot';
+import { Field, mapFieldToResponse } from './map_field_to_response';
 import { Bot } from './bot';
-import { mapFieldToResponse } from './map_field_to_response';
+import { ChatGameClass } from '../games/lib/chat_game';
+import { SlackSession } from '../slackbot';
 
 export interface WebSession extends Express.Session {
-  chat?: ChatSession;
+  chat?: Session;
 }
 
 interface ChatSessionInit {
   name?: string;
 }
 
-export const ChatSessionProto = {
+interface Proto {
+  game: ChatGame | null;
+  messages: {};
+  name: string | null;
+  scores: number[];
+  waitingOn: string | null;
+}
+
+interface ValidateResponse {
+  isValid: boolean;
+  revalidateResponse?: string;
+}
+
+export const SessionProto: Proto = {
   game: null,
   messages: {
     next: [],
@@ -28,9 +42,9 @@ export const ChatSessionProto = {
 
 const games = getGames();
 
-export class ChatSession {
-  public save: () => ChatSession;
-  public hangup: () => ChatSession;
+export class Session {
+  public save: () => Session;
+  public hangup: () => Session;
 
   private initialized: boolean;
   private sessionId: string;
@@ -39,11 +53,11 @@ export class ChatSession {
   private waitingOn: string | null;
   private name: string | null;
   private messages: {
-    next: string[],
-    prev: string[],
-    user_history: string[],
+    next: string[];
+    prev: string[];
+    user_history: string[];
   };
-  private bot;
+  private bot: Bot;
 
   public constructor(bot: Bot, session: WebSession | SlackSession) {
     this.initialized = false;
@@ -53,7 +67,7 @@ export class ChatSession {
     this.save = () => {
       if (!this.initialized) {
         this.initialized = true;
-        _.defaultsDeep(this, ChatSessionProto);
+        _.defaultsDeep(this, SessionProto);
       }
       _.defaultsDeep(session.chat, this);
       return this;
@@ -62,12 +76,12 @@ export class ChatSession {
     this.hangup = () => {
       session.destroy(_.noop);
       this.initialized = false;
-      Object.assign(this, ChatSessionProto);
+      Object.assign(this, SessionProto);
       return this.save();
     };
   }
 
-  public init (opts: ChatSessionInit = {}): void {
+  public init(opts: ChatSessionInit = {}): void {
     if (opts.name) {
       this.setName(opts.name);
     }
@@ -75,7 +89,7 @@ export class ChatSession {
   }
 
   public getResumed({ chat }: WebSession) {
-    _.defaultsDeep(this, chat, ChatSessionProto);
+    _.defaultsDeep(this, chat, SessionProto);
     this.save();
 
     this.game = this.bot.getSessionGame(this.sessionId);
@@ -87,7 +101,7 @@ export class ChatSession {
     this.save();
   }
 
-  public setName(name) {
+  public setName(name: string) {
     this.name = name;
     this.save();
   }
@@ -96,11 +110,11 @@ export class ChatSession {
     return this.name;
   }
 
-  public validateSession(format) {
+  public validateSession(format: string): ValidateResponse {
     if (this.name === null) {
       if (format === 'syn') {
         // browser refresh
-        return false;
+        return { isValid: false };
       }
 
       if (this.waitingOn === null) {
@@ -120,12 +134,14 @@ export class ChatSession {
     return { isValid: true };
   }
 
-  public fulfillWait(input) {
+  public fulfillWait(input: string) {
     if (this.waitingOn !== null) {
-      const field = this.waitingOn;
+      const field = this.waitingOn as Field;
       const { response, method } = mapFieldToResponse(field, input);
 
+      // @ts-ignore - need to handle the method of a class
       if (response !== null && this[method] !== undefined) {
+        // @ts-ignore- need to handle the method of a class
         const fn = this[method].bind(this);
         fn(input);
 
@@ -136,7 +152,7 @@ export class ChatSession {
     }
   }
 
-  public pushNextBotMessage(message) {
+  public pushNextBotMessage(message: string) {
     if (this.initialized) {
       this.messages.next.push(message);
       this.save();
@@ -155,7 +171,7 @@ export class ChatSession {
     return nextMessage;
   }
 
-  public addUserHistory(message) {
+  public addUserHistory(message: string) {
     this.messages.user_history.push(message);
     this.save();
   }
@@ -163,7 +179,7 @@ export class ChatSession {
     return this.messages.user_history;
   }
 
-  public addBotMessage(message) {
+  public addBotMessage(message: string) {
     this.messages.prev.push(message);
     this.save();
   }
@@ -173,11 +189,11 @@ export class ChatSession {
   }
 
   public setGame(game: string) {
-    const gameModule = games[game];
-    if (!gameModule || !gameModule.Game) {
+    const GameModule: ChatGameClass = games[game];
+    if (!GameModule) {
       throw new Error('Invalid game string: ' + game);
     }
-    this.game = new gameModule.Game(this);
+    this.game = new GameModule(this);
     this.game.init();
     this.save();
     this.bot.setGame(this.sessionId, this.game);
@@ -193,7 +209,7 @@ export class ChatSession {
     this.bot.removeGame(this.sessionId);
   }
 
-  public addScore(score) {
+  public addScore(score: number) {
     this.scores.push(score);
     this.save();
   }

@@ -1,11 +1,12 @@
-import { sample } from 'lodash';
-import { getResponders } from '../';
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
+import { Session } from '../../bot';
+import { getResponders } from '../';
+import { sample } from 'lodash';
 
 class RandomResponder extends CKeywordResponder {
   private getRandomResponder: () => Promise<CKeywordResponder>;
 
-  constructor(input, chat) {
+  public constructor(input: string, chat: Session) {
     super(input);
     this.setName('random');
 
@@ -21,7 +22,7 @@ class RandomResponder extends CKeywordResponder {
     };
   }
 
-  public testMatch(input) {
+  public testMatch(input: string) {
     return input.match(/^random\b/);
   }
 

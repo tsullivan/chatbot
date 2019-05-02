@@ -22,15 +22,29 @@ const baseConfig = {
   port: 8080,
 };
 
-const configMap = {
+type ConfigKey = 'development' | 'docker' | 'production' | 'test';
+interface ConfigMap {
+  development: Partial<Config>;
+  docker: Partial<Config>;
+  production: Partial<Config>;
+  test: Partial<Config>;
+}
+
+const configMap: ConfigMap = {
   development: configDevelopment,
   docker: configDocker,
   production: configProduction,
   test: configTest,
 };
 
-function getEnvConfig(envString: string): Config {
-  const envDependencies = [ 'SESSION_SECRET', 'APM_TOKEN', 'APM_URL', 'SLACK_BOT_TOKEN', 'NODE_ENV' ];
+function getEnvConfig(envString: ConfigKey): Config {
+  const envDependencies = [
+    'SESSION_SECRET',
+    'APM_TOKEN',
+    'APM_URL',
+    'SLACK_BOT_TOKEN',
+    'NODE_ENV',
+  ];
 
   for (const envDep of envDependencies) {
     if (!Boolean(process.env[envDep])) {
@@ -39,12 +53,12 @@ function getEnvConfig(envString: string): Config {
   }
 
   if (envString in configMap) {
-    return defaultsDeep(baseConfig, configMap[envString]);
+    const envConfig = configMap[envString] as Config;
+    return defaultsDeep(baseConfig, envConfig) as Config;
   } else {
     throw new Error('Invalid NODE_ENV'); // don't log it, might be weird
   }
 }
 
-export const { apm, env, port, sessionSecret, slack } = getEnvConfig(
-  process.env.NODE_ENV,
-);
+export const { apm, env, port, sessionSecret, slack } =
+  getEnvConfig(process.env.NODE_ENV as ConfigKey); // prettier-ignore

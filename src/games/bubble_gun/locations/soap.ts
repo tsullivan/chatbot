@@ -1,15 +1,16 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { KeywordResponse, Location, parajoin } from '../../lib';
+import { KeywordResponse, Location, parajoin, Adventure } from '../../lib';
 import { SOUTH } from '../constants';
 
 export class SoapLocation extends Location {
   private soapExperiences: number = 0;
 
-  constructor(game) {
+  public constructor(game: Adventure) {
     super({ game, name: 'The Soap Store' });
   }
 
-  public getDescription(game) {
+  public getDescription(game: Adventure) {
     const lns = [
       snl`Oh my goodness, this store has so much soap! It is by far the
       soapiest place you have ever been in!`,
@@ -19,7 +20,7 @@ export class SoapLocation extends Location {
     return parajoin(lns);
   }
 
-  public setLocationKeywords(game) {
+  public setLocationKeywords(game: Adventure) {
     this.addKeyword('PLAYGROUND', 'Go back to the playground', () => {
       return this.followExit(SOUTH);
     });

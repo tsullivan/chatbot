@@ -1,15 +1,16 @@
-import { sample } from 'lodash';
 import { KeywordResponder as AlienImpromptu } from '../../keywords/responders/alien';
-import { KeywordResponder as HumanImpromptu } from '../../keywords/responders/random';
 import { ChatResponse } from '../../types';
+import { KeywordResponder as HumanImpromptu } from '../../keywords/responders/random';
 import { ResponseMessage } from './response_message';
+import { Session } from '../session';
+import { sample } from 'lodash';
 
 export class RandomMessage extends ResponseMessage {
-  constructor(chat, message, format) {
-    super('random', chat, message, format);
+  public constructor(session: Session, message: string, format: string) {
+    super('random', session, message, format);
   }
 
-  public async makeResponse(chat): Promise<ChatResponse> {
+  public async makeResponse(chat: Session): Promise<ChatResponse> {
     const language = sample(['alien'/*, 'human'*/]);
     const responder =
       language === 'alien'

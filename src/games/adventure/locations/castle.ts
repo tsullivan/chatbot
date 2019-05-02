@@ -1,18 +1,19 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { KeywordResponse, Location } from '../../lib';
+import { KeywordResponse, Location, Adventure } from '../../lib';
 import { SOUTH, WINDOW_HANDLE } from '../constants';
 
 export class CastleLocation extends Location {
   private windowsOpen: boolean;
   private socketsSeen: boolean;
 
-  constructor(game) {
+  public constructor(game: Adventure) {
     super({ game, name: 'Great Hall of the Castle' });
     this.windowsOpen = true;
     this.socketsSeen = false;
   }
 
-  public getDescription(game) {
+  public getDescription(game: Adventure) {
     if (this.windowsOpen) {
       return snl`In the great hall of the castle, there are beautiful
         open-air windows with warm, nice-smelling air drifting through.
@@ -30,7 +31,7 @@ export class CastleLocation extends Location {
     }
   }
 
-  public setLocationKeywords(game) {
+  public setLocationKeywords(game: Adventure) {
     this.addKeyword('SLEEP', 'Sleep on the comfy bed', () => {
       if (this.windowsOpen) {
         const p = [

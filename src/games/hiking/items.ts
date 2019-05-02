@@ -1,8 +1,9 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { Item, KeywordResponse } from '../lib';
 import { APPLES, BUBBLE_GUN, CAR, ENEMIES, YOGURT } from './constants';
+import { Adventure, Item, KeywordResponse, Location } from '../lib';
 
-export function getItems(game) {
+export function getItems(game: Adventure) {
   /*
    * Enemies
    */
@@ -99,9 +100,9 @@ export function getItems(game) {
 }
 
 export function setItemsToLocations(
-  { enemiesItem, carItem, applesItem, yogurtItem, bubbleGunItem },
-  { appleShed, car: garage, mountain },
-  game,
+  { enemiesItem, carItem, applesItem, yogurtItem, bubbleGunItem }: { [itemName: string]: Item},
+  { appleShed, car: garage, mountain }: { [locationName: string]: Location},
+  game: Adventure,
 ) {
   /*
    * Set to game

@@ -1,6 +1,6 @@
 import * as apm from 'elastic-apm-node';
 import { ChatResponse } from '../../types';
-import { ChatSession } from '../chat_session';
+import { Session } from '../session';
 
 export class ResponseMessage {
   protected userMessage: string;
@@ -8,9 +8,9 @@ export class ResponseMessage {
   protected response: ChatResponse;
   private span: any;
   private name: string;
-  private chat: ChatSession;
+  private chat: Session;
 
-  constructor(name, chat, userMessage, userFormat) {
+  public constructor(name: string, chat: Session, userMessage: string, userFormat: string) {
     this.span = apm.startSpan(`${name}Span`);
     this.name = name;
     this.chat = chat;
@@ -18,7 +18,7 @@ export class ResponseMessage {
     this.userFormat = userFormat;
   }
 
-  public async makeResponse(chat): Promise<ChatResponse> {
+  public async makeResponse(chat: Session): Promise<ChatResponse> {
     // override this
     return {
       format: null,
@@ -30,21 +30,21 @@ export class ResponseMessage {
     return this.name;
   }
 
-  public getPlain(message): ChatResponse {
+  public getPlain(message: string): ChatResponse {
     return {
       format: 'plain',
       message,
     };
   }
 
-  public getMarkdown(message): ChatResponse {
+  public getMarkdown(message: string): ChatResponse {
     return {
       format: 'markdown',
       message,
     };
   }
 
-  public respond(message, format = 'markdown'): ChatResponse {
+  public respond(message: string, format = 'markdown'): ChatResponse {
     this.response = format === 'plain' ? this.getPlain(message) : this.getMarkdown(message);
     return this.response;
   }

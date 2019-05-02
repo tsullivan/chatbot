@@ -1,13 +1,14 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { KeywordResponse, Location } from '../../lib';
+import { KeywordResponse, Location, Adventure } from '../../lib';
 import { DOWN, WEST } from '../constants';
 
 export class MountainHouseLocation extends Location {
-  constructor(game) {
+  public constructor(game: Adventure) {
     super({ game, name: 'Mountain House' });
   }
 
-  public getDescription(game) {
+  public getDescription(game: Adventure) {
     const ps = [
       snl`Inside the mountain house, the many windows create an atmosphere of
         light, but as it is cloudy outside, you find yourself wishing for a
@@ -19,7 +20,7 @@ export class MountainHouseLocation extends Location {
     return ps.join('\n\n');
   }
 
-  public setLocationKeywords(game) {
+  public setLocationKeywords(game: Adventure) {
     this.addKeyword(['OUTSIDE', 'EXIT'], `Go out to the top of the mountain`, () =>
       this.followExit(WEST),
     );

@@ -1,4 +1,3 @@
-import { Location } from '../../lib/location';
 import {
   BASEMENT,
   BRIDGE,
@@ -14,15 +13,17 @@ import {
   UP,
   WEST,
 } from '../constants';
+import { Adventure } from '../../lib';
 import { BridgeLocation } from './bridge';
 import { ElectronicsLocation } from './electronics';
-import { MagnetLocation } from './magnet';
+import { Location } from '../../lib/location';
 import { MagnetBasementLocation } from './magnet_basement';
+import { MagnetLocation } from './magnet';
 import { PlaygroundLocation } from './playground';
 import { SoapLocation } from './soap';
 import { TreeFortLocation } from './treefort';
 
-export function getLocationsMap(game): Map<string, Location> {
+export function getLocationsMap(game: Adventure): Map<string, Location> {
   const playgroundLocation = new PlaygroundLocation(game);
   const bridgeLocation = new BridgeLocation(game);
   const electronicsLocation = new ElectronicsLocation(game);

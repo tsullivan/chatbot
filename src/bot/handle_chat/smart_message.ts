@@ -2,13 +2,14 @@ import * as apm from 'elastic-apm-node';
 import { keywordTester } from '../../keywords';
 import { ChatResponse } from '../../types';
 import { ResponseMessage } from './response_message';
+import { Session } from '..';
 
 export class SmartMessage extends ResponseMessage {
-  constructor(chat, message, format) {
+  public constructor(chat: Session, message: string, format: string) {
     super('smart', chat, message, format);
   }
 
-  public makeResponse(chat): Promise<ChatResponse> {
+  public makeResponse(chat: Session): Promise<ChatResponse> {
     const { isKeyword, responder } = keywordTester(this.userMessage, chat);
 
     if (isKeyword) {

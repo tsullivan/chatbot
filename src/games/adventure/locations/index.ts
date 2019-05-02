@@ -1,9 +1,10 @@
 import { EAST, NORTH, SOUTH, WEST } from '../constants';
+import { Adventure } from '../../lib';
 import { CastleLocation } from './castle';
 import { CaveLocation } from './cave';
 import { StartLocation } from './start';
 
-export function getLocations(game) {
+export function getLocations(game: Adventure) {
   const startLocation = new StartLocation(game);
   const caveLocation = new CaveLocation(game);
   const castleLocation = new CastleLocation(game);

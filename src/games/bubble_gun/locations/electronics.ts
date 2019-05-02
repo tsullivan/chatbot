@@ -1,16 +1,16 @@
-import { Location } from '../../lib';
+import { Location, Adventure } from '../../lib';
 import { EAST } from '../constants';
 
 export class ElectronicsLocation extends Location {
-  constructor(game) {
+  public constructor(game: Adventure) {
     super({ game, name: 'The Electronics Store' });
   }
 
-  public getDescription(game) {
+  public getDescription(game: Adventure) {
     return `Here at the Electronics store, their motto is: "Electronics - they're what we sell!"`;
   }
 
-  public setLocationKeywords(game) {
+  public setLocationKeywords(game: Adventure) {
     this.addKeyword('PLAYGROUND', 'Go back to the playground', () => {
       return this.followExit(EAST);
     });

@@ -4,16 +4,16 @@ class RepeatResponder extends CKeywordResponder {
   private num: number;
   private phrase: string;
 
-  constructor(input) {
+  public constructor(input: string) {
     super(input);
     this.setName('repeat');
     this.phrase = null;
   }
 
-  public testMatch(input) {
+  public testMatch(input: string) {
     const matches = input.match(/^repeat ([0-9]+) ([\S ]+)$/);
     if (matches !== null) {
-      const num = matches[1];
+      const num = parseInt(matches[1], 10);
       const phrase = matches[2];
       if (num > 0 && num <= 1000) {
         this.num = num;

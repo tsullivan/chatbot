@@ -1,3 +1,4 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
 import { KeywordResponse } from './keyword_response';
 

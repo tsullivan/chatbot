@@ -1,12 +1,14 @@
-import { sample } from 'lodash';
 import { KeywordResponder } from '../keyword_responder';
 import { runDictionary } from './run_dictionary';
+import { sample } from 'lodash';
+
+type PrefixFn = (requested: number) => string;
 
 export class DictionaryResponder extends KeywordResponder {
   private requested: number | null;
   private dictionary: string;
 
-  constructor(input) {
+  public constructor(input: string) {
     super(input);
     this.requested = null;
   }
@@ -23,10 +25,10 @@ export class DictionaryResponder extends KeywordResponder {
     return true;
   }
 
-  public setParsedRequestedDictionaryItem(input, regex) {
+  public setParsedRequestedDictionaryItem(input: string, regex: RegExp) {
     const matches = input.match(regex);
     if (matches !== null) {
-      const requested = matches.splice(1, 1);
+      const [requested ] = matches.splice(1, 1);
       const parsedRequested = parseInt(requested, 10);
       if (!Number.isNaN(parsedRequested)) {
         this.requested = parsedRequested;
@@ -45,7 +47,7 @@ export class DictionaryResponder extends KeywordResponder {
     return dictionary[index];
   }
 
-  public getRequested(prefixFn) {
+  public getRequested(prefixFn: PrefixFn) {
     const dictionary = runDictionary(this.dictionary);
     const indices = Object.keys(dictionary);
     const index = this.requested !== null ? this.requested - 1 : parseInt(sample(indices), 10);

@@ -6,12 +6,12 @@ const app = getServer();
 const agent = request.agent(app);
 const { handshake } = utilFactory(agent);
 
-const testFields = body => ({
+const testFields = (body: { format: string; message: string }) => ({
   format: body.format,
   message: body.message,
 });
 
-const sendTest = message =>
+const sendTest = (message: string) =>
   agent
     .post('/chat')
     .send({ format: 'user', message })

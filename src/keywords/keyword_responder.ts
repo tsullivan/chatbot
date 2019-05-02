@@ -3,13 +3,13 @@ export class KeywordResponder {
   private name: string | null;
   private format: string;
 
-  constructor(input) {
+  public constructor(input: string) {
     this.name = null;
     this.input = input;
     this.format = 'markdown';
   }
 
-  public setName(name) {
+  public setName(name: string) {
     this.name = name;
     return this;
   }
@@ -17,7 +17,7 @@ export class KeywordResponder {
     return this.name;
   }
 
-  public setFormat(format) {
+  public setFormat(format: string) {
     this.format = format;
     return this;
   }
@@ -34,7 +34,7 @@ export class KeywordResponder {
     return true;
   }
 
-  public testMatch(input) {
+  public testMatch(input: string) {
     return input.match(/^$/);
   }
 

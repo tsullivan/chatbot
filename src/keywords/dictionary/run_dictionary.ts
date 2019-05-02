@@ -3,7 +3,18 @@ import { roll } from '../../lib';
 
 const getData = () => cloneDeep(require('./dictionary'));
 
-function reduce(cb, accum) {
+interface Vocabulary {
+  [key: string]: string[];
+}
+type ReduceCallback = (
+  accum: Vocabulary,
+  kSet: string,
+  kind: string,
+  thing: string,
+  index: number
+) => Vocabulary;
+
+function reduce(cb: ReduceCallback, accum: Vocabulary) {
   const data = getData();
   const dataKeys = Object.keys(data);
   for (const kI in dataKeys) {
@@ -18,7 +29,7 @@ function reduce(cb, accum) {
             if (matches.hasOwnProperty(mI)) {
               const m = matches[mI];
               const subMatches = m.match(/\${(\S+):([^}]+)}/);
-              const [ kind, thing ] = subMatches.splice(1, 2);
+              const [kind, thing] = subMatches.splice(1, 2);
               accum = cb(accum, kSet, kind, thing, sI);
             }
           }
@@ -39,7 +50,11 @@ const vocabulary = reduce((accum, kSet, kind, thing) => {
   return accum;
 }, {});
 
-export function runDictionary(kSet = '') {
+interface DictionarySets {
+  [dictionaryKey: string]: any;
+};
+
+export function runDictionary(kSet = ''): DictionarySets {
   const data = getData();
   const dictionary = reduce((accum, myKSet, kind, thing, i) => {
     if (data[myKSet][i] == null) {
@@ -68,5 +83,3 @@ export function runDictionary(kSet = '') {
 
   return kSet ? dictionary[kSet] : dictionary;
 }
-
-

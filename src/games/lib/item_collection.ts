@@ -1,6 +1,7 @@
-import { values as getValues } from 'lodash';
 import { LI, UL } from '../../constants';
+import { Adventure } from '.';
 import { Item } from './item';
+import { values as getValues } from 'lodash';
 import { parajoin } from './parajoin';
 
 // give name and instructions for each inventory and floor item
@@ -8,11 +9,15 @@ function describeItSimple(item: Item) {
   return UL + item.getInfo();
 }
 // just mention visible items, ignore inventory
-function prefixItSimple({ floorItems, inventoryItems }) {
+function prefixItSimple({ floorItems, inventoryItems }: { floorItems: string, inventoryItems: string }) {
   return { floorItems: floorItems != null ? 'You see:\n\n' + floorItems : floorItems };
 }
 
 export class ItemCollection {
+
+  public static getItemsAsArray(items: ItemCollection) {
+    return Array.from(items.items).map(([key, item]: [string, Item]) => item);
+  }
 
   /*
    * Get the stuff to say about the items, but get them prefixed in a specific
@@ -20,11 +25,11 @@ export class ItemCollection {
    * @return {String}
    */
   public static describeGameItems(
-    game,
+    game: Adventure,
     describeIt = describeItSimple,
     prefixIt = prefixItSimple,
   ) {
-    const getTheirInfo = (items) => {
+    const getTheirInfo = (items: Item[]) => {
       return items.length ? items.map(describeIt).join('\n') : null;
     };
     const blocks = getValues(
@@ -42,9 +47,9 @@ export class ItemCollection {
    * the instructions for each item
    * @return {String}
    */
-  public static describeGameItemsFull(game) {
+  public static describeGameItemsFull(game: Adventure) {
     // give name and instructions for each inventory and floor item
-    const describeIt = (item) => {
+    const describeIt = (item: Item) => {
       let words = UL + item.getInfo();
       const instructions = item.getInstructions(LI);
       if (instructions && instructions.length) {
@@ -52,7 +57,7 @@ export class ItemCollection {
       }
       return words;
     };
-    const prefixIt = ({ floorItems, inventoryItems }) => {
+    const prefixIt = ({ floorItems, inventoryItems }: { floorItems: any, inventoryItems: any }) => {
       return {
         floorItems:
           floorItems != null
@@ -67,7 +72,7 @@ export class ItemCollection {
     return ItemCollection.describeGameItems(game, describeIt, prefixIt);
   }
 
-  public static getAllItemsFromSet(game, collection: Set<string>, { pushCondition = (item?: any) => true } = {}): Item[] {
+  public static getAllItemsFromSet(game: Adventure, collection: Set<string>, { pushCondition = (item?: any) => true } = {}): Item[] {
     return Array.from(collection).reduce((accum: Item[], value) => {
       const item = game.getItemFromCollection(value);
       if (pushCondition(item)) {
@@ -77,7 +82,7 @@ export class ItemCollection {
     }, []);
   }
 
-  public static getVisibleItemsFromSet(game, collection: Set<string>): Item[] {
+  public static getVisibleItemsFromSet(game: Adventure, collection: Set<string>): Item[] {
     if (game == null) {
       throw new Error('game param not given');
     }
@@ -89,16 +94,16 @@ export class ItemCollection {
     });
   }
 
-  private items: any;
+  private items: Map<string, Item>;
 
-  constructor() {
+  public constructor() {
     this.items = new Map();
   }
 
-  public addItem(id, item) {
+  public addItem(id: string, item: Item) {
     this.items.set(id, item);
   }
-  public get(id) {
+  public get(id: string) {
     return this.items.get(id);
   }
 }

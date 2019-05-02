@@ -1,14 +1,14 @@
-import { getResponders } from '../';
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
+import { getResponders } from '../';
 
 class HelpResponder extends CKeywordResponder {
-  constructor(input) {
+  public constructor(input: string) {
     super(input);
     this.setName('help');
     this.setFormat('markdown');
   }
 
-  public testMatch(input) {
+  public testMatch(input: string) {
     return input.match(/^help\b/);
   }
 

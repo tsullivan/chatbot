@@ -1,7 +1,8 @@
 import { KeywordResponder as CKeywordResponder } from '../keyword_responder';
+import { Session } from '../../bot';
 
 class ScoreResponder extends CKeywordResponder {
-  constructor(input, chat) {
+  public constructor(input: string, chat: Session) {
     super(input);
     this.setName('score');
 
@@ -10,7 +11,7 @@ class ScoreResponder extends CKeywordResponder {
     };
   }
 
-  public testMatch(input) {
+  public testMatch(input: string) {
     return input.match(/^score\b/);
   }
 }

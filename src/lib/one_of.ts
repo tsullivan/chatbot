@@ -1,6 +1,8 @@
 import { sample } from 'lodash';
 
-export function oneOf(fnArray) {
+type AnyFunction = () => any;
+
+export function oneOf(fnArray: AnyFunction[]) {
   const fn = sample(fnArray);
   return fn();
 }

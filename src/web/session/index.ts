@@ -1,7 +1,7 @@
 import * as express from 'express';
 import * as session from 'express-session';
 import { sessionSecret } from '../../../config';
-import { Bot, ChatSession } from '../../bot';
+import { Bot, Session } from '../../bot';
 
 export function initSession(bot: Bot, app: express.Application) {
   app.use(
@@ -14,7 +14,7 @@ export function initSession(bot: Bot, app: express.Application) {
   );
 
   app.use((req: express.Request, res: express.Response, next) => {
-    const chat = new ChatSession(bot, req.session); // new instance for every request
+    const chat = new Session(bot, req.session); // new instance for every request
     // tslint:disable-next-line prefer-conditional-expression
     if (!req.session.chat) {
       req.session.chat = chat.save();

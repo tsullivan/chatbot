@@ -1,4 +1,4 @@
-import { Adventure as AdventureGame } from './adventure';
+import { Adventure } from './adventure';
 import { ItemCollection } from './item_collection';
 import { KeywordResponse } from './keyword_response';
 import { parajoin } from './parajoin';
@@ -6,7 +6,7 @@ import { parajoin } from './parajoin';
 interface GameKeywordOpts {
   key: string;
   description: string;
-  fn: (game?: AdventureGame) => KeywordResponse;
+  fn: (game?: Adventure) => KeywordResponse;
 }
 
 export function getGameKeywords(): GameKeywordOpts[] {

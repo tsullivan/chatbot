@@ -1,8 +1,9 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { Item, KeywordResponse } from '../lib';
+import { Adventure, Item, KeywordResponse, Location } from '../lib';
 import { GUARDS, KEY, TOWEL } from './constants';
 
-export function getItems(game) {
+export function getItems(game: Adventure) {
   const keyItem = new Item({
     description: snl`On a hook on a far wall, there is the key to open a jail cell.`,
     game,
@@ -63,9 +64,9 @@ export function getItems(game) {
 }
 
 export function setItemsToLocations(
-  { keyItem, towelItem, guardsItem },
-  { cellLocation, vanLocation },
-  game,
+  { keyItem, towelItem, guardsItem }: { [itemKey: string]: Item },
+  { cellLocation, vanLocation }: { [locationKey: string]: Location },
+  game: Adventure
 ) {
   /*
    * Set to game

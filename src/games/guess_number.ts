@@ -1,7 +1,9 @@
-import { ChatGame } from './lib';
+import { ChatGame, KeywordResponse } from './lib';
+import { Session } from '../bot';
 
 const GUESS_BOUND = 20;
-const notDone = response => ({ response, isDone: false });
+const notDone = (response: string): KeywordResponse =>
+  new KeywordResponse({ text: response, isDone: false });
 
 /*
  * Let user guess a number between 1 and GUESS_BOUND
@@ -11,7 +13,7 @@ class GuessNumber extends ChatGame {
   private guesses = 0;
   private target: number;
 
-  constructor(session) {
+  public constructor(session: Session) {
     super(session);
     this.setName('guess_number');
   }
@@ -22,7 +24,7 @@ class GuessNumber extends ChatGame {
     this.target = floor(random() * GUESS_BOUND) + 1;
   }
 
-  public testInput(input) {
+  public testInput(input: string): KeywordResponse {
     this.guesses += 1;
     const guess = parseInt(input, 10);
 
@@ -34,7 +36,7 @@ class GuessNumber extends ChatGame {
     if (guess < 1 || guess > GUESS_BOUND) {
       this.score -= 2;
       return notDone(
-        `WRONG. The number is between 1 and ${GUESS_BOUND}. ${guess} isn't that, ${this.getPlayerName()}!`,
+        `WRONG. The number is between 1 and ${GUESS_BOUND}. ${guess} isn't that, ${this.getPlayerName()}!`
       );
     }
 
@@ -48,12 +50,12 @@ class GuessNumber extends ChatGame {
       }
     }
 
-    return {
+    return new KeywordResponse({
       isDone: true,
-      response: `You got it! ${input} is the right number. You guessed ${
+      text: `You got it! ${input} is the right number. You guessed ${
         this.guesses
       } times. Your score is ${this.score}.`,
-    };
+    });
   }
 
   public getWelcome() {

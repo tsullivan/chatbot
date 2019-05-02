@@ -1,8 +1,23 @@
-import { UL }  from '../../constants';
-import { MultiMap }  from '../../lib/multi_map';
+import { ChatGame } from '.';
 import { KeywordResponse }  from './keyword_response';
+import { MultiMap }  from '../../lib/multi_map';
+import { UL }  from '../../constants';
 
 type KeywordFromMap = [ string, { text: string } ]
+
+type KeywordFn = () => any;
+
+export interface KeywordsHelper {
+  addKeyword: (
+    keyword: string | string[],
+    keywordDescription: string,
+    fn: () => void
+  ) => void;
+  removeKeyword: (keyword: string) => void;
+  hasKeyword: (keyword: string) => boolean;
+  hasKeywords: () => boolean;
+  getInstructions: (prefix?: string) => string;
+}
 
 export const getKeywordsHelper = () => {
   return {
@@ -12,7 +27,7 @@ export const getKeywordsHelper = () => {
      * text {String} text used for getInstructions
      * fn {Function} function that must return KeywordResponse
      */
-    addKeyword(keyword, text, fn) {
+    addKeyword(keyword: string, text: string, fn: KeywordFn) {
       if (typeof keyword === undefined) {
         throw new Error('Keyword was undefined');
       }
@@ -38,7 +53,7 @@ export const getKeywordsHelper = () => {
         .join('\n');
     },
 
-    removeKeyword(keyword) {
+    removeKeyword(keyword: string) {
       if (typeof keyword === undefined) {
         throw new Error('Keyword was undefined');
       }
@@ -53,11 +68,11 @@ export const getKeywordsHelper = () => {
       return this._keywords.size > 0;
     },
 
-    hasKeyword(input) {
+    hasKeyword(input: string) {
       return this._keywords.has(input);
     },
 
-    getInputResponse(input, game) {
+    getInputResponse(input: string, game: ChatGame) {
       const resp = this._keywords.get(input);
       if (!resp) {
         throw new Error(`keyword ${input} is broken: ` + JSON.stringify(this));

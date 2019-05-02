@@ -1,23 +1,19 @@
-import { ChatSession } from '../../bot';
 import { Item, KeywordResponse, Location, parajoin } from './';
-import { ChatGame } from './chat_game'; // FIXME why does everything break if this is collapsed into previous import?
-import { getGameKeywords } from './game_keywords';
+import { ChatGame } from './chat_game';
+import { Session } from '../../bot';
 import { ItemCollection } from './item_collection';
-import { KeywordResponseValue } from './keyword_response';
+import { getGameKeywords } from './game_keywords';
 import { getKeywordsHelper } from './keywords_helper';
 
 export class Adventure extends ChatGame {
-  public branchToGame: (
-    BranchGame: (session: any) => void,
-    prefix: string,
-  ) => KeywordResponse;
+  public branchToGame: (BranchGame: AdventureClass, prefix: string) => KeywordResponse;
   public clearKeywords: () => void;
-  public getInputResponse: (input: string, game: ChatGame) => KeywordResponseValue;
+  public getInputResponse: (input: string, game: ChatGame) => KeywordResponse;
   public getInstructions: () => string;
   public addKeyword: (
     key: string,
     description: string,
-    fn: () => KeywordResponse,
+    fn: () => KeywordResponse
   ) => string;
   public hasKeyword: (key: string) => boolean;
   public score: number;
@@ -30,7 +26,7 @@ export class Adventure extends ChatGame {
   private locationsMap: Map<string, Location>;
   private currentLocation: Location;
 
-  public constructor(session: ChatSession) {
+  public constructor(session: Session) {
     super(session);
     Object.assign(this, getKeywordsHelper());
 
@@ -38,9 +34,9 @@ export class Adventure extends ChatGame {
     this.inventory = new Set(); // ids of items in the collection
 
     // KeywordResponse helpers
-    this.branchToGame = (BranchGame, prefix) => {
-      const newGame = new BranchGame(session);
-      newGame.startFromTrunk(this);
+    this.branchToGame = (BranchGame: AdventureClass, prefix: string) => {
+      const newGame: Adventure = new BranchGame(session);
+      newGame.startFromTrunk();
       return new KeywordResponse({
         text: prefix ? parajoin([prefix, newGame.getWelcome()]) : newGame.getWelcome(),
       });
@@ -89,7 +85,7 @@ export class Adventure extends ChatGame {
     return this.currentLocation;
   }
 
-  public getInputHandlerItem(items, input: string) {
+  public getInputHandlerItem(items: Item[], input: string) {
     let foundItem = null;
     for (const item of items) {
       if (item.hasKeyword(input)) {
@@ -100,11 +96,9 @@ export class Adventure extends ChatGame {
     return foundItem;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public win(response?: string, format?: string): KeywordResponse {
     throw new Error('win method is to override');
   }
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public lose(response?: string, format?: string): KeywordResponse {
     throw new Error('lose method is to override');
   }
@@ -127,6 +121,10 @@ export class Adventure extends ChatGame {
     this.currentLocation = location;
   }
 
+  /*
+   2416: Property 'testInput' in type 'Adventure' is not assignable to the same property in base type 'ChatGame'.  Type '(input: string) => Keywo rdResponse' is not assignable to type '(userMessage: string) => KeywordResponseValue'.    Type 'KeywordResponse' is not assignable to type 'Ke ywordResponseValue'.      Property 'changeScore' is private in type 'KeywordResponse' but not in type 'KeywordResponseValue'.
+  *
+   */
   public testInput(input: string): KeywordResponse {
     input = input.toUpperCase();
     const responseSet = [];
@@ -199,7 +197,7 @@ export class Adventure extends ChatGame {
       // if show item keywords of itemCollection items for visible items on floor or in inventory
       ({ response } = this.getInputResponse('HELP', this));
       responseSet.push(
-        `ERROR! LOSE 2 POINTS. Type HELP to show all the commands` + '\n\n' + response,
+        `ERROR! LOSE 2 POINTS. Type HELP to show all the commands` + '\n\n' + response
       );
       changeScore = -2;
       showInstructions = false;
@@ -254,7 +252,7 @@ export class Adventure extends ChatGame {
     return this.currentLocation.getVisibleFloorItems(this);
   }
 
-  public getNext(prefix, showInstructions): string {
+  public getNext(prefix: string, showInstructions: boolean): string {
     let next = prefix;
     if (showInstructions) {
       next += ['\n\n---', 'You can:', this.getLocationInstructions()].join('\n\n');
@@ -277,9 +275,13 @@ export class Adventure extends ChatGame {
       lns.push(prefix);
     }
     const locationDescription = this.currentLocation.getDescriptionInternal(this);
-    const { response: locationHelp } = this.getInputResponse('HELP', this);
+    const { response: locationHelp } = this.getInputResponse('HELP', this as ChatGame);
     lns.push(locationDescription);
     lns.push(locationHelp);
     return parajoin(lns);
   }
 }
+
+interface AdventureClass {
+  new (session: Session): Adventure;
+};

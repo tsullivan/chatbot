@@ -1,13 +1,14 @@
+// @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { Location, parajoin /*, KeywordResponse*/ } from '../../lib';
+import { Location, parajoin, Adventure } from '../../lib';
 import { CAR, DOWN, UP } from '../constants';
 
 export class CarLocation extends Location {
-  constructor(game) {
+  public constructor(game: Adventure) {
     super({ game, name: 'In a cave under the mountain house' });
   }
 
-  public getDescription(game) {
+  public getDescription(game: Adventure) {
     const lns = [
       snl`The hole which you climbed down is the only source of light. You're
         at the dead-end of a cave which goes one direction into a long tunnel of
@@ -22,7 +23,7 @@ export class CarLocation extends Location {
     return parajoin(lns);
   }
 
-  public setLocationKeywords(game) {
+  public setLocationKeywords(game: Adventure) {
     this.addKeyword('LADDER', `Climb the ladder to get back up to the house`, () =>
       this.followExit(UP, 'Climb, climb, climb.'),
     );

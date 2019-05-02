@@ -1,17 +1,27 @@
-import { ChatSession } from '../bot';
-import { ChatGame } from './lib';
+import { ChatGame, KeywordResponse } from './lib';
+import { Session } from '../bot';
 
 const WIN_CODE = '77';
 const LOSE_CODE = 'kl';
 
-const notDone = (response) => ({ response, format: 'markdown', isDone: false });
-const yesDone = (response) => ({ response, format: 'markdown', isDone: true });
+const notDone = (response: string): KeywordResponse =>
+  new KeywordResponse({
+    text: response,
+    format: 'markdown',
+    isDone: false,
+  });
+const yesDone = (response: string): KeywordResponse =>
+  new KeywordResponse({
+    text: response,
+    format: 'markdown',
+    isDone: true,
+  });
 
 export class Game extends ChatGame {
   public score: number;
   private batStuff: string[];
 
-  constructor(session: ChatSession) {
+  public constructor(session: Session) {
     super(session);
     this.setName('batman');
   }
@@ -21,7 +31,7 @@ export class Game extends ChatGame {
     this.batStuff = [];
   }
 
-  public testInput(input) {
+  public testInput(input: string): KeywordResponse {
     if (input === WIN_CODE || input === LOSE_CODE) {
       let response;
       if (input === WIN_CODE) {
@@ -35,7 +45,7 @@ export class Game extends ChatGame {
       return yesDone(
         `${response} "${input}" ended the Batgame. Your Batstuff is:\n${items}\n\nYour Batscore is ${
           this.score
-        }.`,
+        }.`
       );
     } else {
       this.score += 1;

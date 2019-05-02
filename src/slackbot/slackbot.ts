@@ -1,10 +1,10 @@
+import { Bot, Session } from '../bot';
+import { ChatBody, ChatResponse } from '../types';
 import { RTMClient, WebClient } from '@slack/client';
-import { slack } from '../../config';
-import { Bot, ChatSession } from '../bot';
 import { BOT_NAME } from '../constants';
 import { SlackSession } from '../slackbot/lib';
-import { ChatResponse } from '../types';
 import { initRTMEvents } from './events';
+import { slack } from '../../config';
 
 const slackSessions = new Map(); // memory leak
 
@@ -23,16 +23,14 @@ async function findChannel(web: WebClient): Promise<string> {
 async function findBotId(web: WebClient): Promise<string> {
   const users = await web.users.list();
   // @ts-ignore
-  const { id: botId } = users.members.find(
-    u => u.name === 'beepbeepbeep' && u.is_bot === true
-  );
+  const { id: botId } = users.members.find((u: any) => u.name === 'beepbeepbeep' && u.is_bot === true); // prettier-ignore
   return botId;
 }
 
 export class SlackBot {
-  private slackChannelId;
-  private slackBotId;
-  private bot;
+  private slackChannelId: string;
+  private slackBotId: string;
+  private bot: Bot;
 
   public constructor(bot: Bot) {
     this.bot = bot;
@@ -86,15 +84,16 @@ export class SlackBot {
     }
   }
 
-  public handleSlackChat(userId: string, chatBody): Promise<ChatResponse> {
+  public getSessionObjects(
+    userId: string,
+  ): { chatSession: Session; slackSession: SlackSession } {
     if (slackSessions.has(userId)) {
-      const sess = slackSessions.get(userId);
-      return this.bot.handleChat(chatBody, sess.chat);
+      return slackSessions.get(userId);
     }
 
     // default, initialize
     const slackSession = new SlackSession(userId, this.bot);
-    const chatSession = new ChatSession(this.bot, slackSession);
+    const chatSession = new Session(this.bot, slackSession);
 
     // init as valid session
     chatSession.init({ name: userId });
@@ -103,11 +102,24 @@ export class SlackBot {
     // memory cache
     slackSessions.set(userId, slackSession);
 
-    const bodyForInit = {
-      format: 'user',
-      message: 'name',
-      time: chatBody.time,
+    return {
+      slackSession,
+      chatSession,
     };
-    return this.bot.handleChat(bodyForInit, chatSession);
+  }
+  public handleSlackChat(userId: string, chatBody: ChatBody): Promise<ChatResponse> {
+    const existingSession = slackSessions.get(userId);
+
+    if (existingSession) {
+      return this.bot.handleChat(chatBody, existingSession.chat);
+    } else {
+      const { chatSession: newChatSession } = this.getSessionObjects(userId);
+      const bodyForInit = {
+        format: 'user',
+        message: 'name',
+        time: chatBody.time,
+      };
+      return this.bot.handleChat(bodyForInit, newChatSession);
+    }
   }
 }

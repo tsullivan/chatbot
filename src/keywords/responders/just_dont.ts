@@ -1,14 +1,14 @@
-import { sample } from 'lodash';
-import { getResponders } from '../';
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
+import { getResponders } from '../';
+import { sample } from 'lodash';
 
 class JustDontResponder extends CKeywordResponder {
-  constructor(input) {
+  public constructor(input: string) {
     super(input);
     this.setName('just_dont');
   }
 
-  public testMatch(input) {
+  public testMatch(input: string) {
     return input.match(/^just_dont\b/);
   }
 
