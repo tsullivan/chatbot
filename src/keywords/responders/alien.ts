@@ -98,7 +98,7 @@ class AlienTalkResponder extends CKeywordResponder {
   public async getResponse(): Promise<string> {
     const responder = await this.getRandomResponder();
     const response = await responder.getRandom();
-    return response + '\n\n' + alienTalk(response);
+    return alienTalk(response);
   }
 }
 
