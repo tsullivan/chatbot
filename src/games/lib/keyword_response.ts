@@ -1,4 +1,14 @@
 import { ChatGame } from '../lib/chat_game';
+import { ResponseFormat } from '../../../src/types';
+
+interface KeywordResponseOpts {
+  text: string;
+  format?: ResponseFormat;
+  changeScore?: number;
+  isDone?: boolean;
+  showInstructions?: boolean;
+  isCascade?: boolean;
+}
 
 export class KeywordResponse {
   public static getResponseFromHandler(handler: any, game: ChatGame) {
@@ -11,7 +21,7 @@ export class KeywordResponse {
   }
 
   public changeScore?: number;
-  public format: string;
+  public format: ResponseFormat;
   public isCascade?: boolean;
   public isDone: boolean;
   public response: string;
@@ -24,7 +34,7 @@ export class KeywordResponse {
     isDone = false,
     showInstructions = true,
     isCascade = false,
-  }) {
+  }: KeywordResponseOpts) {
     this.changeScore = changeScore;
     this.format = format;
     this.isCascade = isCascade;

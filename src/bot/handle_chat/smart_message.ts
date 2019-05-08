@@ -1,12 +1,12 @@
 import * as apm from 'elastic-apm-node';
-import { ChatResponse } from '../../types';
+import { ChatResponse, UserFormat } from '../../types';
 import { ResponseMessage } from './response_message';
 import { Session } from '..';
 import { keywordTester } from '../../keywords';
 
 export class SmartMessage extends ResponseMessage {
-  public constructor(chat: Session, message: string, format: string) {
-    super('smart', chat, message, format);
+  public constructor(chat: Session, message: string, userFormat: UserFormat) {
+    super('smart', chat, message, userFormat);
   }
 
   public makeResponse(chat: Session): Promise<ChatResponse> {

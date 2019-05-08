@@ -1,6 +1,7 @@
 import { Item, KeywordResponse, Location, parajoin } from './';
 import { ChatGame } from './chat_game';
 import { ItemCollection } from './item_collection';
+import { ResponseFormat } from '../../types';
 import { Session } from '../../bot';
 import { getGameKeywords } from './game_keywords';
 import { getKeywordsHelper } from './keywords_helper';
@@ -96,10 +97,10 @@ export class Adventure extends ChatGame {
     return foundItem;
   }
 
-  public win(response?: string, format?: string): KeywordResponse {
+  public win(response?: string, format?: ResponseFormat): KeywordResponse {
     throw new Error('win method is to override');
   }
-  public lose(response?: string, format?: string): KeywordResponse {
+  public lose(response?: string, format?: ResponseFormat): KeywordResponse {
     throw new Error('lose method is to override');
   }
 
@@ -128,8 +129,8 @@ export class Adventure extends ChatGame {
   public testInput(input: string): KeywordResponse {
     input = input.toUpperCase();
     const responseSet = [];
-    let response;
-    let format;
+    let response: string;
+    let format: ResponseFormat;
     let changeScore; // FIXME should be independent of keyword response: game.updateScore()
     let isDone = false; // FIXME should be independent of keyword response game.isDone()
     let showInstructions = true;

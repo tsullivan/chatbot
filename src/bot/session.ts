@@ -6,6 +6,7 @@ import { Field, mapFieldToResponse } from './map_field_to_response';
 import { Bot } from './bot';
 import { ChatGameClass } from '../games/lib/chat_game';
 import { SlackSession } from '../slackbot';
+import { UserFormat } from '../types';
 
 export interface WebSession extends Express.Session {
   chat?: Session;
@@ -110,7 +111,7 @@ export class Session {
     return this.name;
   }
 
-  public validateSession(format: string): ValidateResponse {
+  public validateSession(format: UserFormat): ValidateResponse {
     if (this.name === null) {
       if (format === 'syn') {
         // browser refresh

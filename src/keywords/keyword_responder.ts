@@ -1,7 +1,9 @@
+import { ResponseFormat } from '../types';
+
 export class KeywordResponder {
   protected input: string;
   private name: string | null;
-  private format: string;
+  private format: ResponseFormat;
 
   public constructor(input: string) {
     this.name = null;
@@ -17,7 +19,7 @@ export class KeywordResponder {
     return this.name;
   }
 
-  public setFormat(format: string) {
+  public setResponseFormat(format: ResponseFormat) {
     this.format = format;
     return this;
   }
