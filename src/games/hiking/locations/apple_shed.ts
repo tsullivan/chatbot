@@ -1,7 +1,7 @@
 // @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { KeywordResponse, Location, parajoin, Adventure } from '../../lib';
 import { APPLES, EAST, YOGURT } from '../constants';
+import { Adventure, KeywordResponse, Location, parajoin } from '../../lib';
 
 export class AppleShedLocation extends Location {
   private hasYogurt: boolean = false;

@@ -58,34 +58,34 @@ describe('Keywords', () => {
     await handshake();
 
     (async () => {
-    const res: ChatbotRes = await agent
+      const res: ChatbotRes = await agent
         .post('/chat')
         .send({ format: 'user', message: 'name' });
-    const { statusCode, body } = res;
+      const { statusCode, body } = res;
       expect(statusCode).toEqual(200);
       expect(body.message).toMatchSnapshot();
     })();
     (async () => {
-    const res: ChatbotRes = await agent
+      const res: ChatbotRes = await agent
         .post('/chat')
         .send({ format: 'user', message: 'Mit' });
-    const { statusCode, body } = res;
+      const { statusCode, body } = res;
       expect(statusCode).toEqual(200);
       expect(body.message).toMatchSnapshot();
     })();
     (async () => {
-    const res: ChatbotRes = await agent
+      const res: ChatbotRes = await agent
         .post('/chat')
         .send({ format: 'user', message: 'name' });
-    const { statusCode, body } = res;
+      const { statusCode, body } = res;
       expect(statusCode).toEqual(200);
       expect(body.message).toMatchSnapshot();
     })();
     (async () => {
-    const res: ChatbotRes = await agent
+      const res: ChatbotRes = await agent
         .post('/chat')
         .send({ format: 'user', message: 'Tim' }); // reset
-    const { statusCode, body } = res;
+      const { statusCode, body } = res;
       expect(statusCode).toEqual(200);
       expect(body.message).toMatchSnapshot();
     })();

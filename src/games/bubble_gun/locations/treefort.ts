@@ -1,6 +1,6 @@
 // @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { Location, Adventure } from '../../lib';
+import { Adventure, Location } from '../../lib';
 import { DOWN } from '../constants';
 
 export class TreeFortLocation extends Location {

@@ -1,4 +1,4 @@
-import { delayAndDie, Location, Adventure } from '../../lib';
+import { Adventure, Location, delayAndDie } from '../../lib';
 import { SOUTH } from '../constants';
 
 export class VanLocation extends Location {

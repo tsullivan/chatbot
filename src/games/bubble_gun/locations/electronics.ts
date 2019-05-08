@@ -1,4 +1,4 @@
-import { Location, Adventure } from '../../lib';
+import { Adventure, Location } from '../../lib';
 import { EAST } from '../constants';
 
 export class ElectronicsLocation extends Location {

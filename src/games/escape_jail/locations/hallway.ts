@@ -1,6 +1,6 @@
 // @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { delayAndDie, Location, parajoin, Adventure } from '../../lib';
+import { Adventure, Location, delayAndDie, parajoin } from '../../lib';
 import { SOUTH } from '../constants';
 
 export class HallwayLocation extends Location {

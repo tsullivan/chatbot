@@ -1,7 +1,7 @@
 import { Item, KeywordResponse, Location, parajoin } from './';
 import { ChatGame } from './chat_game';
-import { Session } from '../../bot';
 import { ItemCollection } from './item_collection';
+import { Session } from '../../bot';
 import { getGameKeywords } from './game_keywords';
 import { getKeywordsHelper } from './keywords_helper';
 

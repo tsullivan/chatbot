@@ -1,7 +1,7 @@
 // @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { KeywordResponse, Location, parajoin, Adventure } from '../../lib';
 import { APPLES, CAR, ENEMIES, NORTH, SOUTH } from '../constants';
+import { Adventure, KeywordResponse, Location, parajoin } from '../../lib';
 
 export class LakeLocation extends Location {
   public constructor(game: Adventure) {

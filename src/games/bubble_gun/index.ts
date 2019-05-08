@@ -3,8 +3,8 @@ import * as snl from 'strip-newlines';
 import { Adventure, KeywordResponse } from '../lib';
 import { ELECTRONICS, MAGNET, PLAYGROUND, SOAP } from './constants';
 import { getItems, setItemsToLocations } from './items';
-import { getLocationsMap } from './locations';
 import { Session } from '../../bot';
+import { getLocationsMap } from './locations';
 
 export class Game extends Adventure {
   public constructor(session: Session) {
@@ -14,12 +14,12 @@ export class Game extends Adventure {
       const locationsMap = getLocationsMap(this);
       this.setLocationsMap(locationsMap);
       const locations = {
-          playgroundLocation: locationsMap.get(PLAYGROUND),
-          bridgeLocation: locationsMap.get(PLAYGROUND),
-          electronicsLocation: locationsMap.get(ELECTRONICS),
-          soapLocation: locationsMap.get(SOAP),
-          magnetLocation: locationsMap.get(MAGNET),
-        };
+        playgroundLocation: locationsMap.get(PLAYGROUND),
+        bridgeLocation: locationsMap.get(PLAYGROUND),
+        electronicsLocation: locationsMap.get(ELECTRONICS),
+        soapLocation: locationsMap.get(SOAP),
+        magnetLocation: locationsMap.get(MAGNET),
+      };
 
       this.setLocation(locations.playgroundLocation);
 

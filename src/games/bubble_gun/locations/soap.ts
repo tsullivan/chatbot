@@ -1,6 +1,6 @@
 // @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { KeywordResponse, Location, parajoin, Adventure } from '../../lib';
+import { Adventure, KeywordResponse, Location, parajoin } from '../../lib';
 import { SOUTH } from '../constants';
 
 export class SoapLocation extends Location {

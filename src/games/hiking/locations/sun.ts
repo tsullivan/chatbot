@@ -1,6 +1,6 @@
 // @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { KeywordResponse, Location, parajoin, Adventure } from '../../lib';
+import { Adventure, KeywordResponse, Location, parajoin } from '../../lib';
 import { DOWN, YOGURT } from '../constants';
 
 export class TheSunLocation extends Location {

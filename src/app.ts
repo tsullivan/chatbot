@@ -1,6 +1,6 @@
-import { argv } from 'yargs';
 import { Bot } from './bot';
 import { SlackBot } from './slackbot';
+import { argv } from 'yargs';
 import { runServer as runWeb } from './web';
 
 const b = new Bot();

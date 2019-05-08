@@ -16,8 +16,8 @@ import * as starwarsfact from './responders/starwarsfact';
 import * as superherofact from './responders/superherofact';
 import * as what from './responders/what';
 import * as worldfact from './responders/worldfacts';
-import { Session } from '../bot';
 import { KeywordResponder } from './keyword_responder';
+import { Session } from '../bot';
 
 interface ResponderSet {
   [responderKey: string]: any;

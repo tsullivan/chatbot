@@ -1,6 +1,6 @@
 // @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { KeywordResponse, Location, Adventure } from '../../lib';
+import { Adventure, KeywordResponse, Location } from '../../lib';
 import { KEY, SOUTH } from '../constants';
 
 export class CellLocation extends Location {

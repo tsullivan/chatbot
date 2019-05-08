@@ -1,7 +1,7 @@
-import { json as parseJson } from 'body-parser';
 import * as apm from 'elastic-apm-node';
 import * as express from 'express';
 import { Bot } from '../..//bot';
+import { json as parseJson } from 'body-parser';
 
 const jsonParser = parseJson({ type: 'application/json' });
 
@@ -24,8 +24,8 @@ export function chatRoute(app: express.Application, bot: Bot) {
       username: req.session.chat.getName(),
     });
     apm.setCustomContext({
-      avg_score: req.session.chat.getAverageScore(),
-      num_messages: req.session.chat.getUserHistory().length,
+      avg_score: req.session.chat.getAverageScore(), // eslint-disable-line @typescript-eslint/camelcase
+      num_messages: req.session.chat.getUserHistory().length, // eslint-disable-line @typescript-eslint/camelcase
     });
     apm.endTransaction();
   });

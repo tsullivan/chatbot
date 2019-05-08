@@ -2,10 +2,10 @@ import { Game as AdventureGame } from './adventure';
 import { Game as BatmanGame } from './batman';
 import { Game as BubbleGunGame } from './bubble_gun';
 import { ChatGame } from './lib';
-import { Session } from '../bot';
 import { Game as EscapeJailGame } from './escape_jail';
 import { Game as GuessNumberGame } from './guess_number';
 import { Game as HikingGame } from './hiking';
+import { Session } from '../bot';
 
 interface GameSet {
   [gameName: string]: new (session: Session) => ChatGame;

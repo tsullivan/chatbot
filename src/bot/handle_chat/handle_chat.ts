@@ -2,8 +2,8 @@ import * as apm from 'elastic-apm-node';
 import * as moment from 'moment';
 import { BOT_NAME, DATE_FORMAT } from '../../constants';
 import { ChatBody, ChatResponse } from '../../types';
-import { Session } from '../../bot';
 import { RandomMessage } from './random_message';
+import { Session } from '../../bot';
 import { SessionMessage } from './session_message';
 import { SmartMessage } from './smart_message';
 

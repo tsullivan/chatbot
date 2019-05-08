@@ -1,6 +1,6 @@
 // @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { Item, KeywordResponse, Location, parajoin, Adventure } from '../../lib';
+import { Adventure, Item, KeywordResponse, Location, parajoin } from '../../lib';
 import { BUBBLE_GUN, LED, NORTH } from '../constants';
 
 export class BridgeLocation extends Location {

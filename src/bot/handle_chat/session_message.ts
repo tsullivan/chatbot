@@ -1,7 +1,7 @@
 import * as apm from 'elastic-apm-node';
 import { ChatResponse } from '../../types';
-import { Session } from '..';
 import { ResponseMessage } from './response_message';
+import { Session } from '..';
 
 export class SessionMessage extends ResponseMessage {
   public constructor(chat: Session, userMessage: string, userFormat: string) {
