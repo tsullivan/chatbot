@@ -43,29 +43,16 @@ export class Item implements Keywordable {
   private setActions: (actions: ActionOpts, item: Item) => void;
 
   public constructor(options: {
-  game: Adventure;
-  name: string;
-  id: string;
-  description: string;
-  seen?: boolean;
-  setActions?: (opts: ActionOpts, item: Item) => void;
-}) {
+    game: Adventure;
+    name: string;
+    id: string;
+    description: string;
+    seen?: boolean;
+    setActions?: (opts: ActionOpts, item: Item) => void;
+  }) {
     const { game, name, id, description, seen = true, setActions = noop } = options;
-
-    if (!(game instanceof Object)) {
-      throw new Error('game must be an Adventure object');
-    }
     if (!game.getCurrentLocation()) {
       throw new Error('need a current location for the game');
-    }
-    if (typeof name !== 'string') {
-      throw new Error('name must be string');
-    }
-    if (typeof id !== 'string') {
-      throw new Error('id must be string');
-    }
-    if (typeof description !== 'string') {
-      throw new Error('description must be string');
     }
     Object.assign(this, getKeywordsHelper()); // FIXME this is how I'm mix it in
 
@@ -113,7 +100,13 @@ export class Item implements Keywordable {
    */
   public setCombinable(
     game: Adventure,
-    { combinesWith, keyword, keywordDescription, fn, numberToCombineWith = 0 }: Combinable
+    {
+      combinesWith,
+      keyword,
+      keywordDescription,
+      fn,
+      numberToCombineWith = 0,
+    }: Combinable
   ) {
     if (typeof combinesWith !== 'string') {
       throw new Error('invalid combinesWith ' + combinesWith);
@@ -146,7 +139,10 @@ export class Item implements Keywordable {
     this.combinedWith.add(combinesWith);
   }
 
-  public setDroppable(game: Adventure, { keyword, keywordDescription, fn }: Interactable) {
+  public setDroppable(
+    game: Adventure,
+    { keyword, keywordDescription, fn }: Interactable
+  ) {
     // add a drop keyword if item is currently in inventory
     if (game.inInventory(this.id)) {
       this.addKeyword(keyword, keywordDescription, () => {
@@ -155,7 +151,10 @@ export class Item implements Keywordable {
       });
     }
   }
-  public setTakeable(game: Adventure, { keyword, keywordDescription, fn }: Interactable) {
+  public setTakeable(
+    game: Adventure,
+    { keyword, keywordDescription, fn }: Interactable
+  ) {
     // add a take keyword if game location has the item
     if (game.getCurrentLocation().hasFloorItem(this.id)) {
       this.addKeyword(keyword, keywordDescription, () => {

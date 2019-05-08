@@ -9,12 +9,17 @@ function describeItSimple(item: Item) {
   return UL + item.getInfo();
 }
 // just mention visible items, ignore inventory
-function prefixItSimple({ floorItems, inventoryItems }: { floorItems: string, inventoryItems: string }) {
+function prefixItSimple({
+  floorItems,
+  inventoryItems,
+}: {
+  floorItems: string;
+  inventoryItems: string;
+}) {
   return { floorItems: floorItems != null ? 'You see:\n\n' + floorItems : floorItems };
 }
 
 export class ItemCollection {
-
   public static getItemsAsArray(items: ItemCollection) {
     return Array.from(items.items).map(([key, item]: [string, Item]) => item);
   }
@@ -27,7 +32,7 @@ export class ItemCollection {
   public static describeGameItems(
     game: Adventure,
     describeIt = describeItSimple,
-    prefixIt = prefixItSimple,
+    prefixIt = prefixItSimple
   ) {
     const getTheirInfo = (items: Item[]) => {
       return items.length ? items.map(describeIt).join('\n') : null;
@@ -36,7 +41,7 @@ export class ItemCollection {
       prefixIt({
         floorItems: getTheirInfo(game.getCurrentLocation().getVisibleFloorItems(game)),
         inventoryItems: getTheirInfo(game.getVisibleInventoryItems()),
-      }),
+      })
     ).filter(Boolean); // drop null info
 
     return blocks.length > 0 ? parajoin(blocks) : null;
@@ -57,7 +62,13 @@ export class ItemCollection {
       }
       return words;
     };
-    const prefixIt = ({ floorItems, inventoryItems }: { floorItems: any, inventoryItems: any }) => {
+    const prefixIt = ({
+      floorItems,
+      inventoryItems,
+    }: {
+      floorItems: any;
+      inventoryItems: any;
+    }) => {
       return {
         floorItems:
           floorItems != null
@@ -72,7 +83,11 @@ export class ItemCollection {
     return ItemCollection.describeGameItems(game, describeIt, prefixIt);
   }
 
-  public static getAllItemsFromSet(game: Adventure, collection: Set<string>, { pushCondition = (item?: any) => true } = {}): Item[] {
+  public static getAllItemsFromSet(
+    game: Adventure,
+    collection: Set<string>,
+    { pushCondition = (item?: any) => true } = {}
+  ): Item[] {
     return Array.from(collection).reduce((accum: Item[], value) => {
       const item = game.getItemFromCollection(value);
       if (pushCondition(item)) {
@@ -82,7 +97,10 @@ export class ItemCollection {
     }, []);
   }
 
-  public static getVisibleItemsFromSet(game: Adventure, collection: Set<string>): Item[] {
+  public static getVisibleItemsFromSet(
+    game: Adventure,
+    collection: Set<string>
+  ): Item[] {
     if (game == null) {
       throw new Error('game param not given');
     }

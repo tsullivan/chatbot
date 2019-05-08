@@ -8,7 +8,7 @@
     "dev": "DEBUG='chatbot:*' NODE_ENV=development nodemon -e js,ts,json index.js --web",
     "dev-slack": "DEBUG='chatbot:*' NODE_ENV=development nodemon -e js,ts,json index.js --slack --web=false",
     "jest": "NODE_ENV=test SESSION_SECRET=testsess APM_TOKEN=testtoke  SLACK_BOT_TOKEN=testtoke jest --ci --verbose '\\.test\\.[jt]s'",
-    "lint": "eslint --ignore-pattern='*json' 'public/js/**' 'src/**' 'test/**' 'config/**'"
+    "lint": "eslint 'public/js/**' 'src/**' 'test/**' 'config/**'"
   },
   "husky": {
     "hooks": {
