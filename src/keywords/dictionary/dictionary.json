@@ -84,6 +84,7 @@
     "${noun:Pluto} is ${adjective:the second best} ${noun:planet.} You could make ${noun:snow mans}",
     "${noun:Rock}s are ${adjective:hard}. Sometimes you could make them into ${noun:lava}",
     "${noun:Hard rocks} can make a hard slam when you ${verb:break} them into a ${noun:window}.",
-    "${noun:Glass} is not that ${adjective:hard}. It cracks and if you ${verb:pound} it too hard, the ${noun:window} could ${verb:BREAK}!"
+    "${noun:Glass} is not that ${adjective:hard}. It cracks and if you ${verb:pound} it too hard, the ${noun:window} could ${verb:BREAK}!",
+    "People probably used to think that ${noun:bats} are just really ugly birds."
   ]
 }
