@@ -67,7 +67,7 @@ const alienTalk = (text: string) => {
   return words.join(' ');
 };
 
-export class AlienResponder extends CKeywordResponder {
+export default class AlienResponder extends CKeywordResponder {
   private getRandomResponder: () => Promise<CKeywordResponder>;
 
   public constructor(input: string, { chat }: { chat?: Session } = {}) {

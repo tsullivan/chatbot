@@ -2,7 +2,7 @@ import * as apm from 'elastic-apm-node';
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
 import { Session } from '../../bot';
 
-export class WhatResponder extends CKeywordResponder {
+export default class WhatResponder extends CKeywordResponder {
   public constructor(input: string, { chat }: { chat: Session }) {
     super(input);
     this.setName('what');

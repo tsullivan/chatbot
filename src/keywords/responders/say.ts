@@ -1,6 +1,6 @@
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
 
-export class SayResponder extends CKeywordResponder {
+export default class SayResponder extends CKeywordResponder {
   private thingToSay: string;
 
   public constructor(input: string) {

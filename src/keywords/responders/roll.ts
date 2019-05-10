@@ -3,7 +3,7 @@ import { roll } from '../../lib';
 
 const DEFAULT_SIDES = 20;
 
-export class RollResponder extends CKeywordResponder {
+export default class RollResponder extends CKeywordResponder {
   private sides: number;
 
   public constructor(input: string) {

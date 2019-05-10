@@ -1,7 +1,7 @@
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
 import { getResponders } from '../';
 
-export class HelpResponder extends CKeywordResponder {
+export default class HelpResponder extends CKeywordResponder {
   public constructor(input: string) {
     super(input);
     this.setName('help');

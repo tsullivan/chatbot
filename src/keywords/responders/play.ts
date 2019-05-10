@@ -1,7 +1,7 @@
 import { KeywordResponder as CKeywordResponder, ResponderOptions } from '../keyword_responder';
 import { GameSet } from '../../types';
 
-export class GameResponder extends CKeywordResponder {
+export default class GameResponder extends CKeywordResponder {
   private games: GameSet;
 
   public constructor(input: string, options: ResponderOptions) {

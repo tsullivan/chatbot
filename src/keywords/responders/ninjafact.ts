@@ -1,6 +1,6 @@
 import { DictionaryResponder } from '../dictionary';
 
-export class NinjaFactResponder extends DictionaryResponder {
+export default class NinjaFactResponder extends DictionaryResponder {
   public constructor(input: string) {
     super(input);
     this.setName('ninjafact').setDictionary('ninjafacts');

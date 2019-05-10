@@ -1,6 +1,6 @@
 import { DictionaryResponder } from '../dictionary';
 
-export class JokeResponder extends DictionaryResponder {
+export default class JokeResponder extends DictionaryResponder {
   public constructor(input: string) {
     super(input);
     this.setName('joke').setDictionary('jokes');

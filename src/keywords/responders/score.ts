@@ -1,7 +1,7 @@
 import { KeywordResponder as CKeywordResponder } from '../keyword_responder';
 import { Session } from '../../bot';
 
-export class ScoreResponder extends CKeywordResponder {
+export default class ScoreResponder extends CKeywordResponder {
   public constructor(input: string, { chat }: { chat: Session }) {
     super(input);
     this.setName('score');

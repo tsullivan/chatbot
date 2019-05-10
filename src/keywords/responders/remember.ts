@@ -2,7 +2,7 @@ import { KeywordResponder as CKeywordResponder } from '../keyword_responder';
 import { Session } from '../../bot';
 import { sample } from 'lodash';
 
-export class RememberResponder extends CKeywordResponder {
+export default class RememberResponder extends CKeywordResponder {
   public constructor(input: string, { chat }: { chat: Session }) {
     super(input);
     this.setName('remember');

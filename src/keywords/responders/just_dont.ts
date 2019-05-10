@@ -2,7 +2,7 @@ import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
 import { getResponders } from '../';
 import { sample } from 'lodash';
 
-export class JustDontResponder extends CKeywordResponder {
+export default class JustDontResponder extends CKeywordResponder {
   public constructor(input: string) {
     super(input);
     this.setName('just_dont');

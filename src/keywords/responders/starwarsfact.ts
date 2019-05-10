@@ -1,6 +1,6 @@
 import { DictionaryResponder } from '../dictionary';
 
-export class StarWarsFactResponder extends DictionaryResponder {
+export default class StarWarsFactResponder extends DictionaryResponder {
   public constructor(input: string) {
     super(input);
     this.setName('starwarsfact').setDictionary('starwarsfacts');

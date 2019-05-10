@@ -1,6 +1,6 @@
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
 
-export class RepeatResponder extends CKeywordResponder {
+export default class RepeatResponder extends CKeywordResponder {
   private num: number;
   private phrase: string;
 

@@ -3,7 +3,7 @@ import { Session } from '../../bot';
 import { getResponders } from '../';
 import { sample } from 'lodash';
 
-export class RandomResponder extends CKeywordResponder {
+export default class RandomResponder extends CKeywordResponder {
   private getRandomResponder: () => Promise<CKeywordResponder>;
 
   public constructor(input: string, { chat }: { chat: Session }) {
