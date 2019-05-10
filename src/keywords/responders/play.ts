@@ -1,18 +1,18 @@
-import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
-import { Session } from '../../bot';
-import { getGames } from '../../games';
+import { KeywordResponder as CKeywordResponder, ResponderOptions } from '../keyword_responder';
+import { GameSet } from '../../types';
 
-const games = getGames();
+export class GameResponder extends CKeywordResponder {
+  private games: GameSet;
 
-class GameResponder extends CKeywordResponder {
-  public constructor(input: string, session: Session) {
-    super(input);
+  public constructor(input: string, options: ResponderOptions) {
+    super(input, options);
     this.setName('play');
-    this.setResponseFormat('markdown');
+    this.games = options.gameSet;
 
     this.getResponse = async () => {
       const game = input.replace(/^play /, '');
-      if (Object.keys(games).indexOf(game) >= 0) {
+      if (Object.keys(this.games).indexOf(game) >= 0) {
+        const { chat: session } = options;
         session.setGame(game);
         return session.getGameWelcome();
       } else {
@@ -30,11 +30,9 @@ class GameResponder extends CKeywordResponder {
   }
 
   public help() {
-    const gameKeys = Object.keys(games);
+    const gameKeys = Object.keys(this.games);
     return `\`play\`: Play a game with me!\nUsage: \`play <game name>\`\nHere are the games I have: ${gameKeys.join(
       ', ',
     )}`;
   }
 }
-
-export const KeywordResponder = GameResponder;

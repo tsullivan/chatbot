@@ -2,7 +2,7 @@ import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
 import { getResponders } from '../';
 import { sample } from 'lodash';
 
-class JustDontResponder extends CKeywordResponder {
+export class JustDontResponder extends CKeywordResponder {
   public constructor(input: string) {
     super(input);
     this.setName('just_dont');
@@ -18,11 +18,9 @@ class JustDontResponder extends CKeywordResponder {
 
   public async getResponse(): Promise<string> {
     // get a random "just dont" message
-    const responders = getResponders();
+    const responders = await getResponders();
     const responderKey = sample(Object.keys(responders));
-    const responder = new responders[responderKey].KeywordResponder();
+    const responder = new responders[responderKey](null, {});
     return responder.justDont();
   }
 }
-
-export const KeywordResponder = JustDontResponder;

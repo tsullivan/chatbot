@@ -9,8 +9,9 @@ export class SmartMessage extends ResponseMessage {
     super('smart', chat, message, userFormat);
   }
 
-  public makeResponse(chat: Session): Promise<ChatResponse> {
-    const { isKeyword, responder } = keywordTester(this.userMessage, chat);
+  public async makeResponse(chat: Session): Promise<ChatResponse> {
+    // async get games, it's async because it'll do a scandir
+    const { isKeyword, responder } = await keywordTester(this.userMessage, chat);
 
     if (isKeyword) {
       apm.setTag('keyword', responder.getName());

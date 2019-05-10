@@ -1,16 +1,16 @@
-import { Game as AdventureGame } from './adventure';
-import { Game as BatmanGame } from './batman';
-import { Game as BubbleGunGame } from './bubble_gun';
+import { Game as AdventureGame } from './games/adventure';
+import { Game as BatmanGame } from './games/batman';
+import { Game as BubbleGunGame } from './games/bubble_gun';
 import { ChatGame } from './lib';
-import { Game as EscapeJailGame } from './escape_jail';
-import { Game as GuessNumberGame } from './guess_number';
-import { Game as HikingGame } from './hiking';
+import { Game as EscapeJailGame } from './games/escape_jail';
+import { Game as GuessNumberGame } from './games/guess_number';
+import { Game as HikingGame } from './games/hiking';
 import { Session } from '../bot';
 
 interface GameSet {
   [gameName: string]: new (session: Session) => ChatGame;
 }
-export function getGames(): GameSet {
+export async function getGames(): Promise<GameSet> {
   return {
     adventure: AdventureGame,
     batman: BatmanGame,

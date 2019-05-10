@@ -2,11 +2,10 @@ import * as apm from 'elastic-apm-node';
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
 import { Session } from '../../bot';
 
-class WhatResponder extends CKeywordResponder {
-  public constructor(input: string, chat: Session) {
+export class WhatResponder extends CKeywordResponder {
+  public constructor(input: string, { chat }: { chat: Session }) {
     super(input);
     this.setName('what');
-    this.setResponseFormat('markdown');
 
     this.getResponse = async () => {
       let prevMessage;
@@ -29,5 +28,3 @@ class WhatResponder extends CKeywordResponder {
     return input.match(/^what\b/);
   }
 }
-
-export const KeywordResponder = WhatResponder;

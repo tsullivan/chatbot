@@ -1,9 +1,9 @@
 import 'express';
 import * as _ from 'lodash';
 import * as apm from 'elastic-apm-node';
-import { ChatGame, getGames } from '../games';
 import { Field, mapFieldToResponse } from './map_field_to_response';
 import { Bot } from './bot';
+import { ChatGame } from '../games';
 import { ChatGameClass } from '../games/lib/chat_game';
 import { SlackSession } from '../slackbot';
 import { UserFormat } from '../types';
@@ -40,8 +40,6 @@ export const SessionProto: Proto = {
   scores: [],
   waitingOn: null,
 };
-
-const games = getGames();
 
 export class Session {
   public save: () => Session;
@@ -190,7 +188,7 @@ export class Session {
   }
 
   public setGame(game: string) {
-    const GameModule: ChatGameClass = games[game];
+    const GameModule: ChatGameClass = this.bot.getGameClass(game);
     if (!GameModule) {
       throw new Error('Invalid game string: ' + game);
     }
@@ -199,8 +197,13 @@ export class Session {
     this.save();
     this.bot.setGame(this.sessionId, this.game);
   }
+
   public getGame() {
     return this.game;
+  }
+
+  public getGames() {
+    return this.bot.getGames();
   }
 
   public endGame() {

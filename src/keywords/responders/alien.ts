@@ -67,19 +67,19 @@ const alienTalk = (text: string) => {
   return words.join(' ');
 };
 
-class AlienTalkResponder extends CKeywordResponder {
+export class AlienResponder extends CKeywordResponder {
   private getRandomResponder: () => Promise<CKeywordResponder>;
 
-  public constructor(input: string, chat: Session) {
+  public constructor(input: string, { chat }: { chat?: Session } = {}) {
     super(input);
     this.setName('alientalk');
 
     this.getRandomResponder = async () => {
-      const responders = getResponders();
+      const responders = await getResponders();
       const names = Object.keys(responders);
       const name = sample(names);
-      const { KeywordResponder } = responders[name];
-      const responder = new KeywordResponder(null, chat);
+      const RKeywordResponder = responders[name];
+      const responder = new RKeywordResponder(null, { chat });
       if (responder.isImpromptu()) {
         return responder;
       }
@@ -101,5 +101,3 @@ class AlienTalkResponder extends CKeywordResponder {
     return alienTalk(response);
   }
 }
-
-export const KeywordResponder = AlienTalkResponder;

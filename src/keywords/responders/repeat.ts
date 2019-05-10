@@ -1,6 +1,6 @@
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
 
-class RepeatResponder extends CKeywordResponder {
+export class RepeatResponder extends CKeywordResponder {
   private num: number;
   private phrase: string;
 
@@ -45,5 +45,3 @@ class RepeatResponder extends CKeywordResponder {
     return message.trim();
   }
 }
-
-export const KeywordResponder = RepeatResponder;

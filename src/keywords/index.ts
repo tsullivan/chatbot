@@ -1,69 +1,43 @@
-import * as alien from './responders/alien';
-import * as coinflip from './responders/coinflip';
-import * as help from './responders/help';
-import * as joke from './responders/joke';
-import * as just_dont from './responders/just_dont'; // eslint-disable-line @typescript-eslint/camelcase
-import * as name from './responders/name';
-import * as ninjafact from './responders/ninjafact';
-import * as play from './responders/play';
-import * as random from './responders/random';
-import * as remember from './responders/remember';
-import * as repeat from './responders/repeat';
-import * as roll from './responders/roll';
-import * as say from './responders/say';
-import * as score from './responders/score';
-import * as starwarsfact from './responders/starwarsfact';
-import * as superherofact from './responders/superherofact';
-import * as what from './responders/what';
-import * as worldfact from './responders/worldfacts';
-import { KeywordResponder } from './keyword_responder';
-import { Session } from '../bot';
+import { AlienResponder } from './responders/alien';
+import { CoinFlipResponder } from './responders/coinflip';
+import { GameResponder } from './responders/play';
+import { HelpResponder } from './responders/help';
+import { JokeResponder } from './responders/joke';
+import { NameResponder } from './responders/name';
+import { NinjaFactResponder } from './responders/ninjafact';
+import { RandomResponder } from './responders/random';
+import { RememberResponder } from './responders/remember';
+import { RepeatResponder } from './responders/repeat';
+import { ResponderSet } from './keyword_responder';
+import { RollResponder } from './responders/roll';
+import { SayResponder } from './responders/say';
+import { ScoreResponder } from './responders/score';
+import { StarWarsFactResponder } from './responders/starwarsfact';
+import { SuperHeroFactResponder } from './responders/superherofact';
+import { WhatResponder } from './responders/what';
+import { WorldFactResponder } from './responders/worldfacts';
 
-interface ResponderSet {
-  [responderKey: string]: any;
-}
-export function getResponders(): ResponderSet {
+export { keywordTester } from './keyword_tester';
+
+export async function getResponders(): Promise<ResponderSet> {
   return {
-    alien,
-    coinflip,
-    help,
-    joke,
-    just_dont, // eslint-disable-line @typescript-eslint/camelcase
-    name,
-    ninjafact,
-    play,
-    worldfact,
-    random,
-    remember,
-    repeat,
-    roll,
-    say,
-    score,
-    starwarsfact,
-    superherofact,
-    what,
+    alien: AlienResponder,
+    coinflip: CoinFlipResponder,
+    help: HelpResponder,
+    joke: JokeResponder,
+    name: NameResponder,
+    ninjafact: NinjaFactResponder,
+    play: GameResponder,
+    worldfact: WorldFactResponder,
+    random: RandomResponder,
+    remember: RememberResponder,
+    repeat: RepeatResponder,
+    roll: RollResponder,
+    say: SayResponder,
+    score: ScoreResponder,
+    starwarsfact: StarWarsFactResponder,
+    superherofact: SuperHeroFactResponder,
+    what: WhatResponder,
   };
 }
 
-export function keywordTester(input: string, chat: Session) {
-  const responders = getResponders();
-  for (const keyword in responders) {
-    if (responders.hasOwnProperty(keyword)) {
-      try {
-        const responder: KeywordResponder = new responders[keyword].KeywordResponder(
-          input,
-          chat
-        );
-        if (responder.inputMatches()) {
-          return {
-            isKeyword: true,
-            responder,
-          };
-        }
-      } catch (err) {
-        throw new Error('Bad keyword responder constructor: ' + keyword);
-      }
-    }
-  }
-  return { isKeyword: false };
-}

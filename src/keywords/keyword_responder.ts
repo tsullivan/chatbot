@@ -1,14 +1,30 @@
-import { ResponseFormat } from '../types';
+import { GameSet, ResponseFormat } from '../types';
+import { Session } from '../bot';
+
+export interface ResponderOptions {
+  chat?: Session;
+  gameSet?: GameSet;
+  format?: ResponseFormat;
+}
+
+export type ResponderClass = new (
+  input: string,
+  options: ResponderOptions
+) => KeywordResponder;
+
+export interface ResponderSet {
+  [responderKey: string]: ResponderClass;
+}
 
 export class KeywordResponder {
   protected input: string;
   private name: string | null;
   private format: ResponseFormat;
 
-  public constructor(input: string) {
+  public constructor(input: string | null, { format }: { format?: ResponseFormat } = {}) {
     this.name = null;
     this.input = input;
-    this.format = 'markdown';
+    this.format = format || 'markdown';
   }
 
   public setName(name: string) {
@@ -17,11 +33,6 @@ export class KeywordResponder {
   }
   public getName() {
     return this.name;
-  }
-
-  public setResponseFormat(format: ResponseFormat) {
-    this.format = format;
-    return this;
   }
 
   public getFormat() {

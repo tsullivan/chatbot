@@ -1,11 +1,10 @@
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
 import { getResponders } from '../';
 
-class HelpResponder extends CKeywordResponder {
+export class HelpResponder extends CKeywordResponder {
   public constructor(input: string) {
     super(input);
     this.setName('help');
-    this.setResponseFormat('markdown');
   }
 
   public testMatch(input: string) {
@@ -13,10 +12,10 @@ class HelpResponder extends CKeywordResponder {
   }
 
   public async getResponse(): Promise<string> {
-    const responders = getResponders();
+    const responders = await getResponders();
     const responderKeys = Object.keys(responders);
     const usableResponders = responderKeys.filter(key => {
-      const responder = new responders[key].KeywordResponder();
+      const responder = new responders[key](null, {});
       return responder.isListed() === true;
     });
 
@@ -26,7 +25,7 @@ class HelpResponder extends CKeywordResponder {
       const keyword = keywordMatches[1];
 
       if (responders[keyword] !== undefined) {
-        const responder = new responders[keyword].KeywordResponder();
+        const responder = new responders[keyword](null, {});
         return responder.help();
       }
     }
@@ -35,5 +34,3 @@ class HelpResponder extends CKeywordResponder {
     return 'Here are keywords you can use:\n' + items;
   }
 }
-
-export const KeywordResponder = HelpResponder;

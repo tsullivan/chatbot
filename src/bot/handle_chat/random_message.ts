@@ -1,5 +1,5 @@
 import { ChatResponse, UserFormat } from '../../types';
-import { KeywordResponder as HumanImpromptu } from '../../keywords/responders/random';
+import { RandomResponder } from '../../keywords/responders/random';
 import { ResponseMessage } from './response_message';
 import { Session } from '../session';
 
@@ -9,7 +9,7 @@ export class RandomMessage extends ResponseMessage {
   }
 
   public async makeResponse(chat: Session): Promise<ChatResponse> {
-    const responder = new HumanImpromptu(null, chat);
+    const responder = new RandomResponder(null, { chat });
     return this.respond(await responder.getResponse(), responder.getFormat());
   }
 }

@@ -1,6 +1,6 @@
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
 
-class SayResponder extends CKeywordResponder {
+export class SayResponder extends CKeywordResponder {
   private thingToSay: string;
 
   public constructor(input: string) {
@@ -37,5 +37,3 @@ class SayResponder extends CKeywordResponder {
     return this.thingToSay;
   }
 }
-
-export const KeywordResponder = SayResponder;

@@ -1,6 +1,6 @@
 import { DictionaryResponder } from '../dictionary';
 
-class JokeResponder extends DictionaryResponder {
+export class JokeResponder extends DictionaryResponder {
   public constructor(input: string) {
     super(input);
     this.setName('joke').setDictionary('jokes');
@@ -15,5 +15,3 @@ class JokeResponder extends DictionaryResponder {
     return this.getRequested((i: number) => `Here is joke number ${i}`);
   }
 }
-
-export const KeywordResponder = JokeResponder;

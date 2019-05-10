@@ -1,9 +1,9 @@
-import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
+import { KeywordResponder as CKeywordResponder } from '../keyword_responder';
 import { Session } from '../../bot';
 import { sample } from 'lodash';
 
-class RememberResponder extends CKeywordResponder {
-  public constructor(input: string, chat: Session) {
+export class RememberResponder extends CKeywordResponder {
+  public constructor(input: string, { chat }: { chat: Session }) {
     super(input);
     this.setName('remember');
     this.getResponse = async () => {
@@ -21,5 +21,3 @@ class RememberResponder extends CKeywordResponder {
     return `Just don't ask me "remember that one time." I probably don't.`;
   }
 }
-
-export const KeywordResponder = RememberResponder;

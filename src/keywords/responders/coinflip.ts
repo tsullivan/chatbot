@@ -1,7 +1,7 @@
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
 import { roll } from '../../lib';
 
-class CoinFlipResponder extends CKeywordResponder {
+export class CoinFlipResponder extends CKeywordResponder {
   public constructor(input: string) {
     super(input);
     this.setName('coinflip');
@@ -20,5 +20,3 @@ class CoinFlipResponder extends CKeywordResponder {
     return `Flipping a coin... ${result}!`;
   }
 }
-
-export const KeywordResponder = CoinFlipResponder;

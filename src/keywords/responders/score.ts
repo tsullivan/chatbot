@@ -1,8 +1,8 @@
 import { KeywordResponder as CKeywordResponder } from '../keyword_responder';
 import { Session } from '../../bot';
 
-class ScoreResponder extends CKeywordResponder {
-  public constructor(input: string, chat: Session) {
+export class ScoreResponder extends CKeywordResponder {
+  public constructor(input: string, { chat }: { chat: Session }) {
     super(input);
     this.setName('score');
 
@@ -15,5 +15,3 @@ class ScoreResponder extends CKeywordResponder {
     return input.match(/^score\b/);
   }
 }
-
-export const KeywordResponder = ScoreResponder;
