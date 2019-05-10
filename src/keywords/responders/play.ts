@@ -8,7 +8,7 @@ class GameResponder extends CKeywordResponder {
   public constructor(input: string, session: Session) {
     super(input);
     this.setName('play');
-    this.setFormat('markdown');
+    this.setResponseFormat('markdown');
 
     this.getResponse = async () => {
       const game = input.replace(/^play /, '');

@@ -1,6 +1,7 @@
 import { RTMClient } from '@slack/client';
 import { RandomMessage } from '../../bot';
 import { SlackBot } from '../slackbot';
+import { UserFormat } from '../../types';
 
 interface MessagePayload {
   message: string;
@@ -8,13 +9,13 @@ interface MessagePayload {
 
 export function onMessageFactory(
   slackBot: SlackBot,
-  rtm: RTMClient,
+  rtm: RTMClient
 ): (event: any) => Promise<MessagePayload> {
   const log = slackBot.getLogger(['slack', 'onmessage']);
 
   return async event => {
     const { user, text, channel } = event;
-    const chatBody = {
+    const chatBody: { format: UserFormat; message: string; time: Date } = {
       format: 'user',
       message: text,
       time: new Date(),
@@ -47,4 +48,3 @@ export function onMessageFactory(
     return undefined;
   };
 }
-

@@ -1,5 +1,5 @@
 import { Bot, Session } from '../bot';
-import { ChatBody, ChatResponse } from '../types';
+import { ChatBody, ChatResponse, UserFormat } from '../types';
 import { RTMClient, WebClient } from '@slack/client';
 import { BOT_NAME } from '../constants';
 import { SlackSession } from '../slackbot/lib';
@@ -85,7 +85,7 @@ export class SlackBot {
   }
 
   public getSessionObjects(
-    userId: string,
+    userId: string
   ): { chatSession: Session; slackSession: SlackSession } {
     if (slackSessions.has(userId)) {
       return slackSessions.get(userId);
@@ -114,7 +114,7 @@ export class SlackBot {
       return this.bot.handleChat(chatBody, existingSession.chat);
     } else {
       const { chatSession: newChatSession } = this.getSessionObjects(userId);
-      const bodyForInit = {
+      const bodyForInit: { format: UserFormat; message: string; time: Date } = {
         format: 'user',
         message: 'name',
         time: chatBody.time,

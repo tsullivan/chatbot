@@ -5,7 +5,7 @@ class HelpResponder extends CKeywordResponder {
   public constructor(input: string) {
     super(input);
     this.setName('help');
-    this.setFormat('markdown');
+    this.setResponseFormat('markdown');
   }
 
   public testMatch(input: string) {

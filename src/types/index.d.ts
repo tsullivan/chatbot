@@ -14,11 +14,11 @@ export interface MetricStats {
 
 export type ResponseFormat = 'markdown' | 'plain';
 
-export type UserFormat = 'plain' | 'hup' | 'syn';
+export type UserFormat = 'user' | 'hup' | 'syn';
 
 export interface ChatBody {
   message: string;
-  format: ResponseFormat;
+  format: UserFormat;
   time: Date;
 }
 

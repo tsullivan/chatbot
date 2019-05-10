@@ -5,10 +5,10 @@ describe('run_dictionary', () => {
     const dictionary = runDictionary();
     expect(Object.keys(dictionary)).toEqual([
       'jokes',
-      'superherofacts',
-      'starwarsfacts',
-      'pokemonfacts',
       'ninjafacts',
+      'pokemonfacts',
+      'starwarsfacts',
+      'superherofacts',
       'worldfacts',
     ]);
     expect(dictionary.jokes.length).toBeGreaterThan(10);

@@ -6,7 +6,7 @@ class WhatResponder extends CKeywordResponder {
   public constructor(input: string, chat: Session) {
     super(input);
     this.setName('what');
-    this.setFormat('markdown');
+    this.setResponseFormat('markdown');
 
     this.getResponse = async () => {
       let prevMessage;
