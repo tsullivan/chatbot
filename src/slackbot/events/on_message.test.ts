@@ -15,6 +15,10 @@ jest
 jest.spyOn(rtm, 'start').mockImplementation(() => Promise.resolve({ ok: true }));
 
 describe('Slackbot / RTM / On Message', () => {
+  beforeAll(async () => {
+    await slackBot.initTest();
+  });
+
   beforeEach(() => {
     jest.clearAllMocks();
   });

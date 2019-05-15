@@ -8,7 +8,7 @@ const notDone = (response: string): KeywordResponse =>
 /*
  * Let user guess a number between 1 and GUESS_BOUND
  */
-class GuessNumber extends ChatGame {
+export default class GuessNumberGame extends ChatGame {
   public score = 0;
   private guesses = 0;
   private target: number;
@@ -62,5 +62,3 @@ class GuessNumber extends ChatGame {
     return `# Let's play guess a number.\nI'm thinking of a number between 1 and ${GUESS_BOUND}. Try to guess it.`;
   }
 }
-
-export const Game = GuessNumber;

@@ -1,7 +1,7 @@
 // @ts-ignore untyped module
 import * as snl from 'strip-newlines';
 import { Adventure, KeywordResponse, Location, delayAndDie, parajoin } from '../../../lib';
-import { Game as BubbleGunWorld } from '../../bubble_gun';
+import BubbleGunWorldGame from '../../bubble_gun';
 
 export class FenceLocation extends Location {
   private jumped = false;
@@ -54,7 +54,7 @@ export class FenceLocation extends Location {
         `Jump and then climb over the jail fence`,
         () =>
           game.branchToGame(
-            BubbleGunWorld,
+            BubbleGunWorldGame,
             parajoin([
               snl`RUN RUN RUN JUUUUMP! Climb, climb, climb! You made it!`,
               snl`You run and run and run for a long time. You find yourself in

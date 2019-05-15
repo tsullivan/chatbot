@@ -6,7 +6,7 @@ import { WINDOW_HANDLE } from './constants';
 import { getItems } from './items';
 import { getLocations } from './locations';
 
-export class Game extends Adventure {
+export default class AdventureGame extends Adventure {
   public constructor(session: Session) {
     super(session);
     this.setName('adventure');

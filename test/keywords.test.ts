@@ -1,16 +1,20 @@
 import * as request from 'supertest';
-import { getServer } from '../src/web';
-import { utilFactory } from './utils';
+import { HandshakeFn, utilFactory } from './utils';
+import { Bot } from '../src/bot';
 
-const app = getServer();
-const agent = request.agent(app);
-const { handshake } = utilFactory(agent);
+let agent: request.SuperTest<request.Test>;
+let handshake: HandshakeFn;
+const bot = new Bot();
 
 interface ChatbotRes extends request.Response {
   statusCode?: number;
 }
 
 describe('Keywords', () => {
+  beforeAll(async () => {
+    ({ agent, handshake } = await utilFactory().beforeAll(bot));
+  });
+
   test('should repeat', async () => {
     await handshake();
     const res: ChatbotRes = await agent

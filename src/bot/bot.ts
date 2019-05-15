@@ -11,10 +11,17 @@ const sessionGames = new Map(); // memory leak
 export class Bot {
   private metrics: Metrics;
   private games: GameSet;
+  private isInitialized: boolean;
 
   public constructor() {
     this.metrics = new Metrics();
-    getGames().then((games: GameSet) => this.games = games);
+    this.isInitialized = false;
+  }
+
+  public async init(): Promise<this> {
+    this.games = await getGames();
+    this.isInitialized = true;
+    return this;
   }
 
   public handleChat(body: ChatBody, session: Session): Promise<ChatResponse> {
@@ -42,13 +49,11 @@ export class Bot {
   }
 
   public getGames() {
-    if (!this.games) {
-      throw new Error('Async error: Games Set has not been registered in the Bot instance!');
+    if (!this.isInitialized) {
+      throw new Error('Async error: init must be called');
     }
     return this.games;
-
   }
-
 
   public setGame(sessionId: string, game: ChatGame) {
     sessionGames.set(sessionId, game);

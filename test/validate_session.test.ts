@@ -1,9 +1,14 @@
 import * as request from 'supertest';
+import { Bot } from '../src/bot';
 import { getServer } from '../src/web';
 
+const bot = new Bot();
+
 describe('detect invalid session', () => {
+  beforeEach(() => bot.init());
+
   it('double syn', async () => {
-    const app = getServer();
+    const app = await getServer(bot);
     const agent = request.agent(app);
 
     const { body: syn1 } = await agent
@@ -26,7 +31,7 @@ describe('detect invalid session', () => {
   });
 
   it('recover invalid session', async () => {
-    const app = getServer();
+    const app = await getServer(bot);
     const agent = request.agent(app);
 
     const { body: plain1 } = await agent

@@ -2,7 +2,7 @@
 import * as snl from 'strip-newlines';
 import { Adventure, Location, parajoin } from '../../../lib';
 import { EAST, WEST } from '../constants';
-import { Game as EscapeJail } from '../../escape_jail';
+import EscapeJailGame  from '../../escape_jail';
 
 export class RocksLocation extends Location {
   public constructor(game: Adventure) {
@@ -33,7 +33,7 @@ export class RocksLocation extends Location {
       'Horseplay around on the rocks and fall down a cliff.',
       () =>
         game.branchToGame(
-          EscapeJail,
+          EscapeJailGame,
           snl`You start slapping yourself in the face, and get dizzy. You can't
             control where you're going and suddenly you start to fall! You aren't
             sure what happens next, but there are a lot of thuds and bumbs. That

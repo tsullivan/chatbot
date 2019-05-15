@@ -1,12 +1,15 @@
-import * as request from 'supertest';
-import { getServer } from '../src/web';
-import { utilFactory } from './utils';
+import { HandshakeFn, utilFactory } from './utils';
+import { Bot } from '../src/bot';
 
-const app = getServer();
-const agent = request.agent(app);
-const { handshake } = utilFactory(agent);
+let handshake: HandshakeFn;
+
+const bot = new Bot();
 
 describe('handshake', () => {
+  beforeAll(async () => {
+    ({ handshake } = await utilFactory().beforeAll(bot));
+  });
+
   test('should remember my name', async () => {
     return handshake();
   });

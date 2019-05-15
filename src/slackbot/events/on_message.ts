@@ -24,8 +24,6 @@ export function onMessageFactory(
     const isDm = channel.indexOf('D') === 0;
     const isMention = text.indexOf(`${slackBot.getSlackBotId()}`) > 0;
 
-    debugger;
-
     let response;
     if (isDm) {
       response = await slackBot.handleSlackChat(user, chatBody);

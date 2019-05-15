@@ -17,7 +17,7 @@ const yesDone = (response: string): KeywordResponse =>
     isDone: true,
   });
 
-export class Game extends ChatGame {
+export default class BatmanGame extends ChatGame {
   public score: number;
   private batStuff: string[];
 

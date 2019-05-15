@@ -20,11 +20,11 @@ export async function keywordTester(
           };
         }
       } catch (err) {
-        console.error(err);
+        const log = chat.getBotLogger(['keyword_tester']);
+        log.error([], err);
         throw new Error('Bad keyword responder constructor: ' + keyword);
       }
     }
   }
   return { isKeyword: false };
 }
-

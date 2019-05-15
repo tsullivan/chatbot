@@ -1,11 +1,11 @@
 import * as request from 'supertest';
-import { getServer } from '../src/web';
-import { utilFactory } from './utils';
+import { HandshakeFn, utilFactory } from './utils';
+import { Bot } from '../src/bot';
 
-const app = getServer();
-const agent = request.agent(app);
-const { handshake } = utilFactory(agent);
+let agent: request.SuperTest<request.Test>;
+let handshake: HandshakeFn;
 
+const bot = new Bot();
 const sendTest = (message: string) =>
   agent
     .post('/chat')
@@ -13,6 +13,10 @@ const sendTest = (message: string) =>
     .expect(200);
 
 describe('formatting', () => {
+  beforeAll(async () => {
+    ({ agent, handshake } = await utilFactory().beforeAll(bot));
+  });
+
   test('markdown', async () => {
     await handshake();
 

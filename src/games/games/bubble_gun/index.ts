@@ -6,7 +6,7 @@ import { getItems, setItemsToLocations } from './items';
 import { Session } from '../../../bot';
 import { getLocationsMap } from './locations';
 
-export class Game extends Adventure {
+export default class BubbleGunGame extends Adventure {
   public constructor(session: Session) {
     super(session);
     this.setName('bubble_gun');

@@ -5,7 +5,7 @@ import { getItems, setItemsToLocations } from './items';
 import { Session } from '../../../bot';
 import { getLocations } from './locations';
 
-export class Game extends Adventure {
+export default class HikingGame extends Adventure {
   public constructor(session: Session) {
     super(session);
     this.setName('hiking');

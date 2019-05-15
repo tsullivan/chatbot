@@ -229,4 +229,8 @@ export class Session {
       return `Weird, I don't know what game you wanted to play.`;
     }
   }
+
+  public getBotLogger(...args: any[]) {
+    return this.bot.getLogger(...args);
+  }
 }

@@ -13,7 +13,7 @@ const apm = apmNode.start(apmConfig);
 /*
  * Exported for tests
  */
-export function getServer(bot: Bot = new Bot()): express.Application {
+export async function getServer(bot: Bot): Promise<express.Application> {
   const app = express();
 
   const pubs = join(__dirname, '..', '..', 'public');
@@ -32,8 +32,8 @@ export function getServer(bot: Bot = new Bot()): express.Application {
   return app;
 }
 
-export function runServer(bot: Bot): void {
-  const app = getServer(bot);
+export async function runServer(bot: Bot): Promise<void> {
+  const app = await getServer(bot);
   const log = bot.getLogger(['web', 'server']);
 
   app.listen(PORT, () => {

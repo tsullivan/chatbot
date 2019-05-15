@@ -1,15 +1,26 @@
 import * as request from 'supertest';
-import { getServer } from '../src/web';
-import { utilFactory } from './utils';
+import { HandshakeFn, utilFactory } from './utils';
+import { Bot } from '../src/bot';
 
-const app = getServer();
-const agent = request.agent(app);
-const { handshake, send, checkResponses } = utilFactory(agent);
+let handshake: HandshakeFn;
+const bot = new Bot();
+const { send, checkResponses } = utilFactory();
 
 describe('escape-jail', () => {
+  beforeAll(async () => {
+    ({ handshake } = await utilFactory().beforeAll(bot));
+  });
+
+  beforeEach(() => handshake());
+
+  let resps: request.Response[];
+  beforeEach(() => {
+    resps = [];
+  });
+
+
   test('escape', async () => {
     await handshake();
-    const resps = [];
     resps[resps.length] = await send('play escape_jail');
     resps[resps.length] = await send('items');
     resps[resps.length] = await send('escape');

@@ -53,8 +53,16 @@ export class SlackBot {
     return this.slackBotId;
   }
 
-  public async start(): Promise<void> {
+  // for tests
+  public async initTest() {
+    await this.bot.init();
+  }
+
+  public async start() {
     const log = this.getLogger(['slack', 'runbot']);
+
+    await this.bot.init();
+
     log.info([], `Starting ${BOT_NAME} on Slack...`);
 
     let channelId;

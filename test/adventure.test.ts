@@ -1,12 +1,17 @@
 import * as request from 'supertest';
-import { getServer } from '../src/web';
+import { Bot } from '../src/bot';
 import { utilFactory } from './utils';
 
-const app = getServer();
-const agent = request.agent(app);
-const { handshake } = utilFactory(agent);
+let agent: request.SuperTest<request.Test>;
+let handshake: any;
+
+const bot = new Bot();
 
 describe('adventure', () => {
+  beforeAll(async () => {
+    ({ agent, handshake } = await utilFactory().beforeAll(bot));
+  });
+
   test('start', async () => {
     await handshake();
 
