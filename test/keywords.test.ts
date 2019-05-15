@@ -1,23 +1,20 @@
 import * as request from 'supertest';
-import { HandshakeFn, utilFactory } from './utils';
 import { Bot } from '../src/bot';
+import { utilFactory } from './utils';
 
-let agent: request.SuperTest<request.Test>;
-let handshake: HandshakeFn;
 const bot = new Bot();
+const { handshake, getAgent } = utilFactory();
 
 interface ChatbotRes extends request.Response {
   statusCode?: number;
 }
 
 describe('Keywords', () => {
-  beforeAll(async () => {
-    ({ agent, handshake } = await utilFactory().beforeAll(bot));
-  });
+  beforeAll(() => utilFactory().beforeAll(bot));
 
   test('should repeat', async () => {
     await handshake();
-    const res: ChatbotRes = await agent
+    const res: ChatbotRes = await getAgent()
       .post('/chat')
       .send({ format: 'user', message: 'repeat 450 💀' });
     const { statusCode, body } = res;
@@ -27,7 +24,7 @@ describe('Keywords', () => {
 
   test('should help', async () => {
     await handshake();
-    const res: ChatbotRes = await agent
+    const res: ChatbotRes = await getAgent()
       .post('/chat')
       .send({ format: 'user', message: 'help' });
     const { statusCode, body } = res;
@@ -37,7 +34,7 @@ describe('Keywords', () => {
 
   test('should say', async () => {
     await handshake();
-    const res: ChatbotRes = await agent
+    const res: ChatbotRes = await getAgent()
       .post('/chat')
       .send({ format: 'user', message: 'say mama say mama saw' });
     const { statusCode, body } = res;
@@ -47,12 +44,12 @@ describe('Keywords', () => {
 
   test('should what', async () => {
     await handshake();
-    const { body: body1 } = await agent
+    const { body: body1 } = await getAgent()
       .post('/chat')
       .send({ format: 'user', message: 'say 🍍' });
     expect(body1.message).toMatchSnapshot();
 
-    const { body: body2 } = await agent
+    const { body: body2 } = await getAgent()
       .post('/chat')
       .send({ format: 'user', message: 'what' });
     expect(body2.message).toMatchSnapshot();
@@ -62,7 +59,7 @@ describe('Keywords', () => {
     await handshake();
 
     (async () => {
-      const res: ChatbotRes = await agent
+      const res: ChatbotRes = await getAgent()
         .post('/chat')
         .send({ format: 'user', message: 'name' });
       const { statusCode, body } = res;
@@ -70,7 +67,7 @@ describe('Keywords', () => {
       expect(body.message).toMatchSnapshot();
     })();
     (async () => {
-      const res: ChatbotRes = await agent
+      const res: ChatbotRes = await getAgent()
         .post('/chat')
         .send({ format: 'user', message: 'Mit' });
       const { statusCode, body } = res;
@@ -78,7 +75,7 @@ describe('Keywords', () => {
       expect(body.message).toMatchSnapshot();
     })();
     (async () => {
-      const res: ChatbotRes = await agent
+      const res: ChatbotRes = await getAgent()
         .post('/chat')
         .send({ format: 'user', message: 'name' });
       const { statusCode, body } = res;
@@ -86,7 +83,7 @@ describe('Keywords', () => {
       expect(body.message).toMatchSnapshot();
     })();
     (async () => {
-      const res: ChatbotRes = await agent
+      const res: ChatbotRes = await getAgent()
         .post('/chat')
         .send({ format: 'user', message: 'Tim' }); // reset
       const { statusCode, body } = res;

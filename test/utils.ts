@@ -11,6 +11,7 @@ export type BeforeAllFn = (bot: Bot) => Promise<{
 }>;
 
 type UtilFactory = () => {
+  getAgent: () => request.SuperTest<request.Test>;
   handshake: HandshakeFn;
   send: SendFn;
   checkResponses: CheckRespFn;
@@ -19,6 +20,7 @@ type UtilFactory = () => {
 
 export const utilFactory: UtilFactory = () => {
   return {
+    getAgent: () => this.agent,
     beforeAll: async (bot: Bot) => {
       await bot.init();
       const app = await getServer(bot);

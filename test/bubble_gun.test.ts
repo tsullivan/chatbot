@@ -1,15 +1,12 @@
 import * as request from 'supertest';
-import { HandshakeFn, utilFactory } from './utils';
 import { Bot } from '../src/bot';
+import { utilFactory } from './utils';
 
-let handshake: HandshakeFn;
 const bot = new Bot();
-const { send, checkResponses } = utilFactory();
+const { handshake, send, checkResponses } = utilFactory();
 
 describe('bubble_gun', () => {
-  beforeAll(async () => {
-    ({ handshake } = await utilFactory().beforeAll(bot));
-  });
+  beforeAll(() => utilFactory().beforeAll(bot));
 
   beforeEach(() => handshake());
 
