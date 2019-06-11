@@ -1,20 +1,48 @@
 /* global $ */
-function Ajax() {
-  function prepareHistory($container) {
-    $container.empty();
-    $container.append(`<div id="history-user" aria-hidden="true"></div> <div id="history-bot" aria-live="polite"></div>`);
+
+const AJAX_OPTS = {
+  method: 'post',
+  contentType: 'application/json',
+  url: './chat',
+  dataType: 'json',
+};
+
+class Ajaxer {
+  constructor($userText, $history, $error, historyRecaller) {
+    this.$userText = $userText;
+    this.$history = $history;
+    this.$error = $error;
+    this.historyRecaller = historyRecaller;
+
+    this.handleAjaxError = this.handleAjaxError.bind(this);
+    this.sendMessage = this.sendMessage.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateHistory = this.updateHistory.bind(this);
+
+    $('#chat').on('submit', this.handleSubmit());
+
+    this.sendMessage('HELO', 'syn', (message, response) => {
+      this.updateHistory($history, response);
+    });
   }
 
-  function updateHistory($container, ...messages) {
-    prepareHistory($container);
+  prepareHistory($container) {
+    const $fresh = $(
+      `<div id="history-user" aria-hidden="true"></div> <div id="history-bot" aria-live="polite"></div>`
+    );
+    $container.empty();
+    $container.append($fresh);
+  }
+
+  updateHistory($container, ...messages) {
+    this.prepareHistory($container);
 
     for (const message of messages) {
       const html = window.messageFormatter(message);
       if (html) {
         const $html = $(html);
-
-        $userContainer = $container.find('#history-user');
-        $botContainer = $container.find('#history-bot');
+        const $userContainer = $container.find('#history-user');
+        const $botContainer = $container.find('#history-bot');
 
         if (message.format === 'user') {
           $userContainer.append($html); // add to page
@@ -29,14 +57,18 @@ function Ajax() {
     }
   }
 
-  const AJAX_OPTS = {
-    method: 'post',
-    contentType: 'application/json',
-    url: './chat',
-    dataType: 'json',
-  };
+  handleAjaxError(jqXHR, textStatus, errorThrown) {
+    console.error(`${textStatus} ${errorThrown}`);
 
-  function sendMessage(messageText, messageFormat, callback) {
+    const $alert = $(
+      `<div class="alert alert-danger" role="alert">${textStatus}: ${errorThrown}</div>`
+    );
+
+    this.$error.empty(); // EVIL UGLY HACK
+    this.$error.append($alert);
+  }
+
+  sendMessage(messageText, messageFormat, callback, callbackError) {
     const message = {
       format: messageFormat,
       message: messageText,
@@ -47,39 +79,30 @@ function Ajax() {
       Object.assign({}, AJAX_OPTS, {
         data: JSON.stringify(message),
         success: response => callback(message, response),
+        error: this.handleAjaxError,
       })
     );
   }
 
-  function handleSubmit($userText, $history, historyRecaller) {
+  handleSubmit() {
     return e => {
       e.preventDefault();
 
-      let messageText = $userText.val();
+      let messageText = this.$userText.val();
       if (messageText === '') {
         // prefill with last message, and stop
-        $userText.val(historyRecaller.getEarlierText());
+        this.$userText.val(this.historyRecaller.getEarlierText());
         return false;
       } else {
-        historyRecaller.addHistory(messageText);
+        this.historyRecaller.addHistory(messageText);
       }
 
-      sendMessage(messageText, 'user', (message, response) => {
-        $userText.val('');
-        updateHistory($history, message, response);
+      this.sendMessage(messageText, 'user', (message, response) => {
+        this.$userText.val('');
+        this.updateHistory(this.$history, message, response);
       });
     };
   }
-
-  return {
-    initAjax($userText, $history, historyRecaller) {
-      $('#chat').on('submit', handleSubmit($userText, $history, historyRecaller));
-
-      sendMessage('HELO', 'syn', (message, response) => {
-        updateHistory($history, response);
-      });
-    },
-  };
 }
 
-window.Ajax = Ajax;
+window.Ajaxer = Ajaxer;

@@ -40,6 +40,7 @@
         </button>
       </div>
     </form>
+    <div id="error"></div>
   </div>
 
   <script type="text/javascript" src="js/ajax.js"></script>
@@ -47,9 +48,11 @@
     $(document).ready(() => {
       const $userText = $('#userText');
       const $history = $('#history');
+      const $error = $('#error');
       const historyRecaller = new HistoryRecaller();
 
-      Ajax().initAjax($userText, $history, historyRecaller);
+      new Ajaxer($userText, $history, $error, historyRecaller);
+
       $userText.focus();
 
       const UP_ARROW = 38;
