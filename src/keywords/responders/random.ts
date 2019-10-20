@@ -23,7 +23,7 @@ export default class RandomResponder extends CKeywordResponder {
   }
 
   public testMatch(input: string) {
-    return input.match(/^random\b/);
+    return input.match(/^random/);
   }
 
   public justDont() {

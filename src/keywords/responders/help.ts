@@ -8,7 +8,7 @@ export default class HelpResponder extends CKeywordResponder {
   }
 
   public testMatch(input: string) {
-    return input.match(/^help\b/);
+    return input.match(/^help/);
   }
 
   public async getResponse(): Promise<string> {

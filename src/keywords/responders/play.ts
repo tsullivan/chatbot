@@ -22,7 +22,7 @@ export default class GameResponder extends CKeywordResponder {
   }
 
   public testMatch(input: string) {
-    return input.match(/^play\b/);
+    return input.match(/^play/);
   }
 
   public justDont() {

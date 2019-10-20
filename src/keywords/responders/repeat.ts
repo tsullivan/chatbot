@@ -11,7 +11,7 @@ export default class RepeatResponder extends CKeywordResponder {
   }
 
   public testMatch(input: string) {
-    const matches = input.match(/^repeat ([0-9]+) ([\S ]+)$/);
+    const matches = input.match(/^repeat\s*([0-9]+)\s*([\S ]+)$/);
     if (matches !== null) {
       const num = parseInt(matches[1], 10);
       const phrase = matches[2];
@@ -21,7 +21,7 @@ export default class RepeatResponder extends CKeywordResponder {
       }
     }
 
-    return input.match(/^repeat\b/);
+    return input.match(/^repeat/);
   }
 
   public help() {

@@ -8,7 +8,7 @@ export default class CoinFlipResponder extends CKeywordResponder {
   }
 
   public testMatch(input: string) {
-    return input.match(/^coinflip\b/);
+    return input.match(/^coinflip/);
   }
 
   public justDont() {

@@ -72,7 +72,7 @@ export class KeywordResponder {
   }
 
   public async runKeyword(): Promise<string> {
-    const needsHelpMatches = this.input.match(/ help\b$/);
+    const needsHelpMatches = this.input.match(/ help$/);
     if (needsHelpMatches !== null) {
       return this.help();
     }

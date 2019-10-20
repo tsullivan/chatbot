@@ -19,7 +19,7 @@ export default class RollResponder extends CKeywordResponder {
       this.sides = parseInt(sides, 10);
     }
 
-    return input.match(/^roll\b/);
+    return input.match(/^roll/);
   }
 
   public justDont() {

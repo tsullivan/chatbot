@@ -10,7 +10,7 @@ export default class SayResponder extends CKeywordResponder {
   }
 
   public testMatch(input: string) {
-    const matches = input.match(/^say (.*)$/);
+    const matches = input.match(/^say\s*(.*)$/);
     if (matches !== null) {
       const thingToSay = matches[1];
       if (thingToSay.trim() !== '') {
@@ -18,7 +18,7 @@ export default class SayResponder extends CKeywordResponder {
       }
     }
 
-    return input.match(/^say\b(.*)$/);
+    return input.match(/^say(.*)$/);
   }
 
   public help() {

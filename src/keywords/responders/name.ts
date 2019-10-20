@@ -26,6 +26,6 @@ export default class NameResponder extends CKeywordResponder {
   }
 
   public testMatch(input: string) {
-    return input.match(/^name\b/);
+    return input.match(/^name/);
   }
 }

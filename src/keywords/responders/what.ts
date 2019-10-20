@@ -25,6 +25,6 @@ export default class WhatResponder extends CKeywordResponder {
   }
 
   public testMatch(input: string) {
-    return input.match(/^what\b/);
+    return input.match(/^what/);
   }
 }
