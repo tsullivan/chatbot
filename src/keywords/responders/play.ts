@@ -1,4 +1,7 @@
-import { KeywordResponder as CKeywordResponder, ResponderOptions } from '../keyword_responder';
+import {
+  KeywordResponder as CKeywordResponder,
+  ResponderOptions,
+} from '../keyword_responder';
 import { GameSet } from '../../types';
 
 export default class GameResponder extends CKeywordResponder {
@@ -30,9 +33,9 @@ export default class GameResponder extends CKeywordResponder {
   }
 
   public help() {
-    const gameKeys = Object.keys(this.games);
-    return `\`play\`: Play a game with me!\nUsage: \`play <game name>\`\nHere are the games I have: ${gameKeys.join(
-      ', ',
+    const gameKeys = Object.keys(this.games).map(key => `\n- \`play ${key}\``);
+    return `\`play\`: Play a game with me!\nUsage: \`play <game name>\`\nHere are the games I have:\n${gameKeys.join(
+      ''
     )}`;
   }
 }

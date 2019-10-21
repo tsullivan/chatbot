@@ -53,6 +53,7 @@ class Ajaxer {
       if (captureText) {
         // set it to the input 
         this.$userText.val(captureText);
+        this.$userText.focus();
       }
     };
   }
