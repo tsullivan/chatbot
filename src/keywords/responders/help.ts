@@ -30,7 +30,7 @@ export default class HelpResponder extends CKeywordResponder {
       }
     }
 
-    const items = usableResponders.reduce((accum, curr) => `${accum}\n- ${curr}`, '');
-    return 'Here are keywords you can use:\n' + items;
+    const items = usableResponders.map((text) => `\n- \`${text}\``);
+    return `Here are keywords you can use:\n${items.join('')}`;
   }
 }

@@ -29,13 +29,11 @@ export default class GameResponder extends CKeywordResponder {
   }
 
   public justDont() {
-    return `Just don't say "play batman"`;
+    return `Just don't say "\`play batman\`"`;
   }
 
   public help() {
     const gameKeys = Object.keys(this.games).map(key => `\n- \`play ${key}\``);
-    return `\`play\`: Play a game with me!\nUsage: \`play <game name>\`\nHere are the games I have:\n${gameKeys.join(
-      ''
-    )}`;
+    return `Play a game with me!\nUsage: \`play <game name>\`\nHere are the games I have:\n${gameKeys.join('')}`;
   }
 }
