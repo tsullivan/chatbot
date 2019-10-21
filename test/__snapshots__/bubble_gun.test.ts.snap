@@ -15,15 +15,15 @@ Bubble Gun world is very dark right now. All the power seems to be off in this e
 
 It's a pretty normal-looking playground, with the typical offerings of swings, a slide, and jungle gyms. There's even a tree fort!
 
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store
-- LOOK - Look at the area you are currently in.
-- ITEMS - Things you can do with stuff you are holding or stuff you see.
-- HELP - See all the commands you can type
-- QUIT - Quit the game"
+- \`BRIDGE\` - Go to the bridge
+- \`TREE_FORT\` - Climb the ladder up to the tree fort
+- \`ELECTRONICS\` - Go to the Electronics store
+- \`SOAPS\` - Go to the Soaps store
+- \`MAGNETS\` - Go to the Magnet store
+- \`LOOK\` - Look at the area you are currently in.
+- \`ITEMS\` - Things you can do with stuff you are holding or stuff you see.
+- \`HELP\` - See all the commands you can type
+- \`QUIT\` - Quit the game"
 `;
 
 exports[`bubble_gun crashed magnet store and basement 2`] = `
@@ -41,8 +41,8 @@ As packed as it is with shelves full of magnets, you're sure that if you explore
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- EXPLORE - See what could be hiding in this strange shop."
+- \`PLAYGROUND\` - Go back to the playground
+- \`EXPLORE\` - See what could be hiding in this strange shop."
 `;
 
 exports[`bubble_gun crashed magnet store and basement 3`] = `
@@ -58,8 +58,8 @@ You should get extra points! You get 3 points.
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+- \`PLAYGROUND\` - Go back to the playground
+- \`SECRET_DOOR\` - Sneak into the small secret door on the wall behind the leaning shelf."
 `;
 
 exports[`bubble_gun crashed magnet store and basement 4`] = `
@@ -77,9 +77,9 @@ It is a very well-lit and clean place - it almost feels sterile.
 
 You can:
 
-- UP - Go back to the magnet store
-- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
+- \`UP\` - Go back to the magnet store
+- \`EXAMINE_CONTROL_PANEL\` - Take a look at what this control panel has to offer.
+- \`STATUS_CYCLE\` - Press the STATUS_CYCLE button"
 `;
 
 exports[`bubble_gun crashed magnet store and basement 5`] = `
@@ -93,9 +93,9 @@ In the glow of the red light, you can still read the message on the control pane
 
 You can:
 
-- UP - Go back to the magnet store
-- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
+- \`UP\` - Go back to the magnet store
+- \`EXAMINE_CONTROL_PANEL\` - Take a look at what this control panel has to offer.
+- \`STATUS_CYCLE\` - Press the STATUS_CYCLE button"
 `;
 
 exports[`bubble_gun crashed magnet store and basement 6`] = `
@@ -113,8 +113,8 @@ Behind a leaning shelf is a wall with a small door. You can crouch down to enter
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+- \`PLAYGROUND\` - Go back to the playground
+- \`SECRET_DOOR\` - Sneak into the small secret door on the wall behind the leaning shelf."
 `;
 
 exports[`bubble_gun crashed magnet store and basement 7`] = `
@@ -132,8 +132,8 @@ Behind a leaning shelf is a wall with a small door. You can crouch down to enter
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+- \`PLAYGROUND\` - Go back to the playground
+- \`SECRET_DOOR\` - Sneak into the small secret door on the wall behind the leaning shelf."
 `;
 
 exports[`bubble_gun crashed magnet store and basement 8`] = `
@@ -151,9 +151,9 @@ There is a lot of complicated machinery curled up in a really big hole in the fl
 
 You can:
 
-- UP - Go back to the magnet store
-- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
+- \`UP\` - Go back to the magnet store
+- \`EXAMINE_CONTROL_PANEL\` - Take a look at what this control panel has to offer.
+- \`STATUS_CYCLE\` - Press the STATUS_CYCLE button"
 `;
 
 exports[`bubble_gun crashed magnet store and basement 9`] = `
@@ -169,9 +169,9 @@ There is a lot of complicated machinery curled up in a really big hole in the fl
 
 You can:
 
-- UP - Go back to the magnet store
-- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
+- \`UP\` - Go back to the magnet store
+- \`EXAMINE_CONTROL_PANEL\` - Take a look at what this control panel has to offer.
+- \`STATUS_CYCLE\` - Press the STATUS_CYCLE button"
 `;
 
 exports[`bubble_gun crashed magnet store and basement 10`] = `
@@ -187,9 +187,9 @@ The Playground and the Bridge on the map of the control panel have their targets
 
 You can:
 
-- UP - Go back to the magnet store
-- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
+- \`UP\` - Go back to the magnet store
+- \`EXAMINE_CONTROL_PANEL\` - Take a look at what this control panel has to offer.
+- \`STATUS_CYCLE\` - Press the STATUS_CYCLE button"
 `;
 
 exports[`bubble_gun crashed magnet store and basement 11`] = `
@@ -207,8 +207,8 @@ Behind a leaning shelf is a wall with a small door. You can crouch down to enter
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+- \`PLAYGROUND\` - Go back to the playground
+- \`SECRET_DOOR\` - Sneak into the small secret door on the wall behind the leaning shelf."
 `;
 
 exports[`bubble_gun crashed magnet store and basement 12`] = `
@@ -226,8 +226,8 @@ Behind a leaning shelf is a wall with a small door. You can crouch down to enter
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+- \`PLAYGROUND\` - Go back to the playground
+- \`SECRET_DOOR\` - Sneak into the small secret door on the wall behind the leaning shelf."
 `;
 
 exports[`bubble_gun crashed magnet store and basement 13`] = `
@@ -245,9 +245,9 @@ An enormous machine arm has extended out of the floor, crashed through the ceili
 
 You can:
 
-- UP - Go back to the magnet store
-- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
+- \`UP\` - Go back to the magnet store
+- \`EXAMINE_CONTROL_PANEL\` - Take a look at what this control panel has to offer.
+- \`STATUS_CYCLE\` - Press the STATUS_CYCLE button"
 `;
 
 exports[`bubble_gun crashed magnet store and basement 14`] = `
@@ -263,9 +263,9 @@ An enormous machine arm has extended out of the floor, crashed through the ceili
 
 You can:
 
-- UP - Go back to the magnet store
-- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
+- \`UP\` - Go back to the magnet store
+- \`EXAMINE_CONTROL_PANEL\` - Take a look at what this control panel has to offer.
+- \`STATUS_CYCLE\` - Press the STATUS_CYCLE button"
 `;
 
 exports[`bubble_gun crashed magnet store and basement 15`] = `
@@ -281,9 +281,9 @@ What have you done?
 
 You can:
 
-- UP - Go back to the magnet store
-- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
+- \`UP\` - Go back to the magnet store
+- \`EXAMINE_CONTROL_PANEL\` - Take a look at what this control panel has to offer.
+- \`STATUS_CYCLE\` - Press the STATUS_CYCLE button"
 `;
 
 exports[`bubble_gun crashed magnet store and basement 16`] = `
@@ -297,9 +297,9 @@ What. Have. You. Done.
 
 You can:
 
-- UP - Go back to the magnet store
-- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
+- \`UP\` - Go back to the magnet store
+- \`EXAMINE_CONTROL_PANEL\` - Take a look at what this control panel has to offer.
+- \`STATUS_CYCLE\` - Press the STATUS_CYCLE button"
 `;
 
 exports[`bubble_gun crashed magnet store and basement 17`] = `
@@ -317,8 +317,8 @@ Behind a leaning shelf is a wall with a small door. You can crouch down to enter
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+- \`PLAYGROUND\` - Go back to the playground
+- \`SECRET_DOOR\` - Sneak into the small secret door on the wall behind the leaning shelf."
 `;
 
 exports[`bubble_gun crashed magnet store and basement 18`] = `
@@ -336,8 +336,8 @@ Behind a leaning shelf is a wall with a small door. You can crouch down to enter
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+- \`PLAYGROUND\` - Go back to the playground
+- \`SECRET_DOOR\` - Sneak into the small secret door on the wall behind the leaning shelf."
 `;
 
 exports[`bubble_gun crashed magnet store and basement 19`] = `
@@ -362,15 +362,15 @@ Bubble Gun world is very dark right now. All the power seems to be off in this e
 
 It's a pretty normal-looking playground, with the typical offerings of swings, a slide, and jungle gyms. There's even a tree fort!
 
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store
-- LOOK - Look at the area you are currently in.
-- ITEMS - Things you can do with stuff you are holding or stuff you see.
-- HELP - See all the commands you can type
-- QUIT - Quit the game"
+- \`BRIDGE\` - Go to the bridge
+- \`TREE_FORT\` - Climb the ladder up to the tree fort
+- \`ELECTRONICS\` - Go to the Electronics store
+- \`SOAPS\` - Go to the Soaps store
+- \`MAGNETS\` - Go to the Magnet store
+- \`LOOK\` - Look at the area you are currently in.
+- \`ITEMS\` - Things you can do with stuff you are holding or stuff you see.
+- \`HELP\` - See all the commands you can type
+- \`QUIT\` - Quit the game"
 `;
 
 exports[`bubble_gun default bridge 2`] = `
@@ -394,11 +394,11 @@ You see:
 
 You can:
 
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store"
+- \`BRIDGE\` - Go to the bridge
+- \`TREE_FORT\` - Climb the ladder up to the tree fort
+- \`ELECTRONICS\` - Go to the Electronics store
+- \`SOAPS\` - Go to the Soaps store
+- \`MAGNETS\` - Go to the Magnet store"
 `;
 
 exports[`bubble_gun default bridge 3`] = `
@@ -416,8 +416,8 @@ The police have put up signs all along the bridge that say BRIDGE IS OUT!...but 
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
+- \`PLAYGROUND\` - Go back to the playground
+- \`CROSS_BRIDGE\` - Walk over the long, long bridge out of Bubble Gun World"
 `;
 
 exports[`bubble_gun default bridge 4`] = `
@@ -435,8 +435,8 @@ The police have put up signs all along the bridge that say BRIDGE IS OUT!...but 
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
+- \`PLAYGROUND\` - Go back to the playground
+- \`CROSS_BRIDGE\` - Walk over the long, long bridge out of Bubble Gun World"
 `;
 
 exports[`bubble_gun default bridge 5`] = `
@@ -461,15 +461,15 @@ Bubble Gun world is very dark right now. All the power seems to be off in this e
 
 It's a pretty normal-looking playground, with the typical offerings of swings, a slide, and jungle gyms. There's even a tree fort!
 
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store
-- LOOK - Look at the area you are currently in.
-- ITEMS - Things you can do with stuff you are holding or stuff you see.
-- HELP - See all the commands you can type
-- QUIT - Quit the game"
+- \`BRIDGE\` - Go to the bridge
+- \`TREE_FORT\` - Climb the ladder up to the tree fort
+- \`ELECTRONICS\` - Go to the Electronics store
+- \`SOAPS\` - Go to the Soaps store
+- \`MAGNETS\` - Go to the Magnet store
+- \`LOOK\` - Look at the area you are currently in.
+- \`ITEMS\` - Things you can do with stuff you are holding or stuff you see.
+- \`HELP\` - See all the commands you can type
+- \`QUIT\` - Quit the game"
 `;
 
 exports[`bubble_gun fall down in soap store 2`] = `
@@ -487,9 +487,9 @@ You see:
 
 You can:
 
-- STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- PLAYGROUND - Go back to the playground
-- ACCIDENTALLY_SPILL_SOME_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
+- \`STEAL_THE_SOAP\` - Help yourself to the bottle of liquid soap.
+- \`PLAYGROUND\` - Go back to the playground
+- \`ACCIDENTALLY_SPILL_SOME_SOAP\` - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
 
 exports[`bubble_gun fall down in soap store 3`] = `
@@ -499,9 +499,9 @@ exports[`bubble_gun fall down in soap store 3`] = `
 
 You can:
 
-- STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- PLAYGROUND - Go back to the playground
-- DONT_BE_CAREFUL - You can accidentally not be careful. No one will blame you because it will be another accident."
+- \`STEAL_THE_SOAP\` - Help yourself to the bottle of liquid soap.
+- \`PLAYGROUND\` - Go back to the playground
+- \`DONT_BE_CAREFUL\` - You can accidentally not be careful. No one will blame you because it will be another accident."
 `;
 
 exports[`bubble_gun fall down in soap store 4`] = `
@@ -513,9 +513,9 @@ BAM! There goes your bottom!
 
 You can:
 
-- STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- PLAYGROUND - Go back to the playground
-- ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
+- \`STEAL_THE_SOAP\` - Help yourself to the bottle of liquid soap.
+- \`PLAYGROUND\` - Go back to the playground
+- \`ACCIDENTALLY_SPILL_SOME_MORE_SOAP\` - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
 
 exports[`bubble_gun fall down in soap store 5`] = `
@@ -525,9 +525,9 @@ exports[`bubble_gun fall down in soap store 5`] = `
 
 You can:
 
-- STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- PLAYGROUND - Go back to the playground
-- DONT_BE_CAREFUL - You can accidentally not be careful. No one will blame you because it will be another accident."
+- \`STEAL_THE_SOAP\` - Help yourself to the bottle of liquid soap.
+- \`PLAYGROUND\` - Go back to the playground
+- \`DONT_BE_CAREFUL\` - You can accidentally not be careful. No one will blame you because it will be another accident."
 `;
 
 exports[`bubble_gun fall down in soap store 6`] = `
@@ -539,9 +539,9 @@ BONK! There goes your head!
 
 You can:
 
-- STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- PLAYGROUND - Go back to the playground
-- ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
+- \`STEAL_THE_SOAP\` - Help yourself to the bottle of liquid soap.
+- \`PLAYGROUND\` - Go back to the playground
+- \`ACCIDENTALLY_SPILL_SOME_MORE_SOAP\` - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
 
 exports[`bubble_gun fall down in soap store 7`] = `
@@ -551,9 +551,9 @@ exports[`bubble_gun fall down in soap store 7`] = `
 
 You can:
 
-- STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- PLAYGROUND - Go back to the playground
-- DONT_BE_CAREFUL - You can accidentally not be careful. No one will blame you because it will be another accident."
+- \`STEAL_THE_SOAP\` - Help yourself to the bottle of liquid soap.
+- \`PLAYGROUND\` - Go back to the playground
+- \`DONT_BE_CAREFUL\` - You can accidentally not be careful. No one will blame you because it will be another accident."
 `;
 
 exports[`bubble_gun fall down in soap store 8`] = `
@@ -565,9 +565,9 @@ BAM! There goes your bottom!
 
 You can:
 
-- STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- PLAYGROUND - Go back to the playground
-- ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
+- \`STEAL_THE_SOAP\` - Help yourself to the bottle of liquid soap.
+- \`PLAYGROUND\` - Go back to the playground
+- \`ACCIDENTALLY_SPILL_SOME_MORE_SOAP\` - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
 
 exports[`bubble_gun fall down in soap store 9`] = `
@@ -577,9 +577,9 @@ exports[`bubble_gun fall down in soap store 9`] = `
 
 You can:
 
-- STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- PLAYGROUND - Go back to the playground
-- DONT_BE_CAREFUL - You can accidentally not be careful. No one will blame you because it will be another accident."
+- \`STEAL_THE_SOAP\` - Help yourself to the bottle of liquid soap.
+- \`PLAYGROUND\` - Go back to the playground
+- \`DONT_BE_CAREFUL\` - You can accidentally not be careful. No one will blame you because it will be another accident."
 `;
 
 exports[`bubble_gun fall down in soap store 10`] = `
@@ -591,9 +591,9 @@ BONK! There goes your head!
 
 You can:
 
-- STEAL_THE_SOAP - Help yourself to the bottle of liquid soap.
-- PLAYGROUND - Go back to the playground
-- ACCIDENTALLY_SPILL_SOME_MORE_SOAP - You can accidentally spill some soap. No one will blame you because it will be an accident."
+- \`STEAL_THE_SOAP\` - Help yourself to the bottle of liquid soap.
+- \`PLAYGROUND\` - Go back to the playground
+- \`ACCIDENTALLY_SPILL_SOME_MORE_SOAP\` - You can accidentally spill some soap. No one will blame you because it will be an accident."
 `;
 
 exports[`bubble_gun fall down in soap store 11`] = `
@@ -618,15 +618,15 @@ Bubble Gun world is very dark right now. All the power seems to be off in this e
 
 It's a pretty normal-looking playground, with the typical offerings of swings, a slide, and jungle gyms. There's even a tree fort!
 
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store
-- LOOK - Look at the area you are currently in.
-- ITEMS - Things you can do with stuff you are holding or stuff you see.
-- HELP - See all the commands you can type
-- QUIT - Quit the game"
+- \`BRIDGE\` - Go to the bridge
+- \`TREE_FORT\` - Climb the ladder up to the tree fort
+- \`ELECTRONICS\` - Go to the Electronics store
+- \`SOAPS\` - Go to the Soaps store
+- \`MAGNETS\` - Go to the Magnet store
+- \`LOOK\` - Look at the area you are currently in.
+- \`ITEMS\` - Things you can do with stuff you are holding or stuff you see.
+- \`HELP\` - See all the commands you can type
+- \`QUIT\` - Quit the game"
 `;
 
 exports[`bubble_gun magneted bridge 2`] = `
@@ -650,11 +650,11 @@ You see:
 
 You can:
 
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store"
+- \`BRIDGE\` - Go to the bridge
+- \`TREE_FORT\` - Climb the ladder up to the tree fort
+- \`ELECTRONICS\` - Go to the Electronics store
+- \`SOAPS\` - Go to the Soaps store
+- \`MAGNETS\` - Go to the Magnet store"
 `;
 
 exports[`bubble_gun magneted bridge 3`] = `
@@ -672,8 +672,8 @@ As packed as it is with shelves full of magnets, you're sure that if you explore
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- EXPLORE - See what could be hiding in this strange shop."
+- \`PLAYGROUND\` - Go back to the playground
+- \`EXPLORE\` - See what could be hiding in this strange shop."
 `;
 
 exports[`bubble_gun magneted bridge 4`] = `
@@ -691,8 +691,8 @@ As packed as it is with shelves full of magnets, you're sure that if you explore
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- EXPLORE - See what could be hiding in this strange shop."
+- \`PLAYGROUND\` - Go back to the playground
+- \`EXPLORE\` - See what could be hiding in this strange shop."
 `;
 
 exports[`bubble_gun magneted bridge 5`] = `
@@ -708,8 +708,8 @@ You should get extra points! You get 3 points.
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+- \`PLAYGROUND\` - Go back to the playground
+- \`SECRET_DOOR\` - Sneak into the small secret door on the wall behind the leaning shelf."
 `;
 
 exports[`bubble_gun magneted bridge 6`] = `
@@ -727,8 +727,8 @@ Behind a leaning shelf is a wall with a small door. You can crouch down to enter
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+- \`PLAYGROUND\` - Go back to the playground
+- \`SECRET_DOOR\` - Sneak into the small secret door on the wall behind the leaning shelf."
 `;
 
 exports[`bubble_gun magneted bridge 7`] = `
@@ -746,9 +746,9 @@ It is a very well-lit and clean place - it almost feels sterile.
 
 You can:
 
-- UP - Go back to the magnet store
-- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
+- \`UP\` - Go back to the magnet store
+- \`EXAMINE_CONTROL_PANEL\` - Take a look at what this control panel has to offer.
+- \`STATUS_CYCLE\` - Press the STATUS_CYCLE button"
 `;
 
 exports[`bubble_gun magneted bridge 8`] = `
@@ -762,9 +762,9 @@ In the glow of the red light, you can still read the message on the control pane
 
 You can:
 
-- UP - Go back to the magnet store
-- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
+- \`UP\` - Go back to the magnet store
+- \`EXAMINE_CONTROL_PANEL\` - Take a look at what this control panel has to offer.
+- \`STATUS_CYCLE\` - Press the STATUS_CYCLE button"
 `;
 
 exports[`bubble_gun magneted bridge 9`] = `
@@ -780,9 +780,9 @@ The Playground and the Bridge on the map of the control panel have their targets
 
 You can:
 
-- UP - Go back to the magnet store
-- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
+- \`UP\` - Go back to the magnet store
+- \`EXAMINE_CONTROL_PANEL\` - Take a look at what this control panel has to offer.
+- \`STATUS_CYCLE\` - Press the STATUS_CYCLE button"
 `;
 
 exports[`bubble_gun magneted bridge 10`] = `
@@ -798,9 +798,9 @@ What have you done?
 
 You can:
 
-- UP - Go back to the magnet store
-- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
+- \`UP\` - Go back to the magnet store
+- \`EXAMINE_CONTROL_PANEL\` - Take a look at what this control panel has to offer.
+- \`STATUS_CYCLE\` - Press the STATUS_CYCLE button"
 `;
 
 exports[`bubble_gun magneted bridge 11`] = `
@@ -814,9 +814,9 @@ What. Have. You. Done.
 
 You can:
 
-- UP - Go back to the magnet store
-- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
+- \`UP\` - Go back to the magnet store
+- \`EXAMINE_CONTROL_PANEL\` - Take a look at what this control panel has to offer.
+- \`STATUS_CYCLE\` - Press the STATUS_CYCLE button"
 `;
 
 exports[`bubble_gun magneted bridge 12`] = `
@@ -834,8 +834,8 @@ Behind a leaning shelf is a wall with a small door. You can crouch down to enter
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+- \`PLAYGROUND\` - Go back to the playground
+- \`SECRET_DOOR\` - Sneak into the small secret door on the wall behind the leaning shelf."
 `;
 
 exports[`bubble_gun magneted bridge 13`] = `
@@ -859,11 +859,11 @@ You see:
 
 You can:
 
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store"
+- \`BRIDGE\` - Go to the bridge
+- \`TREE_FORT\` - Climb the ladder up to the tree fort
+- \`ELECTRONICS\` - Go to the Electronics store
+- \`SOAPS\` - Go to the Soaps store
+- \`MAGNETS\` - Go to the Magnet store"
 `;
 
 exports[`bubble_gun magneted bridge 14`] = `
@@ -881,8 +881,8 @@ The police have put up signs all along the bridge that say BRIDGE IS OUT!...but 
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
+- \`PLAYGROUND\` - Go back to the playground
+- \`CROSS_BRIDGE\` - Walk over the long, long bridge out of Bubble Gun World"
 `;
 
 exports[`bubble_gun magneted bridge 15`] = `
@@ -900,8 +900,8 @@ The police have put up signs all along the bridge that say BRIDGE IS OUT!...but 
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- CROSS_BRIDGE - Walk over the long, long bridge out of Bubble Gun World"
+- \`PLAYGROUND\` - Go back to the playground
+- \`CROSS_BRIDGE\` - Walk over the long, long bridge out of Bubble Gun World"
 `;
 
 exports[`bubble_gun magneted bridge 16`] = `
@@ -926,15 +926,15 @@ Bubble Gun world is very dark right now. All the power seems to be off in this e
 
 It's a pretty normal-looking playground, with the typical offerings of swings, a slide, and jungle gyms. There's even a tree fort!
 
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store
-- LOOK - Look at the area you are currently in.
-- ITEMS - Things you can do with stuff you are holding or stuff you see.
-- HELP - See all the commands you can type
-- QUIT - Quit the game"
+- \`BRIDGE\` - Go to the bridge
+- \`TREE_FORT\` - Climb the ladder up to the tree fort
+- \`ELECTRONICS\` - Go to the Electronics store
+- \`SOAPS\` - Go to the Soaps store
+- \`MAGNETS\` - Go to the Magnet store
+- \`LOOK\` - Look at the area you are currently in.
+- \`ITEMS\` - Things you can do with stuff you are holding or stuff you see.
+- \`HELP\` - See all the commands you can type
+- \`QUIT\` - Quit the game"
 `;
 
 exports[`bubble_gun magneted playground 2`] = `
@@ -952,8 +952,8 @@ As packed as it is with shelves full of magnets, you're sure that if you explore
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- EXPLORE - See what could be hiding in this strange shop."
+- \`PLAYGROUND\` - Go back to the playground
+- \`EXPLORE\` - See what could be hiding in this strange shop."
 `;
 
 exports[`bubble_gun magneted playground 3`] = `
@@ -971,8 +971,8 @@ As packed as it is with shelves full of magnets, you're sure that if you explore
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- EXPLORE - See what could be hiding in this strange shop."
+- \`PLAYGROUND\` - Go back to the playground
+- \`EXPLORE\` - See what could be hiding in this strange shop."
 `;
 
 exports[`bubble_gun magneted playground 4`] = `
@@ -988,8 +988,8 @@ You should get extra points! You get 3 points.
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+- \`PLAYGROUND\` - Go back to the playground
+- \`SECRET_DOOR\` - Sneak into the small secret door on the wall behind the leaning shelf."
 `;
 
 exports[`bubble_gun magneted playground 5`] = `
@@ -1007,8 +1007,8 @@ Behind a leaning shelf is a wall with a small door. You can crouch down to enter
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+- \`PLAYGROUND\` - Go back to the playground
+- \`SECRET_DOOR\` - Sneak into the small secret door on the wall behind the leaning shelf."
 `;
 
 exports[`bubble_gun magneted playground 6`] = `
@@ -1026,9 +1026,9 @@ It is a very well-lit and clean place - it almost feels sterile.
 
 You can:
 
-- UP - Go back to the magnet store
-- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
+- \`UP\` - Go back to the magnet store
+- \`EXAMINE_CONTROL_PANEL\` - Take a look at what this control panel has to offer.
+- \`STATUS_CYCLE\` - Press the STATUS_CYCLE button"
 `;
 
 exports[`bubble_gun magneted playground 7`] = `
@@ -1042,9 +1042,9 @@ In the glow of the red light, you can still read the message on the control pane
 
 You can:
 
-- UP - Go back to the magnet store
-- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
+- \`UP\` - Go back to the magnet store
+- \`EXAMINE_CONTROL_PANEL\` - Take a look at what this control panel has to offer.
+- \`STATUS_CYCLE\` - Press the STATUS_CYCLE button"
 `;
 
 exports[`bubble_gun magneted playground 8`] = `
@@ -1060,9 +1060,9 @@ The Playground and the Bridge on the map of the control panel have their targets
 
 You can:
 
-- UP - Go back to the magnet store
-- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
+- \`UP\` - Go back to the magnet store
+- \`EXAMINE_CONTROL_PANEL\` - Take a look at what this control panel has to offer.
+- \`STATUS_CYCLE\` - Press the STATUS_CYCLE button"
 `;
 
 exports[`bubble_gun magneted playground 9`] = `
@@ -1078,9 +1078,9 @@ What have you done?
 
 You can:
 
-- UP - Go back to the magnet store
-- EXAMINE_CONTROL_PANEL - Take a look at what this control panel has to offer.
-- STATUS_CYCLE - Press the STATUS_CYCLE button"
+- \`UP\` - Go back to the magnet store
+- \`EXAMINE_CONTROL_PANEL\` - Take a look at what this control panel has to offer.
+- \`STATUS_CYCLE\` - Press the STATUS_CYCLE button"
 `;
 
 exports[`bubble_gun magneted playground 10`] = `
@@ -1098,8 +1098,8 @@ Behind a leaning shelf is a wall with a small door. You can crouch down to enter
 
 You can:
 
-- PLAYGROUND - Go back to the playground
-- SECRET_DOOR - Sneak into the small secret door on the wall behind the leaning shelf."
+- \`PLAYGROUND\` - Go back to the playground
+- \`SECRET_DOOR\` - Sneak into the small secret door on the wall behind the leaning shelf."
 `;
 
 exports[`bubble_gun magneted playground 11`] = `
@@ -1123,11 +1123,11 @@ You see:
 
 You can:
 
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store"
+- \`BRIDGE\` - Go to the bridge
+- \`TREE_FORT\` - Climb the ladder up to the tree fort
+- \`ELECTRONICS\` - Go to the Electronics store
+- \`SOAPS\` - Go to the Soaps store
+- \`MAGNETS\` - Go to the Magnet store"
 `;
 
 exports[`bubble_gun magneted playground 12`] = `
@@ -1151,11 +1151,11 @@ You see:
 
 You can:
 
-- BRIDGE - Go to the bridge
-- TREE_FORT - Climb the ladder up to the tree fort
-- ELECTRONICS - Go to the Electronics store
-- SOAPS - Go to the Soaps store
-- MAGNETS - Go to the Magnet store"
+- \`BRIDGE\` - Go to the bridge
+- \`TREE_FORT\` - Climb the ladder up to the tree fort
+- \`ELECTRONICS\` - Go to the Electronics store
+- \`SOAPS\` - Go to the Soaps store
+- \`MAGNETS\` - Go to the Magnet store"
 `;
 
 exports[`bubble_gun magneted playground 13`] = `

@@ -27,11 +27,46 @@ class Ajaxer {
   }
 
   prepareHistory($container) {
+    this.removeListeners();
+
+    // clear space
     const $fresh = $(
       `<div id="history-user" aria-hidden="true"></div> <div id="history-bot" aria-live="polite"></div>`
     );
     $container.empty();
     $container.append($fresh);
+  }
+
+  getOnCodeMouse(direction) {
+    return ({ target }) => {
+      if (direction === 'enter') {
+        $(target).addClass('codeHover');
+        return;
+      }
+      $(target).removeClass('codeHover');
+    };
+  }
+
+  getOnCodeClick() {
+    return ({ target }) => {
+      const captureText = target.innerText;
+      if (captureText) {
+        // set it to the input 
+        this.$userText.val(captureText);
+      }
+    };
+  }
+
+  addListeners() {
+    $('code').on({
+      click: this.getOnCodeClick(),
+      mouseenter: this.getOnCodeMouse('enter'),
+      mouseleave: this.getOnCodeMouse('leave')
+    });
+  }
+
+  removeListeners() {
+    $('code').off();
   }
 
   updateHistory($container, ...messages) {
@@ -48,6 +83,8 @@ class Ajaxer {
           $userContainer.append($html); // add to page
         } else {
           $botContainer.append($html); // add to page
+
+          this.addListeners();
         }
 
         const fadeTo = message.format === 'user' ? 0 : 1200;

@@ -11,13 +11,13 @@ You're locked up securely in a jail cell. A hole in the ceiling marks where you 
 
 There is a jail key on a far wall across the hallway from your jail cell.
 
-- ESCAPE - Escape from the cell
-- TAKE_JAIL_KEY - Somehow take the jail key from the wall.
-- WAIT - Wait for the guards to stop watching you.
-- LOOK - Look at the area you are currently in.
-- ITEMS - Things you can do with stuff you are holding or stuff you see.
-- HELP - See all the commands you can type
-- QUIT - Quit the game"
+- \`ESCAPE\` - Escape from the cell
+- \`TAKE_JAIL_KEY\` - Somehow take the jail key from the wall.
+- \`WAIT\` - Wait for the guards to stop watching you.
+- \`LOOK\` - Look at the area you are currently in.
+- \`ITEMS\` - Things you can do with stuff you are holding or stuff you see.
+- \`HELP\` - See all the commands you can type
+- \`QUIT\` - Quit the game"
 `;
 
 exports[`escape-jail escape 2`] = `"There aren't any items around or that you are holding that you can do anything with right now."`;
@@ -29,9 +29,9 @@ exports[`escape-jail escape 3`] = `
 
 You can:
 
-- ESCAPE - Escape from the cell
-- TAKE_JAIL_KEY - Somehow take the jail key from the wall.
-- WAIT - Wait for the guards to stop watching you."
+- \`ESCAPE\` - Escape from the cell
+- \`TAKE_JAIL_KEY\` - Somehow take the jail key from the wall.
+- \`WAIT\` - Wait for the guards to stop watching you."
 `;
 
 exports[`escape-jail escape 4`] = `
@@ -45,9 +45,9 @@ Who said that? The Force? What is that??
 
 You can:
 
-- USE_THE_FORCE_TO_TAKE_JAIL_KEY - Use the Force to take the jail cell key.
-- ESCAPE - Escape from the cell
-- WAIT - Wait for the guards to stop watching you."
+- \`USE_THE_FORCE_TO_TAKE_JAIL_KEY\` - Use the Force to take the jail cell key.
+- \`ESCAPE\` - Escape from the cell
+- \`WAIT\` - Wait for the guards to stop watching you."
 `;
 
 exports[`escape-jail escape 5`] = `
@@ -59,8 +59,8 @@ When you open your eyes, the jail key is in your hand.
 
 You can:
 
-- ESCAPE - Escape from the cell
-- WAIT - Wait for the guards to stop watching you."
+- \`ESCAPE\` - Escape from the cell
+- \`WAIT\` - Wait for the guards to stop watching you."
 `;
 
 exports[`escape-jail escape 6`] = `
@@ -70,8 +70,8 @@ exports[`escape-jail escape 6`] = `
 
 You can:
 
-- ESCAPE - Escape from the cell
-- STAND_AROUND - Stand around and let the weight of feeling of excitement, exersion, and curiousity resolve itself in your mind before deciding on something clever to do"
+- \`ESCAPE\` - Escape from the cell
+- \`STAND_AROUND\` - Stand around and let the weight of feeling of excitement, exersion, and curiousity resolve itself in your mind before deciding on something clever to do"
 `;
 
 exports[`escape-jail escape 7`] = `
@@ -89,8 +89,8 @@ Just before the door, there is a window to the outside. You can see that you are
 
 You can:
 
-- ESCAPE - Escape down the hallway and quickly jump into the back of the van
-- STAND_AROUND - Stand around and let the weight of feeling of excitement, exersion, and curiousity resolve itself in your mind before deciding on something clever to do"
+- \`ESCAPE\` - Escape down the hallway and quickly jump into the back of the van
+- \`STAND_AROUND\` - Stand around and let the weight of feeling of excitement, exersion, and curiousity resolve itself in your mind before deciding on something clever to do"
 `;
 
 exports[`escape-jail escape 8`] = `
@@ -110,9 +110,9 @@ You see:
 
 You can:
 
-- TAKE_TOWEL - Take one of the towels from the jail laundry van.
-- ESCAPE - Escape the jail van
-- STAND_AROUND - Stand around and let the weight of feeling of excitement, exersion, and curiousity resolve itself in your mind before deciding on something clever to do"
+- \`TAKE_TOWEL\` - Take one of the towels from the jail laundry van.
+- \`ESCAPE\` - Escape the jail van
+- \`STAND_AROUND\` - Stand around and let the weight of feeling of excitement, exersion, and curiousity resolve itself in your mind before deciding on something clever to do"
 `;
 
 exports[`escape-jail escape 9`] = `
@@ -132,8 +132,8 @@ You're at the huge fence that goes all around the jail and keeps the prisoners i
 
 You can:
 
-- JUMP_THE_FENCE - Jump over the jail fence
-- CLIMB_THE_FENCE - Climb over the jail fence"
+- \`JUMP_THE_FENCE\` - Jump over the jail fence
+- \`CLIMB_THE_FENCE\` - Climb over the jail fence"
 `;
 
 exports[`escape-jail escape 10`] = `
@@ -143,5 +143,5 @@ exports[`escape-jail escape 10`] = `
 
 You can:
 
-- CLIMB_THE_FENCE - Climb over the jail fence"
+- \`CLIMB_THE_FENCE\` - Climb over the jail fence"
 `;

@@ -48,7 +48,7 @@ export const getKeywordsHelper = () => {
       return keywordsArray
         .reduce((accum: string[], keywordInfo) => {
           const [command, { text }] = keywordInfo;
-          return [...accum, `${prefix}${command} - ${text}`];
+          return [...accum, `${prefix}\`${command}\` - ${text}`];
         }, [])
         .join('\n');
     },

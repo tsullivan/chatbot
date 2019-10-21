@@ -9,9 +9,9 @@ In the great hall of the castle, there are beautiful open-air windows with warm,
 
 You can:
 
-- SLEEP - Sleep on the comfy bed
-- LOOK - Look closer at the open-air windows
-- EXIT - Leave the beautful great hall and the castle."
+- \`SLEEP\` - Sleep on the comfy bed
+- \`LOOK\` - Look closer at the open-air windows
+- \`EXIT\` - Leave the beautful great hall and the castle."
 `;
 
 exports[`adventure castle look 1 1`] = `
@@ -25,10 +25,10 @@ In the great hall of the castle, there are beautiful open-air windows with warm,
 
 You can:
 
-- SLEEP - Sleep on the comfy bed
-- LOOK - Look closer at the open-air windows
-- USE_WINDOW_HANDLE - See if the handle in your pocket does anything against the sockets on the open windows in here
-- EXIT - Leave the beautful great hall and the castle."
+- \`SLEEP\` - Sleep on the comfy bed
+- \`LOOK\` - Look closer at the open-air windows
+- \`USE_WINDOW_HANDLE\` - See if the handle in your pocket does anything against the sockets on the open windows in here
+- \`EXIT\` - Leave the beautful great hall and the castle."
 `;
 
 exports[`adventure castle look 2 1`] = `
@@ -42,9 +42,9 @@ In the great hall of the castle, there were beautiful open-air windows with warm
 
 You can:
 
-- SLEEP - Sleep on the comfy bed
-- LOOK - Look closer at the open-air windows
-- EXIT - Leave the beautful great hall and the castle."
+- \`SLEEP\` - Sleep on the comfy bed
+- \`LOOK\` - Look closer at the open-air windows
+- \`EXIT\` - Leave the beautful great hall and the castle."
 `;
 
 exports[`adventure castle sleep fail 1`] = `
@@ -56,9 +56,9 @@ LOSE A POINT
 
 You can:
 
-- SLEEP - Sleep on the comfy bed
-- LOOK - Look closer at the open-air windows
-- EXIT - Leave the beautful great hall and the castle."
+- \`SLEEP\` - Sleep on the comfy bed
+- \`LOOK\` - Look closer at the open-air windows
+- \`EXIT\` - Leave the beautful great hall and the castle."
 `;
 
 exports[`adventure castle sleep success 1`] = `
@@ -81,9 +81,9 @@ It's unnaturally cheery in this smelly old cave. Probably because of the tiny vi
 
 You can:
 
-- DANCE - Dance with the tiny skeleton hands
-- LOOK - Look closer at the tiny village
-- EXIT - Get out of the cheery smelly old cave."
+- \`DANCE\` - Dance with the tiny skeleton hands
+- \`LOOK\` - Look closer at the tiny village
+- \`EXIT\` - Get out of the cheery smelly old cave."
 `;
 
 exports[`adventure cave exit 1`] = `
@@ -97,8 +97,8 @@ Which way looks to be best to find a nice comfy bed to rest? I didn't mean for t
 
 You can:
 
-- CAVE - Go down into the cave
-- CASTLE - Head up to the castle."
+- \`CAVE\` - Go down into the cave
+- \`CASTLE\` - Head up to the castle."
 `;
 
 exports[`adventure cave look 1`] = `
@@ -114,21 +114,21 @@ It's unnaturally cheery in this smelly old cave. Probably because of the tiny vi
 
 You can:
 
-- TAKE_HANDLE - Take the handle and put it in your pocket where it will be safe
-- DANCE - Dance with the tiny skeleton hands
-- LOOK - Look closer at the tiny village
-- EXIT - Get out of the cheery smelly old cave."
+- \`TAKE_HANDLE\` - Take the handle and put it in your pocket where it will be safe
+- \`DANCE\` - Dance with the tiny skeleton hands
+- \`LOOK\` - Look closer at the tiny village
+- \`EXIT\` - Get out of the cheery smelly old cave."
 `;
 
 exports[`adventure exit fail 1`] = `
 "ERROR! LOSE 2 POINTS. Type HELP to show all the commands
 
-- CAVE - Go down into the cave
-- CASTLE - Head up to the castle.
-- LOOK - Look at the area you are currently in.
-- ITEMS - Things you can do with stuff you are holding or stuff you see.
-- HELP - See all the commands you can type
-- QUIT - Quit the game"
+- \`CAVE\` - Go down into the cave
+- \`CASTLE\` - Head up to the castle.
+- \`LOOK\` - Look at the area you are currently in.
+- \`ITEMS\` - Things you can do with stuff you are holding or stuff you see.
+- \`HELP\` - See all the commands you can type
+- \`QUIT\` - Quit the game"
 `;
 
 exports[`adventure score 1`] = `"The average score of the games you plaid are : 47"`;
@@ -140,12 +140,12 @@ It is the night time. You are outside, surrounded by dark trees, and you're very
 
 Which way looks to be best to find a nice comfy bed to rest? I didn't mean for that to rhyme.
 
-- CAVE - Go down into the cave
-- CASTLE - Head up to the castle.
-- LOOK - Look at the area you are currently in.
-- ITEMS - Things you can do with stuff you are holding or stuff you see.
-- HELP - See all the commands you can type
-- QUIT - Quit the game"
+- \`CAVE\` - Go down into the cave
+- \`CASTLE\` - Head up to the castle.
+- \`LOOK\` - Look at the area you are currently in.
+- \`ITEMS\` - Things you can do with stuff you are holding or stuff you see.
+- \`HELP\` - See all the commands you can type
+- \`QUIT\` - Quit the game"
 `;
 
 exports[`adventure take_handle 1`] = `
@@ -155,21 +155,21 @@ exports[`adventure take_handle 1`] = `
 
 You can:
 
-- DANCE - Dance with the tiny skeleton hands
-- LOOK - Look closer at the tiny village
-- EXIT - Get out of the cheery smelly old cave."
+- \`DANCE\` - Dance with the tiny skeleton hands
+- \`LOOK\` - Look closer at the tiny village
+- \`EXIT\` - Get out of the cheery smelly old cave."
 `;
 
 exports[`adventure use_window_handle 1`] = `
 "ERROR! LOSE 2 POINTS. Type HELP to show all the commands
 
-- SLEEP - Sleep on the comfy bed
-- LOOK - Look closer at the open-air windows
-- EXIT - Leave the beautful great hall and the castle.
-- LOOK - Look at the area you are currently in.
-- ITEMS - Things you can do with stuff you are holding or stuff you see.
-- HELP - See all the commands you can type
-- QUIT - Quit the game"
+- \`SLEEP\` - Sleep on the comfy bed
+- \`LOOK\` - Look closer at the open-air windows
+- \`EXIT\` - Leave the beautful great hall and the castle.
+- \`LOOK\` - Look at the area you are currently in.
+- \`ITEMS\` - Things you can do with stuff you are holding or stuff you see.
+- \`HELP\` - See all the commands you can type
+- \`QUIT\` - Quit the game"
 `;
 
 exports[`adventure use_window_handle 2`] = `
@@ -181,7 +181,7 @@ Woah, the crank handle somehow became a permanent part of the castle window. Yea
 
 You can:
 
-- SLEEP - Sleep on the comfy bed
-- LOOK - Look closer at the open-air windows
-- EXIT - Leave the beautful great hall and the castle."
+- \`SLEEP\` - Sleep on the comfy bed
+- \`LOOK\` - Look closer at the open-air windows
+- \`EXIT\` - Leave the beautful great hall and the castle."
 `;

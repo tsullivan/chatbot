@@ -33,3 +33,8 @@ body {
 .messagePlain p {
   white-space: pre-line;
 }
+
+.codeHover {
+  text-decoration: underline;
+  cursor: pointer;
+}
