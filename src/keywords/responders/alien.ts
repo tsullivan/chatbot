@@ -91,10 +91,6 @@ export default class AlienResponder extends CKeywordResponder {
     return input.match(/alien/);
   }
 
-  public justDont() {
-    return `Just don't say "random". I'm not sure what will happen!`;
-  }
-
   public async getResponse(): Promise<string> {
     const responder = await this.getRandomResponder();
     const response = await responder.getRandom();

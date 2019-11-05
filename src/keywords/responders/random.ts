@@ -26,10 +26,6 @@ export default class RandomResponder extends CKeywordResponder {
     return input.match(/^random/);
   }
 
-  public justDont() {
-    return `Just don't say "random". I'm not sure what will happen!`;
-  }
-
   public async getResponse() {
     const responder = await this.getRandomResponder();
     return responder.getRandom();
