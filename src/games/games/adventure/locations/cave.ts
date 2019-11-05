@@ -1,7 +1,8 @@
 // @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { Adventure, KeywordResponse, Location } from '../../../lib';
+import { Adventure, KeywordResponse, Location, parajoin } from '../../../lib';
 import { WEST, WINDOW_HANDLE } from '../constants';
+import HikingGame from '../../hiking';
 
 export class CaveLocation extends Location {
   private danced = false;
@@ -11,9 +12,20 @@ export class CaveLocation extends Location {
   }
 
   public getDescription(game: Adventure) {
-    return snl`It's unnaturally cheery in this smelly old cave. Probably
-    because of the tiny village of tiny dancing skeleton hands. So cute! So
-    tiny! So skeleton handsy!`;
+    const lns = [
+      snl`It's unnaturally cheery in this smelly old cave. Probably because of
+      the tiny village of tiny dancing skeleton hands. What? Skeleton hands?
+      You look closer: yes, the things moving around on the ground are
+      definitely hand bones of people, dancing on their own.`,
+      snl`You can hear a happy tune being hummed, coming from the bony bone
+      hands. Somehow, they have learned to hum and make music, despite being
+      just bones. Strange as it is, their music and the way the skeleton hands
+      are dancing makes them look cute and happy. It makes you not mind the
+      smelly cave smell.`,
+      snl`There's a dark corner of the cave. The smell seems fresher in that
+      direction, but you really can't tell what's over there.`,
+    ];
+    return parajoin(lns);
   }
 
   public setLocationKeywords(game: Adventure) {
@@ -64,8 +76,21 @@ export class CaveLocation extends Location {
       });
     });
 
+    this.addKeyword(
+      'DARK_CORNER',
+      'Walk into the darkness of the fresh-smelling cave corner.',
+      () =>
+        game.branchToGame(
+          HikingGame,
+          `You squint your eyes for strength against the darkness, but it is
+          little help. With your hands reaching out to avoid bumping into a
+          dirty smelly wall, you take a few steps, and then suddenly feel your
+          body drop down into a black hole. YOU FALL FOR THIRTY MINUTES.`
+        )
+    );
+
     this.addKeyword('EXIT', 'Get out of the cheery smelly old cave.', () =>
-      this.followExit(WEST),
+      this.followExit(WEST)
     );
   }
 }

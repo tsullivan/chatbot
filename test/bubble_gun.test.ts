@@ -44,14 +44,6 @@ describe('bubble_gun', () => {
     checkResponses(resps);
   });
 
-  /*
-  test('lighted bridge', async () => {
-    resps[resps.length] = await send('play bubble_gun');
-    resps[resps.length] = await send('quit');
-    checkResponses(resps);
-  });
-   */
-
   test('magneted playground', async () => {
     resps[resps.length] = await send('play bubble_gun');
     resps[resps.length] = await send('magnets');
@@ -114,4 +106,39 @@ describe('bubble_gun', () => {
     resps[resps.length] = await send('quit');
     checkResponses(resps);
   });
+
+  test('cross bridge', async () => {
+    resps[resps.length] = await send('play bubble_gun');
+    resps[resps.length] = await send('look');
+    resps[resps.length] = await send('magnets');
+    resps[resps.length] = await send('look');
+    resps[resps.length] = await send('explore');
+    resps[resps.length] = await send('look');
+    resps[resps.length] = await send('secret_door');
+    resps[resps.length] = await send('status_cycle'); // doors open
+    resps[resps.length] = await send('status_cycle'); // building crashes up
+    resps[resps.length] = await send('status_cycle'); // zaps up the playground
+    resps[resps.length] = await send('status_cycle'); // zaps up the bridge
+    resps[resps.length] = await send('up');
+    resps[resps.length] = await send('playground');
+    resps[resps.length] = await send('electronics');
+    resps[resps.length] = await send('take_aa_batteries');
+    resps[resps.length] = await send('take_lr41_batteries');
+    resps[resps.length] = await send('take_led');
+    resps[resps.length] = await send('playground');
+    resps[resps.length] = await send('soaps');
+    resps[resps.length] = await send('take_soap');
+    resps[resps.length] = await send('playground');
+    resps[resps.length] = await send('bridge');
+    // BUG: should automatically suggest what you can do with items you are holding
+    resps[resps.length] = await send('help');
+    resps[resps.length] = await send('COMBINE_BUBBLE_GUN_AND_BATTERIES');
+    resps[resps.length] = await send('COMBINE_BUBBLE_GUN_AND_SOAP');
+    resps[resps.length] = await send('COMBINE_LED_AND_BATTERIES');
+    resps[resps.length] = await send('throw_led');
+    resps[resps.length] = await send('bubble_blast');
+    resps[resps.length] = await send('quit');
+    checkResponses(resps);
+  });
+
 });
