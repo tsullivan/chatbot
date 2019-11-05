@@ -40,6 +40,7 @@ export class Adventure extends ChatGame {
       newGame.startFromTrunk();
       return new KeywordResponse({
         text: prefix ? parajoin([prefix, newGame.getWelcome()]) : newGame.getWelcome(),
+        showInstructions: false,
       });
     };
     this.startFromTrunk = () => {
