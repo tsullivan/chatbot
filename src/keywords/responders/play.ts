@@ -25,11 +25,11 @@ export default class GameResponder extends CKeywordResponder {
   }
 
   public testMatch(input: string) {
-    return input.match(/^play/);
   }
 
   public justDont() {
     return `Just don't say "\`play batman\`"`;
+    return input.match(/^(:?play|game)/);
   }
 
   public help() {
