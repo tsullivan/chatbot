@@ -254,7 +254,7 @@ export class Adventure extends ChatGame {
     return this.currentLocation.getVisibleFloorItems(this);
   }
 
-  public getNext(prefix: string, showInstructions: boolean): string {
+  public getNext(prefix: string, showInstructions: boolean = true): string {
     let next = prefix;
     if (showInstructions) {
       next += ['\n\n---', 'You can:', this.getLocationInstructions()].join('\n\n');
