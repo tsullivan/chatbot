@@ -2,6 +2,7 @@ import { KeywordsHelper, getKeywordsHelper } from './keywords_helper';
 import { Adventure } from './adventure';
 import { ItemCollection } from './item_collection';
 import { KeywordResponse } from './keyword_response';
+import { Person } from './person';
 import { parajoin } from './parajoin';
 
 export class Location {
@@ -85,6 +86,10 @@ export class Location {
         location: this,
       });
     }
+  }
+
+  /// Person aware
+  public addPerson(person: Person) {
   }
 
   public getDescription(game: Adventure) {
