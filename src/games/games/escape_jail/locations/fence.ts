@@ -52,6 +52,7 @@ export class FenceLocation extends Location {
       this.addKeyword(
         ['RUN_JUMP_AND_CLIMB_THE_FENCE', 'JUMP_CLIMB'],
         `Jump and then climb over the jail fence`,
+        // BUG: there will still be location keywords of escape jail shown in the welcome intro to the new game
         () =>
           game.branchToGame(
             BubbleGunWorldGame,
