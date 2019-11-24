@@ -6,3 +6,4 @@ export { delayAndDie } from './delay_and_die';
 export { parajoin } from './parajoin';
 export { ChatGame } from './chat_game';
 export { Person } from './person';
+export { getFamilyTree } from './family_tree';
