@@ -1,4 +1,4 @@
-import { Adventure, Location, getFamilyTree } from '../../lib';
+import { Adventure, KeywordResponse, Location, getFamilyTree } from '../../lib';
 import { Session } from '../../../bot';
 
 function getLocations(game: Adventure): Record<string, Location> {
@@ -8,6 +8,12 @@ function getLocations(game: Adventure): Record<string, Location> {
         return description;
       }
       public setLocationKeywords() {
+        this.addKeyword('FAMILY_TREE', 'See the family tree', () => {
+          const familyTree = getFamilyTree();
+          return new KeywordResponse({
+            text: familyTree.render(),
+          });
+        });
       }
     }({ game, name });
 
@@ -44,20 +50,14 @@ function getLocations(game: Adventure): Record<string, Location> {
   };
 }
 
-function getSetup(game: Adventure) {
-  return () => {
-    const locations = getLocations(game);
-    game.setLocation(locations.palmLnLocation);
-    const familyTree = getFamilyTree(locations);
-    console.log(JSON.stringify(familyTree));
-    return familyTree;
-  };
-}
-
 export default class FamilyTreeGame extends Adventure {
   public constructor(session: Session) {
     super(session);
     this.setName('family_tree');
-    this.postInit = getSetup(this);
+    const locations = getLocations(this);
+
+    this.postInit = () => {
+      this.setLocation(locations.palmLnLocation);
+    };
   }
 }

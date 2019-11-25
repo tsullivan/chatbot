@@ -6,14 +6,14 @@ interface PersonTree {
   person: Person;
   mother?: Person | PersonTree;
   father?: Person | PersonTree;
-  husband?: Person | PersonTree;
-  wife?: Person | PersonTree;
+  husband?: Person;
+  wife?: Person;
   boyfriend?: Person;
   siblings?: Person[];
   children?: Person[];
 }
 
-function getPersonLocationMap(
+export function getPersonLocationMap(
   people: Record<string, Person>,
   locations: Record<string, Location>
 ) {
@@ -95,7 +95,7 @@ function getPersonLocationMap(
   personLocationMap.set(coSau, vietnamLocation);
 }
 
-export function getFamilyTree(locations: Record<string, Location>) {
+export function getFamilyTree() {
   const henrySullivan = new Person('Henry Nguyen Sullivan');
   const robinSullivan = new Person('Robin Vy Sullivan');
   const uyenNguyen = new Person('Uyen Bich Ngyuen');
@@ -141,9 +141,7 @@ export function getFamilyTree(locations: Record<string, Location>) {
   const ngocTree: PersonTree = {
     name: ngocNgo.name,
     person: ngocNgo,
-    children: [
-      kellySchooler,
-    ],
+    children: [kellySchooler],
   };
   const ngaTree: PersonTree = {
     name: ngaNgo.name,
@@ -165,12 +163,7 @@ export function getFamilyTree(locations: Record<string, Location>) {
   const tanTree: PersonTree = {
     name: tanNguyen.name,
     person: tanNguyen,
-    siblings: [
-      trinhLe,
-      sonNguyen,
-      yenNguyen,
-      coSau,
-    ],
+    siblings: [trinhLe, sonNguyen, yenNguyen, coSau],
   };
   const uyenTree: PersonTree = {
     name: uyenNguyen.name,
@@ -183,21 +176,13 @@ export function getFamilyTree(locations: Record<string, Location>) {
     name: cariRiegel.name,
     person: cariRiegel,
     boyfriend: bobby,
-    children: [
-      timSullivan,
-      melissaSullivan,
-    ]
   };
 
   const rayTree: PersonTree = {
     name: raySullivan.name,
     person: raySullivan,
     wife: caroleSullivan,
-    children: [
-      danSullivan,
-      melissaSullivan,
-      timSullivan,
-    ]
+    children: [danSullivan],
   };
 
   const melissaTree: PersonTree = {
@@ -221,8 +206,37 @@ export function getFamilyTree(locations: Record<string, Location>) {
     siblings: [robinSullivan],
   };
 
+  function renderTree(p: PersonTree, indent: string= '') {
+    let accum = p.name;
+    let nIndent = indent + '  ';
+    if (p.siblings != null) {
+      accum += `\n${indent}- Siblings`;
+      for (const sibling of p.siblings) {
+        accum += `\n${nIndent}- ` + renderTree(sibling as PersonTree, nIndent + ' ');
+      }
+    }
+    if (p.children != null) {
+      accum += `\n${indent}- Children`;
+      for (const child of p.children) {
+        accum += `\n${nIndent}- ` + renderTree(child as PersonTree, nIndent + ' ');
+      }
+    }
+    if (p.mother != null) {
+      accum += `\n${indent}- Mother: ` + renderTree(p.mother as PersonTree, nIndent + ' ');
+    }
+    if (p.father != null) {
+      accum += `\n${indent}- Father: ` + renderTree(p.father as PersonTree, nIndent + ' ');
+    }
+
+    return accum;
+  }
+
+  let rendering = renderTree(henryTree);
+
   return {
     familyTree: henryTree,
-    getPersonLocationMap,
+    render() {
+      return rendering;
+    },
   };
 }
