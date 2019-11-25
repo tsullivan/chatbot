@@ -1,4 +1,3 @@
-import { Location } from './location';
 import { Person } from './person';
 
 interface PersonTree {
@@ -9,223 +8,275 @@ interface PersonTree {
   husband?: Person;
   wife?: Person;
   boyfriend?: Person;
-  siblings?: Person[];
+  siblings?: (Person | PersonTree)[];
   children?: Person[];
-}
-
-export function getPersonLocationMap(
-  people: Record<string, Person>,
-  locations: Record<string, Location>
-) {
-  const {
-    henrySullivan,
-    robinSullivan,
-    uyenNguyen,
-    timSullivan,
-    raySullivan,
-    caroleSullivan,
-    cariRiegel,
-    bobby,
-    melissaSullivan,
-    aliyahJames,
-    danSullivan,
-    ngaNgo,
-    tanNguyen,
-    kieuNgo,
-    quyenLe,
-    thinhLe,
-    binhLe,
-    laiNgo,
-    ngocNgo,
-    kellySchooler,
-    tuongNgo,
-    lieuNgo,
-    teoNgo,
-    honNgo,
-    nhungNguyen,
-    trinhLe,
-    sonNguyen,
-    yenNguyen,
-    coSau,
-  } = people;
-  const {
-    palmLnLocation,
-    ojaiLocation,
-    santaCruzLocation,
-    denverLocation,
-    southwestPortlandLocation,
-    southeastPortlandLocation,
-    vietnamLocation,
-  } = locations;
-  const personLocationMap: Map<Person, Location> = new Map();
-
-  personLocationMap.set(henrySullivan, palmLnLocation);
-  personLocationMap.set(robinSullivan, palmLnLocation);
-  personLocationMap.set(uyenNguyen, palmLnLocation);
-  personLocationMap.set(timSullivan, palmLnLocation);
-
-  personLocationMap.set(raySullivan, ojaiLocation);
-  personLocationMap.set(caroleSullivan, ojaiLocation);
-
-  personLocationMap.set(melissaSullivan, santaCruzLocation);
-  personLocationMap.set(aliyahJames, santaCruzLocation);
-  personLocationMap.set(danSullivan, denverLocation);
-
-  personLocationMap.set(cariRiegel, southwestPortlandLocation);
-  personLocationMap.set(bobby, southwestPortlandLocation);
-
-  personLocationMap.set(ngaNgo, southeastPortlandLocation);
-  personLocationMap.set(tanNguyen, southeastPortlandLocation);
-  personLocationMap.set(ngocNgo, southeastPortlandLocation);
-  personLocationMap.set(kellySchooler, southeastPortlandLocation);
-  personLocationMap.set(laiNgo, southeastPortlandLocation);
-  personLocationMap.set(honNgo, southeastPortlandLocation);
-  personLocationMap.set(trinhLe, southeastPortlandLocation);
-  personLocationMap.set(sonNguyen, southeastPortlandLocation);
-
-  personLocationMap.set(kieuNgo, vietnamLocation);
-  personLocationMap.set(quyenLe, vietnamLocation);
-  personLocationMap.set(thinhLe, vietnamLocation);
-  personLocationMap.set(binhLe, vietnamLocation);
-  personLocationMap.set(tuongNgo, vietnamLocation);
-  personLocationMap.set(lieuNgo, vietnamLocation);
-  personLocationMap.set(teoNgo, vietnamLocation);
-  personLocationMap.set(nhungNguyen, vietnamLocation);
-  personLocationMap.set(yenNguyen, vietnamLocation);
-  personLocationMap.set(coSau, vietnamLocation);
 }
 
 export function getFamilyTree() {
   const henrySullivan = new Person('Henry Nguyen Sullivan');
-  const robinSullivan = new Person('Robin Vy Sullivan');
-  const uyenNguyen = new Person('Uyen Bich Ngyuen');
   const timSullivan = new Person('Timothy Donald Sullivan');
+  const danSullivan = new Person('Dan Sullivan');
 
-  const raySullivan = new Person('Raymond Robert Sullivan');
-  const caroleSullivan = new Person('Carole Jane Sullivan');
-  const cariRiegel = new Person('Carolyn (Cari) Leslie Riegel');
-  const bobby = new Person('Robert (Bobby) Benson');
-
-  const melissaSullivan = new Person('Melissa Ann Sullivan');
-  const aliyahJames = new Person('Aliyah James');
-  const danSullivan = new Person('Daniel Ryan Sullivan');
-
-  const ngaNgo = new Person('Me Nga Ngo (Nancy)');
-  const tanNguyen = new Person('Ba Tan Nguyen (Tom)');
-
-  // Ngo
-  const kieuNgo = new Person('Di Hai: Kieu Ngo (2)');
-  const quyenLe = new Person('Quyen Le, # 1 daughter');
-  const thinhLe = new Person('Thinh Le, # 2 son');
-  const binhLe = new Person('Binh Le, # 3 son');
-
-  const tuongNgo = new Person('Cau Nam (5): Tuong Ngo');
-  const lieuNgo = new Person('Di Sau (6): Lieui Ngo');
-  const teoNgo = new Person('Cau Bay (7): Teo Ngo');
-
-  const ngocNgo = new Person('Di Tam (8): Ngoc Ngo');
-  const kellySchooler = new Person('Kelly Schooler');
-
-  const laiNgo = new Person('Di Tu (4): Lai Ngo'); // portland
-  const honNgo = new Person('Cau Chin (9): Hon Ngo'); // portland
-
-  const nhungNguyen = new Person('Nhung Nguyen'); // maternal grandmother
-
-  // Nguyen
-  const trinhLe = new Person('Bac Hai (2), Trinh Le'); // portland
-  const sonNguyen = new Person('Chu Tam (8), Son Nguyen'); // portland
-
-  const yenNguyen = new Person('Co Bay'); // 7 yen nguyen, co bay // vietnam
-  const coSau = new Person('Co Sau'); // 6 ???, co sau // vietnam
-
-  const ngocTree: PersonTree = {
-    name: ngocNgo.name,
-    person: ngocNgo,
-    children: [kellySchooler],
-  };
-  const ngaTree: PersonTree = {
-    name: ngaNgo.name,
-    person: ngaNgo,
-    mother: nhungNguyen,
-    siblings: [
-      kieuNgo,
-      quyenLe,
-      thinhLe,
-      binhLe,
-      tuongNgo,
-      lieuNgo,
-      teoNgo,
-      ngocTree,
-      laiNgo,
-      honNgo,
-    ],
-  };
-  const tanTree: PersonTree = {
-    name: tanNguyen.name,
-    person: tanNguyen,
-    siblings: [trinhLe, sonNguyen, yenNguyen, coSau],
-  };
-  const uyenTree: PersonTree = {
-    name: uyenNguyen.name,
-    person: uyenNguyen,
-    husband: timSullivan,
-    mother: ngaTree,
-    father: tanTree,
-  };
-  const cariTree: PersonTree = {
-    name: cariRiegel.name,
-    person: cariRiegel,
-    boyfriend: bobby,
-  };
-
-  const rayTree: PersonTree = {
-    name: raySullivan.name,
-    person: raySullivan,
-    wife: caroleSullivan,
-    children: [danSullivan],
-  };
-
-  const melissaTree: PersonTree = {
-    name: melissaSullivan.name,
-    person: melissaSullivan,
-    children: [aliyahJames],
-  };
-  const timTree: PersonTree = {
-    name: timSullivan.name,
-    person: timSullivan,
-    wife: uyenNguyen,
-    mother: cariTree,
-    father: rayTree,
-    siblings: [danSullivan, melissaTree],
-  };
   const henryTree: PersonTree = {
     name: henrySullivan.name,
     person: henrySullivan,
-    mother: uyenTree,
-    father: timTree,
-    siblings: [robinSullivan],
+    mother: (() => {
+      const uyenNguyen = new Person('Uyen Ngyuen');
+      return {
+        name: uyenNguyen.name,
+        person: uyenNguyen,
+        mother: (() => {
+          const ngaNgo = new Person('Ba Ngoai (Nga Ngo)');
+          return {
+            name: ngaNgo.name,
+            person: ngaNgo,
+            mother: new Person('Nhung Nguyen'),
+            father: ((): PersonTree => {
+              const name = 'Thuan Ngo';
+              return {
+                name,
+                person: new Person(name),
+              };
+            })(),
+            siblings: [
+              ((): PersonTree => {
+                const name = 'Di Hai (Kieu Ngo)';
+                return {
+                  name,
+                  person: new Person(name),
+                  children: [
+                    new Person('Quyen Le'),
+                    new Person('Thinh Le'),
+                    new Person('Binh Le'),
+                  ],
+                };
+              })(),
+              new Person('Di Tu (Lai Ngo)'),
+              new Person('Cau Nam (Thanh Ngo)'),
+              new Person('Di Sau (Lieu Ngo)'),
+              new Person('Cau Bay (Tu "Teo" Ngo)'),
+              ((): PersonTree => {
+                const name = 'Di Tam (Ngoc Ngo)';
+                return {
+                  name,
+                  person: new Person(name),
+                  children: [new Person('Kelly Schooler')],
+                };
+              })(),
+              new Person('Cau Chin (Hon Ngo)'),
+            ],
+          };
+        })(),
+        father: (() => {
+          const tanNguyen = new Person('Ong Ngoai (Tan Nguyen)');
+          return {
+            name: tanNguyen.name,
+            person: tanNguyen,
+            mother: ((): PersonTree => {
+              const name = 'Nhung Nguyen';
+              return {
+                name,
+                person: new Person(name),
+                children: [
+                  new Person('Bac Hai (Trinh Le)'),
+                  new Person('Bac Ba'), // b date, d date
+                  new Person('Chu Nam (Giao Nguyen)'),
+                  new Person('Co Sau (Hoa Nguyen)'),
+                  new Person('Co Bay (Yen Nguyen)'),
+                  new Person('Chu Tam (Son Nguyen)'),
+                ],
+              };
+            })(),
+          };
+        })(),
+      };
+    })(),
+    father: {
+      name: timSullivan.name,
+      person: timSullivan,
+      mother: (() => {
+        const cariRiegel = new Person('Carolyn "Grandma Cari" Riegel');
+        return {
+          name: cariRiegel.name,
+          person: cariRiegel,
+          boyfriend: new Person('Robert "Bobby" Benson'),
+          mother: (() => {
+            const shirleyRiegel = new Person('Shirley "Grandma GeeGee" Riegel');
+            return {
+              name: shirleyRiegel.name,
+              person: shirleyRiegel,
+              father: new Person('Grandpa Briggs'),
+            };
+          })(),
+          father: (() => {
+            const donRiegel = new Person('Don "Grandpa D" Riegel');
+            return {
+              name: donRiegel.name,
+              person: donRiegel,
+            };
+          })(),
+          siblings: [
+            (() => {
+              const veraHamrick = new Person('Vera Hamrick');
+              return {
+                name: veraHamrick.name,
+                person: veraHamrick,
+                husband: new Person('Charles "Chuck" Hamrick'),
+                children: [
+                  new Person('Abigail "Abby" Winters'),
+                  new Person('Charles "Chase" Hamrick'),
+                  new Person('Adriana Vogle'),
+                ],
+              };
+            })(),
+            (() => {
+              const marionCox = new Person('Marion Cox');
+              return {
+                name: marionCox.name,
+                person: marionCox,
+                husband: new Person('Jeffrey Cox'),
+                children: [
+                  new Person('Billy Cox'),
+                  new Person('Jason Cox'),
+                  new Person('Jessie Waugh'),
+                ],
+              };
+            })(),
+          ],
+        };
+      })(),
+      father: (() => {
+        const raySullivan = new Person('Raymond "Grampy" Sullivan');
+        return {
+          name: raySullivan.name,
+          person: raySullivan,
+          wife: new Person('Carole "Nana" Sullivan'),
+          children: [danSullivan],
+          father: new Person('James "Great Grampy" Sullivan'),
+          mother: new Person('Estelle "Great Nana" Sullivan'),
+          siblings: [
+            ((): PersonTree => {
+              const name = 'Mary Hernandez';
+              return {
+                name,
+                husband: new Person('Pedro Hernandez'),
+                person: new Person(name),
+                children: [new Person('Santiago')],
+              };
+            })(),
+            new Person('George'),
+            ((): PersonTree => {
+              const name = 'Jim Sullivan';
+              return {
+                name,
+                person: new Person(name),
+                children: [
+                  new Person('Jennifer'),
+                  new Person('Joe Sullivan'),
+                  new Person('Eva'),
+                ],
+              };
+            })(),
+            ((): PersonTree => {
+              const name = 'Estelle Parker';
+              return {
+                name,
+                person: new Person(name),
+                husband: new Person('Alan Parker'),
+              };
+            })(),
+            ((): PersonTree => {
+              const name = 'Gail Bocian';
+              return {
+                name,
+                person: new Person(name),
+                husband: new Person('Rick Bocian'),
+                children: [new Person('Brian'), new Person('Beth'), new Person('Joe')],
+              };
+            })(),
+            ((): PersonTree => {
+              const name = 'Kathleen Fuller';
+              return {
+                name,
+                person: new Person(name),
+                husband: new Person('Jim Fuller'),
+                children: [new Person('Quinn'), new Person('Zack')],
+              };
+            })(),
+            ((): PersonTree => {
+              const name = 'Pat Johnson';
+              return {
+                name,
+                person: new Person(name),
+                husband: new Person('Tom Johnson'),
+              };
+            })(),
+            new Person('Christine'),
+            ((): PersonTree => {
+              const name = 'Michelle Niklas';
+              return {
+                name,
+                person: new Person(name),
+                children: [new Person('Sara'), new Person('Rachel')],
+              };
+            })(),
+            ((): PersonTree => {
+              const name = 'Jeanne';
+              return {
+                name,
+                person: new Person(name),
+                children: [
+                  new Person('Shane'),
+                  new Person('Johnny'),
+                  new Person('Jacob'),
+                ],
+              };
+            })(),
+            new Person('Tim'),
+          ],
+        };
+      })(),
+      siblings: [
+        danSullivan,
+        (() => {
+          const melissaSullivan = new Person('Melissa Sullivan');
+          return {
+            name: melissaSullivan.name,
+            person: melissaSullivan,
+            children: [new Person('Aliyah James')],
+          };
+        })(),
+      ],
+    },
+    siblings: [new Person('Robin Vy Sullivan')],
   };
 
-  function renderTree(p: PersonTree, indent: string= '') {
+  function renderTree(p: PersonTree, indent: string = '') {
     let accum = p.name;
     let nIndent = indent + '  ';
     if (p.siblings != null) {
       accum += `\n${indent}- Siblings`;
       for (const sibling of p.siblings) {
-        accum += `\n${nIndent}- ` + renderTree(sibling as PersonTree, nIndent + ' ');
+        accum += `\n${nIndent}- ` + renderTree(sibling as PersonTree, nIndent + '  ');
       }
     }
     if (p.children != null) {
       accum += `\n${indent}- Children`;
       for (const child of p.children) {
-        accum += `\n${nIndent}- ` + renderTree(child as PersonTree, nIndent + ' ');
+        accum += `\n${nIndent}- ` + renderTree(child as PersonTree, nIndent + '  ');
       }
     }
+    if (p.husband != null) {
+      accum +=
+        `\n${indent}- Husband: ` + renderTree(p.husband as PersonTree, nIndent + '  ');
+    }
     if (p.mother != null) {
-      accum += `\n${indent}- Mother: ` + renderTree(p.mother as PersonTree, nIndent + ' ');
+      accum +=
+        `\n${indent}- Mother: ` + renderTree(p.mother as PersonTree, nIndent + '  ');
     }
     if (p.father != null) {
-      accum += `\n${indent}- Father: ` + renderTree(p.father as PersonTree, nIndent + ' ');
+      accum +=
+        `\n${indent}- Father: ` + renderTree(p.father as PersonTree, nIndent + '  ');
     }
 
     return accum;
