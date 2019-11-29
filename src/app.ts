@@ -1,6 +1,7 @@
 import { Bot } from './bot';
 import { SlackBot } from './slackbot';
 import { argv } from 'yargs';
+import { getFamilyTree } from './games/lib/family_tree';
 import { runServer as runWeb } from './web';
 
 const b = new Bot();
@@ -23,4 +24,5 @@ Promise.resolve()
   })
   .then(() => {
     log.debug([], 'Ready');
+    console.log(getFamilyTree().render()); // debug
   });

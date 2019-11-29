@@ -2,7 +2,6 @@ import * as apm from 'elastic-apm-node';
 import { ChatResponse, UserFormat } from '../../types';
 import { ResponseMessage } from './response_message';
 import { Session } from '..';
-import { getFamilyTree } from '../../games/lib/family_tree';
 
 export class SessionMessage extends ResponseMessage {
   public constructor(chat: Session, userMessage: string, userFormat: UserFormat) {
@@ -18,7 +17,7 @@ export class SessionMessage extends ResponseMessage {
         return this.respond(`Hello again, ${chat.getName()}!`, 'plain');
       } else {
         chat.setWaitOnName();
-        return this.respond(getFamilyTree().render(), 'markdown');
+        return this.respond('Hello! What is your name?', 'plain');
       }
     } else if (userFormat === 'hup') {
       chat.hangup();
