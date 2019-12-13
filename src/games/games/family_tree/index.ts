@@ -1,5 +1,6 @@
-import { Adventure, KeywordResponse, Location, getFamilyTree } from '../../lib';
+import { Adventure, KeywordResponse, Location } from '../../lib';
 import { Session } from '../../../bot';
+import { getFamilyTree } from '../../../lib';
 
 function getLocations(game: Adventure): Record<string, Location> {
   const makeLocation = (name: string, description: string) =>
@@ -25,27 +26,27 @@ function getLocations(game: Adventure): Record<string, Location> {
 
     ojaiLocation: makeLocation(
       'Ojai, California',
-      `This is where Henry's Nana and Grampy Sullivan live.`
+      `This is where Nana and Grampy Sullivan live.`
     ),
     southwestPortlandLocation: makeLocation(
       'SW Portland, Oregon',
-      `This is where Henry's Nana and Grampy Sullivan live.`
+      `This is where Nana and Grampy Sullivan live.`
     ),
     southeastPortlandLocation: makeLocation(
       'SE Portland, Oregon',
-      `This is where Henry's Ong Ngoai and Ba Ngoai live.`
+      `This is where Ong Ngoai and Ba Ngoai live.`
     ),
     vietnamLocation: makeLocation(
       'Nga Trang, Vietnam',
-      `This is where Henry's mother was born`
+      `This is where Mom was born`
     ),
     santaCruzLocation: makeLocation(
       'Felton, California',
-      `This is where Henry's cousin Aliyah lives`
+      `This is where cousin Aliyah lives`
     ),
     ohioLocation: makeLocation(
       'Ohio, United States',
-      `This is where Henry's father was born`
+      `This is where Dad was born`
     ),
   };
 }

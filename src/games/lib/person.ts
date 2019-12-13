@@ -1,4 +1,4 @@
-interface PersonOpts {
+export interface PersonOpts {
   born?: number;
   died?: number;
 }

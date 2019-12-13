@@ -1,4 +1,4 @@
-import { Person } from './person';
+import { Person, PersonOpts } from '../games/lib/person';
 
 interface Branch<T> {
   person?: Person;
@@ -11,200 +11,190 @@ interface Branch<T> {
   children?: (T | Branch<T>)[];
 }
 
+const p = (name: string, opts?: PersonOpts) => new Person(name, opts);
+
 export function getFamilyTree() {
   const tree: Branch<Person> = {
     mother: {
-      person: new Person('Uyen Ngyuen', { born: 1981 }),
+      person: p('Uyen Ngyuen', { born: 1981 }),
       children: [
-        new Person('Henry Nguyen Sullivan', { born: 2012 }),
-        new Person('Robin Vy Sullivan', { born: 2019 }),
+        p('Henry Nguyen Sullivan', { born: 2012 }),
+        p('Robin Vy Sullivan', { born: 2019 }),
       ],
       mother: {
-        person: new Person('Ba Ngoai (Nga Ngo)', { born: 1953 }),
-        mother: new Person('Nhung Nguyen', { died: 2007 }),
-        father: new Person('Thuan Ngo'),
+        person: p('Ba Ngoai (Nga Ngo)', { born: 1953 }),
+        mother: p('Nhung Nguyen', { died: 2007 }),
+        father: p('Thuan Ngo'),
         siblings: [
           {
-            person: new Person('Di Hai (Kieu Ngo)'),
+            person: p('Di Hai (Kieu Ngo)'),
             children: [
-              new Person('Quyen Le', { born: 1978 }),
-              new Person('Thinh Le', { born: 1980 }),
-              new Person('Dinh Le', { born: 1982 }),
+              p('Quyen Le', { born: 1978 }),
+              p('Thinh Le', { born: 1980 }),
+              p('Dinh Le', { born: 1982 }),
             ],
           },
-          new Person('Di Tu (Lai Ngo)'),
+          p('Di Tu (Lai Ngo)'),
           {
-            person: new Person('Cau Nam (Thanh Ngo)'),
-            children: [
-              new Person('Linh Ngo'),
-              new Person('Hao Ngo'),
-              new Person('Y Ngo'),
-            ],
+            person: p('Cau Nam (Thanh Ngo)'),
+            children: [p('Linh Ngo'), p('Hao Ngo'), p('Y Ngo')],
           },
-          new Person('Di Sau (Lieu Ngo)'),
+          p('Di Sau (Lieu Ngo)'),
           {
-            person: new Person('Cau Bay (Tu "Teo" Ngo)'),
-            children: [new Person('Anh Ngo'), new Person('Nguyen Ngo')],
+            person: p('Cau Bay (Tu "Teo" Ngo)'),
+            children: [p('Anh Ngo'), p('Nguyen Ngo')],
           },
           {
-            person: new Person('Di Tam (Ngoc Ngo)'),
-            children: [new Person('Kelly Schooler', { born: 2002 })],
+            person: p('Di Tam (Ngoc Ngo)'),
+            children: [p('Kelly Schooler', { born: 2002 })],
           },
-          new Person('Cau Chin (Hon Ngo)'),
+          p('Cau Chin (Hon Ngo)'),
         ],
       },
       father: {
-        person: new Person('Ong Ngoai (Tan Nguyen)', { born: 1951 }),
+        person: p('Ong Ngoai (Tan Nguyen)', { born: 1951 }),
         mother: {
-          person: new Person('Nhung Nguyen'),
+          person: p('Nhung Nguyen'),
           children: [
             {
-              person: new Person('Bac Hai (Trinh Le)'),
-              children: [new Person('Patrick Le')],
+              person: p('Bac Hai (Trinh Le)'),
+              children: [p('Patrick Le')],
             },
-            new Person('Bac Ba'), // b date, d date
-            new Person('Chu Nam (Giao Nguyen)'),
-            new Person('Co Sau (Hoa Nguyen'),
+            p('Bac Ba'),
+            p('Chu Nam (Giao Nguyen)'),
+            p('Co Sau (Hoa Nguyen'),
             {
-              person: new Person('Co Bay (Yen Nguyen)'),
-              children: [new Person('Quan Nguyen'), new Person('Minu Nguyen')],
+              person: p('Co Bay (Yen Nguyen)'),
+              children: [p('Quan Nguyen'), p('Minu Nguyen')],
             },
             {
-              person: new Person('Chu Tam (Son Nguyen)'),
-              children: [new Person('Nhung Nguyen'), new Person('Nhu Nguyen')],
+              person: p('Chu Tam (Son Nguyen)'),
+              children: [p('Nhung Nguyen'), p('Nhu Nguyen')],
             },
           ],
         },
       },
     },
     father: {
-      person: new Person('Timothy Donald Sullivan', { born: 1980 }),
+      person: p('Timothy Donald Sullivan', { born: 1980 }),
       mother: {
-        person: new Person('Carolyn "Grandma Cari" Riegel', { born: 1959 }),
-        boyfriend: new Person('Robert "Bobby" Benson'),
+        person: p('Carolyn "Grandma Cari" Riegel', { born: 1959 }),
+        boyfriend: p('Robert "Bobby" Benson'),
         mother: {
-          person: new Person('Shirley "Grandma GeeGee" Riegel'),
-          father: new Person('Great-Great Grandpa Briggs'),
+          person: p('Shirley "Grandma GeeGee" Riegel'),
+          father: p('Great-Great Grandpa Briggs'),
         },
         father: {
-          person: new Person('Don "Grandpa D" Riegel'),
+          person: p('Don "Grandpa D" Riegel'),
         },
         siblings: [
           {
-            person: new Person('Vera Hamrick'),
-            husband: new Person('Charles "Chuck" Hamrick'),
+            person: p('Vera Hamrick'),
+            husband: p('Charles "Chuck" Hamrick'),
             children: [
-              new Person('Abigail "Abby" Winters'),
-              new Person('Charles "Chase" Hamrick'),
-              new Person('Adriana Vogle'),
+              p('Abigail "Abby" Winters', { born: 1981 }),
+              p('Charles "Chase" Hamrick', { born: 1983 }),
+              p('Adriana Vogle', { born: 1985 }),
             ],
           },
           {
-            person: new Person('Marion Cox'),
-            husband: new Person('Jeffrey Cox'),
-            children: [
-              new Person('Billy Cox'),
-              new Person('Jason Cox'),
-              new Person('Jessie Waugh'),
-            ],
+            person: p('Marion Cox'),
+            husband: p('Jeffrey Cox'),
+            children: [p('Billy Cox'), p('Jason Cox'), p('Jessie Waugh')],
           },
         ],
       },
       father: {
-        person: new Person('Raymond "Grampy" Sullivan', { born: 1960 }),
-        wife: new Person('Carole "Nana" Sullivan'),
-        father: new Person('James "Great Grampy" Sullivan'),
-        mother: new Person('Estelle "Great Nana" Sullivan'),
+        person: p('Raymond "Grampy" Sullivan', { born: 1960 }),
+        wife: p('Carole "Nana" Sullivan'),
+        father: p('James "Great Grampy" Sullivan'),
+        mother: p('Estelle "Great Nana" Sullivan'),
         siblings: [
           {
-            person: new Person('Mary Hernandez'),
-            husband: new Person('Pedro Hernandez'),
-            children: [new Person('Santiago')],
+            person: p('Mary Hernandez'),
+            husband: p('Pedro Hernandez'),
+            children: [p('Santiago')],
           },
-          new Person('George Sullivan'),
+          p('George Sullivan'),
           {
-            person: new Person('Jim Sullivan'),
+            person: p('Jim Sullivan'),
+            children: [p('Jennifer'), p('Joe Sullivan'), p('Eva')],
+            wife: p('Jenelle Sullivan', { died: 2003 }),
+          },
+          {
+            person: p('Estelle Parker'),
+            husband: p('Alan Parker'),
+            children: [p('Daniel')],
+          },
+          {
+            person: p('Gail Bocian'),
+            husband: p('Rick Bocian'),
+            children: [p('Brian'), p('Beth'), p('Joe')],
+          },
+          {
+            person: p('Kathleen Fuller'),
+            husband: p('Jim Fuller'),
             children: [
-              new Person('Jennifer'),
-              new Person('Joe Sullivan'),
-              new Person('Eva'),
-            ],
-            wife: new Person('Jenelle Sullivan', { died: 2003 }),
-          },
-          {
-            person: new Person('Estelle Parker'),
-            husband: new Person('Alan Parker'),
-          },
-          {
-            person: new Person('Gail Bocian'),
-            husband: new Person('Rick Bocian'),
-            children: [
-              new Person('Brian'),
-              new Person('Beth'),
-              new Person('Joe'),
-            ],
-          },
-          {
-            person: new Person('Kathleen Fuller'),
-            husband: new Person('Jim Fuller'),
-            children: [
-              new Person('Quinn', { born: 1979 }),
-              new Person('Zack'),
-              new Person('Cory'),
+              p('Quinn', { born: 1979 }),
+              p('Zack', { born: 1981 }),
+              p('Cory', { born: 1983 }),
             ],
           },
           {
-            person: new Person('Pat Johnson'),
-            husband: new Person('Tom Johnson'),
-            children: [new Person('Michael'), new Person('Sara')],
+            person: p('Pat Johnson'),
+            husband: p('Tom Johnson'),
+            children: [p('Michael'), p('Laura')],
           },
           {
-            person: new Person('Christine Callahan'),
-            children: [new Person('Shawna'), new Person('Jake')],
+            person: p('Christine Callahan'),
+            children: [p('Shawna'), p('Jake')],
           },
           {
-            person: new Person('Michelle Niklas'),
-            children: [new Person('Sara'), new Person('Rachel')],
-            husband: new Person('Jack Niklas'),
+            person: p('Michelle Niklas'),
+            children: [p('Sara'), p('Rachel')],
+            husband: p('Jack Niklas'),
           },
           {
-            person: new Person('Jean Sullivan'),
-            children: [
-              new Person('Shane', { born: 1980 }),
-              new Person('Johnny'),
-              new Person('Jacob'),
-            ],
+            person: p('Jean Sullivan'),
+            children: [p('Shane', { born: 1980 }), p('Johnny'), p('Jacob')],
           },
-          new Person('Tim Sullivan', { died: 1990 }),
+          p('Tim Sullivan', { died: 1990 }),
         ],
       },
       siblings: [
-        new Person('Daniel Ryan Sullivan', { born: 1988 }),
+        p('Daniel Ryan Sullivan', { born: 1988 }),
         {
-          person: new Person('Melissa Sullivan', { born: 1981 }),
-          children: [new Person('Aliyah James', { born: 2014 })],
+          person: p('Melissa Sullivan', { born: 1981 }),
+          children: [p('Aliyah James', { born: 2014 })],
         },
       ],
     },
   };
 
+  function isPerson(obj: Person | Branch<Person>): obj is Person {
+    return (obj as Person).name !== undefined;
+  }
+
+  function isBranch(obj: Person | Branch<Person>): obj is Branch<Person> {
+    return (obj as Branch<Person>).person.name !== undefined;
+  }
+
   function renderTree(p1: Person | Branch<Person>, indent: string = '') {
     let accum;
-    const branch = p1 as Branch<Person>;
-    const person = branch.person ? branch.person : p1 as Person;
 
     let name;
-    if (person.name) {
-      name = person.name;
-    } else if (branch.person && branch.person.name) {
-      name = branch.person.name;
+    if (isPerson(p1)) {
+      name = p1.name;
+    } else if (isBranch(p1)) {
+      name = p1.person.name;
     }
+
     accum = name ? name : '';
-    if (person.born) {
-      accum += ` [born: ${person.born}]`;
+    if (isPerson(p1) && p1.born) {
+      accum += ` [born: ${p1.born}]`;
     }
-    if (person.died) {
-      accum += ` [died: ${person.died}]`;
+    if (isPerson(p1) && p1.died) {
+      accum += ` [died: ${p1.died}]`;
     }
     let nIndent = indent + '  ';
 
