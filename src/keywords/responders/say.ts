@@ -25,10 +25,6 @@ export default class SayResponder extends CKeywordResponder {
     return `\`say\`: Type \`say something\` and see what happens.`;
   }
 
-  public justDont() {
-    return `Just don't tell me to say something.`;
-  }
-
   public async getResponse(): Promise<string> {
     if (this.thingToSay === null) {
       return this.help();

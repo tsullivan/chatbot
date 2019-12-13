@@ -75,7 +75,11 @@ That was fun, Tim!"
 exports[`adventure cave 1`] = `
 "You are at: **Cheery Cave**
 
-It's unnaturally cheery in this smelly old cave. Probably because of the tiny village of tiny dancing skeleton hands. So cute! So tiny! So skeleton handsy!
+It's unnaturally cheery in this smelly old cave. Probably because of the tiny village of tiny dancing skeleton hands. What? Skeleton hands? You look closer: yes, the things moving around on the ground are definitely hand bones of people, dancing on their own.
+
+You can hear a happy tune being hummed, coming from the bony bone hands. Somehow, they have learned to hum and make music, despite being just bones. Strange as it is, their music and the way the skeleton hands are dancing makes them look cute and happy. It makes you not mind the smelly cave smell.
+
+There's a dark corner of the cave. The smell seems fresher in that direction, but you really can't tell what's over there.
 
 ---
 
@@ -83,6 +87,7 @@ You can:
 
 - \`DANCE\` - Dance with the tiny skeleton hands
 - \`LOOK\` - Look closer at the tiny village
+- \`DARK_CORNER\` - Walk into the darkness of the fresh-smelling cave corner.
 - \`EXIT\` - Get out of the cheery smelly old cave."
 `;
 
@@ -108,7 +113,11 @@ The tiny hotel building has a strange type of flagpole on the roof that looks li
 
 You are at: **Cheery Cave**
 
-It's unnaturally cheery in this smelly old cave. Probably because of the tiny village of tiny dancing skeleton hands. So cute! So tiny! So skeleton handsy!
+It's unnaturally cheery in this smelly old cave. Probably because of the tiny village of tiny dancing skeleton hands. What? Skeleton hands? You look closer: yes, the things moving around on the ground are definitely hand bones of people, dancing on their own.
+
+You can hear a happy tune being hummed, coming from the bony bone hands. Somehow, they have learned to hum and make music, despite being just bones. Strange as it is, their music and the way the skeleton hands are dancing makes them look cute and happy. It makes you not mind the smelly cave smell.
+
+There's a dark corner of the cave. The smell seems fresher in that direction, but you really can't tell what's over there.
 
 ---
 
@@ -117,6 +126,7 @@ You can:
 - \`TAKE_HANDLE\` - Take the handle and put it in your pocket where it will be safe
 - \`DANCE\` - Dance with the tiny skeleton hands
 - \`LOOK\` - Look closer at the tiny village
+- \`DARK_CORNER\` - Walk into the darkness of the fresh-smelling cave corner.
 - \`EXIT\` - Get out of the cheery smelly old cave."
 `;
 
@@ -157,6 +167,7 @@ You can:
 
 - \`DANCE\` - Dance with the tiny skeleton hands
 - \`LOOK\` - Look closer at the tiny village
+- \`DARK_CORNER\` - Walk into the darkness of the fresh-smelling cave corner.
 - \`EXIT\` - Get out of the cheery smelly old cave."
 `;
 

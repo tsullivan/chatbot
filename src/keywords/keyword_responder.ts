@@ -59,10 +59,6 @@ export class KeywordResponder {
     return `Type \`${this.name}\` and see what happens...`;
   }
 
-  public justDont() {
-    return `Just don't.`;
-  }
-
   public async getResponse(): Promise<string> {
     return 'Nothing to say.';
   }

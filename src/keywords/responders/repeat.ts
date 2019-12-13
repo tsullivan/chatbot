@@ -29,10 +29,6 @@ export default class RepeatResponder extends CKeywordResponder {
       Usage: \`repeat <NUM> <PHRASE>\``;
   }
 
-  public justDont() {
-    return `Just don't say "repeat 50 blah"`;
-  }
-
   public async getResponse(): Promise<string> {
     if (this.phrase === null) {
       return this.help();
