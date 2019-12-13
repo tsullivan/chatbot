@@ -57,7 +57,7 @@
     "@types/lodash": "~4.14",
     "@types/node": "~10.12",
     "@types/supertest": "~2.0",
-    "@types/yargs": "^13.0.0",
+    "@types/yargs": "^13.0.3",
     "body-parser": "~1.18",
     "cookie-parser": "~1.4",
     "debug": "~4.1",

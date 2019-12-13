@@ -16,8 +16,4 @@ export default class RememberResponder extends CKeywordResponder {
   public testMatch(input: string) {
     return input.match(/^remember/);
   }
-
-  public justDont() {
-    return `Just don't ask me "remember that one time." I probably don't.`;
-  }
 }
