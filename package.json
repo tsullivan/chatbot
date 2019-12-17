@@ -66,6 +66,7 @@
     "express-session": "~1.15",
     "lodash": "~4.17",
     "moment": "~2.23",
+    "rxjs": "^6.5.3",
     "strip-newlines": "~1.0",
     "ts-node": "~7.0",
     "typescript": "~3.2",

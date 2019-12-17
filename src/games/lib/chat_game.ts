@@ -43,7 +43,7 @@ export class ChatGame {
   public updateState() {
   }
 
-  public testInput(userMessage: string): KeywordResponse {
+  public testInput(userMessage: string): KeywordResponse | Promise<KeywordResponse> {
     throw new Error('Unexpected call to testInput');
   }
 }

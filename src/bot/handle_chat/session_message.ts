@@ -35,20 +35,21 @@ export class SessionMessage extends ResponseMessage {
 
     let response;
     let isDone = false;
-    let responseFormat;
+    let format;
     if (chat.getGame() != null) {
       const game = chat.getGame();
       apm.setTag('game', game.getName());
-      ({ isDone, response, format: responseFormat } = game.testInput(this.userMessage));
+
+      const gameResponse = await game.testInput(this.userMessage);
+      ({ response, format, isDone } = gameResponse);
 
       game.save();
-
       if (isDone === true) {
         response += `\nThat was fun, ${chat.getName()}!`;
         chat.endGame();
       }
 
-      return this.respond(response, responseFormat);
+      return this.respond(response, format);
     }
 
     return null;
