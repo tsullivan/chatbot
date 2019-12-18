@@ -31,7 +31,6 @@ export function getGameKeywords(): GameKeywordOpts[] {
       fn: game => {
         const text = ItemCollection.describeGameItemsFull(game); // 3
         return new KeywordResponse({
-          showInstructions: false,
           text: text || `There aren't any items around or that you are holding that you can do anything with right now.`,
         });
       },
