@@ -46,7 +46,7 @@
     "ts-jest": "~23.10"
   },
   "dependencies": {
-    "@hapi/boom": "^7.4.2",
+    "@hapi/boom": "^8.0.1",
     "@slack/client": "~4.8",
     "@types/cookie-parser": "~1.4",
     "@types/debug": "^4.1.4",
