@@ -179,7 +179,7 @@ export function getFamilyTree() {
     return (obj as Branch<Person>).person.name !== undefined;
   }
 
-  function renderTree(p1: Person | Branch<Person>, indent: string = '') {
+  function renderTree(p1: Person | Branch<Person>, indent = '') {
     let accum;
 
     let name;
@@ -196,7 +196,7 @@ export function getFamilyTree() {
     if (isPerson(p1) && p1.died) {
       accum += ` [died: ${p1.died}]`;
     }
-    let nIndent = indent + '  ';
+    const nIndent = indent + '  ';
 
     const pB = p1 as Branch<Person>;
     if (pB.mother != null) {

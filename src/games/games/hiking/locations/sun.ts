@@ -4,7 +4,7 @@ import { Adventure, KeywordResponse, Location, parajoin } from '../../../lib';
 import { DOWN, YOGURT } from '../constants';
 
 export class TheSunLocation extends Location {
-  private hasGhosts: boolean = false;
+  private hasGhosts = false;
 
   public constructor(game: Adventure) {
     super({ game, name: 'The Sun, in the Sun Ship' });

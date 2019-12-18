@@ -4,8 +4,8 @@ import { APPLES, EAST, YOGURT } from '../constants';
 import { Adventure, KeywordResponse, Location, parajoin } from '../../../lib';
 
 export class AppleShedLocation extends Location {
-  private hasYogurt: boolean = false;
-  private numApples: number = 100;
+  private hasYogurt = false;
+  private numApples = 100;
 
   public constructor(game: Adventure) {
     super({ game, name: 'The Apple Store' });

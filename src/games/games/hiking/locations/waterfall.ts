@@ -4,7 +4,7 @@ import { Adventure, KeywordResponse, Location, parajoin } from '../../../lib';
 import { EAST, UP, WEST } from '../constants';
 
 export class WaterfallLocation extends Location {
-  private gotSprayed: boolean = false;
+  private gotSprayed = false;
 
   public constructor(game: Adventure) {
     super({ game, name: 'Really giant waterfall' });

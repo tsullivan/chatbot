@@ -4,7 +4,7 @@ import { Adventure, KeywordResponse, Location, parajoin } from '../../../lib';
 import { SOUTH } from '../constants';
 
 export class SoapLocation extends Location {
-  private soapExperiences: number = 0;
+  private soapExperiences = 0;
 
   public constructor(game: Adventure) {
     super({ game, name: 'The Soap Store' });

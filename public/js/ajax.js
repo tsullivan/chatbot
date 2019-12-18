@@ -126,7 +126,7 @@ class Ajaxer {
     return e => {
       e.preventDefault();
 
-      let messageText = this.$userText.val();
+      const messageText = this.$userText.val();
       if (messageText === '') {
         // prefill with last message, and stop
         this.$userText.val(this.historyRecaller.getEarlierText());

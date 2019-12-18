@@ -4,9 +4,9 @@ import { Adventure, Item, KeywordResponse, Location, parajoin } from '../../../l
 import { BUBBLE_GUN, EAST, LED, NORTH, SOUTH, UP, WEST } from '../constants';
 
 export class PlaygroundLocation extends Location {
-  private isDark: boolean = true;
-  private isThrowied: boolean = false;
-  private isMagneted: boolean = false;
+  private isDark = true;
+  private isThrowied = false;
+  private isMagneted = false;
 
   public constructor(game: Adventure) {
     super({ game, name: 'The Playground' });

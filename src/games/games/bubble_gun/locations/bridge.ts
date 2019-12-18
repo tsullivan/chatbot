@@ -5,9 +5,9 @@ import { BUBBLE_GUN, LED, NORTH } from '../constants';
 import AdventureGame from '../../adventure';
 
 export class BridgeLocation extends Location {
-  private isDark: boolean = true;
-  private isThrowied: boolean = false;
-  private isMagneted: boolean = false;
+  private isDark = true;
+  private isThrowied = false;
+  private isMagneted = false;
 
   public constructor(game: Adventure) {
     super({ game, name: 'The Bridge Out Of Town' });
