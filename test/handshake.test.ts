@@ -1,11 +1,13 @@
+import { HandshakeFn, utilFactory } from './utils';
 import { Bot } from '../src/bot';
-import { utilFactory } from './utils';
 
+let handshake: HandshakeFn;
 const bot = new Bot();
-const { handshake } = utilFactory();
 
 describe('handshake', () => {
-  beforeAll(() => utilFactory().beforeAll(bot));
+  beforeAll(async () => {
+    ({ handshake } = await utilFactory(bot));
+  });
 
   test('should remember my name', async () => {
     return handshake();

@@ -1,8 +1,9 @@
+import { AgentFn, HandshakeFn, utilFactory } from './utils';
 import { Bot } from '../src/bot';
-import { utilFactory } from './utils';
 
+let handshake: HandshakeFn;
+let getAgent: AgentFn;
 const bot = new Bot();
-const { getAgent, handshake } = utilFactory();
 
 const testFields = (body: { format: string; message: string }) => ({
   format: body.format,
@@ -16,7 +17,9 @@ const sendTest = (message: string) =>
     .expect(200);
 
 describe('batman', () => {
-  beforeAll(() => utilFactory().beforeAll(bot));
+  beforeAll(async () => {
+    ({ handshake, getAgent } = await utilFactory(bot));
+  });
 
   test('should win at the batman game', async () => {
     await handshake();

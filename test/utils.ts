@@ -1,70 +1,65 @@
 import * as request from 'supertest';
+import { SuperTest, Test } from 'supertest';
 import { Bot } from '../src/bot';
 import { getServer } from '../src/web';
 
 export type HandshakeFn = () => Promise<void>;
+export type AgentFn = () => SuperTest<Test>;
 export type SendFn = (message: string) => Promise<request.Response>;
-export type CheckRespFn = (resps: any[]) => void;
-export type BeforeAllFn = (
-  bot: Bot
-) => Promise<{
-  agent: request.SuperTest<request.Test>;
-  handshake: HandshakeFn;
-}>;
+export type CheckFn = (resps: any[]) => void;
 
-type UtilFactory = () => {
-  getAgent: () => request.SuperTest<request.Test>;
-  handshake: HandshakeFn;
-  send: SendFn;
-  checkResponses: CheckRespFn;
-  beforeAll: BeforeAllFn;
-};
+class Util {
+  private readonly agent: request.SuperTest<request.Test>;
 
-export const utilFactory: UtilFactory = () => {
-  return {
-    getAgent: () => this.agent,
-    beforeAll: async (bot: Bot) => {
-      await bot.init();
-      const app = await getServer(bot);
-      this.agent = request.agent(app);
+  public constructor(agent: request.SuperTest<request.Test>) {
+    this.agent = agent;
 
-      return {
-        agent: this.agent,
-        handshake: utilFactory().handshake,
-      };
-    },
+    this.getAgent = this.getAgent.bind(this);
+    this.handshake = this.handshake.bind(this);
+    this.send = this.send.bind(this);
+  }
 
-    handshake: async () => {
-      await this.agent
-        .post('/chat')
-        .send({ format: 'syn', message: 'HELO' })
-        .expect(200)
-        .then((res: any) => {
-          expect(res.body.format).toEqual('plain');
-          expect(res.body.name).toEqual('Beep Beep Beep');
+  public getAgent() {
+    return this.agent;
+  }
 
-          if (res.body.message === 'Hello! What is your name?') {
-            return this.agent
-              .post('/chat')
-              .send({ format: 'user', message: 'Tim' })
-              .expect(200)
-              .then((ret: any) => {
-                expect(ret.body.message).toEqual('Hello, Tim! Nice to meet you.');
-              });
-          }
+  public async handshake() {
+    await this.agent
+      .post('/chat')
+      .send({ format: 'syn', message: 'HELO' })
+      .expect(200)
+      .then((res: any) => {
+        expect(res.body.format).toEqual('plain');
+        expect(res.body.name).toEqual('Beep Beep Beep');
 
-          return expect(res.body.message).toEqual('Hello again, Tim!');
-        });
-    },
+        if (res.body.message === 'Hello! What is your name?') {
+          return this.agent
+            .post('/chat')
+            .send({ format: 'user', message: 'Tim' })
+            .expect(200)
+            .then((ret: any) => {
+              expect(ret.body.message).toEqual('Hello, Tim! Nice to meet you.');
+            });
+        }
 
-    send: (message: string) => {
-      return this.agent.post('/chat').send({ format: 'user', message });
-    },
+        return expect(res.body.message).toEqual('Hello again, Tim!');
+      });
+  }
 
-    checkResponses: (resps: any[]) => {
-      resps.forEach(({ body }: { body: any }) =>
-        expect(body.message).toMatchSnapshot()
-      );
-    },
-  };
+  public async send(message: string) {
+    return await this.agent.post('/chat').send({ format: 'user', message });
+  }
+
+  public checkResponses(resps: any[]) {
+    resps.forEach(({ body }: { body: any }) => expect(body.message).toMatchSnapshot());
+  }
+}
+
+export const utilFactory = async (bot: Bot) => {
+  await bot.init();
+  const app = await getServer(bot);
+  const agent = request.agent(app);
+  const util = new Util(agent);
+
+  return util;
 };

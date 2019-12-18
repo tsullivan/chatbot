@@ -1,12 +1,16 @@
 import * as request from 'supertest';
+import { CheckFn, HandshakeFn, SendFn, utilFactory } from './utils';
 import { Bot } from '../src/bot';
-import { utilFactory } from './utils';
 
+let checkResponses: CheckFn;
+let handshake: HandshakeFn;
+let send: SendFn;
 const bot = new Bot();
-const { handshake, send, checkResponses } = utilFactory();
 
 describe('escape-jail', () => {
-  beforeAll(() => utilFactory().beforeAll(bot));
+  beforeAll(async () => {
+    ({ checkResponses, handshake, send } = await utilFactory(bot));
+  });
 
   beforeEach(() => handshake());
 

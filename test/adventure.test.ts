@@ -1,11 +1,14 @@
+import { AgentFn, HandshakeFn, utilFactory } from './utils';
 import { Bot } from '../src/bot';
-import { utilFactory } from './utils';
 
+let handshake: HandshakeFn;
+let getAgent: AgentFn;
 const bot = new Bot();
-const { getAgent, handshake } = utilFactory();
 
 describe('adventure', () => {
-  beforeAll(() => utilFactory().beforeAll(bot));
+  beforeAll(async () => {
+    ({ handshake, getAgent } = await utilFactory(bot));
+  });
 
   test('start', async () => {
     await handshake();
