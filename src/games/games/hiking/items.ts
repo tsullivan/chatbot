@@ -1,6 +1,6 @@
 // @ts-ignore untyped module
 import * as snl from 'strip-newlines';
-import { APPLES, BUBBLE_GUN, CAR, ENEMIES, YOGURT } from './constants';
+import { APPLES, CAR, ENEMIES, YOGURT } from './constants';
 import { Adventure, Item, KeywordResponse, Location } from '../../lib';
 
 export function getItems(game: Adventure) {
@@ -62,37 +62,8 @@ export function getItems(game: Adventure) {
     seen: false,
   });
 
-  /*
-   * Random ones
-   */
-  const bubbleGunItem = new Item({
-    description: snl`It's a bubble gun for gunning out bubbles. It looks very interesting.`,
-    game,
-    id: BUBBLE_GUN,
-    name: 'Bubble Gun',
-    setActions: ({ setTakeable, setDroppable }) => {
-      setTakeable({
-        fn: () =>
-          new KeywordResponse({
-            text: snl`The bubble gun is now yours.`,
-          }),
-        keyword: 'TAKE_BUBBLE_GUN',
-        keywordDescription: 'Pick up interesting looking bubble gun.',
-      });
-      setDroppable({
-        fn: () =>
-          new KeywordResponse({
-            text: snl`The bubble gun now belongs to the floor.`,
-          }),
-        keyword: 'DROP_BUBBLE_GUN',
-        keywordDescription: 'Drop the interesting looking bubble gun.',
-      });
-    },
-  });
-
   return {
     applesItem,
-    bubbleGunItem,
     carItem,
     enemiesItem,
     yogurtItem,
@@ -100,7 +71,7 @@ export function getItems(game: Adventure) {
 }
 
 export function setItemsToLocations(
-  { enemiesItem, carItem, applesItem, yogurtItem, bubbleGunItem }: { [itemName: string]: Item},
+  { enemiesItem, carItem, applesItem, yogurtItem }: { [itemName: string]: Item},
   { appleShed, car: garage, mountain }: { [locationName: string]: Location},
   game: Adventure,
 ) {
@@ -111,7 +82,6 @@ export function setItemsToLocations(
   game.addItemToCollection(CAR, carItem);
   game.addItemToCollection(APPLES, applesItem);
   game.addItemToCollection(YOGURT, yogurtItem);
-  game.addItemToCollection(BUBBLE_GUN, bubbleGunItem);
 
   // starting inventory items
   game.addToInventory(ENEMIES); // global item
@@ -120,5 +90,4 @@ export function setItemsToLocations(
   appleShed.addFloorItem(APPLES);
   appleShed.addFloorItem(YOGURT);
   garage.addFloorItem(CAR);
-  mountain.addFloorItem(BUBBLE_GUN);
 }

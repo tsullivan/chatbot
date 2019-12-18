@@ -10,5 +10,3 @@ export const APPLES = 'apples';
 export const YOGURT = 'yogurt';
 export const ENEMIES = 'enemies';
 export const CAR = 'car';
-
-export const BUBBLE_GUN = 'bubble_gun';

@@ -20,7 +20,17 @@ There is a jail key on a far wall across the hallway from your jail cell.
 - \`QUIT\` - Quit the game"
 `;
 
-exports[`escape-jail escape 2`] = `"There aren't any items around or that you are holding that you can do anything with right now."`;
+exports[`escape-jail escape 2`] = `
+"There aren't any items around or that you are holding that you can do anything with right now.
+
+---
+
+You can:
+
+- \`ESCAPE\` - Escape from the cell
+- \`TAKE_JAIL_KEY\` - Somehow take the jail key from the wall.
+- \`WAIT\` - Wait for the guards to stop watching you."
+`;
 
 exports[`escape-jail escape 3`] = `
 "You can not escape while the guards are watching!

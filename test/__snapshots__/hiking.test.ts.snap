@@ -376,7 +376,7 @@ You can:
 exports[`hiking finish the game 2`] = `
 "The robot takes out a flag, and swishes it over your head. This takes you to the end of the hiking journey.
 
-Looks like you're a winner! Turns: 45 Score: 119
+Looks like you're a winner! Turns: 44 Score: 119
 That was fun, Tim!"
 `;
 
@@ -417,15 +417,10 @@ It was a long climb up to the really tall top of this mountain, so it feels so g
 
 Nearby is a blue house with a green roof. It has a lot of windows and only one door that is open. There is smoke coming out of the chimney.
 
-You see:
-
-- Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
-
 ---
 
 You can:
 
-- \`TAKE_BUBBLE_GUN\` - Pick up interesting looking bubble gun.
 - \`WATERFALL\` - To go back down to the waterfall
 - \`HOUSE\` - Check out the mountain house up here."
 `;
@@ -437,31 +432,18 @@ It was a long climb up to the really tall top of this mountain, so it feels so g
 
 Nearby is a blue house with a green roof. It has a lot of windows and only one door that is open. There is smoke coming out of the chimney.
 
-You see:
-
-- Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
-
 ---
 
 You can:
 
-- \`TAKE_BUBBLE_GUN\` - Pick up interesting looking bubble gun.
 - \`WATERFALL\` - To go back down to the waterfall
 - \`HOUSE\` - Check out the mountain house up here."
 `;
 
 exports[`hiking fly a car back to the lake 5`] = `
-"In Top of the mountain, You see:
-- Bubble Gun - It's a bubble gun for gunning out bubbles. It looks very interesting.
-  - \`TAKE_BUBBLE_GUN\` - Pick up interesting looking bubble gun.
-
-You are holding:
+"You are holding:
 - Apples - 100 red apples.
-- Yogurt - This yogurt is haunted with ghosts. They look like they want to get out."
-`;
-
-exports[`hiking fly a car back to the lake 6`] = `
-"The bubble gun is now yours.
+- Yogurt - This yogurt is haunted with ghosts. They look like they want to get out.
 
 ---
 
@@ -471,7 +453,7 @@ You can:
 - \`HOUSE\` - Check out the mountain house up here."
 `;
 
-exports[`hiking fly a car back to the lake 7`] = `
+exports[`hiking fly a car back to the lake 6`] = `
 "You are at: **Mountain House**
 
 Inside the mountain house, the many windows create an atmosphere of light, but as it is cloudy outside, you find yourself wishing for a little more.
@@ -489,19 +471,18 @@ You can:
 - \`SLEEP\` - Take a rest on the comfy-looking bed"
 `;
 
-exports[`hiking fly a car back to the lake 8`] = `
+exports[`hiking fly a car back to the lake 7`] = `
 "You lay down on the comfy bed and close your eyes. You let your mind wander. Thinking about how pretty the waterfall was, you realize that although you were scared initially you're feeling pretty good now. You think to yourself that this game is pretty awesome, even though it doesn't have a lot of pictures and it's mostly reading.
 
 GAIN A POINT
 
 You learn some things:
 - Your score is 64
-- You've taken 26 turns
+- You've taken 25 turns
 
 Stuff you are holding:
 - Apples: 100 red apples.
 - Yogurt: This yogurt is haunted with ghosts. They look like they want to get out.
-- Bubble Gun: It's a bubble gun for gunning out bubbles. It looks very interesting.
 
 ---
 
@@ -512,7 +493,7 @@ You can:
 - \`SLEEP\` - Take a rest on the comfy-looking bed"
 `;
 
-exports[`hiking fly a car back to the lake 9`] = `
+exports[`hiking fly a car back to the lake 8`] = `
 "Fortunately, there's a ladder leading straight down the hole, so you don't have to jump down an unknown distance through complete darkness.
 
 You are at: **In a cave under the mountain house**
@@ -533,7 +514,7 @@ You can:
 - \`DRIVE_THE_CAR\` - Get into the car and drive it, to see what's down this tunnel"
 `;
 
-exports[`hiking fly a car back to the lake 10`] = `
+exports[`hiking fly a car back to the lake 9`] = `
 "Climb, climb, climb.
 
 You are at: **Mountain House**
@@ -553,19 +534,18 @@ You can:
 - \`SLEEP\` - Take a rest on the comfy-looking bed"
 `;
 
-exports[`hiking fly a car back to the lake 11`] = `
+exports[`hiking fly a car back to the lake 10`] = `
 "You lay down on the comfy bed and close your eyes. You let your mind wander. Thinking about how pretty the waterfall was, you realize that although you were scared initially you're feeling pretty good now. You think to yourself that this game is pretty awesome, even though it doesn't have a lot of pictures and it's mostly reading.
 
 GAIN A POINT
 
 You learn some things:
 - Your score is 64
-- You've taken 29 turns
+- You've taken 28 turns
 
 Stuff you are holding:
 - Apples: 100 red apples.
 - Yogurt: This yogurt is haunted with ghosts. They look like they want to get out.
-- Bubble Gun: It's a bubble gun for gunning out bubbles. It looks very interesting.
 
 ---
 
@@ -576,7 +556,7 @@ You can:
 - \`SLEEP\` - Take a rest on the comfy-looking bed"
 `;
 
-exports[`hiking fly a car back to the lake 12`] = `
+exports[`hiking fly a car back to the lake 11`] = `
 "Fortunately, there's a ladder leading straight down the hole, so you don't have to jump down an unknown distance through complete darkness.
 
 You are at: **In a cave under the mountain house**
@@ -597,7 +577,7 @@ You can:
 - \`DRIVE_THE_CAR\` - Get into the car and drive it, to see what's down this tunnel"
 `;
 
-exports[`hiking fly a car back to the lake 13`] = `
+exports[`hiking fly a car back to the lake 12`] = `
 "You are at: **In a cave under the mountain house**
 
 The hole which you climbed down is the only source of light. You're at the dead-end of a cave which goes one direction into a long tunnel of darkness. It would be very hard to navigate through that without a light of some kind. The bottom of the hole is so deep, you'd have to use a ladder to get back up. The only way that seems safe to try is the ladder leading back up to the house.
@@ -616,7 +596,7 @@ You can:
 - \`DRIVE_THE_CAR\` - Get into the car and drive it, to see what's down this tunnel"
 `;
 
-exports[`hiking fly a car back to the lake 14`] = `
+exports[`hiking fly a car back to the lake 13`] = `
 "You hop in the car and buckle in. As you put your hands on the steering wheel, the car floats up higher and takes off down the dark tunnel! You zoom and zoom through it as the light of the outside comes closer and closer. There is a tremendous WHOOOOSH!! sound as the car flies out of the side of the mountain! You're now flying over the lake that you passed by on the beginning of this hiking journey.
 
 You are at: **Lake**
@@ -635,7 +615,7 @@ You can:
 - \`THROW_APPLES\` - Throw the apples at the enemies"
 `;
 
-exports[`hiking fly a car back to the lake 15`] = `
+exports[`hiking fly a car back to the lake 14`] = `
 "You are at: **On the bridge top**
 
 The bridge is a really long way up, and then a really long way down. At the top of the bridge is a spaceship. This spaceship looks like a Sun Ship. The hatch is open, and from the outside, it looks pretty functional.
@@ -656,7 +636,7 @@ You can:
 - \`FINISH_LINE\` - From up here on the bridge, you can see the finish line of this entire game!"
 `;
 
-exports[`hiking fly a car back to the lake 16`] = `
+exports[`hiking fly a car back to the lake 15`] = `
 "Down, down, down you go. Down the bridge, bridge, bridge to the lake, lake, lake.
 
 You are at: **Lake**
@@ -675,7 +655,7 @@ You can:
 - \`THROW_APPLES\` - Throw the apples at the enemies"
 `;
 
-exports[`hiking fly a car back to the lake 17`] = `
+exports[`hiking fly a car back to the lake 16`] = `
 "You reach for an apple in your pocket, and give it a mighty hurl. It knocks an enemy head! That enemy becomes defeated!
 
 You continue on in this manner until all enemies are defeated. Their corpses float amidst apples in the water of the lake.
@@ -937,7 +917,17 @@ You can:
 - \`SWIM\` - Swim around in the lake"
 `;
 
-exports[`hiking items and drop key and pick up key 3`] = `"There aren't any items around or that you are holding that you can do anything with right now."`;
+exports[`hiking items and drop key and pick up key 3`] = `
+"There aren't any items around or that you are holding that you can do anything with right now.
+
+---
+
+You can:
+
+- \`ROCKS\` - Go to a place with a lot of rocks
+- \`BRIDGE\` - A giant bridge looks like it crosses right over the entire lake.
+- \`SWIM\` - Swim around in the lake"
+`;
 
 exports[`hiking items and drop key and pick up key 4`] = `
 "You are at: **Lake**
