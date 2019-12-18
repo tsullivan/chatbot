@@ -14,7 +14,7 @@ export class SmartMessage extends ResponseMessage {
     const { isKeyword, responder } = await keywordTester(this.userMessage, chat);
 
     if (isKeyword) {
-      apm.setTag('keyword', responder.getName());
+      apm.setLabel('keyword', responder.getName());
       return responder.runKeyword()
         .then((response: string) => {
           return this.respond(response, responder.getFormat());

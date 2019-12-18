@@ -32,7 +32,7 @@ export async function handleChat(body: ChatBody, chat: Session): Promise<TimedCh
       if (test !== null) {
         response = test;
         chat.addBotMessage(response.message);
-        apm.setTag('responder', worker.getName());
+        apm.setLabel('responder', worker.getName());
         break;
       }
       workIdx++;

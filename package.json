@@ -19,7 +19,7 @@
   "author": "Tim Sullivan",
   "license": "ISC",
   "engines": {
-    "node": ">=10.14 <12"
+    "node": ">=12.14 <13"
   },
   "jest": {
     "preset": "ts-jest",
@@ -61,7 +61,7 @@
     "body-parser": "~1.18",
     "cookie-parser": "~1.4",
     "debug": "~4.1",
-    "elastic-apm-node": "~2.10",
+    "elastic-apm-node": "~3.3.0",
     "express": "~4.16",
     "express-session": "~1.15",
     "lodash": "~4.17",

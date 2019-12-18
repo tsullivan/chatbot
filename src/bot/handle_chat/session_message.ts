@@ -38,7 +38,7 @@ export class SessionMessage extends ResponseMessage {
     let responseFormat;
     if (chat.getGame() != null) {
       const game = chat.getGame();
-      apm.setTag('game', game.getName());
+      apm.setLabel('game', game.getName());
       ({ isDone, response, format: responseFormat } = game.testInput(this.userMessage));
 
       game.save();
