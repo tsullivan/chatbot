@@ -53,4 +53,6 @@ export class KeywordResponse {
       showInstructions: this.showInstructions,
     };
   }
+
+  public readonly isKeywordResponse = true;
 }
