@@ -2,9 +2,10 @@ import { Enemy } from './enemy';
 import { KeywordResponse } from '../../lib';
 
 export interface GameState {
+  level: number;
   turns: number;
   score: number;
-  enemies: Enemy[];
+  enemy?: Enemy;
   responses: string[];
   response?: KeywordResponse;
   isDone: boolean;
