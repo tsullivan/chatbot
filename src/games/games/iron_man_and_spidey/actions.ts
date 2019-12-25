@@ -1,23 +1,18 @@
 import * as Rx from 'rxjs';
 import { filter, map, merge } from 'rxjs/operators';
+import { getQuit, getStoryResponseFromTurn } from './story';
 import { Enemy } from './enemy';
 import { GameState } from './types';
 import { KeywordResponse } from '../../lib';
-import { getStoryResponseFromTurn } from './story';
 
 export const cleanup = (state: GameState): GameState => {
-  return {
-    ...state,
-    response: undefined,
-    responses: [],
-  };
+  return { ...state, response: undefined, responses: [] };
 };
 
-const runBattle$ = (game$: Rx.Observable<GameState>, input: string) => {
-  return game$.pipe(
+const runBattle$ = (game$: Rx.Observable<GameState>, input: string) =>
+  game$.pipe(
     map(state => {
       const { enemy, responses } = state;
-
       if (enemy) {
         const { answer } = enemy.getChallenge();
         if (input === answer) {
@@ -31,23 +26,17 @@ const runBattle$ = (game$: Rx.Observable<GameState>, input: string) => {
       } else {
         state.turns += 1; // progress via default
       }
-
       if (state.turns > 10) {
         state.turns = 1; // reset
         state.level += 1;
         responses.push(`***Great work! Go up a level!***\n\n`);
       }
-
-      return {
-        ...state,
-        responses,
-      };
+      return { ...state, responses };
     })
   );
-};
 
-const runThwip$ = (game$: Rx.Observable<GameState>, input: string) => {
-  return game$.pipe(
+const runThwip$ = (game$: Rx.Observable<GameState>, input: string) =>
+  game$.pipe(
     filter(() => input.toUpperCase() === 'THWIP'),
     map(state => {
       return {
@@ -58,10 +47,9 @@ const runThwip$ = (game$: Rx.Observable<GameState>, input: string) => {
       };
     })
   );
-};
 
-const runLaser$ = (game$: Rx.Observable<GameState>, input: string) => {
-  return game$.pipe(
+const runLaser$ = (game$: Rx.Observable<GameState>, input: string) =>
+  game$.pipe(
     filter(() => input.toUpperCase() === 'LASER_BLAST'),
     map(state => {
       return {
@@ -72,36 +60,29 @@ const runLaser$ = (game$: Rx.Observable<GameState>, input: string) => {
       };
     })
   );
-};
 
-const runQuit$ = (
-  state$: Rx.Observable<GameState>,
-  input: string
-): Rx.Observable<GameState> => {
-  return state$.pipe(
+const gameQuit = (state$: Rx.Observable<GameState>, input: string) =>
+  state$.pipe(
     map(({ isDone, ...state }) => ({
       ...state,
       isDone: input.toUpperCase() === 'QUIT' ? true : isDone,
     })),
-    filter(s => s.isDone === true),
+    filter(state => state.isDone === true),
     map(state => ({
       ...state,
-      response: new KeywordResponse({
-        format: 'markdown',
-        text: `You quit! GAME OVER. Here's your score ${state.score}`,
-        isDone: true,
-      }),
+      response: getQuit(state)
     }))
   );
-};
 
-const getNext = (input: string) => {
-  return (state: GameState) => {
+const gamePlay = (state$: Rx.Observable<GameState>, input: string) => {
+  const new$ = state$.pipe(map(cleanup));
+
+  const next = (state: GameState) => {
     const { responses } = state;
-    const next = getStoryResponseFromTurn(state);
-    responses.push(next.text);
+    const nextResp = getStoryResponseFromTurn(state);
+    responses.push(nextResp.text);
 
-    if (next.challenge) {
+    if (nextResp.challenge) {
       state.enemy = state.enemy || new Enemy();
       const challenge = state.enemy.getChallenge();
       responses.push(`> ${challenge.question}\n\n`);
@@ -112,21 +93,15 @@ const getNext = (input: string) => {
       responses,
     };
   };
-};
-
-export const getGameIteration$ = (state$: Rx.Observable<GameState>, input: string) => {
-  const new$ = state$.pipe(map(cleanup));
 
   return Rx.merge(
-    runBattle$(new$, input).pipe(map(getNext(input))),
-    runThwip$(new$, input).pipe(map(getNext(input))),
-    runLaser$(new$, input).pipe(map(getNext(input))),
+    runBattle$(new$, input).pipe(map(next)),
+    runThwip$(new$, input).pipe(map(next)),
+    runLaser$(new$, input).pipe(map(next))
   ).pipe(
     map(state => {
       const { responses } = state;
-      const pre = `**Iron Man And Spidey Game!**\
-        
-Turns: ${state.turns}. Level: ${state.level}. Score: ${state.score}`;
+      const pre = `**Iron Man And Spidey Game!**\n\nTurns: ${state.turns}. Level: ${state.level}. Score: ${state.score}`;
       const text = [pre, ...responses].join('\n\n');
 
       return {
@@ -136,7 +111,10 @@ Turns: ${state.turns}. Level: ${state.level}. Score: ${state.score}`;
           text,
         }),
       };
-    }),
-    merge(runQuit$(state$, input))
+    })
   );
+};
+
+export const getMain$ = (state$: Rx.Observable<GameState>, input: string) => {
+  return gamePlay(state$, input).pipe(merge(gameQuit(state$, input)));
 };

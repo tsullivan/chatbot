@@ -3,7 +3,7 @@ import { ChatGame, KeywordResponse } from '../../lib';
 import { map, tap } from 'rxjs/operators';
 import { GameState } from './types';
 import { Session } from '../../../bot';
-import { getGameIteration$ } from './actions';
+import { getMain$ } from './actions';
 
 export const getDefaultState = (): GameState => ({
   level: 1,
@@ -27,7 +27,7 @@ export default class IronManAndSpideyGame extends ChatGame {
   public testInput(input: string): Promise<KeywordResponse> {
     const state$: Rx.Observable<GameState> = Rx.of({ ...this.state });
 
-    return getGameIteration$(state$, input)
+    return getMain$(state$, input)
       .pipe(
         tap(({ response, ...state }) => {
           this.state = state;

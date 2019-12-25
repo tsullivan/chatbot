@@ -1,13 +1,19 @@
 import { GameState } from './types';
+import { KeywordResponse } from '../../lib';
 
 interface StoryResponse {
   text: string;
   challenge?: string;
 }
 
-export const getStoryResponseFromTurn = (
-  state: GameState
-): StoryResponse => {
+export const getQuit = (state: GameState): KeywordResponse =>
+  new KeywordResponse({
+    format: 'markdown',
+    text: `You quit! GAME OVER. Here's your score ${state.score}`,
+    isDone: true,
+  });
+
+export const getStoryResponseFromTurn = (state: GameState): StoryResponse => {
   const story: ((state?: GameState) => { text: string })[][] = [
     [
       () => ({
@@ -18,16 +24,28 @@ Marvel headquarters are the best thing for rest. We spent all day fighting that
 space orb, so I really needed it."\n\n
 "I'm glad you got your rest. Now there is something else we have to do. That
 space orb was actually a beacon sent by GALACTUS! He is on is way to Earth
-right now!"`,
+right now!"\n\n
+The heroes got to thinking about how to save the world this time, and decided
+on a teamwork strategy. Spider-Man would stay on Earth and use the Spideycycle
+to help keep innocent citizens safe. Iron Man would fly to space and destroy
+Galactus with his lasers.\n\n
+As soon as these ideas occurred, a window near them smashed and a robot jumped
+into the room! It posed the heroes with a math problem.`,
+        challenge: 'sums',
       }),
       () => ({
-        text: `OH MY GOSH" screamed Spider-Man, right after he ate a quick breakfast.
-"Well, what are we waiting for!? Let's stop that evil ancient space god!" said
-Spider-Man. "One thing though: where is my motorcycle? Is it still in the shop from after
-our last battle?"\n\n
-"Yes" said Iron Man. "I'll have it come to us while we're in battle as soon as
-it's ready!\n\n
-"Ok," said Spider-Man.`,
+        text: `OH MY GOSH" screamed Spider-Man, right the last of the robot
+circuits had been smashed and put into the recycling bin.  "That robot was
+definitely sent by Galactus - no doubt," said Iron Man. "Galactus' weapons are
+nearly too much for us!"\n\n
+"Well now, let's get to work on stopping that unwanted ancient space being from EVER returning!" said
+Spider-Man. "One thing though: where is the Spidey cycle? Is it still in the
+shop from after our last battle?"\n\n
+"Yes" said Iron Man. "Aunt May is working on upgrading the engine also. I think
+she said she would be done today though! I'll ask her to send it to us while
+we're in battle as soon as it's ready!\n\n "Ok," said Spider-Man.
+"I just need to send her the numeric codes so she knows," said Iron Man.`,
+        challenge: 'sums',
       }),
       () => ({
         text: `"That's fine, Mr. Stark. Can you give me a boost to the center
@@ -39,7 +57,10 @@ to carry Spider-Man by his web. Unfortunately, Spider-Man was a little heavy
 and Iron Man lost control!\n\n
 CRASH!!!!\n\n
 "Mr. Stark, we should have used the door! Why did you crash through the
-ceiling?" asked Spider-Man.`,
+ceiling?" asked Spider-Man.\n\n
+"Oops," said Iron Man. "Can you pretend that didn't just happen? Anyway, I can
+pay the bill to get that fixed. I costs this much:"`,
+        challenge: 'sums',
       }),
       () => ({
         text: `Together, the heroes flew out of the headquarters, with
@@ -132,7 +153,8 @@ before it crashed into a building.\n\n
         text: `The two feet and legs grew a torso. The crashed jet destroyed
 the roof of the building, and large chunks fell down and hit someone's car.
 "Hey!!!" yelled the owner of the car. "What did you do to my car?"\n\n
-"Galactus is coming!" yelled a goon.`, challenge: 'sums',
+"Galactus is coming!" yelled a goon.`,
+        challenge: 'sums',
       }),
       () => ({
         text: `The two feet and legs and a torso grew a right arm.\n\n
