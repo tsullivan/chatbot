@@ -9,7 +9,7 @@ export default class RememberResponder extends CKeywordResponder {
     this.getResponse = async () => {
       const history = chat.getUserHistory();
       const thingSaid = String(sample(history)).trim();
-      return `Remember that time you said, "${thingSaid}"? I do.`;
+      return `Remember that time you said, "${thingSaid}"?`;
     };
   }
 
