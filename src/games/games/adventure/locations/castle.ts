@@ -1,5 +1,4 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
+import { snl } from '../../../../lib';
 import { Adventure, KeywordResponse, Location } from '../../../lib';
 import { SOUTH, WINDOW_HANDLE } from '../constants';
 
@@ -13,7 +12,7 @@ export class CastleLocation extends Location {
     this.socketsSeen = false;
   }
 
-  public getDescription(game: Adventure) {
+  public getDescription(_game: Adventure) {
     if (this.windowsOpen) {
       return snl`In the great hall of the castle, there are beautiful
         open-air windows with warm, nice-smelling air drifting through.
@@ -21,7 +20,8 @@ export class CastleLocation extends Location {
         that much though, because it's pretty clean in here. There's also a
         nice looking comfy bed in the middle of the great hall. Hey wait -
         isn't it night time? Where is that light coming from?`;
-    } else {
+    }
+    else {
       return snl`In the great hall of the castle, there were beautiful
         open-air windows with warm, nice-smelling air that drifted through.
         Sunlight would catch a few specks of dust floating in the air. Not
@@ -107,12 +107,12 @@ export class CastleLocation extends Location {
           return new KeywordResponse({
             text: p.join('\n\n'),
           });
-        },
+        }
       );
     }
 
     this.addKeyword('EXIT', 'Leave the beautful great hall and the castle.', () =>
-      this.followExit(SOUTH),
+      this.followExit(SOUTH)
     );
   }
 }

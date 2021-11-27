@@ -1,5 +1,4 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
+import { snl } from '../../../../lib';
 import { Adventure, KeywordResponse, Location, parajoin } from '../../../lib';
 import { ENEMIES, NORTH, SOUTH, WEST } from '../constants';
 
@@ -8,7 +7,7 @@ export class BridgeLocation extends Location {
     super({ game, name: 'On the bridge top' });
   }
 
-  public getDescription(game: Adventure) {
+  public getDescription(_game: Adventure) {
     const lns = [
       snl`The bridge is a really long way up, and then a really long way down.
         At the top of the bridge is a spaceship. This spaceship looks like a

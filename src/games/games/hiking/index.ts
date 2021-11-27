@@ -1,9 +1,8 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
 import { Adventure, KeywordResponse, parajoin } from '../../lib';
 import { getItems, setItemsToLocations } from './items';
 import { Session } from '../../../bot';
 import { getLocations } from './locations';
+import { snl } from '../../../lib';
 
 export default class HikingGame extends Adventure {
   public constructor(session: Session) {

@@ -1,5 +1,4 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
+import { snl } from '../../../../lib';
 import { Adventure, KeywordResponse, Location } from '../../../lib';
 import { DOWN, WEST } from '../constants';
 
@@ -8,7 +7,7 @@ export class MountainHouseLocation extends Location {
     super({ game, name: 'Mountain House' });
   }
 
-  public getDescription(game: Adventure) {
+  public getDescription(_game: Adventure) {
     const ps = [
       snl`Inside the mountain house, the many windows create an atmosphere of
         light, but as it is cloudy outside, you find yourself wishing for a

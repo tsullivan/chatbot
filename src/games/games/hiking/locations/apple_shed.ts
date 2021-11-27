@@ -1,7 +1,6 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
-import { APPLES, EAST, YOGURT } from '../constants';
+import { snl } from '../../../../lib';
 import { Adventure, KeywordResponse, Location, parajoin } from '../../../lib';
+import { APPLES, EAST, YOGURT } from '../constants';
 
 export class AppleShedLocation extends Location {
   private hasYogurt = false;
@@ -11,7 +10,7 @@ export class AppleShedLocation extends Location {
     super({ game, name: 'The Apple Store' });
   }
 
-  public getDescription(game: Adventure) {
+  public getDescription(_game: Adventure) {
     const lns = [
       snl`You're in a giant, giant red sphere in the trees. This is an Apple
         Store. On the inside, it actually a shed. Inside there are many, many
@@ -23,7 +22,7 @@ export class AppleShedLocation extends Location {
         snl`There's no one in the store, but there's a man standing on a tree
           branch out back. He looks inside a window and sees you, then he comes
           in and says a friendly hello.`,
-        snl`"Oh, a customer! Would you like to buy an apple?" he says.`,
+        snl`"Oh, a customer! Would you like to buy an apple?" he says.`
       );
       // TODO npc class that knows if the character has said a certain thing yet
     }
@@ -38,7 +37,7 @@ export class AppleShedLocation extends Location {
         you're ever interested!"`;
     }
     this.addKeyword('EXIT', `If you want to leave the Apple Store`, () =>
-      this.followExit(EAST, pxEx),
+      this.followExit(EAST, pxEx)
     );
     this.addKeyword('LOOK', `Look at the contents of the Apple Store`, () => {
       let resp;
@@ -82,7 +81,7 @@ export class AppleShedLocation extends Location {
             changeScore: 10,
             text: lns.join('\n\n'),
           });
-        },
+        }
       );
     } else if (yogurt.isSeen() && this.hasYogurt) {
       this.addKeyword('BUY_YOGURT', `Purchase the yogurt with ghosts in it.`, () => {

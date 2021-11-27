@@ -1,39 +1,43 @@
-import * as apmNode from 'elastic-apm-node';
+import * as Rx from 'rxjs';
 import * as cookieParser from 'cookie-parser';
 import * as express from 'express';
 import { BOT_NAME, PORT } from '../constants';
-import { Bot } from '../bot';
-import { apm as apmConfig } from '../../config';
+import type { Bot, Chat } from '../bot';
 import { initRoutes } from './routes';
 import { initSession } from './session';
 import { join } from 'path';
 
-const apm = apmNode.start(apmConfig);
-
 /*
  * Exported for tests
  */
-export async function getServer(bot: Bot): Promise<express.Application> {
+export async function getServer(
+  bot: Bot,
+  chats$: Rx.Subject<Chat>,
+  errors$: Rx.Subject<Error>
+): Promise<express.Application> {
   const app = express();
 
   const pubs = join(__dirname, '..', '..', 'public');
   app.use(express.static(pubs)); // home html page, static js
 
   app.use(cookieParser());
-  app.use(apm.middleware.connect());
 
-  app.get('/', (req, res) => {
+  app.get('/', (_req, res) => {
     res.sendFile(join(pubs, 'index.html'));
   });
 
   initSession(bot, app);
-  initRoutes(bot, app);
+  initRoutes(bot, app, chats$, errors$);
 
   return app;
 }
 
-export async function runServer(bot: Bot): Promise<void> {
-  const app = await getServer(bot);
+export async function runServer(
+  bot: Bot,
+  chats$: Rx.Subject<Chat>,
+  errors$: Rx.Subject<Error>
+): Promise<void> {
+  const app = await getServer(bot, chats$, errors$);
   const log = bot.getLogger(['web', 'server']);
 
   app.listen(PORT, () => {

@@ -1,5 +1,6 @@
-import { GameSet, ResponseFormat } from '../types';
+import { ResponseFormat } from '../types';
 import { Session } from '../bot';
+import { GameSet } from '../games/lib';
 
 export interface ResponderOptions {
   chat?: Session;

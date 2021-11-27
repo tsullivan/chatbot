@@ -1,8 +1,7 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
+import { Session } from '../../../bot';
+import { snl } from '../../../lib';
 import { Adventure, KeywordResponse, parajoin } from '../../lib';
 import { getItems, setItemsToLocations } from './items';
-import { Session } from '../../../bot';
 import { getLocations } from './locations';
 
 export default class EscapeJailGame extends Adventure {

@@ -1,6 +1,7 @@
+import * as Rx from 'rxjs';
 import * as request from 'supertest';
 import { SuperTest, Test } from 'supertest';
-import { Bot } from '../src/bot';
+import { Bot, Chat } from '../src/bot';
 import { getServer } from '../src/web';
 
 export type HandshakeFn = () => Promise<void>;
@@ -56,8 +57,9 @@ class Util {
 }
 
 export const utilFactory = async (bot: Bot) => {
-  await bot.init();
-  const app = await getServer(bot);
+  const errors$ = new Rx.Subject<Error>();
+  const chats$ = new Rx.Subject<Chat>();
+  const app = await getServer(bot, chats$, errors$);
   const agent = request.agent(app);
   const util = new Util(agent);
 

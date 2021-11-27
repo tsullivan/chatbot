@@ -1,6 +1,5 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
 import { KeywordResponse } from './keyword_response';
+import { snl } from '../../lib';
 
 export const delayAndDie = () => {
   return {

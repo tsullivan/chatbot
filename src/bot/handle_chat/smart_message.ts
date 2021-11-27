@@ -1,4 +1,3 @@
-import * as apm from 'elastic-apm-node';
 import { ChatResponse, UserFormat } from '../../types';
 import { ResponseMessage } from './response_message';
 import { Session } from '..';
@@ -14,7 +13,6 @@ export class SmartMessage extends ResponseMessage {
     const { isKeyword, responder } = await keywordTester(this.userMessage, chat);
 
     if (isKeyword) {
-      apm.setLabel('keyword', responder.getName());
       return responder.runKeyword()
         .then((response: string) => {
           return this.respond(response, responder.getFormat());

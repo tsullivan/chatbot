@@ -1,6 +1,11 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
-import { Adventure, KeywordResponse, Location, delayAndDie, parajoin } from '../../../lib';
+import { snl } from '../../../../lib';
+import {
+  Adventure,
+  delayAndDie,
+  KeywordResponse,
+  Location,
+  parajoin,
+} from '../../../lib';
 import BubbleGunWorldGame from '../../bubble_gun';
 
 export class FenceLocation extends Location {
@@ -11,7 +16,7 @@ export class FenceLocation extends Location {
     super({ game, name: 'The Jail Fence' });
   }
 
-  public getDescription(game: Adventure) {
+  public getDescription(_game: Adventure) {
     const nls = [
       snl`You've just escaped from a jail. You breathe a sigh of relief
         because that part of your life is forever behind you. They'll never
@@ -60,8 +65,8 @@ export class FenceLocation extends Location {
               snl`RUN RUN RUN JUUUUMP! Climb, climb, climb! You made it!`,
               snl`You run and run and run for a long time. You find yourself in
               a strange new place. It looks very exciting and new!`,
-            ]),
-          ),
+            ])
+          )
       );
 
       const { keyword, description, fn } = delayAndDie();

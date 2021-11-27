@@ -75,7 +75,7 @@ export default class AlienResponder extends CKeywordResponder {
     this.setName('alientalk');
 
     this.getRandomResponder = async () => {
-      const responders = await getResponders();
+      const responders = getResponders();
       const names = Object.keys(responders);
       const name = sample(names);
       const RKeywordResponder = responders[name];

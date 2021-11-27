@@ -1,14 +1,16 @@
+import * as Rx from 'rxjs';
 import * as request from 'supertest';
-import { Bot } from '../src/bot';
+import { Bot, Chat } from '../src/bot';
 import { getServer } from '../src/web';
 
 const bot = new Bot();
 
 describe('detect invalid session', () => {
-  beforeEach(() => bot.init());
+  const errors$ = new Rx.Subject<Error>();
+  const chats$ = new Rx.Subject<Chat>();
 
   it('double syn', async () => {
-    const app = await getServer(bot);
+    const app = await getServer(bot, chats$, errors$);
     const agent = request.agent(app);
 
     const { body: syn1 } = await agent
@@ -31,7 +33,7 @@ describe('detect invalid session', () => {
   });
 
   it('recover invalid session', async () => {
-    const app = await getServer(bot);
+    const app = await getServer(bot, chats$, errors$);
     const agent = request.agent(app);
 
     const { body: plain1 } = await agent

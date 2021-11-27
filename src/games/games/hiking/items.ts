@@ -1,7 +1,6 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
-import { APPLES, CAR, ENEMIES, YOGURT } from './constants';
+import { snl } from '../../../lib';
 import { Adventure, Item, KeywordResponse, Location } from '../../lib';
+import { APPLES, CAR, ENEMIES, YOGURT } from './constants';
 
 export function getItems(game: Adventure) {
   /*

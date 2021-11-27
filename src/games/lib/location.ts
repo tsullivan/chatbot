@@ -5,6 +5,7 @@ import { KeywordResponse } from './keyword_response';
 import { Person } from './person';
 import { parajoin } from './parajoin';
 
+// FIXME abstract
 export class Location {
   public followExit: (direction: string, prefix?: string) => KeywordResponse;
   public getInstructions: (game: Adventure) => string;
@@ -35,14 +36,14 @@ export class Location {
       return this.followExitInternal(game, direction, prefix);
     };
 
-    this.getInstructions = (adventureGame: Adventure) => {
+    this.getInstructions = (_adventureGame: Adventure) => {
       return this.getInstructionsInternal(game, keywordsHelper);
     };
 
     this.setLocationKeywords(game);
   }
 
-  public setLocationKeywords(adventureGame: Adventure) {
+  public setLocationKeywords(_adventureGame: Adventure) {
     throw new Error('setLocationKeywords must be overridden in ' + this.name);
   }
 
@@ -89,10 +90,11 @@ export class Location {
   }
 
   /// Person aware
-  public addPerson(person: Person) {
+  public addPerson(_person: Person) {
+    //
   }
 
-  public getDescription(game: Adventure) {
+  public getDescription(_game: Adventure) {
     throw new Error('Location superclass has no description of its own');
   }
 

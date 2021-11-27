@@ -11,7 +11,6 @@ function describeItSimple(item: Item) {
 // just mention visible items, ignore inventory
 function prefixItSimple({
   floorItems,
-  inventoryItems,
 }: {
   floorItems: string;
   inventoryItems: string;
@@ -21,7 +20,7 @@ function prefixItSimple({
 
 export class ItemCollection {
   public static getItemsAsArray(items: ItemCollection) {
-    return Array.from(items.items).map(([key, item]: [string, Item]) => item);
+    return Array.from(items.items).map(([_key, item]: [string, Item]) => item);
   }
 
   /*
@@ -86,7 +85,7 @@ export class ItemCollection {
   public static getAllItemsFromSet(
     game: Adventure,
     collection: Set<string>,
-    { pushCondition = (item?: any) => true } = {}
+    { pushCondition = (_item?: any) => true } = {}
   ): Item[] {
     return Array.from(collection).reduce((accum: Item[], value) => {
       const item = game.getItemFromCollection(value);

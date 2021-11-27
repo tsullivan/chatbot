@@ -1,5 +1,4 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
+import { snl } from '../../../../lib';
 import { Adventure, Location, parajoin } from '../../../lib';
 import { CAR, DOWN, UP } from '../constants';
 
@@ -8,7 +7,7 @@ export class CarLocation extends Location {
     super({ game, name: 'In a cave under the mountain house' });
   }
 
-  public getDescription(game: Adventure) {
+  public getDescription(_game: Adventure) {
     const lns = [
       snl`The hole which you climbed down is the only source of light. You're
         at the dead-end of a cave which goes one direction into a long tunnel of

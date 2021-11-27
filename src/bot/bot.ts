@@ -1,8 +1,9 @@
+import * as Rx from 'rxjs';
 import * as express from 'express';
-import { ChatBody, ChatResponse, GameSet } from '../types';
+import { ChatBody, ChatResponse } from '../types';
 import { ChatGame, getGames } from '../games';
 import { Log, Metrics } from '../lib';
-import { ChatGameClass } from '../games/lib/chat_game';
+import { ChatGameClass, GameSet } from '../games/lib/chat_game';
 import { ResponderSet } from '../keywords/keyword_responder';
 import { Session } from './session';
 import { getResponders } from '../keywords';
@@ -14,33 +15,19 @@ export class Bot {
   private metrics: Metrics;
   private games: GameSet;
   private responders: ResponderSet;
-  private isInitialized: boolean;
-  private logger: Log;
 
   public constructor() {
     this.metrics = new Metrics();
-    this.isInitialized = false;
-    this.logger = this.getLogger(['bot', 'internal']);
+    this.games = getGames();
+    this.responders = getResponders();
   }
 
-  public async init(): Promise<this> {
-    this.logger.info([], 'init has been called');
-
-    const [gamesTemp, respondersTemp] = await Promise.all([
-      getGames(),
-      getResponders(),
-    ]);
-
-    this.games = gamesTemp;
-    this.responders = respondersTemp;
-
-    this.isInitialized = true;
-    this.logger.info([], 'init is complete');
-    return this;
-  }
-
-  public handleChat(body: ChatBody, session: Session): Promise<ChatResponse> {
-    return handleChat(body, session);
+  public handleChat(
+    body: ChatBody,
+    session: Session,
+    errors$: Rx.Subject<Error>
+  ): Promise<ChatResponse> {
+    return handleChat(body, session, errors$);
   }
 
   public getMetrics(req: express.Request) {
@@ -64,16 +51,10 @@ export class Bot {
   }
 
   public getGames() {
-    if (!this.isInitialized) {
-      throw new Error('Async error: init must be called');
-    }
     return this.games;
   }
 
   public getResponders() {
-    if (!this.isInitialized) {
-      throw new Error('Async error: init must be called');
-    }
     return this.responders;
   }
 

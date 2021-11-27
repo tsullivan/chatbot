@@ -1,7 +1,8 @@
 import { capitalize, cloneDeep, sample } from 'lodash';
 import { roll } from '../../lib';
+import dataSource = require('./dictionary.json');
 
-const getData = () => cloneDeep(require('./dictionary'));
+const getData = () => cloneDeep(dataSource) as Record<string, string[]>;
 
 interface Vocabulary {
   [key: string]: string[];
@@ -40,7 +41,7 @@ function reduce(cb: ReduceCallback, accum: Vocabulary) {
   return accum;
 }
 
-const vocabulary = reduce((accum, kSet, kind, thing) => {
+const vocabulary = reduce((accum, _kSet, kind, thing) => {
   if (accum[kind]) {
     accum[kind].push(thing);
   } else {
@@ -52,7 +53,7 @@ const vocabulary = reduce((accum, kSet, kind, thing) => {
 
 interface DictionarySets {
   [dictionaryKey: string]: any;
-};
+}
 
 export function runDictionary(kSet = ''): DictionarySets {
   const data = getData();

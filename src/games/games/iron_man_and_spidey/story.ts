@@ -14,7 +14,7 @@ export const getQuit = (state: GameState): KeywordResponse =>
   });
 
 export const getStoryResponseFromTurn = (state: GameState): StoryResponse => {
-  const story: ((state?: GameState) => { text: string })[][] = [
+  const story: (() => { text: string })[][] = [
     [
       () => ({
         text: `"Are you still tired, Spidey? I think you got enough rest, don't you?"\n\n
@@ -189,7 +189,7 @@ he was too far.\n\n
   if (story[realLevel]) {
     const runTurns = Math.min(realTurns, story[realLevel].length - 1);
     if (story[realLevel][runTurns]) {
-      return story[realLevel][runTurns](state);
+      return story[realLevel][runTurns]();
     }
   }
 

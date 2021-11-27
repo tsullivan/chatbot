@@ -1,5 +1,4 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
+import { snl } from '../../../../lib';
 import { Adventure, Location, parajoin } from '../../../lib';
 import { NORTH, WEST } from '../constants';
 
@@ -8,7 +7,7 @@ export class StartLocation extends Location {
     super({ game, name: 'Lost in a mountain' });
   }
 
-  public getDescription(game: Adventure) {
+  public getDescription(_game: Adventure) {
     const lns = [
       snl`You find yourself on a big, big mountain. You can see the very top of
         the mountain, but it's still so high up that it hurts your neck to look
@@ -34,7 +33,7 @@ export class StartLocation extends Location {
     return parajoin(lns);
   }
 
-  public setLocationKeywords(game: Adventure) {
+  public setLocationKeywords(_game: Adventure) {
     const pxLake = snl`Your hiking adventure begins! Off to the lake we go.`;
     this.addKeyword(
       'LAKE',

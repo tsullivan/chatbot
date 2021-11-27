@@ -1,9 +1,5 @@
 import { ChatGame } from '../games';
-import { Session } from '../bot';
 
-export interface GameSet {
-  [gameName: string]: new (session: Session) => ChatGame;
-}
 export type SessionGames = Map<string, ChatGame>;
 
 export interface MetricStats {

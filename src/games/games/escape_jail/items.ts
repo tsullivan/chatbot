@@ -1,5 +1,4 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
+import { snl } from '../../../lib';
 import { Adventure, Item, KeywordResponse, Location } from '../../lib';
 import { GUARDS, KEY, TOWEL } from './constants';
 

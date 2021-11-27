@@ -1,16 +1,16 @@
-import * as apm from 'elastic-apm-node';
+import * as Rx from 'rxjs';
 import { ChatResponse, UserFormat } from '../../types';
 import { ResponseMessage } from './response_message';
 import { Session } from '..';
 
 export class SessionMessage extends ResponseMessage {
-  public constructor(chat: Session, userMessage: string, userFormat: UserFormat) {
+  public constructor(chat: Session, userMessage: string, userFormat: UserFormat, private errors$: Rx.Subject<Error>) {
     super('session', chat, userMessage, userFormat);
   }
 
   public async makeResponse(chat: Session): Promise<ChatResponse | null> {
     const userFormat = this.userFormat;
-    const { isValid, revalidateResponse } = chat.validateSession(userFormat);
+    const { isValid, revalidateResponse } = chat.validateSession(userFormat, this.errors$);
 
     if (userFormat === 'syn') {
       if (isValid) {
@@ -38,7 +38,6 @@ export class SessionMessage extends ResponseMessage {
     let format;
     if (chat.getGame() != null) {
       const game = chat.getGame();
-      apm.setLabel('game', game.getName());
 
       const gameResponse = await game.testInput(this.userMessage);
       ({ response, format, isDone } = gameResponse);

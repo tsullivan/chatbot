@@ -1,5 +1,4 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
+import { snl } from '../../../../lib';
 import { Adventure, Location, parajoin } from '../../../lib';
 import { EAST, NORTH } from '../constants';
 
@@ -8,7 +7,7 @@ export class StartLocation extends Location {
     super({ game, name: 'Dark Forest' });
   }
 
-  public getDescription(game: Adventure) {
+  public getDescription(_game: Adventure) {
     const lns = [
       snl`It is the night time. You are outside, surrounded by dark trees, and
        you're very tired. There is a castle and a cave.`,

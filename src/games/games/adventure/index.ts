@@ -1,5 +1,4 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
+import { snl } from '../../../lib';
 import { Adventure, KeywordResponse, parajoin } from '../../lib';
 import { Session } from '../../../bot';
 import { WINDOW_HANDLE } from './constants';

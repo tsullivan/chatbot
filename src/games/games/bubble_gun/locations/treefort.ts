@@ -1,5 +1,4 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
+import { snl } from '../../../../lib';
 import { Adventure, Location } from '../../../lib';
 import { DOWN } from '../constants';
 
@@ -8,12 +7,12 @@ export class TreeFortLocation extends Location {
     super({ game, name: 'The Tree Fort' });
   }
 
-  public getDescription(game: Adventure) {
+  public getDescription(_game: Adventure) {
     return snl`This tree fort is so tall! It has a big window with a clear
       view of the entire playground.`;
   }
 
-  public setLocationKeywords(game: Adventure) {
+  public setLocationKeywords(_game: Adventure) {
     this.addKeyword('PLAYGROUND', 'Go back to the playground', () => {
       return this.followExit(DOWN);
     });

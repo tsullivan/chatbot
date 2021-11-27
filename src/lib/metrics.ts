@@ -7,7 +7,7 @@ export class Metrics {
       games: {
         total: sessionGames.size,
       },
-      session_expires_in_sec: req.session.cookie.maxAge / 1000, // eslint-disable-line @typescript-eslint/camelcase
+      session_expires_in_sec: req.session.cookie.maxAge / 1000,
       users: {
         names: ['tim', 'brach', 'spethen'],
       },

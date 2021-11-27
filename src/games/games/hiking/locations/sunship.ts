@@ -1,5 +1,4 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
+import { snl } from '../../../../lib';
 import { Adventure, Location, parajoin } from '../../../lib';
 import { EAST, UP } from '../constants';
 
@@ -8,7 +7,7 @@ export class SunshipLocation extends Location {
     super({ game, name: 'Sun Ship, on Earth' });
   }
 
-  public getDescription(game: Adventure) {
+  public getDescription(_game: Adventure) {
     const lns = [
       snl`Pretty nice in here. Whatever alien species created this ship did a
         good job.`,
@@ -18,7 +17,7 @@ export class SunshipLocation extends Location {
     return parajoin(lns);
   }
 
-  public setLocationKeywords(game: Adventure) {
+  public setLocationKeywords(_game: Adventure) {
     const pxUp = snl`You close your eyes, hold your breath, and slam your hand
       on the PUSH_ME button. The ship's engine's rumble and your insides suddenly
       feel like cooked noodles as the ship rises up into the sky, and KSHOOOOM!

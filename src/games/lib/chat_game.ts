@@ -2,6 +2,11 @@ import { KeywordResponse } from './keyword_response';
 import { Session } from '../../bot/session';
 import { defaults } from 'lodash';
 
+export interface GameSet {
+  [gameName: string]: new (session: Session) => ChatGame;
+}
+
+// FIXME abstract
 export class ChatGame {
   public save: () => void;
   public score: number;
@@ -41,13 +46,14 @@ export class ChatGame {
   }
 
   public updateState() {
+    //
   }
 
-  public testInput(userMessage: string): KeywordResponse | Promise<KeywordResponse> {
+  public testInput(_userMessage: string): KeywordResponse | Promise<KeywordResponse> {
     throw new Error('Unexpected call to testInput');
   }
 }
 
 export interface ChatGameClass {
   new (session: Session): ChatGame;
-};
+}

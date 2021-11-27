@@ -1,8 +1,7 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
 import { Adventure, Item, KeywordResponse, Location, parajoin } from '../../../lib';
 import { BUBBLE_GUN, LED, NORTH } from '../constants';
 import AdventureGame from '../../adventure';
+import { snl } from '../../../../lib';
 
 export class BridgeLocation extends Location {
   private isDark = true;

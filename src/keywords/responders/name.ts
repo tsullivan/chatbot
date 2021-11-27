@@ -1,4 +1,3 @@
-import * as apm from 'elastic-apm-node';
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
 import { Session } from '../../bot';
 
@@ -14,7 +13,7 @@ export default class NameResponder extends CKeywordResponder {
         chat.setWaitOnName();
         name = chat.getName();
       } catch (err) {
-        apm.captureError(err);
+        // errors$.next(err); // FIXME
         return 'An error has been logged.';
       }
 

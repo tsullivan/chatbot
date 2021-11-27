@@ -1,10 +1,9 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
 import { Adventure, KeywordResponse } from '../../lib';
 import { ELECTRONICS, MAGNET, PLAYGROUND, SOAP } from './constants';
 import { getItems, setItemsToLocations } from './items';
 import { Session } from '../../../bot';
 import { getLocationsMap } from './locations';
+import { snl } from '../../../lib';
 
 export default class BubbleGunGame extends Adventure {
   public constructor(session: Session) {

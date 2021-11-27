@@ -1,5 +1,4 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
+import { snl } from '../../../../lib';
 import { Adventure, KeywordResponse, Location, parajoin } from '../../../lib';
 import { WEST, WINDOW_HANDLE } from '../constants';
 import HikingGame from '../../hiking';
@@ -11,7 +10,7 @@ export class CaveLocation extends Location {
     super({ game, name: 'Cheery Cave' });
   }
 
-  public getDescription(game: Adventure) {
+  public getDescription(_game: Adventure) {
     const lns = [
       snl`It's unnaturally cheery in this smelly old cave. Probably because of
       the tiny village of tiny dancing skeleton hands. What? Skeleton hands?

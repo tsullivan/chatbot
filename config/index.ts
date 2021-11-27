@@ -8,13 +8,6 @@ import { defaultsDeep } from 'lodash';
 interface Config {
   env: string;
   sessionSecret: string;
-  apm: {
-    serviceName: string;
-    active: boolean;
-  };
-  slack: {
-    token: string;
-  };
   port: number;
 }
 
@@ -40,9 +33,6 @@ const configMap: ConfigMap = {
 function getEnvConfig(envString: ConfigKey): Config {
   const envDependencies = [
     'SESSION_SECRET',
-    'APM_TOKEN',
-    'APM_URL',
-    'SLACK_BOT_TOKEN',
     'NODE_ENV',
   ];
 
@@ -60,5 +50,5 @@ function getEnvConfig(envString: ConfigKey): Config {
   }
 }
 
-export const { apm, env, port, sessionSecret, slack } =
+export const { env, port, sessionSecret } =
   getEnvConfig(process.env.NODE_ENV as ConfigKey); // prettier-ignore

@@ -6,6 +6,7 @@ import { Session } from '../../bot';
 import { getGameKeywords } from './game_keywords';
 import { getKeywordsHelper } from './keywords_helper';
 
+// FIXME abstract
 export class Adventure extends ChatGame {
   public branchToGame: (BranchGame: AdventureClass, prefix: string) => KeywordResponse;
   public clearKeywords: () => void;
@@ -98,10 +99,10 @@ export class Adventure extends ChatGame {
     return foundItem;
   }
 
-  public win(response?: string, format?: ResponseFormat): KeywordResponse {
+  public win(_response?: string, _format?: ResponseFormat): KeywordResponse {
     throw new Error('win method is to override');
   }
-  public lose(response?: string, format?: ResponseFormat): KeywordResponse {
+  public lose(_response?: string, _format?: ResponseFormat): KeywordResponse {
     throw new Error('lose method is to override');
   }
 
@@ -143,8 +144,7 @@ export class Adventure extends ChatGame {
 
     /* Array of functions to call to look through areas
      * for which the input can be a keyword */
-    let checks: CheckMethods[];
-    checks = [
+    const checks: CheckMethods[] = [
       {
         getResponder: () => this.getInputResponse(input, this),
         inputCheck: () => this.hasKeyword(input), // game keyword (quit, look, score, etc)

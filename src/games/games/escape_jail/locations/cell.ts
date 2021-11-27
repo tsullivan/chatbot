@@ -1,5 +1,4 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
+import { snl } from '../../../../lib';
 import { Adventure, KeywordResponse, Location } from '../../../lib';
 import { KEY, SOUTH } from '../constants';
 
@@ -13,7 +12,7 @@ export class CellLocation extends Location {
     this.forceAware = false;
   }
 
-  public getDescription(game: Adventure) {
+  public getDescription(_game: Adventure) {
     const desc = [
       snl`You're locked up securely in a jail cell. A hole in the ceiling
         marks where you crashed through accidentally when you got here.`,

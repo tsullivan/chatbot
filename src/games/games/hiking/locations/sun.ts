@@ -1,5 +1,4 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
+import { snl } from '../../../../lib';
 import { Adventure, KeywordResponse, Location, parajoin } from '../../../lib';
 import { DOWN, YOGURT } from '../constants';
 
@@ -10,7 +9,7 @@ export class TheSunLocation extends Location {
     super({ game, name: 'The Sun, in the Sun Ship' });
   }
 
-  public getDescription(game: Adventure) {
+  public getDescription(_game: Adventure) {
     return snl`It's so hot on the Sun! Fear not, it's safe inside the sun ship.
       It's very bright, but the windows of the sunship make it safe to look at.`;
   }

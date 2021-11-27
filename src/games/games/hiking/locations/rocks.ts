@@ -1,15 +1,14 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
+import { snl } from '../../../../lib';
 import { Adventure, Location, parajoin } from '../../../lib';
+import EscapeJailGame from '../../escape_jail';
 import { EAST, WEST } from '../constants';
-import EscapeJailGame  from '../../escape_jail';
 
 export class RocksLocation extends Location {
   public constructor(game: Adventure) {
     super({ game, name: 'Rocky place' });
   }
 
-  public getDescription(game: Adventure) {
+  public getDescription(_game: Adventure) {
     const lns = [
       snl`There's rocks everywhere on the path here. Be careful! You could
         trip, or if you horseplay, a rock could fall on your head, or you could

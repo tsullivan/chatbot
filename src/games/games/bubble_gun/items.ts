@@ -1,7 +1,5 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
+import { snl } from '../../../lib';
 import { Adventure, Item, KeywordResponse, Location, parajoin } from '../../lib';
-
 import { BATTERY_AA, BATTERY_LR41, BUBBLE_GUN, LADDER, LED, SOAP } from './constants';
 
 interface ItemArgs {
@@ -102,7 +100,7 @@ export function getItems(game: Adventure) {
     bubbleGunItem: itemFactory(BUBBLE_GUN, {
       description: snl`It's a bubble gun for gunning out bubbles. If you have soap and two AA batteries, it can fulfill the purpose of its existence.`,
       name: 'Bubble Gun',
-      setActions: ({ setTakeable, setCombinables }, item: Item) => {
+      setActions: ({ setTakeable, setCombinables }, _item: Item) => {
         setTakeable({
           fn: () =>
             new KeywordResponse({
@@ -191,7 +189,6 @@ export function setItemsToLocations(
     playgroundLocation,
     electronicsLocation,
     soapLocation,
-    magnetLocation,
   }: {
     [itemName: string]: Location;
   },

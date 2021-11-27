@@ -1,32 +1,31 @@
-import * as apm from 'elastic-apm-node';
+import * as Rx from 'rxjs';
 import * as express from 'express';
-import { Bot } from '../..//bot';
-import { boomify } from '@hapi/boom';
+import type { Bot, Chat } from '../../bot';
 import { json as parseJson } from 'body-parser';
 
 const jsonParser = parseJson({ type: 'application/json' });
 
-export function chatRoute(app: express.Application, bot: Bot) {
+export function chatRoute(
+  app: express.Application,
+  bot: Bot,
+  chats$: Rx.Subject<Chat>,
+  errors$: Rx.Subject<Error>
+) {
   app.post('/chat', jsonParser, async (req, res) => {
-    apm.startTransaction();
     const log = bot.getLogger(['web', 'routes']);
 
     try {
-      const result = await bot.handleChat(req.body, req.session.chat);
+      const result = await bot.handleChat(req.body, req.session.chat, errors$);
       res.json(result);
     } catch (err) {
       log.error([], err);
-      const boomed = boomify(err);
-      res.status(boomed.output.statusCode).send(boomed.output.payload);
+      res.status(500);
     }
 
-    apm.setUserContext({
+    chats$.next({
       username: req.session.chat.getName(),
+      avg_score: req.session.chat.getAverageScore(),
+      num_messages: req.session.chat.getUserHistory().length,
     });
-    apm.setCustomContext({
-      avg_score: req.session.chat.getAverageScore(), // eslint-disable-line @typescript-eslint/camelcase
-      num_messages: req.session.chat.getUserHistory().length, // eslint-disable-line @typescript-eslint/camelcase
-    });
-    apm.endTransaction();
   });
 }

@@ -1,5 +1,4 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
+import { snl } from '../../../../lib';
 import { Adventure, Location, delayAndDie, parajoin } from '../../../lib';
 import { SOUTH } from '../constants';
 
@@ -8,7 +7,7 @@ export class HallwayLocation extends Location {
     super({ game, name: 'The Jail Hallway' });
   }
 
-  public getDescription(game: Adventure) {
+  public getDescription(_game: Adventure) {
     const lns = [
       snl`You're outside of the jail cell in a hallway lined with many other
         jail cells. The other jail cells have people that belong here, but you
@@ -21,7 +20,7 @@ export class HallwayLocation extends Location {
     return parajoin(lns);
   }
 
-  public setLocationKeywords(game: Adventure) {
+  public setLocationKeywords(_game: Adventure) {
     this.addKeyword(
       'ESCAPE',
       `Escape down the hallway and quickly jump into the back of the van`,

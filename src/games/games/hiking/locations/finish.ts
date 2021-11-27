@@ -1,5 +1,4 @@
-// @ts-ignore untyped module
-import * as snl from 'strip-newlines';
+import { snl } from '../../../../lib';
 import { Adventure, KeywordResponse, Location, parajoin } from '../../../lib';
 import { SOUTH } from '../constants';
 
@@ -8,7 +7,7 @@ export class FinishLocation extends Location {
     super({ game, name: 'Finish Line' });
   }
 
-  public getDescription(game: Adventure) {
+  public getDescription(_game: Adventure) {
     const lns = [
       snl`The finish line looks like a robot. You can ask the robot to take out
         a flag, and that will finish this hiking game.`,
@@ -17,7 +16,7 @@ export class FinishLocation extends Location {
     return parajoin(lns);
   }
 
-  public setLocationKeywords(game: Adventure) {
+  public setLocationKeywords(_game: Adventure) {
     this.addKeyword(
       ['ASK_THE_ROBOT_TO_TAKE_OUT_A_FLAG', 'ROBOT', 'FLAG', 'FINISH'],
       `Leave the hiking journey and save your points`,

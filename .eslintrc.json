@@ -2,8 +2,7 @@
   "env": { "node": true },
   "extends": [
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "prettier/@typescript-eslint"
+    "prettier"
   ],
   "overrides": [
     {
@@ -39,7 +38,6 @@
     "no-shadow": [ "error" ],
     "no-unused-vars": 0,
     "quotes": [ "error", "single", { "allowTemplateLiterals": true } ],
-    "semi": [ "error", "always" ],
-    "sort-imports": [ "error" ]
+    "semi": [ "error", "always" ]
   }
 }

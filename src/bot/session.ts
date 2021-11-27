@@ -1,14 +1,14 @@
 import 'express';
+import * as Rx from 'rxjs';
 import * as _ from 'lodash';
-import * as apm from 'elastic-apm-node';
 import { Field, mapFieldToResponse } from './map_field_to_response';
 import { Bot } from './bot';
 import { ChatGame } from '../games';
 import { ChatGameClass } from '../games/lib/chat_game';
-import { SlackSession } from '../slackbot';
+import { Session as ExpressSession } from 'express-session';
 import { UserFormat } from '../types';
 
-export interface WebSession extends Express.Session {
+export interface WebSession extends ExpressSession {
   chat?: Session;
 }
 
@@ -18,7 +18,7 @@ interface ChatSessionInit {
 
 interface Proto {
   game: ChatGame | null;
-  messages: {};
+  messages: unknown;
   name: string | null;
   scores: number[];
   waitingOn: string | null;
@@ -34,7 +34,7 @@ export const SessionProto: Proto = {
   messages: {
     next: [],
     prev: [],
-    user_history: [], // eslint-disable-line @typescript-eslint/camelcase
+    user_history: [],
   },
   name: null,
   scores: [],
@@ -58,7 +58,10 @@ export class Session {
   };
   private bot: Bot;
 
-  public constructor(bot: Bot, session: WebSession | SlackSession) {
+  public constructor(
+    bot: Bot,
+    session: WebSession
+  ) {
     this.initialized = false;
     this.sessionId = session.id;
     this.bot = bot;
@@ -109,7 +112,7 @@ export class Session {
     return this.name;
   }
 
-  public validateSession(format: UserFormat): ValidateResponse {
+  public validateSession(format: UserFormat, errors$: Rx.Subject<Error>): ValidateResponse {
     if (this.name === null) {
       if (format === 'syn') {
         // browser refresh
@@ -119,7 +122,7 @@ export class Session {
       if (this.waitingOn === null) {
         // somehow lost session data!
         const err = new Error('Session data got lost!');
-        apm.captureError(err);
+        errors$.next(err);
 
         this.setWaitOnName();
         return {
@@ -138,10 +141,11 @@ export class Session {
       const field = this.waitingOn as Field;
       const { response, method } = mapFieldToResponse(field, input);
 
-      // @ts-ignore - need to handle the method of a class
-      if (response !== null && this[method] !== undefined) {
-        // @ts-ignore- need to handle the method of a class
-        const fn = this[method].bind(this);
+      if (
+        response !== null &&
+        (this as unknown as Record<string, () => void>)[method] !== undefined
+      ) {
+        const fn = (this as unknown as Record<string, () => void>)[method].bind(this);
         fn(input);
 
         this.waitingOn = null;

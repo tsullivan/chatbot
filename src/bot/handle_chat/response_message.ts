@@ -1,4 +1,3 @@
-import * as apm from 'elastic-apm-node';
 import { ChatResponse, UserFormat } from '../../types';
 import { Session } from '../session';
 
@@ -11,7 +10,6 @@ export class ResponseMessage {
   private chat: Session;
 
   public constructor(name: string, chat: Session, userMessage: string, userFormat: UserFormat) {
-    this.span = apm.startSpan(`${name}Span`);
     this.name = name;
     this.chat = chat;
     this.userMessage = userMessage;

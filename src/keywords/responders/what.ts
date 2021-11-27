@@ -1,4 +1,3 @@
-import * as apm from 'elastic-apm-node';
 import { KeywordResponder as CKeywordResponder} from '../keyword_responder';
 import { Session } from '../../bot';
 
@@ -13,7 +12,7 @@ export default class WhatResponder extends CKeywordResponder {
       try {
         prevMessage = chat.getPrevBotMessage();
       } catch (err) {
-        apm.captureError(err);
+        // errors$.next(err); // FIXME
         return 'An error has been logged.';
       }
 

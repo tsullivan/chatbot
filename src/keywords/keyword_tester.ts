@@ -10,7 +10,7 @@ export async function keywordTester(
   for (const keyword in responders) {
     if (responders.hasOwnProperty(keyword)) {
       try {
-        const gameSet = await chat.getGames();
+        const gameSet = chat.getGames();
         const TestResponder: ResponderClass = responders[keyword];
         const responder: KeywordResponder = new TestResponder(input, { chat, gameSet });
         if (responder.inputMatches()) {
