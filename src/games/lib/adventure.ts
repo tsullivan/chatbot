@@ -1,4 +1,5 @@
-import { Item, KeywordResponse, Location, parajoin } from './';
+import { p } from '../../lib';
+import { Item, KeywordResponse, Location } from './';
 import { ChatGame } from './chat_game';
 import { ItemCollection } from './item_collection';
 import { ResponseFormat } from '../../types';
@@ -40,7 +41,7 @@ export class Adventure extends ChatGame {
       const newGame: Adventure = new BranchGame(session);
       newGame.startFromTrunk();
       return new KeywordResponse({
-        text: prefix ? parajoin([prefix, newGame.getWelcome()]) : newGame.getWelcome(),
+        text: prefix ? p([prefix, newGame.getWelcome()]) : newGame.getWelcome(),
         showInstructions: false,
       });
     };
@@ -206,7 +207,7 @@ export class Adventure extends ChatGame {
     }
 
     responseSet.reverse();
-    response = parajoin(responseSet);
+    response = p(responseSet);
     this.score += changeScore;
 
     if (this.score <= 0) {
@@ -280,7 +281,7 @@ export class Adventure extends ChatGame {
     const { response: locationHelp } = this.getInputResponse('HELP', this as ChatGame);
     lns.push(locationDescription);
     lns.push(locationHelp);
-    return parajoin(lns);
+    return p(lns);
   }
 }
 

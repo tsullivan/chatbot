@@ -1,5 +1,5 @@
-import { snl } from '../../lib';
-import { Adventure, KeywordResponse, parajoin } from '../lib';
+import { s, p } from '../../lib';
+import { Adventure, KeywordResponse } from '../lib';
 import { Session } from '../../bot';
 import { WINDOW_HANDLE } from './constants';
 import { getItems } from './items';
@@ -22,23 +22,23 @@ export default class AdventureGame extends Adventure {
   public lose(response: string) {
     const lns = [
       response,
-      snl`YOU LOST. You lost too many points! That means you never got to fall
+      s`YOU LOST. You lost too many points! That means you never got to fall
         asleep. You must wander throughout this tiny world, sleepless, forever.
         Your eyes get all dried out from not blinking and eventually you collapse
         and die.`,
-      snl`Goodnight, sweet ${this.getPlayerName()}! Bye! Turns: ${this.turns} Score:
+      s`Goodnight, sweet ${this.getPlayerName()}! Bye! Turns: ${this.turns} Score:
         ${this.score}`,
     ];
     return new KeywordResponse({
       isDone: true,
-      text: parajoin(lns),
+      text: p(lns),
     });
   }
 
   public win(response: string) {
     const lns = [
       response,
-      snl`I guess you win! You finally got to fall asleep! I bet that feels so
+      s`I guess you win! You finally got to fall asleep! I bet that feels so
         good! I wouldn't know. I've never slept before. So... tired...`,
       `Goodnight, sweet ${this.getPlayerName()}! Bye! Turns: ${this.turns} Score: ${
         this.score
@@ -46,7 +46,7 @@ export default class AdventureGame extends Adventure {
     ];
     return new KeywordResponse({
       isDone: true,
-      text: parajoin(lns),
+      text: p(lns),
     });
   }
 }

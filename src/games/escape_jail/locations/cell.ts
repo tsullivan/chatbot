@@ -1,4 +1,4 @@
-import { snl } from '../../../lib';
+import { s } from '../../../lib';
 import { Adventure, KeywordResponse, Location } from '../../lib';
 import { KEY, SOUTH } from '../constants';
 
@@ -14,11 +14,11 @@ export class CellLocation extends Location {
 
   public getDescription(_game: Adventure) {
     const desc = [
-      snl`You're locked up securely in a jail cell. A hole in the ceiling
+      s`You're locked up securely in a jail cell. A hole in the ceiling
         marks where you crashed through accidentally when you got here.`,
     ];
     if (!this.forceAware) {
-      desc.push(snl`There is a jail key on a far wall across the hallway from
+      desc.push(s`There is a jail key on a far wall across the hallway from
                 your jail cell.`);
     }
     return desc.join('\n\n');
@@ -27,7 +27,7 @@ export class CellLocation extends Location {
   public setLocationKeywords(game: Adventure) {
     this.addKeyword('ESCAPE', `Escape from the cell`, () => {
       if (!this.guardsWatching && game.inInventory(KEY)) {
-        const px = snl`You use the key to open the cell door, and quietly walk out.`;
+        const px = s`You use the key to open the cell door, and quietly walk out.`;
         return this.followExit(SOUTH, px);
       }
 
@@ -54,11 +54,11 @@ export class CellLocation extends Location {
           this.forceAware = true;
           key.see();
           const res = [
-            snl`The key is on a wall far out of reach of your cell bars.
+            s`The key is on a wall far out of reach of your cell bars.
             You have to be really sneaky to take the it. Hmm. how to do
             this?`,
-            snl`You hear a voice calling to you. "Use the FORCE, ${game.getPlayerName()}."`,
-            snl`Who said that? The Force? What is that??`,
+            s`You hear a voice calling to you. "Use the FORCE, ${game.getPlayerName()}."`,
+            s`Who said that? The Force? What is that??`,
           ];
           return new KeywordResponse({ text: res.join('\n\n') });
         },
@@ -69,20 +69,20 @@ export class CellLocation extends Location {
       this.addKeyword('WAIT', `Wait for the guards to stop watching you.`, () => {
         this.guardsWatching = false;
         return new KeywordResponse({
-          text: snl`You pretend not to notice the guards watching you. They
+          text: s`You pretend not to notice the guards watching you. They
             watch you for a little bit, then walk away to watch other prisoners.`,
         });
       });
     } else {
       this.addKeyword(
         ['STAND_AROUND', 'WAIT'],
-        snl`Stand around and let the weight of feeling of excitement, exersion,
+        s`Stand around and let the weight of feeling of excitement, exersion,
           and curiousity resolve itself in your mind before deciding on something
           clever to do`,
         () => {
           this.guardsWatching = true;
           return new KeywordResponse({
-            text: snl`You stand around, doing nothing for awhile, The guards
+            text: s`You stand around, doing nothing for awhile, The guards
               come back on watch duty near your cell and start watch you some
               more.`,
           });

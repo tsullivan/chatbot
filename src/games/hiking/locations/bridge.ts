@@ -1,5 +1,5 @@
-import { snl } from '../../../lib';
-import { Adventure, KeywordResponse, Location, parajoin } from '../../lib';
+import { s, p } from '../../../lib';
+import { Adventure, KeywordResponse, Location } from '../../lib';
 import { ENEMIES, NORTH, SOUTH, WEST } from '../constants';
 
 export class BridgeLocation extends Location {
@@ -9,20 +9,20 @@ export class BridgeLocation extends Location {
 
   public getDescription(_game: Adventure) {
     const lns = [
-      snl`The bridge is a really long way up, and then a really long way down.
+      s`The bridge is a really long way up, and then a really long way down.
         At the top of the bridge is a spaceship. This spaceship looks like a
         Sun Ship. The hatch is open, and from the outside, it looks pretty
         functional.`,
-      snl`From the top of the bridge, can can look down at the large lake. The
+      s`From the top of the bridge, can can look down at the large lake. The
         lake is beautiful, and very clear.`,
-      snl`The dark clouds open up this close to the mountain, and the sky is
+      s`The dark clouds open up this close to the mountain, and the sky is
         clear and bright. The lake reflects the view to the top of the mountain,
         which makes this place of the game look very mirror-like. From up here,
         the lake looks just as serious and grim as the mountain it reflects.`,
-      snl`There is a telescope perched on a rail here.`,
+      s`There is a telescope perched on a rail here.`,
     ];
 
-    return parajoin(lns);
+    return p(lns);
   }
 
   public setLocationKeywords(game: Adventure) {
@@ -32,13 +32,13 @@ export class BridgeLocation extends Location {
       'Look through the telescope perched on a rail at the top of the bridge.',
       () => {
         let text =
-          snl`Looking through the telescope, you see something interesting about
+          s`Looking through the telescope, you see something interesting about
             the lake.` + ' ';
         if (game.inInventory(ENEMIES)) {
-          text += snl`There are enemies in the lake. At top of this bridge, it is
+          text += s`There are enemies in the lake. At top of this bridge, it is
             too high up to do anything about it though.`;
         } else {
-          text += snl`The enemies that were in the lake have been defeated! Their
+          text += s`The enemies that were in the lake have been defeated! Their
             defeated corpses float in the water.`;
         }
         return new KeywordResponse({ text });
@@ -47,7 +47,7 @@ export class BridgeLocation extends Location {
     this.addKeyword('LAKE', `Go back down to the lake`, () =>
       this.followExit(
         SOUTH,
-        snl`Down, down, down you go. Down the
+        s`Down, down, down you go. Down the
         bridge, bridge, bridge to the lake, lake, lake.`,
       ),
     );

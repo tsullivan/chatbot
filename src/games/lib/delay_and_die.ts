@@ -1,9 +1,9 @@
 import { KeywordResponse } from './keyword_response';
-import { snl } from '../../lib';
+import { s } from '../../lib';
 
 export const delayAndDie = () => {
   return {
-    description: snl`Stand around and let the weight of feeling of excitement,
+    description: s`Stand around and let the weight of feeling of excitement,
       exersion, and curiousity resolve itself in your mind before deciding on
       something clever to do`,
     fn: () =>

@@ -1,8 +1,8 @@
-import { Adventure, KeywordResponse, parajoin } from '../lib';
+import { Adventure, KeywordResponse } from '../lib';
 import { getItems, setItemsToLocations } from './items';
 import { Session } from '../../bot';
 import { getLocations } from './locations';
-import { snl } from '../../lib';
+import { s, p } from '../../lib';
 
 export default class HikingGame extends Adventure {
   public constructor(session: Session) {
@@ -21,25 +21,25 @@ export default class HikingGame extends Adventure {
   public lose(response: string) {
     const lns = [
       response,
-      snl`YOU LOST. You lost too many points!`,
-      snl`See ya, ${this.getPlayerName()}! Better luck next time! Turns:
+      s`YOU LOST. You lost too many points!`,
+      s`See ya, ${this.getPlayerName()}! Better luck next time! Turns:
         ${this.turns} Score: ${this.score}`,
     ];
     return new KeywordResponse({
       isDone: true,
-      text: parajoin(lns),
+      text: p(lns),
     });
   }
 
   public win(response: string) {
     const lns = [
       response,
-      snl`Looks like you're a winner! Turns: ${this.turns} Score:
+      s`Looks like you're a winner! Turns: ${this.turns} Score:
         ${this.score}`,
     ];
     return new KeywordResponse({
       isDone: true,
-      text: parajoin(lns),
+      text: p(lns),
     });
   }
 }

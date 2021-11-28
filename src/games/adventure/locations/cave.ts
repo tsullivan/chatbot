@@ -1,5 +1,5 @@
-import { snl } from '../../../lib';
-import { Adventure, KeywordResponse, Location, parajoin } from '../../lib';
+import { s, p } from '../../../lib';
+import { Adventure, KeywordResponse, Location } from '../../lib';
 import { WEST, WINDOW_HANDLE } from '../constants';
 import HikingGame from '../../hiking';
 
@@ -12,19 +12,19 @@ export class CaveLocation extends Location {
 
   public getDescription(_game: Adventure) {
     const lns = [
-      snl`It's unnaturally cheery in this smelly old cave. Probably because of
+      s`It's unnaturally cheery in this smelly old cave. Probably because of
       the tiny village of tiny dancing skeleton hands. What? Skeleton hands?
       You look closer: yes, the things moving around on the ground are
       definitely hand bones of people, dancing on their own.`,
-      snl`You can hear a happy tune being hummed, coming from the bony bone
+      s`You can hear a happy tune being hummed, coming from the bony bone
       hands. Somehow, they have learned to hum and make music, despite being
       just bones. Strange as it is, their music and the way the skeleton hands
       are dancing makes them look cute and happy. It makes you not mind the
       smelly cave smell.`,
-      snl`There's a dark corner of the cave. The smell seems fresher in that
+      s`There's a dark corner of the cave. The smell seems fresher in that
       direction, but you really can't tell what's over there.`,
     ];
-    return parajoin(lns);
+    return p(lns);
   }
 
   public setLocationKeywords(game: Adventure) {
@@ -32,8 +32,8 @@ export class CaveLocation extends Location {
       this.addKeyword('DANCE', 'Dance with the tiny skeleton hands', () => {
         this.danced = true;
         this.removeKeyword('DANCE');
-        const p = [
-          snl`The dance is beautiful, with flowing, synchronized forms.
+        const danced = [
+          s`The dance is beautiful, with flowing, synchronized forms.
             However, as hands have no ears, and skeleton hands are the forms that
             are dancing, there is no music. You can infer a beat, but you can not
             move your feet to synchronize in kind - as the hands also do not have
@@ -45,14 +45,14 @@ export class CaveLocation extends Location {
         ];
         return new KeywordResponse({
           changeScore: 1, // add a point for the heck of it
-          text: p.join('\n\n'),
+          text: danced.join('\n\n'),
         });
       });
     }
 
     this.addKeyword('LOOK', 'Look closer at the tiny village', () => {
       const lns = [
-        snl`The tiny village has a tiny hotel with tiny beds made for resting
+        s`The tiny village has a tiny hotel with tiny beds made for resting
           upon by tiny skeleton hands. It warms you heart to see, but it makes
           you no less tired and your warmed heart is at the same time shamed
           with the truthful knowledge that you can find no rest in this
@@ -60,7 +60,7 @@ export class CaveLocation extends Location {
       ];
 
       if (this.hasFloorItem(WINDOW_HANDLE)) {
-        lns.push(snl`The tiny hotel building has a strange type of flagpole
+        lns.push(s`The tiny hotel building has a strange type of flagpole
           on the roof that looks like maybe a crank handle for a window. Maybe
           a castle window(s). However, it might be impossible to know for sure
           if that's what it really is, because this game is very limited. The

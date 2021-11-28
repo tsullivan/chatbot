@@ -1,4 +1,4 @@
-import { snl } from '../../../lib';
+import { s } from '../../../lib';
 import { Adventure, KeywordResponse, Location } from '../../lib';
 import { DOWN, WEST } from '../constants';
 
@@ -9,11 +9,11 @@ export class MountainHouseLocation extends Location {
 
   public getDescription(_game: Adventure) {
     const ps = [
-      snl`Inside the mountain house, the many windows create an atmosphere of
+      s`Inside the mountain house, the many windows create an atmosphere of
         light, but as it is cloudy outside, you find yourself wishing for a
         little more.`,
-      snl`There's a comfy-looking bed, in case you need a rest.`,
-      snl`There's a deep hole in the floor. You can't see the bottom, but you
+      s`There's a comfy-looking bed, in case you need a rest.`,
+      s`There's a deep hole in the floor. You can't see the bottom, but you
         could fit yourself inside.`,
     ];
     return ps.join('\n\n');
@@ -29,14 +29,14 @@ export class MountainHouseLocation extends Location {
       () =>
         this.followExit(
           DOWN,
-          snl`Fortunately, there's a ladder leading straight down the hole, so
+          s`Fortunately, there's a ladder leading straight down the hole, so
             you don't have to jump down an unknown distance through complete
             darkness.`,
         ),
     );
     this.addKeyword(['SLEEP', 'BED'], `Take a rest on the comfy-looking bed`, () => {
       const ps = [
-        snl`You lay down on the comfy bed and close your eyes. You let your
+        s`You lay down on the comfy bed and close your eyes. You let your
           mind wander. Thinking about how pretty the waterfall was, you realize
           that although you were scared initially you're feeling pretty good now.
           You think to yourself that this game is pretty awesome, even though it

@@ -1,4 +1,4 @@
-import { snl } from '../../../lib';
+import { s } from '../../../lib';
 import { Adventure, Location } from '../../lib';
 import { DOWN } from '../constants';
 
@@ -8,7 +8,7 @@ export class TreeFortLocation extends Location {
   }
 
   public getDescription(_game: Adventure) {
-    return snl`This tree fort is so tall! It has a big window with a clear
+    return s`This tree fort is so tall! It has a big window with a clear
       view of the entire playground.`;
   }
 

@@ -4,7 +4,7 @@ function strap(str: string) {
   return str.replace(matchWhitespace, ' ');
 }
 
-export function snl(strangs: TemplateStringsArray, ...values: Array<string | number>) {
+export function s(strangs: TemplateStringsArray, ...values: Array<string | number>) {
   let result = strap(strangs[0]);
   const len = values.length;
 

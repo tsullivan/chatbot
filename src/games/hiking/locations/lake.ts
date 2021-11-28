@@ -1,6 +1,6 @@
 import { APPLES, CAR, ENEMIES, NORTH, SOUTH } from '../constants';
-import { Adventure, KeywordResponse, Location, parajoin } from '../../lib';
-import { snl } from '../../../lib/strip_newlines';
+import { Adventure, KeywordResponse, Location } from '../../lib';
+import { s, p } from '../../../lib';
 
 export class LakeLocation extends Location {
   public constructor(game: Adventure) {
@@ -9,19 +9,19 @@ export class LakeLocation extends Location {
 
   public getDescription(game: Adventure) {
     const lns = [
-      snl`This lake is beautiful, but the cloudy sky gives it a grim
+      s`This lake is beautiful, but the cloudy sky gives it a grim
       appearance. This seems to be a place of battle.`,
     ];
     if (game.inInventory(ENEMIES) && !game.inInventory(CAR)) {
-      lns.push(snl`There are enemies are in the lake. The shores of the lake are
+      lns.push(s`There are enemies are in the lake. The shores of the lake are
         too far away from them to do anything about them, though`);
     } else if (game.inInventory(CAR)) {
-      lns.push(snl`There are enemies are in the lake. You're floating over their
+      lns.push(s`There are enemies are in the lake. You're floating over their
         heads in your flying car.`);
     } else {
       lns.push('The enemies in the lake have been defeated!');
     }
-    return parajoin(lns);
+    return p(lns);
   }
 
   public setLocationKeywords(game: Adventure) {
@@ -36,25 +36,25 @@ export class LakeLocation extends Location {
     this.addKeyword('SWIM', 'Swim around in the lake', () => {
       if (game.inInventory(ENEMIES)) {
         const lns = [
-          snl`As soon as you dip one toe in the water, the enemies come up and
+          s`As soon as you dip one toe in the water, the enemies come up and
             defeat you!`,
-          snl`LOSE 50 points`,
+          s`LOSE 50 points`,
         ];
         return new KeywordResponse({
           changeScore: -50,
           isDone: true,
-          text: parajoin(lns),
+          text: p(lns),
         });
       } else {
         const lns = [
-          snl`You swim around for a little bit, but the floating corpses
+          s`You swim around for a little bit, but the floating corpses
             of the defeated enemies gross you out and you get out of the water
             after a little bit.`,
-          snl`LOSE A POINT`,
+          s`LOSE A POINT`,
         ];
         return new KeywordResponse({
           changeScore: -1,
-          text: parajoin(lns),
+          text: p(lns),
         });
       }
     });
@@ -65,15 +65,15 @@ export class LakeLocation extends Location {
         game.deleteFromInventory(ENEMIES);
         this.removeKeyword('THROW_APPLES');
         const lns = [
-          snl`You reach for an apple in your pocket, and give it a mighty hurl.
+          s`You reach for an apple in your pocket, and give it a mighty hurl.
             It knocks an enemy head! That enemy becomes defeated!`,
-          snl`You continue on in this manner until all enemies are defeated.
+          s`You continue on in this manner until all enemies are defeated.
             Their corpses float amidst apples in the water of the lake.`,
           'GAIN 35 points',
         ];
         return new KeywordResponse({
           changeScore: 35,
-          text: parajoin(lns),
+          text: p(lns),
         });
       });
     }

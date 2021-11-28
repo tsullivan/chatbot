@@ -1,10 +1,10 @@
-import { snl } from '../../lib';
+import { s } from '../../lib';
 import { Adventure, Item, KeywordResponse, Location } from '../lib';
 import { GUARDS, KEY, TOWEL } from './constants';
 
 export function getItems(game: Adventure) {
   const keyItem = new Item({
-    description: snl`On a hook on a far wall, there is the key to open a jail cell.`,
+    description: s`On a hook on a far wall, there is the key to open a jail cell.`,
     game,
     id: KEY,
     name: 'Jail Key',
@@ -14,11 +14,11 @@ export function getItems(game: Adventure) {
         fn: () => {
           this.description = 'The jail key you force-stole from the jail.';
           const resp = [
-            snl`No time for questions. Time for escaping. You decide to put
+            s`No time for questions. Time for escaping. You decide to put
               your trust in the mysterious voice. You close your eyes, and
               imagine the jail key floating up, off its hook, drift quietly
               through the air, and land in your open hand.`,
-            snl`When you open your eyes, the jail key is in your hand.`,
+            s`When you open your eyes, the jail key is in your hand.`,
           ];
           return new KeywordResponse({ text: resp.join('\n\n') });
         },
@@ -28,7 +28,7 @@ export function getItems(game: Adventure) {
     },
   });
   const towelItem = new Item({
-    description: snl`A towel from the jail laundry van.`,
+    description: s`A towel from the jail laundry van.`,
     game,
     id: TOWEL,
     name: 'Jail Towel',

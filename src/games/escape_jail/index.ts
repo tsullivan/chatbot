@@ -1,6 +1,6 @@
 import { Session } from '../../bot';
-import { snl } from '../../lib';
-import { Adventure, KeywordResponse, parajoin } from '../lib';
+import { p, s } from '../../lib';
+import { Adventure, KeywordResponse } from '../lib';
 import { getItems, setItemsToLocations } from './items';
 import { getLocations } from './locations';
 
@@ -19,9 +19,9 @@ export default class EscapeJailGame extends Adventure {
   }
 
   public getWelcome() {
-    const welcome = parajoin([
+    const welcome = p([
       '# CRASH!!!',
-      snl`Your body has tumbled down a mountainside, and
+      s`Your body has tumbled down a mountainside, and
         you have crashed through the roof of a jail. Fortunately you are not
         hurt, but you are stuck in this cell! The guards don't know that you
         are not supposed to be here, and they are watching you.`,
@@ -30,26 +30,26 @@ export default class EscapeJailGame extends Adventure {
   }
 
   public lose(response: string) {
-    const p = [
+    const lose = [
       response,
       'YOU LOST. You lost too many points!',
-      snl`See ya, ${this.getPlayerName()}! Better luck next time! Turns:
+      s`See ya, ${this.getPlayerName()}! Better luck next time! Turns:
         ${this.turns} Score: ${this.score}`,
     ];
     return new KeywordResponse({
       isDone: true,
-      text: p.join('\n\n'),
+      text: lose.join('\n\n'),
     });
   }
 
   public win(response: string) {
-    const p = [
+    const win = [
       response,
       `Looks like have escaped from JAIL! Turns: ${this.turns} Score: ${this.score}`,
     ];
     return new KeywordResponse({
       isDone: true,
-      text: p.join('\n\n'),
+      text: win.join('\n\n'),
     });
   }
 }

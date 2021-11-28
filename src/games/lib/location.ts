@@ -3,7 +3,7 @@ import { Adventure } from './adventure';
 import { ItemCollection } from './item_collection';
 import { KeywordResponse } from './keyword_response';
 import { Person } from './person';
-import { parajoin } from './parajoin';
+import { p } from '../../lib';
 
 // FIXME abstract
 export class Location {
@@ -136,7 +136,7 @@ export class Location {
       lns.push(game.getLocationDescription());
 
       return new KeywordResponse({
-        text: parajoin(lns),
+        text: p(lns),
       });
     }
 

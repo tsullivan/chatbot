@@ -1,5 +1,5 @@
-import { snl } from '../../../lib';
-import { Adventure, KeywordResponse, Location, parajoin } from '../../lib';
+import { s, p } from '../../../lib';
+import { Adventure, KeywordResponse, Location } from '../../lib';
 import { SOUTH } from '../constants';
 
 export class FinishLocation extends Location {
@@ -9,11 +9,11 @@ export class FinishLocation extends Location {
 
   public getDescription(_game: Adventure) {
     const lns = [
-      snl`The finish line looks like a robot. You can ask the robot to take out
+      s`The finish line looks like a robot. You can ask the robot to take out
         a flag, and that will finish this hiking game.`,
-      snl`Ready to end the hiking journey?`,
+      s`Ready to end the hiking journey?`,
     ];
-    return parajoin(lns);
+    return p(lns);
   }
 
   public setLocationKeywords(_game: Adventure) {
@@ -23,7 +23,7 @@ export class FinishLocation extends Location {
       () => {
         return new KeywordResponse({
           isDone: true,
-          text: snl`The robot takes out a flag, and swishes it over your head.
+          text: s`The robot takes out a flag, and swishes it over your head.
             This takes you to the end of the hiking journey.`,
         });
       },

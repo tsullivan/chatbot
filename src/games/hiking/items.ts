@@ -1,4 +1,4 @@
-import { snl } from '../../lib';
+import { s } from '../../lib';
 import { Adventure, Item, KeywordResponse, Location } from '../lib';
 import { APPLES, CAR, ENEMIES, YOGURT } from './constants';
 
@@ -7,7 +7,7 @@ export function getItems(game: Adventure) {
    * Enemies
    */
   const enemiesItem = new Item({
-    description: snl`Tiny enemies have harbored in your pocket. They will jump
+    description: s`Tiny enemies have harbored in your pocket. They will jump
       out and grow to full size if there is water.`,
     game,
     id: ENEMIES,
@@ -19,7 +19,7 @@ export function getItems(game: Adventure) {
    * Car
    */
   const carItem = new Item({
-    description: snl`This car does not have wheels, instead it has flyers on
+    description: s`This car does not have wheels, instead it has flyers on
       the bottom that point at the ground and lift it up, making it go really
       fast. It is created inside the tall mountain.`,
     game,
@@ -29,11 +29,11 @@ export function getItems(game: Adventure) {
       setDroppable({
         fn: () => {
           carItem.setName('Flying silver car (destroyed)');
-          carItem.setDescription(snl`This flying silver car has been crashed
+          carItem.setDescription(s`This flying silver car has been crashed
             into a tree. It's flyers have become completely destroyed, and it
             will no longer go fast or go at all.`);
           return new KeywordResponse({
-            text: snl`You steer the car towards a tree, make it go really
+            text: s`You steer the car towards a tree, make it go really
               really fast, then CRASH! EXPLODE! The flying car is destroyed.`,
           });
         },
@@ -53,7 +53,7 @@ export function getItems(game: Adventure) {
     name: 'Apples',
   });
   const yogurtItem = new Item({
-    description: snl`This yogurt is haunted with ghosts. They look like they
+    description: s`This yogurt is haunted with ghosts. They look like they
       want to get out.`,
     game,
     id: YOGURT,

@@ -1,7 +1,7 @@
 import { Adventure } from './adventure';
 import { ItemCollection } from './item_collection';
 import { KeywordResponse } from './keyword_response';
-import { parajoin } from './parajoin';
+import { p } from '../../lib';
 
 interface GameKeywordOpts {
   key: string;
@@ -21,7 +21,7 @@ export function getGameKeywords(): GameKeywordOpts[] {
         const itemsInternal = ItemCollection.describeGameItems(game);
         return new KeywordResponse({
           isCascade: true,
-          text: parajoin([descriptionInternal, itemsInternal].filter(Boolean)), // (2)
+          text: p([descriptionInternal, itemsInternal].filter(Boolean)), // (2)
         });
       },
       key: 'LOOK',

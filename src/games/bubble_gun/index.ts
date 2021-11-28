@@ -3,7 +3,7 @@ import { ELECTRONICS, MAGNET, PLAYGROUND, SOAP } from './constants';
 import { getItems, setItemsToLocations } from './items';
 import { Session } from '../../bot';
 import { getLocationsMap } from './locations';
-import { snl } from '../../lib';
+import { s } from '../../lib';
 
 export default class BubbleGunGame extends Adventure {
   public constructor(session: Session) {
@@ -35,7 +35,7 @@ export default class BubbleGunGame extends Adventure {
     const p = [
       response,
       'YOU LOST. You lost too many points!',
-      snl`See ya, ${this.getPlayerName()}! Better luck next time! Turns:
+      s`See ya, ${this.getPlayerName()}! Better luck next time! Turns:
         ${this.turns} Score: ${this.score}`,
     ];
     return new KeywordResponse({

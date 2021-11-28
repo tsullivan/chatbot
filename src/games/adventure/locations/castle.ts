@@ -1,4 +1,4 @@
-import { snl } from '../../../lib';
+import { s } from '../../../lib';
 import { Adventure, KeywordResponse, Location } from '../../lib';
 import { SOUTH, WINDOW_HANDLE } from '../constants';
 
@@ -14,7 +14,7 @@ export class CastleLocation extends Location {
 
   public getDescription(_game: Adventure) {
     if (this.windowsOpen) {
-      return snl`In the great hall of the castle, there are beautiful
+      return s`In the great hall of the castle, there are beautiful
         open-air windows with warm, nice-smelling air drifting through.
         Sunlight is catching a few specks of dust floating in the air. Not
         that much though, because it's pretty clean in here. There's also a
@@ -22,7 +22,7 @@ export class CastleLocation extends Location {
         isn't it night time? Where is that light coming from?`;
     }
     else {
-      return snl`In the great hall of the castle, there were beautiful
+      return s`In the great hall of the castle, there were beautiful
         open-air windows with warm, nice-smelling air that drifted through.
         Sunlight would catch a few specks of dust floating in the air. Not
         that much though, because it's pretty clean in here. But the area is
@@ -35,7 +35,7 @@ export class CastleLocation extends Location {
     this.addKeyword('SLEEP', 'Sleep on the comfy bed', () => {
       if (this.windowsOpen) {
         const p = [
-          snl`There is too much light coming in through the open-air
+          s`There is too much light coming in through the open-air
             windows. You'll never be able to enjoy even a minute's rest in this
             spectacular great hall! Oh yeah, and there are no other beds in
             this castle and all the rooms will kill you if you try to go in
@@ -49,7 +49,7 @@ export class CastleLocation extends Location {
       } else {
         // YOU WIN
         const p = [
-          snl`With the windows closed and blocking out the the
+          s`With the windows closed and blocking out the the
             unusually bright outside night air, you rest your weary body on the
             comfy bed in the exquisitely decorated great hall, close your eyes
             and have a pleasant sleep. You dream pleasant dreams as your
@@ -69,18 +69,18 @@ export class CastleLocation extends Location {
     this.addKeyword('LOOK', 'Look closer at the open-air windows', () => {
       let text;
       if (this.windowsOpen) {
-        text = snl`They're nice windows and all, but it's so bright in
+        text = s`They're nice windows and all, but it's so bright in
           here! What kind of weird forces are around that would make the sun
           so bright at this time of night!?`;
 
         if (game.inInventory(WINDOW_HANDLE)) {
-          text += snl`Oh, also you notice that each window has a little socket in
+          text += s`Oh, also you notice that each window has a little socket in
             one corner, and that looks like the handle you're carrying in your pocket
             would fit in it! What do you say, want to give it a whirl???`;
           this.socketsSeen = true;
         }
       } else {
-        text = snl`It's nice and quiet here. The windows are closed and no
+        text = s`It's nice and quiet here. The windows are closed and no
           longer letting in that abonimanimal light.`;
       }
       return new KeywordResponse({ text });
@@ -89,18 +89,18 @@ export class CastleLocation extends Location {
     if (game.inInventory(WINDOW_HANDLE) && this.socketsSeen) {
       this.addKeyword(
         'USE_WINDOW_HANDLE',
-        snl`See if the handle in your pocket does anything against the sockets
+        s`See if the handle in your pocket does anything against the sockets
           on the open windows in here`,
         () => {
           this.windowsOpen = false;
           game.deleteFromInventory(WINDOW_HANDLE);
           this.removeKeyword('USE_WINDOW_HANDLE');
           const p = [
-            snl`With a loud but suprisingly unrusty sounding "SSSSSSHNK" noise,
+            s`With a loud but suprisingly unrusty sounding "SSSSSSHNK" noise,
               metal roller doors slide down to cover the open-air windows. The
               windows are now closed-air windows. The room has much more cozy and
               relaxed lighting!`,
-            snl`Woah, the crank handle somehow became a permanent part of the
+            s`Woah, the crank handle somehow became a permanent part of the
               castle window. Yeah, actually there was just one window and now the
               crank handle can never be retrieved from it. Want it back? Too bad.`,
           ];

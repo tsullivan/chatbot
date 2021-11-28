@@ -2,7 +2,7 @@ import { LI, UL } from '../../constants';
 import { Adventure } from '.';
 import { Item } from './item';
 import { values as getValues } from 'lodash';
-import { parajoin } from './parajoin';
+import { p } from '../../lib';
 
 // give name and instructions for each inventory and floor item
 function describeItSimple(item: Item) {
@@ -43,7 +43,7 @@ export class ItemCollection {
       })
     ).filter(Boolean); // drop null info
 
-    return blocks.length > 0 ? parajoin(blocks) : null;
+    return blocks.length > 0 ? p(blocks) : null;
   }
 
   /*
