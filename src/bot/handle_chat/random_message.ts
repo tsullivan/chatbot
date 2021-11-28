@@ -1,5 +1,5 @@
 import { ChatResponse, UserFormat } from '../../types';
-import RandomResponder from '../../keywords/responders/random';
+import RandomResponder from '../../keywords/random';
 import { ResponseMessage } from './response_message';
 import { Session } from '../session';
 
