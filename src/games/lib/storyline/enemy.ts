@@ -1,10 +1,6 @@
 import { range, sample } from 'lodash';
-import { oneOf } from '../../lib';
-
-interface Challenge {
-  question: string;
-  answer: string;
-}
+import { oneOf } from '../../../lib';
+import { ChallengeCode } from './';
 
 const getMathAddition = () => {
   const [a1, a2] = [sample(range(3, 20)), sample(range(1, 8))];
@@ -26,13 +22,17 @@ const getMathAddition = () => {
 };
 
 export class Enemy {
-  private challenge: Challenge;
+  private ec: {
+  question: string;
+  answer: string;
+};
 
-  public constructor() {
-    this.challenge = oneOf([getMathAddition]);
+  public constructor(_code: ChallengeCode) {
+    this.ec = oneOf([getMathAddition]);
   }
 
-  public getChallenge(): Challenge {
-    return this.challenge;
+  public getChallenge() {
+    return this.ec;
   }
 }
+

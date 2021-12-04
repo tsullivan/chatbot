@@ -1,5 +1,5 @@
 import { ChatResponse, UserFormat } from '../../types';
-import RandomResponder from '../../keywords/random';
+import RandomResponder from '../../keywords/random'; // FIXME: import from somewhere else
 import { ResponseMessage } from './response_message';
 import { Session } from '../session';
 
