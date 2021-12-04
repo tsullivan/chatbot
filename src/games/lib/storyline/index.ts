@@ -13,7 +13,7 @@ export interface GameState {
   isDone: boolean;
 }
 
-export type ChallengeCode = 'sums';
+export type ChallengeCode = 'sums' | 'multiplications';
 
 export interface StoryResponse {
   text: string;

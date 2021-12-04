@@ -111,7 +111,7 @@ export const gamePlay = (
   ).pipe(
     map((state) => {
       const { responses } = state;
-      const pre = `**Iron Man And Spidey Game!**\n\nTurns: ${state.turns}. Level: ${state.level}. Score: ${state.score}`;
+      const pre = `Turns: ${state.turns}. Level: ${state.level}. Score: ${state.score}`;
       const text = [pre, ...responses].join('\n\n');
 
       return {
